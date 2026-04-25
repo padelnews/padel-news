@@ -1,6 +1,6 @@
 {
   "fecha": "2026-04-25",
-  "ultima_actualizacion": "2026-04-25 20:30:00",
+  "ultima_actualizacion": "2026-04-25 20:35:00",
   "marcas": ["NOX", "Siux", "Babolat"],
   "chollos": [
     {
@@ -8,7 +8,7 @@
       "precio_original": 297.52,
       "precio_oferta": 147.08,
       "descuento": "51%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/nox-card.svg",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -17,7 +17,7 @@
       "precio_original": 322.31,
       "precio_oferta": 257.82,
       "descuento": "21%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/nox-card.svg",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -26,7 +26,7 @@
       "precio_original": 247.93,
       "precio_oferta": 114.95,
       "descuento": "54%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/nox-card.svg",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -35,7 +35,7 @@
       "precio_original": 123.97,
       "precio_oferta": 111.53,
       "descuento": "10%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/nox-card.svg",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -44,7 +44,7 @@
       "precio_original": 165.29,
       "precio_oferta": 119.76,
       "descuento": "28%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/nox-card.svg",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -53,7 +53,7 @@
       "precio_original": 138.95,
       "precio_oferta": 79.95,
       "descuento": "42%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/siux-card.svg",
       "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
       "tienda": "IntlPadelShop"
     },
@@ -62,7 +62,7 @@
       "precio_original": 129.00,
       "precio_oferta": 79.95,
       "descuento": "38%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/siux-card.svg",
       "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
       "tienda": "IntlPadelShop"
     },
@@ -71,7 +71,7 @@
       "precio_original": 280.00,
       "precio_oferta": 99.95,
       "descuento": "64%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/siux-card.svg",
       "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
       "tienda": "IntlPadelShop"
     },
@@ -80,7 +80,7 @@
       "precio_original": 175.00,
       "precio_oferta": 99.95,
       "descuento": "43%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/siux-card.svg",
       "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
       "tienda": "IntlPadelShop"
     },
@@ -89,7 +89,7 @@
       "precio_original": 228.95,
       "precio_oferta": 119.95,
       "descuento": "48%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/siux-card.svg",
       "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
       "tienda": "IntlPadelShop"
     },
@@ -98,7 +98,7 @@
       "precio_original": 180.00,
       "precio_oferta": 148.72,
       "descuento": "17%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/babolat-card.svg",
       "enlace": "https://padelproshop.com/es-la/products/pala-babolat-counter-vertuo-2026",
       "tienda": "PadelPROShop"
     },
@@ -107,7 +107,7 @@
       "precio_original": 249.00,
       "precio_oferta": 149.00,
       "descuento": "40%",
-      "imagen": "images/chollos/pala-padel.jpg",
+      "imagen": "images/chollos/babolat-card.svg",
       "enlace": "https://padelproshop.com/products/babolat-technical-v2",
       "tienda": "PadelPROShop"
     }
