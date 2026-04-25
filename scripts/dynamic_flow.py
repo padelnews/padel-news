@@ -228,6 +228,14 @@ def update_index_banner(state):
         content
     )
     
+    # Update hero description for FINAL phase
+    if phase == "final":
+        content = re.sub(
+            r'<p>Sigue toda la acción[^<]*</p>',
+            '<p>¡La final está servida! Tapia/Coello vs Lebrón/Augsburger mañana domingo 26/04 a las 14:00. Los número uno buscan su tercer título.</p>',
+            content
+        )
+    
     with open(page_path, 'w') as f:
         f.write(content)
     
