@@ -307,15 +307,5 @@ if (window.performance) {
 /**
  * Error handling for images
  */
-document.addEventListener('error', function(e) {
-  if (e.target.tagName === 'IMG') {
-    // Replace broken images with placeholder
-    const placeholder = `https://placehold.co/600x400/0066cc/ffffff?text=Imagen+no+disponible`;
-    if (e.target.src !== placeholder) {
-      e.target.src = placeholder;
-      console.log('🖼️ Image replaced with placeholder:', e.target.alt);
-    }
-  }
-}, true);
 
 console.log('✅ Padel News Pro initialized');
