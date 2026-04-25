@@ -1,6 +1,6 @@
 {
   "fecha": "2026-04-25",
-  "ultima_actualizacion": "2026-04-25 20:35:00",
+  "ultima_actualizacion": "2026-04-25 20:42:00",
   "marcas": ["NOX", "Siux", "Babolat"],
   "chollos": [
     {
@@ -8,7 +8,7 @@
       "precio_original": 297.52,
       "precio_oferta": 147.08,
       "descuento": "51%",
-      "imagen": "images/chollos/nox-card.svg",
+      "imagen": "images/chollos/nox-at10-2026.png",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -17,7 +17,7 @@
       "precio_original": 322.31,
       "precio_oferta": 257.82,
       "descuento": "21%",
-      "imagen": "images/chollos/nox-card.svg",
+      "imagen": "images/chollos/nox-at10-2026.png",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -26,7 +26,7 @@
       "precio_original": 247.93,
       "precio_oferta": 114.95,
       "descuento": "54%",
-      "imagen": "images/chollos/nox-card.svg",
+      "imagen": "images/chollos/nox-at10-2026.png",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -35,7 +35,7 @@
       "precio_original": 123.97,
       "precio_oferta": 111.53,
       "descuento": "10%",
-      "imagen": "images/chollos/nox-card.svg",
+      "imagen": "images/chollos/nox-at10-2026.png",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
     },
@@ -44,25 +44,34 @@
       "precio_original": 165.29,
       "precio_oferta": 119.76,
       "descuento": "28%",
-      "imagen": "images/chollos/nox-card.svg",
+      "imagen": "images/chollos/nox-at10-2026.png",
       "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
       "tienda": "ZonaPadel"
+    },
+    {
+      "producto": "Siux Diablo Pro 4 2026",
+      "precio_original": 229.95,
+      "precio_oferta": 199.80,
+      "descuento": "13%",
+      "imagen": "images/chollos/siux-diablo.jpg",
+      "enlace": "https://www.padelshack.com/product/siux-diablo-pro-4-padel-racket-2026/",
+      "tienda": "Padelshack"
+    },
+    {
+      "producto": "Siux Diablo Pro Night Blue 2026",
+      "precio_original": 349.95,
+      "precio_oferta": 249.95,
+      "descuento": "28%",
+      "imagen": "images/chollos/siux-diablo.jpg",
+      "enlace": "https://padelusa.com/products/siux-diablo-pro-2026-night-blue-padel-racket",
+      "tienda": "PadelUSA"
     },
     {
       "producto": "Siux Diablo Go 4 2025",
       "precio_original": 138.95,
       "precio_oferta": 79.95,
       "descuento": "42%",
-      "imagen": "images/chollos/siux-card.svg",
-      "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
-      "tienda": "IntlPadelShop"
-    },
-    {
-      "producto": "Siux Stone Carbon 3K Azul",
-      "precio_original": 129.00,
-      "precio_oferta": 79.95,
-      "descuento": "38%",
-      "imagen": "images/chollos/siux-card.svg",
+      "imagen": "images/chollos/siux-diablo.jpg",
       "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
       "tienda": "IntlPadelShop"
     },
@@ -71,7 +80,7 @@
       "precio_original": 280.00,
       "precio_oferta": 99.95,
       "descuento": "64%",
-      "imagen": "images/chollos/siux-card.svg",
+      "imagen": "images/chollos/siux-diablo.jpg",
       "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
       "tienda": "IntlPadelShop"
     },
@@ -80,16 +89,7 @@
       "precio_original": 175.00,
       "precio_oferta": 99.95,
       "descuento": "43%",
-      "imagen": "images/chollos/siux-card.svg",
-      "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
-      "tienda": "IntlPadelShop"
-    },
-    {
-      "producto": "Siux Diablo Elite 4 2025",
-      "precio_original": 228.95,
-      "precio_oferta": 119.95,
-      "descuento": "48%",
-      "imagen": "images/chollos/siux-card.svg",
+      "imagen": "images/chollos/siux-diablo.jpg",
       "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
       "tienda": "IntlPadelShop"
     },
@@ -98,7 +98,7 @@
       "precio_original": 180.00,
       "precio_oferta": 148.72,
       "descuento": "17%",
-      "imagen": "images/chollos/babolat-card.svg",
+      "imagen": "images/chollos/babolat-counter.jpg",
       "enlace": "https://padelproshop.com/es-la/products/pala-babolat-counter-vertuo-2026",
       "tienda": "PadelPROShop"
     },
@@ -107,7 +107,7 @@
       "precio_original": 249.00,
       "precio_oferta": 149.00,
       "descuento": "40%",
-      "imagen": "images/chollos/babolat-card.svg",
+      "imagen": "images/chollos/babolat-counter.jpg",
       "enlace": "https://padelproshop.com/products/babolat-technical-v2",
       "tienda": "PadelPROShop"
     }
