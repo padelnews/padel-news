@@ -94,11 +94,16 @@
             return { bg: '#666', text: 'white' };
         }
         
-        function getPlaceholderImage(producto, tienda) {
-            const brand = tienda.toLowerCase().includes('nox') ? 'NOX' : 
-                         tienda.toLowerCase().includes('siux') ? 'Siux' : 'Babolat';
+        function getProductImage(chollo) {
+            // Use the image from JSON, or generate a branded placeholder
+            if (chollo.imagen && chollo.imagen.startsWith('http')) {
+                return chollo.imagen;
+            }
+            const brand = chollo.tienda.toLowerCase().includes('nox') ? 'NOX' : 
+                         chollo.tienda.toLowerCase().includes('siux') ? 'Siux' : 'Babolat';
             const color = brand === 'NOX' ? 'ff6b00' : brand === 'Siux' ? 'e63946' : '2a9d8f';
-            return `https://placehold.co/400x250/1a1a2e/${color}?text=${encodeURIComponent(producto.substring(0, 25))}`;
+            const name = encodeURIComponent(chollo.producto.substring(0, 20));
+            return `https://placehold.co/400x280/${color}/ffffff?text=${name}`;
         }
         
         function renderChollos(brand) {
@@ -114,13 +119,12 @@
             
             container.innerHTML = filtered.map(chollo => {
                 const brandStyle = getBrandStyle(chollo.tienda);
-                const imgSrc = chollo.imagen && chollo.imagen.startsWith('http') ? chollo.imagen : getPlaceholderImage(chollo.producto, chollo.tienda);
+                const imgSrc = getProductImage(chollo);
                 
                 return `
                     <article style="background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 16px; overflow: hidden;">
-                        <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 1rem; text-align: center;">
-                            <img src="${imgSrc}" alt="${chollo.producto}" style="max-width: 100%; max-height: 180px; object-fit: contain;" 
-                                 onerror="this.style.display='none'">
+                        <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 1rem; text-align: center; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <img src="${imgSrc}" alt="${chollo.producto}" style="max-width: 100%; max-height: 180px; object-fit: contain;" onerror="this.parentElement.innerHTML='<span style=\\'color:white;font-size:0.9rem;\\'>${chollo.producto}</span>'">
                         </div>
                         <div style="padding: 1.25rem;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; gap: 0.5rem; flex-wrap: wrap;">
