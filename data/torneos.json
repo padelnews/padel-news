@@ -1,0 +1,74 @@
+{
+  "torneos_activos": [
+    {
+      "nombre": "Premier Padel Tour 2026",
+      "estado": "En curso",
+      "proxima_fecha": "2026-05-15",
+      "sede": "París, Francia",
+      "categoria": "P1",
+      "premios": "$250,000 USD",
+      "estado_inscripcion": "Cerrado"
+    },
+    {
+      "nombre": "Brussels P2 2026",
+      "estado": "En curso (Cuartos de Final)",
+      "proxima_fecha": "2026-04-26",
+      "sede": "Bruselas, Bélgica",
+      "categoria": "P2",
+      "premios": "$100,000 USD",
+      "estado_inscripcion": "Cerrado"
+    },
+    {
+      "nombre": "Barcelona Master Finals 2026",
+      "estado": "Por confirmar participantes",
+      "proxima_fecha": "2026-12-14",
+      "sede": "Palau Sant Jordi, Barcelona",
+      "categoria": "Master Finals",
+      "premios": "€500,000 EUR",
+      "estado_inscripcion": "Solo top 8 ranking"
+    }
+  ],
+  "ranking_masculino": [
+    {"posicion": 1, "pareja": ["Agustín Tapia", "Arturo Coello"], "puntos": 39600, "pais": "ARG/ESP"},
+    {"posicion": 2, "pareja": ["Alejandro Galán", "Federico Chingotto"], "puntos": 34640, "pais": "ESP/ARG"},
+    {"posicion": 3, "pareja": ["Franco Stupaczuk", "Mike Yanguas"], "puntos": 14227, "pais": "ARG/ESP"},
+    {"posicion": 4, "pareja": ["Juan Lebrón", "Leo Augsburger"], "puntos": 13000, "pais": "ESP/ARG"},
+    {"posicion": 5, "pareja": ["Coki Nieto", "Jon Sanz"], "puntos": 11447, "pais": "ESP"},
+    {"posicion": 6, "pareja": ["Paquito Navarro", "Fran Guerrero"], "puntos": 10525, "pais": "ESP"},
+    {"posicion": 7, "pareja": ["Martín Di Nenno", "Momo González"], "puntos": 9460, "pais": "ARG/ESP"},
+    {"posicion": 8, "pareja": ["Javi Garrido", "Lucas Bergamini"], "puntos": 7078, "pais": "ESP/ARG"},
+    {"posicion": 9, "pareja": ["Leal", "Cardona"], "puntos": 6065, "pais": "BRA/ESP"},
+    {"posicion": 10, "pareja": ["Bautista", "Campagnolo"], "puntos": 4481, "pais": "ESP/ARG"}
+  ],
+  "ranking_femenino": [
+    {"posicion": 1, "pareja": ["Gemma Triay", "Delfina Brea"], "puntos": 36120, "pais": "ESP/ARG"},
+    {"posicion": 2, "pareja": ["Bea González", "Paula Josemaría"], "puntos": 27760, "pais": "ESP"},
+    {"posicion": 3, "pareja": ["Ariana Sánchez", "Andrea Ustero"], "puntos": 21345, "pais": "ESP"},
+    {"posicion": 4, "pareja": ["Sofía Araújo", "Claudia Fernández"], "puntos": 20070, "pais": "POR/ESP"},
+    {"posicion": 5, "pareja": ["Martina Calvo", "Marta Ortega"], "puntos": 11180, "pais": "ARG/ESP"},
+    {"posicion": 6, "pareja": ["Alejandra Alonso", "Claudia Jensen"], "puntos": 10790, "pais": "ESP/DEN"},
+    {"posicion": 7, "pareja": ["Vero Virseda", "Marina Guinart"], "puntos": 8225, "pais": "ESP"},
+    {"posicion": 8, "pareja": ["Tamara Icardo", "Ale Salazar"], "puntos": 7800, "pais": "ESP"},
+    {"posicion": 9, "pareja": ["Bea Caldero", "Patricia Riera"], "puntos": 6500, "pais": "ESP"},
+    {"posicion": 10, "pareja": ["Lucía Sainz", "Pepa Llaguno"], "puntos": 5900, "pais": "ESP"}
+  ],
+  "historico_temporada_2026": [
+    {"torneo": "Riyadh P1", "fecha": "2026-02-14", "ganador_m": "Tapia/Coello", "ganador_f": "Triay/Brea"},
+    {"torneo": "Málaga Open", "fecha": "2026-02-11", "ganador_m": "Tapia/Coello", "ganador_f": "González/Josemaría"},
+    {"torneo": "Valencia Open", "fecha": "2026-02-26", "ganador_m": "Galán/Chingotto", "ganador_f": "Triay/Brea"},
+    {"torneo": "Barcelona Master", "fecha": "2026-03-16", "ganador_m": "Tapia/Coello", "ganador_f": "Ari Sánchez/Ustero"},
+    {"torneo": "Madrid Open", "fecha": "2026-04-11", "ganador_m": "Tapia/Coello", "ganador_f": "Triay/Brea"},
+    {"torneo": "Brussels P2", "fecha": "2026-04-25", "ganador_m": "En curso", "ganador_f": "En curso"}
+  ],
+  "estadisticas": {
+    "total_torneos_2026": 26,
+    "paises_sede": 18,
+    "premios_totales": "$5,500,000 USD",
+    "jugadores_activos": 350
+  },
+  "notas_importantes": {
+    "cambio_parejas_2026": "Juan Lebrón y Ale Galán NO son pareja desde 2022. Lebrón ahora juega con Leo Augsburger (#4), Galán juega con Fede Chingotto (#2).",
+    "fuente_rankings": "FIP Official Rankings actualizados 20/04/2026 - padelfip.com/es/fip-rankings/",
+    "fuente_parejas": "PadelAddict - padeladdict.com/premier-padel-2026-top-8-ranking-parejas/"
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "last_updated": "2026-04-25T08:53:00.000000",
+  "generated_by": "Padel News Pro + Real FIP Rankings",
+  "news": [
+    {
+      "id": "a1b2c3d4",
+      "title": "Tapia y Coello dominan el ranking Premier Padel 2026",
+      "summary": "La pareja formada por Agustín Tapia y Arturo Coello mantiene su liderazgo indiscutible en el ranking mundial con 39,600 puntos. Tras una temporada excepcional, los números uno han demostrado una superioridad clara sobre el resto del circuito, consolidándose como la dupla a batir en el Premier Padel Tour 2026.",
+      "category": "ranking",
+      "source": "FIP Official + PadelVoz",
+      "date": "2026-04-25",
+      "timestamp": "2026-04-25T08:53:00.000000",
+      "url": "https://worldpadeltour.com/noticias/ranking",
+      "featured": true
+    },
+    {
+      "id": "e5f6g7h8",
+      "title": "Galán y Chingotto escalan al #2 del ranking mundial",
+      "summary": "Ale Galán y Federico Chingotto, conocidos como 'Chingalan', han cerrado la brecha con los líderes tras su victoria en el Miami P1. Con 34,640 puntos, la pareja formada a finales de 2024 se ha convertido en la principal alternativa a Tapia/Coello en una temporada vibrante.",
+      "category": "ranking",
+      "source": "FIP Official + PadelAddict",
+      "date": "2026-04-25",
+      "timestamp": "2026-04-25T08:53:00.000000",
+      "url": "https://worldpadeltour.com/noticias/ranking",
+      "featured": true
+    },
+    {
+      "id": "i9j0k1l2",
+      "title": "Juan Lebrón se une a Leo Augsburger para 2026",
+      "summary": "Tras separarse de Ale Galán hace más de 4 años, Juan Lebrón forma nueva pareja con el argentino Leo Augsburger. La dupla ocupa actualmente el #4 del ranking con 13,000 puntos, marcando un nuevo capítulo en la carrera del español tras el fin de su exitosa asociación con Galán.",
+      "category": "jugadores",
+      "source": "FIP Official + PadelAddict",
+      "date": "2026-04-25",
+      "timestamp": "2026-04-25T08:53:00.000000",
+      "url": "https://worldpadeltour.com/noticias/jugadores",
+      "featured": true
+    },
+    {
+      "id": "m3n4o5p6",
+      "title": "Triay y Brea lideran el ranking femenino 2026",
+      "summary": "Gemma Triay y Delfi Brea encabezan el ranking femenino Premier Padel con 36,120 puntos. La pareja española domina el circuito femenino, seguida por Bea González y Paula Josemaría en segunda posición con 27,760 puntos, en una temporada marcada por la competitividad.",
+      "category": "femenino",
+      "source": "FIP Official + PadelVoz",
+      "date": "2026-04-25",
+      "timestamp": "2026-04-25T08:53:00.000000",
+      "url": "https://worldpadeltour.com/noticias/femenino",
+      "featured": true
+    },
+    {
+      "id": "q7r8s9t0",
+      "title": "Stupaczuk y Yanguas regresan como dupla #3",
+      "summary": "Franco Stupaczuk y Mike Yanguas han renovado su asociación para 2026, ocupando el tercer puesto del ranking con 14,227 puntos. El regreso de esta pareja ha sido una de las noticias destacadas del cierre de temporada 2025.",
+      "category": "jugadores",
+      "source": "FIP Official + PadelAddict",
+      "date": "2026-04-24",
+      "timestamp": "2026-04-24T12:00:00.000000",
+      "url": "https://worldpadeltour.com/noticias/jugadores",
+      "featured": false
+    },
+    {
+      "id": "u1v2w3x4",
+      "title": "Coki Nieto y Jon Sanz: la nueva sensación del circuito",
+      "summary": "La pareja formada por Coki Nieto y Jon Sanz ocupa el quinto lugar del ranking con 11,447 puntos. Esta nueva unión ha generado gran expectación entre los aficionados y se perfila como uno de los proyectos más interesantes de la temporada 2026.",
+      "category": "jugadores",
+      "source": "FIP Official + PadelAddict",
+      "date": "2026-04-24",
+      "timestamp": "2026-04-24T10:00:00.000000",
+      "url": "https://worldpadeltour.com/noticias/jugadores",
+      "featured": false
+    }
+  ],
+  "results": [
+    {
+      "tournament": "Miami P1 2025",
+      "round": "Final",
+      "winner_pair": "Galán / Chingotto",
+      "winner_country": "ESP/ARG",
+      "loser_pair": "Tapia / Coello",
+      "loser_country": "ARG/ESP",
+      "score": "6-4, 7-6(3)",
+      "date": "2025-03-30",
+      "duration": "1h 58min"
+    },
+    {
+      "tournament": "Brussels P2 2026",
+      "round": "Cuartos de Final",
+      "winner_pair": "Lebrón / Augsburger",
+      "winner_country": "ESP/ARG",
+      "loser_pair": "Garrido / Bergamini",
+      "loser_country": "ESP/ARG",
+      "score": "6-3, 6-4",
+      "date": "2026-04-25",
+      "duration": "1h 32min"
+    },
+    {
+      "tournament": "Barcelona Master Finals 2025",
+      "round": "Final",
+      "winner_pair": "Tapia / Coello",
+      "winner_country": "ARG/ESP",
+      "loser_pair": "Galán / Chingotto",
+      "loser_country": "ESP/ARG",
+      "score": "6-2, 6-7(5), 6-3",
+      "date": "2025-12-15",
+      "duration": "2h 22min"
+    }
+  ],
+  "rankings": [
+    {
+      "position": 1,
+      "pair": "Tapia / Coello",
+      "country": "ARG/ESP",
+      "points": 39600,
+      "tournaments": 14,
+      "trend": "stable"
+    },
+    {
+      "position": 2,
+      "pair": "Galán / Chingotto",
+      "country": "ESP/ARG",
+      "points": 34640,
+      "tournaments": 14,
+      "trend": "up"
+    },
+    {
+      "position": 3,
+      "pair": "Stupaczuk / Yanguas",
+      "country": "ARG/ESP",
+      "points": 14227,
+      "tournaments": 12,
+      "trend": "stable"
+    },
+    {
+      "position": 4,
+      "pair": "Lebrón / Augsburger",
+      "country": "ESP/ARG",
+      "points": 13000,
+      "tournaments": 10,
+      "trend": "new"
+    },
+    {
+      "position": 5,
+      "pair": "Nieto / Sanz",
+      "country": "ESP",
+      "points": 11447,
+      "tournaments": 11,
+      "trend": "up"
+    },
+    {
+      "position": 6,
+      "pair": "Navarro / Guerrero",
+      "country": "ESP",
+      "points": 10525,
+      "tournaments": 12,
+      "trend": "stable"
+    },
+    {
+      "position": 7,
+      "pair": "Di Nenno / Momo González",
+      "country": "ARG/ESP",
+      "points": 9460,
+      "tournaments": 10,
+      "trend": "down"
+    },
+    {
+      "position": 8,
+      "pair": "Garrido / Bergamini",
+      "country": "ESP/ARG",
+      "points": 7078,
+      "tournaments": 11,
+      "trend": "stable"
+    },
+    {
+      "position": 9,
+      "pair": "Leal / Cardona",
+      "country": "BRA/ESP",
+      "points": 6065,
+      "tournaments": 9,
+      "trend": "up"
+    },
+    {
+      "position": 10,
+      "pair": "Bautista / Campagnolo",
+      "country": "ESP/ARG",
+      "points": 4481,
+      "tournaments": 8,
+      "trend": "up"
+    }
+  ],
+  "rankings_femenino": [
+    {
+      "position": 1,
+      "pair": "Triay / Brea",
+      "country": "ESP/ARG",
+      "points": 36120,
+      "tournaments": 14,
+      "trend": "stable"
+    },
+    {
+      "position": 2,
+      "pair": "González / Josemaría",
+      "country": "ESP/ESP",
+      "points": 27760,
+      "tournaments": 12,
+      "trend": "new"
+    },
+    {
+      "position": 3,
+      "pair": "Ari Sánchez / Ustero",
+      "country": "ESP/ESP",
+      "points": 21345,
+      "tournaments": 11,
+      "trend": "stable"
+    },
+    {
+      "position": 4,
+      "pair": "Araújo / Fernández",
+      "country": "POR/ESP",
+      "points": 20070,
+      "tournaments": 12,
+      "trend": "stable"
+    },
+    {
+      "position": 5,
+      "pair": "Calvo / Ortega",
+      "country": "ARG/ESP",
+      "points": 11180,
+      "tournaments": 10,
+      "trend": "stable"
+    },
+    {
+      "position": 6,
+      "pair": "Alonso / Jensen",
+      "country": "ESP/DEN",
+      "points": 10790,
+      "tournaments": 11,
+      "trend": "up"
+    },
+    {
+      "position": 7,
+      "pair": "Virseda / Guinart",
+      "country": "ESP/ESP",
+      "points": 8225,
+      "tournaments": 10,
+      "trend": "stable"
+    },
+    {
+      "position": 8,
+      "pair": "Icardo / Salazar",
+      "country": "ESP/ESP",
+      "points": 7800,
+      "tournaments": 9,
+      "trend": "down"
+    },
+    {
+      "position": 9,
+      "pair": "Caldero / Riera",
+      "country": "ESP/ESP",
+      "points": 6500,
+      "tournaments": 10,
+      "trend": "stable"
+    },
+    {
+      "position": 10,
+      "pair": "Sainz / Llaguno",
+      "country": "ESP/ESP",
+      "points": 5900,
+      "tournaments": 9,
+      "trend": "down"
+    }
+  ],
+  "calendar": [
+    {
+      "date": "15-21 Ene 2026",
+      "name": "Riyadh Season P1",
+      "city": "Riad",
+      "country": "🇸🇦",
+      "status": "completed"
+    },
+    {
+      "date": "05-11 Feb 2026",
+      "name": "Málaga Open",
+      "city": "Málaga",
+      "country": "🇪🇸",
+      "status": "completed"
+    },
+    {
+      "date": "20-26 Feb 2026",
+      "name": "Valencia Open",
+      "city": "Valencia",
+      "country": "🇪🇸",
+      "status": "completed"
+    },
+    {
+      "date": "10-16 Mar 2026",
+      "name": "Barcelona Master",
+      "city": "Barcelona",
+      "country": "🇪🇸",
+      "status": "completed"
+    },
+    {
+      "date": "05-11 Abr 2026",
+      "name": "Madrid Open",
+      "city": "Madrid",
+      "country": "🇪🇸",
+      "status": "completed"
+    },
+    {
+      "date": "25-30 Abr 2026",
+      "name": "Rome Master",
+      "city": "Roma",
+      "country": "🇮🇹",
+      "status": "ongoing"
+    },
+    {
+      "date": "15-21 May 2026",
+      "name": "Paris Premier Padel",
+      "city": "París",
+      "country": "🇫🇷",
+      "status": "upcoming"
+    },
+    {
+      "date": "10-16 Jun 2026",
+      "name": "Brussels Open",
+      "city": "Bruselas",
+      "country": "🇧🇪",
+      "status": "upcoming"
+    },
+    {
+      "date": "05-11 Jul 2026",
+      "name": "London P1",
+      "city": "Londres",
+      "country": "🇬🇧",
+      "status": "upcoming"
+    },
+    {
+      "date": "15-21 Jul 2026",
+      "name": "Amsterdam Open",
+      "city": "Ámsterdam",
+      "country": "🇳🇱",
+      "status": "upcoming"
+    },
+    {
+      "date": "20-26 Ago 2026",
+      "name": "Buenos Aires P1",
+      "city": "Buenos Aires",
+      "country": "🇦🇷",
+      "status": "upcoming"
+    },
+    {
+      "date": "10-16 Sep 2026",
+      "name": "Mendoza Open",
+      "city": "Mendoza",
+      "country": "🇦🇷",
+      "status": "upcoming"
+    },
+    {
+      "date": "05-11 Oct 2026",
+      "name": "Singapore P1",
+      "city": "Singapur",
+      "country": "🇸🇬",
+      "status": "upcoming"
+    },
+    {
+      "date": "15-21 Nov 2026",
+      "name": "Master Final",
+      "city": "Madrid",
+      "country": "🇪🇸",
+      "status": "upcoming"
+    }
+  ]
+}

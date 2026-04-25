@@ -1,0 +1,122 @@
+[
+  {
+    "torneo": "Miami P1 2025",
+    "fecha": "2025-03-30",
+    "categoria": "Masculino",
+    "partidos": [
+      {
+        "ronda": "Final",
+        "pareja1": ["Alejandro Galán", "Federico Chingotto"],
+        "pareja2": ["Agustín Tapia", "Arturo Coello"],
+        "marcador": "6-4, 7-6(3)",
+        "ganador": 1,
+        "duracion": "1h 58min"
+      },
+      {
+        "ronda": "Semifinal",
+        "pareja1": ["Juan Lebrón", "Leo Augsburger"],
+        "pareja2": ["Franco Stupaczuk", "Mike Yanguas"],
+        "marcador": "6-3, 4-6, 6-4",
+        "ganador": 1,
+        "duracion": "1h 52min"
+      }
+    ],
+    "impacto_ranking": "Galán/Chingotto cierran brecha con Tapia/Coello tras victoria en Miami"
+  },
+  {
+    "torneo": "Riyadh Season Premier Padel P1 2026",
+    "fecha": "2026-02-14",
+    "categoria": "Masculino",
+    "partidos": [
+      {
+        "ronda": "Final",
+        "pareja1": ["Agustín Tapia", "Arturo Coello"],
+        "pareja2": ["Juan Lebrón", "Leo Augsburger"],
+        "marcador": "6-4, 3-6, 6-2",
+        "ganador": 1,
+        "duracion": "2h 15min"
+      },
+      {
+        "ronda": "Semifinal",
+        "pareja1": ["Alejandro Galán", "Federico Chingotto"],
+        "pareja2": ["Coki Nieto", "Jon Sanz"],
+        "marcador": "7-6(4), 6-3",
+        "ganador": 1,
+        "duracion": "1h 45min"
+      }
+    ],
+    "impacto_ranking": "Tapia/Coello consolidan liderato con 39,600 puntos"
+  },
+  {
+    "torneo": "Brussels P2 2026",
+    "fecha": "2026-04-25",
+    "categoria": "Masculino",
+    "partidos": [
+      {
+        "ronda": "Cuartos de Final",
+        "pareja1": ["Juan Lebrón", "Leo Augsburger"],
+        "pareja2": ["Javi Garrido", "Lucas Bergamini"],
+        "marcador": "6-3, 6-4",
+        "ganador": 1,
+        "duracion": "1h 32min"
+      },
+      {
+        "ronda": "Cuartos de Final",
+        "pareja1": ["Alejandro Galán", "Federico Chingotto"],
+        "pareja2": ["Paquito Navarro", "Fran Guerrero"],
+        "marcador": "6-2, 7-5",
+        "ganador": 1,
+        "duracion": "1h 28min"
+      }
+    ],
+    "impacto_ranking": "En curso - Lebrón/Augsburger y Galán/Chingotto avanzan a semifinales"
+  },
+  {
+    "torneo": "Barcelona Master Finals 2025",
+    "fecha": "2025-12-15",
+    "categoria": "Masculino",
+    "partidos": [
+      {
+        "ronda": "Final",
+        "pareja1": ["Agustín Tapia", "Arturo Coello"],
+        "pareja2": ["Alejandro Galán", "Federico Chingotto"],
+        "marcador": "6-2, 6-7(5), 6-3",
+        "ganador": 1,
+        "duracion": "2h 22min"
+      },
+      {
+        "ronda": "Semifinal",
+        "pareja1": ["Franco Stupaczuk", "Mike Yanguas"],
+        "pareja2": ["Martín Di Nenno", "Momo González"],
+        "marcador": "7-6(2), 6-4",
+        "ganador": 1,
+        "duracion": "1h 48min"
+      }
+    ],
+    "impacto_ranking": "Tapia/Coello cierran 2025 como #1, define parejas para 2026"
+  },
+  {
+    "torneo": "Madrid Open P1 2026 - Femenino",
+    "fecha": "2026-04-11",
+    "categoria": "Femenino",
+    "partidos": [
+      {
+        "ronda": "Final",
+        "pareja1": ["Gemma Triay", "Delfina Brea"],
+        "pareja2": ["Bea González", "Paula Josemaría"],
+        "marcador": "6-3, 7-5",
+        "ganador": 1,
+        "duracion": "1h 38min"
+      },
+      {
+        "ronda": "Semifinal",
+        "pareja1": ["Ariana Sánchez", "Andrea Ustero"],
+        "pareja2": ["Sofía Araújo", "Claudia Fernández"],
+        "marcador": "6-4, 6-7(4), 6-3",
+        "ganador": 1,
+        "duracion": "1h 55min"
+      }
+    ],
+    "impacto_ranking": "Triay/Brea se afianzan en el #1 del ranking femenino con 36,120 puntos"
+  }
+]

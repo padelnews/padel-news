@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padel News Pro | Premier Padel Tour 2026 - Noticias, Resultados y Rankings en Vivo</title>
+    <meta name="description" content="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados en vivo, rankings de jugadores y torneos de padel mundial. Sigue a Tapia, Coello, Galán y Chingotto.">
+    <meta name="keywords" content="padel, premier padel tour, padel 2026, rankings padel, resultados padel, Tapia Coello, Galán Chingotto, Brussels P2">
+    <meta name="author" content="Padel News Pro">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://padelnews.pro/">
+    <meta property="og:title" content="Padel News Pro | Premier Padel Tour 2026">
+    <meta property="og:description" content="Noticias, resultados y rankings del Premier Padel Tour en tiempo real">
+    <meta property="og:image" content="https://padelnews.pro/images/banners/tournament-banner.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Padel News Pro | Premier Padel Tour 2026">
+    <meta name="twitter:description" content="Tu portal profesional del Premier Padel Tour">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <link rel="stylesheet" href="css/style-futuristic.css">
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsNewsMedia",
+      "name": "Padel News Pro",
+      "description": "Portal profesional del Premier Padel Tour 2026",
+      "url": "https://padelnews.pro",
+      "logo": "https://padelnews.pro/images/logo.png",
+      "coverage": {
+        "@type": "SportsEvent",
+        "name": "Premier Padel Tour 2026",
+        "sport": "Padel"
+      }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-branding">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzAwNjZjYyIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1zaXplPSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIHRleHQtYWxpZ249Im1pZGRsZSI+UDwvdGV4dD48L3N2Zz4=" alt="Premier Padel Logo" class="header-logo">
+                <h1>🎾 Padel <span>News</span> Pro</h1>
+            </div>
+            <p class="tagline">Tu portal profesional del Premier Padel Tour - Noticias, resultados y rankings en tiempo real</p>
+            <span class="live-badge">🔴 BRUSSELS P2 EN VIVO</span>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="actualidad.html">Actualidad</a></li>
+                <li><a href="resultados.html">Resultados</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Brussels P2 2026 - Cuartos de Final</h2>
+                <p>Sigue toda la acción del torneo belga. Lebrón/Augsburger y Galán/Chingotto avanzan a semifinales en una jornada histórica.</p>
+                <div class="hero-cta">
+                    <a href="resultados.html" class="btn btn-primary">Ver Resultados en Vivo</a>
+                    
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="number">26</span>
+                        <span class="label">Torneos 2026</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="number">18</span>
+                        <span class="label">Países</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="number">5.5M</span>
+                        <span class="label">USD Premios</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/banners/tournament-banner.jpg" alt="Premier Padel Tour" class="hero-bg" onerror="this.src='https://images.unsplash.com/photo-00000000000000000000000000000000?w=800&h=400&fit=crop'">
+            </div>
+        </section>
+
+        <!-- Featured News -->
+        <section>
+            <h2 class="section-title">📰 Últimas Noticias</h2>
+            <div class="news-grid">
+                <article class="news-card featured">
+                    <div class="news-card-image">
+                        <img src="https://placehold.co/800x400/0066cc/ffffff?text=Padel+News+Pro" alt="Tapia y Coello en acción" onerror="this.src='https://images.padeladdict.com/wp-content/uploads/2025/12/tapia-coello-action.jpg'">
+                        <span class="news-card-category">Ranking #1</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="player-pairing">
+                            <img src="images/players/tapia.jpg" alt="Tapia" class="player-avatar player-avatar-small">
+                            <img src="images/players/coello.jpg" alt="Coello" class="player-avatar player-avatar-small">
+                        </div>
+                        <h3>Tapia y Coello dominan el ranking Premier Padel 2026</h3>
+                        <p>La pareja formada por Agustín Tapia y Arturo Coello mantiene su liderazgo indiscutible en el ranking mundial con 39,600 puntos. Tras una temporada excepcional, los números uno han demostrado una superioridad clara.</p>
+                        <div class="news-card-meta">
+                            <span class="news-card-date">📅 25 Abr 2026</span>
+                            <span class="news-source">FIP Official + PadelVoz</span>
+                        </div>
+                        <a href="articles/article-tapia-coello-ranking.html" class="btn btn-sm btn-primary" style="margin-top: 1rem; display: inline-block;">Ver más</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&h=600&fit=crop" alt="Galán y Chingotto" onerror="this.src='https://images.padeladdict.com/wp-content/uploads/2025/12/galan-chingotto.jpg'">
+                        <span class="news-card-category">Ranking #2</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="player-pairing">
+                            <img src="images/players/galan.jpg" alt="Galán" class="player-avatar player-avatar-small">
+                            <img src="images/players/chingotto.jpg" alt="Chingotto" class="player-avatar player-avatar-small">
+                        </div>
+                        <h3>Galán y Chingotto escalan al #2 del ranking mundial</h3>
+                        <p>Ale Galán y Federico Chingotto, conocidos como 'Chingalan', han cerrado la brecha con los líderes tras su victoria en el Miami P1. Con 34,640 puntos, son la principal alternativa.</p>
+                        <div class="news-card-meta">
+                            <span class="news-card-date">📅 25 Abr 2026</span>
+                            <span class="news-source">FIP + PadelAddict</span>
+                        </div>
+                        <a href="articles/article-galan-chingotto.html" class="btn btn-sm btn-primary" style="margin-top: 1rem; display: inline-block;">Ver más</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop" alt="Juan Lebrón" onerror="this.src='https://images.padeladdict.com/wp-content/uploads/2025/12/lebron-action.jpg'">
+                        <span class="news-card-category">Nueva Pareja</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="player-pairing">
+                            <img src="images/players/lebron.jpg" alt="Lebrón" class="player-avatar player-avatar-small">
+                            <span class="player-name">Lebrón/Augsburger</span>
+                        </div>
+                        <h3>Juan Lebrón se une a Leo Augsburger para 2026</h3>
+                        <p>Tras separarse de Ale Galán hace más de 4 años, Juan Lebrón forma nueva pareja con el argentino Leo Augsburger. La dupla ocupa el #4 con 13,000 puntos.</p>
+                        <div class="news-card-meta">
+                            <span class="news-card-date">📅 25 Abr 2026</span>
+                            <span class="news-source">FIP Official</span>
+                        </div>
+                        <a href="articles/article-lebron-augsburger.html" class="btn btn-sm btn-primary" style="margin-top: 1rem; display: inline-block;">Ver más</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://placehold.co/600x400/ff3399/ffffff?text=Triay+Brea" alt="Triay y Brea" onerror="this.src='https://images.unsplash.com/photo-00000000000000000000000000000000?w=800&h=600&fit=crop'">
+                        <span class="news-card-category">Femenino #1</span>
+                    </div>
+                    <div class="news-card-content">
+                        <h3>Triay y Brea lideran el ranking femenino 2026</h3>
+                        <p>Gemma Triay y Delfi Brea encabezan el ranking femenino Premier Padel con 36,120 puntos. La pareja española domina el circuito femenino.</p>
+                        <div class="news-card-meta">
+                            <span class="news-card-date">📅 25 Abr 2026</span>
+                            <span class="news-source">FIP + PadelVoz</span>
+                        </div>
+                        <a href="articles/article-triay-brea.html" class="btn btn-sm btn-primary" style="margin-top: 1rem; display: inline-block;">Ver más</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://placehold.co/600x400/6633cc/ffffff?text=Stupaczuk+Yanguas" alt="Stupaczuk y Yanguas" onerror="this.src='https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&h=600&fit=crop'">
+                        <span class="news-card-category">Ranking #3</span>
+                    </div>
+                    <div class="news-card-content">
+                        <h3>Stupaczuk y Yanguas regresan como dupla #3</h3>
+                        <p>Franco Stupaczuk y Mike Yanguas han renovado su asociación para 2026, ocupando el tercer puesto del ranking con 14,227 puntos.</p>
+                        <div class="news-card-meta">
+                            <span class="news-card-date">📅 24 Abr 2026</span>
+                            <span class="news-source">PadelAddict</span>
+                        </div>
+                        <a href="articles/article-stupa-yanguas.html" class="btn btn-sm btn-primary" style="margin-top: 1rem; display: inline-block;">Ver más</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://placehold.co/600x400/0066cc/ffffff?text=Padel+Action" alt="Coki Nieto y Jon Sanz" onerror="this.src='https://images.padeladdict.com/wp-content/uploads/2025/12/coki-jon-sanz.jpg'">
+                        <span class="news-card-category">Top 5</span>
+                    </div>
+                    <div class="news-card-content">
+                        <h3>Coki Nieto y Jon Sanz: la nueva sensación</h3>
+                        <p>La pareja ocupa el quinto lugar del ranking con 11,447 puntos. Esta unión ha generado gran expectación entre los aficionados.</p>
+                        <div class="news-card-meta">
+                            <span class="news-card-date">📅 24 Abr 2026</span>
+                            <span class="news-source">PadelAddict</span>
+                        </div>
+                        <a href="articles/article-coki-jon-sanz.html" class="btn btn-sm btn-primary" style="margin-top: 1rem; display: inline-block;">Ver más</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Live Match Banner -->
+        <section class="live-match-banner">
+            <div class="live-match-header">
+                <span class="live-indicator">🔴 EN JUEGO</span>
+                <h3>Brussels P2 2026 - Cuartos de Final</h3>
+            </div>
+            <div class="match-grid">
+                <div class="live-match">
+                    <div class="match-teams">
+                        <div class="team winner">
+                            <span class="team-name">🇪🇸 Lebrón / 🇦🇷 Augsburger</span>
+                            <span class="team-flag">ESP/ARG</span>
+                        </div>
+                        <div class="match-score">6-3, 6-4</div>
+                        <div class="team">
+                            <span class="team-name">🇪🇸 Garrido / 🇦🇷 Bergamini</span>
+                            <span class="team-flag">ESP/ARG</span>
+                        </div>
+                    </div>
+                    <span class="match-status">FINALIZADO</span>
+                </div>
+                <div class="live-match">
+                    <div class="match-teams">
+                        <div class="team winner">
+                            <span class="team-name">🇪🇸 Galán / 🇦🇷 Chingotto</span>
+                            <span class="team-flag">ESP/ARG</span>
+                        </div>
+                        <div class="match-score">6-2, 7-5</div>
+                        <div class="team">
+                            <span class="team-name">🇪🇸 Navarro / 🇪🇸 Guerrero</span>
+                            <span class="team-flag">ESP</span>
+                        </div>
+                    </div>
+                    <span class="match-status">FINALIZADO</span>
+                </div>
+            </div>
+            <a href="resultados.html" class="btn btn-full">Ver Todos los Partidos</a>
+        </section>
+
+        <!-- Recent Results -->
+        <section>
+            <h2 class="section-title">🏆 Resultados Recientes</h2>
+            <div class="results-container">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Torneo</th>
+                            <th>Campeones</th>
+                            <th>Resultado</th>
+                            <th>Finalistas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="tournament-badge">🇸🇦 Riyadh P1</span></td>
+                            <td class="winner">🇦🇷🇪🇸 Tapia / Coello</td>
+                            <td><span class="score">6-4, 6-2</span></td>
+                            <td>🇪🇸🇦🇷 Galán / Chingotto</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tournament-badge">🇪🇸 Gijón P2</span></td>
+                            <td class="winner">🇪🇸 Galán / 🇦🇷 Chingotto</td>
+                            <td><span class="score">7-5, 7-6</span></td>
+                            <td>🇦🇷🇪🇸 Tapia / Coello</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tournament-badge">🇲🇽 Cancún P2</span></td>
+                            <td class="winner">🇦🇷🇪🇸 Tapia / Coello</td>
+                            <td><span class="score">6-7(5), 6-3, 7-5</span></td>
+                            <td>🇪🇸🇦🇷 Lebrón / Augsburger</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tournament-badge">🇺🇸 Miami P1</span></td>
+                            <td class="winner">🇪🇸 Galán / 🇦🇷 Chingotto</td>
+                            <td><span class="score">7-5, 3-6, 6-3</span></td>
+                            <td>🇦🇷🇪🇸 Tapia / Coello</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tournament-badge">🇪🇬 Newgiza P2</span></td>
+                            <td class="winner">🇪🇸 Galán / 🇦🇷 Chingotto</td>
+                            <td><span class="score">6-4, 6-1</span></td>
+                            <td>🇦🇷🇵🇱 Stupaczuk / Yanguas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="resultados.html" class="btn">Ver Todos los Resultados</a>
+            </div>
+        </section>
+
+        <!-- World Rankings -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">🌍 Ranking Mundial Premier Padel</h2>
+            
+            <div class="ranking-tabs">
+                <button class="ranking-tab active" data-tab="men">👨 Masculino</button>
+                <button class="ranking-tab" data-tab="women">👩 Femenino</button>
+            </div>
+
+            <div class="ranking-content" id="men-ranking">
+                <div class="top-three-highlight">
+                    <div class="top-pair gold">
+                        <div class="rank-number">🥇 1</div>
+                        <div class="pair-info">
+                            <img src="images/players/tapia.jpg" alt="Tapia" class="pair-avatar player-avatar">
+                            <img src="images/players/coello.jpg" alt="Coello" class="pair-avatar player-avatar">
+                            <div>
+                                <strong>Agustín Tapia / Arturo Coello</strong>
+                                <span class="country">🇦🇷🇪🇸 Argentina/España</span>
+                            </div>
+                        </div>
+                        <div class="points">39,600 pts</div>
+                    </div>
+                    <div class="top-pair silver">
+                        <div class="rank-number">🥈 2</div>
+                        <div class="pair-info">
+                            <img src="images/players/galan.jpg" alt="Galán" class="pair-avatar player-avatar">
+                            <img src="images/players/chingotto.jpg" alt="Chingotto" class="pair-avatar player-avatar">
+                            <div>
+                                <strong>Ale Galán / Fede Chingotto</strong>
+                                <span class="country">🇪🇸🇦🇷 España/Argentina</span>
+                            </div>
+                        </div>
+                        <div class="points">34,640 pts</div>
+                    </div>
+                    <div class="top-pair bronze">
+                        <div class="rank-number">🥉 3</div>
+                        <div class="pair-info">
+                            <img src="https://placehold.co/400x400/00cc99/ffffff?text=Stupaczuk+Yanguas" alt="Stupaczuk" class="pair-avatar player-avatar" onerror="this.src='https://placehold.co/80x80/cd7f32/ffffff?text=S'">
+                            <img src="https://placehold.co/400x400/0066cc/ffffff?text=Tapia+Coello" alt="Yanguas" class="pair-avatar player-avatar" onerror="this.src='https://placehold.co/80x80/cd7f32/ffffff?text=Y'">
+                            <div>
+                                <strong>Franco Stupaczuk / Mike Yanguas</strong>
+                                <span class="country">🇦🇷🇪🇸 Argentina/España</span>
+                            </div>
+                        </div>
+                        <div class="points">14,227 pts</div>
+                    </div>
+                </div>
+
+                <div class="standings-container">
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Pareja</th>
+                                <th>País</th>
+                                <th>Puntos</th>
+                                <th>Torneos</th>
+                                <th>Tendencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="position">1</div></td>
+                                <td><strong>Tapia / Coello</strong></td>
+                                <td>🇦🇷🇪🇸</td>
+                                <td class="points">39,600</td>
+                                <td>14</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">2</div></td>
+                                <td><strong>Galán / Chingotto</strong></td>
+                                <td>🇪🇸🇦🇷</td>
+                                <td class="points">34,640</td>
+                                <td>14</td>
+                                <td class="trend">⬆️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">3</div></td>
+                                <td><strong>Stupaczuk / Yanguas</strong></td>
+                                <td>🇦🇷🇪🇸</td>
+                                <td class="points">14,227</td>
+                                <td>12</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">4</div></td>
+                                <td><strong>Lebrón / Augsburger</strong></td>
+                                <td>🇪🇸🇦🇷</td>
+                                <td class="points">13,000</td>
+                                <td>10</td>
+                                <td class="trend">🆕</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">5</div></td>
+                                <td><strong>Coki Nieto / Jon Sanz</strong></td>
+                                <td>🇪🇸</td>
+                                <td class="points">11,447</td>
+                                <td>11</td>
+                                <td class="trend">⬆️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">6</div></td>
+                                <td><strong>Navarro / Guerrero</strong></td>
+                                <td>🇪🇸</td>
+                                <td class="points">10,525</td>
+                                <td>12</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">7</div></td>
+                                <td><strong>Di Nenno / Momo</strong></td>
+                                <td>🇦🇷🇪🇸</td>
+                                <td class="points">9,460</td>
+                                <td>10</td>
+                                <td class="trend">⬇️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">8</div></td>
+                                <td><strong>Garrido / Bergamini</strong></td>
+                                <td>🇪🇸🇦🇷</td>
+                                <td class="points">7,078</td>
+                                <td>11</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="ranking-content hidden" id="women-ranking">
+                <div class="top-three-highlight">
+                    <div class="top-pair gold">
+                        <div class="rank-number">🥇 1</div>
+                        <div class="pair-info">
+                            <img src="https://placehold.co/80x80/ffd700/000000?text=TB" alt="Triay/Brea" class="pair-avatar">
+                            <div>
+                                <strong>Gemma Triay / Delfina Brea</strong>
+                                <span class="country">🇪🇸🇦🇷 España/Argentina</span>
+                            </div>
+                        </div>
+                        <div class="points">36,120 pts</div>
+                    </div>
+                    <div class="top-pair silver">
+                        <div class="rank-number">🥈 2</div>
+                        <div class="pair-info">
+                            <img src="https://placehold.co/80x80/c0c0c0/000000?text=GJ" alt="González/Josemaría" class="pair-avatar">
+                            <div>
+                                <strong>Bea González / Paula Josemaría</strong>
+                                <span class="country">🇪🇸 España</span>
+                            </div>
+                        </div>
+                        <div class="points">27,760 pts</div>
+                    </div>
+                    <div class="top-pair bronze">
+                        <div class="rank-number">🥉 3</div>
+                        <div class="pair-info">
+                            <img src="https://placehold.co/80x80/cd7f32/ffffff?text=SU" alt="Sánchez/Ustero" class="pair-avatar">
+                            <div>
+                                <strong>Ariana Sánchez / Andrea Ustero</strong>
+                                <span class="country">🇪🇸 España</span>
+                            </div>
+                        </div>
+                        <div class="points">21,345 pts</div>
+                    </div>
+                </div>
+
+                <div class="standings-container">
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Pareja</th>
+                                <th>País</th>
+                                <th>Puntos</th>
+                                <th>Torneos</th>
+                                <th>Tendencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="position">1</div></td>
+                                <td><strong>Triay / Brea</strong></td>
+                                <td>🇪🇸🇦🇷</td>
+                                <td class="points">36,120</td>
+                                <td>14</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">2</div></td>
+                                <td><strong>González / Josemaría</strong></td>
+                                <td>🇪🇸</td>
+                                <td class="points">27,760</td>
+                                <td>12</td>
+                                <td class="trend">🆕</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">3</div></td>
+                                <td><strong>Ari Sánchez / Ustero</strong></td>
+                                <td>🇪🇸</td>
+                                <td class="points">21,345</td>
+                                <td>11</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">4</div></td>
+                                <td><strong>Araújo / Fernández</strong></td>
+                                <td>🇵🇹🇪🇸</td>
+                                <td class="points">20,070</td>
+                                <td>12</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">5</div></td>
+                                <td><strong>Calvo / Ortega</strong></td>
+                                <td>🇦🇷🇪🇸</td>
+                                <td class="points">11,180</td>
+                                <td>10</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">6</div></td>
+                                <td><strong>Alonso / Jensen</strong></td>
+                                <td>🇪🇸🇩🇰</td>
+                                <td class="points">10,790</td>
+                                <td>11</td>
+                                <td class="trend">⬆️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">7</div></td>
+                                <td><strong>Virseda / Guinart</strong></td>
+                                <td>🇪🇸</td>
+                                <td class="points">8,225</td>
+                                <td>10</td>
+                                <td class="trend">➡️</td>
+                            </tr>
+                            <tr>
+                                <td><div class="position">8</div></td>
+                                <td><strong>Icardo / Salazar</strong></td>
+                                <td>🇪🇸</td>
+                                <td class="points">7,800</td>
+                                <td>9</td>
+                                <td class="trend">⬇️</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="torneos.html" class="btn btn-outline">Ver Ranking Completo</a>
+            </div>
+        </section>
+
+        <!-- Season Calendar Preview -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">📅 Próximos Torneos</h2>
+            <div class="calendar-grid">
+                <div class="tournament-card upcoming">
+                    <div class="tournament-header">
+                        <span class="status-badge status-ongoing">EN CURSO</span>
+                        <h4>🇧🇪 Brussels P2</h4>
+                    </div>
+                    <p class="tournament-date">19-26 Abr 2026</p>
+                    <p class="tournament-location">Bruselas, Bélgica</p>
+                    <p class="tournament-prize">💰 $100,000 USD</p>
+                </div>
+                <div class="tournament-card upcoming">
+                    <div class="tournament-header">
+                        <span class="status-badge status-upcoming">PRÓXIMO</span>
+                        <h4>🇵🇾 Asunción P1</h4>
+                    </div>
+                    <p class="tournament-date">04-10 May 2026</p>
+                    <p class="tournament-location">Asunción, Paraguay</p>
+                    <p class="tournament-prize">💰 $200,000 USD</p>
+                </div>
+                <div class="tournament-card upcoming">
+                    <div class="tournament-header">
+                        <span class="status-badge status-upcoming">PRÓXIMO</span>
+                        <h4>🇦🇷 Buenos Aires P1</h4>
+                    </div>
+                    <p class="tournament-date">11-17 May 2026</p>
+                    <p class="tournament-location">Buenos Aires, Argentina</p>
+                    <p class="tournament-prize">💰 $200,000 USD</p>
+                </div>
+                <div class="tournament-card upcoming">
+                    <div class="tournament-header">
+                        <span class="status-badge status-upcoming">PRÓXIMO</span>
+                        <h4>🇮🇹 Rome Major</h4>
+                    </div>
+                    <p class="tournament-date">01-07 Jun 2026</p>
+                    <p class="tournament-location">Roma, Italia</p>
+                    <p class="tournament-prize">💰 $300,000 USD</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="torneos.html" class="btn">Ver Calendario Completo</a>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">📊 Estadísticas Temporada 2026</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value">26</span>
+                    <span class="stat-label">Torneos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">18</span>
+                    <span class="stat-label">Países</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">$5.5M</span>
+                    <span class="stat-label">Premios Totales</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">350</span>
+                    <span class="stat-label">Jugadores Activos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Highlights Section -->
+        <section style="margin-top: 3rem;">
+            <h2 class="section-title">🎬 Video Highlights</h2>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 1.5rem;">Sigue toda la acción en <strong>Red Bull TV</strong> y YouTube</p>
+            <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="video-card" style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/WtSi-4Oxbzc" title="Miami P1 Highlights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border: none;"></iframe>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--dark);">🇺🇸 Miami P1 Highlights</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Lo mejor del torneo en Estados Unidos</p>
+                    </div>
+                </div>
+                <div class="video-card" style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/WcFECVnSamQ" title="Newgiza P2 Replay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border: none;"></iframe>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--dark);">🇪🇬 Newgiza P2 Replay</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Repeticiones de la pista central Khufu</p>
+                    </div>
+                </div>
+                <div class="video-card" style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <div style="background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; color: white;">
+                        <span style="font-size: 3rem;">🔴</span>
+                        <span style="margin-top: 1rem; font-weight: bold;">Brussels P2 EN VIVO</span>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--dark);">🇧🇪 Brussels P2 Live</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Semifinales y finales en directo</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://www.redbull.com/us-en/event-series/premier-padel" target="_blank" class="btn" style="background: #1a1a1a; color: white;">🔴 Red Bull TV - En Vivo</a>
+                <a href="https://www.redbull.com/int-en/videos/premier-padel-2026-riyadh-p1-highlights" target="_blank" class="btn btn-outline">🎬 Riyadh P1 Highlights</a>
+                <a href="https://www.youtube.com/@PremierPadel" target="_blank" class="btn btn-outline">📺 YouTube Official</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-branding">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzAwNjZjYyIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1zaXplPSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIHRleHQtYWxpZ249Im1pZGRsZSI+UDwvdGV4dD48L3N2Zz4=" alt="Premier Padel" class="footer-logo">
+            </div>
+            <h3>🎾 Padel News Pro</h3>
+            <p>Tu fuente profesional de noticias del Premier Padel Tour</p>
+            <p class="footer-disclaimer">Datos oficiales de FIP Rankings - Actualizado 25 Abr 2026</p>
+            <p>© 2026 - Noticias basadas en fuentes oficiales FIP, PadelVoz, PadelAddict</p>
+            <div class="social-links">
+                <a href="https://twitter.com/PremierPadel" target="_blank" title="Twitter/X">𝕏</a>
+                <a href="https://instagram.com/premierpadel" target="_blank" title="Instagram">📷</a>
+                <a href="https://youtube.com/PremierPadel" target="_blank" title="YouTube">▶️</a>
+                <a href="https://facebook.com/PremierPadel" target="_blank" title="Facebook">📘</a>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.padelfip.com/" target="_blank">FIP Official</a>
+                
+                <a href="https://premierpadel.com/" target="_blank">Premier Padel</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

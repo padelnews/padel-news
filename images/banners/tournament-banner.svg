@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0066cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  
+  <!-- Grid lines for futuristic look -->
+  <g stroke="#00d4ff" stroke-width="0.5" opacity="0.2">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+    <line x1="800" y1="0" x2="800" y2="400"/>
+    <line x1="1000" y1="0" x2="1000" y2="400"/>
+  </g>
+  
+  <!-- Glowing line -->
+  <rect x="0" y="195" width="1200" height="10" fill="url(#glow)" opacity="0.5"/>
+  
+  <!-- Main text -->
+  <text x="600" y="150" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">🏓 PADEL NEWS PRO</text>
+  
+  <!-- Tournament name -->
+  <text x="600" y="230" font-family="Arial, sans-serif" font-size="48" fill="#00d4ff" text-anchor="middle" font-weight="bold">BRUSSELS P2 2026</text>
+  
+  <!-- Location -->
+  <text x="600" y="290" font-family="Arial, sans-serif" font-size="28" fill="#88ccff" text-anchor="middle">🇧🇪 Bruselas, Bélgica | 20-26 Abril</text>
+  
+  <!-- Status badge -->
+  <rect x="480" y="320" width="240" height="40" rx="20" fill="#00d4ff"/>
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="20" fill="#000000" text-anchor="middle" font-weight="bold">🔴 EN VIVO</text>
+</svg>

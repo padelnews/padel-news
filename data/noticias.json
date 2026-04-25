@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "titulo": "Galán y Chingotto arrebatan el número 1 a Tapia y Coello en Egipto",
+    "resumen": "El P2 de Nueva Guiza ha cambiado la jerarquía del ranking mundial. La pareja hispano-argentina superó a los actuales líderes en una temporada donde la lucha por la cima está más abierta que nunca, con 25 torneos en el calendario de Premier Padel 2026.",
+    "fecha": "2026-04-21",
+    "categoria": "Ranking",
+    "imagen": "/images/noticias/galan-chingotto-egipto-2026.jpg",
+    "fuente_sintetizada": "MundoDeportivo + PadelFIP + ActuPadel"
+  },
+  {
+    "id": 2,
+    "titulo": "Premier Padel 2026 expande su calendario con 25 torneos globales",
+    "resumen": "El circuito profesional confirma una expansión sin precedentes con sedes en cuatro continentes. Riyadh abrió la temporada en febrero, y Barcelona cerrará con el Master Finals, consolidando al pádel como deporte global con mayor presencia en Asia y América.",
+    "fecha": "2026-04-20",
+    "categoria": "Calendario",
+    "imagen": "/images/noticias/premier-padel-2026-calendario.jpg",
+    "fuente_sintetizada": "MundiPadel + Padelandia + Sport.es"
+  },
+  {
+    "id": 3,
+    "titulo": "Paula Josemaría roza los 50 títulos y reescribe la historia del pádel femenino",
+    "resumen": "La jugadora española se encuentra a escasos títulos de alcanzar una cifra histórica. Su consistencia en el circuito, junto a su pareja Ariana Sánchez, la posiciona como la referente indiscutible de una generación dorada del pádel femenino.",
+    "fecha": "2026-04-19",
+    "categoria": "Jugadores",
+    "imagen": "/images/noticias/paula-josemaria-50-titulos.jpg",
+    "fuente_sintetizada": "Padel-Magazine + PadelFIP"
+  },
+  {
+    "id": 4,
+    "titulo": "Bea González regresa triunfal en la World Padel League con Claudia Fernández",
+    "resumen": "Tras meses de recuperación por una lesión en el pectoral, la española volvió a las pistas formando una de las parejas más prometedoras para 2025-2026. Su actuación en Bombay con los Cheetahs, campeones del torneo, confirmó que está lista para competir al más alto nivel.",
+    "fecha": "2026-04-18",
+    "categoria": "Fichajes",
+    "imagen": "/images/noticias/bea-claudia-regreso-2025.jpg",
+    "fuente_sintetizada": "MundiPadel + WorldPadelLeague"
+  },
+  {
+    "id": 5,
+    "titulo": "Tapia y Coello mantienen el liderato FIP con 19.800 puntos",
+    "resumen": "A pesar del acoso de Galán/Chingotto (17.740 pts), la pareja argentina-española sigue en lo más alto del ranking FIP actualizado en febrero 2026. La temporada promete una batalla épica con al menos tres parejas con opciones matemáticas de terminar como número 1.",
+    "fecha": "2026-04-17",
+    "categoria": "Ranking",
+    "imagen": "/images/noticias/tapia-coello-ranking-fip-2026.jpg",
+    "fuente_sintetizada": "PadelFIP + Fantas yPadelTour"
+  },
+  {
+    "id": 6,
+    "titulo": "Oysho Padel Cup 2026 aterriza en nuevos continentes",
+    "resumen": "El circuito femenino más importante anuncia sedes fuera de España por primera vez. La iniciativa busca democratizar el acceso al pádel profesional femenino, con torneos confirmados en América Latina y Asia, además de las tradicionales etapas europeas.",
+    "fecha": "2026-04-16",
+    "categoria": "Circuitos",
+    "imagen": "/images/noticias/oysho-cup-2026-internacional.jpg",
+    "fuente_sintetizada": "MundiPadel + WPT"
+  },
+  {
+    "id": 7,
+    "titulo": "Barcelona se prepara para albergar el Master Finals 2026",
+    "resumen": "El Palau Sant Jordi será el escenario donde se decidán los campeones de la temporada. Solo las 8 mejores parejas masculinas y 6 femeninas del ranking tendrán acceso al torneo que cierra el año, con premios récord y expectación máxima.",
+    "fecha": "2026-04-15",
+    "categoria": "Torneos",
+    "imagen": "/images/noticias/barcelona-master-finals-2026.jpg",
+    "fuente_sintetizada": "Sport.es + PadelStar"
+  }
+]
