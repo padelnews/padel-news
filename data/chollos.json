@@ -1,85 +1,103 @@
 {
   "fecha": "2026-04-25",
+  "ultima_actualizacion": "2026-04-25 18:00:00",
+  "marcas": ["NOX", "Siux", "Babolat"],
   "chollos": [
     {
-      "producto": "Vibor-A Yarara Radical 12K 2.0 2025",
-      "precio_original": 280.95,
-      "precio_oferta": 129.95,
-      "descuento": "54%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
-    },
-    {
-      "producto": "Lok Be Flow 2024",
-      "precio_original": 90.91,
-      "precio_oferta": 57.95,
-      "descuento": "36%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
-    },
-    {
-      "producto": "Lok Carb-On Hype 2024",
-      "precio_original": 206.61,
-      "precio_oferta": 109.95,
+      "producto": "NOX AT10 Luxury GENIUS 18K 2025 - Agustín Tapia",
+      "precio_original": 359.99,
+      "precio_oferta": 189.99,
       "descuento": "47%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX Outlet"
     },
     {
-      "producto": "Black Crown Win Ultralight 2025",
-      "precio_original": 132.23,
-      "precio_oferta": 95.95,
-      "descuento": "27%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
+      "producto": "NOX AT10 Luxury GENIUS ATTACK 18K 2025",
+      "precio_original": 339.99,
+      "precio_oferta": 169.99,
+      "descuento": "50%",
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX Outlet"
     },
     {
-      "producto": "Vibor-A Black Mamba Élite 3K 2.0",
-      "precio_original": 190.04,
-      "precio_oferta": 104.96,
-      "descuento": "45%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
+      "producto": "NOX Quantum 12K Cobalt",
+      "precio_original": 339.99,
+      "precio_oferta": 159.99,
+      "descuento": "53%",
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX Outlet"
     },
     {
-      "producto": "Enebe Rsx 7.1 Carbon V.2 2025",
-      "precio_original": 157.02,
-      "precio_oferta": 117.95,
+      "producto": "NOX AT10 Luxury GENIUS 12K 2025",
+      "precio_original": 339.99,
+      "precio_oferta": 189.99,
+      "descuento": "44%",
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX Outlet"
+    },
+    {
+      "producto": "NOX NextGen Pro Attack 3K",
+      "precio_original": 199.99,
+      "precio_oferta": 149.95,
       "descuento": "25%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX Outlet"
     },
     {
-      "producto": "Enebe Cross",
-      "precio_original": 115.70,
-      "precio_oferta": 78.95,
-      "descuento": "32%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
+      "producto": "NOX AT10 Luxury GOLD L.5 - Agustín Tapia",
+      "precio_original": 279.95,
+      "precio_oferta": 139.95,
+      "descuento": "50%",
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX Outlet"
     },
     {
-      "producto": "Black Crown Snake 2022",
-      "precio_original": 107.40,
-      "precio_oferta": 64.95,
-      "descuento": "40%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
+      "producto": "NOX AT Luxury BLUE 18K",
+      "precio_original": 325.00,
+      "precio_oferta": 149.95,
+      "descuento": "54%",
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX Outlet"
     },
     {
-      "producto": "Adidas Crazyquick Boost Padel 2026",
-      "precio_original": 89.95,
-      "precio_oferta": 72.96,
-      "descuento": "19%",
-      "enlace": "https://www.padelstyle.com/zapatillas-adidas",
-      "tienda": "PadelStyle"
+      "producto": "Siux Diablo Pro 2026 Black",
+      "precio_original": 299.00,
+      "precio_oferta": 227.00,
+      "descuento": "24%",
+      "enlace": "https://tiendapadelpoint.com/palas-outlet-siux",
+      "tienda": "PadelPoint"
     },
     {
-      "producto": "Lok Easy Hype 2024",
-      "precio_original": 148.76,
-      "precio_oferta": 76.96,
-      "descuento": "48%",
-      "enlace": "https://www.time2padel.com/es/721-outlet-palas-padel",
-      "tienda": "Time2Padel"
+      "producto": "Siux Diablo All Black",
+      "precio_original": 450.00,
+      "precio_oferta": 119.00,
+      "descuento": "74%",
+      "enlace": "https://webdepadel.com/siux-diablo-all-black/",
+      "tienda": "WebdePadel"
+    },
+    {
+      "producto": "Babolat Counter Vertuo 2.6 2026",
+      "precio_original": 180.00,
+      "precio_oferta": 148.72,
+      "descuento": "17%",
+      "enlace": "https://padelproshop.com/products/pala-babolat-counter-vertuo-2026",
+      "tienda": "PadelPROShop"
+    },
+    {
+      "producto": "NOX AT10 Genius 18K - Agustín Tapia (2023)",
+      "precio_original": 450.00,
+      "precio_oferta": 123.93,
+      "descuento": "72%",
+      "enlace": "https://tiendapadelpoint.com/palas-outlet-nox",
+      "tienda": "PadelPoint"
+    },
+    {
+      "producto": "Babolat Counter Vertuo - Pack 2024",
+      "precio_original": 199.00,
+      "precio_oferta": 159.00,
+      "descuento": "20%",
+      "enlace": "https://padel.tienda/packs/packs-babolat",
+      "tienda": "PadelTienda"
     }
   ]
 }

@@ -3,30 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏓 Chollos de Pádel | Ofertas en Palas, Zapatillas y Equipamiento</title>
+    <title>🏓 Chollos de Palas | NOX, Siux, Babolat - Ofertas Outlet 2026</title>
+    <meta name="description" content="Ofertas exclusivas en palas de pádel NOX, Siux y Babolat. Descuentos de hasta 74% en outlet. Envío 24h.">
     <link rel="stylesheet" href="css/style-futuristic.css">
     <style>
         :root {
-            --accent: #ff6600;
-            --success: #00cc99;
+            --nox-color: #ff6b00;
+            --siux-color: #e63946;
+            --babolat-color: #2a9d8f;
         }
         
-        .chollos-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        .chollos-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             padding: 2rem;
-            border-radius: 16px;
+            border-radius: 20px;
             margin-bottom: 2rem;
             text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
-        .chollos-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        .chollos-hero h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, var(--nox-color), var(--siux-color), var(--babolat-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .chollos-header p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
+        .brand-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .brand-filter {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .brand-filter:hover {
+            transform: scale(1.05);
+        }
+        
+        .brand-filter.nox { background: var(--nox-color); color: white; }
+        .brand-filter.siux { background: var(--siux-color); color: white; }
+        .brand-filter.babolat { background: var(--babolat-color); color: white; }
+        
+        .brand-filter.active {
+            border-color: white;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
         }
         
         .chollo-card {
@@ -35,180 +66,270 @@
             border-radius: 16px;
             padding: 1.5rem;
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
             gap: 1.5rem;
+            align-items: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .chollo-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-neon);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
         
         .chollo-discount {
-            background: var(--accent);
-            color: white;
+            font-size: 1.8rem;
             font-weight: bold;
-            padding: 0.75rem 1rem;
+            padding: 0.5rem;
             border-radius: 12px;
-            font-size: 1.5rem;
-            min-width: 90px;
             text-align: center;
         }
         
-        .chollo-info {
-            flex: 1;
-        }
+        .chollo-discount.nox { background: var(--nox-color); color: white; }
+        .chollo-discount.siux { background: var(--siux-color); color: white; }
+        .chollo-discount.babolat { background: var(--babolat-color); color: white; }
         
         .chollo-info h3 {
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
         }
         
-        .chollo-store {
+        .chollo-brand {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+        
+        .chollo-brand.nox { background: var(--nox-color); color: white; }
+        .chollo-brand.siux { background: var(--siux-color); color: white; }
+        .chollo-brand.babolat { background: var(--babolat-color); color: white; }
+        
+        .chollo-meta {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .chollo-prices {
             text-align: right;
+            min-width: 140px;
         }
         
         .old-price {
             text-decoration: line-through;
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         
         .new-price {
-            color: var(--success);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: bold;
+            color: #00ff88;
         }
         
-        .btn-chollo {
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
+        .btn-offer {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #00cc99, #00ff88);
+            color: #1a1a2e;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.3s;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
         }
         
-        .btn-chollo:hover {
-            background: #ff8533;
+        .btn-offer:hover {
+            transform: scale(1.05);
         }
         
-        .stats-bar {
+        .stats-row {
             display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            justify-content: center;
+            gap: 3rem;
+            margin: 1.5rem 0;
             padding: 1rem;
-            background: var(--glass-bg);
+            background: rgba(255,255,255,0.05);
             border-radius: 12px;
         }
         
-        .stat-item {
+        .stat {
             text-align: center;
         }
         
-        .stat-item .number {
-            font-size: 2rem;
+        .stat-value {
+            font-size: 1.8rem;
             font-weight: bold;
-            color: var(--accent);
+            color: #00ff88;
         }
         
-        .stat-item .label {
+        .stat-label {
+            font-size: 0.8rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
+        }
+        
+        .last-update {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
         }
         
         @media (max-width: 768px) {
             .chollo-card {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 text-align: center;
+            }
+            
+            .chollo-discount {
+                font-size: 1.4rem;
+                padding: 0.4rem;
             }
             
             .chollo-prices {
                 text-align: center;
             }
             
-            .chollo-discount {
-                font-size: 1.2rem;
+            .stats-row {
+                flex-wrap: wrap;
+                gap: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">INICIO</a>
-        <a href="actualidad.html">ACTUALIDAD</a>
-        <a href="resultados.html">RESULTADOS</a>
-        <a href="torneos.html">TORNEOS</a>
-        <a href="chollos.html" class="active">CHOLLOS</a>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="actualidad.html">Actualidad</a></li>
+                <li><a href="resultados.html">Resultados</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="chollos.html" class="active">🏷️ Chollos</a></li>
+            </ul>
+        </div>
     </nav>
     
     <main class="container">
-        <div class="chollos-header">
-            <h1>🏓 Chollos de Pádel</h1>
-            <p>Las mejores ofertas en palas, zapatillas y equipamiento de pádel</p>
+        <div class="chollos-hero">
+            <h1>🏓 Chollos de Palas de Pádel</h1>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+                Ofertas exclusivas en palas <strong>NOX</strong>, <strong>Siux</strong> y <strong>Babolat</strong>
+            </p>
         </div>
         
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="number" id="total-chollos">10</div>
-                <div class="label">Ofertas activas</div>
+        <div class="brand-filters">
+            <span class="brand-filter nox active" data-brand="all">Todas</span>
+            <span class="brand-filter nox" data-brand="NOX">NOX</span>
+            <span class="brand-filter siux" data-brand="Siux">Siux</span>
+            <span class="brand-filter babolat" data-brand="Babolat">Babolat</span>
+        </div>
+        
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-value" id="total-count">0</div>
+                <div class="stat-label">Ofertas activas</div>
             </div>
-            <div class="stat-item">
-                <div class="number" id="avg-discount">40%</div>
-                <div class="label">Descuento medio</div>
+            <div class="stat">
+                <div class="stat-value" id="avg-discount">0%</div>
+                <div class="stat-label">Descuento medio</div>
             </div>
-            <div class="stat-item">
-                <div class="number" id="savings">+500€</div>
-                <div class="label">Ahorro total disponible</div>
+            <div class="stat">
+                <div class="stat-value" id="max-discount">0%</div>
+                <div class="stat-label">Máximo descuento</div>
             </div>
         </div>
+        
+        <p class="last-update" id="last-update">Última actualización: --</p>
         
         <div id="chollos-list">
-            <!-- Los chollos se cargan desde JavaScript -->
+            <!-- Los chollos se cargan dinámicamente -->
+            <p style="text-align: center; color: var(--text-muted);">Cargando ofertas...</p>
         </div>
     </main>
     
-    <script src="scripts/app.js"></script>
     <script>
+        let allChollos = [];
+        
         // Cargar chollos
         fetch('data/chollos.json')
             .then(r => r.json())
             .then(data => {
-                const container = document.getElementById('chollos-list');
-                
-                data.chollos.forEach((chollo, index) => {
-                    const card = document.createElement('div');
-                    card.className = 'chollo-card';
-                    card.innerHTML = `
-                        <div class="chollo-discount">-${chollo.descuento}</div>
+                allChollos = data.chollos;
+                document.getElementById('last-update').textContent = 
+                    `Última actualización: ${data.ultima_actualizacion || data.fecha}`;
+                renderChollos('all');
+                updateStats();
+            })
+            .catch(err => {
+                document.getElementById('chollos-list').innerHTML = 
+                    '<p style="text-align:center;color:var(--text-muted);">Error cargando chollos</p>';
+            });
+        
+        function getBrandClass(tienda) {
+            if (tienda.toLowerCase().includes('nox')) return 'nox';
+            if (tienda.toLowerCase().includes('siux')) return 'siux';
+            if (tienda.toLowerCase().includes('babolat')) return 'babolat';
+            return 'nox';
+        }
+        
+        function renderChollos(brand) {
+            const container = document.getElementById('chollos-list');
+            const filtered = brand === 'all' 
+                ? allChollos 
+                : allChollos.filter(c => c.tienda.toLowerCase().includes(brand.toLowerCase()));
+            
+            if (filtered.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:var(--text-muted);">No hay ofertas de esta marca</p>';
+                return;
+            }
+            
+            container.innerHTML = filtered.map(chollo => {
+                const brandClass = getBrandClass(chollo.tienda);
+                return `
+                    <div class="chollo-card" data-brand="${brandClass}">
+                        <div class="chollo-discount ${brandClass}">-${chollo.descuento}</div>
                         <div class="chollo-info">
                             <h3>${chollo.producto}</h3>
-                            <span class="chollo-store">🏪 ${chollo.tienda}</span>
+                            <span class="chollo-brand ${brandClass}">${chollo.tienda}</span>
                         </div>
                         <div class="chollo-prices">
                             <div class="old-price">${chollo.precio_original.toFixed(2)}€</div>
                             <div class="new-price">${chollo.precio_oferta.toFixed(2)}€</div>
-                            <a href="${chollo.enlace}" target="_blank" class="btn-chollo">Ver Oferta →</a>
+                            <a href="${chollo.enlace}" target="_blank" class="btn-offer">Ver Oferta →</a>
                         </div>
-                    `;
-                    container.appendChild(card);
-                });
-                
-                // Update stats
-                document.getElementById('total-chollos').textContent = data.chollos.length;
-            })
-            .catch(err => {
-                document.getElementById('chollos-list').innerHTML = '<p style="text-align:center;color:var(--text-muted);">Error cargando chollos</p>';
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function updateStats() {
+            const total = allChollos.length;
+            const avgDiscount = Math.round(
+                allChollos.reduce((sum, c) => sum + parseInt(c.descuento), 0) / total
+            );
+            const maxDiscount = Math.max(
+                ...allChollos.map(c => parseInt(c.descuento))
+            );
+            
+            document.getElementById('total-count').textContent = total;
+            document.getElementById('avg-discount').textContent = avgDiscount + '%';
+            document.getElementById('max-discount').textContent = maxDiscount + '%';
+        }
+        
+        // Filtros por marca
+        document.querySelectorAll('.brand-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.brand-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderChollos(btn.dataset.brand);
             });
+        });
     </script>
 </body>
 </html>
