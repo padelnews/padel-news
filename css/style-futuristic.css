@@ -1742,3 +1742,38 @@ footer .social-links a:hover {
   background: var(--primary);
   box-shadow: 0 0 10px var(--primary-glow);
 }
+
+/* ===== IMAGE DISPLAY FIX ===== */
+.article-hero {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 12px;
+}
+
+.article-gallery figure {
+    display: inline-block;
+    margin: 0.5rem;
+    width: calc(50% - 1rem);
+}
+
+.article-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.article-gallery figcaption {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 0.5rem;
+}
+
+/* Fallback for any img without src */
+img:not([src]) {
+    visibility: hidden;
+}
