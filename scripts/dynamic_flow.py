@@ -70,8 +70,25 @@ def save_state(state):
     with open(STATE_FILE, 'w') as f:
         json.dump(state, f, indent=2)
 
+def fetch_official_results():
+    """Fetch official tournament results from Premier Padel (PRIMARY SOURCE)
+    
+    Source: https://premierpadel.com/es
+    This is the OFFICIAL source for Premier Padel results.
+    """
+    try:
+        url = "https://premierpadel.com/es"
+        r = requests.get(url, headers={
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+        }, timeout=30)
+        if r.status_code == 200:
+            return r.text
+    except Exception as e:
+        log(f"Premier Padel fetch error: {e}")
+    return None
+
 def fetch_tournament_data(tournament_id):
-    """Fetch tournament data from FantasyPadelTour"""
+    """Fetch tournament data from FantasyPadelTour (BACKUP SOURCE)"""
     try:
         url = f"https://en.fantasypadeltour.com/games/{tournament_id}"
         r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=20)
@@ -302,7 +319,8 @@ def main():
     log(f"Checking: {CURRENT_TOURNAMENT['name']}")
     
     state = load_state()
-    html = fetch_tournament_data(CURRENT_TOURNAMENT["id"])
+    log("Using PRIMARY SOURCE: premierpadel.com")
+    html = fetch_official_results()
     
     if html:
         new_phase = detect_current_phase(html, state)
