@@ -1,68 +1,104 @@
 {
   "fecha": "2026-04-25",
-  "ultima_actualizacion": "2026-04-25 20:25:00",
+  "ultima_actualizacion": "2026-04-25 20:30:00",
   "marcas": ["NOX", "Siux", "Babolat"],
   "chollos": [
     {
-      "producto": "NOX AT10 Luxury Genius 12K 2025 - Agustín Tapia",
-      "precio_original": 279.00,
-      "precio_oferta": 130.95,
-      "descuento": "53%",
-      "imagen": "https://placehold.co/400x280/1a1a2e/ff6b00?text=NOX+AT10+Genius+12K",
-      "enlace": "https://www.padelstyle.com/pala-nox-at10-luxury-genius-12k-25",
-      "tienda": "PadelStyle"
+      "producto": "NOX AT10 Genius 18K Alum 2025 - Agustín Tapia",
+      "precio_original": 297.52,
+      "precio_oferta": 147.08,
+      "descuento": "51%",
+      "imagen": "https://placehold.co/400x280/ff6b00/ffffff?text=NOX+AT10+18K",
+      "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
+      "tienda": "ZonaPadel"
     },
     {
-      "producto": "NOX AT10 Luxury Genius Attack 12K 2025",
-      "precio_original": 340.00,
-      "precio_oferta": 147.95,
-      "descuento": "56%",
-      "imagen": "https://placehold.co/400x280/1a1a2e/ff6b00?text=NOX+AT10+Attack+12K",
-      "enlace": "https://www.padelstyle.com/pala-nox-at10-genius-attack-12k",
-      "tienda": "PadelStyle"
+      "producto": "NOX AT10 Luxury Genius 18K Alum 2026",
+      "precio_original": 322.31,
+      "precio_oferta": 257.82,
+      "descuento": "21%",
+      "imagen": "https://placehold.co/400x280/ff6b00/ffffff?text=NOX+AT10+2026",
+      "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
+      "tienda": "ZonaPadel"
     },
     {
-      "producto": "NOX AT10 Luxury Genius Attack 18K 2025",
-      "precio_original": 350.00,
-      "precio_oferta": 178.95,
-      "descuento": "49%",
-      "imagen": "https://placehold.co/400x280/1a1a2e/ff6b00?text=NOX+AT10+Attack+18K",
-      "enlace": "https://www.padelstyle.com/pala-nox-at-genius-attack-18k",
-      "tienda": "PadelStyle"
+      "producto": "NOX Future Hybrid 12K Lite 2026",
+      "precio_original": 247.93,
+      "precio_oferta": 114.95,
+      "descuento": "54%",
+      "imagen": "https://placehold.co/400x280/ff6b00/ffffff?text=NOX+Future+12K",
+      "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
+      "tienda": "ZonaPadel"
     },
     {
-      "producto": "NOX AT10 Luxury Genius Attack 18K 2026",
-      "precio_original": 360.00,
-      "precio_oferta": 269.90,
-      "descuento": "25%",
-      "imagen": "https://placehold.co/400x280/1a1a2e/ff6b00?text=NOX+AT10+Attack+18K+2026",
-      "enlace": "https://www.padelstyle.com/pala-nox-at10-18k-attack",
-      "tienda": "PadelStyle"
+      "producto": "NOX ML10 Pro Cup Silver 2025",
+      "precio_original": 123.97,
+      "precio_oferta": 111.53,
+      "descuento": "10%",
+      "imagen": "https://placehold.co/400x280/ff6b00/ffffff?text=NOX+ML10+Pro",
+      "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
+      "tienda": "ZonaPadel"
     },
     {
-      "producto": "Siux Diablo Pro 2026 Night Blue",
-      "precio_original": 349.95,
-      "precio_oferta": 259.95,
-      "descuento": "25%",
-      "imagen": "https://placehold.co/400x280/1a1a2e/e63946?text=Siux+Diablo+Pro+2026",
-      "enlace": "https://www.stockpadel.com/es/palas-de-padel/palas-padel-siux/3262-siux-diablo-pro-2026-night-blue",
-      "tienda": "StockPadel"
+      "producto": "NOX AT10 Pro Cup Hard 2026 - Agustín Tapia",
+      "precio_original": 165.29,
+      "precio_oferta": 119.76,
+      "descuento": "28%",
+      "imagen": "https://placehold.co/400x280/ff6b00/ffffff?text=NOX+AT10+Pro",
+      "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
+      "tienda": "ZonaPadel"
     },
     {
-      "producto": "Siux Diablo Pro 2026 Royal Blue",
-      "precio_original": 349.95,
-      "precio_oferta": 279.95,
-      "descuento": "20%",
-      "imagen": "https://placehold.co/400x280/1a1a2e/e63946?text=Siux+Diablo+Pro+Royal",
-      "enlace": "https://www.stockpadel.com/es/palas-de-padel/palas-padel-siux/3262-siux-diablo-pro-2026-night-blue",
-      "tienda": "StockPadel"
+      "producto": "Siux Diablo Go 4 2025",
+      "precio_original": 138.95,
+      "precio_oferta": 79.95,
+      "descuento": "42%",
+      "imagen": "https://placehold.co/400x280/e63946/ffffff?text=Siux+Diablo+Go+4",
+      "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
+      "tienda": "IntlPadelShop"
+    },
+    {
+      "producto": "Siux Stone Carbon 3K Azul",
+      "precio_original": 129.00,
+      "precio_oferta": 79.95,
+      "descuento": "38%",
+      "imagen": "https://placehold.co/400x280/e63946/ffffff?text=Siux+Stone+Carbon",
+      "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
+      "tienda": "IntlPadelShop"
+    },
+    {
+      "producto": "Siux Electra ST4 Flow 2025",
+      "precio_original": 280.00,
+      "precio_oferta": 99.95,
+      "descuento": "64%",
+      "imagen": "https://placehold.co/400x280/e63946/ffffff?text=Siux+Electra+ST4",
+      "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
+      "tienda": "IntlPadelShop"
+    },
+    {
+      "producto": "Siux Fenix Go 4 2024",
+      "precio_original": 175.00,
+      "precio_oferta": 99.95,
+      "descuento": "43%",
+      "imagen": "https://placehold.co/400x280/e63946/ffffff?text=Siux+Fenix+Go+4",
+      "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
+      "tienda": "IntlPadelShop"
+    },
+    {
+      "producto": "Siux Diablo Elite 4 2025",
+      "precio_original": 228.95,
+      "precio_oferta": 119.95,
+      "descuento": "48%",
+      "imagen": "https://placehold.co/400x280/e63946/ffffff?text=Siux+Diablo+Elite",
+      "enlace": "https://www.internationalpadelshop.com/es/palas-siux-1?limit=24&order=desc&sort=p.price",
+      "tienda": "IntlPadelShop"
     },
     {
       "producto": "Babolat Counter Vertuo 2.6 2026",
       "precio_original": 180.00,
       "precio_oferta": 148.72,
       "descuento": "17%",
-      "imagen": "https://placehold.co/400x280/1a1a2e/2a9d8f?text=Babolat+Counter+Vertuo",
+      "imagen": "https://placehold.co/400x280/2a9d8f/ffffff?text=Babolat+Counter+Vertuo",
       "enlace": "https://padelproshop.com/es-la/products/pala-babolat-counter-vertuo-2026",
       "tienda": "PadelPROShop"
     },
@@ -71,7 +107,7 @@
       "precio_original": 249.00,
       "precio_oferta": 149.00,
       "descuento": "40%",
-      "imagen": "https://placehold.co/400x280/1a1a2e/2a9d8f?text=Babolat+Technical+V2",
+      "imagen": "https://placehold.co/400x280/2a9d8f/ffffff?text=Babolat+Technical+V2",
       "enlace": "https://padelproshop.com/products/babolat-technical-v2",
       "tienda": "PadelPROShop"
     }
