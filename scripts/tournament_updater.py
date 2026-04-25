@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Padel Tournament Auto-Updater v4.2
-Real results scraping with smart phase detection
+Padel Tournament Auto-Updater v5.0
+Simple, reliable phase detection
+Detects phase transitions: semifinal → final → next tournament
 """
 
 import requests
@@ -9,87 +10,97 @@ import json
 import re
 from datetime import datetime
 
-DATA_DIR = "/Users/cristian/Sites/padel_news/data"
 STATE_FILE = "/Users/cristian/.openclaw/workspace/tournament_state.json"
 LOG_FILE = "/Users/cristian/.openclaw/workspace/tournament_updater.log"
 RESULTADOS_HTML = "/Users/cristian/Sites/padel_news/resultados.html"
 INDEX_HTML = "/Users/cristian/Sites/padel_news/index.html"
 ACTUALIDAD_HTML = "/Users/cristian/Sites/padel_news/actualidad.html"
 
-TOURNAMENT_ID = "86"  # Brussels P2
+TOURNAMENT_ID = "86"
 
 def log(msg):
     ts = datetime.now().strftime("%H:%M:%S")
-    line = f"[{ts}] {msg}"
     with open(LOG_FILE, "a") as f:
-        f.write(line + "\n")
-    print(line)
+        f.write(f"[{ts}] {msg}\n")
+    print(f"[{ts}] {msg}")
 
 def load_state():
     try:
         with open(STATE_FILE, 'r') as f:
             return json.load(f)
     except:
-        return {"current_tournament_id": TOURNAMENT_ID, "phase": "semifinal", "finished": False}
+        return {"phase": "semifinal", "last_check": None}
 
 def save_state(state):
     with open(STATE_FILE, 'w') as f:
         json.dump(state, f, indent=2)
 
-def get_headers():
-    return {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-        'Accept': 'text/html',
-        'Accept-Language': 'es,en;q=0.9',
-    }
-
 def fetch_tournament():
-    url = f"https://en.fantasypadeltour.com/games/{TOURNAMENT_ID}"
-    r = requests.get(url, headers=get_headers(), timeout=20)
-    return r.text if r.status_code == 200 else None
-
-def detect_phase_smart(html):
-    """Smart phase detection - count scores in match blocks only"""
-    
-    # Count match results (pairs of set scores)
-    # Format: "6-4, 6-3" or "7-6(4), 6-2"
-    match_results = len(re.findall(r'(\d-\d)[,\s]+(\d-\d)', html))
-    
-    log(f"Match results found: {match_results}")
-    
-    # Brussels P2 structure:
-    # R32 (8 matches) + R16 (8 matches) + QF (4 matches) + SF (2 matches) + F (1 match) = 23 max
-    
-    if match_results >= 21:  # Through semifinals + potential final
-        # Check if final has actual winner
-        if '🏆 FINAL' in html or re.search(r'ganador|winner|champion', html, re.I):
-            return "final", True
-        else:
-            return "semifinal", False
-    elif match_results >= 17:  # Through QF
-        return "quarter", False
-    elif match_results >= 9:   # Through R16  
-        return "r16", False
-    else:
-        return "r32", False
-
-def update_results_page(phase):
-    """Update the results page with correct phase"""
     try:
-        with open(RESULTADOS_HTML, 'r') as f:
+        r = requests.get(
+            f"https://en.fantasypadeltour.com/games/{TOURNAMENT_ID}",
+            headers={'User-Agent': 'Mozilla/5.0'},
+            timeout=20
+        )
+        return r.text if r.status_code == 200 else None
+    except:
+        return None
+
+def check_sports_news():
+    """Check Marca for tournament final result"""
+    try:
+        r = requests.get(
+            "https://www.marca.com/padel/",
+            headers={'User-Agent': 'Mozilla/5.0'},
+            timeout=15
+        )
+        text = r.text.lower()
+        
+        # Look for signs tournament has ended
+        if 'brussels' in text:
+            # Check for final result patterns
+            if re.search(r'(tapia.*coello|coello.*tapia).*(final|gana|victoria)', text):
+                return "Tapia/Coello"
+            elif re.search(r'(galan.*chingotto|chingotto.*galan).*(final|gana|victoria)', text):
+                return "Galan/Chingotto"
+            elif re.search(r'brussels.*final.*\d+-\d+', text):
+                return "OTHER"
+        return None
+    except:
+        return None
+
+def detect_phase(html, state):
+    """Detect current phase based on page content"""
+    
+    # Current known phase from previous checks
+    current_phase = state.get("phase", "semifinal")
+    
+    # Check if semifinal matches have scores (meaning semifinals done → final)
+    if current_phase == "semifinal":
+        # Look for semifinal score patterns
+        if html:
+            # Count how many semifinals show scores
+            semi_scores = len(re.findall(r'(Semifinal|SEMI).*?\d+-\d+', html, re.I))
+            if semi_scores >= 2:
+                # Semifinals done, we're in final
+                return "final"
+        return "semifinal"
+    
+    elif current_phase == "final":
+        # Check if final has a winner
+        winner = check_sports_news()
+        if winner:
+            log(f"Tournament winner detected: {winner}")
+            return "FINISHED"
+        return "final"
+    
+    return current_phase
+
+def update_page_badge(page_path, badge_text):
+    """Update live badge on any page"""
+    try:
+        with open(page_path, 'r') as f:
             content = f.read()
-        
-        phase_labels = {
-            "r32": "Dieciseisavos",
-            "r16": "Octavos de Final", 
-            "quarter": "Cuartos de Final",
-            "semifinal": "Semifinales",
-            "final": "FINAL"
-        }
-        
-        badge_text = f"🔴 BRUSSELS P2 - {phase_labels.get(phase, phase)}"
-        if phase == "final":
-            badge_text = "🏆 BRUSSELS P2 FINAL"
         
         content = re.sub(
             r'<span class="live-badge">[^<]*</span>',
@@ -97,101 +108,44 @@ def update_results_page(phase):
             content
         )
         
-        content = re.sub(
-            r'<p style="font-size: 1\.3rem; font-weight: 700;">[^<]*</p>',
-            f'<p style="font-size: 1.3rem; font-weight: 700;">{phase_labels.get(phase, phase)}</p>',
-            content
-        )
-        
-        with open(RESULTADOS_HTML, 'w') as f:
+        with open(page_path, 'w') as f:
             f.write(content)
-        
-        log(f"Updated resultados.html - {phase_labels.get(phase, phase)}")
     except Exception as e:
-        log(f"Error updating results: {e}")
-
-def update_index_banner(tournament_name, phase):
-    """Update main index banner"""
-    try:
-        with open(INDEX_HTML, 'r') as f:
-            content = f.read()
-        
-        badge_text = f"🔴 {tournament_name} - {phase.upper()}"
-        content = re.sub(r'<span class="live-badge">[^<]*</span>', f'<span class="live-badge">{badge_text}</span>', content)
-        
-        with open(INDEX_HTML, 'w') as f:
-            f.write(content)
-        
-        log(f"Updated index.html banner")
-    except Exception as e:
-        log(f"Error updating index: {e}")
-
-def update_actualidad_banner(tournament_name, phase):
-    """Update actualidad page banner"""
-    try:
-        with open(ACTUALIDAD_HTML, 'r') as f:
-            content = f.read()
-        
-        badge_text = f"🔴 {tournament_name} EN JUEGO"
-        content = re.sub(r'<span class="live-badge">[^<]*</span>', f'<span class="live-badge">{badge_text}</span>', content)
-        
-        with open(ACTUALIDAD_HTML, 'w') as f:
-            f.write(content)
-        
-        log(f"Updated actualidad.html banner")
-    except Exception as e:
-        log(f"Error updating actualidad: {e}")
-
-def check_for_tournament_end():
-    """Check sports news to see if tournament really ended"""
-    try:
-        headers = {'User-Agent': 'Mozilla/5.0'}
-        r = requests.get("https://www.marca.com/padel/", headers=headers, timeout=15)
-        text = r.text.lower()
-        
-        if 'brussels' in text or 'bruselas' in text:
-            patterns = ['tapia.*coello.*ganador', 'coello.*tapia.*título', 'brussels.*final']
-            for p in patterns:
-                if re.search(p, text):
-                    return True
-        return False
-    except:
-        return False
+        log(f"Error updating {page_path}: {e}")
 
 def main():
-    log("=== Tournament Updater v4.2 ===")
+    log("=== Tournament Updater v5 ===")
     
     state = load_state()
     html = fetch_tournament()
     
     if html:
-        phase, finished = detect_phase_smart(html)
+        phase = detect_phase(html, state)
+        log(f"Current phase: {phase}")
         
-        # If phase says final but we can't verify, check sports news
-        if phase == "final" and not finished:
-            if check_for_tournament_end():
-                finished = True
-            else:
-                phase = "semifinal"
-                finished = False
-        
-        log(f"Detected: phase={phase}, finished={finished}")
-        
-        update_results_page(phase)
-        update_index_banner("Brussels P2", phase)
-        update_actualidad_banner("Brussels P2", phase)
-        
-        state["phase"] = phase
-        state["finished"] = finished
-        state["last_update"] = datetime.now().isoformat()
-        save_state(state)
-        
-        if finished:
-            log("🎉 Tournament finished! Needs next setup.")
-            with open("/Users/cristian/.openclaw/workspace/TOURNAMENT_ENDED.txt", "w") as f:
-                f.write(f"{datetime.now().isoformat()}: Tournament ended\n")
+        if phase == "FINISHED":
+            log("🎉 Tournament finished!")
+            state["phase"] = "FINISHED"
+            state["finished"] = True
+            save_state(state)
+            
+            # Alert for next tournament setup
+            with open("/Users/cristian/.openclaw/workspace/TOURNAMENT_FINISHED_ALERT.txt", "w") as f:
+                f.write(f"{datetime.now().isoformat()}: Brussels P2 finished - setup next tournament\n")
+        else:
+            # Update all pages with current phase
+            badge = f"🔴 BRUSSELS P2 - {phase.upper()}"
+            if phase == "final":
+                badge = "🏆 BRUSSELS P2 FINAL"
+            
+            update_page_badge(RESULTADOS_HTML, badge)
+            update_page_badge(INDEX_HTML, badge)
+            update_page_badge(ACTUALIDAD_HTML, f"🔴 BRUSSELS P2 EN JUEGO")
+            
+            state["phase"] = phase
+            save_state(state)
     else:
-        log("Failed to fetch tournament data")
+        log("Could not fetch tournament data")
     
     log("=== Done ===")
 
