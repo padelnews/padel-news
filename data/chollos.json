@@ -1,135 +1,59 @@
 {
   "fecha": "2026-04-25",
-  "ultima_actualizacion": "2026-04-25 19:22:00",
-  "marcas": ["NOX", "Siux", "Babolat"],
+  "ultima_actualizacion": "2026-04-25 19:30:36",
+  "marcas": [
+    "NOX",
+    "Siux",
+    "Babolat"
+  ],
   "chollos": [
     {
-      "producto": "NOX AT10 Luxury GENIUS ATTACK 18K 2025",
-      "precio_original": 339.99,
-      "precio_oferta": 169.99,
-      "descuento": "50%",
-      "enlace": "https://www.noxsport.com/products/at10-luxury-genius-attack-18k-alum-2025",
-      "tienda": "NOX Sport"
-    },
-    {
-      "producto": "Siux Diablo Pro 2026 Black",
-      "precio_original": 299.00,
-      "precio_oferta": 227.00,
-      "descuento": "24%",
-      "enlace": "https://tiendapadelpoint.com/palas/siux/diablo-pro-2026-black",
-      "tienda": "Siux"
-    },
-    {
       "producto": "NOX AT10 Luxury GENIUS 18K 2025",
-      "precio_original": 297.52,
-      "precio_oferta": 147.08,
-      "descuento": "51%",
-      "enlace": "https://www.zonadepadel.es/nox/13771-nox-at10-luxury-genius-18k-alum-2026.html",
-      "tienda": "ZonaPadel"
-    },
-    {
-      "producto": "Siux Diablo 4 Pro 2025",
-      "precio_original": 268.60,
-      "precio_oferta": 111.51,
-      "descuento": "58%",
-      "enlace": "https://www.zonadepadel.es/siux/13930-siux-diablo-pro-royal-blue-2026.html",
-      "tienda": "ZonaPadel"
-    },
-    {
-      "producto": "Siux Trilogy Pro 5 2025",
-      "precio_original": 268.60,
-      "precio_oferta": 106.62,
-      "descuento": "60%",
-      "enlace": "https://www.zonadepadel.es/siux/13930-siux-diablo-pro-royal-blue-2026.html",
-      "tienda": "ZonaPadel"
-    },
-    {
-      "producto": "Siux Trilogy 2 Attack",
-      "precio_original": 289.26,
-      "precio_oferta": 132.19,
-      "descuento": "54%",
-      "enlace": "https://www.zonadepadel.es/siux/13930-siux-diablo-pro-royal-blue-2026.html",
-      "tienda": "ZonaPadel"
+      "precio_original": 359.99,
+      "precio_oferta": 189.99,
+      "descuento": "47%",
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX"
     },
     {
       "producto": "NOX Quantum 12K Cobalt",
       "precio_original": 339.99,
       "precio_oferta": 159.99,
       "descuento": "53%",
-      "enlace": "https://www.noxsport.com/products/quantum-12k-cobalt",
-      "tienda": "NOX Sport"
+      "enlace": "https://www.noxspain.com/collections/outlet-padel-palas",
+      "tienda": "NOX"
     },
     {
-      "producto": "NOX AT10 Luxury GOLD L.5",
-      "precio_original": 279.95,
-      "precio_oferta": 139.95,
-      "descuento": "50%",
-      "enlace": "https://www.noxsport.com/products/at10-luxury-gold-l5-agustin-tapia",
-      "tienda": "NOX Sport"
-    },
-    {
-      "producto": "Siux Diablo Pro 2026 Night Blue",
-      "precio_original": 349.95,
-      "precio_oferta": 259.95,
-      "descuento": "25%",
-      "enlace": "https://www.stockpadel.com/es/palas-de-padel/palas-padel-siux/3262-siux-diablo-pro-2026-night-blue",
-      "tienda": "StockPadel"
-    },
-    {
-      "producto": "Babolat Counter Vertuo 2.6 2026",
-      "precio_original": 180.00,
-      "precio_oferta": 148.72,
-      "descuento": "17%",
-      "enlace": "https://padelproshop.com/es-la/products/pala-babolat-counter-vertuo-2026",
-      "tienda": "PadelPROShop"
-    },
-    {
-      "producto": "NOX AT10 GENIUS 18K 2025",
-      "precio_original": 297.52,
-      "precio_oferta": 180.00,
-      "descuento": "39%",
-      "enlace": "https://www.padel-point.es/nox-at10-genius-18k-2025-1220750012500000.html",
-      "tienda": "Padel-Point"
-    },
-    {
-      "producto": "NOX NextGen Pro Attack 3K",
-      "precio_original": 199.99,
-      "precio_oferta": 149.95,
-      "descuento": "25%",
-      "enlace": "https://www.noxsport.com/products/nextgen-pro-attack-3k",
-      "tienda": "NOX Sport"
-    },
-    {
-      "producto": "Siux Force Pro",
-      "precio_original": 249.00,
-      "precio_oferta": 119.00,
-      "descuento": "52%",
-      "enlace": "https://tiendapadelpoint.com/palas/siux/force-pro",
-      "tienda": "PadelPoint"
-    },
-    {
-      "producto": "Babolat Technical V2 2024",
-      "precio_original": 249.00,
-      "precio_oferta": 149.00,
-      "descuento": "40%",
-      "enlace": "https://padelproshop.com/products/babolat-technical-v2",
-      "tienda": "PadelPROShop"
-    },
-    {
-      "producto": "NOX AT Luxury BLUE 18K",
-      "precio_original": 325.00,
-      "precio_oferta": 149.95,
-      "descuento": "54%",
-      "enlace": "https://www.noxsport.com/products/at-luxury-blue-18k",
-      "tienda": "NOX Sport"
+      "producto": "Siux Diablo Pro 2026 Black",
+      "precio_original": 299.0,
+      "precio_oferta": 227.0,
+      "descuento": "24%",
+      "enlace": "https://tiendapadelpoint.com/palas-outlet-siux",
+      "tienda": "Siux"
     },
     {
       "producto": "Siux Diablo All Black",
-      "precio_original": 450.00,
-      "precio_oferta": 119.00,
+      "precio_original": 450.0,
+      "precio_oferta": 119.0,
       "descuento": "74%",
       "enlace": "https://webdepadel.com/siux-diablo-all-black/",
-      "tienda": "WebdePadel"
+      "tienda": "Siux"
+    },
+    {
+      "producto": "Babolat Counter Vertuo 2.6 2026",
+      "precio_original": 180.0,
+      "precio_oferta": 148.72,
+      "descuento": "17%",
+      "enlace": "https://padelproshop.com/products/pala-babolat-counter-vertuo-2026",
+      "tienda": "Babolat"
+    },
+    {
+      "producto": "Babolat Counter Vertuo Pack 2024",
+      "precio_original": 199.0,
+      "precio_oferta": 159.0,
+      "descuento": "20%",
+      "enlace": "https://padel.tienda/packs/packs-babolat",
+      "tienda": "Babolat"
     }
   ]
 }
