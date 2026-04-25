@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏓 Chollos de Pádel | Ofertas en Palas, Zapatillas y Equipamiento</title>
+    <link rel="stylesheet" href="css/style-futuristic.css">
+    <style>
+        :root {
+            --accent: #ff6600;
+            --success: #00cc99;
+        }
+        
+        .chollos-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .chollos-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .chollos-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .chollo-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .chollo-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-neon);
+        }
+        
+        .chollo-discount {
+            background: var(--accent);
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            min-width: 90px;
+            text-align: center;
+        }
+        
+        .chollo-info {
+            flex: 1;
+        }
+        
+        .chollo-info h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .chollo-store {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .chollo-prices {
+            text-align: right;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        
+        .new-price {
+            color: var(--success);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .btn-chollo {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .btn-chollo:hover {
+            background: #ff8533;
+        }
+        
+        .stats-bar {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--glass-bg);
+            border-radius: 12px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .stat-item .label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .chollo-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .chollo-prices {
+                text-align: center;
+            }
+            
+            .chollo-discount {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">INICIO</a>
+        <a href="actualidad.html">ACTUALIDAD</a>
+        <a href="resultados.html">RESULTADOS</a>
+        <a href="torneos.html">TORNEOS</a>
+        <a href="chollos.html" class="active">CHOLLOS</a>
+    </nav>
+    
+    <main class="container">
+        <div class="chollos-header">
+            <h1>🏓 Chollos de Pádel</h1>
+            <p>Las mejores ofertas en palas, zapatillas y equipamiento de pádel</p>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="number" id="total-chollos">10</div>
+                <div class="label">Ofertas activas</div>
+            </div>
+            <div class="stat-item">
+                <div class="number" id="avg-discount">40%</div>
+                <div class="label">Descuento medio</div>
+            </div>
+            <div class="stat-item">
+                <div class="number" id="savings">+500€</div>
+                <div class="label">Ahorro total disponible</div>
+            </div>
+        </div>
+        
+        <div id="chollos-list">
+            <!-- Los chollos se cargan desde JavaScript -->
+        </div>
+    </main>
+    
+    <script src="scripts/app.js"></script>
+    <script>
+        // Cargar chollos
+        fetch('data/chollos.json')
+            .then(r => r.json())
+            .then(data => {
+                const container = document.getElementById('chollos-list');
+                
+                data.chollos.forEach((chollo, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'chollo-card';
+                    card.innerHTML = `
+                        <div class="chollo-discount">-${chollo.descuento}</div>
+                        <div class="chollo-info">
+                            <h3>${chollo.producto}</h3>
+                            <span class="chollo-store">🏪 ${chollo.tienda}</span>
+                        </div>
+                        <div class="chollo-prices">
+                            <div class="old-price">${chollo.precio_original.toFixed(2)}€</div>
+                            <div class="new-price">${chollo.precio_oferta.toFixed(2)}€</div>
+                            <a href="${chollo.enlace}" target="_blank" class="btn-chollo">Ver Oferta →</a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+                
+                // Update stats
+                document.getElementById('total-chollos').textContent = data.chollos.length;
+            })
+            .catch(err => {
+                document.getElementById('chollos-list').innerHTML = '<p style="text-align:center;color:var(--text-muted);">Error cargando chollos</p>';
+            });
+    </script>
+</body>
+</html>
