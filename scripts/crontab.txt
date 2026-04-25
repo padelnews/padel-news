@@ -1,0 +1,4 @@
+*/10 * * * * /usr/bin/python3 /Users/cristian/.openclaw/workspace/cron_news_updater.py >> /Users/cristian/.openclaw/workspace/cron_news.log 2>&1
+*/15 * * * * /usr/bin/python3 /Users/cristian/.openclaw/workspace/cron_web_optimizer.py >> /Users/cristian/.openclaw/workspace/cron_web.log 2>&1
+*/10 * * * * cd /Users/cristian/Sites/padel_news && /usr/local/bin/python3 scripts/fetch_chollos.py >> data/chollos.log 2>&1
+*/10 * * * * /usr/bin/python3 /Users/cristian/Sites/padel_news/scripts/tournament_watcher.py >> /Users/cristian/.openclaw/workspace/tournament_watcher.log 2>&1
