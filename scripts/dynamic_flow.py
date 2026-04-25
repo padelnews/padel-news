@@ -254,6 +254,20 @@ def update_actualidad_order(state):
         content
     )
     
+    # Update featured article based on phase
+    if phase == "final":
+        # Update featured article category for FINAL
+        content = re.sub(
+            r'<span class="news-card-category">[^<]*</span>',
+            '<span class="news-card-category">🏆 FINAL MAÑANA</span>',
+            content
+        )
+        
+        # Update featured article description for FINAL
+        old_desc = r'<p>\s*El torneo continúa[^<]*</p>'
+        new_desc = '<p>¡La final está servida! Tapia/Coello vs Lebrón/Augsburger mañana domingo 26/04 a las 14:00. Los número uno buscarán su tercer título.</p>'
+        content = re.sub(old_desc, new_desc, content)
+    
     with open(page_path, 'w') as f:
         f.write(content)
     
