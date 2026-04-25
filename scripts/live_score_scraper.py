@@ -77,7 +77,7 @@ def parse_match_scores(html):
 def format_live_banner(score_data):
     """Format live score for display"""
     if not score_data:
-        return "🔴 EN DIRECTO - FINAL Brussels P2\nTapia/Coello vs Lebrón/Augsburger\nEsperando resultados..."
+        return "🔴 EN DIRECTO - FINAL Brussels P2<br>Tapia/Coello vs Lebrón/Augsburger<br>Esperando resultados..."
     
     t1 = score_data["team1"]
     t2 = score_data["team2"]
@@ -89,13 +89,13 @@ def format_live_banner(score_data):
     
     sets = []
     if s1 is not None and s3 is not None:
-        sets.append(f"Set1: {s1}-{s3}")
+        sets.append(f"Set 1: {s1}-{s3}")
     if s2 is not None and s4 is not None:
-        sets.append(f"Set2: {s2}-{s4}")
+        sets.append(f"Set 2: {s2}-{s4}")
     
-    score_text = " | ".join(sets) if sets else "En juego"
+    score_text = " • ".join(sets) if sets else "En juego"
     
-    return f"🔴 EN DIRECTO - FINAL Brussels P2\n{t1} vs {t2}\n{score_text}"
+    return f"🔴 EN DIRECTO - FINAL Brussels P2<br>{t1} vs {t2}<br>{score_text}"
 
 def update_pages(banner_text):
     """Update all pages with live score banner"""
