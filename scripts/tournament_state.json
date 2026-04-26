@@ -1,164 +1,54 @@
 {
-  "_comment": "UNIC SOURCE OF TRUTH - All website data comes from here",
   "version": "2.0",
-  "last_updated": "2026-04-26T18:00:00",
+  "last_updated": "2026-04-26T21:00:00",
   "current_tournament": {
     "id": "asuncion_p2",
-    "name": "Asunción P2",
-    "location": "Asunción, Paraguay",
+    "name": "Asunci\u00f3n P2",
+    "location": "Asunci\u00f3n, Paraguay",
     "dates": "10-17 Mayo 2026",
-    "dates_raw": "2026-05-10",
-    "status": "upcoming",
-    "prize_money": "€264,534",
-    "venue": "Asunción, Paraguay"
+    "status": "upcoming"
   },
   "past_tournaments": [
     {
       "id": "brussels_p2",
       "name": "Brussels P2",
-      "location": "Bruselas, Bélgica",
+      "location": "Bruselas, B\u00e9lgica",
       "dates": "19-26 Abril 2026",
       "status": "finished",
       "winner_male": [
-        "Lebrón",
+        "Lebr\u00f3n",
         "Augsburger"
-      ],
-      "winner_female": [
-        "Brigante",
-        "González"
       ],
       "final_score": "2-6, 6-3, 6-3",
       "finalists_male": [
         "Tapia",
         "Coello"
       ],
-      "finalists_female": [
-        "Osoro",
-        "Iglesias"
-      ],
-      "semifinals_male": [
-        {
-          "teams": [
-            "Lebrón",
-            "Augsburger",
-            "Galán",
-            "Chingotto"
-          ],
-          "score": "6-4, 6-4"
-        },
-        {
-          "teams": [
-            "Tapia",
-            "Coello",
-            "Stupaczuk",
-            "Yanguas"
-          ],
-          "score": "6-4, 6-3"
-        }
-      ],
-      "article_url": "articles/article-brussels-p2-2026.html",
-      "finished_at": "2026-04-26T16:00:00"
+      "article_url": "articles/article-brussels-p2-2026.html"
     },
     {
       "id": "newgiza_p2",
       "name": "NewGiza P2",
       "location": "El Gouna, Egipto",
-      "dates": "Marzo 2026",
+      "dates": "13-18 Abril 2026",
       "status": "finished",
       "winner_male": [
-        "Galán",
+        "Gal\u00e1n",
         "Chingotto"
-      ],
-      "winner_female": [
-        "Josemaría",
-        "González"
       ],
       "final_score": "6-4, 6-1",
       "finalists_male": [
         "Stupaczuk",
         "Yanguas"
       ],
-      "finalists_female": [
-        "Triay",
-        "Brea"
-      ],
-      "article_url": "articles/article-newgiza-2026.html",
-      "finished_at": "2026-03-30T00:00:00"
-    },
-    {
-      "id": "miami_p1",
-      "name": "Miami P1",
-      "location": "Miami, USA",
-      "dates": "Marzo 2026",
-      "status": "finished",
-      "winner_male": [
-        "Galán",
-        "Chingotto"
-      ],
-      "final_score": "7-5, 3-6, 6-3",
-      "finalists_male": [
-        "Tapia",
-        "Coello"
-      ],
-      "finished_at": "2026-03-20T00:00:00"
-    },
-    {
-      "id": "cancun_p2",
-      "name": "Cancún P2",
-      "location": "Cancún, México",
-      "dates": "Marzo 2026",
-      "status": "finished",
-      "winner_male": [
-        "Tapia",
-        "Coello"
-      ],
-      "final_score": "6-7(5), 6-3, 7-5",
-      "finalists_male": [
-        "Lebrón",
-        "Augsburger"
-      ],
-      "finished_at": "2026-03-15T00:00:00"
-    },
-    {
-      "id": "gijon_p2",
-      "name": "Gijón P2",
-      "location": "Gijón, España",
-      "dates": "Febrero 2026",
-      "status": "finished",
-      "winner_male": [
-        "Galán",
-        "Chingotto"
-      ],
-      "final_score": "7-5, 7-6",
-      "finalists_male": [
-        "Tapia",
-        "Coello"
-      ],
-      "finished_at": "2026-02-28T00:00:00"
-    },
-    {
-      "id": "riyadh_p1",
-      "name": "Riyadh Season P1",
-      "location": "Riad, Arabia Saudí",
-      "dates": "Febrero 2026",
-      "status": "finished",
-      "winner_male": [
-        "Tapia",
-        "Coello"
-      ],
-      "final_score": "6-4, 6-2",
-      "finalists_male": [
-        "Galán",
-        "Chingotto"
-      ],
-      "finished_at": "2026-02-15T00:00:00"
+      "article_url": "articles/article-newgiza-2026.html"
     }
   ],
   "upcoming_tournaments": [
     {
       "id": "asuncion_p2",
-      "name": "Asunción P2",
-      "location": "Asunción, Paraguay",
+      "name": "Asunci\u00f3n P2",
+      "location": "Asunci\u00f3n, Paraguay",
       "dates": "10-17 Mayo 2026",
       "status": "upcoming"
     },
@@ -168,16 +58,8 @@
       "location": "Buenos Aires, Argentina",
       "dates": "11-17 Mayo 2026",
       "status": "upcoming"
-    },
-    {
-      "id": "rome_major",
-      "name": "Rome Major",
-      "location": "Roma, Italia",
-      "dates": "01-07 Junio 2026",
-      "status": "upcoming"
     }
   ],
-  "live_match": null,
-  "last_generation": "2026-04-26T20:51:39.878536",
-  "generation_count": 4
+  "last_generation": "2026-04-26T21:00:00",
+  "generation_count": 0
 }
