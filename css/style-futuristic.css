@@ -1815,3 +1815,34 @@ img:not([src]) {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
 }
+
+/* Live Scoreboard */
+.live-scoreboard {
+  display: inline-table;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 8px;
+  padding: 5px 8px;
+  margin: 0 5px;
+  border: 1px solid #333;
+  vertical-align: middle;
+}
+.live-scoreboard td {
+  color: white;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: bold;
+}
+.live-scoreboard tr:first-child td {
+  border-bottom: 1px solid #555;
+}
+.live-scoreboard td:nth-child(2),
+.live-scoreboard td:nth-child(3) {
+  background: #c0392b;
+  text-align: center;
+}
+.live-scoreboard td:nth-child(4) {
+  background: #f39c12;
+  color: #1a1a2e;
+  text-align: center;
+}
+
