@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brussels P2 2026 - Lebrón/Augsburger Campeses | Padel News Pro</title>
+    <title>Brussels P2 2026 - Lebrón/Augsburger Campeones | Padel News Pro</title>
     <meta name="description" content="Resumen completo del Brussels P2 2026: Lebrón y Augsburger remontan y se proclaman campeones tras derrotar a Tapia/Coello.">
     <link rel="stylesheet" href="../css/style-futuristic.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -28,6 +28,11 @@
         .article-title { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; }
         .article-meta { color: #888; font-size: 1rem; margin-bottom: 1.5rem; }
         .article-hero { width: 100%; max-height: 400px; object-fit: cover; border-radius: 16px; margin: 1.5rem 0; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+        .article-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .article-gallery figure { margin: 0; }
+        .article-gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; transition: transform 0.3s; }
+        .article-gallery img:hover { transform: scale(1.02); }
+        .article-gallery figcaption { font-size: 0.8rem; color: #888; margin-top: 0.5rem; text-align: center; }
         .article-content { font-size: 1.1rem; color: #ddd; }
         .article-content p { margin-bottom: 1.5rem; }
         .article-content h3 { color: var(--primary); font-size: 1.4rem; margin: 2rem 0 1rem; }
@@ -45,7 +50,7 @@
         .back-btn { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 2rem; transition: all 0.3s; }
         .back-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3); }
         footer { text-align: center; padding: 2rem; color: #666; margin-top: 3rem; }
-        @media (max-width: 768px) { .article-title { font-size: 1.8rem; } nav { gap: 1rem; } main { padding: 1rem; } }
+        @media (max-width: 768px) { .article-title { font-size: 1.8rem; } nav { gap: 1rem; } main { padding: 1rem; } .article-gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -54,7 +59,7 @@
     </header>
     <nav>
         <a href="../index.html">INICIO</a>
-        <a href="../actualidad.html" class="active">ACTUALIDAD</a>
+        <a href="../actualidad.html">ACTUALIDAD</a>
         <a href="../resultados.html">RESULTADOS</a>
         <a href="../torneos.html">TORNEOS</a>
     </nav>
@@ -66,16 +71,17 @@
                 <p class="article-meta">📅 19-26 Abril 2026 • 📍 Tour & Taxis Gare Maritime, Bruselas, Bélgica • 🏆 €264,534</p>
             </div>
             
+            <!-- Main Hero Image -->
             <figure style="text-align: center;">
-                <img src="../images/brussels-final.jpg" alt="Lebrón y Augsburger celebran en Brussels" class="article-hero" onerror="this.style.display='none'">
-                <figcaption>🏟️ Lebrón y Augsburger levantan el trofeo del Brussels P2 2026</figcaption>
+                <img src="../images/banners/brussels-banner.jpg" alt="Lebrón y Augsburger celebran en Brussels" class="article-hero" onerror="this.style.display='none'">
+                <figcaption>🏟️ Lebrón y Augsburger levantan el trofeo del Brussels P2 2026. Foto: Premier Padel</figcaption>
             </figure>
             
             <div class="article-content">
                 <p>
                     <strong>Juan Lebrón</strong> y <strong>Leo Augsburger</strong> han logrado una victoria histórica en el Brussels P2 2026, 
                     remontando un set en contra para derrotar a los número uno del mundo <strong>Arturo Coello</strong> y 
-                    <strong>Agustín Tapia</strong> con un marcador de 2-6, 6-3, 6-3 en una final de近乎 dos horas.
+                    <strong>Agustín Tapia</strong> con un marcador de 2-6, 6-3, 6-3 en una final de cerca de dos horas.
                 </p>
                 
                 <div class="highlight-box">
@@ -83,7 +89,7 @@
                     <p>
                         El guión no podía haber comenzado peor para Lebrón y Augsburger. Tapia y Coello, en un nivel excepcional, 
                         dominaron el primer set con un 6-2 que parecía sentenciar el partido. Pero la dupla hispano-argentina 
-                        reacción con una fuerza mentale increíble.
+                        reaccionó con una fuerza mental increíble.
                     </p>
                     <p>
                         En el segundo set, Lebrón/Augsburger cambiaron su estrategia, apretando el ritmo y forzando errores 
@@ -91,8 +97,25 @@
                     </p>
                     <p>
                         El set decisivo fue una batalla de igual a igual hasta el 3-3, momento en que Lebrón y Augsburger 
-                        encontraron su mejor nivel para cerrar con un 6-3 definitivo.
+                        encontraron su mejor nivel para cerrar con un 6-3 definitivo y celebrar su primer título juntos en 2026.
                     </p>
+                </div>
+                
+                <h3>📸 Galería del Torneo</h3>
+                
+                <div class="article-gallery">
+                    <figure>
+                        <img src="../images/tournament/brussels-semis.jpg" alt="Semifinales Brussels" onerror="this.src='../images/tournament/tournament-banner.jpg'">
+                        <figcaption>🎾 Momento de las semifinales en Brussels. Foto: Premier Padel</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/tournament/brussels-court.jpg" alt="Pista central Brussels" onerror="this.src='../images/tournament/tournament-banner.jpg'">
+                        <figcaption>🏟️ La pista central Tour & Taxis Gare Maritime</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/banners/brussels-banner.jpg" alt="Lebrón y Augsburger campeones" onerror="this.src='../images/tournament/tournament-banner.jpg'">
+                        <figcaption>🏆 Los campeones celebrando el título en Bélgica</figcaption>
+                    </figure>
                 </div>
                 
                 <h3>📊 Resultados del Torneo</h3>
@@ -131,16 +154,84 @@
                 </div>
                 
                 <div class="results-box">
-                    <h4>📈 Balance de los Campeones</h4>
+                    <h4>⚡ Cuartos - Resultados Destacados</h4>
                     <div class="result-item">
-                        <span>Primer título juntos en 2026</span>
-                        <span>4º título mundial</span>
+                        <span class="winner">Tapia / Coello</span>
+                        <span>6-2, 6-4</span>
                     </div>
                     <div class="result-item">
-                        <span>Victorias en el circuito</span>
-                        <span>12-3 en 2026</span>
+                        <span class="vs">vs</span>
+                        <span>Pincho / Campi</span>
+                    </div>
+                    <div style="margin-top: 0.5rem;"></div>
+                    <div class="result-item">
+                        <span class="winner">Lebrón / Augsburger</span>
+                        <span>6-3, 6-2</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="vs">vs</span>
+                        <span>Sanz / Coki</span>
                     </div>
                 </div>
+                
+                <h3>👩 Mujeres: Belllangotti y González conquistan Bruselas</h3>
+                
+                <p>
+                    En la categoría femenina, <strong>Valentina Brigante</strong> y <strong>Victoria González</strong> se alzaron con el título 
+                    en una final emocionante contra las favoritas del torneo. Las italianas demostraron un nivel excepcional 
+                    durante todo el semana, superando a todas sus rivales sin perder un solo set.
+                </p>
+                
+                <div class="results-box">
+                    <h4>🏅 Final Femenina</h4>
+                    <div class="result-item">
+                        <span class="winner">🇮🇹 Brigante / González</span>
+                        <span>6-3, 6-4</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="vs">vs</span>
+                        <span>Osoro / Iglesias</span>
+                    </div>
+                </div>
+                
+                <h3>💰 Distribución de Premios</h3>
+                
+                <div class="results-box">
+                    <div class="result-item">
+                        <span class="winner">🥇 Lebrón / Augsburger</span>
+                        <span>€35,000 + 600 pts</span>
+                    </div>
+                    <div class="result-item">
+                        <span>🥈 Tapia / Coello</span>
+                        <span>€14,200 + 360 pts</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Semifinalistas</span>
+                        <span>€9,800 + 180 pts</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Cuartos</span>
+                        <span>€5,500 + 60 pts</span>
+                    </div>
+                </div>
+                
+                <h3>📈 Balance de los Campeones</h3>
+                
+                <p>
+                    Con esta victoria, Lebrón y Augsburger suman su <strong>4º título juntos como pareja</strong> y envían 
+                    un mensaje claro al circuito: están готовы para luchar por el número uno.
+                </p>
+                <p>
+                    "Venimos a ganar cada partido" fue el mensaje que dejaron los campeones tras alzarse con el título en Bruselas.
+                </p>
+                
+                <h3>🏟️ El Torneo</h3>
+                
+                <p>
+                    El Brussels P2 2026 se celebró del 19 al 26 de abril en el exclusivo <strong>Tour & Taxis Gare Maritime</strong>, 
+                    en Bruselas, Bélgica. El torneo reunió a las mejores parejas del mundo en una de las sedes más 
+                    impresionantes del pádel europeo, con la pista central como escenario principal de las finales.
+                </p>
                 
                 <div class="next-tournament">
                     <h3>🎾 Próximo Torneo</h3>
