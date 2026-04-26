@@ -1,0 +1,17 @@
+{
+  "source": "FIP Official",
+  "last_updated": "2026-04-26",
+  "url_male": "https://www.padelfip.com/ranking-male/",
+  "url_female": "https://www.padelfip.com/ranking-female/",
+  "male_pairs": [
+    {"rank": 1, "player1": "Agustin Tapia", "country1": "ARG", "player2": "Arturo Coello", "country2": "ESP", "points": 20910},
+    {"rank": 2, "player1": "Alejandro Galan", "country1": "ESP", "player2": "Federico Chingotto", "country2": "ARG", "points": 17760},
+    {"rank": 3, "player1": "Franco Stupaczuk", "country1": "ARG", "player2": "Miguel Yanguas", "country2": "ESP", "points": 6675},
+    {"rank": 4, "player1": "Juan Lebron", "country1": "ESP", "player2": "Leo Augsburger", "country2": "ARG", "points": 6660}
+  ],
+  "female_pairs": [
+    {"rank": 1, "player1": "Paula Josemaria", "country1": "ARG", "player2": "Bea Gonzalez", "country2": "ESP", "points": 17660},
+    {"rank": 2, "player1": "Delfi Brea", "country1": "ARG", "player2": "Gemma Triay", "country2": "ESP", "points": 17300},
+    {"rank": 3, "player1": "Ariana Sanchez", "country1": "ESP", "player2": "Claudia Escrig", "country2": "ESP", "points": 14210}
+  ]
+}

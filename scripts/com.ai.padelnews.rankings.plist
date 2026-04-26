@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ai.padelnews.rankings</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/cristian/Sites/padel_news/scripts/update_rankings.py</string>
+    </array>
+    
+    <key>RunAtLoad</key>
+    <false/>
+    
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Weekday</key>
+            <integer>0</integer>
+            <key>Hour</key>
+            <integer>20</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/cristian/Sites/padel_news/scripts/rankings_update.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/cristian/Sites/padel_news/scripts/rankings_update.err</string>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PYTHONPATH</key>
+        <string>/Users/cristian/Sites/padel_news</string>
+    </dict>
+</dict>
+</plist>
