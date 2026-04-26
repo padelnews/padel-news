@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Padel News AI - Centro de Control de Agentes</title>
+    <link rel="stylesheet" href="css/style-futuristic.css">
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --secondary: #bf00ff;
+            --success: #00ff88;
+            --warning: #ffd700;
+            --danger: #ff4444;
+            --glass-bg: rgba(20, 20, 40, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a2e 100%);
+            min-height: 100vh;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 0 0 20px var(--primary);
+        }
+        
+        .status-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-dot.active { background: var(--success); }
+        .status-dot.inactive { background: var(--danger); }
+        .status-dot.warning { background: var(--warning); }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+        
+        /* ORGANIZATION VIEW */
+        .org-container {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .org-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        /* AGENT COMMUNICATION FLOW */
+        .flow-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .flow-diagram::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0,212,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .central-hub {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 0 40px var(--primary);
+            z-index: 2;
+            animation: hub-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes hub-pulse {
+            0%, 100% { box-shadow: 0 0 40px var(--primary); }
+            50% { box-shadow: 0 0 60px var(--primary), 0 0 80px var(--secondary); }
+        }
+        
+        .hub-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+        
+        .connection-lines {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        
+        .agents-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            z-index: 2;
+        }
+        
+        /* AGENT CARDS */
+        .agent-card {
+            width: 180px;
+            background: var(--glass-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .agent-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .agent-name {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+        
+        .agent-task {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            min-height: 2rem;
+        }
+        
+        .agent-status {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .agent-status.active {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--success);
+        }
+        
+        .agent-status.waiting {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--warning);
+        }
+        
+        .agent-status.inactive {
+            background: rgba(255, 68, 68, 0.2);
+            color: var(--danger);
+        }
+        
+        .agent-schedule {
+            font-size: 0.65rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+        
+        /* CONNECTION LINES SVG */
+        .flow-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .flow-line {
+            stroke: var(--primary);
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+            fill: none;
+            opacity: 0.5;
+            animation: flow-animation 2s linear infinite;
+        }
+        
+        @keyframes flow-animation {
+            from { stroke-dashoffset: 0; }
+            to { stroke-dashoffset: -20; }
+        }
+        
+        /* DETAIL PANEL */
+        .detail-panel {
+            display: none;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .detail-panel.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .detail-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .detail-icon {
+            font-size: 3rem;
+        }
+        
+        .detail-title h2 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .detail-title p {
+            margin: 0.3rem 0 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .close-btn {
+            margin-left: auto;
+            background: rgba(255, 68, 68, 0.2);
+            border: none;
+            color: var(--danger);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .close-btn:hover {
+            background: rgba(255, 68, 68, 0.4);
+        }
+        
+        .detail-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .detail-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .detail-section h3 {
+            color: var(--primary);
+            margin: 0 0 1rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .detail-section li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--glass-border);
+            font-size: 0.85rem;
+        }
+        
+        .detail-section li:last-child {
+            border-bottom: none;
+        }
+        
+        /* LIVE LOG */
+        .live-log {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+        }
+        
+        .log-entry {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .log-entry .time {
+            color: var(--gray);
+            margin-right: 0.5rem;
+        }
+        
+        .log-entry.success { color: var(--success); }
+        .log-entry.error { color: var(--danger); }
+        .log-entry.info { color: var(--primary); }
+        
+        /* VIEW TOGGLE */
+        .view-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .view-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--gray);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .view-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .view-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+        }
+        
+        /* GRID VIEW */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+        
+        /* FOOTER */
+        .dashboard-footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 2rem;
+        }
+        
+        .refresh-info {
+            color: var(--primary);
+            margin-top: 0.5rem;
+        }
+        
+        /* Mini map for agents */
+        .agent-mini-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.7rem;
+            color: var(--gray);
+        }
+        
+        .flow-arrow {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>🎯 Centro de Control de Agentes</h1>
+        <p>Panel de organización y monitoreo en tiempo real</p>
+    </header>
+    
+    <div class="status-bar">
+        <div class="status-item">
+            <div class="status-dot active"></div>
+            <span>Agentes Activos: <strong id="active-count">5</strong></span>
+        </div>
+        <div class="status-item">
+            <div class="status-dot warning"></div>
+            <span>Esperando: <strong id="waiting-count">0</strong></span>
+        </div>
+        <div class="status-item">
+            <span>Última actualización: <strong id="last-update">--:--:--</strong></span>
+        </div>
+        <div class="status-item">
+            <span>Uptime: <strong id="uptime">00:00:00</strong></span>
+        </div>
+    </div>
+    
+    <div class="view-toggle">
+        <button class="view-btn active" onclick="showView('flow')">🔗 Vista de Organización</button>
+        <button class="view-btn" onclick="showView('grid')">📊 Vista de Cuadrícula</button>
+        <button class="view-btn" onclick="refreshDashboard()">🔄 Actualizar</button>
+    </div>
+    
+    <!-- ORGANIZATION FLOW VIEW -->
+    <div id="flow-view" class="org-container">
+        <h2 class="org-title">🔄 Arquitectura de Comunicación de Agentes</h2>
+        
+        <div class="flow-diagram">
+            <svg class="flow-svg" viewBox="0 0 600 600">
+                <!-- Connection lines will be drawn here -->
+                <line class="flow-line" x1="300" y1="80" x2="150" y2="200" />
+                <line class="flow-line" x1="300" y1="80" x2="300" y2="200" />
+                <line class="flow-line" x1="300" y1="80" x2="450" y2="200" />
+                <line class="flow-line" x1="150" y1="280" x2="100" y2="400" />
+                <line class="flow-line" x1="150" y1="280" x2="200" y2="400" />
+                <line class="flow-line" x1="300" y1="280" x2="300" y2="400" />
+                <line class="flow-line" x1="450" y1="280" x2="400" y2="400" />
+                <line class="flow-line" x1="450" y1="280" x2="500" y2="400" />
+            </svg>
+            
+            <div class="central-hub">
+                <div class="hub-label">🎯<br>Hub</div>
+            </div>
+            
+            <div class="agents-row" style="margin-top: 3rem;">
+                <!-- Primary Agents Row -->
+                <div class="agent-card" onclick="showAgentDetail('index')">
+                    <div class="agent-icon">📰</div>
+                    <div class="agent-name">Index Agent</div>
+                    <div class="agent-task">Actualiza página principal</div>
+                    <span class="agent-status active">● Activo</span>
+                    <div class="agent-schedule">⏰ 08:00 & 20:00</div>
+                    <div class="agent-mini-flow">
+                        <span>📄</span><span class="flow-arrow">→</span><span>index.html</span>
+                    </div>
+                </div>
+                
+                <div class="agent-card" onclick="showAgentDetail('calendar')">
+                    <div class="agent-icon">📅</div>
+                    <div class="agent-name">Calendar Agent</div>
+                    <div class="agent-task">Actualiza estados de torneos</div>
+                    <span class="agent-status active">● Activo</span>
+                    <div class="agent-schedule">⏰ 08:00 & 20:00</div>
+                    <div class="agent-mini-flow">
+                        <span>📄</span><span class="flow-arrow">→</span><span>torneos.html</span>
+                    </div>
+                </div>
+                
+                <div class="agent-card" onclick="showAgentDetail('live')">
+                    <div class="agent-icon">⚡</div>
+                    <div class="agent-name">Live Score</div>
+                    <div class="agent-task">Scores en tiempo real</div>
+                    <span class="agent-status waiting">◐ Esperando</span>
+                    <div class="agent-schedule">⏰ Cada 2 horas</div>
+                    <div class="agent-mini-flow">
+                        <span>🌐</span><span class="flow-arrow">→</span><span>FIP API</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agents-row">
+                <!-- Secondary Agents Row -->
+                <div class="agent-card" onclick="showAgentDetail('rankings')">
+                    <div class="agent-icon">🏆</div>
+                    <div class="agent-name">Rankings Agent</div>
+                    <div class="agent-task">Actualiza rankings M/F</div>
+                    <span class="agent-status waiting">◐ Esperando</span>
+                    <div class="agent-schedule">⏰ Domingo 20:00</div>
+                    <div class="agent-mini-flow">
+                        <span>📄</span><span class="flow-arrow">→</span><span>rankings.html</span>
+                    </div>
+                </div>
+                
+                <div class="agent-card" onclick="showAgentDetail('torneos')">
+                    <div class="agent-icon">🎯</div>
+                    <div class="agent-name">Torneos Agent</div>
+                    <div class="agent-task">Gestiona página torneos</div>
+                    <span class="agent-status active">● Activo</span>
+                    <div class="agent-schedule">⏰ 08:00 & 20:00</div>
+                    <div class="agent-mini-flow">
+                        <span>📄</span><span class="flow-arrow">→</span><span>torneos.html</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DATA LAYER -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <h3 style="color: var(--gray); font-size: 1rem; margin-bottom: 1rem;">📦 CAPA DE DATOS</h3>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="background: var(--glass-bg); padding: 1rem 2rem; border-radius: 8px; border: 1px solid var(--glass-border);">
+                    <span style="font-size: 1.5rem;">📊</span>
+                    <div style="font-weight: 600; margin-top: 0.3rem;">tournament_state.json</div>
+                    <div style="font-size: 0.75rem; color: var(--gray);">Estado actual del torneo</div>
+                </div>
+                <div style="background: var(--glass-bg); padding: 1rem 2rem; border-radius: 8px; border: 1px solid var(--glass-border);">
+                    <span style="font-size: 1.5rem;">📈</span>
+                    <div style="font-weight: 600; margin-top: 0.3rem;">tournament_progress.json</div>
+                    <div style="font-size: 0.75rem; color: var(--gray);">Resultados por ronda</div>
+                </div>
+                <div style="background: var(--glass-bg); padding: 1rem 2rem; border-radius: 8px; border: 1px solid var(--glass-border);">
+                    <span style="font-size: 1.5rem;">🏅</span>
+                    <div style="font-weight: 600; margin-top: 0.3rem;">rankings_data.json</div>
+                    <div style="font-size: 0.75rem; color: var(--gray);">Rankings oficiales FIP</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- OUTPUT LAYER -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <h3 style="color: var(--gray); font-size: 1rem; margin-bottom: 1rem;">🌐 CAPA DE SALIDA (Páginas Web)</h3>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(191,0,255,0.2)); padding: 1rem 2rem; border-radius: 8px; border: 1px solid var(--primary);">
+                    <span style="font-size: 1.5rem;">🏠</span>
+                    <div style="font-weight: 600; margin-top: 0.3rem;">index.html</div>
+                    <div style="font-size: 0.75rem; color: var(--gray);">Página principal</div>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(191,0,255,0.2)); padding: 1rem 2rem; border-radius: 8px; border: 1px solid var(--primary);">
+                    <span style="font-size: 1.5rem;">📋</span>
+                    <div style="font-weight: 600; margin-top: 0.3rem;">torneos.html</div>
+                    <div style="font-size: 0.75rem; color: var(--gray);">Calendario y ganadores</div>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(191,0,255,0.2)); padding: 1rem 2rem; border-radius: 8px; border: 1px solid var(--primary);">
+                    <span style="font-size: 1.5rem;">🏆</span>
+                    <div style="font-weight: 600; margin-top: 0.3rem;">rankings.html</div>
+                    <div style="font-size: 0.75rem; color: var(--gray);">Rankings M/F</div>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(191,0,255,0.2)); padding: 1rem 2rem; border-radius: 8px; border: 1px solid var(--primary);">
+                    <span style="font-size: 1.5rem;">⚽</span>
+                    <div style="font-weight: 600; margin-top: 0.3rem;">resultados.html</div>
+                    <div style="font-size: 0.75rem; color: var(--gray);">Resultados</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- GRID VIEW -->
+    <div id="grid-view" class="agents-grid" style="display: none;">
+        <!-- Index Agent -->
+        <div class="agent-card" onclick="showAgentDetail('index')">
+            <div class="agent-icon">📰</div>
+            <div class="agent-name">Index Agent</div>
+            <div class="agent-task">Actualiza la página principal con el último torneo y estadísticas</div>
+            <span class="agent-status active">● Activo</span>
+            <div class="agent-schedule">⏰ 08:00 & 20:00</div>
+        </div>
+        
+        <!-- Calendar Agent -->
+        <div class="agent-card" onclick="showAgentDetail('calendar')">
+            <div class="agent-icon">📅</div>
+            <div class="agent-name">Calendar Agent</div>
+            <div class="agent-task">Actualiza automáticamente los estados: En Curso, Finalizado, Próximo</div>
+            <span class="agent-status active">● Activo</span>
+            <div class="agent-schedule">⏰ 08:00 & 20:00</div>
+        </div>
+        
+        <!-- Live Score Agent -->
+        <div class="agent-card" onclick="showAgentDetail('live')">
+            <div class="agent-icon">⚡</div>
+            <div class="agent-name">Live Score Agent</div>
+            <div class="agent-task">Descarga scores de FIP durante torneos en vivo</div>
+            <span class="agent-status waiting">◐ Esperando</span>
+            <div class="agent-schedule">⏰ Cada 2 horas</div>
+        </div>
+        
+        <!-- Rankings Agent -->
+        <div class="agent-card" onclick="showAgentDetail('rankings')">
+            <div class="agent-icon">🏆</div>
+            <div class="agent-name">Rankings Agent</div>
+            <div class="agent-task">Actualiza rankings masculino y femenino desde FIP</div>
+            <span class="agent-status waiting">◐ Esperando</span>
+            <div class="agent-schedule">⏰ Domingo 20:00</div>
+        </div>
+        
+        <!-- Torneos Agent -->
+        <div class="agent-card" onclick="showAgentDetail('torneos')">
+            <div class="agent-icon">🎯</div>
+            <div class="agent-name">Torneos Agent</div>
+            <div class="agent-task">Gestiona la página de torneos con ganadores</div>
+            <span class="agent-status active">● Activo</span>
+            <div class="agent-schedule">⏰ 08:00 & 20:00</div>
+        </div>
+    </div>
+    
+    <!-- DETAIL PANEL -->
+    <div id="detail-panel" class="detail-panel">
+        <div class="detail-header">
+            <div class="detail-icon" id="detail-icon">📰</div>
+            <div class="detail-title">
+                <h2 id="detail-name">Index Agent</h2>
+                <p id="detail-description">Agente de actualización de página principal</p>
+            </div>
+            <button class="close-btn" onclick="closeDetail()">✕ Cerrar</button>
+        </div>
+        
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>📋 Misión</h3>
+                <p id="detail-mission">Actualiza la página index.html con el último torneo, ganador y estadísticas.</p>
+            </div>
+            
+            <div class="detail-section">
+                <h3>⏰ Schedule</h3>
+                <ul id="detail-schedule">
+                    <li>08:00 - Ejecución matutina</li>
+                    <li>20:00 - Ejecución vespertina</li>
+                </ul>
+            </div>
+            
+            <div class="detail-section">
+                <h3>📥 Inputs</h3>
+                <ul id="detail-inputs">
+                    <li>tournament_state.json</li>
+                    <li>上一 tournament_progress.json</li>
+                </ul>
+            </div>
+            
+            <div class="detail-section">
+                <h3>📤 Outputs</h3>
+                <ul id="detail-outputs">
+                    <li>index.html (sección torneo)</li>
+                    <li>Git commit + push</li>
+                </ul>
+            </div>
+            
+            <div class="detail-section">
+                <h3>🔗 Dependencias</h3>
+                <ul id="detail-deps">
+                    <li>tournament_state.json</li>
+                </ul>
+            </div>
+            
+            <div class="detail-section">
+                <h3>📊 Estado Actual</h3>
+                <ul id="detail-status">
+                    <li><span style="color: var(--success);">●</span> Estado: Activo</li>
+                    <li>Última ejecución: --</li>
+                    <li>Próxima: --</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="detail-section" style="margin-top: 1rem;">
+            <h3>📝 Log de Actividad</h3>
+            <div class="live-log" id="detail-log">
+                <div class="log-entry info"><span class="time">--:--:--</span>Iniciando monitoreo...</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="dashboard-footer">
+        <div>🎯 Padel News AI - Sistema de Agentes Automáticos</div>
+        <div class="refresh-info">🔄 Actualiza cada 30 segundos | Conexión: <span id="connection-status">● En línea</span></div>
+        <div style="margin-top: 0.5rem; font-size: 0.75rem;">
+            <a href="index.html" style="color: var(--primary);">← Volver al sitio</a> | 
+            <a href="torneos.html" style="color: var(--primary);">Torneos</a> | 
+            <a href="rankings.html" style="color: var(--primary);">Rankings</a>
+        </div>
+    </footer>
+    
+    <script>
+        // Agent data
+        const agentsData = {
+            index: {
+                icon: '📰',
+                name: 'Index Agent',
+                description: 'Agente de actualización de página principal',
+                mission: 'Lee tournament_state.json y genera HTML con el último torneo (campeón, runner-up, score, stats). Actualiza la sección "TORNEO DESTACADO" en index.html.',
+                schedule: ['08:00 - Ejecución matutina', '20:00 - Ejecución vespertina'],
+                inputs: ['tournament_state.json', 'tournament_progress.json'],
+                outputs: ['index.html (sección torneo)', 'Git commit + push automático'],
+                deps: ['Tournament State Manager']
+            },
+            calendar: {
+                icon: '📅',
+                name: 'Calendar Agent',
+                description: 'Actualizador automático de estados de torneos',
+                mission: 'Compara fechas actuales con calendario de torneos. Cambia badges: "En Curso" (durante torneo), "Finalizado" (pasado), "Próximo" (futuro). Añade sección de ganador.',
+                schedule: ['08:00 - Verificación matutina', '20:00 - Verificación vespertina'],
+                inputs: ['tournament_state.json', 'Calendario interno (26 torneos)'],
+                outputs: ['torneos.html (badges y ganadores)', 'Git commit + push'],
+                deps: ['Index Agent (comparte estado)']
+            },
+            live: {
+                icon: '⚡',
+                name: 'Live Score Agent',
+                description: 'Agente de scores en tiempo real',
+                mission: 'Se conecta a FIP/Premier Padel API para obtener scores en vivo durante torneos. Actualiza resultados parciales y finales.',
+                schedule: ['Cada 2 horas durante torneo activo'],
+                inputs: ['FIP API (por implementar)', 'Premier Padel scores'],
+                outputs: ['index.html (resultados)', 'tournament_progress.json'],
+                deps: ['Internet connection', 'FIP API']
+            },
+            rankings: {
+                icon: '🏆',
+                name: 'Rankings Agent',
+                description: 'Actualizador de rankings oficiales',
+                mission: 'Descarga rankings oficiales FIP (masculino y femenino). Actualiza rankings.html con tabs M/F. Se ejecuta los domingos para reflejar cambios semanales.',
+                schedule: ['Domingo 20:00 - Actualización semanal'],
+                inputs: ['FIP Rankings API (por implementar)', 'rankings_data.json'],
+                outputs: ['rankings.html (tabs M/F)', 'Git commit + push'],
+                deps: ['FIP Official Data']
+            },
+            torneos: {
+                icon: '🎯',
+                name: 'Torneos Agent',
+                description: 'Gestor de página de torneos',
+                mission: 'Gestiona la página torneos.html. Muestra el último torneo con su ganador, stats y badge de estado. Complementa al Calendar Agent.',
+                schedule: ['08:00 - Actualización matutina', '20:00 - Actualización vespertina'],
+                inputs: ['tournament_state.json', 'last_tournament data'],
+                outputs: ['torneos.html (tarjeta winner)', 'Git commit + push'],
+                deps: ['Calendar Agent']
+            }
+        };
+        
+        let startTime = Date.now();
+        let selectedAgent = null;
+        
+        function showView(view) {
+            document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (view === 'flow') {
+                document.getElementById('flow-view').style.display = 'block';
+                document.getElementById('grid-view').style.display = 'none';
+            } else {
+                document.getElementById('flow-view').style.display = 'none';
+                document.getElementById('grid-view').style.display = 'grid';
+            }
+        }
+        
+        function showAgentDetail(agentId) {
+            const agent = agentsData[agentId];
+            if (!agent) return;
+            
+            selectedAgent = agentId;
+            
+            document.getElementById('detail-icon').textContent = agent.icon;
+            document.getElementById('detail-name').textContent = agent.name;
+            document.getElementById('detail-description').textContent = agent.description;
+            document.getElementById('detail-mission').textContent = agent.mission;
+            
+            const scheduleList = document.getElementById('detail-schedule');
+            scheduleList.innerHTML = agent.schedule.map(s => `<li>${s}</li>`).join('');
+            
+            const inputsList = document.getElementById('detail-inputs');
+            inputsList.innerHTML = agent.inputs.map(i => `<li>${i}</li>`).join('');
+            
+            const outputsList = document.getElementById('detail-outputs');
+            outputsList.innerHTML = agent.outputs.map(o => `<li>${o}</li>`).join('');
+            
+            const depsList = document.getElementById('detail-deps');
+            depsList.innerHTML = agent.deps.map(d => `<li>${d}</li>`).join('');
+            
+            // Generate sample logs
+            const logContainer = document.getElementById('detail-log');
+            logContainer.innerHTML = generateLogs(agentId);
+            
+            document.getElementById('detail-panel').classList.add('active');
+            document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function generateLogs(agentId) {
+            const now = new Date();
+            const logs = [];
+            
+            // Simulated recent activity
+            const activities = {
+                index: ['Lectura de tournament_state.json', 'Generando HTML del torneo', 'Actualizando index.html', 'Git push completado'],
+                calendar: ['Verificando fechas de torneos', 'Brussels P2: ✓ Finalizado', 'Asunción P1: Próximo', 'Actualizando badges'],
+                live: ['Esperando torneo activo...', 'Conexión a FIP API', 'No hay torneo en curso', 'Modo standby'],
+                rankings: ['Esperando actualización semanal...', 'FIP API no disponible', 'Usando datos en cache', 'Próxima: Domingo'],
+                torneos: ['Cargando último torneo', 'Brussels P2 detectado', 'Añadiendo ganador: Lebrón/Augsburger', 'Commit exitoso']
+            };
+            
+            const agentActivities = activities[agentId] || ['Sin actividad reciente'];
+            
+            for (let i = 0; i < 4; i++) {
+                const time = new Date(now - (i * 15 * 60000));
+                const timeStr = time.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                const isError = i === 2 && Math.random() > 0.7;
+                const isSuccess = i === 0 || (i === 3 && agentId !== 'live');
+                
+                logs.push(`<div class="log-entry ${isError ? 'error' : (isSuccess ? 'success' : 'info')}">
+                    <span class="time">${timeStr}</span>${agentActivities[i % agentActivities.length]}
+                </div>`);
+            }
+            
+            return logs.join('');
+        }
+        
+        function closeDetail() {
+            document.getElementById('detail-panel').classList.remove('active');
+            selectedAgent = null;
+        }
+        
+        function refreshDashboard() {
+            // Update timestamp
+            const now = new Date();
+            document.getElementById('last-update').textContent = now.toLocaleTimeString('es-ES');
+            
+            // Update uptime
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const hours = Math.floor(elapsed / 3600).toString().padStart(2, '0');
+            const minutes = Math.floor((elapsed % 3600) / 60).toString().padStart(2, '0');
+            const seconds = (elapsed % 60).toString().padStart(2, '0');
+            document.getElementById('uptime').textContent = `${hours}:${minutes}:${seconds}`;
+            
+            // Refresh logs if detail panel is open
+            if (selectedAgent) {
+                const logContainer = document.getElementById('detail-log');
+                logContainer.innerHTML = generateLogs(selectedAgent);
+            }
+        }
+        
+        // Update every second
+        setInterval(refreshDashboard, 1000);
+        
+        // Initial update
+        refreshDashboard();
+    </script>
+</body>
+</html>
