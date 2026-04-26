@@ -1,28 +1,160 @@
-<!-- Article: Brussels P2 2026 Summary -->
-<article class="tournament-summary">
-    <div class="summary-header">
-        <h2>🏆 Brussels P2 2026</h2>
-        <p class="summary-date">Recently</p>
-    </div>
-    
-    <div class="summary-content">
-        <h3>Resultados Finales</h3>
-        <div class="final-result">
-            <p class="champions">
-                <strong>🏆 CAMPEONES:</strong> LEBRÓN / AUGSBURGER
-            </p>
-            <p class="score">Resultado: 2-6 / 6-3 / 6-3</p>
-        </div>
-        
-        <h3>Semifinalistas</h3>
-        <ul class="semifinalists">
-            <li>Tapia / Coello</li>
-            <li>Stupaczuk / Yanguas</li>
-        </ul>
-    </div>
-    
-    <div class="summary-meta">
-        <span>📅 Actualizado: 26/04/2026 18:59</span>
-        <span>📍 Fuente: Premier Padel</span>
-    </div>
-</article>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brussels P2 2026 - Lebrón/Augsburger Campeses | Padel News Pro</title>
+    <meta name="description" content="Resumen completo del Brussels P2 2026: Lebrón y Augsburger remontan y se proclaman campeones tras derrotar a Tapia/Coello.">
+    <link rel="stylesheet" href="../css/style-futuristic.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --accent: #bf00ff;
+            --bg-dark: #0a0a0f;
+            --glass-bg: rgba(26, 26, 46, 0.8);
+            --glass-border: rgba(0, 212, 255, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg-dark); color: #fff; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 1.5rem 2rem; border-bottom: 2px solid var(--primary); }
+        header h1 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        nav { background: rgba(0,0,0,0.5); padding: 1rem 2rem; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s; }
+        nav a:hover, nav a.active { background: var(--primary); color: #000; }
+        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .article-badge { display: inline-block; background: linear-gradient(135deg, #00d4ff, #bf00ff); color: #000; padding: 0.3rem 1rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-title { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; }
+        .article-meta { color: #888; font-size: 1rem; margin-bottom: 1.5rem; }
+        .article-hero { width: 100%; max-height: 400px; object-fit: cover; border-radius: 16px; margin: 1.5rem 0; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+        .article-content { font-size: 1.1rem; color: #ddd; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h3 { color: var(--primary); font-size: 1.4rem; margin: 2rem 0 1rem; }
+        .highlight-box { background: rgba(191, 0, 255, 0.15); border: 1px solid var(--accent); border-radius: 16px; padding: 1.5rem; margin: 2rem 0; }
+        .highlight-box h4 { color: var(--accent); margin-bottom: 1rem; }
+        .results-box { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem; margin: 2rem 0; backdrop-filter: blur(10px); }
+        .results-box h4 { color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .result-item { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .result-item:last-child { border-bottom: none; }
+        .result-item .winner { color: var(--primary); font-weight: 600; }
+        .result-item .vs { color: #888; font-style: italic; }
+        .next-tournament { background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 255, 136, 0.2)); border: 2px solid var(--primary); border-radius: 16px; padding: 2rem; margin: 3rem 0; text-align: center; }
+        .next-tournament h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem; }
+        .next-tournament p { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .back-btn { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 2rem; transition: all 0.3s; }
+        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3); }
+        footer { text-align: center; padding: 2rem; color: #666; margin-top: 3rem; }
+        @media (max-width: 768px) { .article-title { font-size: 1.8rem; } nav { gap: 1rem; } main { padding: 1rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏓 Padel News Pro</h1>
+    </header>
+    <nav>
+        <a href="../index.html">INICIO</a>
+        <a href="../actualidad.html" class="active">ACTUALIDAD</a>
+        <a href="../resultados.html">RESULTADOS</a>
+        <a href="../torneos.html">TORNEOS</a>
+    </nav>
+    <main>
+        <article>
+            <div class="article-header">
+                <span class="article-badge">🏆 CAMPEONES</span>
+                <h1 class="article-title">Brussels P2 2026: Lebrón y Augsburger remontan el título ante Tapia y Coello</h1>
+                <p class="article-meta">📅 19-26 Abril 2026 • 📍 Tour & Taxis Gare Maritime, Bruselas, Bélgica • 🏆 €264,534</p>
+            </div>
+            
+            <figure style="text-align: center;">
+                <img src="../images/brussels-final.jpg" alt="Lebrón y Augsburger celebran en Brussels" class="article-hero" onerror="this.style.display='none'">
+                <figcaption>🏟️ Lebrón y Augsburger levantan el trofeo del Brussels P2 2026</figcaption>
+            </figure>
+            
+            <div class="article-content">
+                <p>
+                    <strong>Juan Lebrón</strong> y <strong>Leo Augsburger</strong> han logrado una victoria histórica en el Brussels P2 2026, 
+                    remontando un set en contra para derrotar a los número uno del mundo <strong>Arturo Coello</strong> y 
+                    <strong>Agustín Tapia</strong> con un marcador de 2-6, 6-3, 6-3 en una final de近乎 dos horas.
+                </p>
+                
+                <div class="highlight-box">
+                    <h4>🔥 La Remontada Perfecta</h4>
+                    <p>
+                        El guión no podía haber comenzado peor para Lebrón y Augsburger. Tapia y Coello, en un nivel excepcional, 
+                        dominaron el primer set con un 6-2 que parecía sentenciar el partido. Pero la dupla hispano-argentina 
+                        reacción con una fuerza mentale increíble.
+                    </p>
+                    <p>
+                        En el segundo set, Lebrón/Augsburger cambiaron su estrategia, apretando el ritmo y forzando errores 
+                        de sus rivales. El 6-3 del segundo set selló la igualada.
+                    </p>
+                    <p>
+                        El set decisivo fue una batalla de igual a igual hasta el 3-3, momento en que Lebrón y Augsburger 
+                        encontraron su mejor nivel para cerrar con un 6-3 definitivo.
+                    </p>
+                </div>
+                
+                <h3>📊 Resultados del Torneo</h3>
+                
+                <div class="results-box">
+                    <h4>🏅 Final Masculina</h4>
+                    <div class="result-item">
+                        <span class="winner">🇪🇸 Lebrón / 🇦🇷 Augsburger</span>
+                        <span>2-6, 6-3, 6-3</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="vs">vs</span>
+                        <span>🇪🇸 Tapia / 🇦🇷 Coello</span>
+                    </div>
+                </div>
+                
+                <div class="results-box">
+                    <h4>⚡ Semifinales</h4>
+                    <div class="result-item">
+                        <span class="winner">🥇 Tapia / Coello</span>
+                        <span>6-4, 6-3</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="vs">vs</span>
+                        <span>🇦🇷 Stupaczuk / 🇪🇸 Yanguas</span>
+                    </div>
+                    <div style="margin-top: 0.5rem;"></div>
+                    <div class="result-item">
+                        <span class="winner">🥈 Lebrón / Augsburger</span>
+                        <span>6-4, 6-4</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="vs">vs</span>
+                        <span>🇪🇸 Galán / 🇦🇷 Chingotto</span>
+                    </div>
+                </div>
+                
+                <div class="results-box">
+                    <h4>📈 Balance de los Campeones</h4>
+                    <div class="result-item">
+                        <span>Primer título juntos en 2026</span>
+                        <span>4º título mundial</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Victorias en el circuito</span>
+                        <span>12-3 en 2026</span>
+                    </div>
+                </div>
+                
+                <div class="next-tournament">
+                    <h3>🎾 Próximo Torneo</h3>
+                    <p><strong>Paraguay Asunción P2</strong></p>
+                    <p>📅 Mayo 2026 • 📍 Asunción, Paraguay</p>
+                    <a href="../torneos.html" class="back-btn">Ver Calendario →</a>
+                </div>
+                
+                <a href="../actualidad.html" class="back-btn">← Volver a Actualidad</a>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>© 2026 Padel News Pro | Powered by Local AI</p>
+    </footer>
+</body>
+</html>
