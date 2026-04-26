@@ -1,0 +1,13 @@
+{
+  "current_tournament": {
+    "name": "Asunción P1",
+    "location": "Paraguay",
+    "start_date": "2026-05-04",
+    "end_date": "2026-05-10",
+    "prize": "$200,000",
+    "category": "P1"
+  },
+  "status": "upcoming",
+  "last_index_update": "",
+  "next_tournament_after": "Buenos Aires P1"
+}
