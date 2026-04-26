@@ -6,6 +6,7 @@
     <title>Padel News Pro | Premier Padel Tour 2026</title>
     <meta name="description" content="Tu portal profesional del Premier Padel Tour. Resultados, rankings y noticias en tiempo real.">
     <link rel="stylesheet" href="css/style-futuristic.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -33,150 +34,206 @@
     
     <main class="container">
         
-        <!-- HERO: Ultimo campeón + estado -->
-        <section class="hero" style="padding: 2rem; margin-bottom: 2rem;">
-            <div style="display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center;">
-                <div>
-                    <span style="background: var(--accent); color: #000; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 700; font-size: 0.8rem;">🏆 ÚLTIMO TORNEO</span>
-                    <h2 style="margin: 1rem 0 0.5rem; font-size: 1.8rem;">Brussels P2 2026</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">
-                        <strong>Lebrón / Augsburger</strong> 🏆
-                    </p>
-                    <p style="color: var(--gray);">
-                        2-6, 6-3, 6-3 vs Tapia/Coello
-                    </p>
+        <!-- ULTIMO TORNEO - VISTOSO -->
+        <section style="background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(191,0,255,0.15)); border-radius: 16px; overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
+            
+            <!-- Header del torneo -->
+            <div style="background: linear-gradient(90deg, #00d4ff, #bf00ff); padding: 1rem 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <span style="background: #000; color: #fff; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">🏆 ÚLTIMO TORNEO</span>
+                        <h2 style="margin: 0.5rem 0 0; color: #fff;">Brussels P2 2026</h2>
+                    </div>
+                    <div style="text-align: right; color: #fff;">
+                        <div style="font-size: 0.85rem; opacity: 0.8;">🇧🇪 Bélgica</div>
+                        <div style="font-size: 0.85rem; opacity: 0.8;">Abril 2026</div>
+                    </div>
                 </div>
-                <div style="text-align: center;">
-                    <img src="images/banners/brussels-banner.jpg" alt="Brussels Champions" style="width: 180px; border-radius: 12px; box-shadow: var(--shadow);">
+            </div>
+            
+            <!-- Contenido del torneo -->
+            <div style="padding: 1.5rem;">
+                
+                <!-- Resultado final destacado -->
+                <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+                    <div style="font-size: 0.9rem; color: var(--primary); margin-bottom: 1rem; font-weight: 600;">🏆 CAMPEONES 🏆</div>
+                    
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                        <!-- Ganador -->
+                        <div style="text-align: center;">
+                            <img src="images/players/lebron.jpg" alt="Lebrón" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid gold;" onerror="this.src='https://placehold.co/70x70/ffd700/000?text=L'">
+                            <div style="font-weight: 700; margin-top: 0.5rem;">Juan Lebrón</div>
+                            <div style="font-size: 0.8rem; color: var(--gray);">🇪🇸 España</div>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <img src="images/players/augsburger.jpg" alt="Augsburger" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid gold;" onerror="this.src='https://placehold.co/70x70/ffd700/000?text=A'">
+                            <div style="font-weight: 700; margin-top: 0.5rem;">Leo Augsburger</div>
+                            <div style="font-size: 0.8rem; color: var(--gray);">🇦🇷 Argentina</div>
+                        </div>
+                        
+                        <!-- vs + Score -->
+                        <div style="background: rgba(191,0,255,0.3); border-radius: 12px; padding: 1rem 1.5rem;">
+                            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent);">VS</div>
+                            <div style="font-size: 1.8rem; font-weight: 700; margin-top: 0.5rem;">2-1</div>
+                            <div style="font-size: 0.85rem; color: var(--gray);">6-3 (Set 3)</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(0,212,255,0.2); border-radius: 8px;">
+                        <span style="font-size: 0.9rem;">📍 Final: 2-6, 6-3, 6-3 ante Tapia/Coello</span>
+                    </div>
+                </div>
+                
+                <!-- Stats del torneo -->
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">💰</div>
+                        <div style="font-weight: 700; color: var(--primary);">$35,000</div>
+                        <div style="font-size: 0.75rem; color: var(--gray);">Premio pareja ganadora</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🎾</div>
+                        <div style="font-weight: 700; color: var(--primary);">32</div>
+                        <div style="font-size: 0.75rem; color: var(--gray);">Parejas participantes</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">👁️</div>
+                        <div style="font-weight: 700; color: var(--primary);">2,847</div>
+                        <div style="font-size: 0.75rem; color: var(--gray);">Espectadores semana</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🏟️</div>
+                        <div style="font-weight: 700; color: var(--primary);">Pista Central</div>
+                        <div style="font-size: 0.75rem; color: var(--gray);">Royal Paddel Club</div>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <!-- 3 COLUMNAS: Resultados | Rankings Mini | Próximo -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        <!-- VIDEO + REDBULL TV -->
+        <section style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
             
-            <!-- RESULTADOS RECIENTES -->
-            <section style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                    🏆 Resultados
-                </h3>
-                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                    <div style="padding: 0.8rem; background: rgba(255,215,0,0.1); border-radius: 8px; border-left: 3px solid gold;">
-                        <div style="font-weight: 600;">🇧🇪 Brussels P2</div>
-                        <div style="font-size: 0.95rem;">Lebrón/Augsburger <span style="color: var(--primary);">🏆</span></div>
-                        <div style="color: var(--gray); font-size: 0.85rem;">2-6, 6-3, 6-3</div>
-                    </div>
-                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <div style="font-weight: 600;">🇸🇦 Riyadh P1</div>
-                        <div style="font-size: 0.95rem;">Tapia/Coello <span style="color: var(--primary);">🏆</span></div>
-                        <div style="color: var(--gray); font-size: 0.85rem;">6-4, 6-2 vs Galán/Chingotto</div>
-                    </div>
-                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <div style="font-weight: 600;">🇪🇸 Gijón P2</div>
-                        <div style="font-size: 0.95rem;">Galán/Chingotto <span style="color: var(--primary);">🏆</span></div>
-                        <div style="color: var(--gray); font-size: 0.85rem;">7-5, 7-6 vs Tapia/Coello</div>
-                    </div>
-                </div>
-                <a href="resultados.html" style="display: block; text-align: center; margin-top: 1rem; color: var(--primary); font-weight: 600;">Ver todos →</a>
-            </section>
-            
-            <!-- RANKINGS TOP 3 -->
-            <section style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                    📊 Rankings
-                </h3>
-                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                    <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(255,215,0,0.1); border-radius: 8px;">
-                        <span style="font-size: 1.5rem;">🥇</span>
-                        <div style="flex: 1;">
-                            <strong>Tapia / Coello</strong>
-                            <div style="color: var(--gray); font-size: 0.85rem;">🇦🇷🇪🇸 20,910 pts</div>
-                        </div>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(192,192,192,0.1); border-radius: 8px;">
-                        <span style="font-size: 1.5rem;">🥈</span>
-                        <div style="flex: 1;">
-                            <strong>Galán / Chingotto</strong>
-                            <div style="color: var(--gray); font-size: 0.85rem;">🇪🇸🇦🇷 17,760 pts</div>
-                        </div>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(205,127,50,0.1); border-radius: 8px;">
-                        <span style="font-size: 1.5rem;">🥉</span>
-                        <div style="flex: 1;">
-                            <strong>Stupaczuk / Yanguas</strong>
-                            <div style="color: var(--gray); font-size: 0.85rem;">🇦🇷🇪🇸 6,675 pts</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="rankings.html" style="display: block; text-align: center; margin-top: 1rem; color: var(--primary); font-weight: 600;">Ver ranking completo →</a>
-            </section>
-            
-            <!-- PRÓXIMOS TORNEOS -->
-            <section style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                    📅 Próximos
-                </h3>
-                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                    <div style="padding: 0.8rem; background: rgba(0,212,255,0.1); border-radius: 8px; border-left: 3px solid var(--primary);">
-                        <div style="font-weight: 600;">🇵🇾 Asunción P1</div>
-                        <div style="color: var(--gray); font-size: 0.85rem;">04-10 Mayo</div>
-                        <div style="font-size: 0.85rem;">💰 $200,000 USD</div>
-                    </div>
-                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <div style="font-weight: 600;">🇦🇷 Buenos Aires P1</div>
-                        <div style="color: var(--gray); font-size: 0.85rem;">11-17 Mayo</div>
-                        <div style="font-size: 0.85rem;">💰 $200,000 USD</div>
-                    </div>
-                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <div style="font-weight: 600;">🇮🇹 Rome Major</div>
-                        <div style="color: var(--gray); font-size: 0.85rem;">01-07 Junio</div>
-                        <div style="font-size: 0.85rem;">💰 $300,000 USD</div>
-                    </div>
-                </div>
-                <a href="torneos.html" style="display: block; text-align: center; margin-top: 1rem; color: var(--primary); font-weight: 600;">Ver calendario →</a>
-            </section>
-        </div>
-        
-        <!-- ÚLTIMO VIDEO + LINKS RÁPIDOS -->
-        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-            
-            <!-- VIDEO -->
+            <!-- VIDEO HIGHLIGHTS -->
             <div style="background: var(--glass-bg); border-radius: 12px; overflow: hidden;">
-                <div style="background: linear-gradient(135deg, #1a1a1a, #333); padding: 1.5rem;">
-                    <h3 style="color: white; margin: 0;">🎬 Highlights</h3>
-                    <p style="color: #888; margin: 0.3rem 0 0; font-size: 0.9rem;">Brussels P2 2026 - Lo mejor del torneo</p>
+                <div style="padding: 1rem 1.5rem; background: linear-gradient(90deg, #00d4ff, #bf00ff);">
+                    <h3 style="margin: 0; color: #fff;">🎬 Highlights Brussels P2</h3>
                 </div>
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/WcFECVnSamQ" frameborder="0" allowfullscreen style="border: none;"></iframe>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                        src="https://www.youtube.com/embed/WcFECVnSamQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
                 <div style="padding: 1rem;">
-                    <a href="https://www.youtube.com/@PremierPadel" target="_blank" style="color: var(--primary); font-weight: 600;">▶️ Canal oficial Premier Padel</a>
+                    <p style="margin: 0 0 0.5rem; color: var(--gray); font-size: 0.9rem;">Revive los mejores momentos del torneo</p>
+                    <a href="actualidad.html" style="color: var(--primary); font-weight: 600;">📰 Más noticias del torneo →</a>
                 </div>
             </div>
             
-            <!-- LINKS RÁPIDOS -->
+            <!-- REDBULL TV + INFO -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                
+                <!-- Red Bull TV -->
+                <a href="https://www.redbull.com/es-es/tv" target="_blank" style="background: linear-gradient(135deg, #ff0000, #cc0000); border-radius: 12px; padding: 1.5rem; text-align: center; text-decoration: none; transition: transform 0.3s;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📺</div>
+                    <div style="font-weight: 700; color: #fff; font-size: 1.1rem;">Ver Padel en Directo</div>
+                    <div style="color: rgba(255,255,255,0.8); font-size: 0.85rem;">Red Bull TV •Partidos en vivo</div>
+                </a>
+                
+                <!-- Ver resultados -->
+                <a href="resultados.html" style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem; text-align: center; border: 1px solid var(--glass-border);">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏆</div>
+                    <div style="font-weight: 600; color: var(--primary);">Ver Resultados</div>
+                    <div style="color: var(--gray); font-size: 0.85rem;">Todos los cuadros y finales</div>
+                </a>
+                
+                <!-- Ver rankings -->
+                <a href="rankings.html" style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem; text-align: center; border: 1px solid var(--glass-border);">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
+                    <div style="font-weight: 600; color: var(--primary);">Ver Rankings</div>
+                    <div style="color: var(--gray); font-size: 0.85rem;">Clasificación por parejas</div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 3 COLUMNAS: Resultados + Rankings + Próximos -->
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            
+            <!-- RESULTADOS RECIENTES -->
             <div style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">⚡ Acceso Rápido</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
-                    <a href="rankings.html" style="background: rgba(0,212,255,0.1); padding: 1rem; border-radius: 8px; text-align: center; transition: all 0.3s;">
-                        <div style="font-size: 1.5rem;">📊</div>
-                        <div style="font-weight: 600;">Rankings</div>
-                        <div style="font-size: 0.8rem; color: var(--gray);">Por parejas</div>
-                    </a>
-                    <a href="resultados.html" style="background: rgba(191,0,255,0.1); padding: 1rem; border-radius: 8px; text-align: center; transition: all 0.3s;">
-                        <div style="font-size: 1.5rem;">🏆</div>
-                        <div style="font-weight: 600;">Resultados</div>
-                        <div style="font-size: 0.8rem; color: var(--gray);">Todos los torneos</div>
-                    </a>
-                    <a href="actualidad.html" style="background: rgba(255,215,0,0.1); padding: 1rem; border-radius: 8px; text-align: center; transition: all 0.3s;">
-                        <div style="font-size: 1.5rem;">📰</div>
-                        <div style="font-weight: 600;">Actualidad</div>
-                        <div style="font-size: 0.8rem; color: var(--gray);">Noticias</div>
-                    </a>
-                    <a href="chollos.html" style="background: rgba(0,255,100,0.1); padding: 1rem; border-radius: 8px; text-align: center; transition: all 0.3s;">
-                        <div style="font-size: 1.5rem;">🛒</div>
-                        <div style="font-weight: 600;">Chollos</div>
-                        <div style="font-size: 0.8rem; color: var(--gray);">Palas en oferta</div>
-                    </a>
+                <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem;">🏆 Resultados Recientes</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <div style="padding: 0.8rem; background: rgba(255,215,0,0.1); border-radius: 8px; border-left: 3px solid gold;">
+                        <div style="font-weight: 600; font-size: 0.9rem;">🇧🇪 Brussels P2</div>
+                        <div style="font-size: 0.95rem;">Lebrón/Augsburger <strong>🏆</strong></div>
+                        <div style="color: var(--gray); font-size: 0.8rem;">2-6, 6-3, 6-3</div>
+                    </div>
+                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <div style="font-weight: 600; font-size: 0.9rem;">🇸🇦 Riyadh P1</div>
+                        <div style="font-size: 0.95rem;">Tapia/Coello <strong>🏆</strong></div>
+                        <div style="color: var(--gray); font-size: 0.8rem;">6-4, 6-2</div>
+                    </div>
+                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <div style="font-weight: 600; font-size: 0.9rem;">🇪🇸 Gijón P2</div>
+                        <div style="font-size: 0.95rem;">Galán/Chingotto <strong>🏆</strong></div>
+                        <div style="color: var(--gray); font-size: 0.8rem;">7-5, 7-6</div>
+                    </div>
                 </div>
+                <a href="resultados.html" style="display: block; text-align: center; margin-top: 1rem; color: var(--primary); font-weight: 600; font-size: 0.9rem;">Ver todos los resultados →</a>
+            </div>
+            
+            <!-- RANKINGS TOP 3 -->
+            <div style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem;">📊 Ranking Masculino</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                    <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.6rem; background: rgba(255,215,0,0.1); border-radius: 8px;">
+                        <span style="font-size: 1.2rem;">🥇</span>
+                        <div style="flex: 1;">
+                            <strong style="font-size: 0.95rem;">Tapia / Coello</strong>
+                            <div style="color: var(--gray); font-size: 0.8rem;">🇦🇷🇪🇸 20,910 pts</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.6rem; background: rgba(192,192,192,0.1); border-radius: 8px;">
+                        <span style="font-size: 1.2rem;">🥈</span>
+                        <div style="flex: 1;">
+                            <strong style="font-size: 0.95rem;">Galán / Chingotto</strong>
+                            <div style="color: var(--gray); font-size: 0.8rem;">🇪🇸🇦🇷 17,760 pts</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.6rem; background: rgba(205,127,50,0.1); border-radius: 8px;">
+                        <span style="font-size: 1.2rem;">🥉</span>
+                        <div style="flex: 1;">
+                            <strong style="font-size: 0.95rem;">Stupaczuk / Yanguas</strong>
+                            <div style="color: var(--gray); font-size: 0.8rem;">🇦🇷🇪🇸 6,675 pts</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="rankings.html" style="display: block; text-align: center; margin-top: 1rem; color: var(--primary); font-weight: 600; font-size: 0.9rem;">Ver ranking completo →</a>
+            </div>
+            
+            <!-- PRÓXIMOS TORNEOS -->
+            <div style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem;">📅 Próximos Torneos</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <div style="padding: 0.8rem; background: rgba(0,212,255,0.1); border-radius: 8px; border-left: 3px solid var(--primary);">
+                        <div style="font-weight: 600; font-size: 0.9rem;">🇵🇾 Asunción P1</div>
+                        <div style="color: var(--gray); font-size: 0.8rem;">04-10 Mayo</div>
+                        <div style="font-size: 0.85rem;">💰 $200,000 USD</div>
+                    </div>
+                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <div style="font-weight: 600; font-size: 0.9rem;">🇦🇷 Buenos Aires P1</div>
+                        <div style="color: var(--gray); font-size: 0.8rem;">11-17 Mayo</div>
+                        <div style="font-size: 0.85rem;">💰 $200,000 USD</div>
+                    </div>
+                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                        <div style="font-weight: 600; font-size: 0.9rem;">🇮🇹 Rome Major</div>
+                        <div style="color: var(--gray); font-size: 0.8rem;">01-07 Junio</div>
+                        <div style="font-size: 0.85rem;">💰 $300,000 USD</div>
+                    </div>
+                </div>
+                <a href="torneos.html" style="display: block; text-align: center; margin-top: 1rem; color: var(--primary); font-weight: 600; font-size: 0.9rem;">Ver calendario completo →</a>
             </div>
         </section>
         
@@ -184,10 +241,8 @@
     
     <footer>
         <div class="container">
-            <p>© 2026 Padel News Pro | Datos: FIP Official | <a href="https://premierpadel.com" target="_blank">Premier Padel</a></p>
+            <p>© 2026 Padel News Pro | Datos: FIP Official | <a href="https://premierpadel.com" target="_blank" style="color: var(--primary);">Premier Padel</a></p>
         </div>
     </footer>
-    
-    <script src="scripts/app.js"></script>
 </body>
 </html>
