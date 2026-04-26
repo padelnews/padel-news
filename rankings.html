@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rankings Premier Padel 2026 | Padel News Pro</title>
-    <meta name="description" content="Rankings oficiales del Premier Padel Tour 2026. Clasificaciones masculinas y femeninas por parejas.">
+    <title>Rankings por Parejas Premier Padel 2026 | Padel News Pro</title>
     <link rel="stylesheet" href="css/style-futuristic.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
         .rankings-container { max-width: 100%; overflow-x: auto; }
         .rankings-table { width: 100%; border-collapse: collapse; background: var(--glass-bg); border-radius: 12px; overflow: hidden; }
         .rankings-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem 0.8rem; text-align: center; font-weight: 600; font-size: 0.9rem; }
-        .rankings-table th:first-child { text-align: center; width: 60px; }
-        .rankings-table th:nth-child(2) { text-align: left; }
         .rankings-table td { padding: 0.8rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .rankings-table td:first-child { text-align: center; font-weight: 700; color: var(--primary); font-size: 1.1rem; }
         .rankings-table td:nth-child(2) { text-align: left; font-weight: 600; }
@@ -28,21 +25,10 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         .ranking-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
-        .last-update { color: #888; font-size: 0.9rem; }
-        .podium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; text-align: center; }
-        .podium-place { background: linear-gradient(135deg, rgba(191, 0, 255, 0.2), rgba(0, 212, 255, 0.2)); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--glass-border); }
-        .podium-place.first { background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(191, 0, 255, 0.3)); border-color: gold; transform: scale(1.05); }
-        .podium-rank { font-size: 2rem; font-weight: 900; margin-bottom: 0.5rem; }
-        .podium-place.first .podium-rank { color: gold; }
-        .podium-place.second .podium-rank { color: silver; }
-        .podium-place.third .podium-rank { color: #cd7f32; }
-        .podium-name { font-weight: 700; font-size: 1rem; margin: 0.5rem 0; }
-        .podium-points { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
-        .pair-info { font-size: 0.8rem; color: #888; margin-top: 0.3rem; }
         .info-box { margin-top: 2rem; padding: 1.5rem; background: rgba(0,212,255,0.1); border-radius: 12px; border: 1px solid var(--glass-border); }
-        .info-box h4 { color: var(--primary); margin-bottom: 1rem; }
-        .info-box p { color: #ccc; font-size: 0.95rem; line-height: 1.6; }
-        @media (max-width: 768px) { .podium { grid-template-columns: 1fr; } .podium-place.first { order: -1; } .rankings-table { font-size: 0.85rem; } }
+        .info-box h4 { color: var(--primary); margin-bottom: 0.5rem; }
+        .info-box p { color: #ccc; font-size: 0.95rem; }
+        @media (max-width: 768px) { .rankings-table { font-size: 0.85rem; } }
     </style>
 </head>
 <body>
@@ -70,7 +56,7 @@
     </nav>
     
     <main class="container">
-        <h2 class="section-title">🏆 Rankings Mundiales - Premier Padel Tour 2026</h2>
+        <h2 class="section-title">🏆 Rankings por Parejas - Premier Padel 2026</h2>
         
         <!-- Tab Buttons -->
         <div class="tab-buttons">
@@ -78,39 +64,19 @@
             <button class="tab-btn" onclick="showTab('female')">👩 Femenino</button>
         </div>
         
-        <!-- Male Rankings -->
+        <!-- Male Pairs Ranking -->
         <div id="male" class="tab-content active">
             <div class="ranking-header">
-                <h3 style="color: var(--primary);">📊 Ranking Masculino - Individual</h3>
-                <span class="last-update">📅 Actualizado: 20 Abril 2026 • Fuente: FIP Official</span>
+                <h3 style="color: var(--primary);">📊 Ranking Masculino - Por Parejas</h3>
+                <span style="color: #888; font-size: 0.9rem;">📅 Actualizado: 20 Abril 2026 • Fuente: FIP Official</span>
             </div>
             
-            <!-- Podium - CORRECT ORDER -->
-            <div class="podium">
-                <div class="podium-place second">
-                    <div class="podium-rank">🥈 #1 (empatados)</div>
-                    <div class="podium-name">🇦🇷 Tapia / 🇪🇸 Coello</div>
-                    <div class="podium-points">20,910 pts</div>
-                </div>
-                <div class="podium-place first">
-                    <div class="podium-rank">🥇 #1 (empatados)</div>
-                    <div class="podium-name">🇪🇸 Galán / 🇦🇷 Chingotto</div>
-                    <div class="podium-points">17,760 pts</div>
-                </div>
-                <div class="podium-place third">
-                    <div class="podium-rank">🥉 #3</div>
-                    <div class="podium-name">🇦🇷 Stupaczuk</div>
-                    <div class="podium-points">6,675 pts</div>
-                </div>
-            </div>
-            
-            <!-- Full Table -->
             <div class="rankings-container">
                 <table class="rankings-table">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Jugador</th>
+                            <th>Pareja</th>
                             <th>País</th>
                             <th>Puntos</th>
                         </tr>
@@ -118,128 +84,62 @@
                     <tbody>
                         <tr class="top-3">
                             <td>1</td>
-                            <td>🇦🇷 Agustín Tapia</td>
-                            <td>🇦🇷 ARG</td>
+                            <td>🇦🇷 Tapia / 🇪🇸 Coello</td>
+                            <td>🇦🇷🇪🇸</td>
                             <td class="points">20,910</td>
                         </tr>
                         <tr class="top-3">
-                            <td>1</td>
-                            <td>🇪🇸 Arturo Coello</td>
-                            <td>🇪🇸 ESP</td>
-                            <td class="points">20,910</td>
-                        </tr>
-                        <tr class="top-3">
-                            <td>3</td>
-                            <td>🇪🇸 Alejandro Galán</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>2</td>
+                            <td>🇪🇸 Galán / 🇦🇷 Chingotto</td>
+                            <td>🇪🇸🇦🇷</td>
                             <td class="points">17,760</td>
                         </tr>
                         <tr class="top-3">
                             <td>3</td>
-                            <td>🇦🇷 Federico Chingotto</td>
-                            <td>🇦🇷 ARG</td>
-                            <td class="points">17,760</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>🇦🇷 Franco Stupaczuk</td>
-                            <td>🇦🇷 ARG</td>
+                            <td>🇦🇷 Stupaczuk / 🇪🇸 Yanguas</td>
+                            <td>🇦🇷🇪🇸</td>
                             <td class="points">6,675</td>
                         </tr>
                         <tr>
-                            <td>6</td>
-                            <td>🇪🇸 Juan Lebrón</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>4</td>
+                            <td>🇪🇸 Lebrón / 🇦🇷 Augsburger</td>
+                            <td>🇪🇸🇦🇷</td>
                             <td class="points">6,660</td>
                         </tr>
                         <tr>
-                            <td>7</td>
-                            <td>🇪🇸 Francisco Navarro</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>5</td>
+                            <td>🇪🇸 Navarro / 🇪🇸 Yanguas</td>
+                            <td>🇪🇸</td>
                             <td class="points">6,385</td>
                         </tr>
                         <tr>
-                            <td>8</td>
-                            <td>🇪🇸 Miguel Yanguas</td>
-                            <td>🇪🇸 ESP</td>
-                            <td class="points">6,345</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>🇪🇸 Jorge Nieto</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>6</td>
+                            <td>🇪🇸 Nieto / 🇪🇸 Sanz</td>
+                            <td>🇪🇸</td>
                             <td class="points">5,782</td>
                         </tr>
                         <tr>
-                            <td>10</td>
-                            <td>🇦🇷 Martín Di Nenno</td>
-                            <td>🇦🇷 ARG</td>
+                            <td>7</td>
+                            <td>🇦🇷 Di Nenno / 🇦🇷 Campagnolo</td>
+                            <td>🇦🇷</td>
                             <td class="points">5,605</td>
                         </tr>
                         <tr>
-                            <td>11</td>
-                            <td>🇦🇷 Leo Augsburger</td>
-                            <td>🇦🇷 ARG</td>
-                            <td class="points">5,605</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>🇪🇸 Javier Leal</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>8</td>
+                            <td>🇪🇸 Leal / 🇪🇸 Lijó</td>
+                            <td>🇪🇸</td>
                             <td class="points">5,215</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>🇪🇸 Pablo Lijó</td>
-                            <td>🇪🇸 ESP</td>
-                            <td class="points">5,080</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>🇪🇸 Jon Sanz</td>
-                            <td>🇪🇸 ESP</td>
-                            <td class="points">5,025</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>🇧🇷 Lucas Campagnolo</td>
-                            <td>🇧🇷 BRA</td>
-                            <td class="points">4,680</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
-            <div class="info-box" style="margin-top: 1.5rem;">
-                <h4>📌 Nota sobre el Ranking</h4>
-                <p>Tapia y Coello están empatados a puntos (20,910) como pareja #1. Lo mismo ocurre con Galán y Chingotto (17,760). En caso de empate, se usa el orden alfabético.</p>
-            </div>
         </div>
         
-        <!-- Female Rankings -->
+        <!-- Female Pairs Ranking -->
         <div id="female" class="tab-content">
             <div class="ranking-header">
-                <h3 style="color: var(--primary);">📊 Ranking Femenino - Individual</h3>
-                <span class="last-update">📅 Actualizado: 23 Marzo 2026 • Fuente: FIP Official</span>
-            </div>
-            
-            <!-- Podium -->
-            <div class="podium">
-                <div class="podium-place second">
-                    <div class="podium-rank">🥈 #1 (empatadas)</div>
-                    <div class="podium-name">🇦🇷 Brea / 🇪🇸 Triay</div>
-                    <div class="podium-points">17,300 pts</div>
-                </div>
-                <div class="podium-place first">
-                    <div class="podium-rank">🥇 #1 (empatadas)</div>
-                    <div class="podium-name">🇪🇸 Ariana / 🇪🇸 Gemma</div>
-                    <div class="podium-points">17,300 pts</div>
-                </div>
-                <div class="podium-place third">
-                    <div class="podium-rank">🥉 #3</div>
-                    <div class="podium-name">🇦🇷 Josemaría / 🇪🇸 González</div>
-                    <div class="podium-points">14,300 pts</div>
-                </div>
+                <h3 style="color: var(--primary);">📊 Ranking Femenino - Por Parejas</h3>
+                <span style="color: #888; font-size: 0.9rem;">📅 Actualizado: 23 Marzo 2026 • Fuente: FIP Official</span>
             </div>
             
             <div class="rankings-container">
@@ -247,7 +147,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Jugadora</th>
+                            <th>Pareja</th>
                             <th>País</th>
                             <th>Puntos</th>
                         </tr>
@@ -255,63 +155,39 @@
                     <tbody>
                         <tr class="top-3">
                             <td>1</td>
-                            <td>🇦🇷 Delfi Brea</td>
-                            <td>🇦🇷 ARG</td>
-                            <td class="points">17,300</td>
+                            <td>🇦🇷 Josemaría / 🇪🇸 González</td>
+                            <td>🇦🇷🇪🇸</td>
+                            <td class="points">17,660</td>
                         </tr>
                         <tr class="top-3">
-                            <td>1</td>
-                            <td>🇪🇸 Gemma Triay</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>2</td>
+                            <td>🇦🇷 Brea / 🇪🇸 Triay</td>
+                            <td>🇦🇷🇪🇸</td>
                             <td class="points">17,300</td>
                         </tr>
                         <tr class="top-3">
                             <td>3</td>
-                            <td>🇪🇸 Ariana Sánchez</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>🇪🇸 Sánchez / 🇪🇸 Escrig</td>
+                            <td>🇪🇸</td>
                             <td class="points">14,210</td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>🇦🇷 Paula Josemaría</td>
-                            <td>🇦🇷 ARG</td>
-                            <td class="points">14,300</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>🇪🇸 Bea González</td>
-                            <td>🇪🇸 ESP</td>
-                            <td class="points">14,300</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>🇪🇸 Claudia Escrig</td>
-                            <td>🇪🇸 ESP</td>
-                            <td class="points">14,060</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>🇪🇸 Tamara Afonso</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>🇪🇸 Afonso / 🇪🇸 Icardo</td>
+                            <td>🇪🇸</td>
                             <td class="points">13,950</td>
                         </tr>
                         <tr>
-                            <td>8</td>
-                            <td>🇪🇸 Irene García</td>
-                            <td>🇪🇸 ESP</td>
+                            <td>5</td>
+                            <td>🇪🇸 García / 🇪🇸 Martínez</td>
+                            <td>🇪🇸</td>
                             <td class="points">12,620</td>
                         </tr>
                         <tr>
-                            <td>9</td>
-                            <td>🇪🇸 Lucía Martínez</td>
-                            <td>🇪🇸 ESP</td>
-                            <td class="points">7,490</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>🇵🇹 Vasco Póvoa</td>
-                            <td>🇵🇹 POR</td>
-                            <td class="points">6,670</td>
+                            <td>6</td>
+                            <td>🇦🇷 Brigante / 🇦🇷 González</td>
+                            <td>🇦🇷</td>
+                            <td class="points">5,565</td>
                         </tr>
                     </tbody>
                 </table>
@@ -328,8 +204,8 @@
         </script>
         
         <div class="info-box">
-            <h4>📊 Sistema de Rankings en Pádel</h4>
-            <p>En pádel, los puntos se contabilizan por jugador INDIVIDUAL. Una pareja comparte los mismos puntos. Tapia y Coello están empatados a 20,910 puntos porque son pareja. Los datos son de FIP (20 Abril 2026).</p>
+            <h4>📊 Rankings Oficiales por Parejas</h4>
+            <p>En pádel, el ranking oficial es por parejas. Los puntos se acumulan según los resultados en torneos del Premier Padel Tour. Fuente: FIP (Federación Internacional de Pádel).</p>
         </div>
     </main>
     
