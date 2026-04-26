@@ -1846,3 +1846,31 @@ img:not([src]) {
   text-align: center;
 }
 
+
+
+/* Scoreboard Table */
+.scoreboard {
+  display: inline-table;
+  vertical-align: middle;
+  margin: 0 10px;
+  border-collapse: collapse;
+}
+.scoreboard td {
+  padding: 2px 8px;
+  font-size: 12px;
+  color: white;
+}
+.scoreboard .set {
+  background: #c0392b;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #922B21;
+}
+.scoreboard .game {
+  background: #f39c12;
+  color: #1a1a2e;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #d68910;
+}
+
