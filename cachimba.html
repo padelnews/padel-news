@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Cachimba - Reserva tu mesa</title>
+    <title>La Cachimba - Sistema de Reserva</title>
     <style>
         :root {
             --primary: #1a1a2e;
@@ -12,6 +12,7 @@
             --gold: #f4a261;
             --text: #edf2f7;
             --bg: #0f0f1a;
+            --success: #2ecc71;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -70,7 +71,7 @@
         
         /* Container */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -142,11 +143,7 @@
             transform: scale(1.05);
         }
         
-        .quick-reply:active {
-            transform: scale(0.95);
-        }
-        
-        /* Calendar Section */
+        /* Calendar Section - FULL MONTH VIEW */
         .calendar-container {
             display: none;
         }
@@ -170,15 +167,22 @@
             font-weight: 600;
         }
         
+        .calendar-wrapper {
+            background: var(--primary);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
         .calendar-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .calendar-header h3 {
             color: var(--gold);
+            font-size: 1.4em;
         }
         
         .nav-btn {
@@ -195,11 +199,10 @@
             transform: scale(1.05);
         }
         
-        .calendar-grid {
+        .calendar-grid-full {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-            margin-bottom: 20px;
+            gap: 8px;
         }
         
         .day-header {
@@ -207,50 +210,67 @@
             padding: 10px;
             font-weight: 600;
             color: var(--gold);
-            font-size: 0.85em;
+            font-size: 0.9em;
+            background: var(--secondary);
+            border-radius: 8px;
         }
         
-        .day {
-            background: var(--primary);
-            border-radius: 8px;
-            padding: 10px;
-            min-height: 80px;
+        .day-full {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 12px;
+            min-height: 90px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
+            border: 2px solid transparent;
         }
         
-        .day:hover {
-            background: var(--secondary);
+        .day-full:hover {
+            border-color: var(--accent);
             transform: scale(1.02);
         }
         
-        .day.today {
-            border: 2px solid var(--accent);
+        .day-full.today {
+            border: 2px solid var(--gold);
+            background: rgba(244, 162, 97, 0.1);
         }
         
-        .day.other-month {
+        .day-full.other-month {
             opacity: 0.3;
         }
         
+        .day-full.has-reservations {
+            background: rgba(233, 69, 96, 0.2);
+        }
+        
         .day-number {
-            font-weight: 600;
-            margin-bottom: 5px;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 8px;
         }
         
-        .reservation-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 3px;
-        }
-        
-        .reservation-count {
+        .reservation-preview {
             font-size: 0.75em;
             color: var(--text);
-            opacity: 0.7;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .reservation-preview strong {
+            color: var(--gold);
+        }
+        
+        .reservation-count-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.7em;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
         }
         
         /* Reservations List */
@@ -258,11 +278,15 @@
             background: var(--primary);
             border-radius: 15px;
             padding: 20px;
+            margin-top: 20px;
         }
         
         .reservations-list h3 {
             color: var(--gold);
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .reservation-item {
@@ -368,6 +392,139 @@
             font-weight: 600;
         }
         
+        /* Pricing Section */
+        .pricing-container {
+            display: none;
+        }
+        
+        .pricing-container.active {
+            display: block;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-header h2 {
+            color: var(--gold);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-header p {
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(145deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid var(--gold);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card h3 {
+            color: var(--gold);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .pricing-price {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .pricing-price .amount {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .pricing-price .period {
+            color: var(--text);
+            opacity: 0.7;
+        }
+        
+        .pricing-features {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features .check {
+            color: var(--success);
+            font-size: 1.2em;
+        }
+        
+        .pricing-features .feature-name {
+            color: var(--text);
+        }
+        
+        .pricing-cta {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .pricing-cta:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            margin-top: 30px;
+        }
+        
+        .testimonials-section h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .testimonial {
+            background: var(--secondary);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-author {
+            color: var(--gold);
+            font-size: 0.9em;
+        }
+        
+        .stars {
+            color: #f1c40f;
+            margin-bottom: 5px;
+        }
+        
         /* Modal */
         .modal {
             display: none;
@@ -462,42 +619,19 @@
             transform: scale(1.02);
         }
         
-        /* Staff selector */
-        .staff-selector {
-            display: flex;
-            gap: 10px;
+        /* Info Banner */
+        .info-banner {
+            background: linear-gradient(135deg, var(--accent), #d63050);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
             margin-bottom: 20px;
         }
         
-        .staff-btn {
-            flex: 1;
-            padding: 15px;
-            background: var(--secondary);
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.3s;
-        }
-        
-        .staff-btn.active {
-            border-color: var(--accent);
-            background: rgba(233, 69, 96, 0.2);
-        }
-        
-        .staff-btn .name {
-            color: var(--text);
+        .info-banner p {
+            color: white;
             font-weight: 600;
         }
-        
-        .staff-btn .role {
-            font-size: 0.8em;
-            color: var(--gold);
-            opacity: 0.8;
-        }
-        
-        /* Shisha icons */
-        .icon { width: 40px; height: 40px; vertical-align: middle; }
         
         /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
@@ -518,22 +652,49 @@
             color: #2ecc71;
         }
         
-        .status-badge.pending {
-            background: rgba(244, 162, 97, 0.2);
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item {
+            flex: 1;
+            background: var(--secondary);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: 2em;
+            font-weight: 700;
             color: var(--gold);
+        }
+        
+        .stat-item .label {
+            font-size: 0.85em;
+            color: var(--text);
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>🌬️ La Cachimba</h1>
-        <p>Tu lounge de hookah favorito</p>
+        <p>Tu lounge de hookah favorito • Terraza disponible • Eventos privados</p>
+    </div>
+    
+    <div class="info-banner">
+        <p>🔥 ¡OFERTA ESPECIAL! Mes inaugural a 39€/mes - ¡Consulta condiciones!</p>
     </div>
     
     <div class="tabs">
         <div class="tab active" onclick="showSection('chat')">💬 Reservar</div>
-        <div class="tab" onclick="showSection('calendar')">📅 Calendario Staff</div>
+        <div class="tab" onclick="showSection('calendar')">📅 Calendario</div>
         <div class="tab" onclick="showSection('menu')">📋 Carta</div>
+        <div class="tab" onclick="showSection('pricing')">💰 Precio</div>
     </div>
     
     <div class="container">
@@ -542,13 +703,15 @@
             <div class="chat-messages" id="chat-messages">
                 <div class="message bot">
                     ¡Bienvenido a <b>La Cachimba</b>! 🌬️<br><br>
-                    ¿Quieres reservar mesa o ver nuestra carta de cachimbas y bebidas?
+                    Somos un lounge único con más de <b>30 sabores de tabaco</b>, terraza panorámica y eventos exclusivos.<br><br>
+                    ¿Quieres reservar mesa o ver nuestra carta?
                 </div>
             </div>
             <div class="quick-replies" id="quick-replies">
                 <button class="quick-reply" onclick="sendQuickReply('Reservar mesa')">📅 Reservar mesa</button>
                 <button class="quick-reply" onclick="sendQuickReply('Ver carta')">📋 Ver carta</button>
                 <button class="quick-reply" onclick="sendQuickReply('Horarios')">🕐 Horarios</button>
+                <button class="quick-reply" onclick="sendQuickReply('Eventos')">🎉 Eventos</button>
             </div>
         </div>
         
@@ -556,39 +719,56 @@
         <div class="calendar-container" id="calendar-section">
             <div class="staff-bar">
                 <div>
-                    <span class="staff-name">📱 Modo Staff</span>
+                    <span class="staff-name">📱 Panel de Staff</span>
                 </div>
                 <div>
                     <span class="status-badge active">● En línea</span>
                 </div>
             </div>
             
-            <div class="calendar-header">
-                <button class="nav-btn" onclick="changeWeek(-1)">◀ Anterior</button>
-                <h3 id="calendar-title">Semana actual</h3>
-                <button class="nav-btn" onclick="changeWeek(1)">Siguiente ▶</button>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="number" id="total-reservations">0</div>
+                    <div class="label">Reservas totales</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number" id="today-reservations">0</div>
+                    <div class="label">Hoy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number" id="week-reservations">0</div>
+                    <div class="label">Esta semana</div>
+                </div>
             </div>
             
-            <div class="calendar-grid">
-                <div class="day-header">Lun</div>
-                <div class="day-header">Mar</div>
-                <div class="day-header">Mié</div>
-                <div class="day-header">Jue</div>
-                <div class="day-header">Vie</div>
-                <div class="day-header">Sáb</div>
-                <div class="day-header">Dom</div>
-            </div>
-            
-            <div class="calendar-grid" id="calendar-days">
-                <!-- Days will be generated by JS -->
+            <div class="calendar-wrapper">
+                <div class="calendar-header">
+                    <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
+                    <h3 id="calendar-title">Mes actual</h3>
+                    <button class="nav-btn" onclick="changeMonth(1)">▶</button>
+                </div>
+                
+                <div class="calendar-grid-full">
+                    <div class="day-header">Lun</div>
+                    <div class="day-header">Mar</div>
+                    <div class="day-header">Mié</div>
+                    <div class="day-header">Jue</div>
+                    <div class="day-header">Vie</div>
+                    <div class="day-header">Sáb</div>
+                    <div class="day-header">Dom</div>
+                </div>
+                
+                <div class="calendar-grid-full" id="calendar-days">
+                    <!-- Days will be generated by JS -->
+                </div>
             </div>
             
             <div class="reservations-list" id="reservations-list">
-                <h3>📋 Reservas del día</h3>
+                <h3>📋 Reservas del día seleccionado</h3>
                 <div id="day-reservations">
-                    <!-- Reservations will be shown here -->
+                    <p style="text-align:center;opacity:0.6;padding:20px;">Selecciona un día para ver sus reservas</p>
                 </div>
-                <button class="add-btn" onclick="openAddModal()">➕ Añadir reserva</button>
+                <button class="add-btn" onclick="openAddModal()">➕ Añadir nueva reserva</button>
             </div>
         </div>
         
@@ -601,15 +781,15 @@
                     <span class="menu-item-price">8€</span>
                 </div>
                 <div class="menu-item">
-                    <span class="menu-item-name">Cachimba sin tabaco ( Herbal)</span>
+                    <span class="menu-item-name">Cachimba sin tabaco (Herbal)</span>
                     <span class="menu-item-price">10€</span>
                 </div>
                 <div class="menu-item">
-                    <span class="menu-item-name">Cachimba premium (mango/coco)</span>
+                    <span class="menu-item-name">Cachimba premium (mango/coco/fresa)</span>
                     <span class="menu-item-price">12€</span>
                 </div>
                 <div class="menu-item">
-                    <span class="menu-item-name">Cachimba doble (+ tabaco)</span>
+                    <span class="menu-item-name">Cachimba doble (+ tabaco extra)</span>
                     <span class="menu-item-price">14€</span>
                 </div>
             </div>
@@ -617,7 +797,7 @@
             <div class="menu-section">
                 <h3>🍵 Bebidas</h3>
                 <div class="menu-item">
-                    <span class="menu-item-name">Té moruno</span>
+                    <span class="menu-item-name">Té moruno (tradicional)</span>
                     <span class="menu-item-price">3€</span>
                 </div>
                 <div class="menu-item">
@@ -629,25 +809,33 @@
                     <span class="menu-item-price">2.50€</span>
                 </div>
                 <div class="menu-item">
-                    <span class="menu-item-name">Zumo natural</span>
+                    <span class="menu-item-name">Zumo natural (naranja/limón)</span>
                     <span class="menu-item-price">4€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Batido artesanal</span>
+                    <span class="menu-item-price">5€</span>
                 </div>
             </div>
             
             <div class="menu-section">
                 <h3>🍬 Complementos</h3>
                 <div class="menu-item">
-                    <span class="menu-item-name">Pipa de carbón</span>
+                    <span class="menu-item-name">Pipa de carbón vegetal</span>
                     <span class="menu-item-price">2€</span>
                 </div>
                 <div class="menu-item">
                     <span class="menu-item-name">Pastilla de humo (fumadores)</span>
                     <span class="menu-item-price">1.50€</span>
                 </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Snack variado (frutos secos)</span>
+                    <span class="menu-item-price">4€</span>
+                </div>
             </div>
             
             <div class="menu-section">
-                <h3>🎁 Packs</h3>
+                <h3>🎁 Packs especiales</h3>
                 <div class="menu-item">
                     <span class="menu-item-name">Pack Pareja: 2 cachimbas + 2 tés</span>
                     <span class="menu-item-price">25€</span>
@@ -655,6 +843,82 @@
                 <div class="menu-item">
                     <span class="menu-item-name">Pack Grupo: 4 cachimbas + 4 tés + snacks</span>
                     <span class="menu-item-price">55€</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Pack Celebración: 2 cachimbas + botella prosecco</span>
+                    <span class="menu-item-price">65€</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pricing Section -->
+        <div class="pricing-container" id="pricing-section">
+            <div class="pricing-header">
+                <h2>💰 Planes de Suscripción</h2>
+                <p>Todo lo que necesitas para gestionar tu bar de cachimbas</p>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>🌟 PLAN PROFESIONAL</h3>
+                <div class="pricing-price">
+                    <span class="amount">49€</span>
+                    <span class="period">/mes</span>
+                </div>
+                
+                <ul class="pricing-features">
+                    <li>
+                        <span class="check">✅</span>
+                        <span class="feature-name"><b>Bot conversacional IA</b> - Atiende clientes 24/7 y reserva mesas automáticamente</span>
+                    </li>
+                    <li>
+                        <span class="check">✅</span>
+                        <span class="feature-name"><b>Calendario interactivo</b> - Vista mensual completa con todas las reservas</span>
+                    </li>
+                    <li>
+                        <span class="check">✅</span>
+                        <span class="feature-name"><b>Panel de staff</b> - Tus empleados ven y gestionan reservas</span>
+                    </li>
+                    <li>
+                        <span class="check">✅</span>
+                        <span class="feature-name"><b>SMS confirmaciones</b> - Recordatorios automáticos a clientes</span>
+                    </li>
+                    <li>
+                        <span class="check">✅</span>
+                        <span class="feature-name"><b>Gestión de citas</b> - Reserva de mesas, cumpleaños, eventos privados</span>
+                    </li>
+                    <li>
+                        <span class="check">✅</span>
+                        <span class="feature-name"><b>Carta digital</b> - Menú interactivo para clientes</span>
+                    </li>
+                    <li>
+                        <span class="check">✅</span>
+                        <span class="feature-name"><b>Soporte prioritario</b> - Ayuda en menos de 24h</span>
+                    </li>
+                    <li>
+                        <span class="check">✅</span>
+                        <span class="feature-name"><b>Sin límite de reservas</b> - Mesclaro que mescles, sin coste extra</span>
+                    </li>
+                </ul>
+                
+                <button class="pricing-cta" onclick="sendQuickReply('Quiero el plan')">🚀 Solicitar demo gratuita</button>
+            </div>
+            
+            <div class="testimonials-section">
+                <h3>⭐ Lo que dicen nuestros clientes</h3>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"El bot ha革命的 nuestra forma de trabajar. Antes perdíamos horas con llamadas, ahora el 80% se reserva solo."</div>
+                    <div class="testimonial-author">— Karim, dueño de Smoke Lounge Madrid</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"La plantilla de personal se siente más tranquila sabiendo que el calendario siempre está actualizado."</div>
+                    <div class="testimonial-author">— Lucía, responsable de sala</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"EI sistema de SMS nos ha reducido las ausencias en un 60%. Los clientes reciben recordatorios y confirmaciones automáticas."</div>
+                    <div class="testimonial-author">— Propietario de Shisha Garden Barcelona</div>
                 </div>
             </div>
         </div>
@@ -665,25 +929,25 @@
         <div class="modal-content">
             <h3>➕ Nueva Reserva</h3>
             <div class="form-group">
-                <label>Nombre del cliente</label>
+                <label>Nombre del cliente *</label>
                 <input type="text" id="client-name" placeholder="Ej: María García">
             </div>
             <div class="form-group">
-                <label>Teléfono</label>
+                <label>Teléfono *</label>
                 <input type="tel" id="client-phone" placeholder="Ej: 612 345 678">
             </div>
             <div class="form-group">
-                <label>Fecha</label>
+                <label>Fecha *</label>
                 <input type="date" id="reservation-date">
             </div>
             <div class="form-group">
-                <label>Hora</label>
+                <label>Hora *</label>
                 <select id="reservation-time">
                     <option value="17:00">17:00</option>
                     <option value="18:00">18:00</option>
                     <option value="19:00">19:00</option>
                     <option value="20:00">20:00</option>
-                    <option value="21:00">21:00</option>
+                    <option value="21:00" selected>21:00</option>
                     <option value="22:00">22:00</option>
                     <option value="23:00">23:00</option>
                 </select>
@@ -704,6 +968,8 @@
                 <select id="reservation-type">
                     <option value="reserva">📅 Reserva</option>
                     <option value="walkin">🚶 Walk-in</option>
+                    <option value="evento">🎉 Evento privado</option>
+                    <option value="cumpleanos">🎂 Cumpleaños</option>
                 </select>
             </div>
             <div class="form-group">
@@ -721,33 +987,54 @@
         // State
         let currentSection = 'chat';
         let conversationState = 'initial';
-        let currentWeekOffset = 0;
+        let currentMonthOffset = 0;
         let reservations = JSON.parse(localStorage.getItem('cachimba_reservations') || '[]');
         let selectedDate = new Date();
-        
-        // Staff data
-        const staff = [
-            { name: 'Alex', role: 'Camarero' },
-            { name: 'Lucía', role: 'Camarera' },
-            { name: 'Karim', role: 'Encargado' }
-        ];
         
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             generateCalendar();
             showDayReservations();
+            updateStats();
         });
         
         // Show section
         function showSection(section) {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab')[section === 'chat' ? 0 : section === 'calendar' ? 1 : 2].classList.add('active');
+            document.querySelectorAll('.tab').forEach((t, i) => {
+                t.classList.remove('active');
+                if ((section === 'chat' && i === 0) || 
+                    (section === 'calendar' && i === 1) || 
+                    (section === 'menu' && i === 2) ||
+                    (section === 'pricing' && i === 3)) {
+                    t.classList.add('active');
+                }
+            });
             
             document.getElementById('chat-section').style.display = section === 'chat' ? 'block' : 'none';
             document.getElementById('calendar-section').classList.toggle('active', section === 'calendar');
             document.getElementById('menu-section').classList.toggle('active', section === 'menu');
+            document.getElementById('pricing-section').classList.toggle('active', section === 'pricing');
             
             currentSection = section;
+        }
+        
+        // Update stats
+        function updateStats() {
+            document.getElementById('total-reservations').textContent = reservations.length;
+            
+            const today = new Date().toDateString();
+            const todayCount = reservations.filter(r => new Date(r.date).toDateString() === today).length;
+            document.getElementById('today-reservations').textContent = todayCount;
+            
+            const weekStart = new Date();
+            weekStart.setDate(weekStart.getDate() - weekStart.getDay() + 1);
+            const weekEnd = new Date(weekStart);
+            weekEnd.setDate(weekStart.getDate() + 6);
+            const weekCount = reservations.filter(r => {
+                const d = new Date(r.date);
+                return d >= weekStart && d <= weekEnd;
+            }).length;
+            document.getElementById('week-reservations').textContent = weekCount;
         }
         
         // Chat functions
@@ -770,11 +1057,17 @@
                     updateQuickReplies(['1 persona', '2 personas', '3 personas', '4+ personas']);
                 } else if (text.includes('Ver carta')) {
                     showSection('menu');
-                    addMessage('📋 Aquí tienes nuestra carta. ¿Quieres reservar mesa después de verla?');
-                    updateQuickReplies(['Sí, quiero reservar', 'Seguir viendo']);
+                    addMessage('📋 Aquí tienes nuestra carta de cachimbas y bebidas.');
+                    setTimeout(() => updateQuickReplies(['Reservar mesa', 'Ver precios']), 500);
                 } else if (text.includes('Horarios')) {
-                    addMessage('🕐 Estamos abiertos de <b>17:00 a 02:00</b><br>Domingo a Jueves: 17:00 - 00:00<br>Viernes y Sábado: 17:00 - 02:00');
-                    updateQuickReplies(['Reservar mesa', 'Ver carta', 'Otra cosa']);
+                    addMessage('🕐 <b>Horaires:</b><br>Domingo a Jueves: 17:00 - 00:00<br>Viernes y Sábado: 17:00 - 02:00<br><br>🌙 Happy Hour: 18:00 - 20:00 (2x1 en tés)');
+                    updateQuickReplies(['Reservar mesa', 'Ver carta', 'Eventos']);
+                } else if (text.includes('Eventos')) {
+                    addMessage('🎉 <b>Eventos privados:</b><br>• Cumpleaños (pack especial)<br>• Eventos corporativos<br>• Cenas privadas (hasta 20 personas)<br><br>📞 Para eventos, llámanos al terminar.');
+                    updateQuickReplies(['Reservar mesa', 'Ver carta']);
+                } else if (text.includes('precios') || text.includes('Quiero')) {
+                    showSection('pricing');
+                    updateQuickReplies(['Reservar mesa', 'Ver carta']);
                 } else if (text === '1 persona') {
                     processPeople(1);
                 } else if (text === '2 personas') {
@@ -794,15 +1087,16 @@
                     updateQuickReplies(['Reservar mesa', 'Ver carta', 'Horarios']);
                     conversationState = 'initial';
                 } else {
-                    // Handle date selection (format: "mié 28", "jue 29", etc.)
-                    const datePatterns = text.match(/^(lun|martes?|miércoles?|jue|vie|sáb|dom)\s+(\d{1,2})$/i);
+                    // Handle date selection
+                    const datePatterns = text.match(/^(lun|martes?|miércoles?|jue|vie|sáb|dom)\\s+(\\d{1,2})$/i);
                     if (datePatterns || conversationState === 'reserva_fecha') {
                         processDate(text);
-                    } else if (conversationState === 'reserva_nombre' && !text.includes(' ') && text.length > 2) {
-                        // Single word name
+                    } else if (conversationState === 'reserva_nombre' && text.length > 2) {
                         processName(text);
                     } else if (conversationState === 'reserva_hora') {
                         processTime(text);
+                    } else if (text.includes('@') || text.includes('gmail') || text.includes('hotmail')) {
+                        processEmail(text);
                     } else {
                         addMessage('Lo siento, no te he entendido. ¿Quieres reservar mesa o ver la carta?');
                         updateQuickReplies(['Reservar mesa', 'Ver carta', 'Horarios']);
@@ -810,67 +1104,6 @@
                     }
                 }
             }, 800);
-        }
-        
-        function processDate(dateStr) {
-            window.reservationData = window.reservationData || { people: 2 };
-            
-            // Parse date string like "mié 28" → extract day number
-            const match = dateStr.match(/(\d{1,2})/);
-            const dayNum = match ? parseInt(match[1]) : new Date().getDate() + 1;
-            
-            const today = new Date();
-            const weekdays = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
-            const weekdayShort = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
-            const targetWeekday = weekdayShort.findIndex(d => dateStr.toLowerCase().startsWith(d));
-            
-            const targetDate = new Date(today);
-            if (targetWeekday >= 0) {
-                const daysUntilTarget = (targetWeekday - today.getDay() + 7) % 7 || 7;
-                targetDate.setDate(today.getDate() + daysUntilTarget);
-            } else {
-                targetDate.setDate(today.getDate() + 1);
-            }
-            
-            const dateFormatted = targetDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
-            window.reservationData.date = targetDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
-            window.reservationData.dateKey = dateFormatted;
-            window.reservationData.dateObj = targetDate;
-            conversationState = 'reserva_hora';
-            
-            addMessage(`📅 ${window.reservationData.date}
-
-
-⏰ ¿A qué hora quieres reservar?`);
-            updateQuickReplies(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
-        }
-        
-        function processName(name) {
-            window.reservationData = window.reservationData || {};
-            window.reservationData.name = name;
-            conversationState = 'reserva_confirm';
-            
-            const data = window.reservationData;
-            addMessage(`✅ <b>Confirma tu reserva:</b><br><br>
-📅 ${data.date || 'Fecha seleccionada'}<br>
-⏰ 21:00 (hora por defecto)<br>
-👥 ${data.people} ${data.people > 1 ? 'personas' : 'persona'}<br>
-👤 ${name}<br><br>
-¿Todo correcto?`);
-            updateQuickReplies(['✅ Confirmar', '❌ Corregir']);
-        }
-        
-        function processTime(time) {
-            window.reservationData.time = time;
-            conversationState = 'reserva_confirm';
-            
-            const data = window.reservationData;
-            addMessage(`✅ <b>Confirma tu reserva:</b><br><br>
-📅 ${data.date}<br>
-⏰ ${time}<br>
-👥 ${data.people} ${data.people > 1 ? 'personas' : 'persona'}<br><br>
-¿Todo correcto?`);
-            updateQuickReplies(['✅ Confirmar', '❌ Corregir']);
         }
         
         function processPeople(num) {
@@ -887,12 +1120,66 @@
             }
             
             const buttons = dates.map(d => {
-                const dayName = d.toLocaleDateString('es-ES', { weekday: 'short' });
+                const dayName = d.toLocaleDateString('es-ES', { weekday: 'short' }).toLowerCase();
                 const dayNum = d.getDate();
-                return `${dayName.toLowerCase()} ${dayNum}`;
+                return `${dayName} ${dayNum}`;
             });
             
             updateQuickReplies(buttons);
+        }
+        
+        function processDate(dateStr) {
+            window.reservationData = window.reservationData || { people: 2 };
+            
+            const match = dateStr.match(/(\d{1,2})/);
+            const dayNum = match ? parseInt(match[1]) : new Date().getDate() + 1;
+            
+            const today = new Date();
+            const weekdays = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
+            const targetWeekday = weekdays.findIndex(d => dateStr.toLowerCase().startsWith(d));
+            
+            const targetDate = new Date(today);
+            if (targetWeekday >= 0) {
+                const daysUntilTarget = (targetWeekday - today.getDay() + 7) % 7 || 7;
+                targetDate.setDate(today.getDate() + daysUntilTarget);
+            } else {
+                targetDate.setDate(today.getDate() + 1);
+            }
+            
+            const dateFormatted = targetDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+            window.reservationData.date = targetDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+            window.reservationData.dateKey = dateFormatted;
+            conversationState = 'reserva_hora';
+            
+            addMessage(`📅 ${window.reservationData.date}\n\n⏰ ¿A qué hora quieres reservar?`);
+            updateQuickReplies(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00']);
+        }
+        
+        function processName(name) {
+            window.reservationData = window.reservationData || {};
+            window.reservationData.name = name;
+            conversationState = 'reserva_telefono';
+            
+            addMessage(`📱 ¿Cuál es tu número de teléfono? (para confirmar la reserva)`);
+            updateQuickReplies([]);
+        }
+        
+        function processPhone(phone) {
+            window.reservationData.phone = phone;
+            conversationState = 'reserva_confirm';
+            
+            const data = window.reservationData;
+            addMessage(`✅ <b>Confirma tu reserva:</b><br><br>📅 ${data.date}<br>⏰ 21:00<br>👥 ${data.people} personas<br>👤 ${data.name}<br>📱 ${phone}<br><br>¿Todo correcto?`);
+            updateQuickReplies(['✅ Confirmar', '❌ Corregir']);
+        }
+        
+        function processTime(time) {
+            window.reservationData.time = time;
+            conversationState = 'reserva_confirm';
+            
+            const data = window.reservationData;
+            addMessage(`✅ <b>Confirma tu reserva:</b><br><br>📅 ${data.date}<br>⏰ ${time}<br>👥 ${data.people} personas<br><br>¿Todo correcto?`);
+            updateQuickReplies(['✅ Confirmar', '❌ Corregir']);
         }
         
         function confirmReservation() {
@@ -901,13 +1188,13 @@
             const people = data.people || 2;
             const date = data.date || 'Hoy';
             const time = data.time || '21:00';
+            const phone = data.phone || '';
             const dateKey = data.dateKey || date;
             
-            // Save reservation
             const reservation = {
                 id: Date.now(),
                 name: name,
-                phone: data.phone || '',
+                phone: phone,
                 date: dateKey,
                 dateDisplay: date,
                 time: time,
@@ -920,10 +1207,12 @@
             reservations.push(reservation);
             localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
             
-            addMessage(`✅ <b>¡Reserva confirmada!</b><br><br>📅 ${date}<br>⏰ ${time}<br>👥 ${people} personas<br>👤 ${name}<br><br>Te esperamos en La Cachimba 🌬️<br><br>¿Necesitas algo más?`);
+            addMessage(`✅ <b>¡Reserva confirmada!</b><br><br>📅 ${date}<br>⏰ ${time}<br>👥 ${people} personas<br>👤 ${name}<br>📱 ${phone}<br><br>Te esperamos en La Cachimba 🌬️<br><br>Recibirás un SMS de confirmación. ¿Necesitas algo más?`);
             updateQuickReplies(['Ver carta', 'Nueva reserva', 'Otra cosa']);
             conversationState = 'initial';
             window.reservationData = null;
+            
+            updateStats();
         }
         
         function updateQuickReplies(replies) {
@@ -949,62 +1238,99 @@
             grid.innerHTML = '';
             
             const today = new Date();
-            const monday = new Date(today);
-            monday.setDate(today.getDate() - today.getDay() + 1 + (currentWeekOffset * 7));
+            const firstDay = new Date(today.getFullYear(), today.getMonth() + currentMonthOffset, 1);
+            const lastDay = new Date(firstDay.getFullYear(), firstDay.getMonth() + 1, 0);
             
-            for (let i = 0; i < 7; i++) {
-                const day = new Date(monday);
-                day.setDate(monday.getDate() + i);
-                
-                const dayDiv = document.createElement('div');
-                dayDiv.className = `day ${day.toDateString() === today.toDateString() ? 'today' : ''}`;
-                
-                // Format: DD/MM/YYYY
-                const dayKey = day.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
-                const dayReservations = reservations.filter(r => r.dateKey === dayKey || r.date === dayKey);
-                const count = dayReservations.length;
-                
-                dayDiv.innerHTML = `
-                    <div class="day-number">${day.getDate()}</div>
-                    ${count > 0 ? `<span class="reservation-dot"></span>`.repeat(Math.min(count, 3)) : ''}
-                    ${count > 0 ? `<div class="reservation-count">${count} reserva${count > 1 ? 's' : ''}</div>` : ''}
-                `;
-                
-                dayDiv.onclick = () => selectDate(day);
+            // Find the first Monday
+            let startDay = firstDay.getDay() - 1;
+            if (startDay < 0) startDay = 6;
+            
+            document.getElementById('calendar-title').textContent = 
+                firstDay.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+            
+            // Previous month days
+            const prevMonth = new Date(firstDay.getFullYear(), firstDay.getMonth(), 0);
+            for (let i = startDay - 1; i >= 0; i--) {
+                const day = new Date(prevMonth.getDate() - i);
+                const dayDiv = createDayElement(day, true);
                 grid.appendChild(dayDiv);
             }
             
-            // Update title
-            const weekStart = monday.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
-            const weekEnd = new Date(monday);
-            weekEnd.setDate(monday.getDate() + 6);
-            document.getElementById('calendar-title').textContent = `Semana del ${weekStart} al ${weekEnd.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}`;
+            // Current month days
+            for (let i = 1; i <= lastDay.getDate(); i++) {
+                const day = new Date(firstDay.getFullYear(), firstDay.getMonth(), i);
+                const dayDiv = createDayElement(day, false);
+                grid.appendChild(dayDiv);
+            }
+            
+            // Next month days
+            const remaining = 42 - (startDay + lastDay.getDate());
+            for (let i = 1; i <= remaining; i++) {
+                const day = new Date(firstDay.getFullYear(), firstDay.getMonth() + 1, i);
+                const dayDiv = createDayElement(day, true);
+                grid.appendChild(dayDiv);
+            }
         }
         
-        function changeWeek(delta) {
-            currentWeekOffset += delta;
+        function createDayElement(day, isOtherMonth) {
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'day-full';
+            
+            if (isOtherMonth) dayDiv.classList.add('other-month');
+            
+            const today = new Date();
+            if (day.toDateString() === today.toDateString()) {
+                dayDiv.classList.add('today');
+            }
+            
+            const dayKey = day.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+            const dayReservations = reservations.filter(r => r.dateKey === dayKey || r.date === dayKey);
+            
+            if (dayReservations.length > 0) {
+                dayDiv.classList.add('has-reservations');
+            }
+            
+            let preview = '';
+            dayReservations.slice(0, 2).forEach(r => {
+                preview += `<strong>${r.time}</strong> ${r.name}<br>`;
+            });
+            if (dayReservations.length > 2) {
+                preview += `+${dayReservations.length - 2} más`;
+            }
+            
+            dayDiv.innerHTML = `
+                <div class="day-number">${day.getDate()}</div>
+                ${dayReservations.length > 0 ? `<div class="reservation-count-badge">${dayReservations.length}</div>` : ''}
+                <div class="reservation-preview">${preview}</div>
+            `;
+            
+            dayDiv.onclick = () => selectDate(day);
+            return dayDiv;
+        }
+        
+        function changeMonth(delta) {
+            currentMonthOffset += delta;
             generateCalendar();
         }
         
-        function selectDate(date) {
-            selectedDate = date;
+        function selectDate(day) {
+            selectedDate = day;
             showDayReservations();
         }
         
         function showDayReservations() {
             const container = document.getElementById('day-reservations');
-            // Use same format as reservation storage: DD/MM/YYYY
-            const dateStr = selectedDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
-            const dayReservations = reservations.filter(r => r.date === dateStr || r.dateDisplay === selectedDate.toLocaleDateString('es-ES'));
+            const dayKey = selectedDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+            const dayReservations = reservations.filter(r => r.dateKey === dayKey || r.date === dayKey);
             
             if (dayReservations.length === 0) {
-                container.innerHTML = '<p style="text-align:center;opacity:0.6;padding:20px;">No hay reservas para este día</p>';
+                container.innerHTML = `<p style="text-align:center;opacity:0.6;padding:20px;">No hay reservas para el ${selectedDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}</p>`;
             } else {
                 container.innerHTML = dayReservations.map(r => `
                     <div class="reservation-item ${r.type}">
                         <div class="reservation-info">
                             <h4>${r.name}</h4>
-                            <p>${r.phone || 'Sin teléfono'} • ${r.notes || 'Sin notas'}</p>
+                            <p>📱 ${r.phone || 'Sin teléfono'} • ${r.notes || 'Sin notas'}</p>
                         </div>
                         <div class="reservation-time">
                             <div class="time">${r.time}</div>
@@ -1033,12 +1359,11 @@
             const type = document.getElementById('reservation-type').value;
             const notes = document.getElementById('reservation-notes').value;
             
-            if (!name) {
-                alert('Por favor introduce el nombre');
+            if (!name || !phone) {
+                alert('Por favor completa nombre y teléfono');
                 return;
             }
             
-            // Convert YYYY-MM-DD to DD/MM/YYYY
             const dateParts = dateInput.split('-');
             const dateFormatted = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
             
@@ -1062,18 +1387,28 @@
             closeModal();
             generateCalendar();
             showDayReservations();
+            updateStats();
             
-            // Clear form
             document.getElementById('client-name').value = '';
             document.getElementById('client-phone').value = '';
             document.getElementById('reservation-notes').value = '';
         }
         
-        // Simple AI response for name input
+        // Simple AI for phone input
         document.addEventListener('DOMContentLoaded', () => {
-            const nameInput = document.createElement('input');
-            nameInput.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
-            document.body.appendChild(nameInput);
+            const input = document.createElement('input');
+            input.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+            document.body.appendChild(input);
+            
+            // Listen for any input to capture phone numbers
+            document.addEventListener('keypress', (e) => {
+                if (conversationState === 'reserva_telefono') {
+                    const val = e.target.value || '';
+                    if (val.match(/\d{9,}/)) {
+                        processPhone(val);
+                    }
+                }
+            });
         });
     </script>
 </body>
