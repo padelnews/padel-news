@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cachimba - Carta</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        .menu-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .menu-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #1a0a20 0%, #0a0a0f 100%);
+            border-bottom: 2px solid #e94560;
+            margin-bottom: 30px;
+        }
+        
+        .menu-header h1 {
+            font-size: 3em;
+            color: #f4a261;
+            text-shadow: 0 0 30px rgba(244, 162, 97, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        .menu-header p {
+            color: #e94560;
+            font-size: 1.2em;
+            letter-spacing: 3px;
+        }
+        
+        /* Section */
+        .menu-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(145deg, #12121a 0%, #0a0a0f 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .section-title .icon {
+            font-size: 2em;
+        }
+        
+        .section-title h2 {
+            color: #e94560;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+        
+        .section-title .subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8em;
+            letter-spacing: 2px;
+        }
+        
+        /* Items */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-item .info {
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .menu-item .name {
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .menu-item .description {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+        
+        .menu-item .price {
+            color: #f4a261;
+            font-size: 1.2em;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        /* Category */
+        .category {
+            margin: 25px 0 15px 0;
+            color: #f4a261;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(244,162,97,0.5), transparent);
+        }
+        
+        /* Shisha Grid */
+        .shisha-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .shisha-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .shisha-card {
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .shisha-card h3 {
+            color: #e94560;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .shisha-card .tag {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            margin-bottom: 10px;
+        }
+        
+        .shisha-card .price {
+            color: #f4a261;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        
+        /* Pack */
+        .pack-card {
+            background: linear-gradient(135deg, rgba(244, 162, 97, 0.2), rgba(233, 69, 96, 0.2));
+            border: 2px solid #f4a261;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .pack-card h3 {
+            color: #f4a261;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .pack-card .includes {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+        }
+        
+        .pack-card .price {
+            color: #fff;
+            font-size: 2em;
+            font-weight: 700;
+        }
+        
+        /* Footer */
+        .menu-footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9em;
+        }
+        
+        .menu-footer .note {
+            margin-top: 10px;
+            color: #e94560;
+            font-size: 0.8em;
+        }
+        
+        /* Back button */
+        .back-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.5);
+            z-index: 100;
+        }
+        
+        .back-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Neon effect */
+        .neon {
+            text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+        }
+        
+        /* Drink sizes */
+        .drink-sizes {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .size {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+        
+        .size span {
+            color: #f4a261;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Header -->
+        <div class="menu-header">
+            <h1>🌬️ La Cachimba</h1>
+            <p>CARTA</p>
+        </div>
+        
+        <!-- SHISHAS -->
+        <div class="menu-section">
+            <div class="section-title">
+                <span class="icon">💨</span>
+                <div>
+                    <h2>Cachimbas</h2>
+                    <span class="subtitle">Más de 30 sabores</span>
+                </div>
+            </div>
+            
+            <div class="shisha-grid">
+                <div class="shisha-card">
+                    <span class="tag">CLÁSICA</span>
+                    <h3>Cachimba</h3>
+                    <div class="price">8€</div>
+                </div>
+                <div class="shisha-card">
+                    <span class="tag">SIN TABACO</span>
+                    <h3>Sin Tabaco</h3>
+                    <div class="price">10€</div>
+                </div>
+                <div class="shisha-card">
+                    <span class="tag">PREMIUM</span>
+                    <h3>Premium</h3>
+                    <div class="price">12€</div>
+                </div>
+                <div class="shisha-card">
+                    <span class="tag">DOBLE</span>
+                    <h3>Doble</h3>
+                    <div class="price">14€</div>
+                </div>
+            </div>
+            
+            <div class="pack-card">
+                <h3>🌟 Pack Cachimba + Bebida</h3>
+                <p class="includes">Cachimba + Té o Refresco</p>
+                <div class="price">12€</div>
+            </div>
+            
+            <div class="category">Nuestras Mezclas</div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">💛 Rubias / blondes</div>
+                    <div class="description">Suaves y afrutadas. Maracuyá, fresa, melón, mango...</div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">🖤 Negras / Dark</div>
+                    <div class="description">Intensas y bold. Menta fuerte, café, chocolate, Vainilla...</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BEBIDAS -->
+        <div class="menu-section">
+            <div class="section-title">
+                <span class="icon">🍵</span>
+                <div>
+                    <h2>Bebidas</h2>
+                </div>
+            </div>
+            
+            <div class="category">Tés</div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Té Moruno</div>
+                    <div class="description">Tradicional, servido en vaso típico</div>
+                </div>
+                <div class="price">3€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Té Hierbabuena</div>
+                    <div class="description">Fresco y aromatic</div>
+                </div>
+                <div class="price">3.50€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Té Rojo</div>
+                    <div class="description">Con propiedades antioxidantes</div>
+                </div>
+                <div class="price">3.50€</div>
+            </div>
+            
+            <div class="category">Refrescos</div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Coca-Cola / Coca-Cola Zero</div>
+                </div>
+                <div class="price">2.50€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Fanta Limón / Naranja</div>
+                </div>
+                <div class="price">2.50€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Aquarius</div>
+                    <div class="description">Naranja, limón o melocotón</div>
+                </div>
+                <div class="price">2.50€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Nestea</div>
+                    <div class="description">Clásico o Maracuyá</div>
+                </div>
+                <div class="price">2.50€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Red Bull</div>
+                </div>
+                <div class="price">3.50€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Agua</div>
+                </div>
+                <div class="price">2€</div>
+            </div>
+            
+            <div class="category">Batidos Artesanales</div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Batido de Fresa</div>
+                </div>
+                <div class="price">5€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Batido de Mango</div>
+                </div>
+                <div class="price">5€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Batido de Chocolate</div>
+                </div>
+                <div class="price">5€</div>
+            </div>
+        </div>
+        
+        <!-- CERVEZA -->
+        <div class="menu-section">
+            <div class="section-title">
+                <span class="icon">🍺</span>
+                <div>
+                    <h2>Cerveza</h2>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Alhambra Reserva</div>
+                    <div class="drink-sizes">
+                        <span class="size">Copa <span>3.50€</span></span>
+                        <span class="size">Jarra <span>5€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Águila</div>
+                    <div class="drink-sizes">
+                        <span class="size">Tercio <span>3.50€</span></span>
+                        <span class="size">Jarra <span>5€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Heineken</div>
+                    <div class="drink-sizes">
+                        <span class="size">Tercio <span>3.50€</span></span>
+                        <span class="size">Jarra <span>5€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Paulaner</div>
+                    <div class="drink-sizes">
+                        <span class="size">Tercio <span>4€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Desperados</div>
+                    <div class="drink-sizes">
+                        <span class="size">Tercio <span>3.50€</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- VINOS -->
+        <div class="menu-section">
+            <div class="section-title">
+                <span class="icon">🍷</span>
+                <div>
+                    <h2>Vino</h2>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Alma</div>
+                    <div class="drink-sizes">
+                        <span class="size">Copa <span>3.50€</span></span>
+                        <span class="size">Botella <span>12€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Verdejo</div>
+                    <div class="drink-sizes">
+                        <span class="size">Copa <span>3.50€</span></span>
+                        <span class="size">Botella <span>12€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Tinto de Verano</div>
+                    <div class="drink-sizes">
+                        <span class="size">Copa <span>3.50€</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COMBINADOS / LICORES -->
+        <div class="menu-section">
+            <div class="section-title">
+                <span class="icon">🥃</span>
+                <div>
+                    <h2>Licores & Combinados</h2>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Whisky</div>
+                    <div class="description">Johnnie Walker, Jack Daniels, Ballantines</div>
+                    <div class="drink-sizes">
+                        <span class="size">Copa <span>7€</span></span>
+                        <span class="size">Botella <span>desde 40€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Ginebra</div>
+                    <div class="description">Puerto de Indias, Beefeater, Tanqueray, Larios</div>
+                    <div class="drink-sizes">
+                        <span class="size">Copa <span>7€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Vodka</div>
+                    <div class="description">Absolut, Ciroc, Belvedere</div>
+                    <div class="drink-sizes">
+                        <span class="size">Copa <span>7€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Ron</div>
+                    <div class="description">Barceló, Brugal, Zacapa</div>
+                    <div class="drink-sizes">
+                        <span class="size">Copa <span>7€</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Licores</div>
+                    <div class="description">Jägermeister, Baileys, Licor 43, Disaronno</div>
+                </div>
+                <div class="price">5-7€</div>
+            </div>
+        </div>
+        
+        <!-- SNACKS -->
+        <div class="menu-section">
+            <div class="section-title">
+                <span class="icon">🍿</span>
+                <div>
+                    <h2>Snacks</h2>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Café</div>
+                </div>
+                <div class="price">1.50€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Pistachos</div>
+                </div>
+                <div class="price">3€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Fruta fresca</div>
+                </div>
+                <div class="price">3€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Golosinas</div>
+                </div>
+                <div class="price">2€</div>
+            </div>
+        </div>
+        
+        <!-- Packs -->
+        <div class="menu-section">
+            <div class="section-title">
+                <span class="icon">🎁</span>
+                <div>
+                    <h2>Packs</h2>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Pack Pareja</div>
+                    <div class="description">2 Cachimbas + 2 Tés morunos</div>
+                </div>
+                <div class="price">25€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Pack Grupo</div>
+                    <div class="description">4 Cachimbas + 4 Tés</div>
+                </div>
+                <div class="price">45€</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="info">
+                    <div class="name">Pack Tertulia</div>
+                    <div class="description">2 Cachimbas + 1 Cerveza + 1 Refresco + Fruta</div>
+                </div>
+                <div class="price">28€</div>
+            </div>
+        </div>
+        
+        <div class="menu-footer">
+            <p>💡 Solicita cualquier sabor que no veas en carta</p>
+            <p class="note">🌬️ ¡Disfruta de tu experiencia en La Cachimba!</p>
+        </div>
+    </div>
+    
+    <button class="back-btn" onclick="history.back()">← Volver</button>
+</body>
+</html>
