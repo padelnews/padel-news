@@ -72,6 +72,11 @@
             color: var(--text);
         }
         
+        .mode-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
         /* Info Banner */
         .info-banner {
             background: linear-gradient(135deg, var(--accent), #d63050);
@@ -754,6 +759,23 @@
         <button class="mode-btn" id="btn-staff" onclick="setMode('staff')">🔐 Staff</button>
     </div>
     
+    <!-- PIN Overlay for Staff -->
+    <div class="modal" id="pin-overlay">
+        <div class="modal-content" style="text-align: center;">
+            <h3 style="color: var(--gold); margin-bottom: 20px;">🔐 Acceso Staff</h3>
+            <p style="margin-bottom: 15px; opacity: 0.8;">Introduce tu PIN para continuar</p>
+            <div class="form-group">
+                <input type="password" id="pin-input" placeholder="••••" maxlength="10" 
+                    style="text-align: center; font-size: 1.5em; letter-spacing: 5px; padding: 15px;"
+                    onkeypress="if(event.key==='Enter')verifyPin()">
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel" onclick="cancelStaffAccess()">Cancelar</button>
+                <button class="modal-btn confirm" onclick="verifyPin()">Acceder</button>
+            </div>
+        </div>
+    </div>
+    
     <div class="info-banner">
         <p>🔥 ¡Mes inaugural a 39€/mes!</p>
     </div>
@@ -1033,13 +1055,11 @@
         
         function setMode(mode) {
             if (mode === 'staff' && !isStaffUnlocked) {
-                // Show PIN dialog
-                const pin = prompt('Introduce PIN de staff:');
-                if (pin !== STAFF_PIN) {
-                    alert('PIN incorrecto');
-                    return;
-                }
-                isStaffUnlocked = true;
+                // Show PIN modal instead of prompt
+                document.getElementById('pin-overlay').classList.add('active');
+                document.getElementById('pin-input').value = '';
+                document.getElementById('pin-input').focus();
+                return;
             }
             
             document.getElementById('btn-customer').classList.toggle('active', mode === 'customer');
@@ -1048,8 +1068,30 @@
             if (mode === 'staff') {
                 showSection('staff');
             } else {
+                isStaffUnlocked = false;
                 showSection('chat');
             }
+        }
+        
+        function verifyPin() {
+            const pin = document.getElementById('pin-input').value;
+            if (pin === STAFF_PIN) {
+                document.getElementById('pin-overlay').classList.remove('active');
+                isStaffUnlocked = true;
+                document.getElementById('btn-customer').classList.remove('active');
+                document.getElementById('btn-staff').classList.add('active');
+                showSection('staff');
+            } else {
+                alert('PIN incorrecto');
+                document.getElementById('pin-input').value = '';
+                document.getElementById('pin-input').focus();
+            }
+        }
+        
+        function cancelStaffAccess() {
+            document.getElementById('pin-overlay').classList.remove('active');
+            document.getElementById('btn-customer').classList.add('active');
+            document.getElementById('btn-staff').classList.remove('active');
         }
         
         // Show section
