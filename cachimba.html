@@ -909,25 +909,292 @@
             
             <!-- Menu (Customer) -->
             <div class="menu-section" id="customer-menu">
-                <div class="menu-card">
-                    <h3>🌬️ Cachimbas</h3>
-                    <div class="menu-item"><span>Cachimba clásica</span><span class="menu-item-price">8€</span></div>
-                    <div class="menu-item"><span>Cachimba sin tabaco</span><span class="menu-item-price">10€</span></div>
-                    <div class="menu-item"><span>Cachimba premium</span><span class="menu-item-price">12€</span></div>
-                    <div class="menu-item"><span>Cachimba doble</span><span class="menu-item-price">14€</span></div>
+                <style>
+                    .carta-container {
+                        max-width: 900px;
+                        margin: 0 auto;
+                    }
+                    .carta-header {
+                        text-align: center;
+                        padding: 30px 20px;
+                        background: linear-gradient(135deg, var(--primary), var(--secondary));
+                        border-radius: 20px;
+                        margin-bottom: 20px;
+                    }
+                    .carta-header h2 {
+                        color: var(--gold);
+                        font-size: 2.5em;
+                        margin-bottom: 10px;
+                    }
+                    .carta-header p {
+                        opacity: 0.8;
+                        font-style: italic;
+                    }
+                    .carta-category {
+                        margin-bottom: 25px;
+                    }
+                    .carta-category-title {
+                        color: var(--accent);
+                        font-size: 1.4em;
+                        margin-bottom: 15px;
+                        padding-bottom: 8px;
+                        border-bottom: 2px solid var(--accent);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .carta-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                        gap: 12px;
+                    }
+                    .carta-item {
+                        background: var(--secondary);
+                        border-radius: 12px;
+                        padding: 15px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        transition: all 0.3s;
+                    }
+                    .carta-item:hover {
+                        transform: translateX(5px);
+                        background: rgba(233, 69, 96, 0.1);
+                    }
+                    .carta-item-name {
+                        font-weight: 600;
+                    }
+                    .carta-item-desc {
+                        font-size: 0.8em;
+                        opacity: 0.7;
+                        margin-top: 3px;
+                    }
+                    .carta-item-price {
+                        color: var(--gold);
+                        font-weight: 700;
+                        font-size: 1.1em;
+                        white-space: nowrap;
+                        margin-left: 15px;
+                    }
+                    .carta-pack {
+                        background: linear-gradient(135deg, var(--secondary), var(--primary));
+                        border: 2px solid var(--gold);
+                        border-radius: 15px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                    }
+                    .carta-pack-title {
+                        color: var(--gold);
+                        font-size: 1.2em;
+                        margin-bottom: 10px;
+                    }
+                    .carta-pack-items {
+                        opacity: 0.8;
+                        font-size: 0.9em;
+                        margin-bottom: 10px;
+                    }
+                    .carta-pack-price {
+                        color: var(--accent);
+                        font-size: 1.5em;
+                        font-weight: 700;
+                    }
+                    .carta-note {
+                        text-align: center;
+                        padding: 15px;
+                        background: rgba(233, 69, 96, 0.1);
+                        border-radius: 10px;
+                        margin-top: 20px;
+                        font-style: italic;
+                        opacity: 0.8;
+                    }
+                </style>
+                
+                <div class="carta-container">
+                    <div class="carta-header">
+                        <h2>🌬️ CARTA</h2>
+                        <p>Más de 30 sabores para tu mejor momento</p>
+                    </div>
+                    
+                    <div class="carta-category">
+                        <div class="carta-category-title">💨 Cachimbas</div>
+                        <div class="carta-grid">
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Clásica</div>
+                                    <div class="carta-item-desc">Tabaco premium</div>
+                                </div>
+                                <div class="carta-item-price">8€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Sin Tabaco</div>
+                                    <div class="carta-item-desc">Para los más清新</div>
+                                </div>
+                                <div class="carta-item-price">10€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Premium</div>
+                                    <div class="carta-item-desc">Mezcla especial</div>
+                                </div>
+                                <div class="carta-item-price">12€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Doble</div>
+                                    <div class="carta-item-desc">Para compartir</div>
+                                </div>
+                                <div class="carta-item-price">14€</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carta-category">
+                        <div class="carta-category-title">🍵 Tés & Infusiones</div>
+                        <div class="carta-grid">
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Té Moruno</div>
+                                    <div class="carta-item-desc">Tradicional</div>
+                                </div>
+                                <div class="carta-item-price">3€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Hierbabuena</div>
+                                    <div class="carta-item-desc">Fresco y natural</div>
+                                </div>
+                                <div class="carta-item-price">3.50€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Té Rojo</div>
+                                    <div class="carta-item-desc">Depurativo</div>
+                                </div>
+                                <div class="carta-item-price">3.50€</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carta-category">
+                        <div class="carta-category-title">🥤 Bebidas</div>
+                        <div class="carta-grid">
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Refresco</div>
+                                    <div class="carta-item-desc">Cola, naranja, limón</div>
+                                </div>
+                                <div class="carta-item-price">2.50€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Aquarius</div>
+                                    <div class="carta-item-desc">Naranja o limón</div>
+                                </div>
+                                <div class="carta-item-price">2.50€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Batido Artesanal</div>
+                                    <div class="carta-item-desc">Fresa, chocolate, vainilla</div>
+                                </div>
+                                <div class="carta-item-price">5€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Zumo Natural</div>
+                                    <div class="carta-item-desc">Naranja, piña</div>
+                                </div>
+                                <div class="carta-item-price">4€</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carta-category">
+                        <div class="carta-category-title">🎁 Packs Especiales</div>
+                        <div class="carta-pack">
+                            <div class="carta-pack-title">🌹 Pack Pareja</div>
+                            <div class="carta-pack-items">2 cachimbas + 2 tés + snacks</div>
+                            <div class="carta-pack-price">25€</div>
+                        </div>
+                        <div class="carta-pack">
+                            <div class="carta-pack-title">🎉 Pack Grupo</div>
+                            <div class="carta-pack-items">4 cachimbas + 4 tés + snacks + botella vodka (tercio)</div>
+                            <div class="carta-pack-price">55€</div>
+                        </div>
+                        <div class="carta-pack">
+                            <div class="carta-pack-title">👑 Pack Premium</div>
+                            <div class="carta-pack-items">2 cachimbas premium + 2 cócteles + snacks</div>
+                            <div class="carta-pack-price">40€</div>
+                        </div>
+                    </div>
+                    
+                    <div class="carta-category">
+                        <div class="carta-category-title">🍹 Cócteles</div>
+                        <div class="carta-grid">
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Mojito</div>
+                                    <div class="carta-item-desc">Ron, hierbabuena, lima</div>
+                                </div>
+                                <div class="carta-item-price">7.50€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Sex on the Beach</div>
+                                    <div class="carta-item-desc">Vodka, melocotón, naranja</div>
+                                </div>
+                                <div class="carta-item-price">7.50€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Piña Colada</div>
+                                    <div class="carta-item-desc">Ron, coco, piña</div>
+                                </div>
+                                <div class="carta-item-price">7.50€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Moscow Mule</div>
+                                    <div class="carta-item-desc">Vodka, ginger, lima</div>
+                                </div>
+                                <div class="carta-item-price">7.50€</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carta-category">
+                        <div class="carta-category-title">🍺 Cervezas & Vino</div>
+                        <div class="carta-grid">
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Tercio</div>
+                                    <div class="carta-item-desc">Águila, Heineken</div>
+                                </div>
+                                <div class="carta-item-price">3.50€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Copa de Vino</div>
+                                    <div class="carta-item-desc">Tinto o blanco</div>
+                                </div>
+                                <div class="carta-item-price">3.50€</div>
+                            </div>
+                            <div class="carta-item">
+                                <div>
+                                    <div class="carta-item-name">Tinto de Verano</div>
+                                    <div class="carta-item-desc">Refresco y vino</div>
+                                </div>
+                                <div class="carta-item-price">3.50€</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carta-note">
+                        💡 Consulta con el camarero por sabores especiales y catas de té
+                    </div>
                 </div>
-                <div class="menu-card">
-                    <h3>🍵 Bebidas</h3>
-                    <div class="menu-item"><span>Té moruno</span><span class="menu-item-price">3€</span></div>
-                    <div class="menu-item"><span>Té hierbabuena</span><span class="menu-item-price">3.50€</span></div>
-                    <div class="menu-item"><span>Refresco</span><span class="menu-item-price">2.50€</span></div>
-                    <div class="menu-item"><span>Batido artesanal</span><span class="menu-item-price">5€</span></div>
-                </div>
-                <div class="menu-card">
-                    <h3>🎁 Packs</h3>
-                    <div class="menu-item"><span>Pack Pareja (2 cachimbas + 2 tés)</span><span class="menu-item-price">25€</span></div>
-                    <div class="menu-item"><span>Pack Grupo (4 cachimbas + 4 tés)</span><span class="menu-item-price">55€</span></div>
-                </div>
+                
                 <div style="text-align:center;margin-top:20px;">
                     <button onclick="backToChat()" style="padding:10px 20px;background:var(--accent);border:none;color:white;border-radius:8px;cursor:pointer;">
                         ← Volver al chat
@@ -1177,7 +1444,11 @@
         }
         
         function showMenu() {
-            window.open('carta.html', '_blank');
+            document.getElementById('customer-chat').style.display = 'none';
+            document.getElementById('customer-floor').classList.remove('active');
+            document.getElementById('customer-menu').classList.add('active');
+            document.getElementById('customer-pricing').classList.remove('active');
+            customerSubView = 'menu';
         }
         
         function showPricing() {
