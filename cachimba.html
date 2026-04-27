@@ -811,7 +811,12 @@
             </div>
             
             <div style="text-align: center; margin-top: 15px;">
-                <button onclick="backToChat()" style="padding: 10px 20px; background: transparent; border: 1px solid var(--accent); color: var(--gold); border-radius: 8px; cursor: pointer;">← Volver al chat</button>
+                <button onclick="clearTableSelection()" style="padding: 10px 20px; background: transparent; border: 1px solid var(--accent); color: var(--gold); border-radius: 8px; cursor: pointer;">← Cancelar</button>
+            </div>
+            
+            <div class="tabs" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                <div class="tab" onclick="goToSection('menu')">📋 Carta</div>
+                <div class="tab" onclick="goToSection('pricing')">💰 Precio</div>
             </div>
         </div>
         
@@ -1341,9 +1346,6 @@
                 return;
             }
             
-            // Generate confirmation code
-            const confirmationCode = Math.floor(100000 + Math.random() * 900000).toString();
-            
             const reservation = {
                 id: Date.now(),
                 name: name,
@@ -1358,9 +1360,7 @@
                 notes: notes,
                 type: 'reserva',
                 status: 'pending',
-                confirmationCode: confirmationCode,
-                createdAt: new Date().toISOString(),
-                expiresAt: new Date(Date.now() + 30 * 60 * 1000).toISOString() // 30 min auto-release
+                createdAt: new Date().toISOString()
             };
             
             table.status = 'reserved';
@@ -1377,39 +1377,8 @@
             generateStaffCalendar();
             updateDayReservationsList();
             
-            alert(`✅ Reserva creada con código: ${confirmationCode}\n\n📅 ${selectedStaffDate.toLocaleDateString('es-ES')}\n⏰ ${time}\n🪑 ${table.name}\n👤 ${name}\n📱 ${phoneClean}\n\n⏳ Pendiente de check-in\n(Se libera en 30 min si no llega)`);
+            alert(`✅ Reserva creada!\n\n📅 ${selectedStaffDate.toLocaleDateString('es-ES')}\n⏰ ${time}\n🪑 ${table.name}\n👤 ${name}\n📱 ${phoneClean}`);
         }
-        
-        // Auto-release expired reservations
-        function checkExpiredReservations() {
-            const now = new Date();
-            let updated = false;
-            
-            reservations.forEach(r => {
-                if (r.status === 'pending' && r.expiresAt) {
-                    const expires = new Date(r.expiresAt);
-                    if (now > expires) {
-                        // Auto-release this table
-                        const table = tables.find(t => t.id === r.tableId);
-                        if (table && table.status === 'reserved' && table.reservation?.id === r.id) {
-                            table.status = 'free';
-                            table.reservation = null;
-                            r.status = 'expired';
-                            updated = true;
-                        }
-                    }
-                }
-            });
-            
-            if (updated) {
-                localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
-                generateStaffTables();
-                updateDayReservationsList();
-            }
-        }
-        
-        // Check expired reservations every minute
-        setInterval(checkExpiredReservations, 60000);
         
         // Day Reservations List
         function updateDayReservationsList() {
@@ -1421,9 +1390,9 @@
                 container.innerHTML = `<p style="text-align:center;opacity:0.6;">No hay reservas para este día</p>`;
             } else {
                 container.innerHTML = dayReservations.map(r => `
-                    <div class="reservation-item" style="border-left-color: ${r.status === 'expired' ? '#e74c3c' : r.status === 'confirmed' ? '#2ecc71' : '#f39c12'};">
+                    <div class="reservation-item">
                         <div>
-                            <h5>${r.name} ${r.confirmationCode ? `<span style="background:#f39c12;padding:2px 6px;border-radius:4px;font-size:0.7em;">${r.confirmationCode}</span>` : ''}</h5>
+                            <h5>${r.name}</h5>
                             <p>📱 ${r.phone} ${r.tableName ? `• 🪑 ${r.tableName}` : ''}</p>
                         </div>
                         <div class="reservation-time">
@@ -1589,6 +1558,18 @@
 ¡Te esperamos! 🌬️`);
             
             backToChat();
+        }
+        
+        function clearTableSelection() {
+            selectedCustomerTableId = null;
+            document.getElementById('customer-reservation-form').style.display = 'none';
+            generateCustomerTables();
+        }
+        
+        function goToSection(section) {
+            selectedCustomerTableId = null;
+            document.getElementById('customer-floor-section').style.display = 'none';
+            showSection(section);
         }
         
         function backToChat() {
