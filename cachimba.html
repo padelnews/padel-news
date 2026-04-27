@@ -1436,36 +1436,34 @@
         
         function startReservation() {
             document.getElementById('customer-chat').style.display = 'none';
-            document.getElementById('customer-floor').classList.add('active');
-            document.getElementById('customer-menu').classList.remove('active');
-            document.getElementById('customer-pricing').classList.remove('active');
-            customerSubView = 'floor';
-            generateCustomerTables();
+            document.getElementById('customer-floor').style.display = 'block';
+            document.getElementById('customer-menu').style.display = 'none';
+            document.getElementById('customer-pricing').style.display = 'none';
         }
         
         function showMenu() {
+            console.log('showMenu called');
             document.getElementById('customer-chat').style.display = 'none';
-            document.getElementById('customer-floor').classList.remove('active');
-            document.getElementById('customer-menu').classList.add('active');
-            document.getElementById('customer-pricing').classList.remove('active');
-            customerSubView = 'menu';
+            document.getElementById('customer-floor').style.display = 'none';
+            document.getElementById('customer-menu').style.display = 'block';
+            document.getElementById('customer-pricing').style.display = 'none';
         }
         
         function showPricing() {
+            console.log('showPricing called');
             document.getElementById('customer-chat').style.display = 'none';
-            document.getElementById('customer-floor').classList.remove('active');
-            document.getElementById('customer-menu').classList.remove('active');
-            document.getElementById('customer-pricing').classList.add('active');
-            customerSubView = 'pricing';
+            document.getElementById('customer-floor').style.display = 'none';
+            document.getElementById('customer-menu').style.display = 'none';
+            document.getElementById('customer-pricing').style.display = 'block';
         }
         
         function backToChat() {
+            console.log('backToChat called');
             document.getElementById('customer-chat').style.display = 'block';
-            document.getElementById('customer-floor').classList.remove('active');
-            document.getElementById('customer-menu').classList.remove('active');
-            document.getElementById('customer-pricing').classList.remove('active');
+            document.getElementById('customer-floor').style.display = 'none';
+            document.getElementById('customer-menu').style.display = 'none';
+            document.getElementById('customer-pricing').style.display = 'none';
             document.getElementById('customer-form').style.display = 'none';
-            customerSubView = 'chat';
         }
         
         function generateCustomerTables() {
