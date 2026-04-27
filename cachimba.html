@@ -1023,7 +1023,20 @@
         });
         
         // Mode
+        let isStaffUnlocked = false;
+        const STAFF_PIN = '1234';
+        
         function setMode(mode) {
+            if (mode === 'staff' && !isStaffUnlocked) {
+                // Show PIN dialog
+                const pin = prompt('Introduce PIN de staff:');
+                if (pin !== STAFF_PIN) {
+                    alert('PIN incorrecto');
+                    return;
+                }
+                isStaffUnlocked = true;
+            }
+            
             document.getElementById('btn-customer').classList.toggle('active', mode === 'customer');
             document.getElementById('btn-staff').classList.toggle('active', mode === 'staff');
             
@@ -1289,6 +1302,13 @@
                 return;
             }
             
+            // Basic phone validation
+            const phoneClean = phone.replace(/\s/g, '').replace(/\+/g, '');
+            if (!/^\d{9}$/.test(phoneClean)) {
+                alert('El teléfono debe tener 9 dígitos');
+                return;
+            }
+            
             if (!selectedTableId) {
                 alert('Selecciona una mesa');
                 return;
@@ -1302,10 +1322,32 @@
             
             const dayKey = selectedStaffDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
             
+            // CHECK 1: Limit 1 reservation per phone per day
+            const existingPhoneReservations = reservations.filter(r => 
+                r.phone === phoneClean && r.dateKey === dayKey
+            );
+            if (existingPhoneReservations.length > 0) {
+                alert('⚠️ Este teléfono ya tiene una reserva para hoy.\n\nLímite: 1 reserva por persona/día');
+                return;
+            }
+            
+            // CHECK 2: Limit reservations per time slot (anti-sabotage)
+            const tableReservations = reservations.filter(r => 
+                r.dateKey === dayKey && r.time === time
+            );
+            const maxTablesPerSlot = 10; // Don't allow more than 10 tables at once
+            if (tableReservations.length >= maxTablesPerSlot) {
+                alert('⚠️ Demasiadas reservas para este horario.\n\nContacta con el bar para grupos grandes.');
+                return;
+            }
+            
+            // Generate confirmation code
+            const confirmationCode = Math.floor(100000 + Math.random() * 900000).toString();
+            
             const reservation = {
                 id: Date.now(),
                 name: name,
-                phone: phone,
+                phone: phoneClean,
                 date: dayKey,
                 dateKey: dayKey,
                 dateDisplay: selectedStaffDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }),
@@ -1315,7 +1357,10 @@
                 tableName: table.name,
                 notes: notes,
                 type: 'reserva',
-                createdAt: new Date().toISOString()
+                status: 'pending',
+                confirmationCode: confirmationCode,
+                createdAt: new Date().toISOString(),
+                expiresAt: new Date(Date.now() + 30 * 60 * 1000).toISOString() // 30 min auto-release
             };
             
             table.status = 'reserved';
@@ -1332,8 +1377,39 @@
             generateStaffCalendar();
             updateDayReservationsList();
             
-            alert(`✅ Reserva confirmada!\n\n📅 ${selectedStaffDate.toLocaleDateString('es-ES')}\n⏰ ${time}\n🪑 ${table.name}\n👤 ${name}`);
+            alert(`✅ Reserva creada con código: ${confirmationCode}\n\n📅 ${selectedStaffDate.toLocaleDateString('es-ES')}\n⏰ ${time}\n🪑 ${table.name}\n👤 ${name}\n📱 ${phoneClean}\n\n⏳ Pendiente de check-in\n(Se libera en 30 min si no llega)`);
         }
+        
+        // Auto-release expired reservations
+        function checkExpiredReservations() {
+            const now = new Date();
+            let updated = false;
+            
+            reservations.forEach(r => {
+                if (r.status === 'pending' && r.expiresAt) {
+                    const expires = new Date(r.expiresAt);
+                    if (now > expires) {
+                        // Auto-release this table
+                        const table = tables.find(t => t.id === r.tableId);
+                        if (table && table.status === 'reserved' && table.reservation?.id === r.id) {
+                            table.status = 'free';
+                            table.reservation = null;
+                            r.status = 'expired';
+                            updated = true;
+                        }
+                    }
+                }
+            });
+            
+            if (updated) {
+                localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
+                generateStaffTables();
+                updateDayReservationsList();
+            }
+        }
+        
+        // Check expired reservations every minute
+        setInterval(checkExpiredReservations, 60000);
         
         // Day Reservations List
         function updateDayReservationsList() {
@@ -1345,14 +1421,14 @@
                 container.innerHTML = `<p style="text-align:center;opacity:0.6;">No hay reservas para este día</p>`;
             } else {
                 container.innerHTML = dayReservations.map(r => `
-                    <div class="reservation-item">
+                    <div class="reservation-item" style="border-left-color: ${r.status === 'expired' ? '#e74c3c' : r.status === 'confirmed' ? '#2ecc71' : '#f39c12'};">
                         <div>
-                            <h5>${r.name}</h5>
+                            <h5>${r.name} ${r.confirmationCode ? `<span style="background:#f39c12;padding:2px 6px;border-radius:4px;font-size:0.7em;">${r.confirmationCode}</span>` : ''}</h5>
                             <p>📱 ${r.phone} ${r.tableName ? `• 🪑 ${r.tableName}` : ''}</p>
                         </div>
                         <div class="reservation-time">
                             <div class="time">${r.time}</div>
-                            <div>${r.people} pers.</div>
+                            <div>${r.people} pers. • ${r.status === 'pending' ? '⏳ Pendiente' : r.status === 'confirmed' ? '✅ Confirmado' : '❌ Caducado'}</div>
                         </div>
                     </div>
                 `).join('');
