@@ -372,6 +372,41 @@
             cursor: not-allowed;
         }
         
+        /* Staff only elements */
+        .staff-only {
+            display: none;
+        }
+        
+        body.staff-mode .staff-only {
+            display: block;
+        }
+        
+        body.staff-mode .customer-only {
+            display: none;
+        }
+        
+        body.staff-mode .staff-bar {
+            display: flex;
+        }
+        
+        body:not(.staff-mode) .staff-panel {
+            display: none;
+        }
+        
+        body:not(.staff-mode) .floor-plan-header .legend span:not(.free) {
+            display: none;
+        }
+        
+        body.staff-mode #btn-staff {
+            background: var(--accent);
+            color: white;
+        }
+        
+        body:not(.staff-mode) #btn-customer {
+            background: var(--accent);
+            color: white;
+        }
+        
         /* Staff Control Panel */
         .staff-panel {
             background: var(--primary);
@@ -857,7 +892,13 @@
         <p>Tu lounge de hookah favorito • Terraza disponible • Eventos privados</p>
     </div>
     
-    <div class="info-banner">
+    <!-- Mode Toggle -->
+    <div style="background: var(--secondary); padding: 10px; display: flex; justify-content: center; gap: 10px;">
+        <button id="btn-customer" onclick="setMode('customer')" style="padding: 10px 25px; border: none; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;">👤 Cliente</button>
+        <button id="btn-staff" onclick="setMode('staff')" style="padding: 10px 25px; border: none; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s; background: var(--secondary); color: var(--text);">🔐 Staff</button>
+    </div>
+    
+    <div class="info-banner customer-only">
         <p>🔥 ¡OFERTA ESPECIAL! Mes inaugural a 39€/mes - ¡Consulta condiciones!</p>
     </div>
     
@@ -898,8 +939,32 @@
                 </div>
             </div>
             
+            <!-- Date selector for staff -->
+            <div class="staff-only" style="background: var(--secondary); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <div>
+                        <label style="color: var(--gold); font-size: 0.9em; display: block; margin-bottom: 5px;">📅 Ver estado para fecha:</label>
+                        <input type="date" id="floor-date" onchange="updateFloorForDate()" style="padding: 10px; background: var(--primary); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: var(--text);">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="color: var(--gold); font-size: 0.9em; display: block; margin-bottom: 5px;">⏰ Hora:</label>
+                        <select id="floor-time" onchange="updateFloorForDate()" style="padding: 10px; background: var(--primary); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: var(--text);">
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00" selected>21:00</option>
+                            <option value="22:00">22:00</option>
+                            <option value="23:00">23:00</option>
+                        </select>
+                    </div>
+                    <button onclick="showTodayFloor()" style="padding: 10px 20px; background: var(--accent); border: none; border-radius: 8px; color: white; cursor: pointer; margin-top: 20px;">Hoy</button>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.7;">💡 Selecciona una fecha para ver qué mesas están reservadas ese día</p>
+            </div>
+            
             <!-- Quick filters -->
-            <div class="staff-actions" style="margin-bottom: 20px;">
+            <div class="staff-only staff-actions" style="margin-bottom: 20px;">
                 <button class="staff-btn free" onclick="filterTables('all')">Todas</button>
                 <button class="staff-btn free" onclick="filterTables('free')">Solo libres</button>
                 <button class="staff-btn occupy" onclick="showOccupied()">Ocupadas ahora</button>
@@ -1122,6 +1187,18 @@
         let selectedDate = new Date();
         let selectedTableId = null;
         let currentFilter = 'all';
+        let isStaffMode = false;
+        
+        function setMode(staff) {
+            isStaffMode = staff === 'staff';
+            document.body.classList.toggle('staff-mode', isStaffMode);
+            
+            if (staff === 'customer') {
+                showSection('chat');
+            } else {
+                showSection('floor');
+            }
+        }
         
         // Tables configuration
         const tables = [
@@ -1160,6 +1237,10 @@
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('res-date').value = today;
             document.getElementById('res-date').min = today;
+            document.getElementById('floor-date').value = today;
+            
+            // Also update floor plan for today
+            updateFloorForDate();
         });
         
         // Show section
@@ -1227,8 +1308,58 @@
                 ${table.status === 'occupied' ? `<div class="table-info">👤 ${table.currentOccupancy} ahora</div>` : ''}
             `;
             
-            card.onclick = () => selectTable(table.id);
+            // Only allow clicking if table is free
+            if (table.status === 'free') {
+                card.onclick = () => selectTable(table.id);
+                card.style.cursor = 'pointer';
+            } else {
+                card.style.cursor = 'not-allowed';
+            }
             return card;
+        }
+        
+        function showTodayFloor() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('floor-date').value = today;
+            updateFloorForDate();
+        }
+        
+        function updateFloorForDate() {
+            const dateInput = document.getElementById('floor-date').value;
+            const timeInput = document.getElementById('floor-time').value;
+            
+            if (!dateInput) return;
+            
+            // Convert to DD/MM/YYYY
+            const parts = dateInput.split('-');
+            const dateKey = `${parts[2]}/${parts[1]}/${parts[0]}`;
+            
+            // Get reservations for this date/time
+            const dayReservations = reservations.filter(r => r.dateKey === dateKey);
+            
+            // Reset all tables to free
+            tables.forEach(t => {
+                t.status = 'free';
+                t.currentOccupancy = 0;
+                t.reservation = null;
+            });
+            
+            // Mark tables as reserved based on existing reservations
+            dayReservations.forEach(r => {
+                if (r.time === timeInput) {
+                    const table = tables.find(t => t.id === r.tableId);
+                    if (table) {
+                        table.status = 'reserved';
+                        table.reservation = r;
+                    }
+                }
+            });
+            
+            generateFloorPlan();
+            
+            // Update legend to show date info
+            const legend = document.querySelector('.floor-plan-header h3');
+            legend.textContent = `🪑 Plano del Local - ${new Date(dateInput).toLocaleDateString('es-ES', { day: 'numeric', month: 'long' })} ${timeInput}`;
         }
         
         function selectTable(tableId) {
@@ -1516,7 +1647,7 @@
             
             let preview = '';
             dayReservations.slice(0, 2).forEach(r => {
-                preview += `<strong>${r.time}</strong> ${r.name}<br>`;
+                preview += `<strong>${r.time}</strong> ${r.name} ${r.tableName ? `(${r.tableName})` : ''}<br>`;
             });
             if (dayReservations.length > 2) {
                 preview += `+${dayReservations.length - 2} más`;
@@ -1560,8 +1691,8 @@
                 container.innerHTML = dayReservations.map(r => `
                     <div class="reservation-item">
                         <div class="reservation-info">
-                            <h4>${r.name} ${r.tableName ? `(${r.tableName})` : ''}</h4>
-                            <p>📱 ${r.phone || 'Sin teléfono'} ${r.notes ? `• ${r.notes}` : ''}</p>
+                            <h4>${r.name}</h4>
+                            <p>📱 ${r.phone || 'Sin teléfono'} ${r.tableName ? `• 🪑 ${r.tableName}` : ''} ${r.notes ? `• ${r.notes}` : ''}</p>
                         </div>
                         <div class="reservation-time">
                             <div class="time">${r.time}</div>
