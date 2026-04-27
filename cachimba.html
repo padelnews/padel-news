@@ -13,6 +13,8 @@
             --text: #edf2f7;
             --bg: #0f0f1a;
             --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,15 +51,18 @@
             display: flex;
             background: var(--secondary);
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
         }
         
         .tab {
             flex: 1;
-            padding: 15px;
+            min-width: 120px;
+            padding: 15px 10px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: 600;
+            font-size: 0.9em;
         }
         
         .tab:hover {
@@ -71,7 +76,7 @@
         
         /* Container */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -86,7 +91,7 @@
         }
         
         .chat-messages {
-            height: 350px;
+            height: 400px;
             overflow-y: auto;
             padding: 15px;
             background: rgba(0,0,0,0.3);
@@ -143,28 +148,280 @@
             transform: scale(1.05);
         }
         
-        /* Calendar Section - FULL MONTH VIEW */
+        /* Floor Plan Section */
+        .floor-plan-container {
+            display: none;
+        }
+        
+        .floor-plan-container.active {
+            display: block;
+        }
+        
+        .floor-plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background: var(--secondary);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .floor-plan-header h3 {
+            color: var(--gold);
+        }
+        
+        .legend {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85em;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .legend-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+        
+        .legend-dot.free { background: var(--success); }
+        .legend-dot.reserved { background: var(--warning); }
+        .legend-dot.occupied { background: var(--danger); }
+        
+        .floor-plan {
+            background: var(--primary);
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .floor-plan-title {
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .tables-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .table-card {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+            position: relative;
+        }
+        
+        .table-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .table-card.selected {
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(244, 162, 97, 0.4);
+        }
+        
+        .table-card.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        
+        .table-card.disabled:hover {
+            transform: none;
+        }
+        
+        .table-card .table-number {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .table-card .table-capacity {
+            font-size: 0.85em;
+            opacity: 0.7;
+        }
+        
+        .table-card .table-status {
+            margin-top: 8px;
+            font-size: 0.8em;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .table-card .table-status.free {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+        
+        .table-card .table-status.reserved {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+        
+        .table-card .table-status.occupied {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+        
+        .table-card .table-info {
+            font-size: 0.75em;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+        
+        /* Table size indicators */
+        .table-card.size-2 { border-left: 4px solid #3498db; }
+        .table-card.size-4 { border-left: 4px solid #9b59b6; }
+        .table-card.size-6 { border-left: 4px solid #e67e22; }
+        .table-card.size-8 { border-left: 4px solid #1abc9c; }
+        
+        .table-card .table-number { color: var(--gold); }
+        
+        /* Reservation Form in Floor Plan */
+        .reservation-form {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .reservation-form h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .selected-table-display {
+            background: var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .selected-table-display .table-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text);
+            font-size: 0.9em;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1em;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Staff Control Panel */
+        .staff-panel {
+            background: var(--primary);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .staff-panel h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .staff-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .staff-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        
+        .staff-btn.occupy {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .staff-btn.free {
+            background: var(--success);
+            color: white;
+        }
+        
+        .staff-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Calendar Section */
         .calendar-container {
             display: none;
         }
         
         .calendar-container.active {
             display: block;
-        }
-        
-        .staff-bar {
-            background: var(--secondary);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .staff-name {
-            color: var(--gold);
-            font-weight: 600;
         }
         
         .calendar-wrapper {
@@ -257,10 +514,6 @@
             line-height: 1.4;
         }
         
-        .reservation-preview strong {
-            color: var(--gold);
-        }
-        
         .reservation-count-badge {
             position: absolute;
             top: 8px;
@@ -300,10 +553,6 @@
             align-items: center;
         }
         
-        .reservation-item.walkin {
-            border-left-color: var(--gold);
-        }
-        
         .reservation-info h4 {
             color: var(--text);
             margin-bottom: 5px;
@@ -322,12 +571,6 @@
             font-size: 1.2em;
             font-weight: 700;
             color: var(--accent);
-        }
-        
-        .reservation-time .people {
-            font-size: 0.85em;
-            color: var(--text);
-            opacity: 0.7;
         }
         
         .add-btn {
@@ -367,9 +610,6 @@
         .menu-section h3 {
             color: var(--gold);
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
         .menu-item {
@@ -377,14 +617,6 @@
             justify-content: space-between;
             padding: 12px 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .menu-item:last-child {
-            border-bottom: none;
-        }
-        
-        .menu-item-name {
-            color: var(--text);
         }
         
         .menu-item-price {
@@ -409,12 +641,6 @@
         .pricing-header h2 {
             color: var(--gold);
             font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .pricing-header p {
-            color: var(--text);
-            opacity: 0.8;
         }
         
         .pricing-card {
@@ -444,11 +670,6 @@
             color: var(--accent);
         }
         
-        .pricing-price .period {
-            color: var(--text);
-            opacity: 0.7;
-        }
-        
         .pricing-features {
             list-style: none;
         }
@@ -461,17 +682,8 @@
             gap: 12px;
         }
         
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-        
         .pricing-features .check {
             color: var(--success);
-            font-size: 1.2em;
-        }
-        
-        .pricing-features .feature-name {
-            color: var(--text);
         }
         
         .pricing-cta {
@@ -511,7 +723,6 @@
         
         .testimonial-text {
             font-style: italic;
-            color: var(--text);
             margin-bottom: 10px;
         }
         
@@ -559,36 +770,6 @@
             text-align: center;
         }
         
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: var(--text);
-            font-size: 0.9em;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background: var(--secondary);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            color: var(--text);
-            font-size: 1em;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-        
         .modal-buttons {
             display: flex;
             gap: 10px;
@@ -615,10 +796,6 @@
             color: white;
         }
         
-        .modal-btn:hover {
-            transform: scale(1.02);
-        }
-        
         /* Info Banner */
         .info-banner {
             background: linear-gradient(135deg, var(--accent), #d63050);
@@ -631,25 +808,6 @@
         .info-banner p {
             color: white;
             font-weight: 600;
-        }
-        
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--primary); }
-        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
-        
-        /* Status badge */
-        .status-badge {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.7em;
-            font-weight: 600;
-        }
-        
-        .status-badge.active {
-            background: rgba(46, 204, 113, 0.2);
-            color: #2ecc71;
         }
         
         /* Stats bar */
@@ -675,8 +833,21 @@
         
         .stat-item .label {
             font-size: 0.85em;
-            color: var(--text);
             opacity: 0.7;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+        
+        /* Zone labels */
+        .zone-label {
+            text-align: center;
+            color: var(--gold);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -692,6 +863,7 @@
     
     <div class="tabs">
         <div class="tab active" onclick="showSection('chat')">💬 Reservar</div>
+        <div class="tab" onclick="showSection('floor')">🪑 Mesas</div>
         <div class="tab" onclick="showSection('calendar')">📅 Calendario</div>
         <div class="tab" onclick="showSection('menu')">📋 Carta</div>
         <div class="tab" onclick="showSection('pricing')">💰 Precio</div>
@@ -715,29 +887,116 @@
             </div>
         </div>
         
-        <!-- Calendar Section -->
-        <div class="calendar-container" id="calendar-section">
-            <div class="staff-bar">
-                <div>
-                    <span class="staff-name">📱 Panel de Staff</span>
-                </div>
-                <div>
-                    <span class="status-badge active">● En línea</span>
+        <!-- Floor Plan Section -->
+        <div class="floor-plan-container" id="floor-section">
+            <div class="floor-plan-header">
+                <h3>🪑 Plano del Local</h3>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot free"></div> Libre</div>
+                    <div class="legend-item"><div class="legend-dot reserved"></div> Reservada</div>
+                    <div class="legend-item"><div class="legend-dot occupied"></div> Ocupada</div>
                 </div>
             </div>
             
+            <!-- Quick filters -->
+            <div class="staff-actions" style="margin-bottom: 20px;">
+                <button class="staff-btn free" onclick="filterTables('all')">Todas</button>
+                <button class="staff-btn free" onclick="filterTables('free')">Solo libres</button>
+                <button class="staff-btn occupy" onclick="showOccupied()">Ocupadas ahora</button>
+            </div>
+            
+            <div class="floor-plan">
+                <div class="floor-plan-title">🏠 SALÓN PRINCIPAL</div>
+                <div class="tables-grid" id="tables-grid-main">
+                    <!-- Generated by JS -->
+                </div>
+                
+                <div class="zone-label">🌿 TERRAZA</div>
+                <div class="tables-grid" id="tables-grid-terrace">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+            
+            <!-- Reservation Form -->
+            <div class="reservation-form" id="reservation-form">
+                <h4>📝 Nueva Reserva</h4>
+                
+                <div class="selected-table-display" id="selected-table-display">
+                    <div class="table-icon">🪑</div>
+                    <div>Selecciona una mesa libre</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nombre *</label>
+                        <input type="text" id="res-name" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono *</label>
+                        <input type="tel" id="res-phone" placeholder="600 123 456">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Fecha *</label>
+                        <input type="date" id="res-date">
+                    </div>
+                    <div class="form-group">
+                        <label>Hora *</label>
+                        <select id="res-time">
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00" selected>21:00</option>
+                            <option value="22:00">22:00</option>
+                            <option value="23:00">23:00</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Notas (opcional)</label>
+                    <input type="text" id="res-notes" placeholder="Terraza, ocasión especial...">
+                </div>
+                
+                <button class="submit-btn" id="submit-reservation" onclick="submitReservation()" disabled>
+                    Selecciona una mesa para continuar
+                </button>
+            </div>
+            
+            <!-- Staff Quick Actions -->
+            <div class="staff-panel">
+                <h3>🎛️ Control Rápido Staff</h3>
+                <p style="margin-bottom: 15px; opacity: 0.7;">Acciones rápidas para gestionar mesas</p>
+                
+                <div class="staff-actions">
+                    <button class="staff-btn occupy" onclick="quickOccupyAll()">Ocupar mesa sel.</button>
+                    <button class="staff-btn free" onclick="quickFreeTable()">Liberar mesa sel.</button>
+                    <button class="staff-btn occupy" onclick="markWalkIn()">🚶 Walk-in</button>
+                </div>
+                
+                <div id="selected-table-actions" style="margin-top: 15px; opacity: 0.6;">
+                    Selecciona una mesa para ver acciones
+                </div>
+            </div>
+        </div>
+        
+        <!-- Calendar Section -->
+        <div class="calendar-container" id="calendar-section">
             <div class="stats-bar">
                 <div class="stat-item">
                     <div class="number" id="total-reservations">0</div>
-                    <div class="label">Reservas totales</div>
+                    <div class="label">Total reservas</div>
                 </div>
                 <div class="stat-item">
                     <div class="number" id="today-reservations">0</div>
                     <div class="label">Hoy</div>
                 </div>
                 <div class="stat-item">
-                    <div class="number" id="week-reservations">0</div>
-                    <div class="label">Esta semana</div>
+                    <div class="number" id="tables-used">0</div>
+                    <div class="label">Mesas en uso</div>
                 </div>
             </div>
             
@@ -758,17 +1017,14 @@
                     <div class="day-header">Dom</div>
                 </div>
                 
-                <div class="calendar-grid-full" id="calendar-days">
-                    <!-- Days will be generated by JS -->
-                </div>
+                <div class="calendar-grid-full" id="calendar-days"></div>
             </div>
             
-            <div class="reservations-list" id="reservations-list">
-                <h3>📋 Reservas del día seleccionado</h3>
+            <div class="reservations-list">
+                <h3>📋 Reservas del día</h3>
                 <div id="day-reservations">
-                    <p style="text-align:center;opacity:0.6;padding:20px;">Selecciona un día para ver sus reservas</p>
+                    <p style="text-align:center;opacity:0.6;padding:20px;">Selecciona un día</p>
                 </div>
-                <button class="add-btn" onclick="openAddModal()">➕ Añadir nueva reserva</button>
             </div>
         </div>
         
@@ -776,85 +1032,29 @@
         <div class="menu-container" id="menu-section">
             <div class="menu-section">
                 <h3>🌬️ Cachimbas</h3>
-                <div class="menu-item">
-                    <span class="menu-item-name">Cachimba clásica (tabaco normal)</span>
-                    <span class="menu-item-price">8€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Cachimba sin tabaco (Herbal)</span>
-                    <span class="menu-item-price">10€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Cachimba premium (mango/coco/fresa)</span>
-                    <span class="menu-item-price">12€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Cachimba doble (+ tabaco extra)</span>
-                    <span class="menu-item-price">14€</span>
-                </div>
+                <div class="menu-item"><span>Cachimba clásica</span><span class="menu-item-price">8€</span></div>
+                <div class="menu-item"><span>Cachimba sin tabaco</span><span class="menu-item-price">10€</span></div>
+                <div class="menu-item"><span>Cachimba premium</span><span class="menu-item-price">12€</span></div>
+                <div class="menu-item"><span>Cachimba doble</span><span class="menu-item-price">14€</span></div>
             </div>
-            
             <div class="menu-section">
                 <h3>🍵 Bebidas</h3>
-                <div class="menu-item">
-                    <span class="menu-item-name">Té moruno (tradicional)</span>
-                    <span class="menu-item-price">3€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Té con hierbabuena</span>
-                    <span class="menu-item-price">3.50€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Refresco</span>
-                    <span class="menu-item-price">2.50€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Zumo natural (naranja/limón)</span>
-                    <span class="menu-item-price">4€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Batido artesanal</span>
-                    <span class="menu-item-price">5€</span>
-                </div>
+                <div class="menu-item"><span>Té moruno</span><span class="menu-item-price">3€</span></div>
+                <div class="menu-item"><span>Té con hierbabuena</span><span class="menu-item-price">3.50€</span></div>
+                <div class="menu-item"><span>Refresco</span><span class="menu-item-price">2.50€</span></div>
+                <div class="menu-item"><span>Batido artesanal</span><span class="menu-item-price">5€</span></div>
             </div>
-            
             <div class="menu-section">
-                <h3>🍬 Complementos</h3>
-                <div class="menu-item">
-                    <span class="menu-item-name">Pipa de carbón vegetal</span>
-                    <span class="menu-item-price">2€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Pastilla de humo (fumadores)</span>
-                    <span class="menu-item-price">1.50€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Snack variado (frutos secos)</span>
-                    <span class="menu-item-price">4€</span>
-                </div>
-            </div>
-            
-            <div class="menu-section">
-                <h3>🎁 Packs especiales</h3>
-                <div class="menu-item">
-                    <span class="menu-item-name">Pack Pareja: 2 cachimbas + 2 tés</span>
-                    <span class="menu-item-price">25€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Pack Grupo: 4 cachimbas + 4 tés + snacks</span>
-                    <span class="menu-item-price">55€</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Pack Celebración: 2 cachimbas + botella prosecco</span>
-                    <span class="menu-item-price">65€</span>
-                </div>
+                <h3>🎁 Packs</h3>
+                <div class="menu-item"><span>Pack Pareja: 2 cachimbas + 2 tés</span><span class="menu-item-price">25€</span></div>
+                <div class="menu-item"><span>Pack Grupo: 4 cachimbas + 4 tés</span><span class="menu-item-price">55€</span></div>
             </div>
         </div>
         
         <!-- Pricing Section -->
         <div class="pricing-container" id="pricing-section">
             <div class="pricing-header">
-                <h2>💰 Planes de Suscripción</h2>
+                <h2>💰 Plan Profesional</h2>
                 <p>Todo lo que necesitas para gestionar tu bar de cachimbas</p>
             </div>
             
@@ -866,119 +1066,49 @@
                 </div>
                 
                 <ul class="pricing-features">
-                    <li>
-                        <span class="check">✅</span>
-                        <span class="feature-name"><b>Bot conversacional IA</b> - Atiende clientes 24/7 y reserva mesas automáticamente</span>
-                    </li>
-                    <li>
-                        <span class="check">✅</span>
-                        <span class="feature-name"><b>Calendario interactivo</b> - Vista mensual completa con todas las reservas</span>
-                    </li>
-                    <li>
-                        <span class="check">✅</span>
-                        <span class="feature-name"><b>Panel de staff</b> - Tus empleados ven y gestionan reservas</span>
-                    </li>
-                    <li>
-                        <span class="check">✅</span>
-                        <span class="feature-name"><b>SMS confirmaciones</b> - Recordatorios automáticos a clientes</span>
-                    </li>
-                    <li>
-                        <span class="check">✅</span>
-                        <span class="feature-name"><b>Gestión de citas</b> - Reserva de mesas, cumpleaños, eventos privados</span>
-                    </li>
-                    <li>
-                        <span class="check">✅</span>
-                        <span class="feature-name"><b>Carta digital</b> - Menú interactivo para clientes</span>
-                    </li>
-                    <li>
-                        <span class="check">✅</span>
-                        <span class="feature-name"><b>Soporte prioritario</b> - Ayuda en menos de 24h</span>
-                    </li>
-                    <li>
-                        <span class="check">✅</span>
-                        <span class="feature-name"><b>Sin límite de reservas</b> - Mesclaro que mescles, sin coste extra</span>
-                    </li>
+                    <li><span class="check">✅</span> Bot conversacional IA 24/7</li>
+                    <li><span class="check">✅</span> Plano de mesas interactivo</li>
+                    <li><span class="check">✅</span> Control de ocupación en tiempo real</li>
+                    <li><span class="check">✅</span> Calendario mensual completo</li>
+                    <li><span class="check">✅</span> Gestión de eventos privados</li>
+                    <li><span class="check">✅</span> SMS confirmaciones automáticas</li>
+                    <li><span class="check">✅</span> Sin límite de reservas</li>
+                    <li><span class="check">✅</span> Soporte prioritario</li>
                 </ul>
                 
-                <button class="pricing-cta" onclick="sendQuickReply('Quiero el plan')">🚀 Solicitar demo gratuita</button>
+                <button class="pricing-cta" onclick="sendQuickReply('Quiero demo')">🚀 Solicitar demo gratuita</button>
             </div>
             
             <div class="testimonials-section">
                 <h3>⭐ Lo que dicen nuestros clientes</h3>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <div class="testimonial-text">"El bot ha革命的 nuestra forma de trabajar. Antes perdíamos horas con llamadas, ahora el 80% se reserva solo."</div>
-                    <div class="testimonial-author">— Karim, dueño de Smoke Lounge Madrid</div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <div class="testimonial-text">"La plantilla de personal se siente más tranquila sabiendo que el calendario siempre está actualizado."</div>
-                    <div class="testimonial-author">— Lucía, responsable de sala</div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <div class="testimonial-text">"EI sistema de SMS nos ha reducido las ausencias en un 60%. Los clientes reciben recordatorios y confirmaciones automáticas."</div>
-                    <div class="testimonial-author">— Propietario de Shisha Garden Barcelona</div>
+                    <div class="testimonial-text">"El plano de mesas ha simplificado mucho nuestro trabajo. Antes teníamos papelitos por todas partes."</div>
+                    <div class="testimonial-author">— Propietario Shisha Garden</div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Add Reservation Modal -->
-    <div class="modal" id="add-modal">
+    <!-- Quick Occupy Modal -->
+    <div class="modal" id="occupy-modal">
         <div class="modal-content">
-            <h3>➕ Nueva Reserva</h3>
+            <h3>🚫 Ocupar Mesa</h3>
+            <p style="margin-bottom: 15px;">¿Cuántas personas se van a sentar?</p>
             <div class="form-group">
-                <label>Nombre del cliente *</label>
-                <input type="text" id="client-name" placeholder="Ej: María García">
-            </div>
-            <div class="form-group">
-                <label>Teléfono *</label>
-                <input type="tel" id="client-phone" placeholder="Ej: 612 345 678">
-            </div>
-            <div class="form-group">
-                <label>Fecha *</label>
-                <input type="date" id="reservation-date">
-            </div>
-            <div class="form-group">
-                <label>Hora *</label>
-                <select id="reservation-time">
-                    <option value="17:00">17:00</option>
-                    <option value="18:00">18:00</option>
-                    <option value="19:00">19:00</option>
-                    <option value="20:00">20:00</option>
-                    <option value="21:00" selected>21:00</option>
-                    <option value="22:00">22:00</option>
-                    <option value="23:00">23:00</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Número de personas</label>
-                <select id="reservation-people">
+                <label>Personas</label>
+                <select id="occupy-people">
                     <option value="1">1 persona</option>
-                    <option value="2" selected>2 personas</option>
+                    <option value="2">2 personas</option>
                     <option value="3">3 personas</option>
                     <option value="4">4 personas</option>
                     <option value="5">5 personas</option>
                     <option value="6">6+ personas</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>Tipo de reserva</label>
-                <select id="reservation-type">
-                    <option value="reserva">📅 Reserva</option>
-                    <option value="walkin">🚶 Walk-in</option>
-                    <option value="evento">🎉 Evento privado</option>
-                    <option value="cumpleanos">🎂 Cumpleaños</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Notas (opcional)</label>
-                <textarea id="reservation-notes" rows="2" placeholder="Ej: Quieren terraza, allergic al humo..."></textarea>
-            </div>
             <div class="modal-buttons">
                 <button class="modal-btn cancel" onclick="closeModal()">Cancelar</button>
-                <button class="modal-btn confirm" onclick="addReservation()">Confirmar</button>
+                <button class="modal-btn confirm" onclick="confirmOccupy()">Ocupar</button>
             </div>
         </div>
     </div>
@@ -990,27 +1120,58 @@
         let currentMonthOffset = 0;
         let reservations = JSON.parse(localStorage.getItem('cachimba_reservations') || '[]');
         let selectedDate = new Date();
+        let selectedTableId = null;
+        let currentFilter = 'all';
+        
+        // Tables configuration
+        const tables = [
+            // Main room - intimate (2 people)
+            { id: 1, name: 'Mesa 1', capacity: 2, zone: 'main', status: 'free', currentOccupancy: 0 },
+            { id: 2, name: 'Mesa 2', capacity: 2, zone: 'main', status: 'free', currentOccupancy: 0 },
+            { id: 3, name: 'Mesa 3', capacity: 2, zone: 'main', status: 'free', currentOccupancy: 0 },
+            // Main room - standard (4 people)
+            { id: 4, name: 'Mesa 4', capacity: 4, zone: 'main', status: 'free', currentOccupancy: 0 },
+            { id: 5, name: 'Mesa 5', capacity: 4, zone: 'main', status: 'free', currentOccupancy: 0 },
+            { id: 6, name: 'Mesa 6', capacity: 4, zone: 'main', status: 'free', currentOccupancy: 0 },
+            // Main room - large (6 people)
+            { id: 7, name: 'Mesa 7', capacity: 6, zone: 'main', status: 'free', currentOccupancy: 0 },
+            { id: 8, name: 'Mesa 8', capacity: 6, zone: 'main', status: 'free', currentOccupancy: 0 },
+            // Main room - extra large (8 people)
+            { id: 9, name: 'Mesa 9', capacity: 8, zone: 'main', status: 'free', currentOccupancy: 0 },
+            { id: 10, name: 'Mesa 10', capacity: 8, zone: 'main', status: 'free', currentOccupancy: 0 },
+            // Terrace - standard (4 people)
+            { id: 11, name: 'Terraza 1', capacity: 4, zone: 'terrace', status: 'free', currentOccupancy: 0 },
+            { id: 12, name: 'Terraza 2', capacity: 4, zone: 'terrace', status: 'free', currentOccupancy: 0 },
+            { id: 13, name: 'Terraza 3', capacity: 4, zone: 'terrace', status: 'free', currentOccupancy: 0 },
+            // Terrace - large (6 people)
+            { id: 14, name: 'Terraza 4', capacity: 6, zone: 'terrace', status: 'free', currentOccupancy: 0 },
+            { id: 15, name: 'Terraza 5', capacity: 6, zone: 'terrace', status: 'free', currentOccupancy: 0 },
+            // Terrace - VIP (8 people)
+            { id: 16, name: 'Terraza VIP', capacity: 8, zone: 'terrace', status: 'free', currentOccupancy: 0 },
+        ];
         
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
+            generateFloorPlan();
             generateCalendar();
             showDayReservations();
-            updateStats();
+            
+            // Set min date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('res-date').value = today;
+            document.getElementById('res-date').min = today;
         });
         
         // Show section
         function showSection(section) {
             document.querySelectorAll('.tab').forEach((t, i) => {
                 t.classList.remove('active');
-                if ((section === 'chat' && i === 0) || 
-                    (section === 'calendar' && i === 1) || 
-                    (section === 'menu' && i === 2) ||
-                    (section === 'pricing' && i === 3)) {
-                    t.classList.add('active');
-                }
+                const sections = ['chat', 'floor', 'calendar', 'menu', 'pricing'];
+                if (sections[i] === section) t.classList.add('active');
             });
             
             document.getElementById('chat-section').style.display = section === 'chat' ? 'block' : 'none';
+            document.getElementById('floor-section').classList.toggle('active', section === 'floor');
             document.getElementById('calendar-section').classList.toggle('active', section === 'calendar');
             document.getElementById('menu-section').classList.toggle('active', section === 'menu');
             document.getElementById('pricing-section').classList.toggle('active', section === 'pricing');
@@ -1018,23 +1179,240 @@
             currentSection = section;
         }
         
-        // Update stats
-        function updateStats() {
-            document.getElementById('total-reservations').textContent = reservations.length;
+        // Floor Plan Functions
+        function generateFloorPlan() {
+            const mainGrid = document.getElementById('tables-grid-main');
+            const terraceGrid = document.getElementById('tables-grid-terrace');
+            mainGrid.innerHTML = '';
+            terraceGrid.innerHTML = '';
             
-            const today = new Date().toDateString();
-            const todayCount = reservations.filter(r => new Date(r.date).toDateString() === today).length;
-            document.getElementById('today-reservations').textContent = todayCount;
+            tables.forEach(table => {
+                const card = createTableCard(table);
+                if (table.zone === 'main') {
+                    mainGrid.appendChild(card);
+                } else {
+                    terraceGrid.appendChild(card);
+                }
+            });
+        }
+        
+        function createTableCard(table) {
+            const card = document.createElement('div');
+            card.className = `table-card size-${table.capacity}`;
             
-            const weekStart = new Date();
-            weekStart.setDate(weekStart.getDate() - weekStart.getDay() + 1);
-            const weekEnd = new Date(weekStart);
-            weekEnd.setDate(weekStart.getDate() + 6);
-            const weekCount = reservations.filter(r => {
-                const d = new Date(r.date);
-                return d >= weekStart && d <= weekEnd;
-            }).length;
-            document.getElementById('week-reservations').textContent = weekCount;
+            if (table.status === 'reserved') card.classList.add('reserved');
+            if (table.status === 'occupied') card.classList.add('occupied');
+            if (table.status === 'free' && currentFilter === 'free') {
+                // Show
+            } else if (currentFilter === 'free' && table.status !== 'free') {
+                card.classList.add('disabled');
+            }
+            
+            if (selectedTableId === table.id) {
+                card.classList.add('selected');
+            }
+            
+            const statusText = {
+                'free': 'Libre',
+                'reserved': 'Reservada',
+                'occupied': 'Ocupada'
+            };
+            
+            const capacityLabel = table.capacity >= 6 ? `${table.capacity}+ pers.` : `${table.capacity} pers.`;
+            
+            card.innerHTML = `
+                <div class="table-number">${table.id <= 10 ? table.id : table.id - 10}</div>
+                <div class="table-capacity">👥 ${capacityLabel}</div>
+                <div class="table-status ${table.status}">${statusText[table.status]}</div>
+                ${table.status === 'occupied' ? `<div class="table-info">👤 ${table.currentOccupancy} ahora</div>` : ''}
+            `;
+            
+            card.onclick = () => selectTable(table.id);
+            return card;
+        }
+        
+        function selectTable(tableId) {
+            const table = tables.find(t => t.id === tableId);
+            if (!table) return;
+            
+            // If staff mode, show actions
+            if (currentSection === 'floor') {
+                selectedTableId = tableId;
+                generateFloorPlan();
+                updateTableActions(table);
+            }
+        }
+        
+        function updateTableActions(table) {
+            const container = document.getElementById('selected-table-actions');
+            let html = `<div style="background: var(--secondary); padding: 15px; border-radius: 10px;">
+                <h4 style="color: var(--gold); margin-bottom: 10px;">${table.name}</h4>
+                <p style="margin-bottom: 10px;">Capacidad: ${table.capacity} personas</p>
+                <p style="margin-bottom: 10px;">Estado: <span class="status-badge ${table.status}">${table.status === 'free' ? 'Libre' : table.status === 'reserved' ? 'Reservada' : 'Ocupada'}</span></p>`;
+            
+            if (table.status === 'free') {
+                html += `<button class="staff-btn occupy" onclick="openOccupyModal()">Ocupar mesa</button>`;
+            } else if (table.status === 'occupied') {
+                html += `<button class="staff-btn free" onclick="freeTable(${table.id})">Liberar mesa</button>`;
+            } else {
+                html += `<button class="staff-btn free" onclick="freeTable(${table.id})">Liberar reserva</button>`;
+            }
+            
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+        
+        function filterTables(filter) {
+            currentFilter = filter;
+            generateFloorPlan();
+        }
+        
+        function showOccupied() {
+            currentFilter = 'occupied';
+            generateFloorPlan();
+        }
+        
+        function openOccupyModal() {
+            document.getElementById('occupy-modal').classList.add('active');
+        }
+        
+        function closeModal() {
+            document.getElementById('occupy-modal').classList.remove('active');
+        }
+        
+        function confirmOccupy() {
+            const people = document.getElementById('occupy-people').value;
+            const table = tables.find(t => t.id === selectedTableId);
+            if (table) {
+                table.status = 'occupied';
+                table.currentOccupancy = parseInt(people);
+                generateFloorPlan();
+                updateTableActions(table);
+                closeModal();
+            }
+        }
+        
+        function freeTable(tableId) {
+            const table = tables.find(t => t.id === tableId);
+            if (table) {
+                table.status = 'free';
+                table.currentOccupancy = 0;
+                generateFloorPlan();
+                updateTableActions({ ...table, id: tableId });
+            }
+        }
+        
+        function quickOccupyAll() {
+            if (!selectedTableId) {
+                alert('Selecciona una mesa primero');
+                return;
+            }
+            openOccupyModal();
+        }
+        
+        function quickFreeTable() {
+            if (!selectedTableId) {
+                alert('Selecciona una mesa primero');
+                return;
+            }
+            freeTable(selectedTableId);
+        }
+        
+        function markWalkIn() {
+            if (!selectedTableId) {
+                alert('Selecciona una mesa primero');
+                return;
+            }
+            const table = tables.find(t => t.id === selectedTableId);
+            if (table && table.status === 'free') {
+                const name = prompt('Nombre del cliente (opcional):');
+                table.status = 'occupied';
+                table.currentOccupancy = table.capacity;
+                table.walkIn = true;
+                table.clientName = name || 'Walk-in';
+                generateFloorPlan();
+                updateTableActions(table);
+            }
+        }
+        
+        function submitReservation() {
+            const name = document.getElementById('res-name').value.trim();
+            const phone = document.getElementById('res-phone').value.trim();
+            const date = document.getElementById('res-date').value;
+            const time = document.getElementById('res-time').value;
+            const notes = document.getElementById('res-notes').value;
+            
+            if (!name || !phone) {
+                alert('Por favor completa nombre y teléfono');
+                return;
+            }
+            
+            if (!selectedTableId) {
+                alert('Por favor selecciona una mesa');
+                return;
+            }
+            
+            const table = tables.find(t => t.id === selectedTableId);
+            if (!table || table.status !== 'free') {
+                alert('Esa mesa no está disponible');
+                return;
+            }
+            
+            // Convert date to DD/MM/YYYY
+            const dateParts = date.split('-');
+            const dateFormatted = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+            
+            const reservation = {
+                id: Date.now(),
+                name: name,
+                phone: phone,
+                date: dateFormatted,
+                dateKey: dateFormatted,
+                dateDisplay: new Date(date).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }),
+                time: time,
+                people: table.capacity,
+                tableId: table.id,
+                tableName: table.name,
+                notes: notes,
+                type: 'reserva',
+                createdAt: new Date().toISOString()
+            };
+            
+            // Mark table as reserved for this time slot
+            table.status = 'reserved';
+            table.reservation = reservation;
+            
+            reservations.push(reservation);
+            localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
+            
+            // Reset form
+            document.getElementById('res-name').value = '';
+            document.getElementById('res-phone').value = '';
+            document.getElementById('res-notes').value = '';
+            selectedTableId = null;
+            updateSelectedTableDisplay(null);
+            generateFloorPlan();
+            
+            alert(`✅ Reserva confirmada!\n\n📅 ${dateFormatted}\n⏰ ${time}\n🪑 ${table.name}\n👤 ${name}\n📱 ${phone}`);
+        }
+        
+        function updateSelectedTableDisplay(table) {
+            const display = document.getElementById('selected-table-display');
+            const btn = document.getElementById('submit-reservation');
+            
+            if (!table) {
+                display.innerHTML = `<div class="table-icon">🪑</div><div>Selecciona una mesa libre</div>`;
+                btn.disabled = true;
+                btn.textContent = 'Selecciona una mesa para continuar';
+            } else {
+                display.innerHTML = `
+                    <div class="table-icon">🪑</div>
+                    <div style="color: var(--gold); font-weight: 600;">${table.name}</div>
+                    <div>👥 ${table.capacity} personas • ${table.zone === 'terrace' ? '🌿 Terraza' : '🏠 Interior'}</div>
+                `;
+                btn.disabled = false;
+                btn.textContent = 'Confirmar Reserva';
+            }
         }
         
         // Chat functions
@@ -1052,173 +1430,33 @@
             
             setTimeout(() => {
                 if (text.includes('Reservar')) {
-                    conversationState = 'reserva_nombre';
-                    addMessage('🎉 ¡Genial! ¿Para cuántas personas será la reserva?');
-                    updateQuickReplies(['1 persona', '2 personas', '3 personas', '4+ personas']);
+                    showSection('floor');
+                    addMessage('🪑 <b>Reserva tu mesa</b><br><br>En el plano puedes ver todas nuestras mesas:<br>• <b>Interior:</b> Mesas 1-10 (2-8 personas)<br>• <b>Terraza:</b> Mesas 11-16 (4-8 personas)<br><br>Selecciona una mesa libre y completa el formulario.');
+                    updateQuickReplies(['Ver carta', 'Horarios', 'Precios']);
                 } else if (text.includes('Ver carta')) {
                     showSection('menu');
-                    addMessage('📋 Aquí tienes nuestra carta de cachimbas y bebidas.');
-                    setTimeout(() => updateQuickReplies(['Reservar mesa', 'Ver precios']), 500);
+                    addMessage('📋 Aquí tienes nuestra carta.');
+                    updateQuickReplies(['Reservar mesa', 'Precios']);
                 } else if (text.includes('Horarios')) {
-                    addMessage('🕐 <b>Horaires:</b><br>Domingo a Jueves: 17:00 - 00:00<br>Viernes y Sábado: 17:00 - 02:00<br><br>🌙 Happy Hour: 18:00 - 20:00 (2x1 en tés)');
-                    updateQuickReplies(['Reservar mesa', 'Ver carta', 'Eventos']);
+                    addMessage('🕐 <b>Horarios:</b><br>Domingo a Jueves: 17:00 - 00:00<br>Viernes y Sábado: 17:00 - 02:00<br><br>🌙 Happy Hour: 18:00 - 20:00');
+                    updateQuickReplies(['Reservar mesa', 'Ver carta']);
                 } else if (text.includes('Eventos')) {
-                    addMessage('🎉 <b>Eventos privados:</b><br>• Cumpleaños (pack especial)<br>• Eventos corporativos<br>• Cenas privadas (hasta 20 personas)<br><br>📞 Para eventos, llámanos al terminar.');
+                    addMessage('🎉 <b>Eventos privados:</b><br>• Cumpleaños (hasta 20 personas)<br>• Eventos corporativos<br>• Cenas privadas<br><br>📞 Consulta disponibilidad.');
                     updateQuickReplies(['Reservar mesa', 'Ver carta']);
-                } else if (text.includes('precios') || text.includes('Quiero')) {
+                } else if (text.includes('precios') || text.includes('Quiero') || text.includes('demo')) {
                     showSection('pricing');
+                    addMessage('💰 <b>Planes desde 49€/mes</b><br><br>Incluye bot IA, plano de mesas, calendario y más.');
                     updateQuickReplies(['Reservar mesa', 'Ver carta']);
-                } else if (text === '1 persona') {
-                    processPeople(1);
-                } else if (text === '2 personas') {
-                    processPeople(2);
-                } else if (text === '3 personas') {
-                    processPeople(3);
-                } else if (text.includes('4')) {
-                    processPeople(4);
-                } else if (text.includes('Sí') || text.includes('reservar')) {
-                    conversationState = 'reserva_nombre';
-                    addMessage('🎉 ¡Perfecto! ¿En nombre de quién hago la reserva?');
-                    updateQuickReplies([]);
-                } else if (text.includes('Confirm')) {
-                    confirmReservation();
-                } else if (text.includes('Cancel')) {
-                    addMessage('No pasa nada, ¡cuando quieras! 😊');
-                    updateQuickReplies(['Reservar mesa', 'Ver carta', 'Horarios']);
-                    conversationState = 'initial';
                 } else {
-                    // Handle date selection
-                    const datePatterns = text.match(/^(lun|martes?|miércoles?|jue|vie|sáb|dom)\\s+(\\d{1,2})$/i);
-                    if (datePatterns || conversationState === 'reserva_fecha') {
-                        processDate(text);
-                    } else if (conversationState === 'reserva_nombre' && text.length > 2) {
-                        processName(text);
-                    } else if (conversationState === 'reserva_hora') {
-                        processTime(text);
-                    } else if (text.includes('@') || text.includes('gmail') || text.includes('hotmail')) {
-                        processEmail(text);
-                    } else {
-                        addMessage('Lo siento, no te he entendido. ¿Quieres reservar mesa o ver la carta?');
-                        updateQuickReplies(['Reservar mesa', 'Ver carta', 'Horarios']);
-                        conversationState = 'initial';
-                    }
+                    addMessage('¿Necesitas ayuda con algo?');
+                    updateQuickReplies(['Reservar mesa', 'Ver carta', 'Horarios']);
                 }
-            }, 800);
-        }
-        
-        function processPeople(num) {
-            window.reservationData = { people: num };
-            conversationState = 'reserva_fecha';
-            addMessage(`👌 ${num} ${num === 1 ? 'persona' : 'personas'}. ¿Para qué día?`);
-            
-            const today = new Date();
-            const dates = [];
-            for (let i = 1; i <= 7; i++) {
-                const d = new Date(today);
-                d.setDate(today.getDate() + i);
-                dates.push(d);
-            }
-            
-            const buttons = dates.map(d => {
-                const dayName = d.toLocaleDateString('es-ES', { weekday: 'short' }).toLowerCase();
-                const dayNum = d.getDate();
-                return `${dayName} ${dayNum}`;
-            });
-            
-            updateQuickReplies(buttons);
-        }
-        
-        function processDate(dateStr) {
-            window.reservationData = window.reservationData || { people: 2 };
-            
-            const match = dateStr.match(/(\d{1,2})/);
-            const dayNum = match ? parseInt(match[1]) : new Date().getDate() + 1;
-            
-            const today = new Date();
-            const weekdays = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
-            const targetWeekday = weekdays.findIndex(d => dateStr.toLowerCase().startsWith(d));
-            
-            const targetDate = new Date(today);
-            if (targetWeekday >= 0) {
-                const daysUntilTarget = (targetWeekday - today.getDay() + 7) % 7 || 7;
-                targetDate.setDate(today.getDate() + daysUntilTarget);
-            } else {
-                targetDate.setDate(today.getDate() + 1);
-            }
-            
-            const dateFormatted = targetDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
-            window.reservationData.date = targetDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
-            window.reservationData.dateKey = dateFormatted;
-            conversationState = 'reserva_hora';
-            
-            addMessage(`📅 ${window.reservationData.date}\n\n⏰ ¿A qué hora quieres reservar?`);
-            updateQuickReplies(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00']);
-        }
-        
-        function processName(name) {
-            window.reservationData = window.reservationData || {};
-            window.reservationData.name = name;
-            conversationState = 'reserva_telefono';
-            
-            addMessage(`📱 ¿Cuál es tu número de teléfono? (para confirmar la reserva)`);
-            updateQuickReplies([]);
-        }
-        
-        function processPhone(phone) {
-            window.reservationData.phone = phone;
-            conversationState = 'reserva_confirm';
-            
-            const data = window.reservationData;
-            addMessage(`✅ <b>Confirma tu reserva:</b><br><br>📅 ${data.date}<br>⏰ 21:00<br>👥 ${data.people} personas<br>👤 ${data.name}<br>📱 ${phone}<br><br>¿Todo correcto?`);
-            updateQuickReplies(['✅ Confirmar', '❌ Corregir']);
-        }
-        
-        function processTime(time) {
-            window.reservationData.time = time;
-            conversationState = 'reserva_confirm';
-            
-            const data = window.reservationData;
-            addMessage(`✅ <b>Confirma tu reserva:</b><br><br>📅 ${data.date}<br>⏰ ${time}<br>👥 ${data.people} personas<br><br>¿Todo correcto?`);
-            updateQuickReplies(['✅ Confirmar', '❌ Corregir']);
-        }
-        
-        function confirmReservation() {
-            const data = window.reservationData || {};
-            const name = data.name || 'Cliente';
-            const people = data.people || 2;
-            const date = data.date || 'Hoy';
-            const time = data.time || '21:00';
-            const phone = data.phone || '';
-            const dateKey = data.dateKey || date;
-            
-            const reservation = {
-                id: Date.now(),
-                name: name,
-                phone: phone,
-                date: dateKey,
-                dateDisplay: date,
-                time: time,
-                people: people,
-                notes: data.notes || '',
-                type: 'reserva',
-                createdAt: new Date().toISOString()
-            };
-            
-            reservations.push(reservation);
-            localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
-            
-            addMessage(`✅ <b>¡Reserva confirmada!</b><br><br>📅 ${date}<br>⏰ ${time}<br>👥 ${people} personas<br>👤 ${name}<br>📱 ${phone}<br><br>Te esperamos en La Cachimba 🌬️<br><br>Recibirás un SMS de confirmación. ¿Necesitas algo más?`);
-            updateQuickReplies(['Ver carta', 'Nueva reserva', 'Otra cosa']);
-            conversationState = 'initial';
-            window.reservationData = null;
-            
-            updateStats();
+            }, 500);
         }
         
         function updateQuickReplies(replies) {
             const container = document.getElementById('quick-replies');
             container.innerHTML = '';
-            
             replies.forEach(text => {
                 const btn = document.createElement('button');
                 btn.className = 'quick-reply';
@@ -1226,10 +1464,6 @@
                 btn.onclick = () => sendQuickReply(text);
                 container.appendChild(btn);
             });
-            
-            if (replies.length === 0) {
-                container.innerHTML = '<button class="quick-reply" onclick="sendQuickReply(\'Reservar mesa\')">📅 Nueva reserva</button>';
-            }
         }
         
         // Calendar functions
@@ -1241,41 +1475,33 @@
             const firstDay = new Date(today.getFullYear(), today.getMonth() + currentMonthOffset, 1);
             const lastDay = new Date(firstDay.getFullYear(), firstDay.getMonth() + 1, 0);
             
-            // Find the first Monday
             let startDay = firstDay.getDay() - 1;
             if (startDay < 0) startDay = 6;
             
             document.getElementById('calendar-title').textContent = 
                 firstDay.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
             
-            // Previous month days
             const prevMonth = new Date(firstDay.getFullYear(), firstDay.getMonth(), 0);
             for (let i = startDay - 1; i >= 0; i--) {
                 const day = new Date(prevMonth.getDate() - i);
-                const dayDiv = createDayElement(day, true);
-                grid.appendChild(dayDiv);
+                grid.appendChild(createCalendarDay(day, true));
             }
             
-            // Current month days
             for (let i = 1; i <= lastDay.getDate(); i++) {
                 const day = new Date(firstDay.getFullYear(), firstDay.getMonth(), i);
-                const dayDiv = createDayElement(day, false);
-                grid.appendChild(dayDiv);
+                grid.appendChild(createCalendarDay(day, false));
             }
             
-            // Next month days
             const remaining = 42 - (startDay + lastDay.getDate());
             for (let i = 1; i <= remaining; i++) {
                 const day = new Date(firstDay.getFullYear(), firstDay.getMonth() + 1, i);
-                const dayDiv = createDayElement(day, true);
-                grid.appendChild(dayDiv);
+                grid.appendChild(createCalendarDay(day, true));
             }
         }
         
-        function createDayElement(day, isOtherMonth) {
+        function createCalendarDay(day, isOtherMonth) {
             const dayDiv = document.createElement('div');
             dayDiv.className = 'day-full';
-            
             if (isOtherMonth) dayDiv.classList.add('other-month');
             
             const today = new Date();
@@ -1284,7 +1510,7 @@
             }
             
             const dayKey = day.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
-            const dayReservations = reservations.filter(r => r.dateKey === dayKey || r.date === dayKey);
+            const dayReservations = reservations.filter(r => r.dateKey === dayKey);
             
             if (dayReservations.length > 0) {
                 dayDiv.classList.add('has-reservations');
@@ -1304,7 +1530,10 @@
                 <div class="reservation-preview">${preview}</div>
             `;
             
-            dayDiv.onclick = () => selectDate(day);
+            dayDiv.onclick = () => {
+                selectedDate = day;
+                showDayReservations();
+            };
             return dayDiv;
         }
         
@@ -1313,103 +1542,37 @@
             generateCalendar();
         }
         
-        function selectDate(day) {
-            selectedDate = day;
-            showDayReservations();
-        }
-        
         function showDayReservations() {
             const container = document.getElementById('day-reservations');
             const dayKey = selectedDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
-            const dayReservations = reservations.filter(r => r.dateKey === dayKey || r.date === dayKey);
+            const dayReservations = reservations.filter(r => r.dateKey === dayKey);
+            
+            // Update stats
+            const today = new Date().toDateString();
+            const todayCount = reservations.filter(r => new Date(r.date).toDateString() === today).length;
+            const tablesUsed = tables.filter(t => t.status === 'occupied').length;
+            
+            document.getElementById('today-reservations').textContent = todayCount;
+            document.getElementById('tables-used').textContent = tablesUsed;
+            document.getElementById('total-reservations').textContent = reservations.length;
             
             if (dayReservations.length === 0) {
                 container.innerHTML = `<p style="text-align:center;opacity:0.6;padding:20px;">No hay reservas para el ${selectedDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}</p>`;
             } else {
                 container.innerHTML = dayReservations.map(r => `
-                    <div class="reservation-item ${r.type}">
+                    <div class="reservation-item">
                         <div class="reservation-info">
-                            <h4>${r.name}</h4>
-                            <p>📱 ${r.phone || 'Sin teléfono'} • ${r.notes || 'Sin notas'}</p>
+                            <h4>${r.name} ${r.tableName ? `(${r.tableName})` : ''}</h4>
+                            <p>📱 ${r.phone || 'Sin teléfono'} ${r.notes ? `• ${r.notes}` : ''}</p>
                         </div>
                         <div class="reservation-time">
                             <div class="time">${r.time}</div>
-                            <div class="people">${r.people} ${r.people > 1 ? 'personas' : 'persona'}</div>
+                            <div class="people">${r.people} pers.</div>
                         </div>
                     </div>
                 `).join('');
             }
         }
-        
-        function openAddModal() {
-            document.getElementById('add-modal').classList.add('active');
-            document.getElementById('reservation-date').value = selectedDate.toISOString().split('T')[0];
-        }
-        
-        function closeModal() {
-            document.getElementById('add-modal').classList.remove('active');
-        }
-        
-        function addReservation() {
-            const name = document.getElementById('client-name').value;
-            const phone = document.getElementById('client-phone').value;
-            const dateInput = document.getElementById('reservation-date').value;
-            const time = document.getElementById('reservation-time').value;
-            const people = document.getElementById('reservation-people').value;
-            const type = document.getElementById('reservation-type').value;
-            const notes = document.getElementById('reservation-notes').value;
-            
-            if (!name || !phone) {
-                alert('Por favor completa nombre y teléfono');
-                return;
-            }
-            
-            const dateParts = dateInput.split('-');
-            const dateFormatted = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
-            
-            const reservation = {
-                id: Date.now(),
-                name: name,
-                phone: phone,
-                date: dateFormatted,
-                dateKey: dateFormatted,
-                dateDisplay: new Date(dateInput).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }),
-                time: time,
-                people: parseInt(people),
-                notes: notes,
-                type: type,
-                createdAt: new Date().toISOString()
-            };
-            
-            reservations.push(reservation);
-            localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
-            
-            closeModal();
-            generateCalendar();
-            showDayReservations();
-            updateStats();
-            
-            document.getElementById('client-name').value = '';
-            document.getElementById('client-phone').value = '';
-            document.getElementById('reservation-notes').value = '';
-        }
-        
-        // Simple AI for phone input
-        document.addEventListener('DOMContentLoaded', () => {
-            const input = document.createElement('input');
-            input.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
-            document.body.appendChild(input);
-            
-            // Listen for any input to capture phone numbers
-            document.addEventListener('keypress', (e) => {
-                if (conversationState === 'reserva_telefono') {
-                    const val = e.target.value || '';
-                    if (val.match(/\d{9,}/)) {
-                        processPhone(val);
-                    }
-                }
-            });
-        });
     </script>
 </body>
 </html>
