@@ -4,3 +4,22 @@
 [2026-04-27 08:00:02] TORNEOS_AGENT: torneos.html actualizado
 [2026-04-27 08:00:04] TORNEOS_AGENT: Commit + Push successful
 [2026-04-27 08:00:04] TORNEOS_AGENT: === TORNEOS AGENT COMPLETE ===
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   data/chollos.json
+	modified:   data/chollos.log
+	modified:   data/orchestrator_state.json
+	modified:   scripts/dynamic_flow.log
+	modified:   scripts/index_agent.log
+	modified:   scripts/orchestrator.log
+	modified:   torneos.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[2026-04-27 20:00:04] TORNEOS_AGENT: === TORNEOS AGENT STARTED ===
+[2026-04-27 20:00:04] TORNEOS_AGENT: torneos.html actualizado
+[2026-04-27 20:00:04] TORNEOS_AGENT: Git error: Command '['git', 'commit', '-m', 'UPDATE: Torneos - último torneo con ganador']' returned non-zero exit status 1.
+[2026-04-27 20:00:04] TORNEOS_AGENT: === TORNEOS AGENT COMPLETE ===
