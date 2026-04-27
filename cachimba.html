@@ -19,11 +19,104 @@
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        /* Smoke Background Effect */
+        .smoke-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .smoke-bg::before,
+        .smoke-bg::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(ellipse at center, rgba(233, 69, 96, 0.03) 0%, transparent 50%);
+            animation: smokeFloat 20s ease-in-out infinite;
+        }
+        
+        .smoke-bg::after {
+            background: radial-gradient(ellipse at center, rgba(244, 162, 97, 0.03) 0%, transparent 50%);
+            animation: smokeFloat2 25s ease-in-out infinite;
+            animation-delay: -10s;
+        }
+        
+        @keyframes smokeFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10%, 10%) rotate(5deg); }
+            50% { transform: translate(-5%, 20%) rotate(-3deg); }
+            75% { transform: translate(15%, 5%) rotate(7deg); }
+        }
+        
+        @keyframes smokeFloat2 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-10%, -10%) rotate(-5deg); }
+            50% { transform: translate(5%, -20%) rotate(3deg); }
+            75% { transform: translate(-15%, -5%) rotate(-7deg); }
+        }
+        
+        /* Floating smoke particles */
+        .smoke-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .smoke-particle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: particleFloat 15s ease-in-out infinite;
+        }
+        
+        .smoke-particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .smoke-particle:nth-child(2) { left: 70%; top: 60%; animation-delay: -5s; }
+        .smoke-particle:nth-child(3) { left: 40%; top: 80%; animation-delay: -10s; }
+        
+        @keyframes particleFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            50% { transform: translate(50px, -100px) scale(1.5); opacity: 0.5; }
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--bg);
             color: var(--text);
             min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(233, 69, 96, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(244, 162, 97, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .header, .container, .info-banner, .mode-toggle {
+            position: relative;
+            z-index: 2;
         }
         
         /* Header */
@@ -72,16 +165,68 @@
             color: var(--text);
         }
         
-        /* Info Banner */
-        .info-banner {
-            background: linear-gradient(135deg, var(--accent), #d63050);
-            padding: 15px;
+        /* Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            padding: 12px 20px;
+            text-align: center;
+            animation: urgencyPulse 2s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .urgency-banner:hover {
+            background: linear-gradient(135deg, #ff6b6b, #e94560);
+            transform: scale(1.02);
+        }
+        
+        .urgency-banner p {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        
+        .urgency-banner .sub {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+        
+        @keyframes urgencyPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(233, 69, 96, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(233, 69, 96, 0.8); }
+        }
+        
+        /* Social Proof Banner */
+        .social-banner {
+            background: linear-gradient(135deg, var(--gold), #e67e22);
+            padding: 10px 20px;
             text-align: center;
         }
         
-        .info-banner p {
-            color: white;
+        .social-banner p {
+            color: var(--primary);
             font-weight: 600;
+        }
+        
+        .social-stars {
+            color: #f1c40f;
+            margin-right: 8px;
+        }
+        
+        /* Rating Badge */
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+        
+        .rating-badge .stars {
+            color: #f1c40f;
         }
         
         /* Container */
@@ -810,6 +955,13 @@
     </style>
 </head>
 <body>
+    <!-- Smoke Background Effect -->
+    <div class="smoke-bg">
+        <div class="smoke-particle"></div>
+        <div class="smoke-particle"></div>
+        <div class="smoke-particle"></div>
+    </div>
+    
     <div class="header">
         <h1>🌬️ La Cachimba</h1>
         <p>Tu lounge de hookah favorito</p>
@@ -821,8 +973,18 @@
         <button class="mode-btn" id="btn-staff" onclick="showStaffPin()">🔐 Staff</button>
     </div>
     
-    <div class="info-banner customer-view">
-        <p>🔥 ¡Reserva tu mesa online!</p>
+    <!-- Urgency Banner -->
+    <div class="urgency-banner" onclick="startReservation()">
+        <p>🔥 ¡Quedan solo <span id="tables-left">5</span> mesas libres esta noche!</p>
+        <div class="sub">📅 Reserva ahora y asegura tu sitio</div>
+    </div>
+    
+    <!-- Social Proof Banner -->
+    <div class="social-banner">
+        <p>
+            <span class="social-stars">★★★★★</span>
+            <strong>4.8</strong> rating · Más de 500 clientes nos visitan al mes
+        </p>
     </div>
     
     <!-- PIN Modal -->
@@ -1380,7 +1542,24 @@
             generateStaffCalendar();
             generateStaffTables();
             updateDayReservationsList();
+            updateTablesLeft();
+            
+            // Update tables left every minute
+            setInterval(updateTablesLeft, 60000);
         });
+        
+        // Update available tables count
+        function updateTablesLeft() {
+            const today = new Date();
+            const dayKey = `${String(today.getDate()).padStart(2, '0')}/${String(today.getMonth() + 1).padStart(2, '0')}/${today.getFullYear()}`;
+            const time = today.getHours() < 17 ? '17:00' : today.getHours() < 18 ? '18:00' : today.getHours() < 19 ? '19:00' : today.getHours() < 20 ? '20:00' : today.getHours() < 21 ? '21:00' : today.getHours() < 22 ? '22:00' : '23:00';
+            
+            const reservedTables = reservations.filter(r => r.dateKey === dayKey && r.time === time).length;
+            const totalTables = 12;
+            const left = Math.max(0, totalTables - reservedTables);
+            
+            document.getElementById('tables-left').textContent = left;
+        }
         
         // ====== MODE SWITCHING ======
         function switchToCustomer() {
