@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Cachimba - Sistema de Reserva</title>
+    <title>La Cachimba - Reserva tu mesa</title>
     <style>
         :root {
             --primary: #1a1a2e;
@@ -72,11 +72,6 @@
             color: var(--text);
         }
         
-        .mode-btn:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-        
         /* Info Banner */
         .info-banner {
             background: linear-gradient(135deg, var(--accent), #d63050);
@@ -89,35 +84,20 @@
             font-weight: 600;
         }
         
-        /* Tabs */
-        .tabs {
-            display: flex;
-            background: var(--secondary);
-        }
-        
-        .tab {
-            flex: 1;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-        
-        .tab.active {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .tab:not(.active):hover {
-            background: rgba(233, 69, 96, 0.1);
-        }
-        
         /* Container */
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+        }
+        
+        /* ====== CUSTOMER VIEW ====== */
+        .customer-view {
+            display: block;
+        }
+        
+        .customer-view.hidden {
+            display: none;
         }
         
         /* Chat */
@@ -129,7 +109,7 @@
         }
         
         .chat-messages {
-            height: 400px;
+            height: 300px;
             overflow-y: auto;
             padding: 15px;
             background: rgba(0,0,0,0.3);
@@ -143,6 +123,11 @@
             margin-bottom: 12px;
             max-width: 85%;
             animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .message.bot {
@@ -178,12 +163,297 @@
             color: white;
         }
         
-        /* Staff Panel - Unified */
-        .staff-panel {
+        /* Customer Tabs */
+        .customer-tabs {
+            display: flex;
+            background: var(--secondary);
+            border-radius: 15px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+        .customer-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .customer-tab:hover {
+            background: rgba(233, 69, 96, 0.1);
+        }
+        
+        .customer-tab.active {
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Customer Floor Plan */
+        .customer-floor {
             display: none;
         }
         
-        .staff-panel.active {
+        .customer-floor.active {
+            display: block;
+        }
+        
+        .floor-title {
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+        
+        .legend-dot.free { background: var(--success); }
+        .legend-dot.reserved { background: var(--warning); }
+        .legend-dot.occupied { background: var(--danger); }
+        
+        .tables-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        
+        .table-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .table-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .table-card.selected {
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(244, 162, 97, 0.3);
+        }
+        
+        .table-card.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .table-card.disabled:hover {
+            transform: none;
+        }
+        
+        .table-card .table-name {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        
+        .table-card .table-capacity {
+            font-size: 0.85em;
+            opacity: 0.7;
+        }
+        
+        .table-card .table-status {
+            margin-top: 8px;
+            font-size: 0.8em;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .table-card .table-status.free { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+        .table-card .table-status.reserved { background: rgba(243, 156, 18, 0.2); color: #f39c12; }
+        .table-card .table-status.occupied { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+        
+        /* Reservation Form */
+        .reservation-form {
+            background: var(--secondary);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .reservation-form h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .selected-table-info {
+            background: var(--primary);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .selected-table-info .icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            opacity: 0.8;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1em;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .submit-btn:not(:disabled):hover {
+            transform: scale(1.02);
+        }
+        
+        /* Menu Section */
+        .menu-section {
+            display: none;
+        }
+        
+        .menu-section.active {
+            display: block;
+        }
+        
+        .menu-card {
+            background: var(--primary);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .menu-card h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-item-price {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            display: none;
+        }
+        
+        .pricing-section.active {
+            display: block;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(145deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid var(--gold);
+        }
+        
+        .pricing-card h3 {
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-price {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .pricing-price .amount {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .pricing-features {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .pricing-features .check {
+            color: var(--success);
+            margin-right: 10px;
+        }
+        
+        /* ====== STAFF VIEW ====== */
+        .staff-view {
+            display: none;
+        }
+        
+        .staff-view.active {
             display: block;
         }
         
@@ -195,37 +465,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
         }
         
-        .selected-day-info {
+        .staff-header h3 {
             color: var(--gold);
-            font-size: 1.2em;
         }
         
-        .time-selector {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        
-        .time-selector select {
-            padding: 10px;
-            background: var(--primary);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            color: var(--text);
-        }
-        
-        /* Calendar + Floor Plan Grid */
+        /* Staff Main Grid */
         .staff-main-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
         
-        @media (max-width: 900px) {
+        @media (max-width: 800px) {
             .staff-main-grid {
                 grid-template-columns: 1fr;
             }
@@ -277,12 +530,12 @@
         .day-cell {
             background: var(--secondary);
             border-radius: 8px;
-            padding: 8px;
+            padding: 10px;
             text-align: center;
             cursor: pointer;
             font-size: 0.85em;
             transition: all 0.2s;
-            min-height: 40px;
+            min-height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -301,6 +554,10 @@
             color: white;
         }
         
+        .day-cell.has-reservations {
+            position: relative;
+        }
+        
         .day-cell.has-reservations::after {
             content: '';
             display: block;
@@ -317,7 +574,7 @@
             opacity: 0.3;
         }
         
-        /* Floor Plan */
+        /* Floor Plan Staff */
         .floor-section {
             background: var(--primary);
             border-radius: 15px;
@@ -330,187 +587,79 @@
             text-align: center;
         }
         
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 0.85em;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 3px;
-        }
-        
-        .legend-dot.free { background: var(--success); }
-        .legend-dot.reserved { background: var(--warning); }
-        .legend-dot.occupied { background: var(--danger); }
-        
-        .tables-grid {
+        .staff-tables-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
         }
         
-        .table-card {
+        .staff-table-card {
             background: var(--secondary);
-            border-radius: 10px;
-            padding: 12px;
+            border-radius: 8px;
+            padding: 10px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
             border: 2px solid transparent;
-            position: relative;
         }
         
-        .table-card:hover {
+        .staff-table-card:hover {
             transform: scale(1.05);
         }
         
-        .table-card.selected {
+        .staff-table-card.selected {
             border-color: var(--gold);
         }
         
-        .table-card.disabled {
+        .staff-table-card.disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
         
-        .table-card.disabled:hover {
-            transform: none;
-        }
-        
-        .table-card .table-number {
-            font-size: 1.2em;
+        .staff-table-card .name {
             font-weight: 700;
             color: var(--gold);
+            font-size: 0.9em;
         }
         
-        .table-card .table-capacity {
+        .staff-table-card .capacity {
             font-size: 0.75em;
             opacity: 0.7;
         }
         
-        .table-card .table-status {
+        .staff-table-card .status {
             margin-top: 5px;
             font-size: 0.7em;
-            padding: 3px 6px;
+            padding: 2px 6px;
             border-radius: 4px;
         }
         
-        .table-card .table-status.free {
-            background: rgba(46, 204, 113, 0.2);
-            color: #2ecc71;
-        }
+        .staff-table-card .status.free { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+        .staff-table-card .status.reserved { background: rgba(243, 156, 18, 0.2); color: #f39c12; }
+        .staff-table-card .status.occupied { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
         
-        .table-card .table-status.reserved {
-            background: rgba(243, 156, 18, 0.2);
-            color: #f39c12;
-        }
-        
-        .table-card .table-status.occupied {
-            background: rgba(231, 76, 60, 0.2);
-            color: #e74c3c;
-        }
-        
-        .table-card .reservation-info {
-            font-size: 0.65em;
-            margin-top: 4px;
-            opacity: 0.8;
-        }
-        
-        /* Reservation Form */
-        .reservation-form {
-            background: var(--secondary);
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 15px;
-        }
-        
-        .reservation-form h5 {
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .form-group {
-            margin-bottom: 10px;
-        }
-        
-        .form-group label {
-            display: block;
-            font-size: 0.85em;
-            margin-bottom: 3px;
-            color: var(--text);
-            opacity: 0.8;
-        }
-        
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            background: var(--primary);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 6px;
-            color: var(--text);
-            font-size: 0.9em;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background: var(--accent);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        
-        .submit-btn:disabled {
-            opacity: 0.5;
-        }
-        
-        .submit-btn:not(:disabled):hover {
-            transform: scale(1.02);
-        }
-        
-        /* Selected Table Display */
-        .selected-table-display {
-            background: var(--primary);
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        
-        .selected-table-display .table-icon {
-            font-size: 1.5em;
-        }
-        
-        /* Quick Actions */
-        .quick-actions {
+        /* Staff Reservation Form */
+        .staff-form {
             background: var(--secondary);
             border-radius: 10px;
             padding: 15px;
             margin-top: 15px;
         }
         
-        .quick-actions h5 {
+        .staff-form h5 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        
+        /* Staff Quick Actions */
+        .staff-actions {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .staff-actions h5 {
             color: var(--gold);
             margin-bottom: 10px;
         }
@@ -527,29 +676,17 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 0.85em;
-            transition: all 0.3s;
         }
         
-        .action-btn.occupy {
-            background: var(--danger);
-            color: white;
-        }
-        
-        .action-btn.free {
-            background: var(--success);
-            color: white;
-        }
-        
-        .action-btn.reserve {
-            background: var(--warning);
-            color: white;
-        }
+        .action-btn.occupy { background: var(--danger); color: white; }
+        .action-btn.free { background: var(--success); color: white; }
+        .action-btn.reserve { background: var(--warning); color: white; }
         
         .action-btn:hover {
             transform: scale(1.05);
         }
         
-        /* Day Reservations List */
+        /* Day Reservations */
         .day-reservations {
             background: var(--primary);
             border-radius: 15px;
@@ -593,98 +730,20 @@
             color: var(--accent);
         }
         
-        /* Menu Section */
-        .menu-container {
-            display: none;
-        }
-        
-        .menu-container.active {
-            display: block;
-        }
-        
-        .menu-section {
-            background: var(--primary);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .menu-section h3 {
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-        
-        .menu-item {
+        /* Time Selector */
+        .time-selector {
             display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
         }
         
-        .menu-item-price {
-            color: var(--accent);
-            font-weight: 600;
-        }
-        
-        /* Pricing Section */
-        .pricing-container {
-            display: none;
-        }
-        
-        .pricing-container.active {
-            display: block;
-        }
-        
-        .pricing-card {
-            background: linear-gradient(145deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-            padding: 30px;
-            border: 2px solid var(--gold);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .pricing-card h3 {
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        
-        .pricing-price {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
-        .pricing-price .amount {
-            font-size: 3em;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        
-        .pricing-features {
-            list-style: none;
-        }
-        
-        .pricing-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .pricing-features .check {
-            color: var(--success);
-            margin-right: 10px;
-        }
-        
-        .pricing-cta {
-            width: 100%;
-            padding: 15px;
-            background: var(--accent);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 1.1em;
-            cursor: pointer;
-            margin-top: 20px;
+        .time-selector select {
+            padding: 8px;
+            background: var(--primary);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            color: var(--text);
         }
         
         /* Modal */
@@ -716,6 +775,7 @@
         .modal-content h3 {
             color: var(--gold);
             margin-bottom: 15px;
+            text-align: center;
         }
         
         .modal-buttons {
@@ -730,6 +790,7 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            font-size: 1em;
         }
         
         .modal-btn.cancel {
@@ -754,116 +815,166 @@
         <p>Tu lounge de hookah favorito</p>
     </div>
     
+    <!-- Mode Toggle - Always Visible -->
     <div class="mode-toggle">
-        <button class="mode-btn active" id="btn-customer" onclick="setMode('customer')">👤 Cliente</button>
-        <button class="mode-btn" id="btn-staff" onclick="setMode('staff')">🔐 Staff</button>
+        <button class="mode-btn active" id="btn-customer" onclick="switchToCustomer()">👤 Cliente</button>
+        <button class="mode-btn" id="btn-staff" onclick="showStaffPin()">🔐 Staff</button>
     </div>
     
-    <!-- PIN Overlay for Staff -->
-    <div class="modal" id="pin-overlay">
-        <div class="modal-content" style="text-align: center;">
-            <h3 style="color: var(--gold); margin-bottom: 20px;">🔐 Acceso Staff</h3>
-            <p style="margin-bottom: 15px; opacity: 0.8;">Introduce tu PIN para continuar</p>
+    <div class="info-banner customer-view">
+        <p>🔥 ¡Reserva tu mesa online!</p>
+    </div>
+    
+    <!-- PIN Modal -->
+    <div class="modal" id="pin-modal">
+        <div class="modal-content">
+            <h3>🔐 Acceso Staff</h3>
+            <p style="text-align:center;margin-bottom:15px;opacity:0.8;">Introduce tu PIN</p>
             <div class="form-group">
-                <input type="password" id="pin-input" placeholder="••••" maxlength="10" 
-                    style="text-align: center; font-size: 1.5em; letter-spacing: 5px; padding: 15px;"
-                    onkeypress="if(event.key==='Enter')verifyPin()">
+                <input type="password" id="pin-input" placeholder="••••" 
+                    style="text-align:center;font-size:1.5em;letter-spacing:5px;padding:15px;"
+                    onkeypress="if(event.key==='Enter')verifyStaffPin()">
             </div>
             <div class="modal-buttons">
-                <button class="modal-btn cancel" onclick="cancelStaffAccess()">Cancelar</button>
-                <button class="modal-btn confirm" onclick="verifyPin()">Acceder</button>
+                <button class="modal-btn cancel" onclick="closePinModal()">Cancelar</button>
+                <button class="modal-btn confirm" onclick="verifyStaffPin()">Acceder</button>
             </div>
         </div>
-    </div>
-    
-    <div class="info-banner">
-        <p>🔥 ¡Mes inaugural a 39€/mes!</p>
-    </div>
-    
-    <div class="tabs">
-        <div class="tab active" onclick="showSection('chat')">💬 Reservar</div>
-        <div class="tab" onclick="showSection('staff')">🎛️ Panel Staff</div>
-        <div class="tab" onclick="showSection('menu')">📋 Carta</div>
-        <div class="tab" onclick="showSection('pricing')">💰 Precio</div>
     </div>
     
     <div class="container">
-        <!-- Customer Floor Plan -->
-        <div class="chat-container" id="customer-floor-section" style="display: none;">
-            <div style="text-align: center; margin-bottom: 15px;">
-                <h3 style="color: var(--gold);">🪑 Selecciona tu mesa</h3>
-                <p style="opacity: 0.7; font-size: 0.9em;">Elige una mesa libre para tu reserva</p>
-            </div>
-            
-            <div style="margin-bottom: 15px;">
-                <label style="color: var(--gold); font-size: 0.9em;">📅 Fecha:</label>
-                <input type="date" id="customer-date" style="margin-left: 10px; padding: 8px; background: var(--secondary); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: var(--text);">
-            </div>
-            
-            <div class="legend" style="margin-bottom: 15px;">
-                <div class="legend-item"><div class="legend-dot free"></div> Libre</div>
-                <div class="legend-item"><div class="legend-dot reserved"></div> Reservada</div>
-                <div class="legend-item"><div class="legend-dot occupied"></div> Ocupada</div>
-            </div>
-            
-            <div class="tables-grid" id="customer-tables-grid" style="margin-bottom: 15px;">
-                <!-- Generated by JS -->
-            </div>
-            
-            <div class="reservation-form" id="customer-reservation-form" style="display: none;">
-                <h5 style="color: var(--gold); margin-bottom: 10px;">📝 Completa tu reserva</h5>
-                <div class="selected-table-display" id="customer-selected-table" style="background: var(--secondary); padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 10px;">
-                    <div style="color: var(--gold);">Selecciona una mesa</div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Nombre *</label>
-                        <input type="text" id="customer-name" placeholder="Tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label>Teléfono *</label>
-                        <input type="tel" id="customer-phone" placeholder="600 123 456">
+        <!-- ====== CUSTOMER VIEW ====== -->
+        <div class="customer-view" id="customer-view">
+            <!-- Chat Section -->
+            <div class="chat-container" id="customer-chat">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot">
+                        ¡Bienvenido a <b>La Cachimba</b>! 🌬️<br><br>
+                        Más de <b>30 sabores</b>, terraza y eventos.<br><br>
+                        ¿Reservamos tu mesa?
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Notas (opcional)</label>
-                    <input type="text" id="customer-notes" placeholder="Terraza, ocasión especial...">
+                <div class="quick-replies" id="quick-replies">
+                    <button class="quick-reply" onclick="startReservation()">📅 Reservar mesa</button>
+                    <button class="quick-reply" onclick="showMenu()">📋 Ver carta</button>
+                    <button class="quick-reply" onclick="showPricing()">💰 Precios</button>
                 </div>
-                <button class="submit-btn" id="customer-submit" onclick="submitCustomerReservation()" disabled>Completa tu reserva</button>
             </div>
             
-            <div style="text-align: center; margin-top: 15px;">
-                <button onclick="clearTableSelection()" style="padding: 10px 20px; background: transparent; border: 1px solid var(--accent); color: var(--gold); border-radius: 8px; cursor: pointer;">← Cancelar</button>
+            <!-- Floor Plan (Customer) -->
+            <div class="customer-floor" id="customer-floor">
+                <h3 class="floor-title">🪑 Selecciona tu mesa</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <label style="color: var(--gold);">📅 Fecha:</label>
+                    <input type="date" id="customer-date" style="margin-left:10px;padding:8px;background:var(--secondary);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:var(--text);">
+                </div>
+                
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot free"></div> Libre</div>
+                    <div class="legend-item"><div class="legend-dot reserved"></div> Reservada</div>
+                    <div class="legend-item"><div class="legend-dot occupied"></div> Ocupada</div>
+                </div>
+                
+                <div class="tables-grid" id="customer-tables"></div>
+                
+                <div class="reservation-form" id="customer-form" style="display:none;">
+                    <h4>📝 Completa tu reserva</h4>
+                    <div class="selected-table-info" id="selected-table-info"></div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre *</label>
+                            <input type="text" id="customer-name" placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono *</label>
+                            <input type="tel" id="customer-phone" placeholder="600 123 456">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Notas (opcional)</label>
+                        <input type="text" id="customer-notes" placeholder="Terraza, ocasión especial...">
+                    </div>
+                    <button class="submit-btn" id="customer-submit" onclick="submitCustomerReservation()" disabled>
+                        Selecciona una mesa
+                    </button>
+                </div>
+                
+                <div style="margin-top:15px;text-align:center;">
+                    <button onclick="backToChat()" style="padding:10px 20px;background:transparent;border:1px solid var(--accent);color:var(--gold);border-radius:8px;cursor:pointer;">
+                        ← Volver
+                    </button>
+                </div>
             </div>
             
-            <div class="tabs" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                <div class="tab" onclick="goToSection('menu')">📋 Carta</div>
-                <div class="tab" onclick="goToSection('pricing')">💰 Precio</div>
+            <!-- Menu (Customer) -->
+            <div class="menu-section" id="customer-menu">
+                <div class="menu-card">
+                    <h3>🌬️ Cachimbas</h3>
+                    <div class="menu-item"><span>Cachimba clásica</span><span class="menu-item-price">8€</span></div>
+                    <div class="menu-item"><span>Cachimba sin tabaco</span><span class="menu-item-price">10€</span></div>
+                    <div class="menu-item"><span>Cachimba premium</span><span class="menu-item-price">12€</span></div>
+                    <div class="menu-item"><span>Cachimba doble</span><span class="menu-item-price">14€</span></div>
+                </div>
+                <div class="menu-card">
+                    <h3>🍵 Bebidas</h3>
+                    <div class="menu-item"><span>Té moruno</span><span class="menu-item-price">3€</span></div>
+                    <div class="menu-item"><span>Té hierbabuena</span><span class="menu-item-price">3.50€</span></div>
+                    <div class="menu-item"><span>Refresco</span><span class="menu-item-price">2.50€</span></div>
+                    <div class="menu-item"><span>Batido artesanal</span><span class="menu-item-price">5€</span></div>
+                </div>
+                <div class="menu-card">
+                    <h3>🎁 Packs</h3>
+                    <div class="menu-item"><span>Pack Pareja (2 cachimbas + 2 tés)</span><span class="menu-item-price">25€</span></div>
+                    <div class="menu-item"><span>Pack Grupo (4 cachimbas + 4 tés)</span><span class="menu-item-price">55€</span></div>
+                </div>
+                <div style="text-align:center;margin-top:20px;">
+                    <button onclick="backToChat()" style="padding:10px 20px;background:var(--accent);border:none;color:white;border-radius:8px;cursor:pointer;">
+                        ← Volver al chat
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Pricing (Customer) -->
+            <div class="pricing-section" id="customer-pricing">
+                <div class="pricing-card">
+                    <h3>🌟 PLAN PROFESIONAL</h3>
+                    <div class="pricing-price">
+                        <span class="amount">49€</span>
+                        <span style="opacity:0.7">/mes</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✅</span> Bot conversacional IA 24/7</li>
+                        <li><span class="check">✅</span> Plano de mesas interactivo</li>
+                        <li><span class="check">✅</span> Calendario unificado</li>
+                        <li><span class="check">✅</span> Control ocupación en tiempo real</li>
+                        <li><span class="check">✅</span> Sin límite de reservas</li>
+                    </ul>
+                    <button class="submit-btn" style="margin-top:20px;" onclick="startReservation()">
+                        🚀 Probar gratis
+                    </button>
+                </div>
+                <div style="text-align:center;margin-top:20px;">
+                    <button onclick="backToChat()" style="padding:10px 20px;background:transparent;border:1px solid var(--accent);color:var(--gold);border-radius:8px;cursor:pointer;">
+                        ← Volver al chat
+                    </button>
+                </div>
             </div>
         </div>
         
-        <!-- Chat Section -->
-        <div class="chat-container" id="chat-section">
-            <div class="chat-messages" id="chat-messages">
-                <div class="message bot">
-                    ¡Bienvenido a <b>La Cachimba</b>! 🌬️<br><br>
-                    Más de <b>30 sabores</b>, terraza y eventos.<br><br>
-                    ¿Reservamos mesa?
-                </div>
-            </div>
-            <div class="quick-replies" id="quick-replies">
-                <button class="quick-reply" onclick="sendQuickReply('Reservar mesa')">📅 Reservar</button>
-                <button class="quick-reply" onclick="sendQuickReply('Ver carta')">📋 Carta</button>
-                <button class="quick-reply" onclick="sendQuickReply('Horarios')">🕐 Horarios</button>
-            </div>
-        </div>
-        
-        <!-- Staff Panel - Unified -->
-        <div class="staff-panel" id="staff-section">
+        <!-- ====== STAFF VIEW ====== -->
+        <div class="staff-view" id="staff-view">
             <div class="staff-header">
-                <div class="selected-day-info" id="selected-day-info">📅 Selecciona un día</div>
+                <h3>🎛️ Panel de Staff</h3>
+                <div>
+                    <span id="selected-day-staff">📅 Hoy</span>
+                </div>
+            </div>
+            
+            <div class="staff-header" style="margin-top:10px;">
                 <div class="time-selector">
-                    <select id="staff-time">
+                    <label style="color:var(--gold);">⏰ Hora:</label>
+                    <select id="staff-time" onchange="updateStaffFloor()">
                         <option value="17:00">17:00</option>
                         <option value="18:00">18:00</option>
                         <option value="19:00">19:00</option>
@@ -873,119 +984,69 @@
                         <option value="23:00">23:00</option>
                     </select>
                 </div>
+                <button onclick="switchToCustomer()" style="padding:8px 15px;background:var(--accent);border:none;color:white;border-radius:8px;cursor:pointer;">
+                    ← Salir Staff
+                </button>
             </div>
             
             <div class="staff-main-grid">
-                <!-- Left: Mini Calendar -->
+                <!-- Calendar -->
                 <div class="mini-calendar">
                     <h4>📅 Calendario</h4>
                     <div class="calendar-nav">
                         <button onclick="changeStaffMonth(-1)">◀</button>
-                        <span id="calendar-month-title" style="color: var(--gold);">Mes</span>
+                        <span id="calendar-month-title" style="color:var(--gold);">Mes</span>
                         <button onclick="changeStaffMonth(1)">▶</button>
                     </div>
-                    <div class="calendar-grid" id="staff-calendar-grid">
-                        <!-- Generated by JS -->
-                    </div>
+                    <div class="calendar-grid" id="staff-calendar"></div>
                 </div>
                 
-                <!-- Right: Floor Plan -->
+                <!-- Floor Plan -->
                 <div class="floor-section">
-                    <h4>🪑 Mesas del día</h4>
-                    <div class="legend">
+                    <h4>🪑 Mesas</h4>
+                    <div class="legend" style="margin-bottom:10px;">
                         <div class="legend-item"><div class="legend-dot free"></div> Libre</div>
                         <div class="legend-item"><div class="legend-dot reserved"></div> Reservada</div>
                         <div class="legend-item"><div class="legend-dot occupied"></div> Ocupada</div>
                     </div>
-                    <div class="tables-grid" id="staff-tables-grid">
-                        <!-- Generated by JS -->
-                    </div>
+                    <div class="staff-tables-grid" id="staff-tables"></div>
                     
-                    <!-- Reservation Form -->
-                    <div class="reservation-form">
+                    <div class="staff-form">
                         <h5>📝 Nueva Reserva</h5>
-                        <div class="selected-table-display" id="selected-table-display">
-                            <div class="table-icon">🪑</div>
-                            <div style="font-size: 0.85em;">Selecciona mesa</div>
+                        <div class="selected-table-info" id="staff-selected-table" style="background:var(--primary);padding:10px;border-radius:8px;text-align:center;margin-bottom:10px;">
+                            Selecciona mesa
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" id="res-name" placeholder="Nombre">
+                                <input type="text" id="staff-name" placeholder="Nombre">
                             </div>
                             <div class="form-group">
                                 <label>Teléfono</label>
-                                <input type="tel" id="res-phone" placeholder="600 123 456">
+                                <input type="tel" id="staff-phone" placeholder="600 123 456">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>Notas</label>
-                            <input type="text" id="res-notes" placeholder="Opcional">
-                        </div>
-                        <button class="submit-btn" id="submit-reservation" onclick="submitReservation()" disabled>
-                            Selecciona mesa
+                        <button class="submit-btn" id="staff-submit" onclick="submitStaffReservation()" disabled>
+                            Reservar
                         </button>
                     </div>
                     
-                    <!-- Quick Actions -->
-                    <div class="quick-actions">
-                        <h5>⚡ Acciones rápidas</h5>
+                    <div class="staff-actions">
+                        <h5>⚡ Acciones</h5>
                         <div class="action-row">
-                            <button class="action-btn occupy" onclick="openOccupyModal()">🚫 Ocupar mesa</button>
-                            <button class="action-btn free" onclick="freeSelectedTable()">🟢 Liberar mesa</button>
-                            <button class="action-btn reserve" onclick="clearSelection()">❌ Limpiar selección</button>
+                            <button class="action-btn occupy" onclick="openOccupyModal()">🚫 Ocupar</button>
+                            <button class="action-btn free" onclick="freeSelectedTable()">🟢 Liberar</button>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Day Reservations List -->
+            <!-- Day Reservations -->
             <div class="day-reservations">
-                <h4>📋 Reservas del día seleccionado</h4>
+                <h4>📋 Reservas del día</h4>
                 <div id="day-reservations-list">
-                    <p style="text-align:center;opacity:0.6;">Selecciona un día para ver reservas</p>
+                    <p style="text-align:center;opacity:0.6;">Selecciona un día</p>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Menu Section -->
-        <div class="menu-container" id="menu-section">
-            <div class="menu-section">
-                <h3>🌬️ Cachimbas</h3>
-                <div class="menu-item"><span>Cachimba clásica</span><span class="menu-item-price">8€</span></div>
-                <div class="menu-item"><span>Cachimba sin tabaco</span><span class="menu-item-price">10€</span></div>
-                <div class="menu-item"><span>Cachimba premium</span><span class="menu-item-price">12€</span></div>
-            </div>
-            <div class="menu-section">
-                <h3>🍵 Bebidas</h3>
-                <div class="menu-item"><span>Té moruno</span><span class="menu-item-price">3€</span></div>
-                <div class="menu-item"><span>Té hierbabuena</span><span class="menu-item-price">3.50€</span></div>
-                <div class="menu-item"><span>Refresco</span><span class="menu-item-price">2.50€</span></div>
-            </div>
-            <div class="menu-section">
-                <h3>🎁 Packs</h3>
-                <div class="menu-item"><span>Pack Pareja</span><span class="menu-item-price">25€</span></div>
-                <div class="menu-item"><span>Pack Grupo</span><span class="menu-item-price">55€</span></div>
-            </div>
-        </div>
-        
-        <!-- Pricing Section -->
-        <div class="pricing-container" id="pricing-section">
-            <div class="pricing-card">
-                <h3>🌟 PLAN PROFESIONAL</h3>
-                <div class="pricing-price">
-                    <span class="amount">49€</span>
-                    <span style="opacity:0.7">/mes</span>
-                </div>
-                <ul class="pricing-features">
-                    <li><span class="check">✅</span> Bot conversacional IA 24/7</li>
-                    <li><span class="check">✅</span> Plano de mesas interactivo</li>
-                    <li><span class="check">✅</span> Calendario unificado</li>
-                    <li><span class="check">✅</span> Control ocupación en tiempo real</li>
-                    <li><span class="check">✅</span> SMS confirmaciones</li>
-                    <li><span class="check">✅</span> Sin límite de reservas</li>
-                </ul>
-                <button class="pricing-cta" onclick="sendQuickReply('Quiero demo')">🚀 Solicitar demo</button>
             </div>
         </div>
     </div>
@@ -995,22 +1056,18 @@
         <div class="modal-content">
             <h3>🚫 Ocupar Mesa</h3>
             <div class="form-group">
-                <label>¿Cuántas personas?</label>
+                <label>Personas</label>
                 <select id="occupy-people">
                     <option value="1">1</option>
-                    <option value="2">2</option>
+                    <option value="2" selected>2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                     <option value="6">6+</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>Nombre (opcional)</label>
-                <input type="text" id="occupy-name" placeholder="Walk-in">
-            </div>
             <div class="modal-buttons">
-                <button class="modal-btn cancel" onclick="closeModal()">Cancelar</button>
+                <button class="modal-btn cancel" onclick="closeOccupyModal()">Cancelar</button>
                 <button class="modal-btn confirm" onclick="confirmOccupy()">Ocupar</button>
             </div>
         </div>
@@ -1018,69 +1075,81 @@
     
     <script>
         // State
-        let currentSection = 'chat';
-        let conversationState = 'initial';
-        let currentStaffMonthOffset = 0;
-        let reservations = JSON.parse(localStorage.getItem('cachimba_reservations') || '[]');
+        let currentView = 'customer';
+        let customerSubView = 'chat';
+        let staffMonthOffset = 0;
         let selectedStaffDate = new Date();
-        let selectedTableId = null;
-        let selectedCustomerTableId = null;
+        let selectedStaffTable = null;
+        let selectedCustomerTable = null;
+        
+        // Data
+        let reservations = JSON.parse(localStorage.getItem('cachimba_reservations') || '[]');
         
         // Tables
         const tables = [
-            { id: 1, name: 'Mesa 1', capacity: 2, status: 'free', currentOccupancy: 0 },
-            { id: 2, name: 'Mesa 2', capacity: 2, status: 'free', currentOccupancy: 0 },
-            { id: 3, name: 'Mesa 3', capacity: 4, status: 'free', currentOccupancy: 0 },
-            { id: 4, name: 'Mesa 4', capacity: 4, status: 'free', currentOccupancy: 0 },
-            { id: 5, name: 'Mesa 5', capacity: 4, status: 'free', currentOccupancy: 0 },
-            { id: 6, name: 'Mesa 6', capacity: 6, status: 'free', currentOccupancy: 0 },
-            { id: 7, name: 'Mesa 7', capacity: 6, status: 'free', currentOccupancy: 0 },
-            { id: 8, name: 'Mesa 8', capacity: 8, status: 'free', currentOccupancy: 0 },
-            { id: 9, name: 'Terraza 1', capacity: 4, status: 'free', currentOccupancy: 0 },
-            { id: 10, name: 'Terraza 2', capacity: 4, status: 'free', currentOccupancy: 0 },
-            { id: 11, name: 'Terraza 3', capacity: 6, status: 'free', currentOccupancy: 0 },
-            { id: 12, name: 'Terraza VIP', capacity: 8, status: 'free', currentOccupancy: 0 },
+            { id: 1, name: 'Mesa 1', capacity: 2 },
+            { id: 2, name: 'Mesa 2', capacity: 2 },
+            { id: 3, name: 'Mesa 3', capacity: 4 },
+            { id: 4, name: 'Mesa 4', capacity: 4 },
+            { id: 5, name: 'Mesa 5', capacity: 4 },
+            { id: 6, name: 'Mesa 6', capacity: 6 },
+            { id: 7, name: 'Mesa 7', capacity: 6 },
+            { id: 8, name: 'Mesa 8', capacity: 8 },
+            { id: 9, name: 'Terraza 1', capacity: 4 },
+            { id: 10, name: 'Terraza 2', capacity: 4 },
+            { id: 11, name: 'Terraza 3', capacity: 6 },
+            { id: 12, name: 'Terraza VIP', capacity: 8 },
         ];
         
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
+            // Set default date
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('customer-date').value = tomorrow.toISOString().split('T')[0];
+            document.getElementById('customer-date').min = new Date().toISOString().split('T')[0];
+            
+            generateCustomerTables();
             generateStaffCalendar();
             generateStaffTables();
             updateDayReservationsList();
         });
         
-        // Mode
-        let isStaffUnlocked = false;
-        const STAFF_PIN = '1234';
-        
-        function setMode(mode) {
-            if (mode === 'staff' && !isStaffUnlocked) {
-                // Show PIN modal instead of prompt
-                document.getElementById('pin-overlay').classList.add('active');
-                document.getElementById('pin-input').value = '';
-                document.getElementById('pin-input').focus();
-                return;
-            }
-            
-            document.getElementById('btn-customer').classList.toggle('active', mode === 'customer');
-            document.getElementById('btn-staff').classList.toggle('active', mode === 'staff');
-            
-            if (mode === 'staff') {
-                showSection('staff');
-            } else {
-                isStaffUnlocked = false;
-                showSection('chat');
-            }
+        // ====== MODE SWITCHING ======
+        function switchToCustomer() {
+            currentView = 'customer';
+            document.getElementById('customer-view').classList.add('active');
+            document.getElementById('staff-view').classList.remove('active');
+            document.getElementById('btn-customer').classList.add('active');
+            document.getElementById('btn-staff').classList.remove('active');
+            document.getElementById('customer-view').style.display = 'block';
+            document.getElementById('staff-view').style.display = 'none';
+            document.querySelector('.info-banner').style.display = 'block';
+            backToChat();
         }
         
-        function verifyPin() {
+        function showStaffPin() {
+            document.getElementById('pin-modal').classList.add('active');
+            document.getElementById('pin-input').value = '';
+            document.getElementById('pin-input').focus();
+        }
+        
+        function closePinModal() {
+            document.getElementById('pin-modal').classList.remove('active');
+        }
+        
+        function verifyStaffPin() {
             const pin = document.getElementById('pin-input').value;
-            if (pin === STAFF_PIN) {
-                document.getElementById('pin-overlay').classList.remove('active');
-                isStaffUnlocked = true;
+            if (pin === '1234') {
+                closePinModal();
+                currentView = 'staff';
+                document.getElementById('customer-view').style.display = 'none';
+                document.getElementById('staff-view').style.display = 'block';
+                document.getElementById('staff-view').classList.add('active');
                 document.getElementById('btn-customer').classList.remove('active');
                 document.getElementById('btn-staff').classList.add('active');
-                showSection('staff');
+                document.querySelector('.info-banner').style.display = 'none';
+                updateStaffFloor();
             } else {
                 alert('PIN incorrecto');
                 document.getElementById('pin-input').value = '';
@@ -1088,41 +1157,177 @@
             }
         }
         
-        function cancelStaffAccess() {
-            document.getElementById('pin-overlay').classList.remove('active');
-            document.getElementById('btn-customer').classList.add('active');
-            document.getElementById('btn-staff').classList.remove('active');
+        // ====== CUSTOMER FUNCTIONS ======
+        function addMessage(text, isUser = false) {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = `message ${isUser ? 'user' : 'bot'}`;
+            div.innerHTML = text;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
         }
         
-        // Show section
-        function showSection(section) {
-            document.querySelectorAll('.tab').forEach((t, i) => {
-                t.classList.remove('active');
-                const sections = ['chat', 'staff', 'menu', 'pricing'];
-                if (sections[i] === section) t.classList.add('active');
+        function startReservation() {
+            document.getElementById('customer-chat').style.display = 'none';
+            document.getElementById('customer-floor').classList.add('active');
+            document.getElementById('customer-menu').classList.remove('active');
+            document.getElementById('customer-pricing').classList.remove('active');
+            customerSubView = 'floor';
+            generateCustomerTables();
+        }
+        
+        function showMenu() {
+            document.getElementById('customer-chat').style.display = 'none';
+            document.getElementById('customer-floor').classList.remove('active');
+            document.getElementById('customer-menu').classList.add('active');
+            document.getElementById('customer-pricing').classList.remove('active');
+            customerSubView = 'menu';
+        }
+        
+        function showPricing() {
+            document.getElementById('customer-chat').style.display = 'none';
+            document.getElementById('customer-floor').classList.remove('active');
+            document.getElementById('customer-menu').classList.remove('active');
+            document.getElementById('customer-pricing').classList.add('active');
+            customerSubView = 'pricing';
+        }
+        
+        function backToChat() {
+            document.getElementById('customer-chat').style.display = 'block';
+            document.getElementById('customer-floor').classList.remove('active');
+            document.getElementById('customer-menu').classList.remove('active');
+            document.getElementById('customer-pricing').classList.remove('active');
+            document.getElementById('customer-form').style.display = 'none';
+            customerSubView = 'chat';
+        }
+        
+        function generateCustomerTables() {
+            const grid = document.getElementById('customer-tables');
+            grid.innerHTML = '';
+            
+            const dateInput = document.getElementById('customer-date').value;
+            const time = '21:00';
+            
+            // Reset table states
+            const tableStates = {};
+            
+            if (dateInput) {
+                const parts = dateInput.split('-');
+                const dayKey = `${parts[2]}/${parts[1]}/${parts[0]}`;
+                
+                reservations.filter(r => r.dateKey === dayKey && r.time === time).forEach(r => {
+                    tableStates[r.tableId] = { status: 'reserved', reservation: r };
+                });
+            }
+            
+            tables.forEach(table => {
+                const state = tableStates[table.id] || { status: 'free' };
+                
+                const card = document.createElement('div');
+                card.className = `table-card ${state.status}`;
+                if (selectedCustomerTable === table.id) card.classList.add('selected');
+                if (state.status !== 'free') card.classList.add('disabled');
+                
+                const statusText = { 'free': 'Libre', 'reserved': 'Reservada', 'occupied': 'Ocupada' };
+                
+                card.innerHTML = `
+                    <div class="table-name">${table.name}</div>
+                    <div class="table-capacity">👥 ${table.capacity} pers.</div>
+                    <div class="table-status ${state.status}">${statusText[state.status]}</div>
+                `;
+                
+                if (state.status === 'free') {
+                    card.onclick = () => selectCustomerTable(table.id);
+                }
+                
+                grid.appendChild(card);
             });
-            
-            document.getElementById('chat-section').style.display = section === 'chat' ? 'block' : 'none';
-            document.getElementById('staff-section').classList.toggle('active', section === 'staff');
-            document.getElementById('menu-section').classList.toggle('active', section === 'menu');
-            document.getElementById('pricing-section').classList.toggle('active', section === 'pricing');
-            
-            currentSection = section;
         }
         
-        // Staff Calendar
+        function selectCustomerTable(tableId) {
+            selectedCustomerTable = tableId;
+            generateCustomerTables();
+            
+            const table = tables.find(t => t.id === tableId);
+            document.getElementById('selected-table-info').innerHTML = `
+                <div class="icon">🪑</div>
+                <div style="color:var(--gold);font-weight:600;">${table.name}</div>
+                <div>👥 ${table.capacity} personas</div>
+            `;
+            document.getElementById('customer-form').style.display = 'block';
+            document.getElementById('customer-submit').disabled = false;
+            document.getElementById('customer-submit').textContent = `Reservar ${table.name}`;
+        }
+        
+        function submitCustomerReservation() {
+            const name = document.getElementById('customer-name').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
+            const notes = document.getElementById('customer-notes').value;
+            const dateInput = document.getElementById('customer-date').value;
+            
+            if (!name || !phone) {
+                alert('Completa nombre y teléfono');
+                return;
+            }
+            
+            const phoneClean = phone.replace(/\s/g, '');
+            if (!/^\d{9}$/.test(phoneClean)) {
+                alert('El teléfono debe tener 9 dígitos');
+                return;
+            }
+            
+            if (!selectedCustomerTable) {
+                alert('Selecciona una mesa');
+                return;
+            }
+            
+            const table = tables.find(t => t.id === selectedCustomerTable);
+            const parts = dateInput.split('-');
+            const dayKey = `${parts[2]}/${parts[1]}/${parts[0]}`;
+            
+            // Check 1 reservation per phone per day
+            const existing = reservations.filter(r => r.phone === phoneClean && r.dateKey === dayKey);
+            if (existing.length > 0) {
+                alert('⚠️ Este teléfono ya tiene una reserva para hoy. Solo 1 por persona/día');
+                return;
+            }
+            
+            const reservation = {
+                id: Date.now(),
+                name: name,
+                phone: phoneClean,
+                date: dayKey,
+                dateKey: dayKey,
+                dateDisplay: new Date(dateInput).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }),
+                time: '21:00',
+                people: table.capacity,
+                tableId: table.id,
+                tableName: table.name,
+                notes: notes,
+                type: 'reserva'
+            };
+            
+            reservations.push(reservation);
+            localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
+            
+            alert(`✅ ¡Reserva confirmada!\n\n📅 ${reservation.dateDisplay}\n⏰ 21:00\n🪑 ${table.name}\n👤 ${name}\n\n¡Te esperamos! 🌬️`);
+            
+            backToChat();
+        }
+        
+        // ====== STAFF FUNCTIONS ======
         function generateStaffCalendar() {
-            const grid = document.getElementById('staff-calendar-grid');
+            const grid = document.getElementById('staff-calendar');
             grid.innerHTML = '';
             
             const today = new Date();
-            const firstDay = new Date(today.getFullYear(), today.getMonth() + currentStaffMonthOffset, 1);
+            const firstDay = new Date(today.getFullYear(), today.getMonth() + staffMonthOffset, 1);
             const lastDay = new Date(firstDay.getFullYear(), firstDay.getMonth() + 1, 0);
             
             document.getElementById('calendar-month-title').textContent = 
                 firstDay.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
             
-            // Day headers
+            // Headers
             ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'].forEach(day => {
                 const header = document.createElement('div');
                 header.className = 'day-header';
@@ -1130,7 +1335,6 @@
                 grid.appendChild(header);
             });
             
-            // Start from Monday
             let startDay = firstDay.getDay() - 1;
             if (startDay < 0) startDay = 6;
             
@@ -1158,15 +1362,9 @@
             if (isOtherMonth) cell.classList.add('other-month');
             
             const today = new Date();
-            if (day.toDateString() === today.toDateString()) {
-                cell.classList.add('today');
-            }
+            if (day.toDateString() === today.toDateString()) cell.classList.add('today');
+            if (day.toDateString() === selectedStaffDate.toDateString()) cell.classList.add('selected');
             
-            if (day.toDateString() === selectedStaffDate.toDateString()) {
-                cell.classList.add('selected');
-            }
-            
-            // Check if day has reservations
             const dayKey = day.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
             const hasReservations = reservations.some(r => r.dateKey === dayKey);
             if (hasReservations) {
@@ -1181,167 +1379,114 @@
         }
         
         function changeStaffMonth(delta) {
-            currentStaffMonthOffset += delta;
+            staffMonthOffset += delta;
             generateStaffCalendar();
         }
         
         function selectStaffDate(day) {
             selectedStaffDate = day;
-            document.getElementById('selected-day-info').textContent = 
-                `📅 ${day.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}`;
-            
+            document.getElementById('selected-day-staff').textContent = 
+                `📅 ${day.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short' })}`;
             generateStaffCalendar();
-            updateStaffTables();
+            updateStaffFloor();
             updateDayReservationsList();
         }
         
-        // Staff Tables
+        function updateStaffFloor() {
+            const time = document.getElementById('staff-time').value;
+            const dayKey = selectedStaffDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+            
+            // Reset
+            tables.forEach(t => t.status = 'free');
+            
+            // Apply reservations
+            reservations.filter(r => r.dateKey === dayKey && r.time === time).forEach(r => {
+                const table = tables.find(t => t.id === r.tableId);
+                if (table) table.status = 'reserved';
+            });
+            
+            generateStaffTables();
+        }
+        
         function generateStaffTables() {
-            const grid = document.getElementById('staff-tables-grid');
+            const grid = document.getElementById('staff-tables');
             grid.innerHTML = '';
             
             tables.forEach(table => {
-                const card = createTableCard(table);
+                const card = document.createElement('div');
+                card.className = `staff-table-card ${table.status}`;
+                if (selectedStaffTable === table.id) card.classList.add('selected');
+                
+                const statusText = { 'free': 'Libre', 'reserved': 'Reservada', 'occupied': 'Ocupada' };
+                
+                card.innerHTML = `
+                    <div class="name">${table.name}</div>
+                    <div class="capacity">${table.capacity} pers.</div>
+                    <div class="status ${table.status}">${statusText[table.status]}</div>
+                `;
+                
+                card.onclick = () => selectStaffTable(table.id);
                 grid.appendChild(card);
             });
         }
         
-        function createTableCard(table) {
-            const card = document.createElement('div');
-            card.className = `table-card ${table.status === 'reserved' ? 'reserved' : ''} ${table.status === 'occupied' ? 'occupied' : ''}`;
+        function selectStaffTable(tableId) {
+            selectedStaffTable = tableId;
+            const table = tables.find(t => t.id === tableId);
             
-            if (selectedTableId === table.id) {
-                card.classList.add('selected');
-            }
-            
-            if (table.status !== 'free') {
-                card.classList.add('disabled');
-            }
-            
-            const statusText = { 'free': 'Libre', 'reserved': 'Reservada', 'occupied': 'Ocupada' };
-            
-            card.innerHTML = `
-                <div class="table-number">${table.name.replace('Mesa ', 'M').replace('Terraza ', 'T').replace('VIP', 'VIP')}</div>
-                <div class="table-capacity">👥 ${table.capacity} pers.</div>
-                <div class="table-status ${table.status}">${statusText[table.status]}</div>
-                ${table.reservation ? `<div class="reservation-info">${table.reservation.name}</div>` : ''}
+            document.getElementById('staff-selected-table').innerHTML = `
+                <div style="color:var(--gold);font-weight:600;">${table.name}</div>
+                <div>${table.capacity} personas</div>
             `;
-            
-            if (table.status === 'free') {
-                card.onclick = () => selectTable(table.id);
-            }
-            
-            return card;
-        }
-        
-        function selectTable(tableId) {
-            selectedTableId = tableId;
+            document.getElementById('staff-submit').disabled = false;
             generateStaffTables();
-            updateSelectedTableDisplay();
-        }
-        
-        function updateStaffTables() {
-            const time = document.getElementById('staff-time').value;
-            const dayKey = selectedStaffDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
-            
-            // Reset all tables
-            tables.forEach(t => {
-                t.status = 'free';
-                t.currentOccupancy = 0;
-                t.reservation = null;
-            });
-            
-            // Apply reservations for this day/time
-            reservations.filter(r => r.dateKey === dayKey && r.time === time).forEach(r => {
-                const table = tables.find(t => t.id === r.tableId);
-                if (table) {
-                    table.status = 'reserved';
-                    table.reservation = r;
-                }
-            });
-            
-            generateStaffTables();
-        }
-        
-        function updateSelectedTableDisplay() {
-            const display = document.getElementById('selected-table-display');
-            const btn = document.getElementById('submit-reservation');
-            
-            if (!selectedTableId) {
-                display.innerHTML = `<div class="table-icon">🪑</div><div style="font-size: 0.85em;">Selecciona mesa</div>`;
-                btn.disabled = true;
-                btn.textContent = 'Selecciona mesa';
-            } else {
-                const table = tables.find(t => t.id === selectedTableId);
-                display.innerHTML = `<div class="table-icon">🪑</div><div style="color: var(--gold); font-weight: 600;">${table.name}</div><div>👥 ${table.capacity} pers.</div>`;
-                btn.disabled = false;
-                btn.textContent = 'Confirmar Reserva';
-            }
         }
         
         function freeSelectedTable() {
-            if (!selectedTableId) {
+            if (!selectedStaffTable) {
                 alert('Selecciona una mesa primero');
                 return;
             }
-            const table = tables.find(t => t.id === selectedTableId);
+            const table = tables.find(t => t.id === selectedStaffTable);
             if (table) {
-                // If table had a reservation, remove it from the reservations array
-                if (table.reservation && table.reservation.id) {
-                    reservations = reservations.filter(r => r.id !== table.reservation.id);
-                    localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
-                    updateDayReservationsList();
-                }
+                // Remove reservation from data
+                const time = document.getElementById('staff-time').value;
+                const dayKey = selectedStaffDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+                
+                reservations = reservations.filter(r => !(r.tableId === table.id && r.dateKey === dayKey && r.time === time));
+                localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
                 
                 table.status = 'free';
-                table.currentOccupancy = 0;
-                table.reservation = null;
                 generateStaffTables();
+                updateDayReservationsList();
                 generateStaffCalendar();
             }
         }
         
-        function clearSelection() {
-            selectedTableId = null;
-            updateSelectedTableDisplay();
-            generateStaffTables();
-        }
-        
-        // Occupy Modal
         function openOccupyModal() {
-            if (!selectedTableId) {
+            if (!selectedStaffTable) {
                 alert('Selecciona una mesa primero');
                 return;
             }
             document.getElementById('occupy-modal').classList.add('active');
         }
         
-        function closeModal() {
+        function closeOccupyModal() {
             document.getElementById('occupy-modal').classList.remove('active');
         }
         
         function confirmOccupy() {
-            const people = document.getElementById('occupy-people').value;
-            const name = document.getElementById('occupy-name').value || 'Walk-in';
-            const table = tables.find(t => t.id === selectedTableId);
-            
+            const table = tables.find(t => t.id === selectedStaffTable);
             if (table) {
                 table.status = 'occupied';
-                table.currentOccupancy = parseInt(people);
-                table.reservation = { name: name, type: 'walkin' };
                 generateStaffTables();
-                closeModal();
-                
-                document.getElementById('occupy-people').value = '2';
-                document.getElementById('occupy-name').value = '';
+                closeOccupyModal();
             }
         }
         
-        // Submit Reservation
-        function submitReservation() {
-            const name = document.getElementById('res-name').value.trim();
-            const phone = document.getElementById('res-phone').value.trim();
-            const notes = document.getElementById('res-notes').value;
+        function submitStaffReservation() {
+            const name = document.getElementById('staff-name').value.trim();
+            const phone = document.getElementById('staff-phone').value.trim();
             const time = document.getElementById('staff-time').value;
             
             if (!name || !phone) {
@@ -1349,19 +1494,18 @@
                 return;
             }
             
-            // Basic phone validation
-            const phoneClean = phone.replace(/\s/g, '').replace(/\+/g, '');
+            const phoneClean = phone.replace(/\s/g, '');
             if (!/^\d{9}$/.test(phoneClean)) {
                 alert('El teléfono debe tener 9 dígitos');
                 return;
             }
             
-            if (!selectedTableId) {
+            if (!selectedStaffTable) {
                 alert('Selecciona una mesa');
                 return;
             }
             
-            const table = tables.find(t => t.id === selectedTableId);
+            const table = tables.find(t => t.id === selectedStaffTable);
             if (!table || table.status !== 'free') {
                 alert('Esa mesa no está disponible');
                 return;
@@ -1369,22 +1513,10 @@
             
             const dayKey = selectedStaffDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
             
-            // CHECK 1: Limit 1 reservation per phone per day
-            const existingPhoneReservations = reservations.filter(r => 
-                r.phone === phoneClean && r.dateKey === dayKey
-            );
-            if (existingPhoneReservations.length > 0) {
-                alert('⚠️ Este teléfono ya tiene una reserva para hoy.\n\nLímite: 1 reserva por persona/día');
-                return;
-            }
-            
-            // CHECK 2: Limit reservations per time slot (anti-sabotage)
-            const tableReservations = reservations.filter(r => 
-                r.dateKey === dayKey && r.time === time
-            );
-            const maxTablesPerSlot = 10; // Don't allow more than 10 tables at once
-            if (tableReservations.length >= maxTablesPerSlot) {
-                alert('⚠️ Demasiadas reservas para este horario.\n\nContacta con el bar para grupos grandes.');
+            // Check limit
+            const existing = reservations.filter(r => r.phone === phoneClean && r.dateKey === dayKey);
+            if (existing.length > 0) {
+                alert('⚠️ Este teléfono ya tiene una reserva para hoy');
                 return;
             }
             
@@ -1399,37 +1531,30 @@
                 people: table.capacity,
                 tableId: table.id,
                 tableName: table.name,
-                notes: notes,
-                type: 'reserva',
-                status: 'pending',
-                createdAt: new Date().toISOString()
+                type: 'reserva'
             };
             
             table.status = 'reserved';
-            table.reservation = reservation;
             reservations.push(reservation);
             localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
             
-            // Reset form
-            document.getElementById('res-name').value = '';
-            document.getElementById('res-phone').value = '';
-            document.getElementById('res-notes').value = '';
+            document.getElementById('staff-name').value = '';
+            document.getElementById('staff-phone').value = '';
             
             generateStaffTables();
             generateStaffCalendar();
             updateDayReservationsList();
             
-            alert(`✅ Reserva creada!\n\n📅 ${selectedStaffDate.toLocaleDateString('es-ES')}\n⏰ ${time}\n🪑 ${table.name}\n👤 ${name}\n📱 ${phoneClean}`);
+            alert(`✅ Reserva creada!\n\n📅 ${reservation.dateDisplay}\n⏰ ${time}\n🪑 ${table.name}\n👤 ${name}`);
         }
         
-        // Day Reservations List
         function updateDayReservationsList() {
             const container = document.getElementById('day-reservations-list');
             const dayKey = selectedStaffDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
             const dayReservations = reservations.filter(r => r.dateKey === dayKey);
             
             if (dayReservations.length === 0) {
-                container.innerHTML = `<p style="text-align:center;opacity:0.6;">No hay reservas para este día</p>`;
+                container.innerHTML = `<p style="text-align:center;opacity:0.6;">No hay reservas</p>`;
             } else {
                 container.innerHTML = dayReservations.map(r => `
                     <div class="reservation-item">
@@ -1439,251 +1564,15 @@
                         </div>
                         <div class="reservation-time">
                             <div class="time">${r.time}</div>
-                            <div>${r.people} pers. • ${r.status === 'pending' ? '⏳ Pendiente' : r.status === 'confirmed' ? '✅ Confirmado' : '❌ Caducado'}</div>
+                            <div>${r.people} pers.</div>
                         </div>
                     </div>
                 `).join('');
             }
         }
         
-        // Listen to time changes
-        document.getElementById('staff-time').addEventListener('change', updateStaffTables);
-        
-        // Customer Floor Plan
-        function showCustomerFloor() {
-            document.getElementById('chat-section').style.display = 'none';
-            document.getElementById('customer-floor-section').style.display = 'block';
-            
-            // Set date to tomorrow
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            document.getElementById('customer-date').value = tomorrow.toISOString().split('T')[0];
-            document.getElementById('customer-date').min = new Date().toISOString().split('T')[0];
-            
-            generateCustomerTables();
-        }
-        
-        function generateCustomerTables() {
-            const grid = document.getElementById('customer-tables-grid');
-            grid.innerHTML = '';
-            
-            const dateInput = document.getElementById('customer-date').value;
-            const time = '21:00'; // Default time
-            
-            // Reset tables
-            customerTables.forEach(t => {
-                t.status = 'free';
-                t.reservation = null;
-            });
-            
-            // Apply reservations if date is selected
-            if (dateInput) {
-                const parts = dateInput.split('-');
-                const dayKey = `${parts[2]}/${parts[1]}/${parts[0]}`;
-                
-                reservations.filter(r => r.dateKey === dayKey && r.time === time).forEach(r => {
-                    const table = customerTables.find(t => t.id === r.tableId);
-                    if (table) {
-                        table.status = 'reserved';
-                        table.reservation = r;
-                    }
-                });
-            }
-            
-            customerTables.forEach(table => {
-                const card = document.createElement('div');
-                card.className = `table-card ${table.status}`;
-                
-                if (selectedCustomerTableId === table.id) {
-                    card.classList.add('selected');
-                }
-                
-                const statusText = { 'free': 'Libre', 'reserved': 'Reservada', 'occupied': 'Ocupada' };
-                
-                card.innerHTML = `
-                    <div class="table-number">${table.name}</div>
-                    <div class="table-capacity">👥 ${table.capacity} pers.</div>
-                    <div class="table-status ${table.status}">${statusText[table.status]}</div>
-                    ${table.reservation ? `<div class="reservation-info">${table.reservation.name}</div>` : ''}
-                `;
-                
-                if (table.status === 'free') {
-                    card.onclick = () => selectCustomerTable(table.id);
-                } else {
-                    card.classList.add('disabled');
-                }
-                
-                grid.appendChild(card);
-            });
-        }
-        
-        function selectCustomerTable(tableId) {
-            selectedCustomerTableId = tableId;
-            generateCustomerTables();
-            updateCustomerTableDisplay();
-        }
-        
-        function updateCustomerTableDisplay() {
-            const display = document.getElementById('customer-selected-table');
-            const form = document.getElementById('customer-reservation-form');
-            const btn = document.getElementById('customer-submit');
-            
-            if (!selectedCustomerTableId) {
-                display.innerHTML = `<div style="color: var(--gold);">Selecciona una mesa</div>`;
-                form.style.display = 'none';
-            } else {
-                const table = customerTables.find(t => t.id === selectedCustomerTableId);
-                display.innerHTML = `
-                    <div style="font-size: 1.5em;">🪑</div>
-                    <div style="color: var(--gold); font-weight: 600;">${table.name}</div>
-                    <div>👥 ${table.capacity} personas • ${table.zone}</div>
-                `;
-                form.style.display = 'block';
-                btn.disabled = false;
-                btn.textContent = `Reservar ${table.name}`;
-            }
-        }
-        
-        function submitCustomerReservation() {
-            const name = document.getElementById('customer-name').value.trim();
-            const phone = document.getElementById('customer-phone').value.trim();
-            const notes = document.getElementById('customer-notes').value;
-            const dateInput = document.getElementById('customer-date').value;
-            
-            if (!name || !phone) {
-                alert('Por favor completa tu nombre y teléfono');
-                return;
-            }
-            
-            if (!selectedCustomerTableId) {
-                alert('Selecciona una mesa');
-                return;
-            }
-            
-            const table = customerTables.find(t => t.id === selectedCustomerTableId);
-            if (!table || table.status !== 'free') {
-                alert('Esa mesa no está disponible');
-                return;
-            }
-            
-            const parts = dateInput.split('-');
-            const dayKey = `${parts[2]}/${parts[1]}/${parts[0]}`;
-            
-            const reservation = {
-                id: Date.now(),
-                name: name,
-                phone: phone,
-                date: dayKey,
-                dateKey: dayKey,
-                dateDisplay: new Date(dateInput).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }),
-                time: '21:00',
-                people: table.capacity,
-                tableId: table.id,
-                tableName: table.name,
-                notes: notes,
-                type: 'reserva',
-                createdAt: new Date().toISOString()
-            };
-            
-            reservations.push(reservation);
-            localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
-            
-            alert(`✅ ¡Reserva confirmada!
-
-
-📅 ${reservation.dateDisplay}
-⏰ 21:00
-🪑 ${table.name}
-👤 ${name}
-📱 ${phone}
-
-¡Te esperamos! 🌬️`);
-            
-            backToChat();
-        }
-        
-        function clearTableSelection() {
-            selectedCustomerTableId = null;
-            document.getElementById('customer-reservation-form').style.display = 'none';
-            generateCustomerTables();
-        }
-        
-        function goToSection(section) {
-            selectedCustomerTableId = null;
-            document.getElementById('customer-floor-section').style.display = 'none';
-            showSection(section);
-        }
-        
-        function backToChat() {
-            document.getElementById('customer-floor-section').style.display = 'none';
-            document.getElementById('chat-section').style.display = 'block';
-            selectedCustomerTableId = null;
-            
-            // Reset form
-            document.getElementById('customer-name').value = '';
-            document.getElementById('customer-phone').value = '';
-            document.getElementById('customer-notes').value = '';
-        }
-        
-        // Customer tables (same as staff but separate state)
-        const customerTables = [
-            { id: 1, name: 'Mesa 1', capacity: 2, zone: 'Interior', status: 'free' },
-            { id: 2, name: 'Mesa 2', capacity: 2, zone: 'Interior', status: 'free' },
-            { id: 3, name: 'Mesa 3', capacity: 4, zone: 'Interior', status: 'free' },
-            { id: 4, name: 'Mesa 4', capacity: 4, zone: 'Interior', status: 'free' },
-            { id: 5, name: 'Mesa 5', capacity: 4, zone: 'Interior', status: 'free' },
-            { id: 6, name: 'Mesa 6', capacity: 6, zone: 'Interior', status: 'free' },
-            { id: 7, name: 'Mesa 7', capacity: 6, zone: 'Interior', status: 'free' },
-            { id: 8, name: 'Mesa 8', capacity: 8, zone: 'Interior', status: 'free' },
-            { id: 9, name: 'Terraza 1', capacity: 4, zone: 'Terraza', status: 'free' },
-            { id: 10, name: 'Terraza 2', capacity: 4, zone: 'Terraza', status: 'free' },
-            { id: 11, name: 'Terraza 3', capacity: 6, zone: 'Terraza', status: 'free' },
-            { id: 12, name: 'Terraza VIP', capacity: 8, zone: 'Terraza', status: 'free' },
-        ];
-        function addMessage(text, isUser = false) {
-            const messages = document.getElementById('chat-messages');
-            const div = document.createElement('div');
-            div.className = `message ${isUser ? 'user' : 'bot'}`;
-            div.innerHTML = text;
-            messages.appendChild(div);
-            messages.scrollTop = messages.scrollHeight;
-        }
-        
-        function sendQuickReply(text) {
-            addMessage(text, true);
-            
-            setTimeout(() => {
-                if (text.includes('Reservar')) {
-                    // Show customer floor plan instead of saying call
-                    addMessage('🎉 ¡Genial! Selecciona tu mesa en el plano:<br><br>📅 Elige la fecha<br>🪑 Selecciona una mesa libre<br>📝 Rellena tus datos<br><br>¡Así de fácil!');
-                    showCustomerFloor();
-                } else if (text.includes('Carta')) {
-                    showSection('menu');
-                    updateQuickReplies(['Reservar mesa', 'Precios']);
-                } else if (text.includes('Horarios')) {
-                    addMessage('🕐 <b>Horarios:</b><br>Dom-Jue: 17:00 - 00:00<br>Vie-Sáb: 17:00 - 02:00<br><br>🌙 Happy Hour: 18:00-20:00');
-                    updateQuickReplies(['Reservar mesa', 'Ver carta']);
-                } else if (text.includes('Precios') || text.includes('demo')) {
-                    showSection('pricing');
-                    updateQuickReplies(['Reservar mesa', 'Ver carta']);
-                } else {
-                    addMessage('¿Necesitas algo más?');
-                    updateQuickReplies(['Reservar mesa', 'Ver carta']);
-                }
-            }, 500);
-        }
-        
-        function updateQuickReplies(replies) {
-            const container = document.getElementById('quick-replies');
-            container.innerHTML = '';
-            replies.forEach(text => {
-                const btn = document.createElement('button');
-                btn.className = 'quick-reply';
-                btn.textContent = text;
-                btn.onclick = () => sendQuickReply(text);
-                container.appendChild(btn);
-            });
-        }
+        // Listen for date changes
+        document.getElementById('customer-date').addEventListener('change', generateCustomerTables);
     </script>
 </body>
 </html>
