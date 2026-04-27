@@ -1,192 +1,133 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padel News Pro | Premier Padel Tour 2026</title>
-    <meta name="description" content="Tu portal profesional del Premier Padel Tour. Resultados, rankings y noticias en tiempo real.">
+    <meta name="description" content="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.">
     <link rel="stylesheet" href="css/style-futuristic.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --accent: #bf00ff;
+            --bg-dark: #0a0a0f;
+            --glass-bg: rgba(26, 26, 46, 0.8);
+            --glass-border: rgba(0, 212, 255, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg-dark); color: #fff; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 1.5rem 2rem; border-bottom: 2px solid var(--primary); }
+        header h1 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .live-badge { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; margin-top: 1rem; }
+        nav { background: rgba(0,0,0,0.5); padding: 1rem 2rem; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s; }
+        nav a:hover, nav a.active { background: var(--primary); color: #000; }
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+        .results-table { width: 100%; border-collapse: collapse; background: var(--glass-bg); border-radius: 12px; overflow: hidden; }
+        .results-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem; text-align: left; font-weight: 600; }
+        .results-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .results-table tr:hover { background: rgba(0, 212, 255, 0.1); }
+        .winner { color: var(--primary); font-weight: 600; }
+        .tournament-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; }
+        .score { font-weight: 600; }
+        footer { text-align: center; padding: 2rem; color: #666; margin-top: 3rem; }
+        @media (max-width: 768px) { .section-title { font-size: 1.2rem; } nav { gap: 1rem; } main { padding: 1rem; } }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="header-branding">
-                <h1>🎾 Padel <span>News</span> Pro</h1>
-            </div>
-            <p class="tagline">Premier Padel Tour 2026</p>
-            <span class="live-badge">🏆 Brussels P2 FINALIZADO | Próximo: Asunción P1 (May)</span>
-        </div>
+        <h1>🎾 Padel News Pro</h1>
+        <p class="tagline">Tu portal profesional del Premier Padel Tour 2026</p>
+        <span class="live-badge">🎾 PRÓXIMO - Asunción P2 (10-17 Mayo 2026)</span>
     </header>
-    
     <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="rankings.html">Rankings</a></li>
-                <li><a href="actualidad.html">Actualidad</a></li>
-                <li><a href="resultados.html">Resultados</a></li>
-                <li><a href="torneos.html">Torneos</a></li>
-                <li><a href="chollos.html">Chollos 🏷️</a></li>
-            </ul>
-        </div>
+        <a href="index.html">Inicio</a>
+        <a href="actualidad.html">Actualidad</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="torneos.html">Torneos</a>
+        <a href="chollos.html">Chollos 🏷️</a>
     </nav>
-    
-    <main class="container">
-        
-        <!-- ULTIMO TORNEO - VISTOSO -->
-        <section style="background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(191,0,255,0.15)); border-radius: 16px; overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
-            
-            <div style="background: linear-gradient(90deg, #00d4ff, #bf00ff); padding: 1rem 1.5rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <span style="background: #000; color: #fff; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">🏆 ÚLTIMO TORNEO</span>
-                        <h2 style="margin: 0.5rem 0 0; color: #fff;">Brussels P2 2026</h2>
-                    </div>
-                    <div style="text-align: right; color: #fff;">
-                        <div style="font-size: 0.85rem; opacity: 0.8;">🇧🇪 Bélgica</div>
-                        <div style="font-size: 0.85rem; opacity: 0.8;">Abril 2026</div>
-                    </div>
-                </div>
+    <main>
+
+
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(191, 0, 255, 0.1)); padding: 3rem; border-radius: 20px; margin-bottom: 3rem; border: 1px solid var(--glass-border);">
+            <div class="hero-content">
+                <h2 style="font-family: 'Orbitron', sans-serif; font-size: 2rem; margin-bottom: 1rem;">
+                    Asunción P2 - UPCOMING
+                </h2>
+                <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 1.5rem;">
+                    Información y resultados del Asunción P2.
+                </p>
+                <a href="resultados.html" class="btn btn-primary" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700;">Ver Resultados</a>
             </div>
-            
-            <div style="padding: 1.5rem;">
-                
-                <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
-                    <div style="font-size: 0.9rem; color: var(--primary); margin-bottom: 1rem; font-weight: 600;">🏆 CAMPEONES 🏆</div>
-                    
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
-                        <div style="text-align: center;">
-                            <img src="images/players/lebron.jpg" alt="Lebrón" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid gold;" onerror="this.src='https://placehold.co/70x70/ffd700/000?text=L'">
-                            <div style="font-weight: 700; margin-top: 0.5rem;">Juan Lebrón</div>
-                            <div style="font-size: 0.8rem; color: var(--gray);">🇪🇸 España</div>
-                        </div>
+        </section>
+
+        <!-- Results Section -->
+        <section style="margin-bottom: 3rem;">
+            <h2 class="section-title">🏆 Resultados Recientes</h2>
+            <div class="table-scroll-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Torneo</th>
+                            <th>Campeones</th>
+                            <th>Resultado</th>
+                            <th>Finalistas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         
-                        <div style="text-align: center;">
-                            <img src="images/players/augsburger.jpg" alt="Augsburger" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid gold;" onerror="this.src='https://placehold.co/70x70/ffd700/000?text=A'">
-                            <div style="font-weight: 700; margin-top: 0.5rem;">Leo Augsburger</div>
-                            <div style="font-size: 0.8rem; color: var(--gray);">🇦🇷 Argentina</div>
-                        </div>
-                        
-                        <div style="background: rgba(191,0,255,0.3); border-radius: 12px; padding: 1rem 1.5rem;">
-                            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent);">VS</div>
-                            <div style="font-size: 1.8rem; font-weight: 700; margin-top: 0.5rem;">2-1</div>
-                            <div style="font-size: 0.85rem; color: var(--gray);">Marcador final</div>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(0,212,255,0.2); border-radius: 8px;">
-                        <span style="font-size: 0.9rem;">📍 Final: 2-6, 6-3, 6-3 ante Tapia/Coello</span>
-                    </div>
-                </div>
+                        <tr>
+                            <td><span class="tournament-badge">🇧🇪 Brussels P2</span></td>
+                            <td class="winner">🇪🇸🇦🇷 Lebrón / Augsburger</td>
+                            <td><span class="score">2-6, 6-3, 6-3</span></td>
+                            <td>🇪🇸🇦🇷 Tapia / Coello</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tournament-badge">🇪🇬 NewGiza P2</span></td>
+                            <td class="winner">🇪🇸🇦🇷 Galán / Chingotto</td>
+                            <td><span class="score">6-4, 6-1</span></td>
+                            <td>🇦🇷🇪🇸 Stupaczuk / Yanguas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="resultados.html" class="btn" style="margin-top: 1rem; display: inline-block; color: var(--primary);">Ver Todos los Resultados →</a>
+        </section>
+
+        <!-- Upcoming Tournaments -->
+        <section style="margin-bottom: 3rem;">
+            <h2 class="section-title">📅 Próximos Torneos</h2>
+            <div class="calendar-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
-                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">💰</div>
-                        <div style="font-weight: 700; color: var(--primary);">$35,000</div>
-                        <div style="font-size: 0.75rem; color: var(--gray);">Premio pareja ganadora</div>
+                <div class="tournament-card upcoming">
+                    <div class="tournament-header">
+                        <span class="status-badge status-upcoming">PRÓXIMO</span>
+                        <h4>🇵🇾 Asunción P2</h4>
                     </div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🎾</div>
-                        <div style="font-weight: 700; color: var(--primary);">32</div>
-                        <div style="font-size: 0.75rem; color: var(--gray);">Parejas participantes</div>
+                    <p class="tournament-date">10-17 Mayo 2026</p>
+                    <p class="tournament-location">Asunción, Paraguay</p>
+                    <p class="tournament-prize">💰 €200,000</p>
+                </div>
+                <div class="tournament-card upcoming">
+                    <div class="tournament-header">
+                        <span class="status-badge status-upcoming">PRÓXIMO</span>
+                        <h4>🇦🇷 Buenos Aires P1</h4>
                     </div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">👁️</div>
-                        <div style="font-weight: 700; color: var(--primary);">2,847</div>
-                        <div style="font-size: 0.75rem; color: var(--gray);">Espectadores semana</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🏟️</div>
-                        <div style="font-weight: 700; color: var(--primary);">Pista Central</div>
-                        <div style="font-size: 0.75rem; color: var(--gray);">Royal Paddel Club</div>
-                    </div>
+                    <p class="tournament-date">11-17 Mayo 2026</p>
+                    <p class="tournament-location">Buenos Aires, Argentina</p>
+                    <p class="tournament-prize">💰 €200,000</p>
                 </div>
             </div>
+            <a href="torneos.html" class="btn" style="margin-top: 1rem; display: inline-block; color: var(--primary);">Ver Calendario Completo →</a>
         </section>
-        
-        <!-- 2 COLUMNAS: Resultados + Próximos (sin Rankings) -->
-        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-            
-            <!-- RESULTADOS RECIENTES -->
-            <div style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem;">🏆 Resultados Recientes</h3>
-                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                    <div style="padding: 0.8rem; background: rgba(255,215,0,0.1); border-radius: 8px; border-left: 3px solid gold;">
-                        <div style="font-weight: 600; font-size: 0.9rem;">🇧🇪 Brussels P2</div>
-                        <div style="font-size: 0.95rem;">Lebrón/Augsburger <strong>🏆</strong></div>
-                        <div style="color: var(--gray); font-size: 0.8rem;">2-6, 6-3, 6-3</div>
-                    </div>
-                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <div style="font-weight: 600; font-size: 0.9rem;">🇸🇦 Riyadh P1</div>
-                        <div style="font-size: 0.95rem;">Tapia/Coello <strong>🏆</strong></div>
-                        <div style="color: var(--gray); font-size: 0.8rem;">6-4, 6-2</div>
-                    </div>
-                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <div style="font-weight: 600; font-size: 0.9rem;">🇪🇸 Gijón P2</div>
-                        <div style="font-size: 0.95rem;">Galán/Chingotto <strong>🏆</strong></div>
-                        <div style="color: var(--gray); font-size: 0.8rem;">7-5, 7-6</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- PRÓXIMOS TORNEOS -->
-            <div style="background: var(--glass-bg); border-radius: 12px; padding: 1.5rem;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem;">📅 Próximos Torneos</h3>
-                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                    <div style="padding: 0.8rem; background: rgba(0,212,255,0.1); border-radius: 8px; border-left: 3px solid var(--primary);">
-                        <div style="font-weight: 600; font-size: 0.9rem;">🇵🇾 Asunción P1</div>
-                        <div style="color: var(--gray); font-size: 0.8rem;">04-10 Mayo</div>
-                        <div style="font-size: 0.85rem;">💰 $200,000 USD</div>
-                    </div>
-                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <div style="font-weight: 600; font-size: 0.9rem;">🇦🇷 Buenos Aires P1</div>
-                        <div style="color: var(--gray); font-size: 0.8rem;">11-17 Mayo</div>
-                        <div style="font-size: 0.85rem;">💰 $200,000 USD</div>
-                    </div>
-                    <div style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
-                        <div style="font-weight: 600; font-size: 0.9rem;">🇮🇹 Rome Major</div>
-                        <div style="color: var(--gray); font-size: 0.8rem;">01-07 Junio</div>
-                        <div style="font-size: 0.85rem;">💰 $300,000 USD</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- VIDEO AL FINAL -->
-        <section style="background: var(--glass-bg); border-radius: 12px; overflow: hidden; margin-bottom: 2rem;">
-            <div style="padding: 1rem 1.5rem; background: linear-gradient(90deg, #00d4ff, #bf00ff);">
-                <h3 style="margin: 0; color: #fff;">🎬 Highlights Brussels P2 2026</h3>
-            </div>
-            <div style="position: relative; height: 0; padding-bottom: 56.25%;">
-                <iframe 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                    src="https://www.youtube.com/embed/YyZdpcxUc0w" 
-                    title="Brussels P2 Highlights"
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
-        
-        <!-- REDBULL TV AL FINAL -->
-        <section style="background: linear-gradient(135deg, #1a0000, #330000); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,0,0,0.3);">
-            <div style="padding: 2rem; text-align: center;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">📺</div>
-                <h3 style="color: #ff4444; margin: 0 0 0.5rem; font-size: 1.5rem;">Ver Padel en Directo</h3>
-                <p style="color: rgba(255, 255, 255, 0.7); margin: 0 0 1.5rem;">Partidos del Premier Padel Tour en Red Bull TV</p>
-                <a href="https://redbull.tv/es_ES/partner-channel/rrn:content:tv-partner-channels:7bbfd0ef-86fd-40fd-be46-f245c351b77a" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #ff0000, #cc0000); color: #fff; padding: 1rem 2.5rem; border-radius: 8px; font-weight: 700; font-size: 1.1rem; text-decoration: none;">
-                    VER AHORA →
-                </a>
-            </div>
-        </section>
-        
+
     </main>
-    
     <footer>
-        <div class="container">
-            <p>© 2026 Padel News Pro | Datos: FIP Official | <a href="https://premierpadel.com" target="_blank" style="color: var(--primary);">Premier Padel</a></p>
-        </div>
+        <p>© 2026 Padel News Pro | Actualizado: 27/04/2026 13:44</p>
     </footer>
 </body>
 </html>

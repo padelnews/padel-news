@@ -1,0 +1,4 @@
+[2026-04-27 08:00:02] CALENDAR_AGENT: === CALENDAR AGENT STARTED ===
+[2026-04-27 08:00:02] CALENDAR_AGENT: Calendario actualizado
+[2026-04-27 08:00:02] CALENDAR_AGENT: Git error: Command '['git', 'add', 'torneos.html']' returned non-zero exit status 128.
+[2026-04-27 08:00:02] CALENDAR_AGENT: === CALENDAR AGENT COMPLETE ===

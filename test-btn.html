@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Botones</title>
+</head>
+<body>
+    <h1>Test</h1>
+    <div id="menu"></div>
+    <script>
+    var m = document.getElementById('menu');
+    
+    function act(v) {
+        alert('Clicked: ' + v);
+    }
+    
+    function showMenu() {
+        m.innerHTML = '<button class="btn">Pedir Cita</button>';
+        var btn = m.querySelector('.btn');
+        btn.onclick = function() {
+            act('CITA');
+        };
+    }
+    
+    showMenu();
+    </script>
+</body>
+</html>

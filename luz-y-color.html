@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Luz y Color</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #ECE5DD; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            height: 100vh;
+        }
+        
+        .wa-screen {
+            max-width: 500px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #ECE5DD;
+        }
+        
+        .header {
+            background: #075E54;
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .header-info h3 { font-size: 16px; font-weight: 500; }
+        .header-info p { font-size: 12px; opacity: 0.85; }
+        
+        .chat {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            background: #ECE5DD;
+        }
+        
+        .msg {
+            max-width: 75%;
+            padding: 7px 10px;
+            border-radius: 7px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+        }
+        .msg.received {
+            background: #fff;
+            margin-right: auto;
+            border-top-left-radius: 0;
+        }
+        .msg.sent {
+            background: #DCF8C6;
+            margin-left: auto;
+            border-top-right-radius: 0;
+        }
+        .msg .time {
+            font-size: 10px;
+            color: #999;
+            text-align: right;
+            margin-top: 2px;
+        }
+        
+        /* WhatsApp Reply Buttons */
+        .wa-reply-btns {
+            background: #fff;
+            border-radius: 7px;
+            overflow: hidden;
+            margin-bottom: 8px;
+            border: 1px solid #ddd;
+        }
+        .wa-reply-btn {
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            background: #fff;
+            border: none;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+            font-size: 14px;
+            color: #00A884;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .wa-reply-btn:last-child { border-bottom: none; }
+        .wa-reply-btn:active { background: #f0f0f0; }
+        
+        .typing {
+            background: #fff;
+            padding: 10px 14px;
+            border-radius: 7px;
+            display: inline-block;
+            font-size: 12px;
+            color: #666;
+        }
+        .typing::after { content: '...'; animation: dots 1s infinite; }
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+        
+        .input-area {
+            background: #F0F0F0;
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+        }
+        .input-area textarea {
+            flex: 1;
+            padding: 10px 14px;
+            border: none;
+            border-radius: 20px;
+            font-size: 15px;
+            resize: none;
+            max-height: 100px;
+            font-family: inherit;
+            outline: none;
+        }
+        .input-area button {
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: #00A884;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wa-screen">
+        <div class="header">
+            <div class="header-icon">💇</div>
+            <div class="header-info">
+                <h3>Luz y Color</h3>
+                <p>en línea</p>
+            </div>
+        </div>
+        
+        <div class="chat" id="chat"></div>
+        
+        <div class="input-area">
+            <textarea id="msgInput" rows="1" placeholder="Escribe un mensaje..."></textarea>
+            <button onclick="send()">▶</button>
+        </div>
+    </div>
+    
+    <script>
+    var PROXY = 'http://192.168.1.187:8889';
+    var MODEL = 'llama3.2:3b';
+    var APT_KEY = 'luz_appointments';
+    var CLIENT_KEY = 'luz_client';
+    
+    var STATE = 'MENU';
+    var selService = '', selDur = 0, selDate = '', selHour = '', selName = '', selRaw = null;
+    
+    var SERVICES = [
+        {n:'Corte', d:30, p:'25€'},
+        {n:'Barbería', d:30, p:'20€'},
+        {n:'Lavado y Peinado', d:30, p:'18€'},
+        {n:'Uñas (Manicura)', d:45, p:'20€'},
+        {n:'Uñas (Pedicura)', d:60, p:'25€'},
+        {n:'Semipermanente', d:45, p:'18€'},
+        {n:'Color', d:90, p:'45€'},
+        {n:'Mechas', d:120, p:'50€'},
+        {n:'Baño de Color', d:60, p:'35€'},
+        {n:'Tinte Raíces', d:45, p:'30€'},
+        {n:'Recogido', d:60, p:'35€'},
+        {n:'Peinado Evento', d:60, p:'40€'},
+        {n:'Maquillaje', d:45, p:'35€'},
+        {n:'Maquillaje Novia', d:60, p:'55€'},
+        {n:'Tratamiento Capilar', d:30, p:'25€'},
+        {n:'Depilación', d:30, p:'15€'}
+    ];
+    
+    var HOURS_WEEK_MORN = ['10:00','11:00','11:30','12:00'];
+    var HOURS_WEEK_AFTER = ['17:00','17:30','18:00','18:30','19:00'];
+    var HOURS_SAT = ['10:00','11:00','11:30','12:00'];
+    
+    var DAYS_SHORT = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+    var MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    
+    var chat = document.getElementById('chat');
+    var msgInput = document.getElementById('msgInput');
+    
+    function getClient() { return JSON.parse(localStorage.getItem(CLIENT_KEY) || '{}'); }
+    function saveClient(c) { localStorage.setItem(CLIENT_KEY,JSON.stringify(c)); }
+    function getApts() { return JSON.parse(localStorage.getItem(APT_KEY) || '[]'); }
+    function saveApt(a) { var r = getApts(); r.push(a); localStorage.setItem(APT_KEY,JSON.stringify(r)); }
+    
+    function now() {
+        var d = new Date();
+        return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+    }
+    
+    function addMsg(text, sent) {
+        chat.innerHTML += '<div class="msg ' + (sent ? 'sent' : 'received') + '">' + text + '<div class="time">' + now() + '</div></div>';
+        chat.scrollTop = chat.scrollHeight;
+    }
+    
+    function addReplyButtons(btns) {
+        var html = '<div class="wa-reply-btns">';
+        btns.forEach(function(b, i) {
+            html += '<button class="wa-reply-btn" onclick="sendReply(\'' + b + '\')">' + b + '</button>';
+        });
+        html += '</div>';
+        chat.innerHTML += html;
+        chat.scrollTop = chat.scrollHeight;
+    }
+    
+    function showTyping() {
+        chat.innerHTML += '<div class="msg received typing" id="typing">Escribiendo</div>';
+        chat.scrollTop = chat.scrollHeight;
+    }
+    
+    function removeTyping() {
+        var t = document.getElementById('typing');
+        if (t) t.remove();
+    }
+    
+    function sendReply(text) {
+        addMsg(text, true);
+        showTyping();
+        setTimeout(function() {
+            removeTyping();
+            processMsg(text);
+        }, 600 + Math.random() * 400);
+    }
+    
+    function autoReply(text, replyBtns) {
+        showTyping();
+        setTimeout(function() {
+            removeTyping();
+            addMsg(text, false);
+            if (replyBtns && replyBtns.length > 0) {
+                setTimeout(function() {
+                    addReplyButtons(replyBtns);
+                }, 300);
+            }
+        }, 800 + Math.random() * 500);
+    }
+    
+    function send() {
+        var m = msgInput.value.trim();
+        if (!m) return;
+        addMsg(m, true);
+        msgInput.value = '';
+        msgInput.style.height = 'auto';
+        processMsg(m);
+    }
+    
+    msgInput.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+    });
+    
+    msgInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            send();
+        }
+    });
+    
+    function processMsg(m) {
+        var c = getClient();
+        
+        if (STATE === 'MENU') {
+            var lower = m.toLowerCase();
+            
+            if (lower.includes('cita') || lower.includes('pedir')) {
+                STATE = 'SERVICE';
+                autoReply('¿Qué servicio te vas a hacer?', [
+                    '1️⃣ Corte',
+                    '2️⃣ Color',
+                    '3️⃣ Mechitas', 
+                    '4️⃣ Uñas',
+                    '5️⃣ Maquillaje',
+                    '6️⃣ Otros'
+                ]);
+            }
+            else if (lower.includes('precio')) {
+                var p = '📋 *Lista de precios:*\n\n';
+                SERVICES.forEach(function(s, i) { p += (i+1) + '. ' + s.n + ': ' + s.p + '\n'; });
+                p += '\n⏰ L-V: 9-20h | S: 9-14h';
+                autoReply(p, ['📅 Pedir Cita']);
+                STATE = 'MENU';
+            }
+            else {
+                autoReply('¡Hola! 👋 ¿Qué necesitas?', [
+                    '📅 Pedir Cita',
+                    '💰 Ver Precios'
+                ]);
+            }
+        }
+        else if (STATE === 'SERVICE') {
+            var lower = m.toLowerCase();
+            var found = null;
+            
+            // Match by number or name
+            var num = m.match(/^(\d+)/);
+            if (num) {
+                var idx = parseInt(num[1]) - 1;
+                if (idx >= 0 && idx < SERVICES.length) {
+                    found = SERVICES[idx];
+                }
+            }
+            
+            if (!found) {
+                SERVICES.forEach(function(s) {
+                    if (lower.includes(s.n.toLowerCase())) found = s;
+                });
+            }
+            
+            if (lower.includes('6️⃣') || lower.includes('otros') || lower.includes('ver más')) {
+                autoReply('Aquí tienes todos nuestros servicios:', SERVICES.map(function(s, i) { return (i+1) + '. ' + s.n; }));
+                return;
+            }
+            
+            if (found) {
+                selService = found.n;
+                selDur = found.d;
+                
+                var days = [];
+                var now = new Date();
+                for (var i = 1; i <= 14; i++) {
+                    var d = new Date(now); d.setDate(now.getDate() + i);
+                    var dow = d.getDay();
+                    if (dow === 0 || dow === 1) continue;
+                    days.push(DAYS_SHORT[dow] + ' ' + d.getDate());
+                }
+                
+                STATE = 'DATE';
+                autoReply('Perfecto, ' + found.n + ' (' + found.d + ' min) 👍\n\n¿Qué día te viene bien?', [
+                    '📆 ' + days[0],
+                    '📆 ' + days[1],
+                    '📆 ' + days[2],
+                    '📆 ' + days[3],
+                    '📆 ' + days[4],
+                    '📆 ' + days[5]
+                ]);
+            }
+            else {
+                autoReply('Elige una opción:', [
+                    '1️⃣ Corte',
+                    '2️⃣ Color', 
+                    '3️⃣ Mechitas',
+                    '4️⃣ Uñas',
+                    '5️⃣ Maquillaje',
+                    '6️⃣ Otros'
+                ]);
+            }
+        }
+        else if (STATE === 'DATE') {
+            var lower = m.toLowerCase();
+            var now = new Date();
+            var dayFound = null;
+            
+            DAYS_SHORT.forEach(function(d, idx) {
+                if (lower.includes(d.toLowerCase())) dayFound = idx;
+            });
+            
+            var nums = m.match(/\d+/g);
+            var numFound = nums ? parseInt(nums[0]) : null;
+            
+            for (var i = 1; i <= 14; i++) {
+                var d = new Date(now); d.setDate(now.getDate() + i);
+                var dow = d.getDay();
+                if (dow === 0 || dow === 1) continue;
+                
+                var match = false;
+                if (dayFound !== null && dow === dayFound) match = true;
+                if (numFound && d.getDate() === numFound) match = true;
+                
+                if (match) {
+                    selDate = DAYS_SHORT[dow] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
+                    selRaw = d;
+                    break;
+                }
+            }
+            
+            if (selDate) {
+                var isSat = selRaw.getDay() === 6;
+                var allHours = isSat ? HOURS_SAT : HOURS_WEEK_MORN.concat(HOURS_WEEK_AFTER);
+                var closeTime = isSat ? 14*60 : 20*60;
+                
+                var availHours = allHours.filter(function(h) {
+                    var hourMin = parseInt(h.split(':')[0]) * 60 + parseInt(h.split(':')[1]);
+                    return hourMin + selDur <= closeTime;
+                });
+                
+                STATE = 'HOUR';
+                var hourBtns = availHours.slice(0, 6).map(function(h) { return '🕐 ' + h; });
+                autoReply('Perfecto, ' + selDate + ' 📅\n\n¿A qué hora?', hourBtns);
+            }
+            else {
+                var days = [];
+                var now = new Date();
+                for (var i = 1; i <= 14; i++) {
+                    var d = new Date(now); d.setDate(now.getDate() + i);
+                    var dow = d.getDay();
+                    if (dow === 0 || dow === 1) continue;
+                    days.push('📆 ' + DAYS_SHORT[dow] + ' ' + d.getDate());
+                }
+                autoReply('Elige un día:', days.slice(0, 6));
+            }
+        }
+        else if (STATE === 'HOUR') {
+            var lower = m.toLowerCase();
+            var allHours = HOURS_WEEK_MORN.concat(HOURS_WEEK_AFTER).concat(HOURS_SAT);
+            var hourFound = null;
+            
+            allHours.forEach(function(h) {
+                if (lower.includes(h)) hourFound = h;
+            });
+            
+            if (hourFound) {
+                selHour = hourFound;
+                STATE = 'NAME';
+                autoReply('¡Genial, ' + selHour + '! 🕐\n\n¿Cómo te llamas para la reserva?');
+                msgInput.placeholder = 'Escribe tu nombre...';
+                msgInput.focus();
+            }
+            else {
+                var isSat = selRaw && selRaw.getDay() === 6;
+                var allHours = isSat ? HOURS_SAT : HOURS_WEEK_MORN.concat(HOURS_WEEK_AFTER);
+                var hourBtns = allHours.map(function(h) { return '🕐 ' + h; });
+                autoReply('Elige una hora:', hourBtns.slice(0, 6));
+            }
+        }
+        else if (STATE === 'NAME') {
+            selName = m;
+            var c = getClient();
+            c.name = m;
+            saveClient(c);
+            
+            var price = SERVICES.find(function(s){return s.n===selService}).p;
+            
+            addMsg('', true);
+            autoReply('📋 *Resumen de tu cita:*\n\n👤 ' + selName + '\n📅 ' + selDate + '\n🕐 ' + selHour + ' (' + selDur + ' min)\n💇 ' + selService + '\n💰 ' + price + '\n\n¿Confirmas?', ['✅ Confirmar', '❌ Cancelar']);
+            STATE = 'CONFIRM';
+        }
+        else if (STATE === 'CONFIRM') {
+            var lower = m.toLowerCase();
+            
+            if (lower.includes('confirm') || lower.includes('sí') || lower.includes('si') || lower.includes('✅')) {
+                var price = SERVICES.find(function(s){return s.n===selService}).p;
+                saveApt({name: selName, date: selDate, time: selHour, service: selService, dur: selDur, price: price});
+                
+                autoReply('✅ *¡Cita confirmada!*\n\n📅 ' + selDate + '\n🕐 ' + selHour + '\n💇 ' + selService + '\n\n¡Te esperamos! 😊', ['📅 Nueva Cita', '🏠 Menú']);
+                selService = ''; selDur = 0; selDate = ''; selHour = ''; selName = '';
+                STATE = 'MENU';
+            }
+            else if (lower.includes('cancel') || lower.includes('no') || lower.includes('❌')) {
+                autoReply('¡Cita cancelada! 😐\n\n¿Necesitas algo más?', ['📅 Pedir Cita', '💰 Ver Precios']);
+                selService = ''; selDur = 0; selDate = ''; selHour = ''; selName = '';
+                STATE = 'MENU';
+            }
+            else {
+                autoReply('¿Confirmas la cita?', ['✅ Confirmar', '❌ Cancelar']);
+            }
+        }
+    }
+    
+    // Init
+    setTimeout(function() {
+        autoReply('¡Hola! 👋 Bienvenida a *Luz y Color*.\n\nSoy María, ¿qué necesitas?', ['📅 Pedir Cita', '💰 Ver Precios']);
+    }, 500);
+    </script>
+</body>
+</html>

@@ -3,8 +3,8 @@
   "last_updated": "2026-04-26T21:00:00",
   "current_tournament": {
     "id": "asuncion_p2",
-    "name": "Asunci\u00f3n P2",
-    "location": "Asunci\u00f3n, Paraguay",
+    "name": "Asunción P2",
+    "location": "Asunción, Paraguay",
     "dates": "10-17 Mayo 2026",
     "status": "upcoming"
   },
@@ -12,11 +12,11 @@
     {
       "id": "brussels_p2",
       "name": "Brussels P2",
-      "location": "Bruselas, B\u00e9lgica",
+      "location": "Bruselas, Bélgica",
       "dates": "19-26 Abril 2026",
       "status": "finished",
       "winner_male": [
-        "Lebr\u00f3n",
+        "Lebrón",
         "Augsburger"
       ],
       "final_score": "2-6, 6-3, 6-3",
@@ -33,7 +33,7 @@
       "dates": "13-18 Abril 2026",
       "status": "finished",
       "winner_male": [
-        "Gal\u00e1n",
+        "Galán",
         "Chingotto"
       ],
       "final_score": "6-4, 6-1",
@@ -47,8 +47,8 @@
   "upcoming_tournaments": [
     {
       "id": "asuncion_p2",
-      "name": "Asunci\u00f3n P2",
-      "location": "Asunci\u00f3n, Paraguay",
+      "name": "Asunción P2",
+      "location": "Asunción, Paraguay",
       "dates": "10-17 Mayo 2026",
       "status": "upcoming"
     },
@@ -60,6 +60,6 @@
       "status": "upcoming"
     }
   ],
-  "last_generation": "2026-04-26T21:00:00",
-  "generation_count": 0
+  "last_generation": "2026-04-27T13:44:26.193044",
+  "generation_count": 1
 }

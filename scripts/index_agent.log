@@ -1,0 +1,28 @@
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   AGENTS.md
+	modified:   data/chollos.json
+	modified:   data/chollos.log
+	modified:   data/tournament_state.json
+	modified:   scripts/dynamic_flow.log
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	scripts/calendar_agent.err
+	scripts/calendar_agent.log
+	scripts/index_agent.err
+	scripts/index_agent.log
+	scripts/torneos_agent.err
+	scripts/torneos_agent.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[2026-04-27 08:00:02] INDEX_AGENT: === INDEX AGENT STARTED ===
+[2026-04-27 08:00:02] INDEX_AGENT: WARNING: No encontré el marker, usando método alternativo
+[2026-04-27 08:00:02] INDEX_AGENT: Index actualizado - Status: upcoming
+[2026-04-27 08:00:02] INDEX_AGENT: Git error: Command '['git', 'commit', '-m', 'UPDATE: Index - torneo upcoming']' returned non-zero exit status 1.
+[2026-04-27 08:00:02] INDEX_AGENT: === INDEX AGENT COMPLETE ===

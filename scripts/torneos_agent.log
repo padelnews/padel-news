@@ -1,0 +1,6 @@
+[main ad67542] UPDATE: Torneos - último torneo con ganador
+ 2 files changed, 85 insertions(+), 1 deletion(-)
+[2026-04-27 08:00:02] TORNEOS_AGENT: === TORNEOS AGENT STARTED ===
+[2026-04-27 08:00:02] TORNEOS_AGENT: torneos.html actualizado
+[2026-04-27 08:00:04] TORNEOS_AGENT: Commit + Push successful
+[2026-04-27 08:00:04] TORNEOS_AGENT: === TORNEOS AGENT COMPLETE ===

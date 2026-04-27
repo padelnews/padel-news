@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Luz y Color - Test</title>
+</head>
+<body>
+    <h1>💇 Luz y Color - Test Chat</h1>
+    <div id="status" style="padding:10px;background:#ddd;margin:10px 0;">Checking...</div>
+    <div id="chat" style="height:200px;overflow:auto;background:#f0f0f0;padding:10px;margin:10px 0;"></div>
+    <input type="text" id="msg" placeholder="Type here..." style="width:70%;padding:10px;">
+    <button onclick="send()" style="padding:10px;">SEND</button>
+
+    <script>
+        const PROXY = 'http://192.168.1.187:8889';
+        const MODEL = 'llama3.2:1b';
+        
+        // Test connection on load
+        fetch(PROXY)
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('status').innerHTML = '✅ Proxy connected: ' + t;
+                document.getElementById('status').style.background = '#aef';
+            })
+            .catch(e => {
+                document.getElementById('status').innerHTML = '❌ Proxy error: ' + e;
+                document.getElementById('status').style.background = '#faa';
+            });
+        
+        function send() {
+            const msg = document.getElementById('msg').value;
+            if (!msg) return;
+            
+            document.getElementById('chat').innerHTML += '<div><b>You:</b> ' + msg + '</div>';
+            document.getElementById('msg').value = '';
+            document.getElementById('chat').innerHTML += '<div><i>Bot typing...</i></div>';
+            
+            fetch(PROXY + '/api/generate', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    model: MODEL,
+                    prompt: 'Eres María. Clienta dice: ' + msg + '. María:',
+                    options: {num_predict: 50},
+                    stream: false
+                })
+            })
+            .then(r => r.json())
+            .then(d => {
+                document.getElementById('chat').innerHTML += '<div><b>Maria:</b> ' + d.response + '</div>';
+            })
+            .catch(e => {
+                document.getElementById('chat').innerHTML += '<div><b>Error:</b> ' + e + '</div>';
+            });
+        }
+    </script>
+</body>
+</html>

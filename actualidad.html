@@ -3,92 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualidad - Padel News Pro | Premier Padel Tour 2026</title>
-    <meta name="description" content="Últimas noticias del Premier Padel Tour 2026. Resultados, crónicas y análisis de torneos de pádel profesional.">
-    <meta name="keywords" content="padel, actualidades padel, noticias padel 2026, Premier Padel Tour">
-    <meta name="author" content="Padel News Pro">
-    
+    <title>Actualidad Padel 2026 | Padel News Pro</title>
+    <meta name="description" content="Noticias y actualidad del Premier Padel Tour 2026.">
     <link rel="stylesheet" href="css/style-futuristic.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --accent: #bf00ff;
+            --bg-dark: #0a0a0f;
+            --glass-bg: rgba(26, 26, 46, 0.8);
+            --glass-border: rgba(0, 212, 255, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg-dark); color: #fff; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 1.5rem 2rem; border-bottom: 2px solid var(--primary); }
+        header h1 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .live-badge { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; margin-top: 1rem; }
+        nav { background: rgba(0,0,0,0.5); padding: 1rem 2rem; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s; }
+        nav a:hover, nav a.active { background: var(--primary); color: #000; }
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+        .results-table { width: 100%; border-collapse: collapse; background: var(--glass-bg); border-radius: 12px; overflow: hidden; }
+        .results-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem; text-align: left; font-weight: 600; }
+        .results-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .results-table tr:hover { background: rgba(0, 212, 255, 0.1); }
+        .winner { color: var(--primary); font-weight: 600; }
+        .tournament-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; }
+        .score { font-weight: 600; }
+        footer { text-align: center; padding: 2rem; color: #666; margin-top: 3rem; }
+        @media (max-width: 768px) { .section-title { font-size: 1.2rem; } nav { gap: 1rem; } main { padding: 1rem; } }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="header-branding">
-                <h1>🎾 Padel <span>News</span> Pro</h1>
-            </div>
-            <p class="tagline">Tu portal profesional del Premier Padel Tour - Últimas noticias del pádel profesional</p>
-            <span class="live-badge">🏆 Bruselas completado | Últimas noticias</span>
-        </div>
+        <h1>🎾 Padel News Pro</h1>
+        <p class="tagline">Tu portal profesional del Premier Padel Tour 2026</p>
+        <span class="live-badge">🎾 PRÓXIMO - Asunción P2 (10-17 Mayo 2026)</span>
     </header>
-
     <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="rankings.html">Rankings</a></li>
-                <li><a href="actualidad.html" class="active">Actualidad</a></li>
-                <li><a href="resultados.html">Resultados</a></li>
-                <li><a href="torneos.html">Torneos</a></li>
-                <li><a href="chollos.html">Chollos 🏷️</a></li>
-            </ul>
-        </div>
+        <a href="index.html">Inicio</a>
+        <a href="actualidad.html">Actualidad</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="torneos.html">Torneos</a>
+        <a href="chollos.html">Chollos 🏷️</a>
     </nav>
-    
-    <main class="container">
+    <main>
+
+
         <h2 class="section-title">📰 Últimas Noticias</h2>
         
-        <!-- Featured Article: Brussels P2 2026 - CAMPEONES -->
+        
+        <!-- Featured Article: Latest Tournament -->
         <article class="news-card featured" style="margin-bottom: 3rem;">
             <div class="news-card-image">
-                <img src="images/brussels-tournament-cover.jpg" alt="Lebrón y Augsburger campeones Brussels P2 2026" onerror="this.src='images/tournament-banner.jpg'">
+                <img src="images/brussels-tournament-cover.jpg" alt="Brussels P2" onerror="this.src='images/banners/tournament-banner.jpg'">
                 <span class="news-card-category">🏆 CAMPEONES</span>
             </div>
             <div class="news-card-content">
                 <h3>
-                    <a href="articles/article-brussels-p2-2026.html">Brussels P2 2026: Lebrón y Augsburger remontan y se proclaman campeones</a>
+                    <a href="articles/article-brussels-p2-2026.html">Brussels P2: Lebrón y Augsburger se proclaman campeones</a>
                 </h3>
                 <p>
-                    <strong>Juan Lebrón</strong> y <strong>Leo Augsburger</strong> han logrado una victoria histórica en el Brussels P2 2026, 
-                    remontando un set en contra para derrotar a los número uno Tapia/Coello con un marcador de 2-6, 6-3, 6-3 
-                    en una final de casi dos horas. Los campeones enviaron un mensaje claro al tour...
+                    <strong>Lebrón y Augsburger</strong> han logrado una victoria memorable en el Brussels P2 2026, 
+                    derrotando a sus rivales con un marcador de 2-6, 6-3, 6-3. 
+                    El torneo se celebró en Bruselas, Bélgica del 19-26 Abril 2026.
                 </p>
                 <div class="news-card-meta">
                     <span class="news-card-date">📅 19-26 Abril 2026</span>
-                    <span class="news-source">📍 Tour & Taxis Gare Maritime, Bruselas</span>
+                    <span class="news-source">📍 Bruselas, Bélgica</span>
                 </div>
                 <a href="articles/article-brussels-p2-2026.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Leer resumen completo →</a>
             </div>
         </article>
         
-        <!-- Next Article: NewGiza P2 -->
-        <article class="news-card featured" style="margin-bottom: 3rem; opacity: 0.85;">
-            <div class="news-card-image">
-                <img src="images/newgiza-news-cover.jpg" alt="Galán y Chingotto campeones NewGiza P2 2026">
-                <span class="news-card-category">🏆 GANADOR</span>
-            </div>
-            <div class="news-card-content">
-                <h3>
-                    <a href="articles/article-newgiza-2026.html">NewGiza P2 2026: Galán y Chingotto se proclaman campeones en Egipto</a>
-                </h3>
-                <p>
-                    <strong>Alejandro Galán</strong> y <strong>Federico Chingotto</strong> han logrado un triunfo histórico en el NewGiza P2 2026, 
-                    conquistando el título en Egipto tras una final impecable contra Stupaczuk/Yanguas (6-4, 6-1). 
-                    En mujeres, Josemaría y González también se alzaron con el título...
-                </p>
-                <div class="news-card-meta">
-                    <span class="news-card-date">📅 13-18 Abril 2026</span>
-                    <span class="news-source">📍 NewGiza Sports Club, Giza</span>
-                </div>
-                <a href="articles/article-newgiza-2026.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Ver más →</a>
-            </div>
-        </article>
+        <p style="text-align: center; color: #666; padding: 2rem;">
+            Más noticias disponibles pronto. Sigue atento a las actualizaciones del Premier Padel Tour 2026.
+        </p>
+
     </main>
-    
     <footer>
-        <div class="container">
-            <p>© 2026 Padel News Pro | Powered by Local AI</p>
-        </div>
+        <p>© 2026 Padel News Pro | Actualizado: 27/04/2026 13:44</p>
     </footer>
 </body>
 </html>

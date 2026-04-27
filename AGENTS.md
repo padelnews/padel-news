@@ -40,40 +40,65 @@
 ## 🏠 AGENTE INDEX (Home Page)
 
 ### 📋 MISIÓN
-Gestionar la página principal: banner de estado, resultados recientes, próximos torneos.
+Gestionar la página principal: mostrar el torneo actual con progreso, emparejamientos, scores.
+
+**El agente detecta automáticamente:**
+- 🕐 **ANTES del torneo:** Muestra countdown + info del próximo torneo
+- 🔴 **DURANTE el torneo:** Muestra ronda actual (cuartos/semis/final) + partidos + scores
+- ✅ **DESPUÉS del torneo:** Muestra campeón + resultado final
 
 ### 📂 ARCHIVOS QUE CONTROLA
 - `index.html` - Página principal
-- `includes/header.html` - Header con banner live
-- `css/style-futuristic.css` - Estilos (NO MODIFICAR, solo usar clases)
+- `data/tournament_state.json` - Estado del torneo (estado, fechas, tipo)
+- `data/tournament_progress.json` - Progreso (ronda actual, partidos, scores)
+- `scripts/index_agent.py` - Script principal del agente
 
 ### 🔄 FLUJO DE ACTUALIZACIÓN
 
 ```
-1. Leer tournament_state.json → detectar estado actual
-2. SI hay torneo en curso:
-   - Activar live banner
-   - Mostrar resultado parcial
-3. SI torneo finalizado:
-   - Mostrar banner "FINALIZADO"
-   - Actualizar resultados recientes (ordenar: terminado primero)
-   - Mostrar campeón con badge
-4. SI próximo torneo:
-   - Banner countdown
-5. Regenerar index.html sin perder estilos
-6. Commit + Push
+1. Leer tournament_state.json
+   → ¿status = upcoming / in_progress / finished?
+
+2. SI in_progress:
+   → Mostrar ronda actual (Cuartos/Semis/Final)
+   → Mostrar partidos con equipos y scores
+   → Si hay partido en vivo, marcar con 🔴 EN VIVO
+
+3. SI upcoming:
+   → Mostrar countdown: "X días para que empiece"
+   → Info: nombre, ubicación, fechas, premio
+
+4. SI finished:
+   → Mostrar campeón + runner-up + score final
+   → Stats del torneo
+
+5. Actualizar index.html (solo la sección torneo, no tocar 3 columnas)
+6. Commit + Push automático
 ```
 
 ### ⚠️ REGLAS CRÍTICAS
-- **NUNCA** modificar CSS directamente
-- **MANTENER** estructura del header consistente con otras páginas
-- **SOLO** modificar contenido dentro de las secciones, no la estructura
-- Banner debe usar clases de `style-futuristic.css` → `.live-badge`
+- **SOLO modificar la sección del torneo**, nunca las 3 columnas inferiores
+- **Scores reales solo** - no inventar resultados (el usuario los ve en TV)
+- **Formato consistente** - usar el mismo HTML structure siempre
 
 ### 📊 TRIGGER (Cuándo ejecutarse)
-- Cuando `tournament_state.json` cambia
-- Cada 15 minutos via cron
-- Después de cada torneo finalizado
+- **Automatic schedule:** Cada día 08:00 y 20:00 via launchd
+- **Cuando cambia tournament_state.json**
+- **Manual:** `python3 scripts/index_agent.py --force`
+
+### 📁 DATOS DEL PRÓXIMO TORNEO
+```json
+{
+  "current_tournament": {
+    "name": "Asunción P1",
+    "location": "Paraguay",
+    "start_date": "2026-05-04",
+    "end_date": "2026-05-10",
+    "prize": "$200,000"
+  },
+  "status": "upcoming"
+}
+```
 
 ---
 

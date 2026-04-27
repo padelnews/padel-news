@@ -13,9 +13,18 @@
     "location": "Bélgica",
     "start_date": "2026-04-20",
     "end_date": "2026-04-26",
-    "champions": ["Juan Lebrón", "Leo Augsburger"],
-    "champion_country": ["España", "Argentina"],
-    "runner_up": ["Agustín Tapia", "Arturo Coello"],
+    "champions": [
+      "Juan Lebrón",
+      "Leo Augsburger"
+    ],
+    "champion_country": [
+      "España",
+      "Argentina"
+    ],
+    "runner_up": [
+      "Agustín Tapia",
+      "Arturo Coello"
+    ],
     "score": "2-6, 6-3, 6-3",
     "final_score_detailed": "2-6, 6-3, 6-3",
     "prize": "$35,000",
@@ -23,6 +32,6 @@
     "spectators": 2847,
     "venue": "Royal Paddel Club"
   },
-  "last_index_update": "",
+  "last_index_update": "2026-04-27",
   "next_tournament_after": "Buenos Aires P1"
 }

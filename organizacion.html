@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PadelNews - Organización y Agentes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0f0f23; color: #fff; }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .hero p { font-size: 1.2em; opacity: 0.9; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+        
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #64b5f6; margin-bottom: 20px; font-size: 1.5em; }
+        
+        /* Flow Diagram */
+        .flow {
+            background: #1a1a2e;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .flow-step {
+            background: #16213e;
+            border: 2px solid #64b5f6;
+            border-radius: 10px;
+            padding: 15px 25px;
+            text-align: center;
+        }
+        .flow-step h4 { color: #64b5f6; margin-bottom: 5px; }
+        .flow-step p { font-size: 0.85em; color: #888; }
+        .flow-arrow { font-size: 2em; color: #64b5f6; }
+        
+        /* Agent Cards Grid */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .agent-card {
+            background: #16213e;
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .agent-card:hover {
+            transform: translateY(-5px);
+            border-color: #64b5f6;
+        }
+        
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .agent-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+        }
+        .agent-icon.blue { background: #1e88e5; }
+        .agent-icon.green { background: #43a047; }
+        .agent-icon.orange { background: #fb8c00; }
+        .agent-icon.purple { background: #8e24aa; }
+        .agent-icon.red { background: #e53935; }
+        
+        .agent-header h3 { font-size: 1.1em; }
+        .agent-header span { font-size: 0.8em; color: #888; }
+        
+        .agent-status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            margin-bottom: 10px;
+        }
+        .status-active { background: #2e7d32; color: #fff; }
+        .status-paused { background: #f57c00; color: #fff; }
+        .status-inactive { background: #c62828; color: #fff; }
+        
+        .agent-card p { font-size: 0.9em; color: #aaa; margin-bottom: 15px; line-height: 1.5; }
+        
+        .agent-details {
+            background: #0f0f23;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.8em;
+        }
+        .agent-details div { margin-bottom: 5px; color: #888; }
+        .agent-details span { color: #64b5f6; }
+        
+        /* Schedule Badge */
+        .schedule {
+            display: inline-block;
+            background: #1a237e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            color: #90caf9;
+            margin-top: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .footer a { color: #64b5f6; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🤖 PadelNews - Sistema de Agentes</h1>
+        <p>Automatización inteligente para tu web de pádel</p>
+    </div>
+    
+    <div class="container">
+        
+        <!-- Flow Section -->
+        <div class="section">
+            <h2>📊 Flujo de Datos</h2>
+            <div class="flow">
+                <div class="flow-step">
+                    <h4>🌐 Fuentes</h4>
+                    <p>FIP, Premier Padel<br>Playwright scraping</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <h4>📁 JSON Data</h4>
+                    <p>Source of truth<br>rankings_data.json</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <h4>🤖 Agentes</h4>
+                    <p>Extracción y<br>actualización</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <h4>📝 HTML</h4>
+                    <p>Generación<br>automática</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <h4>🚀 GitHub Pages</h4>
+                    <p>Publicación<br>automática</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Agents Section -->
+        <div class="section">
+            <h2>🤖 Agentes Configurados</h2>
+            <div class="agents-grid">
+                
+                <!-- Index Agent -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon blue">🏠</div>
+                        <div>
+                            <h3>Index Agent</h3>
+                            <span>Actualiza página inicio</span>
+                        </div>
+                    </div>
+                    <span class="agent-status status-inactive">● Inactivo</span>
+                    <p>Actualiza automáticamente la página de inicio con el último torneo y su winner. Se ejecuta dos veces al día.</p>
+                    <div class="agent-details">
+                        <div>Script: <span>index_agent.py</span></div>
+                        <div>Programado: <span>08:00 y 20:00</span></div>
+                        <div>Salida: <span>index.html</span></div>
+                    </div>
+                </div>
+                
+                <!-- Torneos Agent -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon green">🏆</div>
+                        <div>
+                            <h3>Torneos Agent</h3>
+                            <span>Gestión de torneos</span>
+                        </div>
+                    </div>
+                    <span class="agent-status status-inactive">● Inactivo</span>
+                    <p>Actualiza la página de torneos con el calendario, winners y estados de cada torneo.</p>
+                    <div class="agent-details">
+                        <div>Script: <span>torneos_agent.py</span></div>
+                        <div>Programado: <span>Cada 6 horas</span></div>
+                        <div>Salida: <span>torneos.html</span></div>
+                    </div>
+                </div>
+                
+                <!-- Calendar Agent -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon orange">📅</div>
+                        <div>
+                            <h3>Calendar Agent</h3>
+                            <span>Estados automáticos</span>
+                        </div>
+                    </div>
+                    <span class="agent-status status-inactive">● Inactivo</span>
+                    <p>Calcula automáticamente si un torneo está "En curso", "Finalizado" o "Próximo" basándose en las fechas.</p>
+                    <div class="agent-details">
+                        <div>Script: <span>calendar_agent.py</span></div>
+                        <div>Programado: <span>Diario</span></div>
+                        <div>Salida: <span>torneos.html (calendario)</span></div>
+                    </div>
+                </div>
+                
+                <!-- Live Score Agent -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon red">⚡</div>
+                        <div>
+                            <h3>Live Score Agent</h3>
+                            <span>Resultados en vivo</span>
+                        </div>
+                    </div>
+                    <span class="agent-status status-inactive">● Inactivo</span>
+                    <p>Monitorea los partidos en directo durante torneos activos. Actualiza resultados cada 2 horas.</p>
+                    <div class="agent-details">
+                        <div>Script: <span>live_score_agent.py</span></div>
+                        <div>Programado: <span>Cada 2 horas (solo en torneo)</span></div>
+                        <div>Salida: <span>resultados.html</span></div>
+                    </div>
+                </div>
+                
+                <!-- Rankings Agent -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon purple">📈</div>
+                        <div>
+                            <h3>Rankings Agent</h3>
+                            <span>Clasificaciones FIP</span>
+                        </div>
+                    </div>
+                    <span class="agent-status status-inactive">● Inactivo</span>
+                    <p>Extrae datos oficiales de FIP y actualiza los rankings masculine y femenino cada semana.</p>
+                    <div class="agent-details">
+                        <div>Script: <span>rankings_agent.py</span></div>
+                        <div>Programado: <span>Domingo 20:00</span></div>
+                        <div>Fuente: <span>fip.com</span></div>
+                    </div>
+                </div>
+                
+                <!-- Dynamic Flow -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon blue">🔄</div>
+                        <div>
+                            <h3>Dynamic Flow</h3>
+                            <span>Flujo automático</span>
+                        </div>
+                    </div>
+                    <span class="agent-status status-active">● Activo</span>
+                    <p>Coordina todos los agentes y asegura que las actualizaciones sean consistentes entre páginas.</p>
+                    <div class="agent-details">
+                        <div>Script: <span>dynamic_flow.py</span></div>
+                        <div>Frecuencia: <span>Cada 5 min</span></div>
+                        <div>Coordina: <span>Todos</span></div>
+                    </div>
+                </div>
+                
+                <!-- Tournament Watcher -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon orange">👁️</div>
+                        <div>
+                            <h3>Tournament Watcher</h3>
+                            <span>Vigila nuevos torneos</span>
+                        </div>
+                    </div>
+                    <span class="agent-status status-inactive">● Inactivo</span>
+                    <p>Monitorea la aparición de nuevos torneos en Premier Padel y notifica automáticamente.</p>
+                    <div class="agent-details">
+                        <div>Script: <span>tournament_watcher.py</span></div>
+                        <div>Programado: <span>Cada 30 min</span></div>
+                        <div>Salida: <span>Notificaciones</span></div>
+                    </div>
+                </div>
+                
+                <!-- Chollos Agent -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon green">🏷️</div>
+                        <div>
+                            <h3>Chollos Agent</h3>
+                            <span>Descuentos y ofertas</span>
+                        </div>
+                    </div>
+                    <span class="agent-status status-inactive">● Inactivo</span>
+                    <p>Busca chollos de palas, bolas y equipamiento de pádel en tiendas online.</p>
+                    <div class="agent-details">
+                        <div>Script: <span>chollos_monitor.py</span></div>
+                        <div>Programado: <span>Cada 6 horas</span></div>
+                        <div>Salida: <span>ofertas.html</span></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- Data Sources -->
+        <div class="section">
+            <h2>📡 Fuentes de Datos</h2>
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon green">🏆</div>
+                        <div>
+                            <h3>Premier Padel</h3>
+                            <span>Resultados oficiales</span>
+                        </div>
+                    </div>
+                    <p>Datos de torneos, partidos, scores ystream en vivo.</p>
+                    <div class="agent-details">
+                        <div>URL: <span>premierpadel.com</span></div>
+                        <div>Método: <span>Playwright (JS dinámico)</span></div>
+                    </div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon purple">📊</div>
+                        <div>
+                            <h3>FIP</h3>
+                            <span>Rankings oficiales</span>
+                        </div>
+                    </div>
+                    <p>Clasificaciones masculine y femenino por parejas.</p>
+                    <div class="agent-details">
+                        <div>URL: <span>fip.com</span></div>
+                        <div>Método: <span>Playwright</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="section">
+            <h2>🛠️ Tecnología</h2>
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <h3>Stack utilizado</h3>
+                    <p>Python + BeautifulSoup/Playwright para scraping, HTML/CSS/JS para frontend, GitHub Pages para hosting, Ollama (GPU) para IA.</p>
+                </div>
+                <div class="agent-card">
+                    <h3>Scheduling</h3>
+                    <p>launchd (macOS) para ejecutar agentes en momentos específicos. logs para debuggear.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="footer">
+        <p>Generado automáticamente por PadelNews Agent System</p>
+        <p>Repo: <a href="https://github.com/padelnews/padel-news">github.com/padelnews/padel-news</a></p>
+    </div>
+</body>
+</html>
