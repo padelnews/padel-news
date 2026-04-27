@@ -1226,10 +1226,18 @@
             }
             const table = tables.find(t => t.id === selectedTableId);
             if (table) {
+                // If table had a reservation, remove it from the reservations array
+                if (table.reservation && table.reservation.id) {
+                    reservations = reservations.filter(r => r.id !== table.reservation.id);
+                    localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
+                    updateDayReservationsList();
+                }
+                
                 table.status = 'free';
                 table.currentOccupancy = 0;
                 table.reservation = null;
                 generateStaffTables();
+                generateStaffCalendar();
             }
         }
         
