@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luz y Color - Agente IA Demo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #fff; min-height: 100vh; }
+        
+        .header {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 1.8em; margin-bottom: 5px; }
+        .header p { opacity: 0.9; }
+        
+        .demo-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        
+        .section {
+            background: #16213e;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #0f3460;
+        }
+        
+        .section h2 {
+            color: #e91e63;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chat-window {
+            background: #0f0f23;
+            border-radius: 10px;
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .message {
+            margin-bottom: 12px;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 85%;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; } }
+        
+        .bot { background: #9c27b0; margin-right: auto; border-bottom-left-radius: 5px; }
+        .user { background: #e91e63; margin-left: auto; border-bottom-right-radius: 5px; }
+        
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .input-area input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 25px;
+            border: none;
+            background: #1a1a2e;
+            color: #fff;
+            font-size: 1em;
+        }
+        
+        .input-area button {
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            background: #e91e63;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        
+        .input-area button:hover { transform: scale(1.05); }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .feature {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .feature:hover { transform: translateY(-3px); }
+        .feature-icon { font-size: 2em; margin-bottom: 8px; }
+        .feature-name { font-weight: bold; color: #e91e63; }
+        .feature-desc { font-size: 0.85em; opacity: 0.8; margin-top: 5px; }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .cta-section h3 { margin-bottom: 10px; }
+        .price { font-size: 2.5em; font-weight: bold; margin: 15px 0; }
+        .price small { font-size: 0.4em; opacity: 0.8; }
+        
+        .cta-btn {
+            display: inline-block;
+            background: #fff;
+            color: #e91e63;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.2s;
+        }
+        
+        .cta-btn:hover { transform: scale(1.1); }
+        
+        .status-bar {
+            background: #0f3460;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+        
+        .status-ok { color: #4caf50; }
+        
+        .typing-indicator {
+            display: none;
+            padding: 10px;
+            color: #888;
+            font-style: italic;
+        }
+        
+        .typing-indicator.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>💇 Luz y Color</h1>
+        <p>Peluquería en Torrejón de la Calzada - Demo IA</p>
+    </div>
+    
+    <div class="demo-container">
+        <div class="status-bar">
+            <span>🤖 Agente IA Activo</span>
+            <span class="status-ok">● En línea</span>
+        </div>
+        
+        <div class="section">
+            <h2>💬 WhatsApp Inteligente</h2>
+            <p style="margin-bottom: 15px; opacity: 0.8;">Prueba cómo respondería el agente automáticamente</p>
+            
+            <div class="chat-window" id="chatWindow">
+                <div class="message bot">
+                    ¡Hola! Soy el asistente virtual de Luz y Color 🏠
+                    ¿En qué puedo ayudarte hoy?
+                </div>
+            </div>
+            
+            <div class="typing-indicator" id="typing">Escribiendo...</div>
+            
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Escribe un mensaje..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✨ Funcionalidades del Agente</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <div class="feature-name">Citas</div>
+                    <div class="feature-desc">Reserva y recuerda citas automáticamente</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-name">WhatsApp</div>
+                    <div class="feature-desc">Responde 24/7 en WhatsApp</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⭐</div>
+                    <div class="feature-name">Reviews</div>
+                    <div class="feature-desc">Pide opiniones a clientes</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📸</div>
+                    <div class="feature-name">Redes</div>
+                    <div class="feature-desc">Genera posts para Instagram</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h3>Oferta Especial Inauguración</h3>
+            <div class="price">49€<small>/mes</small></div>
+            <p>Setup incluido + 1 mes gratis</p>
+            <a href="#" class="cta-btn" onclick="alert('Contacta con Cristian para activar este servicio'); return false;">Solicitar Demo Gratis</a>
+        </div>
+    </div>
+    
+    <script>
+        const responses = {
+            'hola': [
+                "¡Hola! 👋 ¡Qué alegría que nos escribas! ¿Quieres pedir cita o te puedo ayudar en algo?",
+                "¡Buenas! 😊 ¿En qué podemos ayudarte hoy? Tenemos disponibles citas esta semana."
+            ],
+            'cita': [
+                "¡Perfecto! 💇‍♀️ ¿Qué día te iría bien? Tenemos disponible:\n\n📅 Lunes a Viernes: 9:00 - 20:00\n📅 Sábados: 9:00 - 14:00",
+                "¡Genial! 🎉 ¿Para cuándo la quieres? Tenemos huecos esta semana. ¿Prefieres mañana o pas.do?"
+            ],
+            'precio': [
+                "Nuestros precios 🏷️:\n\n💇 Corte: 25€\n🎨 Color: 45€\n✂️ Corte + Color: 60€\n💅 Uñas: 20€\n\n¿Te animas? 😊",
+                "Tratamientos desde 20€ hasta 80€ según lo que necesites. ¡Consulta sin compromiso!"
+            ],
+            'horario': [
+                "Nuestro horario 🕐:\n\nLunes a Viernes: 9:00 - 20:00\nSábados: 9:00 - 14:00\nDomingos: Cerrado\n\n¡Te esperamos! 💕",
+                "Estamos abiertos de lunes a sábado. ¿Te vienen bien estos horarios?"
+            ],
+            'ubicacion': [
+                "Estamos en 📍:\n\nC/ Mayor 15\nTorrejón de la Calzada\n\n¡Es fácil encontrarnos! Ven en coche o podemos darte indicaciones 😊",
+                "Estamos en el centro de Torrejón de la Calzada. ¡Te esperamos!"
+            ],
+            'default': [
+                "¡Entendido! 👍 Para pedir cita solo dime qué día y hora te viene bien. También puedes llamarnos al 912 345 678",
+                "¡Muy bien! 😊 ¿Quieres que te reserve una cita? Solo dime qué día te conviene.",
+                "¡Perfecto! 💫 ¿Te gustaría ver nuestros precios o prefieres pedir cita directamente?"
+            ]
+        };
+        
+        function getResponse(message) {
+            const msg = message.toLowerCase();
+            if (msg.includes('hola') || msg.includes('buenas') || msg.includes('hello')) 
+                return responses.hola[Math.floor(Math.random() * responses.hola.length)];
+            if (msg.includes('cita') || msg.includes('hora') || msg.includes('reservar') || msg.includes('pedir'))
+                return responses.cita[Math.floor(Math.random() * responses.cita.length)];
+            if (msg.includes('precio') || msg.includes('cost') || msg.includes('tarifa'))
+                return responses.precio[Math.floor(Math.random() * responses.precio.length)];
+            if (msg.includes('horario') || msg.includes('hora') || msg.includes('abiert'))
+                return responses.horario[Math.floor(Math.random() * responses.horario.length)];
+            if (msg.includes('ubicación') || msg.includes('dónde') || msg.includes('dirección') || msg.includes('está'))
+                return responses.ubicacion[Math.floor(Math.random() * responses.ubicacion.length)];
+            return responses.default[Math.floor(Math.random() * responses.default.length)];
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            const chat = document.getElementById('chatWindow');
+            chat.innerHTML += `<div class="message user">${message}</div>`;
+            input.value = '';
+            
+            // Show typing
+            const typing = document.getElementById('typing');
+            typing.classList.add('active');
+            chat.scrollTop = chat.scrollHeight;
+            
+            // Bot response after delay
+            setTimeout(() => {
+                typing.classList.remove('active');
+                const response = getResponse(message);
+                chat.innerHTML += `<div class="message bot">${response.replace(/\n/g, '<br>')}</div>`;
+                chat.scrollTop = chat.scrollHeight;
+            }, 1000 + Math.random() * 1000);
+        }
+        
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+    </script>
+</body>
+</html>
