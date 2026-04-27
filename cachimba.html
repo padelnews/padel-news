@@ -793,8 +793,84 @@
                     addMessage('No pasa nada, ¡cuando quieras! 😊');
                     updateQuickReplies(['Reservar mesa', 'Ver carta', 'Horarios']);
                     conversationState = 'initial';
+                } else {
+                    // Handle date selection (format: "mié 28", "jue 29", etc.)
+                    const datePatterns = text.match(/^(lun|martes?|miércoles?|jue|vie|sáb|dom)\s+(\d{1,2})$/i);
+                    if (datePatterns || conversationState === 'reserva_fecha') {
+                        processDate(text);
+                    } else if (conversationState === 'reserva_nombre' && !text.includes(' ') && text.length > 2) {
+                        // Single word name
+                        processName(text);
+                    } else if (conversationState === 'reserva_hora') {
+                        processTime(text);
+                    } else {
+                        addMessage('Lo siento, no te he entendido. ¿Quieres reservar mesa o ver la carta?');
+                        updateQuickReplies(['Reservar mesa', 'Ver carta', 'Horarios']);
+                        conversationState = 'initial';
+                    }
                 }
             }, 800);
+        }
+        
+        function processDate(dateStr) {
+            window.reservationData = window.reservationData || { people: 2 };
+            
+            // Parse date string like "mié 28" → extract day number
+            const match = dateStr.match(/(\d{1,2})/);
+            const dayNum = match ? parseInt(match[1]) : new Date().getDate() + 1;
+            
+            const today = new Date();
+            const weekdays = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+            const weekdayShort = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
+            const targetWeekday = weekdayShort.findIndex(d => dateStr.toLowerCase().startsWith(d));
+            
+            const targetDate = new Date(today);
+            if (targetWeekday >= 0) {
+                const daysUntilTarget = (targetWeekday - today.getDay() + 7) % 7 || 7;
+                targetDate.setDate(today.getDate() + daysUntilTarget);
+            } else {
+                targetDate.setDate(today.getDate() + 1);
+            }
+            
+            const dateFormatted = targetDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+            window.reservationData.date = targetDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+            window.reservationData.dateKey = dateFormatted;
+            window.reservationData.dateObj = targetDate;
+            conversationState = 'reserva_hora';
+            
+            addMessage(`📅 ${window.reservationData.date}
+
+
+⏰ ¿A qué hora quieres reservar?`);
+            updateQuickReplies(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
+        }
+        
+        function processName(name) {
+            window.reservationData = window.reservationData || {};
+            window.reservationData.name = name;
+            conversationState = 'reserva_confirm';
+            
+            const data = window.reservationData;
+            addMessage(`✅ <b>Confirma tu reserva:</b><br><br>
+📅 ${data.date || 'Fecha seleccionada'}<br>
+⏰ 21:00 (hora por defecto)<br>
+👥 ${data.people} ${data.people > 1 ? 'personas' : 'persona'}<br>
+👤 ${name}<br><br>
+¿Todo correcto?`);
+            updateQuickReplies(['✅ Confirmar', '❌ Corregir']);
+        }
+        
+        function processTime(time) {
+            window.reservationData.time = time;
+            conversationState = 'reserva_confirm';
+            
+            const data = window.reservationData;
+            addMessage(`✅ <b>Confirma tu reserva:</b><br><br>
+📅 ${data.date}<br>
+⏰ ${time}<br>
+👥 ${data.people} ${data.people > 1 ? 'personas' : 'persona'}<br><br>
+¿Todo correcto?`);
+            updateQuickReplies(['✅ Confirmar', '❌ Corregir']);
         }
         
         function processPeople(num) {
@@ -813,7 +889,7 @@
             const buttons = dates.map(d => {
                 const dayName = d.toLocaleDateString('es-ES', { weekday: 'short' });
                 const dayNum = d.getDate();
-                return `${dayName} ${dayNum}`;
+                return `${dayName.toLowerCase()} ${dayNum}`;
             });
             
             updateQuickReplies(buttons);
@@ -825,13 +901,15 @@
             const people = data.people || 2;
             const date = data.date || 'Hoy';
             const time = data.time || '21:00';
+            const dateKey = data.dateKey || date;
             
             // Save reservation
             const reservation = {
                 id: Date.now(),
                 name: name,
                 phone: data.phone || '',
-                date: date,
+                date: dateKey,
+                dateDisplay: date,
                 time: time,
                 people: people,
                 notes: data.notes || '',
@@ -842,9 +920,10 @@
             reservations.push(reservation);
             localStorage.setItem('cachimba_reservations', JSON.stringify(reservations));
             
-            addMessage(`✅ <b>¡Reserva confirmada!</b><br><br>📅 ${date} a las ${time}<br>👥 ${people} personas<br>👤 ${name}<br><br>Te esperamos en La Cachimba 🌬️<br><br>¿Necesitas algo más?`);
-            updateQuickReplies(['Ver carta', 'Otra cosa']);
+            addMessage(`✅ <b>¡Reserva confirmada!</b><br><br>📅 ${date}<br>⏰ ${time}<br>👥 ${people} personas<br>👤 ${name}<br><br>Te esperamos en La Cachimba 🌬️<br><br>¿Necesitas algo más?`);
+            updateQuickReplies(['Ver carta', 'Nueva reserva', 'Otra cosa']);
             conversationState = 'initial';
+            window.reservationData = null;
         }
         
         function updateQuickReplies(replies) {
@@ -880,7 +959,9 @@
                 const dayDiv = document.createElement('div');
                 dayDiv.className = `day ${day.toDateString() === today.toDateString() ? 'today' : ''}`;
                 
-                const dayReservations = reservations.filter(r => r.date === day.toLocaleDateString('es-ES'));
+                // Format: DD/MM/YYYY
+                const dayKey = day.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+                const dayReservations = reservations.filter(r => r.dateKey === dayKey || r.date === dayKey);
                 const count = dayReservations.length;
                 
                 dayDiv.innerHTML = `
@@ -912,8 +993,9 @@
         
         function showDayReservations() {
             const container = document.getElementById('day-reservations');
-            const dateStr = selectedDate.toLocaleDateString('es-ES');
-            const dayReservations = reservations.filter(r => r.date === dateStr);
+            // Use same format as reservation storage: DD/MM/YYYY
+            const dateStr = selectedDate.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '/');
+            const dayReservations = reservations.filter(r => r.date === dateStr || r.dateDisplay === selectedDate.toLocaleDateString('es-ES'));
             
             if (dayReservations.length === 0) {
                 container.innerHTML = '<p style="text-align:center;opacity:0.6;padding:20px;">No hay reservas para este día</p>';
@@ -945,7 +1027,7 @@
         function addReservation() {
             const name = document.getElementById('client-name').value;
             const phone = document.getElementById('client-phone').value;
-            const date = document.getElementById('reservation-date').value;
+            const dateInput = document.getElementById('reservation-date').value;
             const time = document.getElementById('reservation-time').value;
             const people = document.getElementById('reservation-people').value;
             const type = document.getElementById('reservation-type').value;
@@ -956,13 +1038,17 @@
                 return;
             }
             
-            const dateFormatted = new Date(date).toLocaleDateString('es-ES');
+            // Convert YYYY-MM-DD to DD/MM/YYYY
+            const dateParts = dateInput.split('-');
+            const dateFormatted = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
             
             const reservation = {
                 id: Date.now(),
                 name: name,
                 phone: phone,
                 date: dateFormatted,
+                dateKey: dateFormatted,
+                dateDisplay: new Date(dateInput).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }),
                 time: time,
                 people: parseInt(people),
                 notes: notes,
