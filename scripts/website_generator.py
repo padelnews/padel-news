@@ -33,49 +33,45 @@ TEMPLATE_HEADER = '''<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <meta name="description" content="{description}">
-    <link rel="stylesheet" href="css/style-futuristic.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎾</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        :root {{
-            --primary: #00d4ff;
-            --accent: #bf00ff;
-            --bg-dark: #0a0a0f;
-            --glass-bg: rgba(26, 26, 46, 0.8);
-            --glass-border: rgba(0, 212, 255, 0.3);
-        }}
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ font-family: 'Rajdhani', sans-serif; background: var(--bg-dark); color: #fff; line-height: 1.6; }}
-        header {{ background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 1.5rem 2rem; border-bottom: 2px solid var(--primary); }}
-        header h1 {{ font-family: 'Orbitron', sans-serif; font-size: 1.8rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }}
-        .live-badge {{ display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; margin-top: 1rem; }}
-        nav {{ background: rgba(0,0,0,0.5); padding: 1rem 2rem; display: flex; gap: 2rem; flex-wrap: wrap; }}
-        nav a {{ color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s; }}
-        nav a:hover, nav a.active {{ background: var(--primary); color: #000; }}
+        body {{ font-family: 'Rajdhani', sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; }}
+        header {{ background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 2rem 1rem; border-bottom: 2px solid #00d4ff; text-align: center; }}
+        header h1 {{ font-family: 'Orbitron', sans-serif; font-size: 2.5rem; background: linear-gradient(90deg, #00d4ff, #bf00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }}
+        header p {{ opacity: 0.8; margin-bottom: 1rem; }}
+        .live-badge {{ display: inline-block; background: linear-gradient(135deg, #00d4ff, #bf00ff); color: #000; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; }}
+        nav {{ background: rgba(0,0,0,0.5); padding: 1rem; text-align: center; }}
+        nav ul {{ list-style: none; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }}
+        nav a {{ color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; }}
+        nav a:hover, nav a.active {{ background: #00d4ff; color: #000; }}
         main {{ max-width: 1200px; margin: 0 auto; padding: 2rem; }}
-        .section-title {{ font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; }}
-        .results-table {{ width: 100%; border-collapse: collapse; background: var(--glass-bg); border-radius: 12px; overflow: hidden; }}
+        .section-title {{ font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: #00d4ff; margin-bottom: 1.5rem; text-align: center; }}
+        .results-table {{ width: 100%; border-collapse: collapse; background: rgba(26, 26, 46, 0.8); border-radius: 12px; overflow: hidden; }}
         .results-table th {{ background: rgba(0, 212, 255, 0.2); padding: 1rem; text-align: left; font-weight: 600; }}
         .results-table td {{ padding: 0.8rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }}
-        .results-table tr:hover {{ background: rgba(0, 212, 255, 0.1); }}
-        .winner {{ color: var(--primary); font-weight: 600; }}
+        .winner {{ color: #00d4ff; font-weight: 600; }}
         .tournament-badge {{ display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; }}
         .score {{ font-weight: 600; }}
-        footer {{ text-align: center; padding: 2rem; color: #666; margin-top: 3rem; }}
-        @media (max-width: 768px) {{ .section-title {{ font-size: 1.2rem; }} nav {{ gap: 1rem; }} main {{ padding: 1rem; }} }}
+        footer {{ text-align: center; padding: 2rem; color: #666; }}
+        @media (max-width: 768px) {{ .section-title {{ font-size: 1.2rem; }} }}
     </style>
 </head>
 <body>
     <header>
         <h1>🎾 Padel News Pro</h1>
-        <p class="tagline">Tu portal profesional del Premier Padel Tour 2026</p>
+        <p>Tu portal profesional del Premier Padel Tour 2026</p>
         <span class="live-badge">{banner}</span>
     </header>
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="actualidad.html">Actualidad</a>
-        <a href="resultados.html">Resultados</a>
-        <a href="torneos.html">Torneos</a>
-        <a href="chollos.html">Chollos 🏷️</a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="actualidad.html">Actualidad</a></li>
+            <li><a href="resultados.html">Resultados</a></li>
+            <li><a href="torneos.html">Torneos</a></li>
+            <li><a href="chollos.html">Chollos 🏷️</a></li>
+        </ul>
     </nav>
     <main>
 '''
