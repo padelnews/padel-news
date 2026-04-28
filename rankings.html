@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="css/style-futuristic.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
+        /* FORCE CENTER - override any conflicting styles */
+        header, header .container { text-align: center !important; }
+        header h1 { text-align: center !important; display: block !important; margin-left: auto !important; margin-right: auto !important; }
+        header .tagline { text-align: center !important; display: block !important; }
+        .header-branding { justify-content: center !important; }
+        nav ul { justify-content: center !important; }
+        nav { text-align: center; }
+        .live-badge { margin-left: auto !important; margin-right: auto !important; display: inline-block !important; }
         .rankings-container { max-width: 100%; overflow-x: auto; }
         .rankings-table { width: 100%; border-collapse: collapse; background: var(--glass-bg); border-radius: 12px; overflow: hidden; }
         .rankings-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem 0.8rem; text-align: center; font-weight: 600; font-size: 0.9rem; }
