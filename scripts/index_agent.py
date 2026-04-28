@@ -111,7 +111,7 @@ def generate_tournament_section(state, progress):
         ru2 = f"{runner_up[1]}" if len(runner_up) > 1 else ""
         
         return f'''
-        <section style="background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(191,0,255,0.15)); border-radius: 16px; overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
+        <section style="background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(191,0,255,0.15)); border-radius: 16px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(0,212,255,0.3);">
             <div style="background: linear-gradient(90deg, #00d4ff, #bf00ff); padding: 1rem 1.5rem;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
@@ -126,25 +126,25 @@ def generate_tournament_section(state, progress):
             </div>
             <div style="padding: 1.5rem;">
                 <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
-                    <div style="font-size: 0.9rem; color: var(--primary); margin-bottom: 1rem; font-weight: 600;">🏆 CAMPEONES 🏆</div>
+                    <div style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 1rem; font-weight: 600;">🏆 CAMPEONES 🏆</div>
                     
                     <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
                         <div style="text-align: center;">
                             <img src="images/players/{champ_photo1}.jpg" alt="{champ1}" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid gold;" onerror="this.src='https://placehold.co/70x70/ffd700/000?text={champ1[:1]}'">
                             <div style="font-weight: 700; margin-top: 0.5rem;">{champ1}</div>
-                            <div style="font-size: 0.8rem; color: var(--gray);">{champ1_country}</div>
+                            <div style="font-size: 0.8rem; color: #888;">{champ1_country}</div>
                         </div>
                         
                         <div style="text-align: center;">
                             <img src="images/players/{champ_photo2}.jpg" alt="{champ2}" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid gold;" onerror="this.src='https://placehold.co/70x70/ffd700/000?text={champ2[:1]}'">
                             <div style="font-weight: 700; margin-top: 0.5rem;">{champ2}</div>
-                            <div style="font-size: 0.8rem; color: var(--gray);">{champ2_country}</div>
+                            <div style="font-size: 0.8rem; color: #888;">{champ2_country}</div>
                         </div>
                         
                         <div style="background: rgba(191,0,255,0.3); border-radius: 12px; padding: 1rem 1.5rem;">
-                            <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent);">VS</div>
+                            <div style="font-size: 1.5rem; font-weight: 900; color: #bf00ff;">VS</div>
                             <div style="font-size: 1.8rem; font-weight: 700; margin-top: 0.5rem;">2-1</div>
-                            <div style="font-size: 0.85rem; color: var(--gray);">Marcador final</div>
+                            <div style="font-size: 0.85rem; color: #888;">Marcador final</div>
                         </div>
                     </div>
                     
@@ -156,23 +156,23 @@ def generate_tournament_section(state, progress):
                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
                     <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
                         <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">💰</div>
-                        <div style="font-weight: 700; color: var(--primary);">{prize}</div>
-                        <div style="font-size: 0.75rem; color: var(--gray);">Premio pareja ganadora</div>
+                        <div style="font-weight: 700; color: #00d4ff;">{prize}</div>
+                        <div style="font-size: 0.75rem; color: #888;">Premio pareja ganadora</div>
                     </div>
                     <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
                         <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🎾</div>
-                        <div style="font-weight: 700; color: var(--primary);">{participants}</div>
-                        <div style="font-size: 0.75rem; color: var(--gray);">Parejas participantes</div>
+                        <div style="font-weight: 700; color: #00d4ff;">{participants}</div>
+                        <div style="font-size: 0.75rem; color: #888;">Parejas participantes</div>
                     </div>
                     <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
                         <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">👁️</div>
-                        <div style="font-weight: 700; color: var(--primary);">{spectators}</div>
-                        <div style="font-size: 0.75rem; color: var(--gray);">Espectadores semana</div>
+                        <div style="font-weight: 700; color: #00d4ff;">{spectators}</div>
+                        <div style="font-size: 0.75rem; color: #888;">Espectadores semana</div>
                     </div>
                     <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; text-align: center;">
                         <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🏟️</div>
-                        <div style="font-weight: 700; color: var(--primary);">{venue}</div>
-                        <div style="font-size: 0.75rem; color: var(--gray);">Sede del torneo</div>
+                        <div style="font-weight: 700; color: #00d4ff;">{venue}</div>
+                        <div style="font-size: 0.75rem; color: #888;">Sede del torneo</div>
                     </div>
                 </div>
             </div>
@@ -193,7 +193,7 @@ def generate_tournament_section(state, progress):
         days_left = "?"
     
     return f'''
-    <section style="background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(191,0,255,0.15)); border-radius: 16px; overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
+    <section style="background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(191,0,255,0.15)); border-radius: 16px; overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(0,212,255,0.3);">
         <div style="background: linear-gradient(90deg, #00d4ff, #bf00ff); padding: 1rem 1.5rem;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div>
@@ -207,8 +207,8 @@ def generate_tournament_section(state, progress):
             </div>
         </div>
         <div style="padding: 2rem; text-align: center;">
-            <div style="font-size: 3rem; font-weight: 900; color: var(--primary);">{days_left if isinstance(days_left, int) and days_left > 0 else "PRONTO"}</div>
-            <div style="color: var(--gray);">días para que empiece</div>
+            <div style="font-size: 3rem; font-weight: 900; color: #00d4ff;">{days_left if isinstance(days_left, int) and days_left > 0 else "PRONTO"}</div>
+            <div style="color: #888;">días para que empiece</div>
         </div>
     </section>'''
 
