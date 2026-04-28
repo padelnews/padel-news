@@ -114,10 +114,12 @@ header .container {
 
 .header-branding {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .header-logo {
@@ -138,6 +140,7 @@ header h1 {
   font-weight: 900;
   letter-spacing: 3px;
   text-transform: uppercase;
+  text-align: center;
   background: linear-gradient(135deg, var(--primary) 0%, #ffffff 50%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
