@@ -2884,3 +2884,7 @@ NOX error: <urlopen error [Errno 8] nodename nor servname provided, or not known
 NOX error: <urlopen error [Errno 8] nodename nor servname provided, or not known>
 NOX error: <urlopen error [Errno 8] nodename nor servname provided, or not known>
 ✓ Updated with 6 offers (NOX: 2, Siux: 2, Babolat: 2)
+[2026-04-28 07:10:00] Checking NOX, Siux, Babolat deals...
+NOX error: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+NOX error: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+✓ Updated with 6 offers (NOX: 2, Siux: 2, Babolat: 2)
