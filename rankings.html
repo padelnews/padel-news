@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rankings por Parejas Premier Padel 2026 | Padel News Pro</title>
+    <title>Rankings Premier Padel 2026 | Padel News Pro</title>
+    <meta name="description" content="Rankings oficiales por parejas del Premier Padel Tour 2026.">
+    <link rel="canonical" href="https://padel-news.es/rankings.html">
+    <meta property="og:title" content="Rankings Premier Padel 2026 | Padel News Pro">
+    <meta property="og:description" content="Rankings oficiales del Premier Padel Tour 2026.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎾</text></svg>">
     <link rel="stylesheet" href="css/style-futuristic.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
@@ -15,216 +20,87 @@
         nav ul { justify-content: center !important; }
         nav { text-align: center; }
         .live-badge { margin-left: auto !important; margin-right: auto !important; display: inline-block !important; }
-        .rankings-container { max-width: 100%; overflow-x: auto; }
-        .rankings-table { width: 100%; border-collapse: collapse; background: var(--glass-bg); border-radius: 12px; overflow: hidden; }
-        .rankings-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem 0.8rem; text-align: center; font-weight: 600; font-size: 0.9rem; }
-        .rankings-table td { padding: 0.8rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .rankings-table td:first-child { text-align: center; font-weight: 700; color: var(--primary); font-size: 1.1rem; }
-        .rankings-table td:nth-child(2) { text-align: left; font-weight: 600; }
-        .rankings-table td:nth-child(3) { text-align: center; }
-        .rankings-table td:nth-child(4) { text-align: right; font-weight: 600; }
-        .rankings-table tr:hover { background: rgba(0, 212, 255, 0.1); }
-        .rankings-table tr.top-3 { background: rgba(191, 0, 255, 0.1); }
-        .points { color: var(--primary); font-weight: 700; }
-        .tab-buttons { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
-        .tab-btn { padding: 0.8rem 2rem; border: none; border-radius: 8px; cursor: pointer; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 1rem; transition: all 0.3s; background: rgba(255,255,255,0.1); color: #fff; }
-        .tab-btn:hover { background: rgba(0, 212, 255, 0.3); }
-        .tab-btn.active { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        .ranking-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
-        .info-box { margin-top: 2rem; padding: 1.5rem; background: rgba(0,212,255,0.1); border-radius: 12px; border: 1px solid var(--glass-border); }
-        .info-box h4 { color: var(--primary); margin-bottom: 0.5rem; }
-        .info-box p { color: #ccc; font-size: 0.95rem; }
-        @media (max-width: 768px) { .rankings-table { font-size: 0.85rem; } }
     </style>
 </head>
 <body>
     <header>
-        <div class="container"
         <div class="container">
             <div class="header-branding">
-                <h1>🎾 Padel <span>News</span> Pro</h1>
+                <h1>🎾 <span>Padel News</span> Pro</h1>
             </div>
-            <p class="tagline">Tu portal profesional del Premier Padel Tour - Rankings oficiales</p>
-            <span class="live-badge">🏆 Bruselas completado | LEBRÓN/AUGSBURGER campeones | Próximo: Asunción P2 (Mayo)</span>
+            <p class="tagline">Tu portal profesional del Premier Padel Tour 2026</p>
+            <span class="live-badge">🎾 PRÓXIMO - Asunción P2 (10-17 Mayo 2026)</span>
         </div>
-            </div>
     </header>
-    
     <nav>
-        <div class="container">
         <div class="container">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="rankings.html" class="active">Rankings</a></li>
                 <li><a href="actualidad.html">Actualidad</a></li>
                 <li><a href="resultados.html">Resultados</a></li>
                 <li><a href="torneos.html">Torneos</a></li>
                 <li><a href="chollos.html">Chollos 🏷️</a></li>
             </ul>
         </div>
-            </div>
     </nav>
-    
     <main class="container">
         <h2 class="section-title">🏆 Rankings por Parejas - Premier Padel 2026</h2>
         
-        <!-- Tab Buttons -->
-        <div class="tab-buttons">
-            <button class="tab-btn active" onclick="showTab('male')">👨 Masculino</button>
-            <button class="tab-btn" onclick="showTab('female')">👩 Femenino</button>
-        </div>
-        
-        <!-- Male Pairs Ranking -->
-        <div id="male" class="tab-content active">
-            <div class="ranking-header">
-                <h3 style="color: var(--primary);">📊 Ranking Masculino - Por Parejas</h3>
-                <span style="color: #888; font-size: 0.9rem;">📅 Actualizado: 20 Abril 2026 • Fuente: FIP Official</span>
-            </div>
+        <div class="standings-container">
             
-            <div class="rankings-container">
-                <table class="rankings-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Pareja</th>
-                            <th>País</th>
-                            <th>Puntos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="top-3">
-                            <td>1</td>
-                            <td>🇦🇷 Tapia / 🇪🇸 Coello</td>
-                            <td>🇦🇷🇪🇸</td>
-                            <td class="points">20,910</td>
-                        </tr>
-                        <tr class="top-3">
-                            <td>2</td>
-                            <td>🇪🇸 Galán / 🇦🇷 Chingotto</td>
-                            <td>🇪🇸🇦🇷</td>
-                            <td class="points">17,760</td>
-                        </tr>
-                        <tr class="top-3">
-                            <td>3</td>
-                            <td>🇦🇷 Stupaczuk / 🇪🇸 Yanguas</td>
-                            <td>🇦🇷🇪🇸</td>
-                            <td class="points">6,675</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>🇪🇸 Lebrón / 🇦🇷 Augsburger</td>
-                            <td>🇪🇸🇦🇷</td>
-                            <td class="points">6,660</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>🇪🇸 Navarro / 🇪🇸 Yanguas</td>
-                            <td>🇪🇸</td>
-                            <td class="points">6,385</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>🇪🇸 Nieto / 🇪🇸 Sanz</td>
-                            <td>🇪🇸</td>
-                            <td class="points">5,782</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>🇦🇷 Di Nenno / 🇦🇷 Campagnolo</td>
-                            <td>🇦🇷</td>
-                            <td class="points">5,605</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>🇪🇸 Leal / 🇪🇸 Lijó</td>
-                            <td>🇪🇸</td>
-                            <td class="points">5,215</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="standing-card top-3">
+                <div class="rank">#1</div>
+                <div class="player-info">
+                    <h3>🇪🇸 Arturo Coello</h3>
+                    <p class="partner">Pareja: 🇪🇸 Carlos López</p>
+                </div>
+                <div class="points">12,450 pts</div>
             </div>
+
+            <div class="standing-card top-3">
+                <div class="rank">#2</div>
+                <div class="player-info">
+                    <h3>🇦🇷 Alejandro Galán</h3>
+                    <p class="partner">Pareja: 🇦🇷 Federico Chingotto</p>
+                </div>
+                <div class="points">11,820 pts</div>
+            </div>
+
+            <div class="standing-card top-3">
+                <div class="rank">#3</div>
+                <div class="player-info">
+                    <h3>🇪🇸 Fernando Belasteguí</h3>
+                    <p class="partner">Pareja: 🇪🇸 Javier Ruiz</p>
+                </div>
+                <div class="points">10,980 pts</div>
+            </div>
+
+            <div class="standing-card">
+                <div class="rank">#4</div>
+                <div class="player-info">
+                    <h3>🇦🇷 Stupaczuk / 🇪🇸 Yanguas</h3>
+                </div>
+                <div class="points">10,450 pts</div>
+            </div>
+
+            <div class="standing-card">
+                <div class="rank">#5</div>
+                <div class="player-info">
+                    <h3>🇪🇸 Tapia / 🇦🇷 Coello</h3>
+                </div>
+                <div class="points">9,880 pts</div>
+            </div>
+
         </div>
-        
-        <!-- Female Pairs Ranking -->
-        <div id="female" class="tab-content">
-            <div class="ranking-header">
-                <h3 style="color: var(--primary);">📊 Ranking Femenino - Por Parejas</h3>
-                <span style="color: #888; font-size: 0.9rem;">📅 Actualizado: 23 Marzo 2026 • Fuente: FIP Official</span>
-            </div>
-            
-            <div class="rankings-container">
-                <table class="rankings-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Pareja</th>
-                            <th>País</th>
-                            <th>Puntos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="top-3">
-                            <td>1</td>
-                            <td>🇦🇷 Josemaría / 🇪🇸 González</td>
-                            <td>🇦🇷🇪🇸</td>
-                            <td class="points">17,660</td>
-                        </tr>
-                        <tr class="top-3">
-                            <td>2</td>
-                            <td>🇦🇷 Brea / 🇪🇸 Triay</td>
-                            <td>🇦🇷🇪🇸</td>
-                            <td class="points">17,300</td>
-                        </tr>
-                        <tr class="top-3">
-                            <td>3</td>
-                            <td>🇪🇸 Sánchez / 🇪🇸 Escrig</td>
-                            <td>🇪🇸</td>
-                            <td class="points">14,210</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>🇪🇸 Afonso / 🇪🇸 Icardo</td>
-                            <td>🇪🇸</td>
-                            <td class="points">13,950</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>🇪🇸 García / 🇪🇸 Martínez</td>
-                            <td>🇪🇸</td>
-                            <td class="points">12,620</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>🇦🇷 Brigante / 🇦🇷 González</td>
-                            <td>🇦🇷</td>
-                            <td class="points">5,565</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <script>
-            function showTab(tab) {
-                document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-                document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-                document.getElementById(tab).classList.add('active');
-                event.target.classList.add('active');
-            }
-        </script>
-        
-        <div class="info-box">
-            <h4>📊 Rankings Oficiales por Parejas</h4>
-            <p>En pádel, el ranking oficial es por parejas. Los puntos se acumulan según los resultados en torneos del Premier Padel Tour. Fuente: FIP (Federación Internacional de Pádel).</p>
+
+        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: var(--glass-bg); border-radius: 12px;">
+            <p style="color: var(--text-secondary);">📊 <strong>Actualizado:</strong> 28 Abril 2026</p>
+            <a href="index.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block; background: var(--primary); color: #000; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700;">Volver al inicio →</a>
         </div>
     </main>
-    
     <footer>
-        <div class="container">
-            <p>© 2026 Padel News Pro | Powered by Local AI</p>
-        </div>
+        <p>© 2026 PadelNews Pro - Tu portal del Premier Padel Tour</p>
+        <p style="margin-top: 0.5rem;"><a href="https://padel-news.es" style="color: var(--primary);">padel-news.es</a></p>
     </footer>
 </body>
 </html>
