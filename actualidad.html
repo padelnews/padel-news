@@ -20,8 +20,12 @@
         nav a:hover, nav a.active { background: #00d4ff; color: #000; }
         main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
         .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: #00d4ff; margin-bottom: 1.5rem; text-align: center; }
-        .news-card { background: rgba(26, 26, 46, 0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-align: center; }
-        .news-card h3 { color: #00d4ff; margin-bottom: 1rem; }
+        .article-card { background: rgba(26, 26, 46, 0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: all 0.3s; cursor: pointer; }
+        .article-card:hover { border-color: #00d4ff; transform: translateY(-2px); }
+        .article-card a { color: #fff; text-decoration: none; display: block; }
+        .article-card h3 { color: #00d4ff; margin-bottom: 0.8rem; }
+        .article-card p { color: #ccc; margin-bottom: 0.5rem; }
+        .article-meta { font-size: 0.85rem; color: #888; }
         footer { text-align: center; padding: 2rem; color: #666; }
     </style>
 </head>
@@ -43,19 +47,43 @@
     <main>
         <h2 class="section-title">📰 Últimas Noticias</h2>
         
-        <div class="news-card">
-            <span style="background: rgba(191,0,255,0.3); padding: 0.3rem 1rem; border-radius: 12px;">🏆 CAMPEONES</span>
-            <h3>Brussels P2: Lebrón y Augsburger se proclaman campeones</h3>
-            <p>Victoria memorable con marcador de <strong>2-6, 6-3, 6-3</strong> contra Tapia/Coello. Torneo celebrado en Bruselas, Bélgica (19-26 Abril 2026).</p>
+        <div class="article-card">
+            <a href="articles/article-brussels-p2-2026.html">
+                <span style="background: rgba(191,0,255,0.3); padding: 0.3rem 1rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem;">🏆 BRUSSELS P2</span>
+                <h3>Lebrón y Augsburger se proclaman campeones en Bruselas</h3>
+                <p>Victoria memorable con marcador de <strong>2-6, 6-3, 6-3</strong> contra Tapia/Coello.</p>
+                <div class="article-meta">📅 19-26 Abril 2026 • 📍 Bruselas, Bélgica</div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="articles/article-newgiza-2026.html">
+                <span style="background: rgba(0,212,255,0.3); padding: 0.3rem 1rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem;">🏆 NEWGIZA P2</span>
+                <h3>Galán y Chingotto dominan en El Gouna</h3>
+                <p>Triunfo con <strong>6-4, 6-1</strong> ante Stupaczuk/Yanguas.</p>
+                <div class="article-meta">📅 13-18 Abril 2026 • 📍 El Gouna, Egipto</div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="articles/article-asunción-p2-2026.html">
+                <span style="background: rgba(0,255,136,0.3); padding: 0.3rem 1rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem;">🎾 PRÓXIMO</span>
+                <h3>Asunción P2: Todo listo para el próximo torneo</h3>
+                <p>El torneo se celebrará del 10 al 17 de Mayo en Asunción, Paraguay.</p>
+                <div class="article-meta">📅 10-17 Mayo 2026 • 📍 Asunción, Paraguay</div>
+            </a>
         </div>
         
-        <div class="news-card">
-            <span style="background: rgba(191,0,255,0.3); padding: 0.3rem 1rem; border-radius: 12px;">🏆 CAMPEONES</span>
-            <h3>NewGiza P2: Galán y Chingotto champions</h3>
-            <p>Dominaron con <strong>6-4, 6-1</strong> a Stupaczuk/Yanguas. Torneo en El Gouna, Egipto (13-18 Abril 2026).</p>
+        <div class="article-card">
+            <a href="articles/article-tapia-coello-ranking.html">
+                <span style="background: rgba(255,215,0,0.3); padding: 0.3rem 1rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem;">🏅 RANKINGS</span>
+                <h3>Tapia y Coello ascienden en el ranking mundial</h3>
+                <p>Análisis de la nueva clasificación mundial tras los últimos torneos.</p>
+                <div class="article-meta">📅 Actualizado Abril 2026</div>
+            </a>
         </div>
-        
-        <p style="text-align: center; color: #666;">Más noticias pronto. ¡Síguenos!</p>
+
+        <p style="text-align: center; color: #666; margin-top: 2rem;">Más noticias pronto. ¡Síguenos!</p>
     </main>
     <footer>
         <p>© 2026 PadelNews Pro</p>
