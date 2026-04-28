@@ -3,46 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padel News Pro | Premier Padel Tour 2026 - Noticias y Resultados</title>
-    <meta name="description" content="Tu portal profesional del Premier Padel Tour 2026. Noticias actualizadas, resultados en vivo, rankings y próxima fecha del circuito. Todo sobre pádel profesional.">
-    <meta name="keywords" content="pádel, padel, premier padel, resultados padel, rankings padel, noticias padel, torneos padel">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://padel-news.es/">
-    <meta property="og:title" content="Padel News Pro | Premier Padel Tour 2026">
-    <meta property="og:description" content="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://padel-news.es/">
-    <meta property="og:site_name" content="PadelNews">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎾</text></svg>">
+    <title>Padel News Pro | Premier Padel Tour 2026</title>
+    <meta name="description" content="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.">
     <link rel="stylesheet" href="css/style-futuristic.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --accent: #bf00ff;
+            --bg-dark: #0a0a0f;
+            --glass-bg: rgba(26, 26, 46, 0.8);
+            --glass-border: rgba(0, 212, 255, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg-dark); color: #fff; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 1.5rem 2rem; border-bottom: 2px solid var(--primary); }
+        header h1 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .live-badge { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; margin-top: 1rem; }
+        nav { background: rgba(0,0,0,0.5); padding: 1rem 2rem; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s; }
+        nav a:hover, nav a.active { background: var(--primary); color: #000; }
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+        .results-table { width: 100%; border-collapse: collapse; background: var(--glass-bg); border-radius: 12px; overflow: hidden; }
+        .results-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem; text-align: left; font-weight: 600; }
+        .results-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .results-table tr:hover { background: rgba(0, 212, 255, 0.1); }
+        .winner { color: var(--primary); font-weight: 600; }
+        .tournament-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; }
+        .score { font-weight: 600; }
+        footer { text-align: center; padding: 2rem; color: #666; margin-top: 3rem; }
+        @media (max-width: 768px) { .section-title { font-size: 1.2rem; } nav { gap: 1rem; } main { padding: 1rem; } }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="header-branding">
-                <h1>🎾 <span>Padel News</span> Pro</h1>
-            </div>
-            <p class="tagline">Tu portal profesional del Premier Padel Tour 2026</p>
-            <span class="live-badge">🎾 PRÓXIMO - Asunción P2 (10-17 Mayo 2026)</span>
-        </div>
+        <h1>🎾 Padel News Pro</h1>
+        <p class="tagline">Tu portal profesional del Premier Padel Tour 2026</p>
+        <span class="live-badge">🎾 PRÓXIMO - Asunción P2 (10-17 Mayo 2026)</span>
     </header>
     <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="actualidad.html">Actualidad</a></li>
-                <li><a href="resultados.html">Resultados</a></li>
-                <li><a href="torneos.html">Torneos</a></li>
-                <li><a href="chollos.html">Chollos 🏷️</a></li>
-            </ul>
-        </div>
+        <a href="index.html">Inicio</a>
+        <a href="actualidad.html">Actualidad</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="torneos.html">Torneos</a>
+        <a href="chollos.html">Chollos 🏷️</a>
     </nav>
     <main>
+
+
         <!-- Hero Section -->
         <section class="hero" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(191, 0, 255, 0.1)); padding: 3rem; border-radius: 20px; margin-bottom: 3rem; border: 1px solid var(--glass-border);">
-            <div class="hero-content" style="text-align: center;">
+            <div class="hero-content">
                 <h2 style="font-family: 'Orbitron', sans-serif; font-size: 2rem; margin-bottom: 1rem;">
                     Asunción P2 - UPCOMING
                 </h2>
@@ -67,6 +79,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        
                         <tr>
                             <td><span class="tournament-badge">🇧🇪 Brussels P2</span></td>
                             <td class="winner">🇪🇸🇦🇷 Lebrón / Augsburger</td>
@@ -88,7 +101,8 @@
         <!-- Upcoming Tournaments -->
         <section style="margin-bottom: 3rem;">
             <h2 class="section-title">📅 Próximos Torneos</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="calendar-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                
                 <div class="tournament-card upcoming">
                     <div class="tournament-header">
                         <span class="status-badge status-upcoming">PRÓXIMO</span>
@@ -105,49 +119,15 @@
                     </div>
                     <p class="tournament-date">11-17 Mayo 2026</p>
                     <p class="tournament-location">Buenos Aires, Argentina</p>
-                    <p class="tournament-prize">💰 €250,000</p>
-                </div>
-                <div class="tournament-card upcoming">
-                    <div class="tournament-header">
-                        <span class="status-badge status-upcoming">PRÓXIMO</span>
-                        <h4>🇪🇸 Mallorca P2</h4>
-                    </div>
-                    <p class="tournament-date">18-24 Mayo 2026</p>
-                    <p class="tournament-location">Mallorca, España</p>
                     <p class="tournament-prize">💰 €200,000</p>
                 </div>
             </div>
+            <a href="torneos.html" class="btn" style="margin-top: 1rem; display: inline-block; color: var(--primary);">Ver Calendario Completo →</a>
         </section>
 
-        <!-- Rankings Preview -->
-        <section style="margin-bottom: 3rem;">
-            <h2 class="section-title">🏅 Top 5 World Rankings</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                <div class="ranking-card" style="background: var(--glass-bg); padding: 1.5rem; border-radius: 12px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🥇</div>
-                    <div style="color: var(--primary); font-weight: 700;">🇪🇸 Arturo Coello</div>
-                    <div style="opacity: 0.7;">12,450 pts</div>
-                </div>
-                <div class="ranking-card" style="background: var(--glass-bg); padding: 1.5rem; border-radius: 12px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🥈</div>
-                    <div style="color: var(--primary); font-weight: 700;">🇦🇷 Alejandro Galán</div>
-                    <div style="opacity: 0.7;">11,820 pts</div>
-                </div>
-                <div class="ranking-card" style="background: var(--glass-bg); padding: 1.5rem; border-radius: 12px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🥉</div>
-                    <div style="color: var(--primary); font-weight: 700;">🇪🇸 Fernando Belasteguí</div>
-                    <div style="opacity: 0.7;">10,980 pts</div>
-                </div>
-            </div>
-            <a href="rankings.html" class="btn" style="margin-top: 1rem; display: inline-block; color: var(--primary);">Ver Rankings Completos →</a>
-        </section>
     </main>
     <footer>
-        <p>© 2026 PadelNews Pro - Tu portal del premier Padel Tour</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-            <a href="https://padel-news.es" style="color: var(--primary);">padel-news.es</a> | 
-            Contacto: info@padel-news.es
-        </p>
+        <p>© 2026 Padel News Pro | Actualizado: 28/04/2026 11:13</p>
     </footer>
 </body>
 </html>
