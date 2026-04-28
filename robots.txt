@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://padelnews.github.io/padel-news/sitemap.xml
