@@ -20,13 +20,14 @@
         nav a:hover, nav a.active { background: #00d4ff; color: #000; }
         main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
         .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: #00d4ff; margin-bottom: 1.5rem; text-align: center; }
-        .article-card { background: rgba(26, 26, 46, 0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: all 0.3s; cursor: pointer; }
-        .article-card:hover { border-color: #00d4ff; transform: translateY(-2px); }
-        .article-card a { color: #fff; text-decoration: none; display: block; }
-        .article-card h3 { color: #00d4ff; margin-bottom: 0.8rem; }
-        .article-card p { color: #ccc; margin-bottom: 0.5rem; }
-        .article-meta { font-size: 0.85rem; color: #888; }
+        .results-table { width: 100%; border-collapse: collapse; background: rgba(26, 26, 46, 0.8); border-radius: 12px; overflow: hidden; }
+        .results-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem; text-align: left; font-weight: 600; }
+        .results-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .winner { color: #00d4ff; font-weight: 600; }
+        .tournament-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; }
+        .score { font-weight: 600; }
         footer { text-align: center; padding: 2rem; color: #666; }
+        @media (max-width: 768px) { .section-title { font-size: 1.2rem; } }
     </style>
 </head>
 <body>
@@ -38,55 +39,48 @@
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="actualidad.html" class="active">Actualidad</a></li>
+            <li><a href="actualidad.html">Actualidad</a></li>
             <li><a href="resultados.html">Resultados</a></li>
             <li><a href="torneos.html">Torneos</a></li>
             <li><a href="chollos.html">Chollos 🏷️</a></li>
         </ul>
     </nav>
     <main>
+
+
         <h2 class="section-title">📰 Últimas Noticias</h2>
         
-        <div class="article-card">
-            <a href="articles/article-brussels-p2-2026.html">
-                <span style="background: rgba(191,0,255,0.3); padding: 0.3rem 1rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem;">🏆 BRUSSELS P2</span>
-                <h3>Lebrón y Augsburger se proclaman campeones en Bruselas</h3>
-                <p>Victoria memorable con marcador de <strong>2-6, 6-3, 6-3</strong> contra Tapia/Coello.</p>
-                <div class="article-meta">📅 19-26 Abril 2026 • 📍 Bruselas, Bélgica</div>
-            </a>
-        </div>
-
-        <div class="article-card">
-            <a href="articles/article-newgiza-2026.html">
-                <span style="background: rgba(0,212,255,0.3); padding: 0.3rem 1rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem;">🏆 NEWGIZA P2</span>
-                <h3>Galán y Chingotto dominan en El Gouna</h3>
-                <p>Triunfo con <strong>6-4, 6-1</strong> ante Stupaczuk/Yanguas.</p>
-                <div class="article-meta">📅 13-18 Abril 2026 • 📍 El Gouna, Egipto</div>
-            </a>
-        </div>
-
-        <div class="article-card">
-            <a href="articles/article-asunción-p2-2026.html">
-                <span style="background: rgba(0,255,136,0.3); padding: 0.3rem 1rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem;">🎾 PRÓXIMO</span>
-                <h3>Asunción P2: Todo listo para el próximo torneo</h3>
-                <p>El torneo se celebrará del 10 al 17 de Mayo en Asunción, Paraguay.</p>
-                <div class="article-meta">📅 10-17 Mayo 2026 • 📍 Asunción, Paraguay</div>
-            </a>
-        </div>
         
-        <div class="article-card">
-            <a href="articles/article-tapia-coello-ranking.html">
-                <span style="background: rgba(255,215,0,0.3); padding: 0.3rem 1rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem;">🏅 RANKINGS</span>
-                <h3>Tapia y Coello ascienden en el ranking mundial</h3>
-                <p>Análisis de la nueva clasificación mundial tras los últimos torneos.</p>
-                <div class="article-meta">📅 Actualizado Abril 2026</div>
-            </a>
-        </div>
+        <!-- Featured Article: Latest Tournament -->
+        <article class="news-card featured" style="margin-bottom: 3rem;">
+            <div class="news-card-image">
+                <img src="images/brussels-tournament-cover.jpg" alt="Brussels P2" onerror="this.src='images/banners/tournament-banner.jpg'">
+                <span class="news-card-category">🏆 CAMPEONES</span>
+            </div>
+            <div class="news-card-content">
+                <h3>
+                    <a href="articles/article-brussels-p2-2026.html">Brussels P2: Lebrón y Augsburger se proclaman campeones</a>
+                </h3>
+                <p>
+                    <strong>Lebrón y Augsburger</strong> han logrado una victoria memorable en el Brussels P2 2026, 
+                    derrotando a sus rivales con un marcador de 2-6, 6-3, 6-3. 
+                    El torneo se celebró en Bruselas, Bélgica del 19-26 Abril 2026.
+                </p>
+                <div class="news-card-meta">
+                    <span class="news-card-date">📅 19-26 Abril 2026</span>
+                    <span class="news-source">📍 Bruselas, Bélgica</span>
+                </div>
+                <a href="articles/article-brussels-p2-2026.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Leer resumen completo →</a>
+            </div>
+        </article>
+        
+        <p style="text-align: center; color: #666; padding: 2rem;">
+            Más noticias disponibles pronto. Sigue atento a las actualizaciones del Premier Padel Tour 2026.
+        </p>
 
-        <p style="text-align: center; color: #666; margin-top: 2rem;">Más noticias pronto. ¡Síguenos!</p>
     </main>
     <footer>
-        <p>© 2026 PadelNews Pro</p>
+        <p>© 2026 Padel News Pro | Actualizado: 28/04/2026 16:14</p>
     </footer>
 </body>
 </html>

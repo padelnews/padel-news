@@ -20,8 +20,14 @@
         nav a:hover, nav a.active { background: #00d4ff; color: #000; }
         main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
         .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: #00d4ff; margin-bottom: 1.5rem; text-align: center; }
-        .card { background: rgba(26, 26, 46, 0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; text-align: center; margin-bottom: 1rem; }
+        .results-table { width: 100%; border-collapse: collapse; background: rgba(26, 26, 46, 0.8); border-radius: 12px; overflow: hidden; }
+        .results-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem; text-align: left; font-weight: 600; }
+        .results-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .winner { color: #00d4ff; font-weight: 600; }
+        .tournament-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; }
+        .score { font-weight: 600; }
         footer { text-align: center; padding: 2rem; color: #666; }
+        @media (max-width: 768px) { .section-title { font-size: 1.2rem; } }
     </style>
 </head>
 <body>
@@ -34,36 +40,103 @@
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="actualidad.html">Actualidad</a></li>
-            <li><a href="resultados.html" class="active">Resultados</a></li>
+            <li><a href="resultados.html">Resultados</a></li>
             <li><a href="torneos.html">Torneos</a></li>
             <li><a href="chollos.html">Chollos 🏷️</a></li>
         </ul>
     </nav>
     <main>
+
+
         <h2 class="section-title">🏆 Resultados Qatar Airways Premier Padel Tour 2026</h2>
         
-        <div class="card" style="background: linear-gradient(135deg, rgba(0,255,136,0.15), rgba(0,212,255,0.15)); border: 1px solid rgba(0,255,136,0.3);">
-            <span style="background: rgba(0,255,136,0.2); color: #00ff88; padding: 0.3rem 1rem; border-radius: 12px;">🎾 PRÓXIMO</span>
-            <h3 style="margin: 1rem 0;">Asunción P2</h3>
-            <p>📅 10-17 Mayo 2026 • Asunción, Paraguay</p>
-        </div>
+        
+        <!-- PRÓXIMO TORNEO -->
+        <section style="margin-bottom: 3rem;">
+            <div style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.15), rgba(0, 212, 255, 0.15)); border: 1px solid rgba(0, 255, 136, 0.3); padding: 2.5rem; border-radius: 20px; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <span class="badge" style="background: rgba(0, 255, 136, 0.2); color: #00ff88;">🎾 PRÓXIMO</span>
+                        <h3 style="font-size: 1.8rem; margin: 0.5rem 0;">Asunción P2</h3>
+                        <p style="opacity: 0.9;">📅 10-17 Mayo 2026 • Asunción, Paraguay</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Estado</p>
+                        <p style="font-size: 1.3rem; font-weight: 700;">⏳ PENDIENTE</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Brussels P2 -->
+        <section style="margin-bottom: 3rem;">
+            <div style="background: rgba(26, 26, 46, 0.8); border: 1px solid var(--glass-border); padding: 2rem; border-radius: 16px; margin-bottom: 1.5rem;">
+                <span class="badge" style="background: rgba(100,100,100,0.3); color: #ccc;">✅ Finalizado</span>
+                <h3 style="font-size: 1.5rem; margin: 0.5rem 0; color: var(--primary);">🇧🇪 Brussels P2</h3>
+                <p style="opacity: 0.8;">📅 19-26 Abril 2026 • Bruselas, Bélgica</p>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, rgba(191, 0, 255, 0.3), rgba(0, 212, 255, 0.3)); border: 2px solid var(--accent); border-radius: 16px; padding: 2rem; text-align: center; margin: 1.5rem 0;">
+                <h3 style="color: white; margin-bottom: 1rem;">🏆 CAMPEONES</h3>
+                <p style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">Lebrón / Augsburger</p>
+                <p style="font-size: 1.5rem; color: white; margin: 0.5rem 0;">2-6, 6-3, 6-3</p>
+                <p style="color: #888;">vs Tapia / Coello</p>
+            </div>
+            
+            <h4 style="color: var(--primary); margin: 2rem 0 1rem;">📊 Cuadro</h4>
+            <div class="table-scroll-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr><th>Ronda</th><th>Pareja 1</th><th>Resultado</th><th>Pareja 2</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Final</strong></td>
+                            <td class="winner">Lebrón / Augsburger</td>
+                            <td>2-6, 6-3, 6-3</td>
+                            <td>Tapia / Coello</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- NewGiza P2 -->
+        <section style="margin-bottom: 3rem;">
+            <div style="background: rgba(26, 26, 46, 0.8); border: 1px solid var(--glass-border); padding: 2rem; border-radius: 16px; margin-bottom: 1.5rem;">
+                <span class="badge" style="background: rgba(100,100,100,0.3); color: #ccc;">✅ Finalizado</span>
+                <h3 style="font-size: 1.5rem; margin: 0.5rem 0; color: var(--primary);">🇪🇬 NewGiza P2</h3>
+                <p style="opacity: 0.8;">📅 13-18 Abril 2026 • El Gouna, Egipto</p>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, rgba(191, 0, 255, 0.3), rgba(0, 212, 255, 0.3)); border: 2px solid var(--accent); border-radius: 16px; padding: 2rem; text-align: center; margin: 1.5rem 0;">
+                <h3 style="color: white; margin-bottom: 1rem;">🏆 CAMPEONES</h3>
+                <p style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">Galán / Chingotto</p>
+                <p style="font-size: 1.5rem; color: white; margin: 0.5rem 0;">6-4, 6-1</p>
+                <p style="color: #888;">vs Stupaczuk / Yanguas</p>
+            </div>
+            
+            <h4 style="color: var(--primary); margin: 2rem 0 1rem;">📊 Cuadro</h4>
+            <div class="table-scroll-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr><th>Ronda</th><th>Pareja 1</th><th>Resultado</th><th>Pareja 2</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Final</strong></td>
+                            <td class="winner">Galán / Chingotto</td>
+                            <td>6-4, 6-1</td>
+                            <td>Stupaczuk / Yanguas</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <div class="card">
-            <h3>🇧🇪 Brussels P2</h3>
-            <p style="color: #00d4ff; font-size: 1.3rem;">🏆 Lebrón / Augsburger</p>
-            <p>2-6, 6-3, 6-3</p>
-            <p style="color: #888;">vs Tapia / Coello</p>
-        </div>
-
-        <div class="card">
-            <h3>🇪🇬 NewGiza P2</h3>
-            <p style="color: #00d4ff; font-size: 1.3rem;">🏆 Galán / Chingotto</p>
-            <p>6-4, 6-1</p>
-            <p style="color: #888;">vs Stupaczuk / Yanguas</p>
-        </div>
     </main>
     <footer>
-        <p>© 2026 PadelNews Pro</p>
+        <p>© 2026 Padel News Pro | Actualizado: 28/04/2026 16:14</p>
     </footer>
 </body>
 </html>

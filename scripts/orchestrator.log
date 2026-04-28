@@ -16707,3 +16707,2735 @@
 >>> Running check_tournament_state: Interval-based run (5 min)
 [2026-04-28 12:44:32]     Script: dynamic_flow.py
 [2026-04-28 12:44:32]     Description: Check tournament state and transition if needed
+[2026-04-28 12:44:34]     ✓ SUCCESS
+[2026-04-28 12:44:34]     Skipping index_updater: Hour 12 not in [8, 20]
+[2026-04-28 12:44:34]     Skipping torneos_updater: Hour 12 not in [9]
+[2026-04-28 12:44:34]     Skipping rankings_updater: Hour 12 not in [20]
+[2026-04-28 12:44:34] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 12:44:34]     Script: fetch_chollos.py
+[2026-04-28 12:44:34]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 12:44:34]     ✓ SUCCESS
+[2026-04-28 12:44:34]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 12:44:34]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 12:44:34]     Skipping actualidad_updater: Ran 292 min ago, interval is 360
+[2026-04-28 12:44:34]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 12:44:34] 
+============================================================
+[2026-04-28 12:44:34] SUMMARY
+[2026-04-28 12:44:34] ============================================================
+[2026-04-28 12:44:34] Agents run: 2
+[2026-04-28 12:44:34]   - check_tournament_state
+[2026-04-28 12:44:34]   - chollos_fetcher
+[2026-04-28 12:44:34] ============================================================
+[2026-04-28 12:44:34] ORCHESTRATOR COMPLETED
+[2026-04-28 12:44:34] ============================================================
+[2026-04-28 12:44:32] ============================================================
+[2026-04-28 12:44:32] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 12:44:32] ============================================================
+[2026-04-28 12:44:32] Current time: 2026-04-28 12:44:32
+[2026-04-28 12:44:32] Tournament status: upcoming
+[2026-04-28 12:44:32] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 12:44:32]     Script: dynamic_flow.py
+[2026-04-28 12:44:32]     Description: Check tournament state and transition if needed
+[2026-04-28 12:44:34]     ✓ SUCCESS
+[2026-04-28 12:44:34]     Skipping index_updater: Hour 12 not in [8, 20]
+[2026-04-28 12:44:34]     Skipping torneos_updater: Hour 12 not in [9]
+[2026-04-28 12:44:34]     Skipping rankings_updater: Hour 12 not in [20]
+[2026-04-28 12:44:34] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 12:44:34]     Script: fetch_chollos.py
+[2026-04-28 12:44:34]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 12:44:34]     ✓ SUCCESS
+[2026-04-28 12:44:34]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 12:44:34]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 12:44:34]     Skipping actualidad_updater: Ran 292 min ago, interval is 360
+[2026-04-28 12:44:34]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 12:44:34] 
+============================================================
+[2026-04-28 12:44:34] SUMMARY
+[2026-04-28 12:44:34] ============================================================
+[2026-04-28 12:44:34] Agents run: 2
+[2026-04-28 12:44:34]   - check_tournament_state
+[2026-04-28 12:44:34]   - chollos_fetcher
+[2026-04-28 12:44:34] ============================================================
+[2026-04-28 12:44:34] ORCHESTRATOR COMPLETED
+[2026-04-28 12:44:34] ============================================================
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] Current time: 2026-04-28 12:49:34
+[2026-04-28 12:49:34] Tournament status: upcoming
+[2026-04-28 12:49:34] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 12:49:34]     Script: dynamic_flow.py
+[2026-04-28 12:49:34]     Description: Check tournament state and transition if needed
+[2026-04-28 12:49:34]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 12:49:34]     Skipping index_updater: Hour 12 not in [8, 20]
+[2026-04-28 12:49:34]     Skipping torneos_updater: Hour 12 not in [9]
+[2026-04-28 12:49:34]     Skipping rankings_updater: Hour 12 not in [20]
+[2026-04-28 12:49:34]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 12:49:34]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 12:49:34]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 12:49:34]     Skipping actualidad_updater: Ran 297 min ago, interval is 360
+[2026-04-28 12:49:34]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 12:49:34] 
+============================================================
+[2026-04-28 12:49:34] SUMMARY
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] Agents run: 0
+[2026-04-28 12:49:34]   (none - all agents within their interval)
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] ORCHESTRATOR COMPLETED
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] Current time: 2026-04-28 12:49:34
+[2026-04-28 12:49:34] Tournament status: upcoming
+[2026-04-28 12:49:34] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 12:49:34]     Script: dynamic_flow.py
+[2026-04-28 12:49:34]     Description: Check tournament state and transition if needed
+[2026-04-28 12:49:34]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 12:49:34]     Skipping index_updater: Hour 12 not in [8, 20]
+[2026-04-28 12:49:34]     Skipping torneos_updater: Hour 12 not in [9]
+[2026-04-28 12:49:34]     Skipping rankings_updater: Hour 12 not in [20]
+[2026-04-28 12:49:34]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 12:49:34]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 12:49:34]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 12:49:34]     Skipping actualidad_updater: Ran 297 min ago, interval is 360
+[2026-04-28 12:49:34]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 12:49:34] 
+============================================================
+[2026-04-28 12:49:34] SUMMARY
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] Agents run: 0
+[2026-04-28 12:49:34]   (none - all agents within their interval)
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:49:34] ORCHESTRATOR COMPLETED
+[2026-04-28 12:49:34] ============================================================
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] Current time: 2026-04-28 12:54:35
+[2026-04-28 12:54:35] Tournament status: upcoming
+[2026-04-28 12:54:35] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 12:54:35]     Script: dynamic_flow.py
+[2026-04-28 12:54:35]     Description: Check tournament state and transition if needed
+[2026-04-28 12:54:35]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 12:54:35]     Skipping index_updater: Hour 12 not in [8, 20]
+[2026-04-28 12:54:35]     Skipping torneos_updater: Hour 12 not in [9]
+[2026-04-28 12:54:35]     Skipping rankings_updater: Hour 12 not in [20]
+[2026-04-28 12:54:35] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 12:54:35]     Script: fetch_chollos.py
+[2026-04-28 12:54:35]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 12:54:35]     ✓ SUCCESS
+[2026-04-28 12:54:35] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 12:54:35]     Script: tournament_watcher.py
+[2026-04-28 12:54:35]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 12:54:35]     ✓ SUCCESS
+[2026-04-28 12:54:35]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 12:54:35]     Skipping actualidad_updater: Ran 302 min ago, interval is 360
+[2026-04-28 12:54:35]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 12:54:35] 
+============================================================
+[2026-04-28 12:54:35] SUMMARY
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] Agents run: 2
+[2026-04-28 12:54:35]   - chollos_fetcher
+[2026-04-28 12:54:35]   - tournament_watcher
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] ORCHESTRATOR COMPLETED
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] Current time: 2026-04-28 12:54:35
+[2026-04-28 12:54:35] Tournament status: upcoming
+[2026-04-28 12:54:35] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 12:54:35]     Script: dynamic_flow.py
+[2026-04-28 12:54:35]     Description: Check tournament state and transition if needed
+[2026-04-28 12:54:35]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 12:54:35]     Skipping index_updater: Hour 12 not in [8, 20]
+[2026-04-28 12:54:35]     Skipping torneos_updater: Hour 12 not in [9]
+[2026-04-28 12:54:35]     Skipping rankings_updater: Hour 12 not in [20]
+[2026-04-28 12:54:35] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 12:54:35]     Script: fetch_chollos.py
+[2026-04-28 12:54:35]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 12:54:35]     ✓ SUCCESS
+[2026-04-28 12:54:35] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 12:54:35]     Script: tournament_watcher.py
+[2026-04-28 12:54:35]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 12:54:35]     ✓ SUCCESS
+[2026-04-28 12:54:35]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 12:54:35]     Skipping actualidad_updater: Ran 302 min ago, interval is 360
+[2026-04-28 12:54:35]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 12:54:35] 
+============================================================
+[2026-04-28 12:54:35] SUMMARY
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] Agents run: 2
+[2026-04-28 12:54:35]   - chollos_fetcher
+[2026-04-28 12:54:35]   - tournament_watcher
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:54:35] ORCHESTRATOR COMPLETED
+[2026-04-28 12:54:35] ============================================================
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] Current time: 2026-04-28 12:59:35
+[2026-04-28 12:59:35] Tournament status: upcoming
+[2026-04-28 12:59:35] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 12:59:35]     Script: dynamic_flow.py
+[2026-04-28 12:59:35]     Description: Check tournament state and transition if needed
+[2026-04-28 12:59:35]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 12:59:35]     Skipping index_updater: Hour 12 not in [8, 20]
+[2026-04-28 12:59:35]     Skipping torneos_updater: Hour 12 not in [9]
+[2026-04-28 12:59:35]     Skipping rankings_updater: Hour 12 not in [20]
+[2026-04-28 12:59:35]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 12:59:35]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 12:59:35]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 12:59:35]     Skipping actualidad_updater: Ran 307 min ago, interval is 360
+[2026-04-28 12:59:35]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 12:59:35] 
+============================================================
+[2026-04-28 12:59:35] SUMMARY
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] Agents run: 0
+[2026-04-28 12:59:35]   (none - all agents within their interval)
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] ORCHESTRATOR COMPLETED
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] Current time: 2026-04-28 12:59:35
+[2026-04-28 12:59:35] Tournament status: upcoming
+[2026-04-28 12:59:35] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 12:59:35]     Script: dynamic_flow.py
+[2026-04-28 12:59:35]     Description: Check tournament state and transition if needed
+[2026-04-28 12:59:35]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 12:59:35]     Skipping index_updater: Hour 12 not in [8, 20]
+[2026-04-28 12:59:35]     Skipping torneos_updater: Hour 12 not in [9]
+[2026-04-28 12:59:35]     Skipping rankings_updater: Hour 12 not in [20]
+[2026-04-28 12:59:35]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 12:59:35]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 12:59:35]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 12:59:35]     Skipping actualidad_updater: Ran 307 min ago, interval is 360
+[2026-04-28 12:59:35]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 12:59:35] 
+============================================================
+[2026-04-28 12:59:35] SUMMARY
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] Agents run: 0
+[2026-04-28 12:59:35]   (none - all agents within their interval)
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 12:59:35] ORCHESTRATOR COMPLETED
+[2026-04-28 12:59:35] ============================================================
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] Current time: 2026-04-28 13:04:36
+[2026-04-28 13:04:36] Tournament status: upcoming
+[2026-04-28 13:04:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:04:36]     Script: dynamic_flow.py
+[2026-04-28 13:04:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:04:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:04:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:04:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:04:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:04:36] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:04:36]     Script: fetch_chollos.py
+[2026-04-28 13:04:36]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:04:36]     ✓ SUCCESS
+[2026-04-28 13:04:36]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 13:04:36]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:04:36]     Skipping actualidad_updater: Ran 312 min ago, interval is 360
+[2026-04-28 13:04:36]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:04:36] 
+============================================================
+[2026-04-28 13:04:36] SUMMARY
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] Agents run: 1
+[2026-04-28 13:04:36]   - chollos_fetcher
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] ORCHESTRATOR COMPLETED
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] Current time: 2026-04-28 13:04:36
+[2026-04-28 13:04:36] Tournament status: upcoming
+[2026-04-28 13:04:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:04:36]     Script: dynamic_flow.py
+[2026-04-28 13:04:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:04:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:04:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:04:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:04:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:04:36] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:04:36]     Script: fetch_chollos.py
+[2026-04-28 13:04:36]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:04:36]     ✓ SUCCESS
+[2026-04-28 13:04:36]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 13:04:36]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:04:36]     Skipping actualidad_updater: Ran 312 min ago, interval is 360
+[2026-04-28 13:04:36]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:04:36] 
+============================================================
+[2026-04-28 13:04:36] SUMMARY
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] Agents run: 1
+[2026-04-28 13:04:36]   - chollos_fetcher
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:04:36] ORCHESTRATOR COMPLETED
+[2026-04-28 13:04:36] ============================================================
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] Current time: 2026-04-28 13:09:36
+[2026-04-28 13:09:36] Tournament status: upcoming
+[2026-04-28 13:09:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:09:36]     Script: dynamic_flow.py
+[2026-04-28 13:09:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:09:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:09:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:09:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:09:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:09:36]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:09:36]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 13:09:36]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:09:36]     Skipping actualidad_updater: Ran 317 min ago, interval is 360
+[2026-04-28 13:09:36]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:09:36] 
+============================================================
+[2026-04-28 13:09:36] SUMMARY
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] Agents run: 0
+[2026-04-28 13:09:36]   (none - all agents within their interval)
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] ORCHESTRATOR COMPLETED
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] Current time: 2026-04-28 13:09:36
+[2026-04-28 13:09:36] Tournament status: upcoming
+[2026-04-28 13:09:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:09:36]     Script: dynamic_flow.py
+[2026-04-28 13:09:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:09:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:09:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:09:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:09:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:09:36]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:09:36]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 13:09:36]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:09:36]     Skipping actualidad_updater: Ran 317 min ago, interval is 360
+[2026-04-28 13:09:36]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:09:36] 
+============================================================
+[2026-04-28 13:09:36] SUMMARY
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] Agents run: 0
+[2026-04-28 13:09:36]   (none - all agents within their interval)
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:09:36] ORCHESTRATOR COMPLETED
+[2026-04-28 13:09:36] ============================================================
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] Current time: 2026-04-28 13:14:36
+[2026-04-28 13:14:36] Tournament status: upcoming
+[2026-04-28 13:14:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:14:36]     Script: dynamic_flow.py
+[2026-04-28 13:14:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:14:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:14:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:14:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:14:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:14:36] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:14:36]     Script: fetch_chollos.py
+[2026-04-28 13:14:36]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:14:36]     ✓ SUCCESS
+[2026-04-28 13:14:36]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 13:14:36]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:14:36]     Skipping actualidad_updater: Ran 322 min ago, interval is 360
+[2026-04-28 13:14:36]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:14:36] 
+============================================================
+[2026-04-28 13:14:36] SUMMARY
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] Agents run: 1
+[2026-04-28 13:14:36]   - chollos_fetcher
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] ORCHESTRATOR COMPLETED
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] Current time: 2026-04-28 13:14:36
+[2026-04-28 13:14:36] Tournament status: upcoming
+[2026-04-28 13:14:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:14:36]     Script: dynamic_flow.py
+[2026-04-28 13:14:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:14:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:14:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:14:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:14:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:14:36] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:14:36]     Script: fetch_chollos.py
+[2026-04-28 13:14:36]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:14:36]     ✓ SUCCESS
+[2026-04-28 13:14:36]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 13:14:36]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:14:36]     Skipping actualidad_updater: Ran 322 min ago, interval is 360
+[2026-04-28 13:14:36]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:14:36] 
+============================================================
+[2026-04-28 13:14:36] SUMMARY
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] Agents run: 1
+[2026-04-28 13:14:36]   - chollos_fetcher
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:14:36] ORCHESTRATOR COMPLETED
+[2026-04-28 13:14:36] ============================================================
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] Current time: 2026-04-28 13:19:36
+[2026-04-28 13:19:36] Tournament status: upcoming
+[2026-04-28 13:19:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:19:36]     Script: dynamic_flow.py
+[2026-04-28 13:19:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:19:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:19:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:19:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:19:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:19:36]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:19:36]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 13:19:36]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:19:36]     Skipping actualidad_updater: Ran 327 min ago, interval is 360
+[2026-04-28 13:19:36]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:19:36] 
+============================================================
+[2026-04-28 13:19:36] SUMMARY
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] Agents run: 0
+[2026-04-28 13:19:36]   (none - all agents within their interval)
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] ORCHESTRATOR COMPLETED
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] Current time: 2026-04-28 13:19:36
+[2026-04-28 13:19:36] Tournament status: upcoming
+[2026-04-28 13:19:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:19:36]     Script: dynamic_flow.py
+[2026-04-28 13:19:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:19:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:19:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:19:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:19:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:19:36]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:19:36]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 13:19:36]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:19:36]     Skipping actualidad_updater: Ran 327 min ago, interval is 360
+[2026-04-28 13:19:36]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:19:36] 
+============================================================
+[2026-04-28 13:19:36] SUMMARY
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] Agents run: 0
+[2026-04-28 13:19:36]   (none - all agents within their interval)
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:19:36] ORCHESTRATOR COMPLETED
+[2026-04-28 13:19:36] ============================================================
+[2026-04-28 13:24:36] ============================================================
+[2026-04-28 13:24:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:24:36] ============================================================
+[2026-04-28 13:24:36] Current time: 2026-04-28 13:24:36
+[2026-04-28 13:24:36] Tournament status: upcoming
+[2026-04-28 13:24:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:24:36]     Script: dynamic_flow.py
+[2026-04-28 13:24:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:24:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:24:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:24:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:24:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:24:36] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:24:36]     Script: fetch_chollos.py
+[2026-04-28 13:24:36]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:24:36]     ✓ SUCCESS
+[2026-04-28 13:24:36] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 13:24:36]     Script: tournament_watcher.py
+[2026-04-28 13:24:36]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 13:24:37]     ✓ SUCCESS
+[2026-04-28 13:24:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:24:37]     Skipping actualidad_updater: Ran 332 min ago, interval is 360
+[2026-04-28 13:24:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:24:37] 
+============================================================
+[2026-04-28 13:24:37] SUMMARY
+[2026-04-28 13:24:37] ============================================================
+[2026-04-28 13:24:37] Agents run: 2
+[2026-04-28 13:24:37]   - chollos_fetcher
+[2026-04-28 13:24:37]   - tournament_watcher
+[2026-04-28 13:24:37] ============================================================
+[2026-04-28 13:24:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:24:37] ============================================================
+[2026-04-28 13:24:36] ============================================================
+[2026-04-28 13:24:36] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:24:36] ============================================================
+[2026-04-28 13:24:36] Current time: 2026-04-28 13:24:36
+[2026-04-28 13:24:36] Tournament status: upcoming
+[2026-04-28 13:24:36] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:24:36]     Script: dynamic_flow.py
+[2026-04-28 13:24:36]     Description: Check tournament state and transition if needed
+[2026-04-28 13:24:36]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:24:36]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:24:36]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:24:36]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:24:36] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:24:36]     Script: fetch_chollos.py
+[2026-04-28 13:24:36]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:24:36]     ✓ SUCCESS
+[2026-04-28 13:24:36] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 13:24:36]     Script: tournament_watcher.py
+[2026-04-28 13:24:36]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 13:24:37]     ✓ SUCCESS
+[2026-04-28 13:24:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:24:37]     Skipping actualidad_updater: Ran 332 min ago, interval is 360
+[2026-04-28 13:24:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:24:37] 
+============================================================
+[2026-04-28 13:24:37] SUMMARY
+[2026-04-28 13:24:37] ============================================================
+[2026-04-28 13:24:37] Agents run: 2
+[2026-04-28 13:24:37]   - chollos_fetcher
+[2026-04-28 13:24:37]   - tournament_watcher
+[2026-04-28 13:24:37] ============================================================
+[2026-04-28 13:24:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:24:37] ============================================================
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] Current time: 2026-04-28 13:29:37
+[2026-04-28 13:29:37] Tournament status: upcoming
+[2026-04-28 13:29:37] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:29:37]     Script: dynamic_flow.py
+[2026-04-28 13:29:37]     Description: Check tournament state and transition if needed
+[2026-04-28 13:29:37]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:29:37]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:29:37]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:29:37]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:29:37]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:29:37]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 13:29:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:29:37]     Skipping actualidad_updater: Ran 337 min ago, interval is 360
+[2026-04-28 13:29:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:29:37] 
+============================================================
+[2026-04-28 13:29:37] SUMMARY
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] Agents run: 0
+[2026-04-28 13:29:37]   (none - all agents within their interval)
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] Current time: 2026-04-28 13:29:37
+[2026-04-28 13:29:37] Tournament status: upcoming
+[2026-04-28 13:29:37] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:29:37]     Script: dynamic_flow.py
+[2026-04-28 13:29:37]     Description: Check tournament state and transition if needed
+[2026-04-28 13:29:37]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:29:37]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:29:37]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:29:37]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:29:37]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:29:37]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 13:29:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:29:37]     Skipping actualidad_updater: Ran 337 min ago, interval is 360
+[2026-04-28 13:29:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:29:37] 
+============================================================
+[2026-04-28 13:29:37] SUMMARY
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] Agents run: 0
+[2026-04-28 13:29:37]   (none - all agents within their interval)
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:29:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:29:37] ============================================================
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] Current time: 2026-04-28 13:34:37
+[2026-04-28 13:34:37] Tournament status: upcoming
+[2026-04-28 13:34:37] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:34:37]     Script: dynamic_flow.py
+[2026-04-28 13:34:37]     Description: Check tournament state and transition if needed
+[2026-04-28 13:34:37]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:34:37]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:34:37]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:34:37]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:34:37] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:34:37]     Script: fetch_chollos.py
+[2026-04-28 13:34:37]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:34:37]     ✓ SUCCESS
+[2026-04-28 13:34:37]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 13:34:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:34:37]     Skipping actualidad_updater: Ran 342 min ago, interval is 360
+[2026-04-28 13:34:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:34:37] 
+============================================================
+[2026-04-28 13:34:37] SUMMARY
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] Agents run: 1
+[2026-04-28 13:34:37]   - chollos_fetcher
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] Current time: 2026-04-28 13:34:37
+[2026-04-28 13:34:37] Tournament status: upcoming
+[2026-04-28 13:34:37] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:34:37]     Script: dynamic_flow.py
+[2026-04-28 13:34:37]     Description: Check tournament state and transition if needed
+[2026-04-28 13:34:37]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:34:37]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:34:37]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:34:37]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:34:37] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:34:37]     Script: fetch_chollos.py
+[2026-04-28 13:34:37]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:34:37]     ✓ SUCCESS
+[2026-04-28 13:34:37]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 13:34:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:34:37]     Skipping actualidad_updater: Ran 342 min ago, interval is 360
+[2026-04-28 13:34:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:34:37] 
+============================================================
+[2026-04-28 13:34:37] SUMMARY
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] Agents run: 1
+[2026-04-28 13:34:37]   - chollos_fetcher
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:34:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:34:37] ============================================================
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] Current time: 2026-04-28 13:39:37
+[2026-04-28 13:39:37] Tournament status: upcoming
+[2026-04-28 13:39:37] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:39:37]     Script: dynamic_flow.py
+[2026-04-28 13:39:37]     Description: Check tournament state and transition if needed
+[2026-04-28 13:39:37]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:39:37]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:39:37]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:39:37]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:39:37]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:39:37]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 13:39:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:39:37]     Skipping actualidad_updater: Ran 347 min ago, interval is 360
+[2026-04-28 13:39:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:39:37] 
+============================================================
+[2026-04-28 13:39:37] SUMMARY
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] Agents run: 0
+[2026-04-28 13:39:37]   (none - all agents within their interval)
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] Current time: 2026-04-28 13:39:37
+[2026-04-28 13:39:37] Tournament status: upcoming
+[2026-04-28 13:39:37] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:39:37]     Script: dynamic_flow.py
+[2026-04-28 13:39:37]     Description: Check tournament state and transition if needed
+[2026-04-28 13:39:37]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:39:37]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:39:37]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:39:37]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:39:37]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:39:37]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 13:39:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:39:37]     Skipping actualidad_updater: Ran 347 min ago, interval is 360
+[2026-04-28 13:39:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:39:37] 
+============================================================
+[2026-04-28 13:39:37] SUMMARY
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] Agents run: 0
+[2026-04-28 13:39:37]   (none - all agents within their interval)
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:39:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:39:37] ============================================================
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] Current time: 2026-04-28 13:44:37
+[2026-04-28 13:44:37] Tournament status: upcoming
+[2026-04-28 13:44:37] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:44:37]     Script: dynamic_flow.py
+[2026-04-28 13:44:37]     Description: Check tournament state and transition if needed
+[2026-04-28 13:44:37]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:44:37]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:44:37]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:44:37]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:44:37] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:44:37]     Script: fetch_chollos.py
+[2026-04-28 13:44:37]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:44:37]     ✓ SUCCESS
+[2026-04-28 13:44:37]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 13:44:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:44:37]     Skipping actualidad_updater: Ran 352 min ago, interval is 360
+[2026-04-28 13:44:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:44:37] 
+============================================================
+[2026-04-28 13:44:37] SUMMARY
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] Agents run: 1
+[2026-04-28 13:44:37]   - chollos_fetcher
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] Current time: 2026-04-28 13:44:37
+[2026-04-28 13:44:37] Tournament status: upcoming
+[2026-04-28 13:44:37] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:44:37]     Script: dynamic_flow.py
+[2026-04-28 13:44:37]     Description: Check tournament state and transition if needed
+[2026-04-28 13:44:37]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:44:37]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:44:37]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:44:37]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:44:37] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:44:37]     Script: fetch_chollos.py
+[2026-04-28 13:44:37]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:44:37]     ✓ SUCCESS
+[2026-04-28 13:44:37]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 13:44:37]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:44:37]     Skipping actualidad_updater: Ran 352 min ago, interval is 360
+[2026-04-28 13:44:37]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:44:37] 
+============================================================
+[2026-04-28 13:44:37] SUMMARY
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] Agents run: 1
+[2026-04-28 13:44:37]   - chollos_fetcher
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:44:37] ORCHESTRATOR COMPLETED
+[2026-04-28 13:44:37] ============================================================
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] Current time: 2026-04-28 13:49:38
+[2026-04-28 13:49:38] Tournament status: upcoming
+[2026-04-28 13:49:38] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:49:38]     Script: dynamic_flow.py
+[2026-04-28 13:49:38]     Description: Check tournament state and transition if needed
+[2026-04-28 13:49:38]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:49:38]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:49:38]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:49:38]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:49:38]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:49:38]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 13:49:38]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:49:38]     Skipping actualidad_updater: Ran 357 min ago, interval is 360
+[2026-04-28 13:49:38]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:49:38] 
+============================================================
+[2026-04-28 13:49:38] SUMMARY
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] Agents run: 0
+[2026-04-28 13:49:38]   (none - all agents within their interval)
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] ORCHESTRATOR COMPLETED
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] Current time: 2026-04-28 13:49:38
+[2026-04-28 13:49:38] Tournament status: upcoming
+[2026-04-28 13:49:38] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:49:38]     Script: dynamic_flow.py
+[2026-04-28 13:49:38]     Description: Check tournament state and transition if needed
+[2026-04-28 13:49:38]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:49:38]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:49:38]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:49:38]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:49:38]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:49:38]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 13:49:38]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:49:38]     Skipping actualidad_updater: Ran 357 min ago, interval is 360
+[2026-04-28 13:49:38]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:49:38] 
+============================================================
+[2026-04-28 13:49:38] SUMMARY
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] Agents run: 0
+[2026-04-28 13:49:38]   (none - all agents within their interval)
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:49:38] ORCHESTRATOR COMPLETED
+[2026-04-28 13:49:38] ============================================================
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] Current time: 2026-04-28 13:54:38
+[2026-04-28 13:54:38] Tournament status: upcoming
+[2026-04-28 13:54:38] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:54:38]     Script: dynamic_flow.py
+[2026-04-28 13:54:38]     Description: Check tournament state and transition if needed
+[2026-04-28 13:54:38]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:54:38]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:54:38]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:54:38]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:54:38] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:54:38]     Script: fetch_chollos.py
+[2026-04-28 13:54:38]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:54:38]     ✓ SUCCESS
+[2026-04-28 13:54:38] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 13:54:38]     Script: tournament_watcher.py
+[2026-04-28 13:54:38]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 13:54:38]     ✓ SUCCESS
+[2026-04-28 13:54:38]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:54:38] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 13:54:38]     Script: update_actualidad.py
+[2026-04-28 13:54:38]     Description: Update news/actualidad section
+[2026-04-28 13:54:38]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 13:54:38]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:54:38] 
+============================================================
+[2026-04-28 13:54:38] SUMMARY
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] Agents run: 2
+[2026-04-28 13:54:38]   - chollos_fetcher
+[2026-04-28 13:54:38]   - tournament_watcher
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] ORCHESTRATOR COMPLETED
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] Current time: 2026-04-28 13:54:38
+[2026-04-28 13:54:38] Tournament status: upcoming
+[2026-04-28 13:54:38] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:54:38]     Script: dynamic_flow.py
+[2026-04-28 13:54:38]     Description: Check tournament state and transition if needed
+[2026-04-28 13:54:38]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:54:38]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:54:38]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:54:38]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:54:38] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 13:54:38]     Script: fetch_chollos.py
+[2026-04-28 13:54:38]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 13:54:38]     ✓ SUCCESS
+[2026-04-28 13:54:38] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 13:54:38]     Script: tournament_watcher.py
+[2026-04-28 13:54:38]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 13:54:38]     ✓ SUCCESS
+[2026-04-28 13:54:38]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:54:38] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 13:54:38]     Script: update_actualidad.py
+[2026-04-28 13:54:38]     Description: Update news/actualidad section
+[2026-04-28 13:54:38]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 13:54:38]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:54:38] 
+============================================================
+[2026-04-28 13:54:38] SUMMARY
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] Agents run: 2
+[2026-04-28 13:54:38]   - chollos_fetcher
+[2026-04-28 13:54:38]   - tournament_watcher
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:54:38] ORCHESTRATOR COMPLETED
+[2026-04-28 13:54:38] ============================================================
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] Current time: 2026-04-28 13:59:38
+[2026-04-28 13:59:38] Tournament status: upcoming
+[2026-04-28 13:59:38] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:59:38]     Script: dynamic_flow.py
+[2026-04-28 13:59:38]     Description: Check tournament state and transition if needed
+[2026-04-28 13:59:38]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:59:38]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:59:38]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:59:38]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:59:38]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:59:38]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 13:59:38]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:59:38] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 13:59:38]     Script: update_actualidad.py
+[2026-04-28 13:59:38]     Description: Update news/actualidad section
+[2026-04-28 13:59:38]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 13:59:38]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:59:38] 
+============================================================
+[2026-04-28 13:59:38] SUMMARY
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] Agents run: 0
+[2026-04-28 13:59:38]   (none - all agents within their interval)
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] ORCHESTRATOR COMPLETED
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] Current time: 2026-04-28 13:59:38
+[2026-04-28 13:59:38] Tournament status: upcoming
+[2026-04-28 13:59:38] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 13:59:38]     Script: dynamic_flow.py
+[2026-04-28 13:59:38]     Description: Check tournament state and transition if needed
+[2026-04-28 13:59:38]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 13:59:38]     Skipping index_updater: Hour 13 not in [8, 20]
+[2026-04-28 13:59:38]     Skipping torneos_updater: Hour 13 not in [9]
+[2026-04-28 13:59:38]     Skipping rankings_updater: Hour 13 not in [20]
+[2026-04-28 13:59:38]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 13:59:38]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 13:59:38]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 13:59:38] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 13:59:38]     Script: update_actualidad.py
+[2026-04-28 13:59:38]     Description: Update news/actualidad section
+[2026-04-28 13:59:38]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 13:59:38]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 13:59:38] 
+============================================================
+[2026-04-28 13:59:38] SUMMARY
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] Agents run: 0
+[2026-04-28 13:59:38]   (none - all agents within their interval)
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 13:59:38] ORCHESTRATOR COMPLETED
+[2026-04-28 13:59:38] ============================================================
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] Current time: 2026-04-28 14:04:39
+[2026-04-28 14:04:39] Tournament status: upcoming
+[2026-04-28 14:04:39] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:04:39]     Script: dynamic_flow.py
+[2026-04-28 14:04:39]     Description: Check tournament state and transition if needed
+[2026-04-28 14:04:39]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:04:39]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:04:39]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:04:39]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:04:39] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:04:39]     Script: fetch_chollos.py
+[2026-04-28 14:04:39]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:04:39]     ✓ SUCCESS
+[2026-04-28 14:04:39]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 14:04:39]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:04:39] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:04:39]     Script: update_actualidad.py
+[2026-04-28 14:04:39]     Description: Update news/actualidad section
+[2026-04-28 14:04:39]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:04:39]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:04:39] 
+============================================================
+[2026-04-28 14:04:39] SUMMARY
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] Agents run: 1
+[2026-04-28 14:04:39]   - chollos_fetcher
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] ORCHESTRATOR COMPLETED
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] Current time: 2026-04-28 14:04:39
+[2026-04-28 14:04:39] Tournament status: upcoming
+[2026-04-28 14:04:39] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:04:39]     Script: dynamic_flow.py
+[2026-04-28 14:04:39]     Description: Check tournament state and transition if needed
+[2026-04-28 14:04:39]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:04:39]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:04:39]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:04:39]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:04:39] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:04:39]     Script: fetch_chollos.py
+[2026-04-28 14:04:39]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:04:39]     ✓ SUCCESS
+[2026-04-28 14:04:39]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 14:04:39]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:04:39] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:04:39]     Script: update_actualidad.py
+[2026-04-28 14:04:39]     Description: Update news/actualidad section
+[2026-04-28 14:04:39]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:04:39]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:04:39] 
+============================================================
+[2026-04-28 14:04:39] SUMMARY
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] Agents run: 1
+[2026-04-28 14:04:39]   - chollos_fetcher
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:04:39] ORCHESTRATOR COMPLETED
+[2026-04-28 14:04:39] ============================================================
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] Current time: 2026-04-28 14:09:39
+[2026-04-28 14:09:39] Tournament status: upcoming
+[2026-04-28 14:09:39] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:09:39]     Script: dynamic_flow.py
+[2026-04-28 14:09:39]     Description: Check tournament state and transition if needed
+[2026-04-28 14:09:39]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:09:39]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:09:39]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:09:39]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:09:39]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:09:39]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 14:09:39]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:09:39] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:09:39]     Script: update_actualidad.py
+[2026-04-28 14:09:39]     Description: Update news/actualidad section
+[2026-04-28 14:09:39]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:09:39]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:09:39] 
+============================================================
+[2026-04-28 14:09:39] SUMMARY
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] Agents run: 0
+[2026-04-28 14:09:39]   (none - all agents within their interval)
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] ORCHESTRATOR COMPLETED
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] Current time: 2026-04-28 14:09:39
+[2026-04-28 14:09:39] Tournament status: upcoming
+[2026-04-28 14:09:39] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:09:39]     Script: dynamic_flow.py
+[2026-04-28 14:09:39]     Description: Check tournament state and transition if needed
+[2026-04-28 14:09:39]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:09:39]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:09:39]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:09:39]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:09:39]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:09:39]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 14:09:39]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:09:39] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:09:39]     Script: update_actualidad.py
+[2026-04-28 14:09:39]     Description: Update news/actualidad section
+[2026-04-28 14:09:39]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:09:39]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:09:39] 
+============================================================
+[2026-04-28 14:09:39] SUMMARY
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] Agents run: 0
+[2026-04-28 14:09:39]   (none - all agents within their interval)
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:09:39] ORCHESTRATOR COMPLETED
+[2026-04-28 14:09:39] ============================================================
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] Current time: 2026-04-28 14:14:39
+[2026-04-28 14:14:39] Tournament status: upcoming
+[2026-04-28 14:14:39] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:14:39]     Script: dynamic_flow.py
+[2026-04-28 14:14:39]     Description: Check tournament state and transition if needed
+[2026-04-28 14:14:39]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:14:39]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:14:39]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:14:39]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:14:39] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:14:39]     Script: fetch_chollos.py
+[2026-04-28 14:14:39]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:14:39]     ✓ SUCCESS
+[2026-04-28 14:14:39]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 14:14:39]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:14:39] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:14:39]     Script: update_actualidad.py
+[2026-04-28 14:14:39]     Description: Update news/actualidad section
+[2026-04-28 14:14:39]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:14:39]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:14:39] 
+============================================================
+[2026-04-28 14:14:39] SUMMARY
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] Agents run: 1
+[2026-04-28 14:14:39]   - chollos_fetcher
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] ORCHESTRATOR COMPLETED
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] Current time: 2026-04-28 14:14:39
+[2026-04-28 14:14:39] Tournament status: upcoming
+[2026-04-28 14:14:39] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:14:39]     Script: dynamic_flow.py
+[2026-04-28 14:14:39]     Description: Check tournament state and transition if needed
+[2026-04-28 14:14:39]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:14:39]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:14:39]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:14:39]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:14:39] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:14:39]     Script: fetch_chollos.py
+[2026-04-28 14:14:39]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:14:39]     ✓ SUCCESS
+[2026-04-28 14:14:39]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 14:14:39]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:14:39] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:14:39]     Script: update_actualidad.py
+[2026-04-28 14:14:39]     Description: Update news/actualidad section
+[2026-04-28 14:14:39]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:14:39]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:14:39] 
+============================================================
+[2026-04-28 14:14:39] SUMMARY
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] Agents run: 1
+[2026-04-28 14:14:39]   - chollos_fetcher
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:14:39] ORCHESTRATOR COMPLETED
+[2026-04-28 14:14:39] ============================================================
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] Current time: 2026-04-28 14:19:39
+[2026-04-28 14:19:39] Tournament status: upcoming
+[2026-04-28 14:19:39] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:19:39]     Script: dynamic_flow.py
+[2026-04-28 14:19:39]     Description: Check tournament state and transition if needed
+[2026-04-28 14:19:39]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:19:39]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:19:39]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:19:39]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:19:39]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:19:39]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 14:19:39]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:19:39] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:19:39]     Script: update_actualidad.py
+[2026-04-28 14:19:39]     Description: Update news/actualidad section
+[2026-04-28 14:19:39]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:19:39]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:19:39] 
+============================================================
+[2026-04-28 14:19:39] SUMMARY
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] Agents run: 0
+[2026-04-28 14:19:39]   (none - all agents within their interval)
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] ORCHESTRATOR COMPLETED
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] Current time: 2026-04-28 14:19:39
+[2026-04-28 14:19:39] Tournament status: upcoming
+[2026-04-28 14:19:39] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:19:39]     Script: dynamic_flow.py
+[2026-04-28 14:19:39]     Description: Check tournament state and transition if needed
+[2026-04-28 14:19:39]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:19:39]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:19:39]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:19:39]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:19:39]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:19:39]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 14:19:39]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:19:39] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:19:39]     Script: update_actualidad.py
+[2026-04-28 14:19:39]     Description: Update news/actualidad section
+[2026-04-28 14:19:39]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:19:39]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:19:39] 
+============================================================
+[2026-04-28 14:19:39] SUMMARY
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] Agents run: 0
+[2026-04-28 14:19:39]   (none - all agents within their interval)
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:19:39] ORCHESTRATOR COMPLETED
+[2026-04-28 14:19:39] ============================================================
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] Current time: 2026-04-28 14:24:40
+[2026-04-28 14:24:40] Tournament status: upcoming
+[2026-04-28 14:24:40] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:24:40]     Script: dynamic_flow.py
+[2026-04-28 14:24:40]     Description: Check tournament state and transition if needed
+[2026-04-28 14:24:40]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:24:40]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:24:40]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:24:40]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:24:40] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:24:40]     Script: fetch_chollos.py
+[2026-04-28 14:24:40]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:24:40]     ✓ SUCCESS
+[2026-04-28 14:24:40] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 14:24:40]     Script: tournament_watcher.py
+[2026-04-28 14:24:40]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 14:24:40]     ✓ SUCCESS
+[2026-04-28 14:24:40]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:24:40] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:24:40]     Script: update_actualidad.py
+[2026-04-28 14:24:40]     Description: Update news/actualidad section
+[2026-04-28 14:24:40]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:24:40]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:24:40] 
+============================================================
+[2026-04-28 14:24:40] SUMMARY
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] Agents run: 2
+[2026-04-28 14:24:40]   - chollos_fetcher
+[2026-04-28 14:24:40]   - tournament_watcher
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] ORCHESTRATOR COMPLETED
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] Current time: 2026-04-28 14:24:40
+[2026-04-28 14:24:40] Tournament status: upcoming
+[2026-04-28 14:24:40] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:24:40]     Script: dynamic_flow.py
+[2026-04-28 14:24:40]     Description: Check tournament state and transition if needed
+[2026-04-28 14:24:40]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:24:40]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:24:40]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:24:40]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:24:40] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:24:40]     Script: fetch_chollos.py
+[2026-04-28 14:24:40]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:24:40]     ✓ SUCCESS
+[2026-04-28 14:24:40] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 14:24:40]     Script: tournament_watcher.py
+[2026-04-28 14:24:40]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 14:24:40]     ✓ SUCCESS
+[2026-04-28 14:24:40]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:24:40] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:24:40]     Script: update_actualidad.py
+[2026-04-28 14:24:40]     Description: Update news/actualidad section
+[2026-04-28 14:24:40]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:24:40]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:24:40] 
+============================================================
+[2026-04-28 14:24:40] SUMMARY
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] Agents run: 2
+[2026-04-28 14:24:40]   - chollos_fetcher
+[2026-04-28 14:24:40]   - tournament_watcher
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:24:40] ORCHESTRATOR COMPLETED
+[2026-04-28 14:24:40] ============================================================
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] Current time: 2026-04-28 14:29:40
+[2026-04-28 14:29:40] Tournament status: upcoming
+[2026-04-28 14:29:40] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:29:40]     Script: dynamic_flow.py
+[2026-04-28 14:29:40]     Description: Check tournament state and transition if needed
+[2026-04-28 14:29:40]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:29:40]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:29:40]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:29:40]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:29:40]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:29:40]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 14:29:40]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:29:40] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:29:40]     Script: update_actualidad.py
+[2026-04-28 14:29:40]     Description: Update news/actualidad section
+[2026-04-28 14:29:40]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:29:40]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:29:40] 
+============================================================
+[2026-04-28 14:29:40] SUMMARY
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] Agents run: 0
+[2026-04-28 14:29:40]   (none - all agents within their interval)
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] ORCHESTRATOR COMPLETED
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] Current time: 2026-04-28 14:29:40
+[2026-04-28 14:29:40] Tournament status: upcoming
+[2026-04-28 14:29:40] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:29:40]     Script: dynamic_flow.py
+[2026-04-28 14:29:40]     Description: Check tournament state and transition if needed
+[2026-04-28 14:29:40]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:29:40]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:29:40]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:29:40]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:29:40]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:29:40]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 14:29:40]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:29:40] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:29:40]     Script: update_actualidad.py
+[2026-04-28 14:29:40]     Description: Update news/actualidad section
+[2026-04-28 14:29:40]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:29:40]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:29:40] 
+============================================================
+[2026-04-28 14:29:40] SUMMARY
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] Agents run: 0
+[2026-04-28 14:29:40]   (none - all agents within their interval)
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:29:40] ORCHESTRATOR COMPLETED
+[2026-04-28 14:29:40] ============================================================
+[2026-04-28 14:34:40] ============================================================
+[2026-04-28 14:34:40] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:34:40] ============================================================
+[2026-04-28 14:34:40] Current time: 2026-04-28 14:34:40
+[2026-04-28 14:34:40] Tournament status: upcoming
+[2026-04-28 14:34:40] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:34:40]     Script: dynamic_flow.py
+[2026-04-28 14:34:40]     Description: Check tournament state and transition if needed
+[2026-04-28 14:34:40]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:34:40]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:34:40]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:34:40]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:34:40] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:34:40]     Script: fetch_chollos.py
+[2026-04-28 14:34:40]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:34:41]     ✓ SUCCESS
+[2026-04-28 14:34:41]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 14:34:41]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:34:41] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:34:41]     Script: update_actualidad.py
+[2026-04-28 14:34:41]     Description: Update news/actualidad section
+[2026-04-28 14:34:41]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:34:41]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:34:41] 
+============================================================
+[2026-04-28 14:34:41] SUMMARY
+[2026-04-28 14:34:41] ============================================================
+[2026-04-28 14:34:41] Agents run: 1
+[2026-04-28 14:34:41]   - chollos_fetcher
+[2026-04-28 14:34:41] ============================================================
+[2026-04-28 14:34:41] ORCHESTRATOR COMPLETED
+[2026-04-28 14:34:41] ============================================================
+[2026-04-28 14:34:40] ============================================================
+[2026-04-28 14:34:40] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:34:40] ============================================================
+[2026-04-28 14:34:40] Current time: 2026-04-28 14:34:40
+[2026-04-28 14:34:40] Tournament status: upcoming
+[2026-04-28 14:34:40] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:34:40]     Script: dynamic_flow.py
+[2026-04-28 14:34:40]     Description: Check tournament state and transition if needed
+[2026-04-28 14:34:40]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:34:40]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:34:40]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:34:40]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:34:40] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:34:40]     Script: fetch_chollos.py
+[2026-04-28 14:34:40]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:34:41]     ✓ SUCCESS
+[2026-04-28 14:34:41]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 14:34:41]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:34:41] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:34:41]     Script: update_actualidad.py
+[2026-04-28 14:34:41]     Description: Update news/actualidad section
+[2026-04-28 14:34:41]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:34:41]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:34:41] 
+============================================================
+[2026-04-28 14:34:41] SUMMARY
+[2026-04-28 14:34:41] ============================================================
+[2026-04-28 14:34:41] Agents run: 1
+[2026-04-28 14:34:41]   - chollos_fetcher
+[2026-04-28 14:34:41] ============================================================
+[2026-04-28 14:34:41] ORCHESTRATOR COMPLETED
+[2026-04-28 14:34:41] ============================================================
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] Current time: 2026-04-28 14:39:41
+[2026-04-28 14:39:41] Tournament status: upcoming
+[2026-04-28 14:39:41] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:39:41]     Script: dynamic_flow.py
+[2026-04-28 14:39:41]     Description: Check tournament state and transition if needed
+[2026-04-28 14:39:41]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:39:41]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:39:41]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:39:41]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:39:41]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:39:41]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 14:39:41]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:39:41] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:39:41]     Script: update_actualidad.py
+[2026-04-28 14:39:41]     Description: Update news/actualidad section
+[2026-04-28 14:39:41]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:39:41]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:39:41] 
+============================================================
+[2026-04-28 14:39:41] SUMMARY
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] Agents run: 0
+[2026-04-28 14:39:41]   (none - all agents within their interval)
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] ORCHESTRATOR COMPLETED
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] Current time: 2026-04-28 14:39:41
+[2026-04-28 14:39:41] Tournament status: upcoming
+[2026-04-28 14:39:41] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:39:41]     Script: dynamic_flow.py
+[2026-04-28 14:39:41]     Description: Check tournament state and transition if needed
+[2026-04-28 14:39:41]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:39:41]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:39:41]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:39:41]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:39:41]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:39:41]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 14:39:41]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:39:41] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:39:41]     Script: update_actualidad.py
+[2026-04-28 14:39:41]     Description: Update news/actualidad section
+[2026-04-28 14:39:41]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:39:41]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:39:41] 
+============================================================
+[2026-04-28 14:39:41] SUMMARY
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] Agents run: 0
+[2026-04-28 14:39:41]   (none - all agents within their interval)
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:39:41] ORCHESTRATOR COMPLETED
+[2026-04-28 14:39:41] ============================================================
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] Current time: 2026-04-28 14:44:41
+[2026-04-28 14:44:41] Tournament status: upcoming
+[2026-04-28 14:44:41] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:44:41]     Script: dynamic_flow.py
+[2026-04-28 14:44:41]     Description: Check tournament state and transition if needed
+[2026-04-28 14:44:41]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:44:41]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:44:41]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:44:41]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:44:41] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:44:41]     Script: fetch_chollos.py
+[2026-04-28 14:44:41]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:44:41]     ✓ SUCCESS
+[2026-04-28 14:44:41]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 14:44:41]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:44:41] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:44:41]     Script: update_actualidad.py
+[2026-04-28 14:44:41]     Description: Update news/actualidad section
+[2026-04-28 14:44:41]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:44:41]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:44:41] 
+============================================================
+[2026-04-28 14:44:41] SUMMARY
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] Agents run: 1
+[2026-04-28 14:44:41]   - chollos_fetcher
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] ORCHESTRATOR COMPLETED
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] Current time: 2026-04-28 14:44:41
+[2026-04-28 14:44:41] Tournament status: upcoming
+[2026-04-28 14:44:41] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:44:41]     Script: dynamic_flow.py
+[2026-04-28 14:44:41]     Description: Check tournament state and transition if needed
+[2026-04-28 14:44:41]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:44:41]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:44:41]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:44:41]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:44:41] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:44:41]     Script: fetch_chollos.py
+[2026-04-28 14:44:41]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:44:41]     ✓ SUCCESS
+[2026-04-28 14:44:41]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 14:44:41]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:44:41] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:44:41]     Script: update_actualidad.py
+[2026-04-28 14:44:41]     Description: Update news/actualidad section
+[2026-04-28 14:44:41]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:44:41]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:44:41] 
+============================================================
+[2026-04-28 14:44:41] SUMMARY
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] Agents run: 1
+[2026-04-28 14:44:41]   - chollos_fetcher
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:44:41] ORCHESTRATOR COMPLETED
+[2026-04-28 14:44:41] ============================================================
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] Current time: 2026-04-28 14:49:41
+[2026-04-28 14:49:41] Tournament status: upcoming
+[2026-04-28 14:49:41] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:49:41]     Script: dynamic_flow.py
+[2026-04-28 14:49:41]     Description: Check tournament state and transition if needed
+[2026-04-28 14:49:41]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:49:41]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:49:41]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:49:41]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:49:41]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:49:41]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 14:49:41]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:49:41] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:49:41]     Script: update_actualidad.py
+[2026-04-28 14:49:41]     Description: Update news/actualidad section
+[2026-04-28 14:49:41]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:49:41]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:49:41] 
+============================================================
+[2026-04-28 14:49:41] SUMMARY
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] Agents run: 0
+[2026-04-28 14:49:41]   (none - all agents within their interval)
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] ORCHESTRATOR COMPLETED
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] Current time: 2026-04-28 14:49:41
+[2026-04-28 14:49:41] Tournament status: upcoming
+[2026-04-28 14:49:41] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:49:41]     Script: dynamic_flow.py
+[2026-04-28 14:49:41]     Description: Check tournament state and transition if needed
+[2026-04-28 14:49:41]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:49:41]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:49:41]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:49:41]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:49:41]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:49:41]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 14:49:41]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:49:41] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:49:41]     Script: update_actualidad.py
+[2026-04-28 14:49:41]     Description: Update news/actualidad section
+[2026-04-28 14:49:41]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:49:41]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:49:41] 
+============================================================
+[2026-04-28 14:49:41] SUMMARY
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] Agents run: 0
+[2026-04-28 14:49:41]   (none - all agents within their interval)
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:49:41] ORCHESTRATOR COMPLETED
+[2026-04-28 14:49:41] ============================================================
+[2026-04-28 14:54:41] ============================================================
+[2026-04-28 14:54:41] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:54:41] ============================================================
+[2026-04-28 14:54:41] Current time: 2026-04-28 14:54:41
+[2026-04-28 14:54:41] Tournament status: upcoming
+[2026-04-28 14:54:41] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:54:41]     Script: dynamic_flow.py
+[2026-04-28 14:54:41]     Description: Check tournament state and transition if needed
+[2026-04-28 14:54:41]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:54:41]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:54:41]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:54:41]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:54:41] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:54:41]     Script: fetch_chollos.py
+[2026-04-28 14:54:41]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:54:41]     ✓ SUCCESS
+[2026-04-28 14:54:41] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 14:54:41]     Script: tournament_watcher.py
+[2026-04-28 14:54:41]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 14:54:42]     ✓ SUCCESS
+[2026-04-28 14:54:42]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:54:42] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:54:42]     Script: update_actualidad.py
+[2026-04-28 14:54:42]     Description: Update news/actualidad section
+[2026-04-28 14:54:42]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:54:42]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:54:42] 
+============================================================
+[2026-04-28 14:54:42] SUMMARY
+[2026-04-28 14:54:42] ============================================================
+[2026-04-28 14:54:42] Agents run: 2
+[2026-04-28 14:54:42]   - chollos_fetcher
+[2026-04-28 14:54:42]   - tournament_watcher
+[2026-04-28 14:54:42] ============================================================
+[2026-04-28 14:54:42] ORCHESTRATOR COMPLETED
+[2026-04-28 14:54:42] ============================================================
+[2026-04-28 14:54:41] ============================================================
+[2026-04-28 14:54:41] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:54:41] ============================================================
+[2026-04-28 14:54:41] Current time: 2026-04-28 14:54:41
+[2026-04-28 14:54:41] Tournament status: upcoming
+[2026-04-28 14:54:41] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:54:41]     Script: dynamic_flow.py
+[2026-04-28 14:54:41]     Description: Check tournament state and transition if needed
+[2026-04-28 14:54:41]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:54:41]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:54:41]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:54:41]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:54:41] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 14:54:41]     Script: fetch_chollos.py
+[2026-04-28 14:54:41]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 14:54:41]     ✓ SUCCESS
+[2026-04-28 14:54:41] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 14:54:41]     Script: tournament_watcher.py
+[2026-04-28 14:54:41]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 14:54:42]     ✓ SUCCESS
+[2026-04-28 14:54:42]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:54:42] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:54:42]     Script: update_actualidad.py
+[2026-04-28 14:54:42]     Description: Update news/actualidad section
+[2026-04-28 14:54:42]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:54:42]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:54:42] 
+============================================================
+[2026-04-28 14:54:42] SUMMARY
+[2026-04-28 14:54:42] ============================================================
+[2026-04-28 14:54:42] Agents run: 2
+[2026-04-28 14:54:42]   - chollos_fetcher
+[2026-04-28 14:54:42]   - tournament_watcher
+[2026-04-28 14:54:42] ============================================================
+[2026-04-28 14:54:42] ORCHESTRATOR COMPLETED
+[2026-04-28 14:54:42] ============================================================
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] Current time: 2026-04-28 14:59:42
+[2026-04-28 14:59:42] Tournament status: upcoming
+[2026-04-28 14:59:42] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:59:42]     Script: dynamic_flow.py
+[2026-04-28 14:59:42]     Description: Check tournament state and transition if needed
+[2026-04-28 14:59:42]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:59:42]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:59:42]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:59:42]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:59:42]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:59:42]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 14:59:42]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:59:42] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:59:42]     Script: update_actualidad.py
+[2026-04-28 14:59:42]     Description: Update news/actualidad section
+[2026-04-28 14:59:42]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:59:42]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:59:42] 
+============================================================
+[2026-04-28 14:59:42] SUMMARY
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] Agents run: 0
+[2026-04-28 14:59:42]   (none - all agents within their interval)
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] ORCHESTRATOR COMPLETED
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] Current time: 2026-04-28 14:59:42
+[2026-04-28 14:59:42] Tournament status: upcoming
+[2026-04-28 14:59:42] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 14:59:42]     Script: dynamic_flow.py
+[2026-04-28 14:59:42]     Description: Check tournament state and transition if needed
+[2026-04-28 14:59:42]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 14:59:42]     Skipping index_updater: Hour 14 not in [8, 20]
+[2026-04-28 14:59:42]     Skipping torneos_updater: Hour 14 not in [9]
+[2026-04-28 14:59:42]     Skipping rankings_updater: Hour 14 not in [20]
+[2026-04-28 14:59:42]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 14:59:42]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 14:59:42]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 14:59:42] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 14:59:42]     Script: update_actualidad.py
+[2026-04-28 14:59:42]     Description: Update news/actualidad section
+[2026-04-28 14:59:42]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 14:59:42]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 14:59:42] 
+============================================================
+[2026-04-28 14:59:42] SUMMARY
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] Agents run: 0
+[2026-04-28 14:59:42]   (none - all agents within their interval)
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 14:59:42] ORCHESTRATOR COMPLETED
+[2026-04-28 14:59:42] ============================================================
+[2026-04-28 15:04:42] ============================================================
+[2026-04-28 15:04:42] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:04:42] ============================================================
+[2026-04-28 15:04:42] Current time: 2026-04-28 15:04:42
+[2026-04-28 15:04:42] Tournament status: upcoming
+[2026-04-28 15:04:42] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:04:42]     Script: dynamic_flow.py
+[2026-04-28 15:04:42]     Description: Check tournament state and transition if needed
+[2026-04-28 15:04:42]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:04:42]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:04:42]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:04:42]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:04:42] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:04:42]     Script: fetch_chollos.py
+[2026-04-28 15:04:42]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:04:42]     ✓ SUCCESS
+[2026-04-28 15:04:42]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 15:04:42]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:04:42] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:04:42]     Script: update_actualidad.py
+[2026-04-28 15:04:42]     Description: Update news/actualidad section
+[2026-04-28 15:04:43]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:04:43]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:04:43] 
+============================================================
+[2026-04-28 15:04:43] SUMMARY
+[2026-04-28 15:04:43] ============================================================
+[2026-04-28 15:04:43] Agents run: 1
+[2026-04-28 15:04:43]   - chollos_fetcher
+[2026-04-28 15:04:43] ============================================================
+[2026-04-28 15:04:43] ORCHESTRATOR COMPLETED
+[2026-04-28 15:04:43] ============================================================
+[2026-04-28 15:04:42] ============================================================
+[2026-04-28 15:04:42] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:04:42] ============================================================
+[2026-04-28 15:04:42] Current time: 2026-04-28 15:04:42
+[2026-04-28 15:04:42] Tournament status: upcoming
+[2026-04-28 15:04:42] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:04:42]     Script: dynamic_flow.py
+[2026-04-28 15:04:42]     Description: Check tournament state and transition if needed
+[2026-04-28 15:04:42]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:04:42]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:04:42]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:04:42]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:04:42] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:04:42]     Script: fetch_chollos.py
+[2026-04-28 15:04:42]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:04:42]     ✓ SUCCESS
+[2026-04-28 15:04:42]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 15:04:42]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:04:42] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:04:42]     Script: update_actualidad.py
+[2026-04-28 15:04:42]     Description: Update news/actualidad section
+[2026-04-28 15:04:43]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:04:43]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:04:43] 
+============================================================
+[2026-04-28 15:04:43] SUMMARY
+[2026-04-28 15:04:43] ============================================================
+[2026-04-28 15:04:43] Agents run: 1
+[2026-04-28 15:04:43]   - chollos_fetcher
+[2026-04-28 15:04:43] ============================================================
+[2026-04-28 15:04:43] ORCHESTRATOR COMPLETED
+[2026-04-28 15:04:43] ============================================================
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] Current time: 2026-04-28 15:09:43
+[2026-04-28 15:09:43] Tournament status: upcoming
+[2026-04-28 15:09:43] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:09:43]     Script: dynamic_flow.py
+[2026-04-28 15:09:43]     Description: Check tournament state and transition if needed
+[2026-04-28 15:09:43]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:09:43]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:09:43]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:09:43]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:09:43]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:09:43]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 15:09:43]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:09:43] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:09:43]     Script: update_actualidad.py
+[2026-04-28 15:09:43]     Description: Update news/actualidad section
+[2026-04-28 15:09:43]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:09:43]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:09:43] 
+============================================================
+[2026-04-28 15:09:43] SUMMARY
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] Agents run: 0
+[2026-04-28 15:09:43]   (none - all agents within their interval)
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] ORCHESTRATOR COMPLETED
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] Current time: 2026-04-28 15:09:43
+[2026-04-28 15:09:43] Tournament status: upcoming
+[2026-04-28 15:09:43] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:09:43]     Script: dynamic_flow.py
+[2026-04-28 15:09:43]     Description: Check tournament state and transition if needed
+[2026-04-28 15:09:43]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:09:43]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:09:43]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:09:43]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:09:43]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:09:43]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 15:09:43]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:09:43] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:09:43]     Script: update_actualidad.py
+[2026-04-28 15:09:43]     Description: Update news/actualidad section
+[2026-04-28 15:09:43]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:09:43]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:09:43] 
+============================================================
+[2026-04-28 15:09:43] SUMMARY
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] Agents run: 0
+[2026-04-28 15:09:43]   (none - all agents within their interval)
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:09:43] ORCHESTRATOR COMPLETED
+[2026-04-28 15:09:43] ============================================================
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] Current time: 2026-04-28 15:14:43
+[2026-04-28 15:14:43] Tournament status: upcoming
+[2026-04-28 15:14:43] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:14:43]     Script: dynamic_flow.py
+[2026-04-28 15:14:43]     Description: Check tournament state and transition if needed
+[2026-04-28 15:14:43]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:14:43]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:14:43]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:14:43]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:14:43] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:14:43]     Script: fetch_chollos.py
+[2026-04-28 15:14:43]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:14:43]     ✓ SUCCESS
+[2026-04-28 15:14:43]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 15:14:43]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:14:43] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:14:43]     Script: update_actualidad.py
+[2026-04-28 15:14:43]     Description: Update news/actualidad section
+[2026-04-28 15:14:43]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:14:43]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:14:43] 
+============================================================
+[2026-04-28 15:14:43] SUMMARY
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] Agents run: 1
+[2026-04-28 15:14:43]   - chollos_fetcher
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] ORCHESTRATOR COMPLETED
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] Current time: 2026-04-28 15:14:43
+[2026-04-28 15:14:43] Tournament status: upcoming
+[2026-04-28 15:14:43] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:14:43]     Script: dynamic_flow.py
+[2026-04-28 15:14:43]     Description: Check tournament state and transition if needed
+[2026-04-28 15:14:43]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:14:43]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:14:43]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:14:43]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:14:43] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:14:43]     Script: fetch_chollos.py
+[2026-04-28 15:14:43]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:14:43]     ✓ SUCCESS
+[2026-04-28 15:14:43]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 15:14:43]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:14:43] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:14:43]     Script: update_actualidad.py
+[2026-04-28 15:14:43]     Description: Update news/actualidad section
+[2026-04-28 15:14:43]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:14:43]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:14:43] 
+============================================================
+[2026-04-28 15:14:43] SUMMARY
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] Agents run: 1
+[2026-04-28 15:14:43]   - chollos_fetcher
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:14:43] ORCHESTRATOR COMPLETED
+[2026-04-28 15:14:43] ============================================================
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] Current time: 2026-04-28 15:19:43
+[2026-04-28 15:19:43] Tournament status: upcoming
+[2026-04-28 15:19:43] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:19:43]     Script: dynamic_flow.py
+[2026-04-28 15:19:43]     Description: Check tournament state and transition if needed
+[2026-04-28 15:19:43]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:19:43]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:19:43]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:19:43]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:19:43]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:19:43]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 15:19:43]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:19:43] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:19:43]     Script: update_actualidad.py
+[2026-04-28 15:19:43]     Description: Update news/actualidad section
+[2026-04-28 15:19:43]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:19:43]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:19:43] 
+============================================================
+[2026-04-28 15:19:43] SUMMARY
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] Agents run: 0
+[2026-04-28 15:19:43]   (none - all agents within their interval)
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] ORCHESTRATOR COMPLETED
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] Current time: 2026-04-28 15:19:43
+[2026-04-28 15:19:43] Tournament status: upcoming
+[2026-04-28 15:19:43] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:19:43]     Script: dynamic_flow.py
+[2026-04-28 15:19:43]     Description: Check tournament state and transition if needed
+[2026-04-28 15:19:43]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:19:43]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:19:43]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:19:43]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:19:43]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:19:43]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 15:19:43]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:19:43] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:19:43]     Script: update_actualidad.py
+[2026-04-28 15:19:43]     Description: Update news/actualidad section
+[2026-04-28 15:19:43]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:19:43]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:19:43] 
+============================================================
+[2026-04-28 15:19:43] SUMMARY
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] Agents run: 0
+[2026-04-28 15:19:43]   (none - all agents within their interval)
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:19:43] ORCHESTRATOR COMPLETED
+[2026-04-28 15:19:43] ============================================================
+[2026-04-28 15:24:43] ============================================================
+[2026-04-28 15:24:43] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:24:43] ============================================================
+[2026-04-28 15:24:43] Current time: 2026-04-28 15:24:43
+[2026-04-28 15:24:43] Tournament status: upcoming
+[2026-04-28 15:24:43] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:24:43]     Script: dynamic_flow.py
+[2026-04-28 15:24:43]     Description: Check tournament state and transition if needed
+[2026-04-28 15:24:43]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:24:43]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:24:43]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:24:43]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:24:43] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:24:43]     Script: fetch_chollos.py
+[2026-04-28 15:24:43]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:24:43]     ✓ SUCCESS
+[2026-04-28 15:24:43] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 15:24:43]     Script: tournament_watcher.py
+[2026-04-28 15:24:43]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 15:24:44]     ✓ SUCCESS
+[2026-04-28 15:24:44]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:24:44] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:24:44]     Script: update_actualidad.py
+[2026-04-28 15:24:44]     Description: Update news/actualidad section
+[2026-04-28 15:24:44]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:24:44]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:24:44] 
+============================================================
+[2026-04-28 15:24:44] SUMMARY
+[2026-04-28 15:24:44] ============================================================
+[2026-04-28 15:24:44] Agents run: 2
+[2026-04-28 15:24:44]   - chollos_fetcher
+[2026-04-28 15:24:44]   - tournament_watcher
+[2026-04-28 15:24:44] ============================================================
+[2026-04-28 15:24:44] ORCHESTRATOR COMPLETED
+[2026-04-28 15:24:44] ============================================================
+[2026-04-28 15:24:43] ============================================================
+[2026-04-28 15:24:43] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:24:43] ============================================================
+[2026-04-28 15:24:43] Current time: 2026-04-28 15:24:43
+[2026-04-28 15:24:43] Tournament status: upcoming
+[2026-04-28 15:24:43] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:24:43]     Script: dynamic_flow.py
+[2026-04-28 15:24:43]     Description: Check tournament state and transition if needed
+[2026-04-28 15:24:43]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:24:43]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:24:43]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:24:43]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:24:43] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:24:43]     Script: fetch_chollos.py
+[2026-04-28 15:24:43]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:24:43]     ✓ SUCCESS
+[2026-04-28 15:24:43] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 15:24:43]     Script: tournament_watcher.py
+[2026-04-28 15:24:43]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 15:24:44]     ✓ SUCCESS
+[2026-04-28 15:24:44]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:24:44] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:24:44]     Script: update_actualidad.py
+[2026-04-28 15:24:44]     Description: Update news/actualidad section
+[2026-04-28 15:24:44]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:24:44]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:24:44] 
+============================================================
+[2026-04-28 15:24:44] SUMMARY
+[2026-04-28 15:24:44] ============================================================
+[2026-04-28 15:24:44] Agents run: 2
+[2026-04-28 15:24:44]   - chollos_fetcher
+[2026-04-28 15:24:44]   - tournament_watcher
+[2026-04-28 15:24:44] ============================================================
+[2026-04-28 15:24:44] ORCHESTRATOR COMPLETED
+[2026-04-28 15:24:44] ============================================================
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] Current time: 2026-04-28 15:29:44
+[2026-04-28 15:29:44] Tournament status: upcoming
+[2026-04-28 15:29:44] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:29:44]     Script: dynamic_flow.py
+[2026-04-28 15:29:44]     Description: Check tournament state and transition if needed
+[2026-04-28 15:29:44]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:29:44]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:29:44]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:29:44]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:29:44]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:29:44]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 15:29:44]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:29:44] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:29:44]     Script: update_actualidad.py
+[2026-04-28 15:29:44]     Description: Update news/actualidad section
+[2026-04-28 15:29:44]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:29:44]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:29:44] 
+============================================================
+[2026-04-28 15:29:44] SUMMARY
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] Agents run: 0
+[2026-04-28 15:29:44]   (none - all agents within their interval)
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] ORCHESTRATOR COMPLETED
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] Current time: 2026-04-28 15:29:44
+[2026-04-28 15:29:44] Tournament status: upcoming
+[2026-04-28 15:29:44] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:29:44]     Script: dynamic_flow.py
+[2026-04-28 15:29:44]     Description: Check tournament state and transition if needed
+[2026-04-28 15:29:44]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:29:44]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:29:44]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:29:44]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:29:44]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:29:44]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 15:29:44]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:29:44] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:29:44]     Script: update_actualidad.py
+[2026-04-28 15:29:44]     Description: Update news/actualidad section
+[2026-04-28 15:29:44]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:29:44]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:29:44] 
+============================================================
+[2026-04-28 15:29:44] SUMMARY
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] Agents run: 0
+[2026-04-28 15:29:44]   (none - all agents within their interval)
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:29:44] ORCHESTRATOR COMPLETED
+[2026-04-28 15:29:44] ============================================================
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] Current time: 2026-04-28 15:34:44
+[2026-04-28 15:34:44] Tournament status: upcoming
+[2026-04-28 15:34:44] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:34:44]     Script: dynamic_flow.py
+[2026-04-28 15:34:44]     Description: Check tournament state and transition if needed
+[2026-04-28 15:34:44]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:34:44]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:34:44]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:34:44]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:34:44] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:34:44]     Script: fetch_chollos.py
+[2026-04-28 15:34:44]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:34:44]     ✓ SUCCESS
+[2026-04-28 15:34:44]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 15:34:44]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:34:44] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:34:44]     Script: update_actualidad.py
+[2026-04-28 15:34:44]     Description: Update news/actualidad section
+[2026-04-28 15:34:44]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:34:44]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:34:44] 
+============================================================
+[2026-04-28 15:34:44] SUMMARY
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] Agents run: 1
+[2026-04-28 15:34:44]   - chollos_fetcher
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] ORCHESTRATOR COMPLETED
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] Current time: 2026-04-28 15:34:44
+[2026-04-28 15:34:44] Tournament status: upcoming
+[2026-04-28 15:34:44] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:34:44]     Script: dynamic_flow.py
+[2026-04-28 15:34:44]     Description: Check tournament state and transition if needed
+[2026-04-28 15:34:44]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:34:44]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:34:44]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:34:44]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:34:44] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:34:44]     Script: fetch_chollos.py
+[2026-04-28 15:34:44]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:34:44]     ✓ SUCCESS
+[2026-04-28 15:34:44]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 15:34:44]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:34:44] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:34:44]     Script: update_actualidad.py
+[2026-04-28 15:34:44]     Description: Update news/actualidad section
+[2026-04-28 15:34:44]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:34:44]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:34:44] 
+============================================================
+[2026-04-28 15:34:44] SUMMARY
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] Agents run: 1
+[2026-04-28 15:34:44]   - chollos_fetcher
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:34:44] ORCHESTRATOR COMPLETED
+[2026-04-28 15:34:44] ============================================================
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] Current time: 2026-04-28 15:39:45
+[2026-04-28 15:39:45] Tournament status: upcoming
+[2026-04-28 15:39:45] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:39:45]     Script: dynamic_flow.py
+[2026-04-28 15:39:45]     Description: Check tournament state and transition if needed
+[2026-04-28 15:39:45]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:39:45]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:39:45]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:39:45]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:39:45]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:39:45]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 15:39:45]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:39:45] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:39:45]     Script: update_actualidad.py
+[2026-04-28 15:39:45]     Description: Update news/actualidad section
+[2026-04-28 15:39:45]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:39:45]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:39:45] 
+============================================================
+[2026-04-28 15:39:45] SUMMARY
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] Agents run: 0
+[2026-04-28 15:39:45]   (none - all agents within their interval)
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] ORCHESTRATOR COMPLETED
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] Current time: 2026-04-28 15:39:45
+[2026-04-28 15:39:45] Tournament status: upcoming
+[2026-04-28 15:39:45] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:39:45]     Script: dynamic_flow.py
+[2026-04-28 15:39:45]     Description: Check tournament state and transition if needed
+[2026-04-28 15:39:45]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:39:45]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:39:45]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:39:45]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:39:45]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:39:45]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 15:39:45]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:39:45] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:39:45]     Script: update_actualidad.py
+[2026-04-28 15:39:45]     Description: Update news/actualidad section
+[2026-04-28 15:39:45]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:39:45]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:39:45] 
+============================================================
+[2026-04-28 15:39:45] SUMMARY
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] Agents run: 0
+[2026-04-28 15:39:45]   (none - all agents within their interval)
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:39:45] ORCHESTRATOR COMPLETED
+[2026-04-28 15:39:45] ============================================================
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] Current time: 2026-04-28 15:44:45
+[2026-04-28 15:44:45] Tournament status: upcoming
+[2026-04-28 15:44:45] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:44:45]     Script: dynamic_flow.py
+[2026-04-28 15:44:45]     Description: Check tournament state and transition if needed
+[2026-04-28 15:44:45]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:44:45]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:44:45]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:44:45]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:44:45] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:44:45]     Script: fetch_chollos.py
+[2026-04-28 15:44:45]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:44:45]     ✓ SUCCESS
+[2026-04-28 15:44:45]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 15:44:45]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:44:45] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:44:45]     Script: update_actualidad.py
+[2026-04-28 15:44:45]     Description: Update news/actualidad section
+[2026-04-28 15:44:45]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:44:45]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:44:45] 
+============================================================
+[2026-04-28 15:44:45] SUMMARY
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] Agents run: 1
+[2026-04-28 15:44:45]   - chollos_fetcher
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] ORCHESTRATOR COMPLETED
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] Current time: 2026-04-28 15:44:45
+[2026-04-28 15:44:45] Tournament status: upcoming
+[2026-04-28 15:44:45] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:44:45]     Script: dynamic_flow.py
+[2026-04-28 15:44:45]     Description: Check tournament state and transition if needed
+[2026-04-28 15:44:45]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:44:45]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:44:45]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:44:45]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:44:45] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:44:45]     Script: fetch_chollos.py
+[2026-04-28 15:44:45]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:44:45]     ✓ SUCCESS
+[2026-04-28 15:44:45]     Skipping tournament_watcher: Ran 20 min ago, interval is 30
+[2026-04-28 15:44:45]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:44:45] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:44:45]     Script: update_actualidad.py
+[2026-04-28 15:44:45]     Description: Update news/actualidad section
+[2026-04-28 15:44:45]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:44:45]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:44:45] 
+============================================================
+[2026-04-28 15:44:45] SUMMARY
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] Agents run: 1
+[2026-04-28 15:44:45]   - chollos_fetcher
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:44:45] ORCHESTRATOR COMPLETED
+[2026-04-28 15:44:45] ============================================================
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] Current time: 2026-04-28 15:49:45
+[2026-04-28 15:49:45] Tournament status: upcoming
+[2026-04-28 15:49:45] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:49:45]     Script: dynamic_flow.py
+[2026-04-28 15:49:45]     Description: Check tournament state and transition if needed
+[2026-04-28 15:49:45]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:49:45]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:49:45]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:49:45]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:49:45]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:49:45]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 15:49:45]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:49:45] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:49:45]     Script: update_actualidad.py
+[2026-04-28 15:49:45]     Description: Update news/actualidad section
+[2026-04-28 15:49:45]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:49:45]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:49:45] 
+============================================================
+[2026-04-28 15:49:45] SUMMARY
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] Agents run: 0
+[2026-04-28 15:49:45]   (none - all agents within their interval)
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] ORCHESTRATOR COMPLETED
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] Current time: 2026-04-28 15:49:45
+[2026-04-28 15:49:45] Tournament status: upcoming
+[2026-04-28 15:49:45] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:49:45]     Script: dynamic_flow.py
+[2026-04-28 15:49:45]     Description: Check tournament state and transition if needed
+[2026-04-28 15:49:45]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:49:45]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:49:45]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:49:45]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:49:45]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:49:45]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-04-28 15:49:45]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:49:45] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:49:45]     Script: update_actualidad.py
+[2026-04-28 15:49:45]     Description: Update news/actualidad section
+[2026-04-28 15:49:45]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:49:45]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:49:45] 
+============================================================
+[2026-04-28 15:49:45] SUMMARY
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] Agents run: 0
+[2026-04-28 15:49:45]   (none - all agents within their interval)
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:49:45] ORCHESTRATOR COMPLETED
+[2026-04-28 15:49:45] ============================================================
+[2026-04-28 15:54:45] ============================================================
+[2026-04-28 15:54:45] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:54:45] ============================================================
+[2026-04-28 15:54:45] Current time: 2026-04-28 15:54:45
+[2026-04-28 15:54:45] Tournament status: upcoming
+[2026-04-28 15:54:45] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:54:45]     Script: dynamic_flow.py
+[2026-04-28 15:54:45]     Description: Check tournament state and transition if needed
+[2026-04-28 15:54:45]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:54:45]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:54:45]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:54:45]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:54:45] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:54:45]     Script: fetch_chollos.py
+[2026-04-28 15:54:45]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:54:45]     ✓ SUCCESS
+[2026-04-28 15:54:45] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 15:54:45]     Script: tournament_watcher.py
+[2026-04-28 15:54:45]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 15:54:46]     ✓ SUCCESS
+[2026-04-28 15:54:46]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:54:46] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:54:46]     Script: update_actualidad.py
+[2026-04-28 15:54:46]     Description: Update news/actualidad section
+[2026-04-28 15:54:46]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:54:46]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:54:46] 
+============================================================
+[2026-04-28 15:54:46] SUMMARY
+[2026-04-28 15:54:46] ============================================================
+[2026-04-28 15:54:46] Agents run: 2
+[2026-04-28 15:54:46]   - chollos_fetcher
+[2026-04-28 15:54:46]   - tournament_watcher
+[2026-04-28 15:54:46] ============================================================
+[2026-04-28 15:54:46] ORCHESTRATOR COMPLETED
+[2026-04-28 15:54:46] ============================================================
+[2026-04-28 15:54:45] ============================================================
+[2026-04-28 15:54:45] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:54:45] ============================================================
+[2026-04-28 15:54:45] Current time: 2026-04-28 15:54:45
+[2026-04-28 15:54:45] Tournament status: upcoming
+[2026-04-28 15:54:45] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:54:45]     Script: dynamic_flow.py
+[2026-04-28 15:54:45]     Description: Check tournament state and transition if needed
+[2026-04-28 15:54:45]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:54:45]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:54:45]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:54:45]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:54:45] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 15:54:45]     Script: fetch_chollos.py
+[2026-04-28 15:54:45]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 15:54:45]     ✓ SUCCESS
+[2026-04-28 15:54:45] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-04-28 15:54:45]     Script: tournament_watcher.py
+[2026-04-28 15:54:45]     Description: Watch for new tournaments in Premier Padel
+[2026-04-28 15:54:46]     ✓ SUCCESS
+[2026-04-28 15:54:46]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:54:46] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:54:46]     Script: update_actualidad.py
+[2026-04-28 15:54:46]     Description: Update news/actualidad section
+[2026-04-28 15:54:46]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:54:46]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:54:46] 
+============================================================
+[2026-04-28 15:54:46] SUMMARY
+[2026-04-28 15:54:46] ============================================================
+[2026-04-28 15:54:46] Agents run: 2
+[2026-04-28 15:54:46]   - chollos_fetcher
+[2026-04-28 15:54:46]   - tournament_watcher
+[2026-04-28 15:54:46] ============================================================
+[2026-04-28 15:54:46] ORCHESTRATOR COMPLETED
+[2026-04-28 15:54:46] ============================================================
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] Current time: 2026-04-28 15:59:46
+[2026-04-28 15:59:46] Tournament status: upcoming
+[2026-04-28 15:59:46] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:59:46]     Script: dynamic_flow.py
+[2026-04-28 15:59:46]     Description: Check tournament state and transition if needed
+[2026-04-28 15:59:46]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:59:46]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:59:46]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:59:46]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:59:46]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:59:46]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 15:59:46]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:59:46] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:59:46]     Script: update_actualidad.py
+[2026-04-28 15:59:46]     Description: Update news/actualidad section
+[2026-04-28 15:59:46]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:59:46]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:59:46] 
+============================================================
+[2026-04-28 15:59:46] SUMMARY
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] Agents run: 0
+[2026-04-28 15:59:46]   (none - all agents within their interval)
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] ORCHESTRATOR COMPLETED
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] Current time: 2026-04-28 15:59:46
+[2026-04-28 15:59:46] Tournament status: upcoming
+[2026-04-28 15:59:46] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 15:59:46]     Script: dynamic_flow.py
+[2026-04-28 15:59:46]     Description: Check tournament state and transition if needed
+[2026-04-28 15:59:46]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 15:59:46]     Skipping index_updater: Hour 15 not in [8, 20]
+[2026-04-28 15:59:46]     Skipping torneos_updater: Hour 15 not in [9]
+[2026-04-28 15:59:46]     Skipping rankings_updater: Hour 15 not in [20]
+[2026-04-28 15:59:46]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 15:59:46]     Skipping tournament_watcher: Ran 5 min ago, interval is 30
+[2026-04-28 15:59:46]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 15:59:46] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 15:59:46]     Script: update_actualidad.py
+[2026-04-28 15:59:46]     Description: Update news/actualidad section
+[2026-04-28 15:59:46]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 15:59:46]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 15:59:46] 
+============================================================
+[2026-04-28 15:59:46] SUMMARY
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] Agents run: 0
+[2026-04-28 15:59:46]   (none - all agents within their interval)
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 15:59:46] ORCHESTRATOR COMPLETED
+[2026-04-28 15:59:46] ============================================================
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] Current time: 2026-04-28 16:04:46
+[2026-04-28 16:04:46] Tournament status: upcoming
+[2026-04-28 16:04:46] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 16:04:46]     Script: dynamic_flow.py
+[2026-04-28 16:04:46]     Description: Check tournament state and transition if needed
+[2026-04-28 16:04:46]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 16:04:46]     Skipping index_updater: Hour 16 not in [8, 20]
+[2026-04-28 16:04:46]     Skipping torneos_updater: Hour 16 not in [9]
+[2026-04-28 16:04:46]     Skipping rankings_updater: Hour 16 not in [20]
+[2026-04-28 16:04:46] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 16:04:46]     Script: fetch_chollos.py
+[2026-04-28 16:04:46]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 16:04:46]     ✓ SUCCESS
+[2026-04-28 16:04:46]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 16:04:46]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 16:04:46] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 16:04:46]     Script: update_actualidad.py
+[2026-04-28 16:04:46]     Description: Update news/actualidad section
+[2026-04-28 16:04:46]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 16:04:46]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 16:04:46] 
+============================================================
+[2026-04-28 16:04:46] SUMMARY
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] Agents run: 1
+[2026-04-28 16:04:46]   - chollos_fetcher
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] ORCHESTRATOR COMPLETED
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] Current time: 2026-04-28 16:04:46
+[2026-04-28 16:04:46] Tournament status: upcoming
+[2026-04-28 16:04:46] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 16:04:46]     Script: dynamic_flow.py
+[2026-04-28 16:04:46]     Description: Check tournament state and transition if needed
+[2026-04-28 16:04:46]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 16:04:46]     Skipping index_updater: Hour 16 not in [8, 20]
+[2026-04-28 16:04:46]     Skipping torneos_updater: Hour 16 not in [9]
+[2026-04-28 16:04:46]     Skipping rankings_updater: Hour 16 not in [20]
+[2026-04-28 16:04:46] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-04-28 16:04:46]     Script: fetch_chollos.py
+[2026-04-28 16:04:46]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-04-28 16:04:46]     ✓ SUCCESS
+[2026-04-28 16:04:46]     Skipping tournament_watcher: Ran 10 min ago, interval is 30
+[2026-04-28 16:04:46]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 16:04:46] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 16:04:46]     Script: update_actualidad.py
+[2026-04-28 16:04:46]     Description: Update news/actualidad section
+[2026-04-28 16:04:46]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 16:04:46]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 16:04:46] 
+============================================================
+[2026-04-28 16:04:46] SUMMARY
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] Agents run: 1
+[2026-04-28 16:04:46]   - chollos_fetcher
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:04:46] ORCHESTRATOR COMPLETED
+[2026-04-28 16:04:46] ============================================================
+[2026-04-28 16:09:46] ============================================================
+[2026-04-28 16:09:46] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 16:09:46] ============================================================
+[2026-04-28 16:09:46] Current time: 2026-04-28 16:09:46
+[2026-04-28 16:09:46] Tournament status: upcoming
+[2026-04-28 16:09:46] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 16:09:46]     Script: dynamic_flow.py
+[2026-04-28 16:09:46]     Description: Check tournament state and transition if needed
+[2026-04-28 16:09:46]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 16:09:46]     Skipping index_updater: Hour 16 not in [8, 20]
+[2026-04-28 16:09:46]     Skipping torneos_updater: Hour 16 not in [9]
+[2026-04-28 16:09:46]     Skipping rankings_updater: Hour 16 not in [20]
+[2026-04-28 16:09:46]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 16:09:46]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 16:09:46]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 16:09:46] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 16:09:46]     Script: update_actualidad.py
+[2026-04-28 16:09:46]     Description: Update news/actualidad section
+[2026-04-28 16:09:47]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 16:09:47]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 16:09:47] 
+============================================================
+[2026-04-28 16:09:47] SUMMARY
+[2026-04-28 16:09:47] ============================================================
+[2026-04-28 16:09:47] Agents run: 0
+[2026-04-28 16:09:47]   (none - all agents within their interval)
+[2026-04-28 16:09:47] ============================================================
+[2026-04-28 16:09:47] ORCHESTRATOR COMPLETED
+[2026-04-28 16:09:47] ============================================================
+[2026-04-28 16:09:46] ============================================================
+[2026-04-28 16:09:46] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 16:09:46] ============================================================
+[2026-04-28 16:09:46] Current time: 2026-04-28 16:09:46
+[2026-04-28 16:09:46] Tournament status: upcoming
+[2026-04-28 16:09:46] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 16:09:46]     Script: dynamic_flow.py
+[2026-04-28 16:09:46]     Description: Check tournament state and transition if needed
+[2026-04-28 16:09:46]     ✗ FAILED: Script not found: /Users/cristian/Sites/padel_news/scripts/dynamic_flow.py
+[2026-04-28 16:09:46]     Skipping index_updater: Hour 16 not in [8, 20]
+[2026-04-28 16:09:46]     Skipping torneos_updater: Hour 16 not in [9]
+[2026-04-28 16:09:46]     Skipping rankings_updater: Hour 16 not in [20]
+[2026-04-28 16:09:46]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-04-28 16:09:46]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-04-28 16:09:46]     Skipping live_score: Tournament is upcoming, not active
+[2026-04-28 16:09:46] 
+>>> Running actualidad_updater: Interval-based run (360 min)
+[2026-04-28 16:09:46]     Script: update_actualidad.py
+[2026-04-28 16:09:46]     Description: Update news/actualidad section
+[2026-04-28 16:09:47]     ✗ FAILED: /Users/cristian/Sites/padel_news/scripts/update_actualidad.py:64: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is als
+[2026-04-28 16:09:47]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-04-28 16:09:47] 
+============================================================
+[2026-04-28 16:09:47] SUMMARY
+[2026-04-28 16:09:47] ============================================================
+[2026-04-28 16:09:47] Agents run: 0
+[2026-04-28 16:09:47]   (none - all agents within their interval)
+[2026-04-28 16:09:47] ============================================================
+[2026-04-28 16:09:47] ORCHESTRATOR COMPLETED
+[2026-04-28 16:09:47] ============================================================
+[2026-04-28 16:14:47] ============================================================
+[2026-04-28 16:14:47] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-04-28 16:14:47] ============================================================
+[2026-04-28 16:14:47] Current time: 2026-04-28 16:14:47
+[2026-04-28 16:14:47] Tournament status: upcoming
+[2026-04-28 16:14:47] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-04-28 16:14:47]     Script: dynamic_flow.py
+[2026-04-28 16:14:47]     Description: Check tournament state and transition if needed
