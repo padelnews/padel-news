@@ -27,3 +27,22 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [2026-04-28 08:00:00] CALENDAR_AGENT: Calendario actualizado
 [2026-04-28 08:00:00] CALENDAR_AGENT: Git error: Command '['git', 'commit', '-m', 'UPDATE: Calendario - estados automáticos según fecha']' returned non-zero exit status 1.
 [2026-04-28 08:00:00] CALENDAR_AGENT: === CALENDAR AGENT COMPLETE ===
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   data/chollos.json
+	modified:   data/orchestrator_state.json
+	modified:   scripts/dynamic_flow.log
+	modified:   scripts/index_agent.log
+	modified:   scripts/orchestrator.log
+	modified:   scripts/torneos_agent.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[2026-04-28 20:00:04] CALENDAR_AGENT: === CALENDAR AGENT STARTED ===
+[2026-04-28 20:00:05] CALENDAR_AGENT: Calendario actualizado
+[2026-04-28 20:00:05] CALENDAR_AGENT: Git error: Command '['git', 'commit', '-m', 'UPDATE: Calendario - estados automáticos según fecha']' returned non-zero exit status 1.
+[2026-04-28 20:00:05] CALENDAR_AGENT: === CALENDAR AGENT COMPLETE ===
