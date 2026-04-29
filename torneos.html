@@ -8,24 +8,35 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎾</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #00d4ff;
+            --accent: #bf00ff;
+            --bg-dark: #0a0a0f;
+            --glass-bg: rgba(26, 26, 46, 0.8);
+            --glass-border: rgba(0, 212, 255, 0.3);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Rajdhani', sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 2rem 1rem; border-bottom: 2px solid #00d4ff; text-align: center; }
-        header h1 { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; background: linear-gradient(90deg, #00d4ff, #bf00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg-dark); color: #fff; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0a0a0f, #1a1a2e); padding: 2rem 1rem; border-bottom: 2px solid var(--primary); text-align: center; }
+        header h1 { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
         header p { opacity: 0.8; margin-bottom: 1rem; }
-        .live-badge { display: inline-block; background: linear-gradient(135deg, #00d4ff, #bf00ff); color: #000; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; }
+        .live-badge { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #000; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; }
         nav { background: rgba(0,0,0,0.5); padding: 1rem; text-align: center; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; padding: 0; }
         nav a { color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; }
-        nav a:hover, nav a.active { background: #00d4ff; color: #000; }
+        nav a:hover, nav a.active { background: var(--primary); color: #000; }
         main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: #00d4ff; margin-bottom: 1.5rem; text-align: center; }
-        .results-table { width: 100%; border-collapse: collapse; background: rgba(26, 26, 46, 0.8); border-radius: 12px; overflow: hidden; }
+        .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; text-align: center; }
+        .badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; font-weight: 700; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .tournament-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 1.5rem; }
+        .tournament-card h4 { color: var(--primary); margin-bottom: 0.5rem; }
+        .status-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; font-weight: 700; }
+        .status-upcoming { background: rgba(0, 255, 136, 0.3); color: #00ff88; }
+        .results-table { width: 100%; border-collapse: collapse; background: var(--glass-bg); border-radius: 12px; overflow: hidden; }
         .results-table th { background: rgba(0, 212, 255, 0.2); padding: 1rem; text-align: left; font-weight: 600; }
         .results-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .winner { color: #00d4ff; font-weight: 600; }
-        .tournament-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; }
-        .score { font-weight: 600; }
+        .winner { color: var(--primary); font-weight: 600; }
         footer { text-align: center; padding: 2rem; color: #666; }
         @media (max-width: 768px) { .section-title { font-size: 1.2rem; } }
     </style>
@@ -41,79 +52,70 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="actualidad.html">Actualidad</a></li>
             <li><a href="resultados.html">Resultados</a></li>
-            <li><a href="torneos.html">Torneos</a></li>
+            <li><a href="torneos.html" class="active">Torneos</a></li>
             <li><a href="chollos.html">Chollos 🏷️</a></li>
         </ul>
     </nav>
     <main>
-
-
         <h2 class="section-title">📋 Calendario Oficial Qatar Airways Premier Padel Tour 2026</h2>
         
-        <!-- Next Tournament -->
+        <!-- Siguiente Torneo -->
         <section style="margin-bottom: 3rem;">
             <h3 style="color: var(--primary); margin-bottom: 1.5rem;">🎾 Siguiente Torneo</h3>
-            <div class="calendar-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                
+            <div class="calendar-grid">
                 <div class="tournament-card" style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 212, 255, 0.2)); border: 2px solid var(--primary);">
-                    <div class="tournament-header">
-                        <span class="status-badge status-upcoming">🎾 PRÓXIMO</span>
-                        <h4>🇵🇾 Asunción P2</h4>
-                    </div>
-                    <p class="tournament-date">10-17 Mayo 2026</p>
-                    <p class="tournament-location">Asunción, Paraguay</p>
-                    <p class="tournament-prize">💰 €264,534</p>
+                    <span class="status-badge status-upcoming">🎾 PRÓXIMO</span>
+                    <h4>🇵🇾 Asunción P2</h4>
+                    <p>10-17 Mayo 2026</p>
+                    <p>Asunción, Paraguay</p>
+                    <p>💰 €264,534</p>
                 </div>
             </div>
         </section>
 
-        <!-- Calendar Table -->
+        <!-- Calendario Completo -->
         <section style="margin-bottom: 3rem;">
             <h3 style="color: var(--primary); margin-bottom: 1.5rem;">📅 Calendario Completo</h3>
-            <div class="table-scroll-wrapper">
-                <table class="results-table">
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Torneo</th>
-                            <th>Ubicación</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td><strong>10-17 Mayo 2026</strong></td>
-                            <td>Asunción P2</td>
-                            <td>🇵🇾 Asunción, Paraguay</td>
-                            <td><span class="badge" style="background: rgba(0, 255, 136, 0.2); color: #00ff88;">🎾 PRÓXIMO</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>11-17 Mayo 2026</strong></td>
-                            <td>Buenos Aires P1</td>
-                            <td>🇦🇷 Buenos Aires, Argentina</td>
-                            <td><span class="badge" style="background: rgba(0, 255, 136, 0.2); color: #00ff88;">🎾 PRÓXIMO</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>19-26 Abril 2026</strong></td>
-                            <td><strong>Brussels P2</strong></td>
-                            <td>🇧🇪 Bruselas, Bélgica</td>
-                            <td><span class="badge" style="background: rgba(100,100,100,0.3);">✅ Finalizado</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>13-18 Abril 2026</strong></td>
-                            <td><strong>NewGiza P2</strong></td>
-                            <td>🇪🇬 El Gouna, Egipto</td>
-                            <td><span class="badge" style="background: rgba(100,100,100,0.3);">✅ Finalizado</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Torneo</th>
+                        <th>Ubicación</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>10-17 Mayo 2026</strong></td>
+                        <td>Asunción P2</td>
+                        <td>🇵🇾 Asunción, Paraguay</td>
+                        <td><span class="badge" style="background: rgba(0, 255, 136, 0.2); color: #00ff88;">🎾 PRÓXIMO</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>11-17 Mayo 2026</strong></td>
+                        <td>Buenos Aires P1</td>
+                        <td>🇦🇷 Buenos Aires, Argentina</td>
+                        <td><span class="badge" style="background: rgba(0, 255, 136, 0.2); color: #00ff88;">🎾 PRÓXIMO</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>19-26 Abril 2026</strong></td>
+                        <td><strong>Brussels P2</strong></td>
+                        <td>🇧🇪 Bruselas, Bélgica</td>
+                        <td><span class="badge" style="background: rgba(100,100,100,0.3);">✅ Finalizado</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>13-18 Abril 2026</strong></td>
+                        <td><strong>NewGiza P2</strong></td>
+                        <td>🇪🇬 El Gouna, Egipto</td>
+                        <td><span class="badge" style="background: rgba(100,100,100,0.3);">✅ Finalizado</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
-
     </main>
     <footer>
-        <p>© 2026 Padel News Pro | Actualizado: 29/04/2026 08:36</p>
+        <p>© 2026 PadelNews Pro</p>
     </footer>
 </body>
 </html>
