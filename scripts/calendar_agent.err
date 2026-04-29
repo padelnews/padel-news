@@ -9,3 +9,10 @@ To https://github.com/padelnews/padel-news.git
    49645a1..9316009  main -> main
 To https://github.com/padelnews/padel-news.git
    83b2e78..cc9682d  main -> main
+fatal: Unable to create '/Users/cristian/Sites/padel_news/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.

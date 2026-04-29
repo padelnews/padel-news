@@ -42,3 +42,5 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [2026-04-29 08:00:00] INDEX_AGENT: Index actualizado - Status: upcoming
 [2026-04-29 08:00:01] INDEX_AGENT: Git error: Command '['git', 'commit', '-m', 'UPDATE: Index - torneo upcoming']' returned non-zero exit status 128.
 [2026-04-29 08:00:01] INDEX_AGENT: === INDEX AGENT COMPLETE ===
+[2026-04-29 20:00:02] INDEX_AGENT: === INDEX AGENT STARTED ===
+[2026-04-29 20:00:02] INDEX_AGENT: Ya actualizado hoy (2026-04-29), saltando...

@@ -51,3 +51,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [2026-04-29 08:00:00] TORNEOS_AGENT: torneos.html actualizado
 [2026-04-29 08:00:01] TORNEOS_AGENT: Git error: Command '['git', 'commit', '-m', 'UPDATE: Torneos - último torneo con ganador']' returned non-zero exit status 1.
 [2026-04-29 08:00:01] TORNEOS_AGENT: === TORNEOS AGENT COMPLETE ===
+[main b05cccb] UPDATE: Torneos - último torneo con ganador
+ 1 file changed, 18 insertions(+)
+[2026-04-29 20:00:02] TORNEOS_AGENT: === TORNEOS AGENT STARTED ===
+[2026-04-29 20:00:02] TORNEOS_AGENT: torneos.html actualizado
+[2026-04-29 20:00:04] TORNEOS_AGENT: Commit + Push successful
+[2026-04-29 20:00:04] TORNEOS_AGENT: === TORNEOS AGENT COMPLETE ===
