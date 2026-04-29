@@ -491,42 +491,53 @@ def generate_actualidad(state: Dict) -> str:
     
     past = state.get("past_tournaments", [])
     current = state.get("current_tournament", {})
+    upcoming = state.get("upcoming_tournaments", [])
     
-    # Get latest finished tournament
-    latest = past[0] if past else {}
-    
-    # Build featured article
-    featured = ""
-    if latest:
-        winner_m = latest.get("winner_male", [])
-        article_url = latest.get("article_url", "index.html")
-        loc = latest.get("location", "")
+    # Build all past tournaments as news cards
+    past_cards = ""
+    for t in past[:4]:  # Max 4 past tournaments
+        winner_m = t.get("winner_male", [])
+        article_url = t.get("article_url", "index.html")
+        loc = t.get("location", "")
+        loc_split = loc.split(",")[0].strip() if loc else ""
         loc_flag = {"Bruselas": "🇧🇪", "El Gouna": "🇪🇬", "Miami": "🇺🇸", "Cancún": "🇲🇽", 
-                   "Gijón": "🇪🇸", "Riad": "🇸🇦"}.get(loc.split(",")[0].strip(), "🏳️")
+                   "Gijón": "🇪🇸", "Riad": "🇸🇦"}.get(loc_split, "🏳️")
         
-        featured = f'''
-        <!-- Featured Article: Latest Tournament -->
-        <article class="news-card featured" style="margin-bottom: 3rem;">
-            <div class="news-card-image">
-                <img src="images/brussels-tournament-cover.jpg" alt="{latest.get('name', '')}" onerror="this.src='images/banners/tournament-banner.jpg'">
-                <span class="news-card-category">🏆 CAMPEONES</span>
-            </div>
-            <div class="news-card-content">
-                <h3>
-                    <a href="{article_url}">{latest.get('name', '')}: {' y '.join(winner_m)} se proclaman campeones</a>
-                </h3>
-                <p>
-                    <strong>{' y '.join(winner_m)}</strong> han logrado una victoria memorable en el {latest.get('name', '')} 2026, 
-                    derrotando a sus rivales con un marcador de {latest.get('final_score', '')}. 
-                    El torneo se celebró en {latest.get('location', '')} del {latest.get('dates', '')}.
-                </p>
-                <div class="news-card-meta">
-                    <span class="news-card-date">📅 {latest.get('dates', '')}</span>
-                    <span class="news-source">📍 {latest.get('location', '')}</span>
+        past_cards += f'''
+            <article class="news-card">
+                <div class="news-card-image">{loc_flag}</div>
+                <div class="news-card-content">
+                    <span class="news-card-category">🏆 CAMPEONES</span>
+                    <h3><a href="{article_url}">{t.get('name', '')}: {' y '.join(winner_m)} se proclaman campeones</a></h3>
+                    <p>La pareja {' y '.join(winner_m)} victories en {t.get('name', '')} con un marcador de {t.get('final_score', '')}.</p>
+                    <div class="news-card-meta">
+                        <span>📅 {t.get('dates', '')}</span>
+                        <span>📍 {t.get('location', '')}</span>
+                    </div>
+                    <a href="{article_url}" class="btn">Leer más →</a>
                 </div>
-                <a href="{article_url}" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Leer resumen completo →</a>
-            </div>
-        </article>'''
+            </article>'''
+    
+    # Build upcoming tournament card
+    upcoming_card = ""
+    if upcoming:
+        next_t = upcoming[0]
+        loc_split = next_t.get("location", "").split(",")[0].strip() if next_t.get("location") else ""
+        loc_flag = {"Asunción": "🇵🇾", "Buenos Aires": "🇦🇷", "Roma": "🇮🇹"}.get(loc_split, "🏳️")
+        upcoming_card = f'''
+            <article class="news-card">
+                <div class="news-card-image">{loc_flag}</div>
+                <div class="news-card-content">
+                    <span class="news-card-category">📅 PRÓXIMO</span>
+                    <h3><a href="torneos.html">{next_t.get('name', '')}: El siguiente torneo del Premier Padel</a></h3>
+                    <p>El próximo torneo se celebrará del {next_t.get('dates', '')} en {next_t.get('location', '')}.</p>
+                    <div class="news-card-meta">
+                        <span>📅 {next_t.get('dates', '')}</span>
+                        <span>📍 {next_t.get('location', '')}</span>
+                    </div>
+                    <a href="torneos.html" class="btn">Ver torneo →</a>
+                </div>
+            </article>'''
     
     banner = get_current_banner(state)
     timestamp = datetime.now().strftime("%d/%m/%Y %H:%M")
@@ -539,11 +550,10 @@ def generate_actualidad(state: Dict) -> str:
 
         <h2 class="section-title">📰 Últimas Noticias</h2>
         
-        {featured}
-        
-        <p style="text-align: center; color: #666; padding: 2rem;">
-            Más noticias disponibles pronto. Sigue atento a las actualizaciones del Premier Padel Tour 2026.
-        </p>
+        <div class="news-grid">
+            {past_cards}
+            {upcoming_card}
+        </div>
 {TEMPLATE_FOOTER.format(timestamp=timestamp)}'''
     
     return html
