@@ -5,7 +5,7 @@
     "id": "asuncion_p2",
     "name": "Asunción P2",
     "location": "Asunción, Paraguay",
-    "dates": "10-17 Mayo 2026",
+    "dates": "03-10 Mayo 2026",
     "status": "upcoming"
   },
   "past_tournaments": [
@@ -49,17 +49,17 @@
       "id": "asuncion_p2",
       "name": "Asunción P2",
       "location": "Asunción, Paraguay",
-      "dates": "10-17 Mayo 2026",
+      "dates": "03-10 Mayo 2026",
       "status": "upcoming"
     },
     {
       "id": "buenos_aires_p1",
       "name": "Buenos Aires P1",
       "location": "Buenos Aires, Argentina",
-      "dates": "18-24 Mayo 2026",
+      "dates": "11-17 Mayo 2026",
       "status": "upcoming"
     }
   ],
-  "last_generation": "2026-04-29T14:31:35.109410",
-  "generation_count": 537
+  "last_generation": "2026-04-29T14:35:12.385063",
+  "generation_count": 538
 }
