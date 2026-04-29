@@ -8120,3 +8120,260 @@
 [2026-04-29 09:06:22] Validation passed
 [2026-04-29 09:06:22] 
 --- Deploying to GitHub ---
+[2026-04-29 09:06:24] Deployed to GitHub successfully
+[2026-04-29 09:06:24] ============================================================
+[2026-04-29 09:06:24] DYNAMIC FLOW v3.0 COMPLETED
+[2026-04-29 09:06:24] ============================================================
+[2026-04-29 09:11:24] ============================================================
+[2026-04-29 09:11:24] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:11:24] ============================================================
+[2026-04-29 09:11:24] Current tournament: Asunción P2
+[2026-04-29 09:11:24] Status: upcoming
+[2026-04-29 09:11:24] 
+--- Generating pages from state ---
+[2026-04-29 09:11:24] ERROR generating pages: [2026-04-29 09:11:24] === Website Generator v2.0 Started ===
+[2026-04-29 09:11:24] Dry run: False, Verify: False
+[2026-04-29 09:11:24] Generating index.html...
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 664, in <module>
+    main()
+    ~~~~^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 604, in main
+    "index.html": generate_index(state),
+                  ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 212, in generate_index
+    html = f'''{TEMPLATE_HEADER.format(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        title="Padel News Pro | Premier Padel Tour 2026",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        description="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        banner=banner
+        ^^^^^^^^^^^^^
+    )}
+    ^
+KeyError: '\n            --primary'
+
+[2026-04-29 09:16:24] ============================================================
+[2026-04-29 09:16:24] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:16:24] ============================================================
+[2026-04-29 09:16:24] Current tournament: Asunción P2
+[2026-04-29 09:16:24] Status: upcoming
+[2026-04-29 09:16:24] 
+--- Generating pages from state ---
+[2026-04-29 09:16:24] ERROR generating pages: [2026-04-29 09:16:24] === Website Generator v2.0 Started ===
+[2026-04-29 09:16:24] Dry run: False, Verify: False
+[2026-04-29 09:16:24] Generating index.html...
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 664, in <module>
+    main()
+    ~~~~^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 604, in main
+    "index.html": generate_index(state),
+                  ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 212, in generate_index
+    html = f'''{TEMPLATE_HEADER.format(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        title="Padel News Pro | Premier Padel Tour 2026",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        description="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        banner=banner
+        ^^^^^^^^^^^^^
+    )}
+    ^
+KeyError: '\n            --primary'
+
+[2026-04-29 09:21:25] ============================================================
+[2026-04-29 09:21:25] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:21:25] ============================================================
+[2026-04-29 09:21:25] Current tournament: Asunción P2
+[2026-04-29 09:21:25] Status: upcoming
+[2026-04-29 09:21:25] 
+--- Generating pages from state ---
+[2026-04-29 09:21:25] ERROR generating pages: [2026-04-29 09:21:25] === Website Generator v2.0 Started ===
+[2026-04-29 09:21:25] Dry run: False, Verify: False
+[2026-04-29 09:21:25] Generating index.html...
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 664, in <module>
+    main()
+    ~~~~^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 604, in main
+    "index.html": generate_index(state),
+                  ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 212, in generate_index
+    html = f'''{TEMPLATE_HEADER.format(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        title="Padel News Pro | Premier Padel Tour 2026",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        description="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        banner=banner
+        ^^^^^^^^^^^^^
+    )}
+    ^
+KeyError: '\n            --primary'
+
+[2026-04-29 09:26:25] ============================================================
+[2026-04-29 09:26:25] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:26:25] ============================================================
+[2026-04-29 09:26:25] Current tournament: Asunción P2
+[2026-04-29 09:26:25] Status: upcoming
+[2026-04-29 09:26:25] 
+--- Generating pages from state ---
+[2026-04-29 09:26:25] ERROR generating pages: [2026-04-29 09:26:25] === Website Generator v2.0 Started ===
+[2026-04-29 09:26:25] Dry run: False, Verify: False
+[2026-04-29 09:26:25] Generating index.html...
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 664, in <module>
+    main()
+    ~~~~^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 604, in main
+    "index.html": generate_index(state),
+                  ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 212, in generate_index
+    html = f'''{TEMPLATE_HEADER.format(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        title="Padel News Pro | Premier Padel Tour 2026",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        description="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        banner=banner
+        ^^^^^^^^^^^^^
+    )}
+    ^
+KeyError: '\n            --primary'
+
+[2026-04-29 09:31:25] ============================================================
+[2026-04-29 09:31:25] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:31:25] ============================================================
+[2026-04-29 09:31:25] Current tournament: Asunción P2
+[2026-04-29 09:31:25] Status: upcoming
+[2026-04-29 09:31:25] 
+--- Generating pages from state ---
+[2026-04-29 09:31:25] ERROR generating pages: [2026-04-29 09:31:25] === Website Generator v2.0 Started ===
+[2026-04-29 09:31:25] Dry run: False, Verify: False
+[2026-04-29 09:31:25] Generating index.html...
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 664, in <module>
+    main()
+    ~~~~^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 604, in main
+    "index.html": generate_index(state),
+                  ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 212, in generate_index
+    html = f'''{TEMPLATE_HEADER.format(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        title="Padel News Pro | Premier Padel Tour 2026",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        description="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        banner=banner
+        ^^^^^^^^^^^^^
+    )}
+    ^
+KeyError: '\n            --primary'
+
+[2026-04-29 09:36:26] ============================================================
+[2026-04-29 09:36:26] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:36:26] ============================================================
+[2026-04-29 09:36:26] Current tournament: Asunción P2
+[2026-04-29 09:36:26] Status: upcoming
+[2026-04-29 09:36:26] 
+--- Generating pages from state ---
+[2026-04-29 09:36:26] ERROR generating pages: [2026-04-29 09:36:26] === Website Generator v2.0 Started ===
+[2026-04-29 09:36:26] Dry run: False, Verify: False
+[2026-04-29 09:36:26] Generating index.html...
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 664, in <module>
+    main()
+    ~~~~^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 604, in main
+    "index.html": generate_index(state),
+                  ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 212, in generate_index
+    html = f'''{TEMPLATE_HEADER.format(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        title="Padel News Pro | Premier Padel Tour 2026",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        description="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        banner=banner
+        ^^^^^^^^^^^^^
+    )}
+    ^
+KeyError: '\n            --primary'
+
+[2026-04-29 09:41:25] ============================================================
+[2026-04-29 09:41:25] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:41:25] ============================================================
+[2026-04-29 09:41:25] Current tournament: Asunción P2
+[2026-04-29 09:41:25] Status: upcoming
+[2026-04-29 09:41:25] 
+--- Generating pages from state ---
+[2026-04-29 09:41:25] ERROR generating pages: [2026-04-29 09:41:25] === Website Generator v2.0 Started ===
+[2026-04-29 09:41:25] Dry run: False, Verify: False
+[2026-04-29 09:41:25] Generating index.html...
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 664, in <module>
+    main()
+    ~~~~^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 604, in main
+    "index.html": generate_index(state),
+                  ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 212, in generate_index
+    html = f'''{TEMPLATE_HEADER.format(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        title="Padel News Pro | Premier Padel Tour 2026",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        description="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        banner=banner
+        ^^^^^^^^^^^^^
+    )}
+    ^
+KeyError: '\n            --primary'
+
+[2026-04-29 09:41:34] ============================================================
+[2026-04-29 09:41:34] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:41:34] ============================================================
+[2026-04-29 09:41:34] Current tournament: Asunción P2
+[2026-04-29 09:41:34] Status: upcoming
+[2026-04-29 09:41:34] 
+--- Generating pages from state ---
+[2026-04-29 09:41:35] ERROR generating pages: [2026-04-29 09:41:34] === Website Generator v2.0 Started ===
+[2026-04-29 09:41:34] Dry run: False, Verify: False
+[2026-04-29 09:41:34] Generating index.html...
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 664, in <module>
+    main()
+    ~~~~^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 604, in main
+    "index.html": generate_index(state),
+                  ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/cristian/Sites/padel_news/scripts/website_generator.py", line 212, in generate_index
+    html = f'''{TEMPLATE_HEADER.format(
+                ~~~~~~~~~~~~~~~~~~~~~~^
+        title="Padel News Pro | Premier Padel Tour 2026",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        description="Tu portal profesional del Premier Padel Tour 2026. Noticias, resultados y rankings.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        banner=banner
+        ^^^^^^^^^^^^^
+    )}
+    ^
+KeyError: '\n            --primary'
+
+[2026-04-29 09:46:25] ============================================================
+[2026-04-29 09:46:25] DYNAMIC FLOW v3.0 STARTED
+[2026-04-29 09:46:25] ============================================================
+[2026-04-29 09:46:25] Current tournament: Asunción P2
+[2026-04-29 09:46:25] Status: upcoming
+[2026-04-29 09:46:25] 
+--- Generating pages from state ---
+[2026-04-29 09:46:25] Pages generated successfully
+[2026-04-29 09:46:25] 
+--- Validating pages ---
+[2026-04-29 09:46:25] Validation passed
+[2026-04-29 09:46:25] 
+--- Deploying to GitHub ---
