@@ -37,3 +37,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [2026-04-28 08:00:01] INDEX_AGENT: === INDEX AGENT COMPLETE ===
 [2026-04-28 20:00:04] INDEX_AGENT: === INDEX AGENT STARTED ===
 [2026-04-28 20:00:04] INDEX_AGENT: Ya actualizado hoy (2026-04-28), saltando...
+[2026-04-29 08:00:00] INDEX_AGENT: === INDEX AGENT STARTED ===
+[2026-04-29 08:00:00] INDEX_AGENT: WARNING: No encontré el marker, usando método alternativo
+[2026-04-29 08:00:00] INDEX_AGENT: Index actualizado - Status: upcoming
+[2026-04-29 08:00:01] INDEX_AGENT: Git error: Command '['git', 'commit', '-m', 'UPDATE: Index - torneo upcoming']' returned non-zero exit status 128.
+[2026-04-29 08:00:01] INDEX_AGENT: === INDEX AGENT COMPLETE ===

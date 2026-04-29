@@ -46,3 +46,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [2026-04-28 20:00:05] CALENDAR_AGENT: Calendario actualizado
 [2026-04-28 20:00:05] CALENDAR_AGENT: Git error: Command '['git', 'commit', '-m', 'UPDATE: Calendario - estados automáticos según fecha']' returned non-zero exit status 1.
 [2026-04-28 20:00:05] CALENDAR_AGENT: === CALENDAR AGENT COMPLETE ===
+[main cc9682d] UPDATE: Calendario - estados automáticos según fecha
+ 2 files changed, 85 insertions(+), 1 deletion(-)
+[2026-04-29 08:00:00] CALENDAR_AGENT: === CALENDAR AGENT STARTED ===
+[2026-04-29 08:00:00] CALENDAR_AGENT: Calendario actualizado
+[2026-04-29 08:00:02] CALENDAR_AGENT: Commit + Push successful
+[2026-04-29 08:00:02] CALENDAR_AGENT: === CALENDAR AGENT COMPLETE ===
