@@ -9695,3 +9695,14 @@
 [2026-04-30 18:50:03] Generated: torneos.html
 [2026-04-30 18:50:03] Generated: actualidad.html
 [2026-04-30 18:50:03] === Generation Complete (875 times) ===
+[2026-04-30 18:55:08] === Website Generator v2.0 Started ===
+[2026-04-30 18:55:08] Dry run: False, Verify: False
+[2026-04-30 18:55:08] Generating index.html...
+[2026-04-30 18:55:08] Generating resultados.html...
+[2026-04-30 18:55:08] Generating torneos.html...
+[2026-04-30 18:55:08] Generating actualidad.html...
+[2026-04-30 18:55:08] Generated: index.html
+[2026-04-30 18:55:08] Generated: resultados.html
+[2026-04-30 18:55:08] Generated: torneos.html
+[2026-04-30 18:55:08] Generated: actualidad.html
+[2026-04-30 18:55:08] === Generation Complete (876 times) ===
