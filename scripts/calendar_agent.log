@@ -80,3 +80,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [2026-04-30 20:00:00] CALENDAR_AGENT: Calendario actualizado
 [2026-04-30 20:00:00] CALENDAR_AGENT: Git error: Command '['git', 'add', 'torneos.html']' returned non-zero exit status 128.
 [2026-04-30 20:00:00] CALENDAR_AGENT: === CALENDAR AGENT COMPLETE ===
+[main df405b7] UPDATE: Calendario - estados automáticos según fecha
+ 1 file changed, 18 insertions(+)
+[2026-05-01 08:00:00] CALENDAR_AGENT: === CALENDAR AGENT STARTED ===
+[2026-05-01 08:00:00] CALENDAR_AGENT: Calendario actualizado
+[2026-05-01 08:00:01] CALENDAR_AGENT: Git error: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[2026-05-01 08:00:01] CALENDAR_AGENT: === CALENDAR AGENT COMPLETE ===

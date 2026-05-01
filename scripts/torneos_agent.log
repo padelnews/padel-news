@@ -69,3 +69,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [2026-04-30 20:00:00] TORNEOS_AGENT: torneos.html actualizado
 [2026-04-30 20:00:02] TORNEOS_AGENT: Commit + Push successful
 [2026-04-30 20:00:02] TORNEOS_AGENT: === TORNEOS AGENT COMPLETE ===
+[main a2d6104] UPDATE: Torneos - último torneo con ganador
+ 1 file changed, 67 insertions(+), 1 deletion(-)
+[2026-05-01 08:00:00] TORNEOS_AGENT: === TORNEOS AGENT STARTED ===
+[2026-05-01 08:00:00] TORNEOS_AGENT: torneos.html actualizado
+[2026-05-01 08:00:01] TORNEOS_AGENT: Commit + Push successful
+[2026-05-01 08:00:01] TORNEOS_AGENT: === TORNEOS AGENT COMPLETE ===

@@ -23,3 +23,6 @@ an editor opened by 'git commit'. Please make sure all processes
 are terminated then try again. If it still fails, a git process
 may have crashed in this repository earlier:
 remove the file manually to continue.
+To https://github.com/padelnews/padel-news.git
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at df405b744ebd56437ee4e2e109d06c9a58cb298e but expected edfeac8b5c223db9668a7edfdc6bd213c0036cdf)
+error: failed to push some refs to 'https://github.com/padelnews/padel-news.git'
