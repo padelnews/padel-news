@@ -459,8 +459,8 @@
                 alert('❌ Introduce la URL del TikTok Live');
                 return;
             }
-            // Abrir el Live de TikTok directamente en una ventana nueva
-            window.open(url, '_blank');
+            // Abrir el panel de control del bot
+            window.open('https://192.168.1.140:8888/tiktok_bot_control.html', '_blank');
         }
         
         async function saveWinner(user, boxNumber, price) {
