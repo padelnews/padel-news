@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Usuarios TikTok Subastas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #ff0050, #00f2ea);
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        
+        .stat-value {
+            font-size: 48px;
+            font-weight: 900;
+            color: #00f2ea;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+        }
+        
+        .card h2 {
+            font-size: 20px;
+            color: #00f2ea;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        
+        th {
+            background: rgba(0, 242, 234, 0.1);
+            color: #00f2ea;
+            font-weight: 700;
+        }
+        
+        tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .box-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #00ff88;
+            color: #000;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin: 2px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff0050, #00f2ea);
+            color: #fff;
+        }
+        
+        .products-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .product-item {
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid #00f2ea;
+        }
+        
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            font-weight: 900;
+            color: #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Panel de Administración</h1>
+        <p>Gestión de usuarios y productos</p>
+    </div>
+    
+    <!-- Estadísticas -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value" id="total-users">0</div>
+            <div class="stat-label">Usuarios</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="total-boxes">0</div>
+            <div class="stat-label">Cajas Activas</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="total-revenue">€0</div>
+            <div class="stat-label">Recaudado</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="total-products">0</div>
+            <div class="stat-label">Productos Vendidos</div>
+        </div>
+    </div>
+    
+    <!-- Tabla de Usuarios -->
+    <div class="card">
+        <h2>👥 Usuarios con Caja Pagada</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Cajas</th>
+                    <th>Gastado</th>
+                    <th>Productos</th>
+                </tr>
+            </thead>
+            <tbody id="users-table">
+                <!-- Se llena dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Últimos Productos -->
+    <div class="card">
+        <h2>📦 Últimos Productos Asignados</h2>
+        <div class="products-list" id="products-list">
+            <!-- Se llena dinámicamente -->
+        </div>
+    </div>
+
+    <script>
+        // Cargar datos (en producción, fetch a la API)
+        const database = {
+            users: {
+                '@carlos92': {
+                    email: 'carlos@email.com',
+                    phone: '+34 600 000 001',
+                    address: 'Calle Mayor 1, Madrid',
+                    boxes: ['233'],
+                    total_spent: 80,
+                    products_won: 10
+                },
+                '@maria_garcia': {
+                    email: 'maria@email.com',
+                    phone: '+34 600 000 002',
+                    address: 'Calle Sol 5, Barcelona',
+                    boxes: ['150', '200'],
+                    total_spent: 45,
+                    products_won: 3
+                },
+                '@juan_perez': {
+                    email: 'juan@email.com',
+                    phone: '+34 600 000 003',
+                    address: 'Avenida Libertad 10, Valencia',
+                    boxes: ['250'],
+                    total_spent: 30,
+                    products_won: 2
+                }
+            },
+            products: [
+                { name: 'Caja Misteriosa Premium', price: 8, box_number: '233', winner: '@carlos92', timestamp: '21:30' },
+                { name: 'Producto Sorpresa', price: 15, box_number: '150', winner: '@maria_garcia', timestamp: '21:32' },
+                { name: 'Pack Especial', price: 12, box_number: '233', winner: '@carlos92', timestamp: '21:35' },
+                { name: 'Sorpresa VIP', price: 20, box_number: '250', winner: '@juan_perez', timestamp: '21:37' },
+                { name: 'Caja Básica', price: 6, box_number: '233', winner: '@carlos92', timestamp: '21:40' }
+            ]
+        };
+        
+        // Actualizar estadísticas
+        const users = database.users;
+        const totalUsers = Object.keys(users).length;
+        const totalBoxes = Object.values(users).reduce((sum, u) => sum + u.boxes.length, 0);
+        const totalRevenue = Object.values(users).reduce((sum, u) => sum + u.total_spent, 0);
+        const totalProducts = database.products.length;
+        
+        document.getElementById('total-users').textContent = totalUsers;
+        document.getElementById('total-boxes').textContent = totalBoxes;
+        document.getElementById('total-revenue').textContent = `€${totalRevenue}`;
+        document.getElementById('total-products').textContent = totalProducts;
+        
+        // Llenar tabla de usuarios
+        const usersTable = document.getElementById('users-table');
+        usersTable.innerHTML = Object.entries(users).map(([user, data]) => `
+            <tr>
+                <td><strong style="color: #00f2ea;">${user}</strong></td>
+                <td>${data.email}</td>
+                <td>${data.phone}</td>
+                <td>${data.boxes.map(b => `<span class="box-badge">#${b}</span>`).join('')}</td>
+                <td style="color: #00ff88; font-weight: 700;">€${data.total_spent}</td>
+                <td>${data.products_won}</td>
+            </tr>
+        `).join('');
+        
+        // Llenar lista de productos
+        const productsList = document.getElementById('products-list');
+        productsList.innerHTML = database.products.map(p => `
+            <div class="product-item">
+                <div class="product-header">
+                    <strong style="font-size: 18px;">${p.name}</strong>
+                    <span class="product-price">€${p.price}</span>
+                </div>
+                <div style="color: #888; font-size: 14px;">
+                    📦 Caja #${p.box_number} → 🏆 ${p.winner} · ⏰ ${p.timestamp}
+                </div>
+            </div>
+        `).join('');
+    </script>
+</body>
+</html>

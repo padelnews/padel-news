@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial - TikTok Subastas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 100%);
+            color: #fff;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(90deg, #ff0050, #00f2ea);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 50px rgba(255, 0, 80, 0.5);
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .history-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .history-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: grid;
+            grid-template-columns: 80px 1fr 200px 150px;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .history-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 242, 234, 0.3);
+        }
+        
+        .item-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ff0050;
+            text-shadow: 0 0 30px rgba(255, 0, 80, 0.5);
+        }
+        
+        .item-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .item-price {
+            font-size: 36px;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+            text-align: right;
+        }
+        
+        .item-winner {
+            text-align: right;
+        }
+        
+        .winner-box {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        
+        .winner-user {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00f2ea;
+        }
+        
+        .item-time {
+            font-size: 18px;
+            color: #888;
+            text-align: center;
+        }
+        
+        /* Animación de entrada */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .history-item {
+            animation: slideIn 0.5s ease;
+        }
+        
+        .history-item:nth-child(1) { animation-delay: 0.1s; }
+        .history-item:nth-child(2) { animation-delay: 0.2s; }
+        .history-item:nth-child(3) { animation-delay: 0.3s; }
+        .history-item:nth-child(4) { animation-delay: 0.4s; }
+        .history-item:nth-child(5) { animation-delay: 0.5s; }
+        .history-item:nth-child(6) { animation-delay: 0.6s; }
+        .history-item:nth-child(7) { animation-delay: 0.7s; }
+        .history-item:nth-child(8) { animation-delay: 0.8s; }
+        .history-item:nth-child(9) { animation-delay: 0.9s; }
+        .history-item:nth-child(10) { animation-delay: 1.0s; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏆 Historial de Subastas</h1>
+        <p>Últimos productos asignados</p>
+    </div>
+    
+    <div class="history-grid" id="history-list">
+        <!-- Se llena dinámicamente -->
+    </div>
+
+    <script>
+        // Datos de ejemplo (en producción, fetch a la API)
+        const products = [
+            { id: 1, name: 'Caja Misteriosa Premium', price: 8, box: '233', winner: '@carlos92', time: '21:30' },
+            { id: 2, name: 'Producto Sorpresa', price: 15, box: '150', winner: '@maria_garcia', time: '21:32' },
+            { id: 3, name: 'Pack Especial', price: 12, box: '233', winner: '@carlos92', time: '21:35' },
+            { id: 4, name: 'Sorpresa VIP', price: 20, box: '250', winner: '@juan_perez', time: '21:37' },
+            { id: 5, name: 'Caja Básica', price: 6, box: '233', winner: '@carlos92', time: '21:40' },
+            { id: 6, name: 'Edición Limitada', price: 25, box: '200', winner: '@maria_garcia', time: '21:42' },
+            { id: 7, name: 'Pack Deluxe', price: 18, box: '150', winner: '@maria_garcia', time: '21:45' },
+            { id: 8, name: 'Sorpresa Gold', price: 30, box: '250', winner: '@juan_perez', time: '21:47' },
+            { id: 9, name: 'Caja Premium', price: 10, box: '233', winner: '@carlos92', time: '21:50' },
+            { id: 10, name: 'Producto Estrella', price: 22, box: '200', winner: '@maria_garcia', time: '21:52' }
+        ];
+        
+        const historyList = document.getElementById('history-list');
+        historyList.innerHTML = products.map((p, i) => `
+            <div class="history-item">
+                <div class="item-number">#${p.id}</div>
+                <div class="item-name">${p.name}</div>
+                <div class="item-price">€${p.price}</div>
+                <div class="item-winner">
+                    <div class="winner-box">📦 Caja #${p.box}</div>
+                    <div class="winner-user">🏆 ${p.winner}</div>
+                </div>
+                <div class="item-time">⏰ ${p.time}</div>
+            </div>
+        `).join('');
+        
+        // Auto-refresh cada 30 segundos (en producción)
+        setInterval(() => {
+            // fetch('/api/products')...
+            console.log('🔄 Refreshing...');
+        }, 30000);
+    </script>
+</body>
+</html>
