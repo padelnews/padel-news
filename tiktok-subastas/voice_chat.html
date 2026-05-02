@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatClaw - JARVIS Interface</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a0a2a 100%);
+            min-height: 100vh;
+            color: white;
+            overflow: hidden;
+        }
+
+        .bg-animation {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; overflow: hidden;
+        }
+        .bg-animation::before {
+            content: ''; position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(0, 150, 255, 0.03) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+
+        .status-line {
+            position: fixed; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #0066ff, #00ccff, #0066ff);
+            background-size: 200% 100%;
+            animation: scan 3s linear infinite;
+        }
+        @keyframes scan {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+
+        .jarvis-container {
+            position: relative; z-index: 1;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            min-height: 100vh; padding: 2rem;
+        }
+
+        .jarvis-orb {
+            width: 200px; height: 200px; border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #1a4a8a, #0a2040, #000);
+            box-shadow: 
+                0 0 60px rgba(0, 100, 255, 0.3),
+                0 0 100px rgba(0, 100, 255, 0.2),
+                inset 0 0 60px rgba(0, 100, 255, 0.1);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; margin-bottom: 2rem; transition: all 0.5s ease;
+        }
+
+        .jarvis-orb::before {
+            content: ''; position: absolute; width: 100%; height: 100%;
+            border-radius: 50%; border: 2px solid rgba(0, 150, 255, 0.5);
+            animation: orbit 4s linear infinite;
+        }
+        .jarvis-orb::after {
+            content: ''; position: absolute; width: 110%; height: 110%;
+            border-radius: 50%; border: 1px solid rgba(0, 150, 255, 0.2);
+            animation: orbit 6s linear infinite reverse;
+        }
+        @keyframes orbit {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .jarvis-orb.listening {
+            box-shadow: 
+                0 0 80px rgba(0, 255, 150, 0.5),
+                0 0 120px rgba(0, 255, 150, 0.3),
+                inset 0 0 80px rgba(0, 255, 150, 0.2);
+            animation: pulse-glow 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .jarvis-orb.wake-detected {
+            box-shadow: 
+                0 0 100px rgba(0, 255, 100, 0.8),
+                0 0 150px rgba(0, 255, 100, 0.5),
+                inset 0 0 100px rgba(0, 255, 100, 0.3);
+            animation: wake-pulse 0.5s ease-in-out infinite;
+        }
+        @keyframes wake-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .jarvis-orb.thinking {
+            box-shadow: 
+                0 0 80px rgba(255, 150, 0, 0.6),
+                0 0 120px rgba(255, 150, 0, 0.4),
+                inset 0 0 80px rgba(255, 150, 0, 0.2);
+            animation: think-pulse 1s ease-in-out infinite;
+        }
+        @keyframes think-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .orb-inner {
+            width: 80px; height: 80px; border-radius: 50%;
+            background: radial-gradient(circle, #00ccff 0%, #0066ff 50%, #003399 100%);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.8);
+        }
+
+        .orb-text {
+            position: absolute; bottom: -40px;
+            font-size: 0.9rem; color: #00ccff;
+            text-transform: uppercase; letter-spacing: 3px;
+        }
+
+        .title {
+            font-size: 3rem; font-weight: 300; letter-spacing: 15px;
+            color: #00ccff; text-shadow: 0 0 30px rgba(0, 200, 255, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1rem; color: #6699aa; letter-spacing: 5px;
+            margin-bottom: 2rem;
+        }
+
+        .mode-toggle {
+            display: flex; gap: 1rem; margin-bottom: 1.5rem;
+        }
+
+        .mode-btn {
+            background: rgba(0, 50, 100, 0.5);
+            border: 1px solid rgba(0, 150, 255, 0.3);
+            color: #00ccff; padding: 0.8rem 1.5rem;
+            border-radius: 25px; cursor: pointer;
+            font-size: 0.9rem; transition: all 0.3s;
+        }
+        .mode-btn:hover, .mode-btn.active {
+            background: rgba(0, 100, 200, 0.5);
+            border-color: #00ccff;
+        }
+
+        .chat-container {
+            width: 100%; max-width: 600px;
+            background: rgba(0, 20, 40, 0.8);
+            border: 1px solid rgba(0, 150, 255, 0.3);
+            border-radius: 15px; padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .chat-messages {
+            height: 300px; overflow-y: auto; margin-bottom: 1rem;
+        }
+
+        .message { margin-bottom: 1rem; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .message.user { text-align: right; }
+        .message.user .bubble {
+            background: linear-gradient(135deg, #0044aa, #0066ff);
+            color: white; display: inline-block; padding: 10px 15px;
+            border-radius: 15px 15px 0 15px; max-width: 80%;
+        }
+        .message.jarvis .bubble {
+            background: rgba(0, 100, 150, 0.5);
+            border: 1px solid rgba(0, 150, 255, 0.3);
+            color: #00ccff; display: inline-block; padding: 10px 15px;
+            border-radius: 15px 15px 15px 0; max-width: 80%;
+        }
+        .message .timestamp {
+            font-size: 0.7rem; color: #446688; margin-top: 5px;
+        }
+
+        .input-area { display: flex; gap: 10px; }
+        .chat-input {
+            flex: 1; background: rgba(0, 50, 100, 0.3);
+            border: 1px solid rgba(0, 150, 255, 0.3);
+            border-radius: 25px; padding: 12px 20px;
+            color: white; font-size: 1rem; outline: none;
+        }
+        .chat-input:focus { border-color: rgba(0, 200, 255, 0.7); }
+        .chat-input::placeholder { color: #668899; }
+
+        .btn {
+            width: 50px; height: 50px; border-radius: 50%; border: none;
+            cursor: pointer; display: flex; align-items: center;
+            justify-content: center; font-size: 1.2rem; transition: all 0.3s;
+        }
+        .btn-mic {
+            background: linear-gradient(135deg, #0066ff, #003399);
+        }
+        .btn-mic:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(0, 100, 255, 0.5); }
+        .btn-mic.listening {
+            background: linear-gradient(135deg, #00cc66, #009944);
+            animation: pulse 1s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 204, 102, 0.7); }
+            50% { box-shadow: 0 0 0 20px rgba(0, 204, 102, 0); }
+        }
+
+        .connection-status {
+            position: fixed; bottom: 20px; left: 20px;
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.8rem; color: #6699aa;
+        }
+        .status-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #00cc66; animation: blink 2s infinite;
+        }
+        .status-dot.disconnected { background: #cc3300; animation: none; }
+        @keyframes blink {
+            0%, 100% { opacity: 1; } 50% { opacity: 0.5; }
+        }
+
+        .transcript {
+            position: fixed; top: 30px; left: 50%; transform: translateX(-50%);
+            background: rgba(0, 100, 200, 0.9); color: white;
+            padding: 0.5rem 1.5rem; border-radius: 25px;
+            font-size: 1.1rem; display: none;
+            z-index: 100;
+        }
+        .transcript.show { display: block; }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="status-line"></div>
+    <div class="transcript" id="transcript">Escuchando...</div>
+
+    <div class="jarvis-container">
+        <div class="jarvis-orb" id="orb">
+            <div class="orb-inner"></div>
+            <span class="orb-text" id="orb-status">En espera</span>
+        </div>
+
+        <h1 class="title">🦞 CHATCLAW</h1>
+        <p class="subtitle">VOICE INTERFACE</p>
+
+        <div class="mode-toggle">
+            <button class="mode-btn" id="mode-push" onclick="setMode('push')">
+                🔘 Pulsar para hablar
+            </button>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chat">
+                <div class="message jarvis">
+                    <div class="bubble">Buenos días. Pulsa el micrófono para hablar o escribe tu mensaje aquí.</div>
+                    <div class="timestamp">Ahora</div>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" class="chat-input" id="input" placeholder="Escribe tu mensaje..." autocomplete="off">
+                <button class="btn btn-mic" id="mic-btn" title="Micrófono">🎤</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="connection-status">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status-text">Inicializando...</span>
+    </div>
+
+    <script>
+        let recognition = null;
+        let isListening = false;
+
+        const orb = document.getElementById('orb');
+        const orbStatus = document.getElementById('orb-status');
+        const statusDot = document.getElementById('status-dot');
+        const statusText = document.getElementById('status-text');
+        const chat = document.getElementById('chat');
+        const input = document.getElementById('input');
+        const micBtn = document.getElementById('mic-btn');
+        const transcript = document.getElementById('transcript');
+
+        function initSpeechRecognition() {
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                statusText.textContent = 'Speech API no disponible';
+                return null;
+            }
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = true;
+            recognition.lang = 'es-ES';
+
+            recognition.onstart = () => {
+                isListening = true;
+                orb.classList.add('listening');
+                orbStatus.textContent = 'Escuchando...';
+                statusText.textContent = 'Escuchando...';
+                transcript.classList.add('show');
+                transcript.textContent = 'Escuchando...';
+            };
+
+            recognition.onresult = (event) => {
+                const result = event.results[event.results.length - 1];
+                const text = result[0].transcript.toLowerCase().trim();
+                
+                transcript.textContent = text;
+
+                if (result.isFinal) {
+                    transcript.classList.remove('show');
+                    handleRecognizedText(text);
+                }
+            };
+
+            recognition.onerror = (event) => {
+                console.log('Speech error:', event.error);
+                stopListening();
+            };
+
+            recognition.onend = () => {
+                stopListening();
+            };
+
+            return recognition;
+        }
+
+        function startListening() {
+            if (!recognition) {
+                recognition = initSpeechRecognition();
+            }
+            if (recognition && !isListening) {
+                try {
+                    recognition.start();
+                } catch (e) {
+                    console.log('Recognition start error:', e);
+                }
+            }
+        }
+
+        function stopListening() {
+            isListening = false;
+            orb.classList.remove('listening');
+            transcript.classList.remove('show');
+            orbStatus.textContent = 'En espera';
+            statusText.textContent = 'Listo';
+        }
+
+        async function handleRecognizedText(text) {
+            addMessage(text, 'user');
+            await sendToServer(text);
+        }
+
+        async function sendToServer(text) {
+            orb.classList.add('thinking');
+            orbStatus.textContent = 'Procesando...';
+            statusText.textContent = 'Procesando...';
+
+            try {
+                const resp = await fetch('/ask', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({question: text})
+                });
+
+                const data = await resp.json();
+                
+                if (data.response) {
+                    addMessage(data.response, 'jarvis');
+                    speak(data.response);
+                } else if (data.error) {
+                    addMessage('Error: ' + data.error, 'jarvis');
+                }
+            } catch (e) {
+                addMessage('Error de conexión: ' + e.message, 'jarvis');
+            }
+
+            orb.classList.remove('thinking');
+            orbStatus.textContent = 'En espera';
+            statusText.textContent = 'Listo';
+        }
+
+        function addMessage(text, sender) {
+            const time = new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+            const msg = document.createElement('div');
+            msg.className = `message ${sender}`;
+            msg.innerHTML = `<div class="bubble">${text}</div><div class="timestamp">${time}</div>`;
+            chat.appendChild(msg);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'es-ES';
+                utterance.rate = 1.0;
+                utterance.pitch = 1.0;
+                
+                const voices = window.speechSynthesis.getVoices();
+                const spanishVoice = voices.find(v => v.lang.includes('es'));
+                if (spanishVoice) utterance.voice = spanishVoice;
+                
+                utterance.onstart = () => {
+                    orb.classList.add('listening');
+                    orbStatus.textContent = 'Hablando...';
+                };
+                
+                utterance.onend = () => {
+                    orb.classList.remove('listening');
+                    orbStatus.textContent = 'En espera';
+                    statusText.textContent = 'Listo';
+                };
+                
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function setMode(mode) {
+            document.getElementById('mode-push').classList.toggle('active', mode === 'push');
+        }
+
+        // Mic button click
+        micBtn.addEventListener('click', () => {
+            if (isListening) {
+                recognition.stop();
+            } else {
+                startListening();
+            }
+        });
+
+        // Text input
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && input.value.trim()) {
+                const text = input.value.trim();
+                addMessage(text, 'user');
+                sendToServer(text);
+                input.value = '';
+            }
+        });
+
+        // Initialize
+        recognition = initSpeechRecognition();
+        statusDot.classList.remove('disconnected');
+        statusText.textContent = 'Listo';
+
+        // Auto-focus input after 2 seconds
+        setTimeout(() => {
+            input.focus();
+        }, 2000);
+    </script>
+</body>
+</html>
