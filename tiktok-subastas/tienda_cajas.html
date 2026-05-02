@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Cajas Misteriosas - Compra Tu Caja</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(90deg, #ff0050, #00f2ea);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 50px rgba(255, 0, 80, 0.5);
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Cajas Grid */
+        .boxes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .box-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .box-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 242, 234, 0.3);
+            border-color: #00f2ea;
+        }
+        
+        .box-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .box-name {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff0050, #00f2ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .box-price {
+            font-size: 42px;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        .box-features {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .box-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .box-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .box-features li::before {
+            content: '✅ ';
+            margin-right: 10px;
+        }
+        
+        .btn-buy {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #ff0050, #00f2ea);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-buy:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 0, 80, 0.5);
+        }
+        
+        /* Formulario Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e, #0a0a1a);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            border: 2px solid #00f2ea;
+            box-shadow: 0 0 50px rgba(0, 242, 234, 0.3);
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .modal-header h2 {
+            font-size: 28px;
+            color: #00f2ea;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #00f2ea;
+        }
+        
+        .btn-pay {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            font-size: 18px;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        
+        .btn-close {
+            background: transparent;
+            border: 1px solid #ff4444;
+            color: #ff4444;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        /* Pasarela de Pago */
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .payment-method {
+            flex: 1;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid #333;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover, .payment-method.selected {
+            border-color: #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+        }
+        
+        .payment-method i {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+        
+        /* Success Message */
+        .success-box {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .success-title {
+            font-size: 32px;
+            color: #00ff88;
+            margin-bottom: 15px;
+        }
+        
+        .success-text {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎵 TikTok Cajas Misteriosas</h1>
+        <p>Compra tu caja y participa en las subastas EN VIVO</p>
+    </div>
+    
+    <div class="container">
+        <div class="boxes-grid">
+            <!-- Caja Básica -->
+            <div class="box-card">
+                <div class="box-icon">📦</div>
+                <div class="box-name">Caja Básica</div>
+                <div class="box-price">€9.99</div>
+                <ul class="box-features">
+                    <li>Acceso a 1 subasta</li>
+                    <li>Producto valor hasta €20</li>
+                    <li>Envío incluido</li>
+                    <li>Garantía 30 días</li>
+                </ul>
+                <button class="btn-buy" onclick="openModal('Caja Básica', 9.99)">Comprar Ahora</button>
+            </div>
+            
+            <!-- Caja Premium -->
+            <div class="box-card" style="border-color: #00f2ea; box-shadow: 0 0 30px rgba(0, 242, 234, 0.3);">
+                <div class="box-icon">💎</div>
+                <div class="box-name">Caja Premium</div>
+                <div class="box-price">€19.99</div>
+                <ul class="box-features">
+                    <li>Acceso a 3 subastas</li>
+                    <li>Producto valor hasta €50</li>
+                    <li>Envío prioritario</li>
+                    <li>Garantía 60 días</li>
+                    <li>Soporte VIP</li>
+                </ul>
+                <button class="btn-buy" onclick="openModal('Caja Premium', 19.99)">Comprar Ahora</button>
+            </div>
+            
+            <!-- Caja VIP -->
+            <div class="box-card">
+                <div class="box-icon">👑</div>
+                <div class="box-name">Caja VIP</div>
+                <div class="box-price">€49.99</div>
+                <ul class="box-features">
+                    <li>Acceso ILIMITADO</li>
+                    <li>Producto valor hasta €150</li>
+                    <li>Envío express 24h</li>
+                    <li>Garantía 90 días</li>
+                    <li>Soporte 24/7</li>
+                    <li>Acceso anticipado</li>
+                </ul>
+                <button class="btn-buy" onclick="openModal('Caja VIP', 49.99)">Comprar Ahora</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de Compra -->
+    <div class="modal" id="purchase-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🛒 Completar Compra</h2>
+                <p id="modal-product-name"></p>
+            </div>
+            
+            <form id="purchase-form" onsubmit="processPayment(event)">
+                <div class="form-group">
+                    <label>👤 Usuario de TikTok *</label>
+                    <input type="text" id="tiktok-user" required placeholder="@tu_usuario">
+                </div>
+                
+                <div class="form-group">
+                    <label>📧 Email *</label>
+                    <input type="email" id="email" required placeholder="tu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label>📱 Teléfono *</label>
+                    <input type="tel" id="phone" required placeholder="+34 600 000 000">
+                </div>
+                
+                <div class="form-group">
+                    <label>🏠 Dirección de Envío *</label>
+                    <input type="text" id="address" required placeholder="Calle, número, piso...">
+                </div>
+                
+                <div class="form-group">
+                    <label>🏙️ Ciudad *</label>
+                    <input type="text" id="city" required placeholder="Ciudad">
+                </div>
+                
+                <div class="form-group">
+                    <label>📮 Código Postal *</label>
+                    <input type="text" id="zip" required placeholder="28001">
+                </div>
+                
+                <div class="form-group">
+                    <label>💳 Método de Pago</label>
+                    <div class="payment-methods">
+                        <div class="payment-method selected" onclick="selectPayment(this, 'card')">
+                            <div>💳</div>
+                            <div>Tarjeta</div>
+                        </div>
+                        <div class="payment-method" onclick="selectPayment(this, 'bizum')">
+                            <div>📱</div>
+                            <div>Bizum</div>
+                        </div>
+                        <div class="payment-method" onclick="selectPayment(this, 'paypal')">
+                            <div>🅿️</div>
+                            <div>PayPal</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <input type="hidden" id="selected-box">
+                <input type="hidden" id="selected-price">
+                <input type="hidden" id="payment-method" value="card">
+                
+                <button type="submit" class="btn-pay">Pagar Ahora</button>
+                <button type="button" class="btn-close" onclick="closeModal()">Cancelar</button>
+            </form>
+            
+            <!-- Success -->
+            <div class="success-box" id="success-box" style="display: none;">
+                <div class="success-icon">✅</div>
+                <div class="success-title">¡Pago Completado!</div>
+                <div class="success-text">
+                    Tu caja ha sido activada correctamente.<br>
+                    Ahora puedes participar en las subastas EN VIVO.
+                </div>
+                <div style="background: rgba(0,255,136,0.1); padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <strong>Usuario TikTok:</strong> <span id="success-user"></span><br>
+                    <strong>Caja:</strong> <span id="success-box-name"></span><br>
+                    <strong>Estado:</strong> <span style="color: #00ff88;">✅ ACTIVA</span>
+                </div>
+                <button class="btn-buy" onclick="closeModal()">Ir a las Subastas</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentBox = '';
+        let currentPrice = 0;
+        
+        function openModal(boxName, price) {
+            currentBox = boxName;
+            currentPrice = price;
+            
+            document.getElementById('modal-product-name').textContent = `${boxName} - €${price}`;
+            document.getElementById('selected-box').value = boxName;
+            document.getElementById('selected-price').value = price;
+            
+            document.getElementById('purchase-modal').classList.add('active');
+            document.getElementById('purchase-form').style.display = 'block';
+            document.getElementById('success-box').style.display = 'none';
+        }
+        
+        function closeModal() {
+            document.getElementById('purchase-modal').classList.remove('active');
+        }
+        
+        function selectPayment(element, method) {
+            document.querySelectorAll('.payment-method').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+            document.getElementById('payment-method').value = method;
+        }
+        
+        async function processPayment(event) {
+            event.preventDefault();
+            
+            const data = {
+                box: document.getElementById('selected-box').value,
+                price: parseFloat(document.getElementById('selected-price').value),
+                tiktokUser: document.getElementById('tiktok-user').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                zip: document.getElementById('zip').value,
+                paymentMethod: document.getElementById('payment-method').value
+            };
+            
+            // Simular procesamiento de pago
+            const btn = event.target.querySelector('.btn-pay');
+            btn.textContent = '⏳ Procesando...';
+            btn.disabled = true;
+            
+            // Enviar al backend
+            try {
+                const response = await fetch('/api/comprar_caja', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    // Mostrar éxito
+                    document.getElementById('purchase-form').style.display = 'none';
+                    document.getElementById('success-box').style.display = 'block';
+                    document.getElementById('success-user').textContent = data.tiktokUser;
+                    document.getElementById('success-box-name').textContent = data.box;
+                } else {
+                    alert('❌ Error: ' + result.error);
+                }
+            } catch (e) {
+                alert('❌ Error de conexión: ' + e.message);
+            }
+            
+            btn.textContent = 'Pagar Ahora';
+            btn.disabled = false;
+        }
+        
+        // Cerrar modal con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>

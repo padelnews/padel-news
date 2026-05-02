@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Subastas LIVE</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(90deg, #ff0050, #00f2ea);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(255, 0, 80, 0.5);
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0,0,0,0.5);
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+        
+        .live-dot {
+            width: 12px;
+            height: 12px;
+            background: #ff0000;
+            border-radius: 50%;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .live-text {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        
+        /* Main Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px 350px;
+            gap: 20px;
+            padding: 20px;
+            height: calc(100vh - 90px);
+        }
+        
+        /* Product Display */
+        .product-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .product-image {
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .product-name {
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff0050, #00f2ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .product-price {
+            font-size: 48px;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        .timer {
+            font-size: 64px;
+            font-weight: 900;
+            color: #ff4444;
+            text-shadow: 0 0 30px rgba(255, 68, 68, 0.5);
+            font-family: 'Courier New', monospace;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Chat Feed */
+        .chat-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-header {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-right: 10px;
+        }
+        
+        .chat-message {
+            background: rgba(255,255,255,0.08);
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 3px solid rgba(255,255,255,0.2);
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .chat-message.highlight {
+            border-left-color: #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+        }
+        
+        .chat-message.bid {
+            border-left-color: #ff0050;
+            background: rgba(255, 0, 80, 0.1);
+        }
+        
+        .chat-user {
+            font-weight: 700;
+            color: #00f2ea;
+            margin-bottom: 5px;
+        }
+        
+        .chat-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .chat-time {
+            font-size: 11px;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        /* Winners Panel */
+        .winners-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow-y: auto;
+        }
+        
+        .winners-header {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .winner-count {
+            background: #00ff88;
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        .winner-item {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 242, 234, 0.1));
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .winner-user {
+            font-size: 16px;
+            font-weight: 700;
+            color: #00ff88;
+            margin-bottom: 5px;
+        }
+        
+        .winner-product {
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .winner-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00f2ea;
+        }
+        
+        .winner-time {
+            font-size: 11px;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        /* Admin Controls */
+        .admin-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 20px;
+            z-index: 1000;
+        }
+        
+        .admin-btn {
+            background: linear-gradient(135deg, #ff0050, #00f2ea);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 5px;
+            transition: transform 0.2s;
+        }
+        
+        .admin-btn:hover { transform: scale(1.05); }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+        
+        /* Mobile */
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🎵 TikTok <span style="color: #00f2ea;">Subastas</span></div>
+        <div class="live-indicator">
+            <div class="live-dot"></div>
+            <span class="live-text">EN DIRECTO</span>
+        </div>
+    </div>
+    
+    <div class="main-grid">
+        <!-- Product Section -->
+        <div class="product-section">
+            <div class="product-image" id="product-image">📦</div>
+            <div class="product-name" id="product-name">Caja Misteriosa Premium</div>
+            <div class="product-price" id="product-price">€0</div>
+            <div class="timer" id="timer">00:30</div>
+        </div>
+        
+        <!-- Chat Feed -->
+        <div class="chat-section">
+            <div class="chat-header">
+                💬 Chat en Vivo
+                <span style="font-size: 12px; color: #888;" id="chat-count">0 mensajes</span>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+        </div>
+        
+        <!-- Winners Panel -->
+        <div class="winners-section">
+            <div class="winners-header">
+                🏆 Ganadores
+                <span class="winner-count" id="winner-count">0</span>
+            </div>
+            <div id="winners-list"></div>
+        </div>
+    </div>
+    
+    <!-- Admin Controls -->
+    <div class="admin-panel">
+        <button class="admin-btn" onclick="startTimer()">⏱️ Iniciar</button>
+        <button class="admin-btn" onclick="stopTimer()">⏹️ Parar</button>
+        <button class="admin-btn" onclick="resetTimer()">🔄 Reset</button>
+        <button class="admin-btn" onclick="addWinner()">🏆 Guardar</button>
+        <button class="admin-btn" onclick="exportData()">📊 Exportar</button>
+    </div>
+
+    <script>
+        // Estado
+        let timeLeft = 30;
+        let timerInterval = null;
+        let isRunning = false;
+        let winners = [];
+        let chatMessages = [];
+        let currentProduct = {
+            name: 'Caja Misteriosa Premium',
+            price: 0,
+            image: '📦'
+        };
+        
+        // Usuarios con caja pagada (simulado)
+        const usersWithBox = new Set(['@carlos92', '@maria_garcia', '@juan_perez', '@lucia_88', '@pedro_shop']);
+        
+        // Timer
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0 && isRunning) {
+                stopTimer();
+                alert('⏰ ¡TIEMPO TERMINADO!');
+            }
+        }
+        
+        function startTimer() {
+            if (isRunning) return;
+            isRunning = true;
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimer();
+            }, 1000);
+        }
+        
+        function stopTimer() {
+            isRunning = false;
+            clearInterval(timerInterval);
+        }
+        
+        function resetTimer() {
+            stopTimer();
+            timeLeft = 30;
+            updateTimer();
+        }
+        
+        // Simular chat de TikTok
+        const sampleMessages = [
+            { user: '@carlos92', text: '¡MÍO!', type: 'claim' },
+            { user: '@maria_garcia', text: 'Yo lo quiero', type: 'claim' },
+            { user: '@juan_perez', text: '15€', type: 'bid' },
+            { user: '@lucia_88', text: '20€ voy!', type: 'bid' },
+            { user: '@pedro_shop', text: '25€ mío', type: 'bid' },
+            { user: '@ana_lopez', text: 'Qué precio tiene?', type: 'normal' },
+            { user: '@david_99', text: 'Yo yo yo!', type: 'claim' },
+            { user: '@sofia_m', text: '30€', type: 'bid' },
+            { user: '@miguel_tk', text: 'Lo cojo!', type: 'claim' },
+            { user: '@elena_store', text: '35€ va!', type: 'bid' }
+        ];
+        
+        function simulateChat() {
+            setInterval(() => {
+                const randomMsg = sampleMessages[Math.floor(Math.random() * sampleMessages.length)];
+                addChatMessage(randomMsg.user, randomMsg.text, randomMsg.type);
+            }, 2000);
+        }
+        
+        function addChatMessage(user, text, type = 'normal') {
+            const message = {
+                user,
+                text,
+                type,
+                time: new Date().toLocaleTimeString('es-ES')
+            };
+            
+            chatMessages.push(message);
+            
+            const container = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = `chat-message ${type === 'claim' ? 'highlight' : type === 'bid' ? 'bid' : ''}`;
+            div.innerHTML = `
+                <div class="chat-user">${user}</div>
+                <div class="chat-text">${text}</div>
+                <div class="chat-time">${message.time}</div>
+            `;
+            
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+            
+            document.getElementById('chat-count').textContent = `${chatMessages.length} mensajes`;
+            
+            // Detectar pujas/claims automáticamente
+            if ((type === 'claim' && usersWithBox.has(user)) || type === 'bid') {
+                // Actualizar precio más alto
+                const bidMatch = text.match(/(\d+)€?/);
+                if (bidMatch) {
+                    const bidAmount = parseInt(bidMatch[1]);
+                    if (bidAmount > currentProduct.price) {
+                        currentProduct.price = bidAmount;
+                        document.getElementById('product-price').textContent = `€${bidAmount}`;
+                    }
+                }
+            }
+        }
+        
+        // Ganadores
+        function addWinner() {
+            if (!currentProduct.price || currentProduct.price === 0) {
+                alert('❌ No hay pujas registradas');
+                return;
+            }
+            
+            // Encontrar mejor puja
+            const bids = chatMessages.filter(m => m.type === 'bid' || m.type === 'claim');
+            if (bids.length === 0) {
+                alert('❌ No hay mensajes válidos');
+                return;
+            }
+            
+            // Obtener mejor puja de usuario con caja
+            let bestBid = null;
+            let bestAmount = 0;
+            
+            for (const msg of bids.reverse()) {
+                if (usersWithBox.has(msg.user)) {
+                    const bidMatch = msg.text.match(/(\d+)€?/);
+                    const amount = bidMatch ? parseInt(bidMatch[1]) : 0;
+                    
+                    if (amount > bestAmount || (amount === 0 && msg.type === 'claim')) {
+                        bestBid = msg;
+                        bestAmount = amount;
+                    }
+                }
+            }
+            
+            if (!bestBid) {
+                alert('❌ Ningún usuario con caja válida');
+                return;
+            }
+            
+            const winner = {
+                user: bestBid.user,
+                product: currentProduct.name,
+                price: currentProduct.price,
+                time: new Date().toLocaleString('es-ES')
+            };
+            
+            winners.push(winner);
+            
+            const container = document.getElementById('winners-list');
+            const div = document.createElement('div');
+            div.className = 'winner-item';
+            div.innerHTML = `
+                <div class="winner-user">🏆 ${winner.user}</div>
+                <div class="winner-product">${winner.product}</div>
+                <div class="winner-price">€${winner.price}</div>
+                <div class="winner-time">${winner.time}</div>
+            `;
+            
+            container.insertBefore(div, container.firstChild);
+            document.getElementById('winner-count').textContent = winners.length;
+            
+            alert(`✅ Ganador: ${winner.user}\nProducto: ${winner.product}\nPrecio: €${winner.price}`);
+            
+            // Reset para siguiente producto
+            resetTimer();
+            currentProduct.price = 0;
+            document.getElementById('product-price').textContent = '€0';
+        }
+        
+        // Exportar datos
+        function exportData() {
+            const data = {
+                winners,
+                chatMessages,
+                exportTime: new Date().toLocaleString('es-ES')
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `subastas_tiktok_${Date.now()}.json`;
+            a.click();
+            
+            alert(`📊 Datos exportados:\n- ${winners.length} ganadores\n- ${chatMessages.length} mensajes`);
+        }
+        
+        // Inicializar
+        updateTimer();
+        simulateChat();
+        
+        // Conectar a API real (placeholder)
+        async function connectToTikTokAPI() {
+            console.log('🔌 Conectando a TikTok Live API...');
+            // Aquí iría la conexión real con Selenium/WebSocket
+        }
+        
+        connectToTikTokAPI();
+    </script>
+</body>
+</html>

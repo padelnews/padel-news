@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+
+# SSL Certificates (no subir keys privadas)
+*.pem
+*.key
+*.crt
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+tmp/
+temp/
+/tmp/
+
+# Database (si hay datos reales)
+*.db
+*.sqlite
+
+# Environment
+.env
+.env.local

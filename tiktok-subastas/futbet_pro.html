@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutBet PRO - Apuestas Premium</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121212;
+            color: #fff;
+        }
+        
+        /* Header Bet365 */
+        .header {
+            background: linear-gradient(180deg, #1a4d2e 0%, #0d2818 100%);
+            padding: 0 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #00ff88;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #fff;
+        }
+        
+        .logo span { color: #00ff88; }
+        
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .balance-display {
+            background: #000;
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid #00ff88;
+        }
+        
+        .balance-label { font-size: 11px; color: #888; text-transform: uppercase; }
+        .balance-amount { font-size: 18px; font-weight: 700; color: #00ff88; }
+        
+        .btn-deposit {
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            color: #000;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        
+        /* Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: #1e1e1e;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .sidebar-header {
+            background: #2a2a2a;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #00ff88;
+        }
+        
+        .sport-item {
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #2a2a2a;
+            transition: background 0.2s;
+        }
+        
+        .sport-item:hover, .sport-item.active {
+            background: #2a2a2a;
+            border-left: 3px solid #00ff88;
+        }
+        
+        .sport-icon { font-size: 18px; }
+        .sport-name { flex: 1; font-size: 13px; }
+        .sport-count { background: #00ff88; color: #000; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
+        
+        /* Content */
+        .content {
+            background: #1e1e1e;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .content-header {
+            background: #2a2a2a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .live-badge {
+            background: #ff4444;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .tabs {
+            display: flex;
+            background: #2a2a2a;
+            padding: 10px;
+            gap: 5px;
+        }
+        
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: #1e1e1e;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .tab.active {
+            background: #00ff88;
+            color: #000;
+        }
+        
+        /* Match Card */
+        .match-card {
+            background: #252525;
+            margin: 1px 0;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            transition: background 0.2s;
+        }
+        
+        .match-card:hover {
+            background: #2a2a2a;
+        }
+        
+        .match-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .match-time {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+        }
+        
+        .teams-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .team-name { font-size: 14px; font-weight: 600; }
+        .team-score { background: #000; padding: 4px 12px; border-radius: 4px; font-weight: 700; color: #00ff88; }
+        
+        .match-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 11px;
+            color: #888;
+        }
+        
+        /* Odds */
+        .odds-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        
+        .odd-btn {
+            background: #333;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 10px 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        
+        .odd-btn:hover, .odd-btn.selected {
+            background: #00ff88;
+            border-color: #00ff88;
+            color: #000;
+        }
+        
+        .odd-label { font-size: 11px; color: #888; margin-bottom: 4px; }
+        .odd-btn:hover .odd-label, .odd-btn.selected .odd-label { color: #000; }
+        .odd-value { font-size: 15px; font-weight: 700; color: #00ff88; }
+        .odd-btn:hover .odd-value, .odd-btn.selected .odd-value { color: #000; }
+        
+        /* Bet Slip */
+        .bet-slip {
+            background: #1e1e1e;
+            border-radius: 4px;
+            position: sticky;
+            top: 10px;
+        }
+        
+        .bet-slip-header {
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .bet-slip-title { font-size: 16px; font-weight: 900; color: #000; }
+        .bet-count { background: #000; color: #00ff88; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700; }
+        
+        .bet-slip-content { padding: 15px; }
+        
+        .bet-item {
+            background: #252525;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 3px solid #00ff88;
+        }
+        
+        .bet-match { font-size: 12px; color: #888; margin-bottom: 5px; }
+        .bet-selection { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+        .bet-odds { color: #00ff88; font-weight: 700; font-size: 16px; }
+        
+        .stake-input {
+            width: 100%;
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 10px;
+            color: #fff;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        
+        .stake-input:focus { outline: none; border-color: #00ff88; }
+        
+        .returns-info {
+            background: #000;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        
+        .returns-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; }
+        .returns-total { font-size: 16px; font-weight: 700; color: #00ff88; margin-top: 8px; padding-top: 8px; border-top: 1px solid #333; }
+        
+        .btn-bet {
+            width: 100%;
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            border: none;
+            padding: 14px;
+            border-radius: 4px;
+            color: #000;
+            font-weight: 900;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-bet:hover { transform: scale(1.02); }
+        
+        @media (max-width: 1024px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .sidebar, .bet-slip { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">⚽ Fut<span>Bet</span> PRO</div>
+        <div class="user-section">
+            <div class="balance-display">
+                <div class="balance-label">Saldo</div>
+                <div class="balance-amount">€<span id="balance">1000.00</span></div>
+            </div>
+            <button class="btn-deposit" onclick="deposit()">+ Ingresar</button>
+        </div>
+    </div>
+    
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">🏆 Competiciones</div>
+            <div class="sport-item active" onclick="filterLeague('all')">
+                <span class="sport-icon">🌍</span>
+                <span class="sport-name">Todas</span>
+                <span class="sport-count">8</span>
+            </div>
+            <div class="sport-item" onclick="filterLeague('laliga')">
+                <span class="sport-icon">🇪🇸</span>
+                <span class="sport-name">LaLiga</span>
+                <span class="sport-count">3</span>
+            </div>
+            <div class="sport-item" onclick="filterLeague('premier')">
+                <span class="sport-icon">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                <span class="sport-name">Premier</span>
+                <span class="sport-count">2</span>
+            </div>
+            <div class="sport-item" onclick="filterLeague('seriea')">
+                <span class="sport-icon">🇮🇹</span>
+                <span class="sport-name">Serie A</span>
+                <span class="sport-count">1</span>
+            </div>
+            <div class="sport-item" onclick="filterLeague('bundesliga')">
+                <span class="sport-icon">🇩🇪</span>
+                <span class="sport-name">Bundesliga</span>
+                <span class="sport-count">1</span>
+            </div>
+            <div class="sport-item" onclick="filterLeague('champions')">
+                <span class="sport-icon">🇪🇺</span>
+                <span class="sport-name">Champions</span>
+                <span class="sport-count">1</span>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <div class="content-header">
+                <h2 style="font-size: 18px;">⚽ Partidos Destacados</h2>
+                <span class="live-badge">🔴 EN VIVO</span>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" onclick="filterTab('today')">Todos</div>
+                <div class="tab" onclick="filterTab('live')">En Vivo</div>
+                <div class="tab" onclick="filterTab('tomorrow')">Mañana</div>
+            </div>
+            
+            <div id="matches-container"></div>
+        </div>
+        
+        <!-- Bet Slip -->
+        <div class="bet-slip">
+            <div class="bet-slip-header">
+                <span class="bet-slip-title">🎫 Boletín</span>
+                <span class="bet-count" id="bet-count">0</span>
+            </div>
+            <div class="bet-slip-content">
+                <div id="bet-items"></div>
+                <div id="bet-form" style="display: none;">
+                    <input type="number" class="stake-input" id="stake" placeholder="Importe (€)" min="1" value="10">
+                    <div class="returns-info">
+                        <div class="returns-row">
+                            <span>Cuota Total:</span>
+                            <span id="total-odds" style="color: #00ff88;">0.00</span>
+                        </div>
+                        <div class="returns-row">
+                            <span>Ganancia:</span>
+                            <span id="potential-win" style="color: #00ff88; font-weight: 700;">€0.00</span>
+                        </div>
+                    </div>
+                    <button class="btn-bet" onclick="placeBet()">Apostar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const matches = [
+            { id: 1, league: 'laliga', home: 'Real Madrid', away: 'Barcelona', homeScore: 2, awayScore: 1, time: "72'", live: true, odds: { home: 1.95, draw: 3.60, away: 3.80 }, homeLogo: '🤍', awayLogo: '💙' },
+            { id: 2, league: 'premier', home: 'Man City', away: 'Liverpool', homeScore: 1, awayScore: 1, time: "55'", live: true, odds: { home: 2.10, draw: 3.40, away: 3.20 }, homeLogo: '💙', awayLogo: '❤️' },
+            { id: 3, league: 'laliga', home: 'Atlético', away: 'Sevilla', homeScore: 0, awayScore: 0, time: "21:00", live: false, odds: { home: 1.85, draw: 3.50, away: 4.20 }, homeLogo: '❤️', awayLogo: '🤍' },
+            { id: 4, league: 'premier', home: 'Arsenal', away: 'Chelsea', homeScore: 0, awayScore: 0, time: "20:30", live: false, odds: { home: 2.30, draw: 3.30, away: 3.10 }, homeLogo: '❤️', awayLogo: '💙' },
+            { id: 5, league: 'seriea', home: 'Juventus', away: 'Milan', homeScore: 3, awayScore: 2, time: "88'", live: true, odds: { home: 1.50, draw: 4.50, away: 6.00 }, homeLogo: '🤍', awayLogo: '❤️' },
+            { id: 6, league: 'bundesliga', home: 'Bayern', away: 'Dortmund', homeScore: 0, awayScore: 0, time: "Mañana 17:30", live: false, odds: { home: 1.75, draw: 4.00, away: 4.50 }, homeLogo: '❤️', awayLogo: '💛' },
+            { id: 7, league: 'champions', home: 'PSG', away: 'Real Madrid', homeScore: 0, awayScore: 0, time: "Mié 21:00", live: false, odds: { home: 2.80, draw: 3.40, away: 2.50 }, homeLogo: '💙', awayLogo: '🤍' },
+            { id: 8, league: 'laliga', home: 'Valencia', away: 'Betis', homeScore: 0, awayScore: 0, time: "16:00", live: false, odds: { home: 2.60, draw: 3.10, away: 2.90 }, homeLogo: '🦇', awayLogo: '💚' }
+        ];
+
+        let balance = 1000;
+        let selectedBets = [];
+        let currentFilter = 'all';
+        let currentTab = 'today';
+
+        function renderMatches() {
+            const container = document.getElementById('matches-container');
+            let filtered = matches;
+            
+            if (currentFilter !== 'all') filtered = filtered.filter(m => m.league === currentFilter);
+            if (currentTab === 'live') filtered = filtered.filter(m => m.live);
+            else if (currentTab === 'tomorrow') filtered = filtered.filter(m => m.time.includes('Mañana'));
+            
+            container.innerHTML = filtered.map(match => `
+                <div class="match-card">
+                    <div class="match-info">
+                        <div class="match-time">
+                            ${match.league.toUpperCase()} • ${match.time}
+                            ${match.live ? '<span style="color:#ff4444;margin-left:8px;">🔴</span>' : ''}
+                        </div>
+                        <div class="teams-row">
+                            <span class="team-name">${match.home}</span>
+                            <span class="team-score">${match.homeScore}</span>
+                        </div>
+                        <div class="teams-row">
+                            <span class="team-name">${match.away}</span>
+                            <span class="team-score">${match.awayScore}</span>
+                        </div>
+                        ${match.live ? `
+                        <div class="match-stats">
+                            <span>🟨 ${Math.floor(Math.random()*5)}</span>
+                            <span>🟥 ${Math.floor(Math.random()*2)}</span>
+                            <span>📊 ${Math.floor(Math.random()*60)}%</span>
+                        </div>` : ''}
+                    </div>
+                    <div class="odds-grid">
+                        <div class="odd-btn ${selectedBets.find(b => b.matchId === match.id && b.type === 'home') ? 'selected' : ''}" onclick="selectBet(${match.id}, 'home', ${match.odds.home}, '${match.home}')">
+                            <div class="odd-label">1</div>
+                            <div class="odd-value">${match.odds.home.toFixed(2)}</div>
+                        </div>
+                        <div class="odd-btn ${selectedBets.find(b => b.matchId === match.id && b.type === 'draw') ? 'selected' : ''}" onclick="selectBet(${match.id}, 'draw', ${match.odds.draw}, 'Empate')">
+                            <div class="odd-label">X</div>
+                            <div class="odd-value">${match.odds.draw.toFixed(2)}</div>
+                        </div>
+                        <div class="odd-btn ${selectedBets.find(b => b.matchId === match.id && b.type === 'away') ? 'selected' : ''}" onclick="selectBet(${match.id}, 'away', ${match.odds.away}, '${match.away}')">
+                            <div class="odd-label">2</div>
+                            <div class="odd-value">${match.odds.away.toFixed(2)}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectBet(matchId, type, odds, selection) {
+            const match = matches.find(m => m.id === matchId);
+            const idx = selectedBets.findIndex(b => b.matchId === matchId);
+            
+            if (idx !== -1) selectedBets.splice(idx, 1);
+            else selectedBets.push({ matchId, home: match.home, away: match.away, type, odds, selection });
+            
+            updateBetSlip();
+            renderMatches();
+        }
+
+        function updateBetSlip() {
+            const container = document.getElementById('bet-items');
+            const form = document.getElementById('bet-form');
+            const count = document.getElementById('bet-count');
+            
+            count.textContent = selectedBets.length;
+            
+            if (selectedBets.length === 0) {
+                container.innerHTML = '<p style="color:#888;text-align:center;padding:30px;">Selecciona una cuota</p>';
+                form.style.display = 'none';
+                return;
+            }
+            
+            container.innerHTML = selectedBets.map(bet => `
+                <div class="bet-item">
+                    <div class="bet-match">${bet.home} vs ${bet.away}</div>
+                    <div class="bet-selection">${bet.selection}</div>
+                    <div class="bet-odds">@ ${bet.odds.toFixed(2)}</div>
+                    <button onclick="removeBet(${bet.matchId})" style="float:right;background:none;border:none;color:#ff4444;cursor:pointer;font-size:18px;">×</button>
+                </div>
+            `).join('');
+            
+            form.style.display = 'block';
+            calculateReturns();
+        }
+
+        function removeBet(matchId) {
+            selectedBets = selectedBets.filter(b => b.matchId !== matchId);
+            updateBetSlip();
+            renderMatches();
+        }
+
+        function calculateReturns() {
+            const totalOdds = selectedBets.reduce((acc, bet) => acc * bet.odds, 1);
+            const stake = parseFloat(document.getElementById('stake').value) || 0;
+            const win = stake * totalOdds;
+            
+            document.getElementById('total-odds').textContent = totalOdds.toFixed(2);
+            document.getElementById('potential-win').textContent = '€' + win.toFixed(2);
+        }
+
+        document.getElementById('stake').addEventListener('input', calculateReturns);
+
+        function placeBet() {
+            const stake = parseFloat(document.getElementById('stake').value);
+            
+            if (stake > balance) { alert('❌ Saldo insuficiente'); return; }
+            if (stake < 1) { alert('❌ Mínimo €1'); return; }
+            
+            balance -= stake;
+            document.getElementById('balance').textContent = balance.toFixed(2);
+            
+            const totalOdds = selectedBets.reduce((acc, bet) => acc * bet.odds, 1);
+            const win = stake * totalOdds;
+            
+            setTimeout(() => {
+                if (Math.random() > 0.5) {
+                    balance += win;
+                    document.getElementById('balance').textContent = balance.toFixed(2);
+                    alert(`🎉 ¡GANASTE! €${win.toFixed(2)}`);
+                } else {
+                    alert('❌ Apuesta perdida');
+                }
+            }, 2000);
+            
+            alert(`✅ Apuesta realizada\n\nImporte: €${stake}\nCuota: ${totalOdds.toFixed(2)}\nGanancia potencial: €${win.toFixed(2)}`);
+            
+            selectedBets = [];
+            updateBetSlip();
+            renderMatches();
+        }
+
+        function deposit() {
+            const amount = prompt('Importe (€):', '100');
+            if (amount && !isNaN(amount)) {
+                balance += parseFloat(amount);
+                document.getElementById('balance').textContent = balance.toFixed(2);
+                alert(`✅ Ingresados €${amount}`);
+            }
+        }
+
+        function filterLeague(league) {
+            currentFilter = league;
+            document.querySelectorAll('.sport-item').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            renderMatches();
+        }
+
+        function filterTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            renderMatches();
+        }
+
+        renderMatches();
+        updateBetSlip();
+    </script>
+</body>
+</html>
