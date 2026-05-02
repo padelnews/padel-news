@@ -249,6 +249,11 @@
     <div class="main-container">
         <div class="card">
             <div class="input-group">
+                <label>🔴 URL del TikTok Live</label>
+                <input type="text" id="tiktok-url" placeholder="https://www.tiktok.com/@tu_usuario/live" style="width: 100%; font-size: 16px; padding: 15px;">
+            </div>
+            
+            <div class="input-group">
                 <label>💰 Precio del Producto (€)</label>
                 <input type="number" class="price-input" id="price" placeholder="6" min="1" max="999">
             </div>
@@ -267,6 +272,10 @@
             
             <div style="text-align: center; margin-top: 20px;">
                 <span class="status-badge status-waiting" id="status-badge">⏳ Esperando...</span>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn" style="background: #00f2ea; color: #000;" onclick="openTikTokBot()">🤖 Abrir Bot TikTok</button>
             </div>
             
             <div class="winner-display" id="winner-display">
@@ -442,6 +451,18 @@
             document.getElementById('winner-display').classList.add('active');
             document.getElementById('status-badge').className = 'status-badge status-winner';
             document.getElementById('status-badge').textContent = '🏆 GANADOR ASIGNADO';
+        }
+        
+        function openTikTokBot() {
+            const url = document.getElementById('tiktok-url').value;
+            if (!url) {
+                alert('❌ Introduce la URL del TikTok Live');
+                return;
+            }
+            // Abrir el bot en una ventana nueva
+            window.open('/tiktok_bot_control.html', '_blank');
+            // O abrir directamente el Live de TikTok
+            // window.open(url, '_blank');
         }
         
         async function saveWinner(user, boxNumber, price) {
