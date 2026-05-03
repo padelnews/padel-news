@@ -1,10 +1,11 @@
 {
   "last_runs": {
-    "check_tournament_state": "2026-05-03T19:56:25.046814",
+    "check_tournament_state": "2026-05-03T20:01:27.621991",
     "chollos_fetcher": "2026-05-03T19:56:25.046814",
     "tournament_watcher": "2026-05-03T19:46:18.523202",
     "actualidad_updater": "2026-05-03T17:05:04.962653",
     "index_updater": "2026-05-03T08:41:42.761948",
-    "torneos_updater": "2026-05-03T09:16:56.663979"
+    "torneos_updater": "2026-05-03T09:16:56.663979",
+    "rankings_updater": "2026-05-03T20:01:27.621991"
   }
 }
