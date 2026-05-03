@@ -31141,3 +31141,28 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 [2026-05-03 17:40:20] Validation passed
 [2026-05-03 17:40:20] 
 --- Deploying to GitHub ---
+[2026-05-03 17:40:21] Git push failed: To https://github.com/padelnews/padel-news.git
+ ! [rejected]          main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/padelnews/padel-news.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+[2026-05-03 17:40:21] ============================================================
+[2026-05-03 17:40:21] DYNAMIC FLOW v3.0 COMPLETED
+[2026-05-03 17:40:21] ============================================================
+[2026-05-03 17:45:21] ============================================================
+[2026-05-03 17:45:21] DYNAMIC FLOW v3.0 STARTED
+[2026-05-03 17:45:21] ============================================================
+[2026-05-03 17:45:21] Current tournament: Asunción P2
+[2026-05-03 17:45:21] Status: upcoming
+[2026-05-03 17:45:21] 
+--- Generating pages from state ---
+[2026-05-03 17:45:21] Pages generated successfully
+[2026-05-03 17:45:21] 
+--- Validating pages ---
+[2026-05-03 17:45:22] Validation passed
+[2026-05-03 17:45:22] 
+--- Deploying to GitHub ---
