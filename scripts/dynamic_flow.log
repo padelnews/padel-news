@@ -40616,3 +40616,87 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 [2026-05-05 01:29:26] Validation passed
 [2026-05-05 01:29:26] 
 --- Deploying to GitHub ---
+[2026-05-05 01:29:28] Git push failed: To https://github.com/padelnews/padel-news.git
+ ! [rejected]          main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/padelnews/padel-news.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+[2026-05-05 01:29:28] ============================================================
+[2026-05-05 01:29:28] DYNAMIC FLOW v3.0 COMPLETED
+[2026-05-05 01:29:28] ============================================================
+[2026-05-05 01:34:30] ============================================================
+[2026-05-05 01:34:30] DYNAMIC FLOW v3.0 STARTED
+[2026-05-05 01:34:30] ============================================================
+[2026-05-05 01:34:30] Current tournament: Asunción P2
+[2026-05-05 01:34:30] Status: upcoming
+[2026-05-05 01:34:30] 
+--- Generating pages from state ---
+[2026-05-05 01:34:31] Pages generated successfully
+[2026-05-05 01:34:31] 
+--- Validating pages ---
+[2026-05-05 01:34:31] VALIDATION FAILED: ============================================================
+PADEL NEWS WEBSITE VALIDATOR v2.0
+============================================================
+✅ State file loaded
+
+=== HTML Structure Check ===
+✅ index.html - HTML structure OK
+✅ actualidad.html - HTML structure OK
+✅ resultados.html - HTML structure OK
+✅ torneos.html - HTML structure OK
+
+=== Data Consistency Check ===
+❌ ERROR: Index shows 'EN VIVO' but current tournament is 'upcoming'
+
+=== Tournament Results Check ===
+✅ Tournament results OK
+
+=== Image References Check ===
+⚠️  WARNING: article-galan-chingotto.html: Contains 2 onerror fallback(s) - some images may be missing
+✅ Image check complete
+
+=== Banner Consistency Check ===
+✅ Banner consistency check complete
+
+=== Winner Placement Check ===
+✅ Winner placement OK (manual verification recommended)
+
+============================================================
+VALIDATION SUMMARY
+============================================================
+✅ PASS: HTML Structure
+❌ FAIL: Data Consistency
+✅ PASS: Tournament Results
+✅ PASS: Images
+✅ PASS: Banner Consistency
+✅ PASS: Winner Placement
+
+Total errors: 1
+Total warnings: 1
+
+ERRORS:
+  - Index shows 'EN VIVO' but current tournament is 'upcoming'
+
+WARNINGS:
+  - article-galan-chingotto.html: Contains 2 onerror fallback(s) - some images may be missing
+
+💥 Validation failed - please fix errors above
+
+[2026-05-05 01:34:31] NOT deploying to GitHub until errors are fixed
+[2026-05-05 01:39:31] ============================================================
+[2026-05-05 01:39:31] DYNAMIC FLOW v3.0 STARTED
+[2026-05-05 01:39:31] ============================================================
+[2026-05-05 01:39:31] Current tournament: Asunción P2
+[2026-05-05 01:39:31] Status: upcoming
+[2026-05-05 01:39:31] 
+--- Generating pages from state ---
+[2026-05-05 01:39:32] Pages generated successfully
+[2026-05-05 01:39:32] 
+--- Validating pages ---
+[2026-05-05 01:39:32] Validation passed
+[2026-05-05 01:39:32] 
+--- Deploying to GitHub ---
