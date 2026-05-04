@@ -118271,3 +118271,57 @@
 >>> Running check_tournament_state: Interval-based run (5 min)
 [2026-05-04 09:16:25]     Script: dynamic_flow.py
 [2026-05-04 09:16:25]     Description: Check tournament state and transition if needed
+[2026-05-04 09:16:26]     ✓ SUCCESS
+[2026-05-04 09:16:26]     Skipping index_updater: Hour 9 not in [8, 20]
+[2026-05-04 09:16:26]     Skipping torneos_updater: Ran 1440 min ago, interval is 1440
+[2026-05-04 09:16:26]     Skipping rankings_updater: Hour 9 not in [20]
+[2026-05-04 09:16:26]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-05-04 09:16:26]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-05-04 09:16:26]     Skipping live_score: Tournament is upcoming, not active
+[2026-05-04 09:16:26]     Skipping actualidad_updater: Ran 247 min ago, interval is 360
+[2026-05-04 09:16:26]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-05-04 09:16:26] 
+============================================================
+[2026-05-04 09:16:26] SUMMARY
+[2026-05-04 09:16:26] ============================================================
+[2026-05-04 09:16:26] Agents run: 1
+[2026-05-04 09:16:26]   - check_tournament_state
+[2026-05-04 09:16:26] ============================================================
+[2026-05-04 09:16:26] ORCHESTRATOR COMPLETED
+[2026-05-04 09:16:26] ============================================================
+[2026-05-04 09:16:25] ============================================================
+[2026-05-04 09:16:25] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-05-04 09:16:25] ============================================================
+[2026-05-04 09:16:25] Current time: 2026-05-04 09:16:25
+[2026-05-04 09:16:25] Tournament status: upcoming
+[2026-05-04 09:16:25] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-05-04 09:16:25]     Script: dynamic_flow.py
+[2026-05-04 09:16:25]     Description: Check tournament state and transition if needed
+[2026-05-04 09:16:26]     ✓ SUCCESS
+[2026-05-04 09:16:26]     Skipping index_updater: Hour 9 not in [8, 20]
+[2026-05-04 09:16:26]     Skipping torneos_updater: Ran 1440 min ago, interval is 1440
+[2026-05-04 09:16:26]     Skipping rankings_updater: Hour 9 not in [20]
+[2026-05-04 09:16:26]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-05-04 09:16:26]     Skipping tournament_watcher: Ran 25 min ago, interval is 30
+[2026-05-04 09:16:26]     Skipping live_score: Tournament is upcoming, not active
+[2026-05-04 09:16:26]     Skipping actualidad_updater: Ran 247 min ago, interval is 360
+[2026-05-04 09:16:26]     Skipping resultados_updater: Tournament is upcoming, not finished
+[2026-05-04 09:16:26] 
+============================================================
+[2026-05-04 09:16:26] SUMMARY
+[2026-05-04 09:16:26] ============================================================
+[2026-05-04 09:16:26] Agents run: 1
+[2026-05-04 09:16:26]   - check_tournament_state
+[2026-05-04 09:16:26] ============================================================
+[2026-05-04 09:16:26] ORCHESTRATOR COMPLETED
+[2026-05-04 09:16:26] ============================================================
+[2026-05-04 09:21:27] ============================================================
+[2026-05-04 09:21:27] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-05-04 09:21:27] ============================================================
+[2026-05-04 09:21:27] Current time: 2026-05-04 09:21:27
+[2026-05-04 09:21:27] Tournament status: upcoming
+[2026-05-04 09:21:27] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-05-04 09:21:27]     Script: dynamic_flow.py
+[2026-05-04 09:21:27]     Description: Check tournament state and transition if needed
