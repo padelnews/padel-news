@@ -1,8 +1,8 @@
 {
   "last_runs": {
-    "check_tournament_state": "2026-05-05T11:00:20.393646",
-    "chollos_fetcher": "2026-05-05T10:55:18.428511",
-    "tournament_watcher": "2026-05-05T10:35:09.704089",
+    "check_tournament_state": "2026-05-05T11:05:24.083224",
+    "chollos_fetcher": "2026-05-05T11:05:24.083224",
+    "tournament_watcher": "2026-05-05T11:05:24.083224",
     "actualidad_updater": "2026-05-05T05:22:07.094606",
     "index_updater": "2026-05-05T08:49:24.371185",
     "torneos_updater": "2026-05-05T09:24:42.019394",
