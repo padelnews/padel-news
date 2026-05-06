@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Micrófono</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .result {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 500px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+        .ok { background: #00aa55; }
+        .error { background: #cc3300; }
+        .info { background: #0066cc; }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            margin: 10px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #btn-test { background: #00d4ff; color: #000; }
+        #btn-stop { background: #ff6600; color: white; }
+        #transcript {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎤 Test Micrófono</h1>
+    
+    <div id="result" class="result info">
+        Pulsando "Probar" para comprobar...
+    </div>
+    
+    <button id="btn-test" onclick="testMic()">🎤 PROBAR MICRÓFONO</button>
+    <button id="btn-stop" onclick="stopTest()" disabled>⏹ PARAR</button>
+    
+    <div id="transcript">Esperando...</div>
+
+    <script>
+        const result = document.getElementById('result');
+        const transcript = document.getElementById('transcript');
+        const btnTest = document.getElementById('btn-test');
+        const btnStop = document.getElementById('btn-stop');
+        let recognition = null;
+        let isTesting = false;
+
+        function testMic() {
+            console.log('🎤 Test iniciado');
+            console.log('UserAgent:', navigator.userAgent);
+            
+            // Check 1: Speech Recognition disponible
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                result.className = 'result error';
+                result.innerHTML = '❌ Speech Recognition NO disponible<br>Tu navegador no lo soporta';
+                transcript.innerHTML = 'Usa Chrome en Android';
+                return;
+            }
+            
+            console.log('✅ Speech Recognition disponible');
+            
+            // Check 2: Permissions API
+            if (navigator.permissions) {
+                navigator.permissions.query({name: 'microphone'}).then(r => {
+                    console.log('Permiso mic:', r.state);
+                    if (r.state === 'denied') {
+                        result.className = 'result error';
+                        result.innerHTML = '❌ Permiso de micrófono DENEGADO<br>Ve a Ajustes → Chrome → Micrófono → Activar';
+                    }
+                });
+            }
+            
+            // Crear recognition
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.lang = 'es-ES';
+            recognition.continuous = false;
+            recognition.interimResults = true;
+            
+            recognition.onstart = () => {
+                isTesting = true;
+                btnTest.disabled = true;
+                btnStop.disabled = false;
+                result.className = 'result ok';
+                result.innerHTML = '✅ ESCUCHANDO...<br>Habla ahora';
+                transcript.innerHTML = '🎤 Grabando...';
+                console.log('✅ Recognition started');
+            };
+            
+            recognition.onresult = (event) => {
+                const result_text = event.results[event.results.length - 1][0].transcript;
+                transcript.innerHTML = '🗣 Dijiste: <b>' + result_text + '</b>';
+                console.log('🗣 Result:', result_text);
+                
+                if (event.results[0].isFinal) {
+                    transcript.innerHTML += '<br>✅ ¡FUNCIONA! El micrófono está activo.';
+                }
+            };
+            
+            recognition.onerror = (e) => {
+                console.error('❌ Error:', e.error);
+                result.className = 'result error';
+                result.innerHTML = '❌ Error: ' + e.error + '<br>Revisa los permisos';
+                stopTest();
+            };
+            
+            recognition.onend = () => {
+                console.log('Recognition ended');
+                if (isTesting) {
+                    stopTest();
+                }
+            };
+            
+            // Start
+            try {
+                recognition.start();
+                console.log('✅ recognition.start() llamado');
+            } catch(e) {
+                console.error('❌ Error al iniciar:', e);
+                result.className = 'result error';
+                result.innerHTML = '❌ Error al iniciar: ' + e.message;
+            }
+        }
+
+        function stopTest() {
+            isTesting = false;
+            btnTest.disabled = false;
+            btnStop.disabled = true;
+            
+            if (recognition) {
+                try {
+                    recognition.stop();
+                    console.log('✅ Recognition stopped');
+                } catch(e) {}
+            }
+            
+            result.className = 'result info';
+            result.innerHTML = 'Test finalizado.<br>Pulsa "PROBAR" para intentar de nuevo.';
+        }
+
+        // Info inicial
+        console.log('=== TEST MICRÓFONO ===');
+        console.log('Browser:', navigator.userAgent);
+        console.log('SpeechRecognition:', 'webkitSpeechRecognition' in window ? '✅' : '❌');
+        console.log('SpeechRecognition:', 'SpeechRecognition' in window ? '✅' : '❌');
+    </script>
+</body>
+</html>

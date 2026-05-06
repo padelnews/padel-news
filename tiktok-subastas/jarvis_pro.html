@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ChatClaw JARVIS AI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Orbitron', 'Segoe UI', sans-serif;
+            background: #000;
+        }
+        
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        /* UI Overlay */
+        #ui-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        /* Header */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+            letter-spacing: 3px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            background: rgba(0, 20, 40, 0.8);
+            color: #00d4ff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        .btn.listening {
+            background: rgba(0, 255, 136, 0.3);
+            border-color: #00ff88;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
+            50% { box-shadow: 0 0 0 15px rgba(0, 255, 136, 0); }
+        }
+        
+        /* Status */
+        .status {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00d4ff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+        }
+        
+        /* Chat Panel - Mobile responsive */
+        .chat-panel {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 50%; /* Ocupa desde la mitad hacia abajo */
+            background: linear-gradient(180deg, rgba(0, 20, 40, 0.95) 0%, rgba(0, 20, 40, 1) 100%);
+            backdrop-filter: blur(20px);
+            border-top: 2px solid rgba(0, 212, 255, 0.5);
+            border-radius: 20px 20px 0 0;
+            z-index: 100;
+            display: none;
+            flex-direction: column;
+            pointer-events: auto;
+            box-shadow: 0 -10px 40px rgba(0, 212, 255, 0.3);
+        }
+        
+        .chat-panel.active {
+            display: flex;
+        }
+        
+        .chat-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h3 {
+            color: #00d4ff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .chat-close {
+            background: none;
+            border: none;
+            color: #00d4ff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            min-height: 150px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.user { text-align: right; }
+        .message.jarvis { text-align: left; }
+        
+        .message .bubble {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 20px;
+            max-width: 85%;
+            word-wrap: break-word;
+            line-height: 1.4;
+            font-size: 0.95rem;
+        }
+        
+        .message.user .bubble {
+            background: linear-gradient(135deg, #0066ff, #0044aa);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .message.jarvis .bubble {
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .timestamp {
+            font-size: 0.7rem;
+            color: rgba(0, 212, 255, 0.5);
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Input area */
+        .input-area {
+            padding: 20px;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: rgba(0, 20, 40, 0.5);
+        }
+        
+        #chat-input {
+            flex: 1;
+            background: rgba(0, 50, 100, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 25px;
+            padding: 12px 20px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            font-family: inherit;
+        }
+        
+        #chat-input:focus {
+            border-color: #00d4ff;
+            background: rgba(0, 50, 100, 0.5);
+        }
+        
+        #chat-input::placeholder {
+            color: rgba(0, 212, 255, 0.5);
+        }
+        
+        #chat-send {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #00d4ff, #0066ff);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        /* Center text - MOVER MÁS ABAJO */
+        .center-text {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(0, 212, 255, 0.3);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            pointer-events: none;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .logo { font-size: 1.2rem; }
+            .btn { width: 45px; height: 45px; font-size: 1.2rem; }
+            .status { top: 70px; font-size: 0.8rem; }
+            .chat-panel { max-height: 80vh; }
+            #chat-messages { max-height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <div id="ui-layer">
+        <div class="header">
+            <div class="logo">🦞 CHATCLAW</div>
+            <div class="controls">
+                <button class="btn" id="btn-mic" title="Micrófono">🎤</button>
+                <button class="btn" id="btn-chat" title="Chat">💬</button>
+            </div>
+        </div>
+        
+        <div class="status" id="status-text"></div>
+        
+        <div class="center-text" id="center-text">Sistema en línea</div>
+        
+        <div class="chat-panel" id="chat-panel">
+            <div class="chat-header">
+                <h3>Chat</h3>
+                <button class="chat-close" id="chat-close">✕</button>
+            </div>
+            <div id="chat-messages">
+                <div class="message jarvis">
+                    <div class="bubble">Sistema JARVIS en línea. Pulsa el micrófono para hablar o escribe aquí.</div>
+                    <div class="timestamp">Ahora</div>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." />
+                <button id="chat-send">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // === THREE.JS ADVANCED ORB ===
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ 
+            antialias: true, 
+            alpha: true,
+            powerPreference: 'high-performance'
+        });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+        
+        camera.position.z = 50;
+        
+        // Create advanced particle system
+        const particleCount = 3000;
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const velocities = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const sizes = new Float32Array(particleCount);
+        
+        for (let i = 0; i < particleCount; i++) {
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.acos(2 * Math.random() - 1);
+            const r = Math.pow(Math.random(), 0.5) * 30;
+            
+            positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+            positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+            positions[i * 3 + 2] = r * Math.cos(phi);
+            
+            velocities[i * 3] = (Math.random() - 0.5) * 0.02;
+            velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.02;
+            velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.02;
+            
+            // Cyan to blue gradient
+            colors[i * 3] = 0 + Math.random() * 0.2;
+            colors[i * 3 + 1] = 0.6 + Math.random() * 0.4;
+            colors[i * 3 + 2] = 1;
+            
+            sizes[i] = Math.random() * 0.5 + 0.3;
+        }
+        
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+        
+        // Custom shader material for particles
+        const material = new THREE.PointsMaterial({
+            size: 0.4,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+            sizeAttenuation: true
+        });
+        
+        const particles = new THREE.Points(geometry, material);
+        scene.add(particles);
+        
+        // Inner core glow
+        const coreGeometry = new THREE.SphereGeometry(8, 32, 32);
+        const coreMaterial = new THREE.MeshBasicMaterial({
+            color: 0x00ffff,
+            transparent: true,
+            opacity: 0.3,
+            blending: THREE.AdditiveBlending
+        });
+        const core = new THREE.Mesh(coreGeometry, coreMaterial);
+        scene.add(core);
+        
+        // Outer rings
+        const ringGeometry = new THREE.TorusGeometry(20, 0.3, 16, 100);
+        const ringMaterial = new THREE.MeshBasicMaterial({
+            color: 0x00d4ff,
+            transparent: true,
+            opacity: 0.4,
+            blending: THREE.AdditiveBlending
+        });
+        
+        const ring1 = new THREE.Mesh(ringGeometry, ringMaterial);
+        ring1.rotation.x = Math.PI / 2;
+        scene.add(ring1);
+        
+        const ring2 = new THREE.Mesh(ringGeometry, ringMaterial);
+        ring2.rotation.y = Math.PI / 2;
+        scene.add(ring2);
+        
+        const ring3 = new THREE.Mesh(ringGeometry, ringMaterial);
+        ring3.rotation.x = Math.PI / 3;
+        ring3.rotation.y = Math.PI / 4;
+        scene.add(ring3);
+        
+        // Animation state
+        let state = 'idle';
+        let rotationSpeed = 0.002;
+        let expansionFactor = 1;
+        
+        function setState(newState) {
+            state = newState;
+            
+            switch(newState) {
+                case 'listening':
+                    rotationSpeed = 0.005;
+                    expansionFactor = 1.3;
+                    coreMaterial.color.setHex(0x00ff88);
+                    material.color.setHex(0x00ff88);
+                    ringMaterial.color.setHex(0x00ff88);
+                    break;
+                case 'thinking':
+                    rotationSpeed = 0.008;
+                    expansionFactor = 0.8;
+                    coreMaterial.color.setHex(0xffaa00);
+                    material.color.setHex(0xffaa00);
+                    ringMaterial.color.setHex(0xffaa00);
+                    break;
+                case 'speaking':
+                    rotationSpeed = 0.006;
+                    expansionFactor = 1.2;
+                    coreMaterial.color.setHex(0x00d4ff);
+                    material.color.setHex(0x00d4ff);
+                    ringMaterial.color.setHex(0x00d4ff);
+                    break;
+                default:
+                    rotationSpeed = 0.002;
+                    expansionFactor = 1;
+                    coreMaterial.color.setHex(0x00ffff);
+                    material.color.setHex(0x00d4ff);
+                    ringMaterial.color.setHex(0x00d4ff);
+            }
+        }
+        
+        // Animation loop
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.01;
+            
+            // Rotate entire system
+            particles.rotation.y += rotationSpeed;
+            particles.rotation.x += rotationSpeed * 0.5;
+            ring1.rotation.z += 0.01;
+            ring2.rotation.x += 0.01;
+            ring3.rotation.y += 0.01;
+            
+            // Pulse effect
+            const pulse = 1 + Math.sin(time) * 0.05;
+            particles.scale.setScalar(expansionFactor * pulse);
+            core.scale.setScalar(pulse);
+            
+            // Animate particles
+            const positions = geometry.attributes.position.array;
+            for (let i = 0; i < particleCount; i++) {
+                const i3 = i * 3;
+                positions[i3] += velocities[i3];
+                positions[i3 + 1] += velocities[i3 + 1];
+                positions[i3 + 2] += velocities[i3 + 2];
+                
+                // Keep particles in sphere
+                const dist = Math.sqrt(
+                    positions[i3] ** 2 + 
+                    positions[i3 + 1] ** 2 + 
+                    positions[i3 + 2] ** 2
+                );
+                
+                if (dist > 30) {
+                    velocities[i3] *= -0.95;
+                    velocities[i3 + 1] *= -0.95;
+                    velocities[i3 + 2] *= -0.95;
+                }
+            }
+            geometry.attributes.position.needsUpdate = true;
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Handle resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // === VOICE & CHAT ===
+        let recognition = null;
+        let isListening = false;
+        const btnMic = document.getElementById('btn-mic');
+        const btnChat = document.getElementById('btn-chat');
+        const chatPanel = document.getElementById('chat-panel');
+        const chatClose = document.getElementById('chat-close');
+        const statusText = document.getElementById('status-text');
+        const centerText = document.getElementById('center-text');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const chatSend = document.getElementById('chat-send');
+        
+        // Initialize speech recognition
+        function initRecognition() { console.log('🎤 initRecognition llamado'); 
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                console.error('❌ Speech Recognition NO disponible'); console.log('UserAgent:', navigator.userAgent);
+                return null;
+            }
+            
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = true;
+            recognition.lang = 'es-ES';
+            recognition.maxAlternatives = 1;
+            
+            recognition.onstart = () => {
+                isListening = true;
+                btnMic.classList.add('listening');
+                statusText.textContent = 'Escuchando...';
+                centerText.textContent = '🎤 Habla ahora';
+                setState('listening');
+            };
+            
+            recognition.onresult = async (event) => {
+                const result = event.results[event.results.length - 1];
+                const text = result[0].transcript.trim();
+                
+                if (result.isFinal) {
+                    addMessage(text, 'user');
+                    await sendToServer(text);
+                }
+            };
+            
+            recognition.onerror = (event) => {
+                console.error('❌ Error recognition:', event.error);
+                stopListening();
+            };
+            
+            recognition.onend = () => {
+                stopListening();
+            };
+            
+            return recognition;
+        }
+        
+        function stopListening() {
+            isListening = false;
+            btnMic.classList.remove('listening');
+            statusText.textContent = '';
+            centerText.textContent = 'Sistema en línea';
+            setState('idle');
+        }
+        
+        // Mic button
+        btnMic.addEventListener('click', () => {
+            console.log('🎤 Click en micrófono');
+            
+            if (!recognition) {
+                console.log('Inicializando recognition...');
+                recognition = initRecognition();
+                if (!recognition) {
+                    alert('Tu navegador no soporta reconocimiento de voz. Usa Chrome.');
+                    return;
+                }
+            }
+            
+            if (isListening) {
+                console.log('Parando recognition...');
+                recognition.stop();
+            } else {
+                console.log('Iniciando recognition...');
+                try {
+                    recognition.start();
+                    console.log('✅ Recognition iniciado');
+                } catch(e) {
+                    console.error('❌ Error al iniciar:', e);
+                }
+            }
+        });
+        
+        // Chat toggle
+        btnChat.addEventListener('click', () => {
+            chatPanel.classList.add('active');
+            setTimeout(() => chatInput.focus(), 100);
+        });
+        
+        chatClose.addEventListener('click', () => {
+            chatPanel.classList.remove('active');
+        });
+        
+        // Send message
+        async function sendToServer(text) {
+            statusText.textContent = 'Procesando...';
+            centerText.textContent = '🤔 Pensando...';
+            setState('thinking');
+            
+            try {
+                const resp = await fetch('/ask', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({question: text})
+                });
+                
+                const data = await resp.json();
+                
+                if (data.response) {
+                    addMessage(data.response, 'jarvis');
+                    await speakResponse(data.response);
+                } else if (data.error) {
+                    addMessage('Error: ' + data.error, 'jarvis');
+                }
+            } catch (e) {
+                addMessage('Error: ' + e.message, 'jarvis');
+            }
+            
+            statusText.textContent = '';
+            centerText.textContent = 'Sistema en línea';
+            setState('idle');
+        }
+        
+        function addMessage(text, sender) {
+            const time = new Date().toLocaleTimeString('es-ES', {hour: '2-digit', minute: '2-digit'});
+            const div = document.createElement('div');
+            div.className = `message ${sender}`;
+            div.innerHTML = `
+                <div class="bubble">${text}</div>
+                <div class="timestamp">${time}</div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        async function speakResponse(text) {
+            if (!('speechSynthesis' in window)) {
+                console.error('❌ SpeechSynthesis no disponible');
+                addMessage('(Audio no disponible)', 'jarvis');
+                return;
+            }
+            
+            // Cancel any ongoing speech
+            window.speechSynthesis.cancel();
+            
+            // Esperar a que las voces estén cargadas
+            let voices = window.speechSynthesis.getVoices();
+            if (voices.length === 0) {
+                // Esperar a que se carguen las voces
+                await new Promise(resolve => {
+                    window.speechSynthesis.onvoiceschanged = resolve;
+                    setTimeout(resolve, 500); // Timeout por si acaso
+                });
+                voices = window.speechSynthesis.getVoices();
+            }
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'es-ES';
+            utterance.rate = 1.2;
+            utterance.pitch = 1.05;
+            utterance.volume = 1.0;
+            
+            // Buscar voz española
+            const spanishVoice = voices.find(v => 
+                v.lang === 'es-ES' || 
+                v.lang.includes('Spanish') || 
+                v.lang.includes('es-')
+            );
+            
+            if (spanishVoice) {
+                utterance.voice = spanishVoice;
+                console.log('✅ Voz:', spanishVoice.name);
+            }
+            
+            utterance.onstart = () => {
+                setState('speaking');
+                statusText.textContent = 'Hablando...';
+                centerText.textContent = '🔊';
+                console.log('🔊 Audio START');
+            };
+            
+            utterance.onend = () => {
+                setState('idle');
+                statusText.textContent = '';
+                centerText.textContent = 'Sistema en línea';
+                console.log('✅ Audio END');
+            };
+            
+            utterance.onerror = (e) => {
+                console.error('❌ Audio ERROR:', e);
+                setState('idle');
+                statusText.textContent = '';
+                centerText.textContent = 'Sistema en línea';
+            };
+            
+            console.log('🎤 Speaking:', text.substring(0, 50));
+            
+            // Pequeño delay para asegurar que cancel() funcionó
+            setTimeout(() => {
+                window.speechSynthesis.speak(utterance);
+            }, 100);
+        }
+        
+        // Text input
+        chatSend.addEventListener('click', () => {
+            const text = chatInput.value.trim();
+            if (text) {
+                addMessage(text, 'user');
+                sendToServer(text);
+                chatInput.value = '';
+            }
+        });
+        
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                chatSend.click();
+            }
+        });
+        
+        // Initialize - PRE-load recognition
+        console.log('🎤 Initializing recognition at startup...');
+        recognition = initRecognition();
+        if (recognition) {
+            console.log('✅ Recognition ready');
+        } else {
+            console.error('❌ Recognition failed to initialize');
+        }
+        
+        // Load voices on mobile
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.getVoices();
+            window.speechSynthesis.onvoiceschanged = () => {
+                window.speechSynthesis.getVoices();
+                console.log('🎤 Voces cargadas:', window.speechSynthesis.getVoices().length);
+            };
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Operador - TikTok Subastas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a0a2e 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #ff0050, #00f2ea);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 50px rgba(255, 0, 80, 0.5);
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .input-group {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        .price-input {
+            width: 200px;
+            padding: 20px;
+            font-size: 48px;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            border: 3px solid #333;
+            border-radius: 15px;
+            color: #fff;
+            font-weight: 900;
+        }
+        
+        .price-input:focus {
+            outline: none;
+            border-color: #00f2ea;
+        }
+        
+        .timer-display {
+            font-size: 120px;
+            font-weight: 900;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            color: #ff4444;
+            text-shadow: 0 0 50px rgba(255, 68, 68, 0.5);
+            margin: 30px 0;
+            display: none;
+        }
+        
+        .timer-display.active {
+            display: block;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .btn {
+            padding: 20px 40px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 900;
+            cursor: pointer;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .btn-start {
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            color: #000;
+            width: 100%;
+        }
+        
+        .btn-stop {
+            background: #ff4444;
+            color: #fff;
+        }
+        
+        .current-price {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid #00ff88;
+            border-radius: 15px;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .current-price.active {
+            display: block;
+        }
+        
+        .current-price-label {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        
+        .current-price-value {
+            font-size: 48px;
+            font-weight: 900;
+            color: #00ff88;
+        }
+        
+        .winner-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 242, 234, 0.2));
+            border: 3px solid #00ff88;
+            border-radius: 20px;
+            margin: 20px 0;
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .winner-display.active {
+            display: block;
+        }
+        
+        .winner-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .winner-title {
+            font-size: 28px;
+            color: #00ff88;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .winner-info {
+            font-size: 20px;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        
+        .winner-info strong {
+            color: #00f2ea;
+        }
+        
+        .chat-preview {
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+            padding: 15px;
+            height: 200px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .chat-message {
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .chat-message.highlight {
+            background: rgba(0, 255, 136, 0.2);
+            border-left: 3px solid #00ff88;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .status-waiting {
+            background: #333;
+            color: #888;
+        }
+        
+        .status-running {
+            background: #ff4444;
+            color: #fff;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-winner {
+            background: #00ff88;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 Panel Operador</h1>
+        <p>Subastas TikTok Live - Sistema Simplificado</p>
+    </div>
+    
+    <div class="main-container">
+        <div class="card">
+            <div class="input-group">
+                <label>💰 Precio del Producto (€)</label>
+                <input type="number" class="price-input" id="price" placeholder="6" min="1" max="999">
+            </div>
+            
+            <div class="timer-display" id="timer">10</div>
+            
+            <div class="current-price" id="current-price-display">
+                <div class="current-price-label">PRECIO ACTUAL</div>
+                <div class="current-price-value" id="current-price-value">€0</div>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="btn btn-start" id="btn-start" onclick="startAuction()">▶️ INICIAR SUBASTA</button>
+                <button class="btn btn-stop" id="btn-stop" onclick="stopAuction()" style="display: none;">⏹️ PARAR</button>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <span class="status-badge status-waiting" id="status-badge">⏳ Esperando...</span>
+            </div>
+            
+            <div class="winner-display" id="winner-display">
+                <div class="winner-icon">🏆</div>
+                <div class="winner-title">¡GANADOR!</div>
+                <div class="winner-info">
+                    <strong>Usuario:</strong> <span id="winner-user">-</span>
+                </div>
+                <div class="winner-info">
+                    <strong>Caja #:</strong> <span id="winner-box">-</span>
+                </div>
+                <div class="winner-info">
+                    <strong>Precio:</strong> <span id="winner-price">€0</span>
+                </div>
+                <div class="winner-info">
+                    <strong>Estado:</strong> <span style="color: #00ff88;">✅ CAJA PAGADA</span>
+                </div>
+            </div>
+            
+            <div class="chat-preview" id="chat-preview">
+                <div style="color: #888; text-align: center; padding: 20px;">
+                    Esperando mensajes del chat...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 10;
+        let timerInterval = null;
+        let isRunning = false;
+        let currentPrice = 0;
+        let winnerFound = false;
+        
+        // Cajas pagadas (en producción viene de la base de datos)
+        const paidBoxes = new Set(['1', '2', '3', '150', '200', '250']);
+        
+        // Mensajes simulados del chat (en producción viene del bot)
+        const simulatedMessages = [
+            { user: '@carlos92', text: 'mío 150' },
+            { user: '@maria_garcia', text: 'es mío' },
+            { user: '@juan_perez', text: 'mío 200' },
+            { user: '@lucia_88', text: 'yo yo yo' },
+            { user: '@pedro_shop', text: 'mío 250' }
+        ];
+        
+        function startAuction() {
+            const price = parseInt(document.getElementById('price').value);
+            
+            if (!price || price <= 0) {
+                alert('❌ Introduce un precio válido');
+                return;
+            }
+            
+            currentPrice = price;
+            isRunning = true;
+            winnerFound = false;
+            
+            // UI Update
+            document.getElementById('current-price-value').textContent = `€${price}`;
+            document.getElementById('current-price-display').classList.add('active');
+            document.getElementById('timer').classList.add('active');
+            document.getElementById('btn-start').style.display = 'none';
+            document.getElementById('btn-stop').style.display = 'inline-block';
+            document.getElementById('winner-display').classList.remove('active');
+            document.getElementById('status-badge').className = 'status-badge status-running';
+            document.getElementById('status-badge').textContent = '🔴 EN CURSO';
+            
+            // Iniciar cuenta atrás
+            timeLeft = 10;
+            document.getElementById('timer').textContent = timeLeft;
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').textContent = timeLeft;
+                
+                // Simular mensajes del chat (en producción viene del bot real)
+                if (Math.random() > 0.6) {
+                    const randomMsg = simulatedMessages[Math.floor(Math.random() * simulatedMessages.length)];
+                    checkMessage(randomMsg.user, randomMsg.text);
+                }
+                
+                if (timeLeft <= 0) {
+                    stopAuction();
+                    if (!winnerFound) {
+                        alert('⏰ Tiempo terminado - Sin ganador');
+                    }
+                }
+            }, 1000);
+        }
+        
+        function stopAuction() {
+            isRunning = false;
+            clearInterval(timerInterval);
+            document.getElementById('timer').classList.remove('active');
+            document.getElementById('btn-start').style.display = 'inline-block';
+            document.getElementById('btn-stop').style.display = 'none';
+            document.getElementById('status-badge').className = 'status-badge status-waiting';
+            document.getElementById('status-badge').textContent = '⏳ Esperando...';
+        }
+        
+        function checkMessage(user, text) {
+            if (!isRunning || winnerFound) return;
+            
+            const lowerText = text.toLowerCase();
+            
+            // Buscar patrón: "mío" + número
+            const match = lowerText.match(/mío\s*(\d+)/);
+            
+            if (match) {
+                const boxNumber = match[1];
+                addChatMessage(user, text, true);
+                
+                // Verificar si la caja está pagada
+                if (paidBoxes.has(boxNumber)) {
+                    // ¡GANADOR ENCONTRADO!
+                    winnerFound = true;
+                    showWinner(user, boxNumber, currentPrice);
+                    stopAuction();
+                    
+                    // Guardar en backend
+                    saveWinner(user, boxNumber, currentPrice);
+                } else {
+                    addChatMessage(user, `${text} ❌`, false, 'Caja NO pagada');
+                }
+            } else {
+                addChatMessage(user, text, false);
+            }
+        }
+        
+        function addChatMessage(user, text, isHighlight, note = '') {
+            const container = document.getElementById('chat-preview');
+            
+            // Limpiar mensaje inicial
+            if (container.children[0] && container.children[0].textContent.includes('Esperando')) {
+                container.innerHTML = '';
+            }
+            
+            const div = document.createElement('div');
+            div.className = `chat-message ${isHighlight ? 'highlight' : ''}`;
+            div.innerHTML = `
+                <strong style="color: #00f2ea;">${user}</strong>: ${text}
+                ${note ? `<br><small style="color: #ff4444;">${note}</small>` : ''}
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+        
+        function showWinner(user, boxNumber, price) {
+            document.getElementById('winner-user').textContent = user;
+            document.getElementById('winner-box').textContent = `#${boxNumber}`;
+            document.getElementById('winner-price').textContent = `€${price}`;
+            document.getElementById('winner-display').classList.add('active');
+            document.getElementById('status-badge').className = 'status-badge status-winner';
+            document.getElementById('status-badge').textContent = '🏆 GANADOR ASIGNADO';
+        }
+        
+        async function saveWinner(user, boxNumber, price) {
+            try {
+                await fetch('/api/guardar_ganador', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        user,
+                        boxNumber,
+                        price,
+                        product: `Producto #${boxNumber}`,
+                        time: new Date().toLocaleString('es-ES')
+                    })
+                });
+                console.log('✅ Ganador guardado');
+            } catch (e) {
+                console.error('❌ Error guardando:', e);
+            }
+        }
+        
+        // Conectar con bot de Selenium para chat real
+        function connectToBot() {
+            console.log('🔌 Conectando al bot de TikTok...');
+            // En producción, WebSocket con el bot
+        }
+        
+        connectToBot();
+    </script>
+</body>
+</html>
