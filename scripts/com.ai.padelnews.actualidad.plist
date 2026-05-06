@@ -21,9 +21,9 @@
     <string>/Users/cristian/Sites/padel_news/scripts/actualidad_agent.err</string>
     
     <key>StartInterval</key>
-    <integer>360</integer>
+    <integer>10800</integer>
     
     <key>RunAtLoad</key>
-    <false/>
+    <true/>
 </dict>
 </plist>

@@ -136,7 +136,7 @@ def main():
     
     # Step 1: Fetch news
     log("\n>>> Step 1: Fetching news...")
-    success, output = run_script("fetch_news.py", timeout=120)
+    success, output = run_script("fetch_news.py", timeout=300)
     if success:
         log("✅ News fetched successfully")
         # Extract number of articles from output if possible
@@ -148,7 +148,8 @@ def main():
         state["last_fetch"] = datetime.now().isoformat()
         state["articles_info"] = articles_count
     else:
-        log(f"⚠️ News fetch failed: {output[:200]}")
+        log(f"⚠️ News fetch failed or timed out: {output[:200]}")
+        log("Continuing with existing news data...")
     
     # Step 2: Generate pages
     log("\n>>> Step 2: Generating pages...")
