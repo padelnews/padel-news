@@ -163055,3 +163055,12 @@
 >>> Running check_tournament_state: Interval-based run (5 min)
 [2026-05-06 23:01:48]     Script: dynamic_flow.py
 [2026-05-06 23:01:48]     Description: Check tournament state and transition if needed
+[2026-05-06 23:06:50] ============================================================
+[2026-05-06 23:06:50] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-05-06 23:06:50] ============================================================
+[2026-05-06 23:06:50] Current time: 2026-05-06 23:06:50
+[2026-05-06 23:06:50] Tournament status: live
+[2026-05-06 23:06:50] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-05-06 23:06:50]     Script: dynamic_flow.py
+[2026-05-06 23:06:50]     Description: Check tournament state and transition if needed
