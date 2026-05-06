@@ -5,9 +5,11 @@
     "start_date": "2026-05-04",
     "end_date": "2026-05-10",
     "prize": "$200,000",
-    "category": "P1"
+    "category": "P1",
+    "status": "live",
+    "current_round": "Round of 16"
   },
-  "status": "upcoming",
+  "status": "live",
   "last_tournament": {
     "name": "Brussels P2",
     "location": "Bélgica",

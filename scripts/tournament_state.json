@@ -2,11 +2,11 @@
   "version": "2.0",
   "last_updated": "2026-04-26T21:00:00",
   "current_tournament": {
-    "id": "asuncion_p2",
-    "name": "Asunción P2",
+    "id": "asuncion_p1",
+    "name": "Asunción P1",
     "location": "Asunción, Paraguay",
-    "dates": "03-10 Mayo 2026",
-    "status": "upcoming"
+    "dates": "04-10 Mayo 2026",
+    "status": "live"
   },
   "past_tournaments": [
     {
@@ -46,13 +46,6 @@
   ],
   "upcoming_tournaments": [
     {
-      "id": "asuncion_p2",
-      "name": "Asunción P2",
-      "location": "Asunción, Paraguay",
-      "dates": "03-10 Mayo 2026",
-      "status": "upcoming"
-    },
-    {
       "id": "buenos_aires_p1",
       "name": "Buenos Aires P1",
       "location": "Buenos Aires, Argentina",
@@ -60,6 +53,6 @@
       "status": "upcoming"
     }
   ],
-  "last_generation": "2026-05-06T22:56:47.186203",
-  "generation_count": 2628
+  "last_generation": "2026-05-06T23:01:38.889108",
+  "generation_count": 2631
 }
