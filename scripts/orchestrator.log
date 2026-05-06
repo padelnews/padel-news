@@ -164166,3 +164166,67 @@
 >>> Running check_tournament_state: Interval-based run (5 min)
 [2026-05-07 00:37:59]     Script: dynamic_flow.py
 [2026-05-07 00:37:59]     Description: Check tournament state and transition if needed
+[2026-05-07 00:38:03]     ✓ SUCCESS
+[2026-05-07 00:38:03]     Skipping index_updater: Hour 0 not in [8, 20]
+[2026-05-07 00:38:03]     Skipping torneos_updater: Hour 0 not in [9]
+[2026-05-07 00:38:03]     Skipping rankings_updater: Hour 0 not in [20]
+[2026-05-07 00:38:03] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-05-07 00:38:03]     Script: fetch_chollos.py
+[2026-05-07 00:38:03]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-05-07 00:38:03]     ✓ SUCCESS
+[2026-05-07 00:38:03]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-05-07 00:38:03]     Skipping live_score: Tournament is live, not active
+[2026-05-07 00:38:03]     Skipping actualidad_updater: Ran 56 min ago, interval is 360
+[2026-05-07 00:38:03]     Skipping resultados_updater: Tournament is live, not finished
+[2026-05-07 00:38:03] 
+============================================================
+[2026-05-07 00:38:03] SUMMARY
+[2026-05-07 00:38:03] ============================================================
+[2026-05-07 00:38:03] Agents run: 2
+[2026-05-07 00:38:03]   - check_tournament_state
+[2026-05-07 00:38:03]   - chollos_fetcher
+[2026-05-07 00:38:03] ============================================================
+[2026-05-07 00:38:03] ORCHESTRATOR COMPLETED
+[2026-05-07 00:38:03] ============================================================
+[2026-05-07 00:37:59] ============================================================
+[2026-05-07 00:37:59] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-05-07 00:37:59] ============================================================
+[2026-05-07 00:37:59] Current time: 2026-05-07 00:37:59
+[2026-05-07 00:37:59] Tournament status: live
+[2026-05-07 00:37:59] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-05-07 00:37:59]     Script: dynamic_flow.py
+[2026-05-07 00:37:59]     Description: Check tournament state and transition if needed
+[2026-05-07 00:38:03]     ✓ SUCCESS
+[2026-05-07 00:38:03]     Skipping index_updater: Hour 0 not in [8, 20]
+[2026-05-07 00:38:03]     Skipping torneos_updater: Hour 0 not in [9]
+[2026-05-07 00:38:03]     Skipping rankings_updater: Hour 0 not in [20]
+[2026-05-07 00:38:03] 
+>>> Running chollos_fetcher: Interval-based run (10 min)
+[2026-05-07 00:38:03]     Script: fetch_chollos.py
+[2026-05-07 00:38:03]     Description: Fetch new deals from NOX, Siux, Babolat
+[2026-05-07 00:38:03]     ✓ SUCCESS
+[2026-05-07 00:38:03]     Skipping tournament_watcher: Ran 15 min ago, interval is 30
+[2026-05-07 00:38:03]     Skipping live_score: Tournament is live, not active
+[2026-05-07 00:38:03]     Skipping actualidad_updater: Ran 56 min ago, interval is 360
+[2026-05-07 00:38:03]     Skipping resultados_updater: Tournament is live, not finished
+[2026-05-07 00:38:03] 
+============================================================
+[2026-05-07 00:38:03] SUMMARY
+[2026-05-07 00:38:03] ============================================================
+[2026-05-07 00:38:03] Agents run: 2
+[2026-05-07 00:38:03]   - check_tournament_state
+[2026-05-07 00:38:03]   - chollos_fetcher
+[2026-05-07 00:38:03] ============================================================
+[2026-05-07 00:38:03] ORCHESTRATOR COMPLETED
+[2026-05-07 00:38:03] ============================================================
+[2026-05-07 00:43:03] ============================================================
+[2026-05-07 00:43:03] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-05-07 00:43:03] ============================================================
+[2026-05-07 00:43:03] Current time: 2026-05-07 00:43:03
+[2026-05-07 00:43:03] Tournament status: live
+[2026-05-07 00:43:03] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-05-07 00:43:03]     Script: dynamic_flow.py
+[2026-05-07 00:43:03]     Description: Check tournament state and transition if needed
