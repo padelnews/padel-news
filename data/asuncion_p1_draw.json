@@ -4,7 +4,7 @@
   "dates": "03-10 Mayo 2026",
   "status": "live",
   "current_round": "Round of 16",
-  "last_updated": "2026-05-07T16:15:36.357066",
+  "last_updated": "2026-05-07T16:25:38.367736",
   "prize": "€264,534",
   "surface": "Outdoor Concrete",
   "source": "premier_padel_official_draw",
@@ -520,10 +520,10 @@
           "country": "ESP",
           "seed": null
         },
-        "score": "1-0",
-        "status": "live",
+        "score": "6-4, 6-3",
+        "status": "finished",
         "scheduled_time": "",
-        "winner": null
+        "winner": "team1"
       },
       {
         "match_id": "r16_8",
@@ -549,7 +549,100 @@
         "winner": "team1"
       }
     ],
-    "quarters": [],
+    "quarters": [
+      {
+        "match_id": "q_1",
+        "team1": {
+          "players": [
+            "Agustin Tapia",
+            "Arturo Coello"
+          ],
+          "country": "TBD",
+          "seed": null
+        },
+        "team2": {
+          "players": [
+            "Jon Sanz",
+            "Jorge Nieto"
+          ],
+          "country": "TBD",
+          "seed": null
+        },
+        "score": "",
+        "status": "scheduled",
+        "scheduled_time": "16:00",
+        "winner": null
+      },
+      {
+        "match_id": "q_2",
+        "team1": {
+          "players": [
+            "Javier Garrido",
+            "Lucas Bergamini"
+          ],
+          "country": "TBD",
+          "seed": null
+        },
+        "team2": {
+          "players": [
+            "Leandro Augsburger",
+            "Juan Lebron"
+          ],
+          "country": "TBD",
+          "seed": null
+        },
+        "score": "",
+        "status": "scheduled",
+        "scheduled_time": "18:00",
+        "winner": null
+      },
+      {
+        "match_id": "q_3",
+        "team1": {
+          "players": [
+            "Franco Stupaczuk",
+            "Miguel Yanguas"
+          ],
+          "country": "TBD",
+          "seed": null
+        },
+        "team2": {
+          "players": [
+            "Eduardo Alonso",
+            "Aimar Goñi Lacabe"
+          ],
+          "country": "TBD",
+          "seed": null
+        },
+        "score": "",
+        "status": "scheduled",
+        "scheduled_time": "20:00",
+        "winner": null
+      },
+      {
+        "match_id": "q_4",
+        "team1": {
+          "players": [
+            "Juan Tello",
+            "Maximiliano Arce Simo"
+          ],
+          "country": "TBD",
+          "seed": null
+        },
+        "team2": {
+          "players": [
+            "Inigo Jofre",
+            "David Gala Sanchez"
+          ],
+          "country": "TBD",
+          "seed": null
+        },
+        "score": "",
+        "status": "scheduled",
+        "scheduled_time": "22:00",
+        "winner": null
+      }
+    ],
     "semis": [],
     "final": []
   }
