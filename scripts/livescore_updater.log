@@ -1504,3 +1504,37 @@
 [2026-05-07 16:15:38] ============================================================
 [2026-05-07 16:15:38] LIVESCORE UPDATER COMPLETED
 [2026-05-07 16:15:38] ============================================================
+[2026-05-07 16:25:38] ============================================================
+[2026-05-07 16:25:38] LIVESCORE UPDATER STARTED
+[2026-05-07 16:25:38] ============================================================
+[2026-05-07 16:25:38] Current tournament: Asunción P1
+[2026-05-07 16:25:38] Current round: None
+[2026-05-07 16:25:38] Simulating match progress...
+[2026-05-07 16:25:38]   Match finished: 6-4, 6-3
+[2026-05-07 16:25:38]   Generating Quarter-finals draw...
+[2026-05-07 16:25:38] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 16:25:38] Regenerating website pages...
+[2026-05-07 16:25:38] ✅ Pages regenerated successfully
+[2026-05-07 16:25:38] Committing and pushing changes...
+[main 846338c0] 🔴 Live score update 16:25
+ 2 files changed, 169 insertions(+), 10 deletions(-)
+[2026-05-07 16:25:40] ✅ Changes pushed to GitHub
+[2026-05-07 16:25:40] ============================================================
+[2026-05-07 16:25:40] LIVESCORE UPDATER COMPLETED
+[2026-05-07 16:25:40] ============================================================
+[2026-05-07 16:25:38] ============================================================
+[2026-05-07 16:25:38] LIVESCORE UPDATER STARTED
+[2026-05-07 16:25:38] ============================================================
+[2026-05-07 16:25:38] Current tournament: Asunción P1
+[2026-05-07 16:25:38] Current round: None
+[2026-05-07 16:25:38] Simulating match progress...
+[2026-05-07 16:25:38]   Match finished: 6-4, 6-3
+[2026-05-07 16:25:38]   Generating Quarter-finals draw...
+[2026-05-07 16:25:38] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 16:25:38] Regenerating website pages...
+[2026-05-07 16:25:38] ✅ Pages regenerated successfully
+[2026-05-07 16:25:38] Committing and pushing changes...
+[2026-05-07 16:25:40] ✅ Changes pushed to GitHub
+[2026-05-07 16:25:40] ============================================================
+[2026-05-07 16:25:40] LIVESCORE UPDATER COMPLETED
+[2026-05-07 16:25:40] ============================================================
