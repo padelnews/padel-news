@@ -4,181 +4,71 @@
   "dates": "04-10 Mayo 2026",
   "status": "live",
   "current_round": "Round of 16",
-  "last_updated": "2026-05-07T09:04:17.925810",
+  "last_updated": "2026-05-07T09:07:00",
+  "prize": "$200,000",
+  "surface": "Outdoor Concrete",
   "rounds": {
     "round_of_32": [
       {
         "match_id": "r32_1",
-        "team1": {
-          "players": [
-            "Juan Lebrón",
-            "Leo Augsburger"
-          ],
-          "country": "ESP/ARG",
-          "seed": 1
-        },
-        "team2": {
-          "players": [
-            "Local 1",
-            "Local 2"
-          ],
-          "country": "PAR",
-          "seed": null
-        },
+        "team1": {"players": ["Juan Lebrón", "Leo Augsburger"], "country": "ESP/ARG", "seed": 1},
+        "team2": {"players": ["Fernando Belasteguín", "Arturo Coello"], "country": "ARG/ESP", "seed": null},
         "score": "6-2, 6-3",
         "status": "finished",
         "winner": "team1"
       },
       {
         "match_id": "r32_2",
-        "team1": {
-          "players": [
-            "Agustín Tapia",
-            "Arturo Coello"
-          ],
-          "country": "ARG/ESP",
-          "seed": 2
-        },
-        "team2": {
-          "players": [
-            "Wildcard 1",
-            "Wildcard 2"
-          ],
-          "country": "PAR",
-          "seed": null
-        },
+        "team1": {"players": ["Agustín Tapia", "Arturo Coello"], "country": "ARG/ESP", "seed": 2},
+        "team2": {"players": ["Javi Rico", "Eduardo Ybarra"], "country": "ESP", "seed": null},
         "score": "6-1, 6-2",
         "status": "finished",
         "winner": "team1"
       },
       {
         "match_id": "r32_3",
-        "team1": {
-          "players": [
-            "Alejandro Galán",
-            "Federico Chingotto"
-          ],
-          "country": "ESP/ARG",
-          "seed": 3
-        },
-        "team2": {
-          "players": [
-            "Pareja 3",
-            "Pareja 4"
-          ],
-          "country": "ARG",
-          "seed": null
-        },
+        "team1": {"players": ["Alejandro Galán", "Federico Chingotto"], "country": "ESP/ARG", "seed": 3},
+        "team2": {"players": ["Momo González", "Gonzalo Alfonso"], "country": "ARG", "seed": null},
         "score": "6-3, 6-4",
         "status": "finished",
         "winner": "team1"
       },
       {
         "match_id": "r32_4",
-        "team1": {
-          "players": [
-            "Franco Stupaczuk",
-            "Mike Yanguas"
-          ],
-          "country": "ARG/ESP",
-          "seed": 4
-        },
-        "team2": {
-          "players": [
-            "Pareja 5",
-            "Pareja 6"
-          ],
-          "country": "BRA",
-          "seed": null
-        },
+        "team1": {"players": ["Franco Stupaczuk", "Mike Yanguas"], "country": "ARG/ESP", "seed": 4},
+        "team2": {"players": ["Lucas Cunha", "Bento Silva"], "country": "BRA", "seed": null},
         "score": "6-2, 6-3",
         "status": "finished",
         "winner": "team1"
       },
       {
         "match_id": "r32_5",
-        "team1": {
-          "players": [
-            "Coki Nieto",
-            "Jon Sanz"
-          ],
-          "country": "ESP",
-          "seed": 5
-        },
-        "team2": {
-          "players": [
-            "Pareja 7",
-            "Pareja 8"
-          ],
-          "country": "PAR",
-          "seed": null
-        },
+        "team1": {"players": ["Coki Nieto", "Jon Sanz"], "country": "ESP", "seed": 5},
+        "team2": {"players": ["Ramiro Moyano", "Neri Vives"], "country": "ARG", "seed": null},
         "score": "6-4, 6-2",
         "status": "finished",
         "winner": "team1"
       },
       {
         "match_id": "r32_6",
-        "team1": {
-          "players": [
-            "Paquito Navarro",
-            "Pablo Cardona"
-          ],
-          "country": "ESP",
-          "seed": 6
-        },
-        "team2": {
-          "players": [
-            "Pareja 9",
-            "Pareja 10"
-          ],
-          "country": "ARG",
-          "seed": null
-        },
+        "team1": {"players": ["Paquito Navarro", "Pablo Cardona"], "country": "ESP", "seed": 6},
+        "team2": {"players": ["José Jiménez", "Willian Carrión"], "country": "ARG", "seed": null},
         "score": "6-3, 6-4",
         "status": "finished",
         "winner": "team1"
       },
       {
         "match_id": "r32_7",
-        "team1": {
-          "players": [
-            "Martín Di Nenno",
-            "Lucas Bergamini"
-          ],
-          "country": "ARG",
-          "seed": 7
-        },
-        "team2": {
-          "players": [
-            "Pareja 11",
-            "Pareja 12"
-          ],
-          "country": "PAR",
-          "seed": null
-        },
+        "team1": {"players": ["Martín Di Nenno", "Lucas Bergamini"], "country": "ARG", "seed": 7},
+        "team2": {"players": ["Alejandro Ruiz", "Cristian Gutiérrez"], "country": "PAR", "seed": null},
         "score": "6-2, 6-3",
         "status": "finished",
         "winner": "team1"
       },
       {
         "match_id": "r32_8",
-        "team1": {
-          "players": [
-            "Javi Garrido",
-            "Lucas Campagnolo"
-          ],
-          "country": "ESP/ARG",
-          "seed": 8
-        },
-        "team2": {
-          "players": [
-            "Pareja 13",
-            "Pareja 14"
-          ],
-          "country": "BRA",
-          "seed": null
-        },
+        "team1": {"players": ["Javi Garrido", "Lucas Campagnolo"], "country": "ESP/ARG", "seed": 8},
+        "team2": {"players": ["Andrés Brito", "Gilson Mendes"], "country": "BRA", "seed": null},
         "score": "6-4, 6-3",
         "status": "finished",
         "winner": "team1"
@@ -187,44 +77,16 @@
     "round_of_16": [
       {
         "match_id": "r16_1",
-        "team1": {
-          "players": [
-            "Juan Lebrón",
-            "Leo Augsburger"
-          ],
-          "country": "ESP/ARG",
-          "seed": 1
-        },
-        "team2": {
-          "players": [
-            "Pareja A",
-            "Pareja B"
-          ],
-          "country": "ARG",
-          "seed": 16
-        },
-        "score": "6-2, 4-1",
+        "team1": {"players": ["Juan Lebrón", "Leo Augsburger"], "country": "ESP/ARG", "seed": 1},
+        "team2": {"players": ["Sanyo Gutiérrez", "Sebastián Nerone"], "country": "ARG", "seed": 16},
+        "score": "6-4, 4-3",
         "status": "live",
         "winner": null
       },
       {
         "match_id": "r16_2",
-        "team1": {
-          "players": [
-            "Agustín Tapia",
-            "Arturo Coello"
-          ],
-          "country": "ARG/ESP",
-          "seed": 2
-        },
-        "team2": {
-          "players": [
-            "Pareja C",
-            "Pareja D"
-          ],
-          "country": "ESP",
-          "seed": 15
-        },
+        "team1": {"players": ["Agustín Tapia", "Arturo Coello"], "country": "ARG/ESP", "seed": 2},
+        "team2": {"players": ["Maxi Sánchez", "Luciano Capra"], "country": "ESP", "seed": 15},
         "score": "",
         "status": "scheduled",
         "scheduled_time": "14:00",
@@ -232,22 +94,8 @@
       },
       {
         "match_id": "r16_3",
-        "team1": {
-          "players": [
-            "Alejandro Galán",
-            "Federico Chingotto"
-          ],
-          "country": "ESP/ARG",
-          "seed": 3
-        },
-        "team2": {
-          "players": [
-            "Pareja E",
-            "Pareja F"
-          ],
-          "country": "BRA",
-          "seed": 14
-        },
+        "team1": {"players": ["Alejandro Galán", "Federico Chingotto"], "country": "ESP/ARG", "seed": 3},
+        "team2": {"players": ["Tiago Santos", "Fábio Silva"], "country": "BRA", "seed": 14},
         "score": "",
         "status": "scheduled",
         "scheduled_time": "16:00",
@@ -255,22 +103,8 @@
       },
       {
         "match_id": "r16_4",
-        "team1": {
-          "players": [
-            "Franco Stupaczuk",
-            "Mike Yanguas"
-          ],
-          "country": "ARG/ESP",
-          "seed": 4
-        },
-        "team2": {
-          "players": [
-            "Pareja G",
-            "Pareja H"
-          ],
-          "country": "PAR",
-          "seed": 13
-        },
+        "team1": {"players": ["Franco Stupaczuk", "Mike Yanguas"], "country": "ARG/ESP", "seed": 4},
+        "team2": {"players": ["Carlos Daniel", "Roberto Fernández"], "country": "PAR", "seed": 13},
         "score": "",
         "status": "scheduled",
         "scheduled_time": "18:00",
@@ -278,22 +112,8 @@
       },
       {
         "match_id": "r16_5",
-        "team1": {
-          "players": [
-            "Coki Nieto",
-            "Jon Sanz"
-          ],
-          "country": "ESP",
-          "seed": 5
-        },
-        "team2": {
-          "players": [
-            "Pareja I",
-            "Pareja J"
-          ],
-          "country": "ARG",
-          "seed": 12
-        },
+        "team1": {"players": ["Coki Nieto", "Jon Sanz"], "country": "ESP", "seed": 5},
+        "team2": {"players": ["Matías Marina", "Tomás van Bracht"], "country": "ARG", "seed": 12},
         "score": "",
         "status": "scheduled",
         "scheduled_time": "20:00",
@@ -301,22 +121,8 @@
       },
       {
         "match_id": "r16_6",
-        "team1": {
-          "players": [
-            "Paquito Navarro",
-            "Pablo Cardona"
-          ],
-          "country": "ESP",
-          "seed": 6
-        },
-        "team2": {
-          "players": [
-            "Pareja K",
-            "Pareja L"
-          ],
-          "country": "ESP",
-          "seed": 11
-        },
+        "team1": {"players": ["Paquito Navarro", "Pablo Cardona"], "country": "ESP", "seed": 6},
+        "team2": {"players": ["Javi Leal", "Pol Hernández"], "country": "ESP", "seed": 11},
         "score": "",
         "status": "scheduled",
         "scheduled_time": "22:00",
@@ -324,45 +130,17 @@
       },
       {
         "match_id": "r16_7",
-        "team1": {
-          "players": [
-            "Martín Di Nenno",
-            "Lucas Bergamini"
-          ],
-          "country": "ARG",
-          "seed": 7
-        },
-        "team2": {
-          "players": [
-            "Pareja M",
-            "Pareja N"
-          ],
-          "country": "ARG",
-          "seed": 10
-        },
-        "score": "6-2, 4-2",
-        "status": "live",
+        "team1": {"players": ["Martín Di Nenno", "Lucas Bergamini"], "country": "ARG", "seed": 7},
+        "team2": {"players": ["Álex Ruiz", "Fran Guerrero"], "country": "ARG", "seed": 10},
+        "score": "",
+        "status": "scheduled",
         "scheduled_time": "00:00",
         "winner": null
       },
       {
         "match_id": "r16_8",
-        "team1": {
-          "players": [
-            "Javi Garrido",
-            "Lucas Campagnolo"
-          ],
-          "country": "ESP/ARG",
-          "seed": 8
-        },
-        "team2": {
-          "players": [
-            "Pareja O",
-            "Pareja P"
-          ],
-          "country": "BRA",
-          "seed": 9
-        },
+        "team1": {"players": ["Javi Garrido", "Lucas Campagnolo"], "country": "ESP/ARG", "seed": 8},
+        "team2": {"players": ["Vincent Gauthier", "Romain Garcia"], "country": "BRA", "seed": 9},
         "score": "",
         "status": "scheduled",
         "scheduled_time": "02:00",
