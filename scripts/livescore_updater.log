@@ -1168,3 +1168,39 @@
 [2026-05-07 14:35:18] ============================================================
 [2026-05-07 14:35:18] LIVESCORE UPDATER COMPLETED
 [2026-05-07 14:35:18] ============================================================
+[2026-05-07 14:45:18] ============================================================
+[2026-05-07 14:45:18] LIVESCORE UPDATER STARTED
+[2026-05-07 14:45:18] ============================================================
+[2026-05-07 14:45:18] Current tournament: Asunción P1
+[2026-05-07 14:45:18] Current round: None
+[2026-05-07 14:45:18] Simulating match progress...
+[2026-05-07 14:45:18]   Match updated: 6-3, 5-1
+[2026-05-07 14:45:18]   Match updated: 6-3, 5-2
+[2026-05-07 14:45:18]   Match updated: 6-2, 2-0
+[2026-05-07 14:45:18] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 14:45:18] Regenerating website pages...
+[2026-05-07 14:45:18] ✅ Pages regenerated successfully
+[2026-05-07 14:45:18] Committing and pushing changes...
+[main ca3af787] 🔴 Live score update 14:45
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+[2026-05-07 14:45:20] ✅ Changes pushed to GitHub
+[2026-05-07 14:45:20] ============================================================
+[2026-05-07 14:45:20] LIVESCORE UPDATER COMPLETED
+[2026-05-07 14:45:20] ============================================================
+[2026-05-07 14:45:18] ============================================================
+[2026-05-07 14:45:18] LIVESCORE UPDATER STARTED
+[2026-05-07 14:45:18] ============================================================
+[2026-05-07 14:45:18] Current tournament: Asunción P1
+[2026-05-07 14:45:18] Current round: None
+[2026-05-07 14:45:18] Simulating match progress...
+[2026-05-07 14:45:18]   Match updated: 6-3, 5-1
+[2026-05-07 14:45:18]   Match updated: 6-3, 5-2
+[2026-05-07 14:45:18]   Match updated: 6-2, 2-0
+[2026-05-07 14:45:18] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 14:45:18] Regenerating website pages...
+[2026-05-07 14:45:18] ✅ Pages regenerated successfully
+[2026-05-07 14:45:18] Committing and pushing changes...
+[2026-05-07 14:45:20] ✅ Changes pushed to GitHub
+[2026-05-07 14:45:20] ============================================================
+[2026-05-07 14:45:20] LIVESCORE UPDATER COMPLETED
+[2026-05-07 14:45:20] ============================================================
