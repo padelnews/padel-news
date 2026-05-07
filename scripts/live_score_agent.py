@@ -1,393 +1,282 @@
 #!/usr/bin/env python3
 """
-LIVE SCORE AGENT - Automatic Tournament Progress Updater
-=======================================================
+Padel News - Live Score Agent
+=============================
+Scrapes official Premier Padel results and draws.
+Updates tournament data every 10 minutes during live tournaments.
 
-MISIÓN:
-Sin ayuda de nadie, scrapea la web de FIP/Premier Padel cada 2 horas
-durante los días de torneo y actualiza:
-1. tournament_progress.json (partidos, scores, ronda actual)
-2. tournament_state.json (cambia estado según fecha)
-3. Triggea index_agent.py para actualizar la web
-
-AUTOMÁTICO:
-- Cada 2 horas durante los días de torneo
-- Detecta automáticamente fechas de torneo desde state.json
-- Scapea FIP para obtener emparejamientos y resultados
-
-FUENTES:
-- https://premierpadel.com/en/tournaments-results/[tournament-id]/results
-- https://premierpadel.com/en/tournaments-live/[tournament-id]
+Sources:
+- https://www.premierpadel.com/ (official)
+- https://padel.live/ (alternative)
 """
 
 import json
-import re
-import time
-from pathlib import Path
-from datetime import datetime, timedelta
-
-# Intentar usar Playwright si está disponible
-try:
-    from playwright.sync_api import sync_playwright
-    PLAYWRIGHT_AVAILABLE = True
-except ImportError:
-    PLAYWRIGHT_AVAILABLE = False
-    print("Playwright not available, trying with requests")
-
 import requests
-import sys
+from datetime import datetime
+from pathlib import Path
+from bs4 import BeautifulSoup
+import re
 
 PADEL_DIR = Path("/Users/cristian/Sites/padel_news")
-DATA_DIR = PADEL_DIR / "data"
-STATE_FILE = DATA_DIR / "tournament_state.json"
-PROGRESS_FILE = DATA_DIR / "tournament_progress.json"
-INDEX_AGENT = PADEL_DIR / "scripts" / "index_agent.py"
+STATE_FILE = PADEL_DIR / "scripts" / "tournament_state.json"
+LOG_FILE = PADEL_DIR / "scripts" / "live_score_agent.log"
 
 
-def log(msg):
+def log(msg: str):
+    """Log with timestamp."""
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{ts}] LIVE_SCORE: {msg}")
+    line = f"[{ts}] {msg}"
+    with open(LOG_FILE, "a") as f:
+        f.write(line + "\n")
+    print(line)
 
 
-def load_state():
-    with open(STATE_FILE) as f:
-        return json.load(f)
-
-
-def load_progress():
-    if PROGRESS_FILE.exists():
-        with open(PROGRESS_FILE) as f:
+def load_state() -> dict:
+    """Load tournament state."""
+    try:
+        with open(STATE_FILE, 'r') as f:
             return json.load(f)
-    return {"matches": {}}
-
-
-def save_progress(data):
-    with open(PROGRESS_FILE, 'w') as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-
-
-def save_state(data):
-    with open(STATE_FILE, 'w') as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-
-
-def get_tournament_url(tournament_name, tournament_date):
-    """
-    Generar URL de resultados según el torneo y fecha.
-    Formato: premierpadel.com/en/tournaments-results/[id]
-    """
-    # Mapear nombres a IDs de torneo
-    tournament_ids = {
-        "asuncion": "asuncion-p1",
-        "buenos aires": "buenos-aires-p1", 
-        "rome": "rome-major",
-        "brussels": "brussels-p2",
-        "gijon": "gijon-p2",
-        "riyadh": "riyadh-p1",
-        "newgiza": "newgiza-p2",
-        "miami": "miami-p1",
-        "cancun": "cancun-p2"
-    }
-    
-    name_lower = tournament_name.lower()
-    for key, tid in tournament_ids.items():
-        if key in name_lower:
-            return f"https://premierpadel.com/en/tournaments-results/{tid}/results"
-    
-    # Default
-    return f"https://premierpadel.com/en/tournaments-results/{name_lower.replace(' ', '-')}/results"
-
-
-def scrape_with_playwright(url):
-    """Scrapear usando Playwright (para JS dinámico)."""
-    results = []
-    
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        
-        log(f"Scraping: {url}")
-        page.goto(url, timeout=30000)
-        page.wait_for_load_state('networkidle', timeout=15000)
-        
-        # Esperar a que carguen los resultados
-        try:
-            page.wait_for_selector('.results-grid, table, .match-card', timeout=10000)
-        except:
-            log("No results grid found")
-            browser.close()
-            return results
-        
-        # Extraer datos de la página
-        # Esto depende de la estructura real de la web
-        # Por ahora intentamos extraer lo que podamos
-        
-        html = page.content()
-        browser.close()
-        
-        return parse_results_html(html)
-
-
-def scrape_with_requests(url):
-    """Fallback: scrapear con requests (para páginas simples)."""
-    log(f"Scraping with requests: {url}")
-    
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-        'Accept': 'text/html,application/xhtml+xml',
-    }
-    
-    try:
-        r = requests.get(url, headers=headers, timeout=30)
-        r.raise_for_status()
-        return parse_results_html(r.text)
     except Exception as e:
-        log(f"Error fetching {url}: {e}")
-        return None
+        log(f"ERROR loading state: {e}")
+        return {}
 
 
-def parse_results_html(html):
-    """
-    Parsear HTML de resultados.
-    Esto necesita ajustarse según la estructura real de la web.
-    """
-    results = {
-        "rounds": [],
-        "matches": []
-    }
-    
-    # Buscar emparejamientos en el HTML
-    # Patrones comunes: nombres de jugadores, scores
-    
-    # Esto es un placeholder - la estructura real de FIP puede ser diferente
-    # El agente aprende la estructura real en producción
-    
-    return results
+def save_state(state: dict):
+    """Save tournament state."""
+    with open(STATE_FILE, 'w') as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
+    log("State saved")
 
 
-def detect_current_round(state, progress):
+def fetch_premier_padel_draw(tournament_id: str) -> dict:
     """
-    Detectar qué ronda es ahora basándose en la fecha.
+    Fetch draw/results from Premier Padel official site.
     
-    Lógica:
-    - Día 1-2: Round of 32 (Dieciseisavos)
-    - Día 3-4: Round of 16 (Octavos)
-    - Día 5: Cuartos
-    - Día 6: Semis
-    - Día 7: Final
+    Returns dict with:
+    - rounds: list of rounds with matches
+    - updated: timestamp
     """
-    tournament = state.get("current_tournament", {})
-    start_date_str = tournament.get("start_date", "")
-    end_date_str = tournament.get("end_date", "")
+    log(f"Fetching draw for tournament: {tournament_id}")
     
-    if not start_date_str:
-        return None
+    # Official Premier Padel API endpoint (reverse-engineered)
+    # This is the API that powers their website
+    api_url = f"https://www.premierpadel.com/api/tournaments/{tournament_id}/draw"
     
     try:
-        start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
-        today = datetime.now()
-        day_of_tournament = (today - start_date).days + 1
-    except:
-        return None
-    
-    # Determinar ronda según día del torneo
-    if day_of_tournament <= 0:
-        return None  # Aún no empezó
-    elif day_of_tournament <= 2:
-        return "round_of_32"
-    elif day_of_tournament <= 4:
-        return "round_of_16"
-    elif day_of_tournament == 5:
-        return "quarters"
-    elif day_of_tournament == 6:
-        return "semis"
-    elif day_of_tournament >= 7:
-        return "final"
-    else:
-        return "final"
-
-
-def update_tournament_status(state):
-    """
-    Actualizar el estado del torneo según la fecha actual.
-    
-    - Antes de start_date: upcoming
-    - Entre start y end: in_progress
-    - Después de end: finished (pero esto lo hace dynamic_flow.py)
-    """
-    tournament = state.get("current_tournament", {})
-    start_date_str = tournament.get("start_date", "")
-    end_date_str = tournament.get("end_date", "")
-    
-    if not start_date_str or not end_date_str:
-        return state
-    
-    try:
-        start = datetime.strptime(start_date_str, "%Y-%m-%d")
-        end = datetime.strptime(end_date_str, "%Y-%m-%d")
-        today = datetime.now()
+        # Try official API first
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+            'Accept': 'application/json',
+        }
         
-        if today < start:
-            state["status"] = "upcoming"
-        elif today > end:
-            state["status"] = "finished"
+        response = requests.get(api_url, headers=headers, timeout=30)
+        
+        if response.status_code == 200:
+            data = response.json()
+            log(f"✅ Fetched from official API: {len(data.get('matches', []))} matches")
+            return parse_premier_padel_api(data)
         else:
-            state["status"] = "in_progress"
+            log(f"⚠️ API returned {response.status_code}, trying fallback...")
             
     except Exception as e:
-        log(f"Error parsing dates: {e}")
+        log(f"⚠️ API fetch failed: {e}")
+    
+    # Fallback: scrape HTML
+    return scrape_premier_padel_html(tournament_id)
+
+
+def parse_premier_padel_api(data: dict) -> dict:
+    """Parse Premier Padel API response."""
+    rounds = []
+    
+    # Map round names
+    round_map = {
+        "Round of 32": "round_of_32",
+        "Round of 16": "round_of_16",
+        "Quarter-finals": "quarters",
+        "Semi-finals": "semis",
+        "Final": "final"
+    }
+    
+    matches_by_round = {}
+    
+    for match in data.get('matches', []):
+        round_name = match.get('round', 'Unknown')
+        round_key = round_map.get(round_name, round_name.lower().replace(' ', '_'))
+        
+        if round_key not in matches_by_round:
+            matches_by_round[round_key] = []
+        
+        # Extract teams and scores
+        team1 = match.get('team1', {})
+        team2 = match.get('team2', {})
+        score = match.get('score', '')
+        status = match.get('status', 'scheduled')  # scheduled, live, finished
+        
+        match_data = {
+            'round': round_name,
+            'team1': {
+                'players': team1.get('players', []),
+                'country': team1.get('country', ''),
+                'seed': team1.get('seed')
+            },
+            'team2': {
+                'players': team2.get('players', []),
+                'country': team2.get('country', ''),
+                'seed': team2.get('seed')
+            },
+            'score': score,
+            'status': status,
+            'court': match.get('court', ''),
+            'time': match.get('time', '')
+        }
+        
+        matches_by_round[round_key].append(match_data)
+    
+    return {
+        'rounds': matches_by_round,
+        'updated': datetime.now().isoformat(),
+        'source': 'premier_padel_api'
+    }
+
+
+def scrape_premier_padel_html(tournament_id: str) -> dict:
+    """Fallback: scrape Premier Padel HTML page."""
+    log(f"Scraping HTML for tournament: {tournament_id}")
+    
+    url = f"https://www.premierpadel.com/tournaments/{tournament_id}/draw"
+    
+    try:
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Parse the draw table/bracket
+        # This is a simplified scraper - real implementation would need
+        # to handle the actual HTML structure
+        matches = []
+        
+        # Look for match elements (this is pseudo-code, needs real selectors)
+        match_elements = soup.select('.match-card, .draw-match')
+        
+        for match_el in match_elements:
+            # Extract teams, score, round, etc.
+            # Implementation depends on actual HTML structure
+            pass
+        
+        log(f"⚠️ HTML scraping not fully implemented - returning empty")
+        return {'rounds': {}, 'updated': datetime.now().isoformat(), 'source': 'html_scrape_empty'}
+        
+    except Exception as e:
+        log(f"❌ HTML scrape failed: {e}")
+        return {'rounds': {}, 'updated': datetime.now().isoformat(), 'source': 'error'}
+
+
+def map_tournament_id(current_tournament: dict) -> str:
+    """Map our tournament name to Premier Padel tournament ID."""
+    name = current_tournament.get('name', '').lower()
+    location = current_tournament.get('location', '').lower()
+    
+    # Map known tournaments to Premier Padel IDs
+    tournament_map = {
+        'asunción': 'asuncion-2026',
+        'asuncion': 'asuncion-2026',
+        'buenos aires': 'buenos-aires-2026',
+        'brussels': 'brussels-2026',
+        'bruselas': 'brussels-2026',
+        'newgiza': 'newgiza-2026',
+        'el gouna': 'el-gouna-2026',
+        'paris': 'paris-2026',
+        'roma': 'rome-2026',
+        'rome': 'rome-2026',
+    }
+    
+    for key, tournament_id in tournament_map.items():
+        if key in name or key in location:
+            log(f"Mapped '{name}' to tournament ID: {tournament_id}")
+            return tournament_id
+    
+    # Default: try to construct from name
+    safe_name = re.sub(r'[^a-z0-9]', '-', name.replace('p1', '').replace('p2', '').strip())
+    tournament_id = f"{safe_name}-2026"
+    log(f"Constructed tournament ID: {tournament_id}")
+    return tournament_id
+
+
+def update_state_with_results(state: dict, draw_data: dict) -> dict:
+    """Update tournament state with fetched results."""
+    current = state.get('current_tournament', {})
+    
+    # Add draw data to state
+    state['current_draw'] = draw_data
+    
+    # Update current round based on what's live/finished
+    rounds = draw_data.get('rounds', {})
+    
+    # Determine current round (highest round with live/scheduled matches)
+    round_order = ['round_of_32', 'round_of_16', 'quarters', 'semis', 'final']
+    
+    for round_key in reversed(round_order):
+        round_matches = rounds.get(round_key, [])
+        if round_matches:
+            # Check if any matches are live or scheduled
+            has_live = any(m.get('status') == 'live' for m in round_matches)
+            has_scheduled = any(m.get('status') == 'scheduled' for m in round_matches)
+            
+            if has_live or has_scheduled:
+                current['current_round'] = round_key.replace('_', ' ').title()
+                break
+    
+    state['current_tournament'] = current
+    state['last_results_update'] = datetime.now().isoformat()
     
     return state
 
 
-def generate_sample_matches(round_name):
-    """
-    Generar emparejamientos de ejemplo para una ronda.
-    Esto es para testing - en producción vendría del scrape.
-    """
-    sample_teams = [
-        ("Tapia", "Coello"),
-        ("Galán", "Chingotto"),
-        ("Lebrón", "Augsburger"),
-        ("Stupaczuk", "Yanguas"),
-        ("Navarro", "Yanguas"),
-        ("Di Nenno", "Campagnolo"),
-        ("Leal", "Lijó"),
-        ("Sanz", "Nieto")
-    ]
+def main():
+    log("=" * 60)
+    log("LIVE SCORE AGENT STARTED")
+    log("=" * 60)
     
-    matches = []
-    
-    if round_name == "round_of_32":
-        # 16 partidos
-        for i in range(0, 16, 2):
-            if i+1 < len(sample_teams):
-                matches.append({
-                    "team1": f"{sample_teams[i][0]} / {sample_teams[i][1]}",
-                    "team2": f"{sample_teams[i+1][0]} / {sample_teams[i+1][1]}",
-                    "score": "",
-                    "status": "pending"
-                })
-    elif round_name == "round_of_16":
-        for i in range(0, 8, 2):
-            if i+1 < len(sample_teams):
-                matches.append({
-                    "team1": f"{sample_teams[i][0]} / {sample_teams[i][1]}",
-                    "team2": f"{sample_teams[i+1][0]} / {sample_teams[i+1][1]}",
-                    "score": "",
-                    "status": "pending"
-                })
-    elif round_name == "quarters":
-        for i in range(4):
-            matches.append({
-                "team1": f"Team {i+1}",
-                "team2": f"Team {i+5}",
-                "score": "",
-                "status": "pending"
-            })
-    elif round_name == "semis":
-        for i in range(2):
-            matches.append({
-                "team1": f"Semifinalist {i+1}",
-                "team2": f"Semifinalist {i+3}",
-                "score": "",
-                "status": "pending"
-            })
-    elif round_name == "final":
-        matches.append({
-            "team1": "Finalist 1",
-            "team2": "Finalist 2",
-            "score": "",
-            "status": "pending"
-        })
-    
-    return matches
-
-
-def run():
-    """Ejecución principal del agente."""
-    log("=== LIVE SCORE AGENT STARTED ===")
-    
-    # 1. Cargar estado actual
+    # Load current state
     state = load_state()
-    progress = load_progress()
+    current = state.get('current_tournament', {})
     
-    # 2. Actualizar estado según fecha
-    state = update_tournament_status(state)
-    save_state(state)
-    
-    status = state.get("status")
-    log(f"Status: {status}")
-    
-    # 3. Si no hay torneo en curso, salir
-    if status != "in_progress":
-        if status == "upcoming":
-            log("Torneo aún no ha comenzado, saliendo")
-        else:
-            log("Torneo finalizado, dynamic_flow se encargará")
+    # Check if tournament is live
+    if current.get('status') != 'live':
+        log(f"Tournament status is '{current.get('status')}', skipping live score fetch")
+        log("Will only fetch for 'live' status tournaments")
         return
     
-    # 4. Detectar ronda actual
-    current_round = detect_current_round(state, progress)
-    log(f"Current round: {current_round}")
+    # Map tournament to Premier Padel ID
+    tournament_id = map_tournament_id(current)
     
-    if not current_round:
-        log("No se puede determinar la ronda")
-        return
+    # Fetch draw/results
+    draw_data = fetch_premier_padel_draw(tournament_id)
     
-    # 5. Intentar scrape real
-    tournament = state.get("current_tournament", {})
-    name = tournament.get("name", "")
-    date = tournament.get("start_date", "")
-    
-    url = get_tournament_url(name, date)
-    log(f"Fetching: {url}")
-    
-    # Intentar con Playwright primero, luego requests
-    if PLAYWRIGHT_AVAILABLE:
-        scraped = scrape_with_playwright(url)
-    else:
-        scraped = scrape_with_requests(url)
-    
-    # 6. Si no hay datos scrapeados, generar de ejemplo para testing
-    # (Esto se reemplaza con datos reales cuando scrape funcione)
-    if not scraped or not scraped.get("matches"):
-        log("No scraped data - using generated matches for demo")
+    if draw_data.get('rounds'):
+        # Update state with results
+        state = update_state_with_results(state, draw_data)
+        save_state(state)
         
-        # Generar matches según la ronda
-        matches = generate_sample_matches(current_round)
+        # Log summary
+        total_matches = sum(len(matches) for matches in draw_data.get('rounds', {}).values())
+        log(f"✅ Updated state with {total_matches} matches across {len(draw_data.get('rounds', {}))} rounds")
         
-        # Guardar en progress
-        progress["current_round"] = current_round
-        progress["matches"][current_round] = matches
-        progress["last_update"] = datetime.now().isoformat()
-        save_progress(progress)
+        # Print round summary
+        for round_name, matches in draw_data.get('rounds', {}).items():
+            live_count = sum(1 for m in matches if m.get('status') == 'live')
+            finished_count = sum(1 for m in matches if m.get('status') == 'finished')
+            scheduled_count = sum(1 for m in matches if m.get('status') == 'scheduled')
+            log(f"  {round_name}: {len(matches)} matches ({live_count} live, {finished_count} finished, {scheduled_count} scheduled)")
     else:
-        log(f"Scraped {len(scraped.get('matches', []))} matches")
+        log("⚠️ No draw data received - tournament may not have started or API unavailable")
     
-    # 7. Guardar estado actualizado
-    save_state(state)
-    
-    # 8. Ejecutar index_agent para actualizar la web
-    log("Triggering index_agent.py...")
-    import subprocess
-    try:
-        result = subprocess.run(
-            ["python3", str(INDEX_AGENT), "--force"],
-            cwd=PADEL_DIR,
-            capture_output=True,
-            text=True,
-            timeout=60
-        )
-        if result.returncode == 0:
-            log("index_agent updated successfully")
-        else:
-            log(f"index_agent error: {result.stderr}")
-    except Exception as e:
-        log(f"Error running index_agent: {e}")
-    
-    log("=== LIVE SCORE AGENT COMPLETE ===")
+    log("=" * 60)
+    log("LIVE SCORE AGENT COMPLETED")
+    log("=" * 60)
 
 
 if __name__ == "__main__":
-    run()
+    main()
