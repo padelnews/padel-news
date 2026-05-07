@@ -282,10 +282,21 @@ def generate_resultados(state: Dict) -> str:
     current = state.get("current_tournament", {})
     upcoming = state.get("upcoming_tournaments", [])
     
+    # Load draw data if available
+    draw_file = PADEL_DIR / "data" / "asuncion_p1_draw.json"
+    draw_data = {}
+    if draw_file.exists():
+        try:
+            with open(draw_file, 'r') as f:
+                draw_data = json.load(f)
+            log(f"Loaded draw data: {len(draw_data.get('rounds', {}))} rounds")
+        except:
+            pass
+    
     # Build sections for each tournament
     tournament_sections = ""
     
-    # CURRENT TORNEO FIRST (if live/ongoing)
+    # CURRENT TORNEO FIRST (if live/ongoing) - WITH MATCHES
     if current and current.get('status') == 'live':
         # Add live tournament banner
         tournament_sections += f'''
@@ -304,26 +315,82 @@ def generate_resultados(state: Dict) -> str:
                     </div>
                 </div>
             </div>
-            
-            <div style="background: rgba(26, 26, 46, 0.6); border: 1px solid rgba(255, 50, 50, 0.3); border-radius: 16px; padding: 2rem; margin-top: 1.5rem; text-align: center;">
-                <p style="font-size: 1.1rem; margin-bottom: 1rem; color: #fff;">
-                    🔥 El torneo está en directo. Resultados en tiempo real próximamente.
-                </p>
-                <p style="font-size: 0.95rem; color: #aaa;">
-                    📍 {current.get('location', 'Paraguay')} • Premios: {current.get('prize', '$200,000')}
-                </p>
-            </div>
         </section>'''
         
-        # Add info box about live scoring
-        tournament_sections += f'''
+        # Add matches from draw data
+        rounds = draw_data.get('rounds', {})
+        round_names = {
+            'round_of_32': 'Round of 32',
+            'round_of_16': 'Round of 16',
+            'quarters': 'Cuartos de Final',
+            'semis': 'Semifinales',
+            'final': 'FINAL'
+        }
+        
+        for round_key, round_name in round_names.items():
+            matches = rounds.get(round_key, [])
+            if not matches:
+                continue
+            
+            # Build matches table
+            matches_rows = ""
+            for match in matches:
+                team1 = match.get('team1', {})
+                team2 = match.get('team2', {})
+                score = match.get('score', '')
+                status = match.get('status', 'scheduled')
+                scheduled = match.get('scheduled_time', '')
+                
+                # Determine styling based on status
+                if status == 'live':
+                    row_class = 'style="background: rgba(255, 50, 50, 0.2); border-left: 3px solid #ff5050;"'
+                    status_badge = '<span style="color: #ff5050; font-weight: 700; font-size: 0.8rem;">🔴 EN JUEGO</span>'
+                elif status == 'finished':
+                    row_class = ''
+                    status_badge = ''
+                else:
+                    row_class = 'style="opacity: 0.7;"'
+                    status_badge = f'<span style="color: #888; font-size: 0.8rem;">🕐 {scheduled}</span>' if scheduled else ''
+                
+                # Build team display
+                t1_players = ' / '.join(team1.get('players', []))
+                t2_players = ' / '.join(team2.get('players', []))
+                t1_flag = team1.get('country', '')
+                t2_flag = team2.get('country', '')
+                
+                # Seed indicator
+                t1_seed = f"[{team1.get('seed')}] " if team1.get('seed') else ''
+                t2_seed = f"[{team2.get('seed')}] " if team2.get('seed') else ''
+                
+                winner_class = "winner" if match.get('winner') == 'team1' else ""
+                t2_winner_class = "winner" if match.get('winner') == 'team2' else ""
+                
+                matches_rows += f'''
+                        <tr {row_class}>
+                            <td style="padding: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="{winner_class}" style="font-weight: 600;">{t1_seed}{t1_players}</span>
+                                    <span style="color: #888; font-size: 0.85rem;">{t1_flag}</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.3rem;">
+                                    <span class="{t2_winner_class}" style="font-weight: 600;">{t2_seed}{t2_players}</span>
+                                    <span style="color: #888; font-size: 0.85rem;">{t2_flag}</span>
+                                </div>
+                            </td>
+                            <td style="padding: 0.8rem; text-align: center; font-weight: 700; color: var(--primary);">{score if score else '-'}</td>
+                            <td style="padding: 0.8rem; text-align: right;">{status_badge}</td>
+                        </tr>'''
+            
+            if matches_rows:
+                tournament_sections += f'''
         <section style="margin-bottom: 2rem;">
-            <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(191, 0, 255, 0.1)); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem;">
-                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📊 Seguimiento en Vivo</h4>
-                <p style="color: #ccc; font-size: 0.95rem;">
-                    Los resultados se actualizarán automáticamente durante el torneo. 
-                    ¡Vuelve más tarde para ver los partidos en directo!
-                </p>
+            <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem;">🎾 {round_name}</h3>
+            <div class="table-scroll-wrapper">
+                <table class="results-table">
+                    <tbody>
+                        {matches_rows}
+                    </tbody>
+                </table>
             </div>
         </section>'''
     
