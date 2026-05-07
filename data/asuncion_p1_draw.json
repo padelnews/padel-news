@@ -4,7 +4,7 @@
   "dates": "03-10 Mayo 2026",
   "status": "live",
   "current_round": "Round of 16",
-  "last_updated": "2026-05-07T13:23:57.284115",
+  "last_updated": "2026-05-07T13:25:03.208206",
   "prize": "$200,000",
   "surface": "Outdoor Concrete",
   "source": "premier_padel_api_bracket_order",
@@ -206,7 +206,7 @@
           "country": "PY",
           "seed": 16
         },
-        "score": "6-4, 3-2",
+        "score": "6-2, 2-1",
         "status": "live",
         "scheduled_time": "",
         "winner": null
@@ -367,8 +367,8 @@
           "country": "ES",
           "seed": 9
         },
-        "score": "",
-        "status": "scheduled",
+        "score": "0-1",
+        "status": "live",
         "scheduled_time": "28:00",
         "winner": null
       }
