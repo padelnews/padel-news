@@ -150,3 +150,41 @@
 [2026-05-07 09:34:22] ============================================================
 [2026-05-07 09:34:22] LIVESCORE UPDATER COMPLETED
 [2026-05-07 09:34:22] ============================================================
+[2026-05-07 09:44:23] ============================================================
+[2026-05-07 09:44:23] LIVESCORE UPDATER STARTED
+[2026-05-07 09:44:23] ============================================================
+[2026-05-07 09:44:23] Current tournament: Asunción P1
+[2026-05-07 09:44:23] Current round: None
+[2026-05-07 09:44:23] Simulating match progress...
+[2026-05-07 09:44:23]   Match updated: 6-3, 2-0
+[2026-05-07 09:44:23]   Match started: Coki Nieto vs Matías Marina
+[2026-05-07 09:44:23]   Match finished: 6-4, 6-3
+[2026-05-07 09:44:23]   Match started: Javi Garrido vs Sanyo Gutiérrez
+[2026-05-07 09:44:23] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 09:44:23] Regenerating website pages...
+[2026-05-07 09:44:23] ✅ Pages regenerated successfully
+[2026-05-07 09:44:23] Committing and pushing changes...
+[main 9100c46c] 🔴 Live score update 09:44
+ 2 files changed, 21 insertions(+), 21 deletions(-)
+[2026-05-07 09:44:24] ✅ Changes pushed to GitHub
+[2026-05-07 09:44:24] ============================================================
+[2026-05-07 09:44:24] LIVESCORE UPDATER COMPLETED
+[2026-05-07 09:44:24] ============================================================
+[2026-05-07 09:44:23] ============================================================
+[2026-05-07 09:44:23] LIVESCORE UPDATER STARTED
+[2026-05-07 09:44:23] ============================================================
+[2026-05-07 09:44:23] Current tournament: Asunción P1
+[2026-05-07 09:44:23] Current round: None
+[2026-05-07 09:44:23] Simulating match progress...
+[2026-05-07 09:44:23]   Match updated: 6-3, 2-0
+[2026-05-07 09:44:23]   Match started: Coki Nieto vs Matías Marina
+[2026-05-07 09:44:23]   Match finished: 6-4, 6-3
+[2026-05-07 09:44:23]   Match started: Javi Garrido vs Sanyo Gutiérrez
+[2026-05-07 09:44:23] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 09:44:23] Regenerating website pages...
+[2026-05-07 09:44:23] ✅ Pages regenerated successfully
+[2026-05-07 09:44:23] Committing and pushing changes...
+[2026-05-07 09:44:24] ✅ Changes pushed to GitHub
+[2026-05-07 09:44:24] ============================================================
+[2026-05-07 09:44:24] LIVESCORE UPDATER COMPLETED
+[2026-05-07 09:44:24] ============================================================
