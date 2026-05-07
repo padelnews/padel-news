@@ -4,7 +4,7 @@
   "dates": "03-10 Mayo 2026",
   "status": "live",
   "current_round": "Round of 16",
-  "last_updated": "2026-05-07T10:34:38.733877",
+  "last_updated": "2026-05-07T10:35:54.887423",
   "prize": "$200,000",
   "surface": "Outdoor Concrete",
   "source": "premier_padel_api_contestants",
@@ -200,11 +200,11 @@
         },
         "team2": {
           "players": [
-            "Alejandro Galan",
-            "Federico Chingotto"
+            "Facundo Dehnike",
+            "Marcel Font"
           ],
-          "country": "ESP",
-          "seed": 2
+          "country": "PAR",
+          "seed": 16
         },
         "score": "6-4, 3-2",
         "status": "live",
@@ -215,16 +215,16 @@
         "match_id": "r16_2",
         "team1": {
           "players": [
-            "Lucas Campagnolo",
-            "Jairo Bautista"
+            "Javier Garrido",
+            "Lucas Bergamini"
           ],
-          "country": "BRA",
-          "seed": 2
+          "country": "ESP",
+          "seed": 8
         },
         "team2": {
           "players": [
-            "Jose Antonio Diestro",
-            "Maximiliano Sanchez Blasco"
+            "Javier Barahona",
+            "Gonzalo Gabriel Alfonso"
           ],
           "country": "ESP",
           "seed": 15
@@ -238,16 +238,16 @@
         "match_id": "r16_3",
         "team1": {
           "players": [
-            "Javier Valdes",
-            "Renzo Gabriel Nuñez"
+            "Javier Leal",
+            "Eduardo Agustin Torre"
           ],
-          "country": "CHI",
+          "country": "ESP",
           "seed": 3
         },
         "team2": {
           "players": [
-            "Alejandro Ruiz",
-            "Juanlu Esbri"
+            "Marc Quilez",
+            "Federico Mouriño"
           ],
           "country": "ESP",
           "seed": 14
@@ -261,16 +261,16 @@
         "match_id": "r16_4",
         "team1": {
           "players": [
-            "Javier Leal",
-            "Eduardo Agustin Torre"
+            "Valentino Libaak",
+            "Alex Chozas"
           ],
-          "country": "ESP",
+          "country": "ARG",
           "seed": 4
         },
         "team2": {
           "players": [
-            "Eduardo Alonso",
-            "Aimar Goñi Lacabe"
+            "Victor Ruiz",
+            "Carlos Daniel Gutierrez"
           ],
           "country": "ESP",
           "seed": 13
@@ -284,19 +284,19 @@
         "match_id": "r16_5",
         "team1": {
           "players": [
-            "Valentino Libaak",
-            "Alex Chozas"
+            "Lucas Campagnolo",
+            "Jairo Bautista"
           ],
-          "country": "ARG",
+          "country": "BRA",
           "seed": 5
         },
         "team2": {
           "players": [
-            "Leonel Daniel Aguirre",
-            "Alejandro Arroyo"
+            "Franco Stupaczuk",
+            "Miguel Yanguas"
           ],
           "country": "ARG",
-          "seed": 12
+          "seed": 4
         },
         "score": "",
         "status": "scheduled",
@@ -307,19 +307,19 @@
         "match_id": "r16_6",
         "team1": {
           "players": [
-            "Antonio Fernandez",
-            "Denis Tomas Perino"
+            "Jon Sanz",
+            "Jorge Nieto"
           ],
           "country": "ESP",
-          "seed": 6
+          "seed": 5
         },
         "team2": {
           "players": [
-            "Jeronimo Gonzalez",
-            "Martin Di Nenno"
+            "Alonso Rodriguez Martinez",
+            "Juan Ignacio De Pascual"
           ],
           "country": "ESP",
-          "seed": 7
+          "seed": 11
         },
         "score": "",
         "status": "scheduled",
@@ -330,19 +330,19 @@
         "match_id": "r16_7",
         "team1": {
           "players": [
-            "Jon Sanz",
-            "Jorge Nieto"
+            "Javier Valdes",
+            "Renzo Gabriel Nuñez"
           ],
-          "country": "ESP",
-          "seed": 5
+          "country": "CHI",
+          "seed": 7
         },
         "team2": {
           "players": [
-            "Francisco Navarro",
-            "Francisco Guerrero"
+            "Leandro Augsburger",
+            "Juan Lebron"
           ],
-          "country": "ESP",
-          "seed": 6
+          "country": "ARG",
+          "seed": 3
         },
         "score": "",
         "status": "scheduled",
@@ -353,18 +353,18 @@
         "match_id": "r16_8",
         "team1": {
           "players": [
-            "Javier Garrido",
-            "Lucas Bergamini"
+            "Antonio Fernandez",
+            "Denis Tomas Perino"
           ],
           "country": "ESP",
           "seed": 8
         },
         "team2": {
           "players": [
-            "Juan Tello",
-            "Maximiliano Arce Simo"
+            "Pol Hernandez Alvarez",
+            "Guillermo Collado Losada"
           ],
-          "country": "ARG",
+          "country": "ESP",
           "seed": 9
         },
         "score": "",
