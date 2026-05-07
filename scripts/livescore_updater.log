@@ -1454,3 +1454,21 @@
 [2026-05-07 16:05:34] Committing and pushing changes...
 [main 662cc7f2] 🔴 Live score update 16:05
  2 files changed, 2 insertions(+), 2 deletions(-)
+[2026-05-07 16:05:36] ✅ Changes pushed to GitHub
+[2026-05-07 16:05:36] ============================================================
+[2026-05-07 16:05:36] LIVESCORE UPDATER COMPLETED
+[2026-05-07 16:05:36] ============================================================
+[2026-05-07 16:05:34] ============================================================
+[2026-05-07 16:05:34] LIVESCORE UPDATER STARTED
+[2026-05-07 16:05:34] ============================================================
+[2026-05-07 16:05:34] Current tournament: Asunción P1
+[2026-05-07 16:05:34] Current round: None
+[2026-05-07 16:05:34] Simulating match progress...
+[2026-05-07 16:05:34] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 16:05:34] Regenerating website pages...
+[2026-05-07 16:05:34] ✅ Pages regenerated successfully
+[2026-05-07 16:05:34] Committing and pushing changes...
+[2026-05-07 16:05:36] ✅ Changes pushed to GitHub
+[2026-05-07 16:05:36] ============================================================
+[2026-05-07 16:05:36] LIVESCORE UPDATER COMPLETED
+[2026-05-07 16:05:36] ============================================================
