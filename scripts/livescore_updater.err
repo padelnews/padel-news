@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/cristian/Sites/padel_news/scripts/livescore_updater.py", line 253, in <module>
+    main()
+  File "/Users/cristian/Sites/padel_news/scripts/livescore_updater.py", line 237, in main
+    draw_data = simulate_match_progress(draw_data)
+  File "/Users/cristian/Sites/padel_news/scripts/livescore_updater.py", line 106, in simulate_match_progress
+    winner1 = r16_matches[i*2].get('winner', 'team1')
+IndexError: list index out of range

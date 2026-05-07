@@ -62,14 +62,15 @@ def fetch_with_playwright(url: str, timeout: int = 60000) -> str:
             # Navigate and wait for content
             page.goto(url, wait_until='networkidle', timeout=timeout)
             
-            # Wait for draw table to load
-            page.wait_for_selector('.draw-table, .match-card, [data-testid*="match"]', timeout=30000)
+            # Wait longer for draw to load (up to 20 seconds)
+            log("Waiting for draw to load...")
+            page.wait_for_timeout(20000)
             
             # Get page content
             content = page.content()
             
             browser.close()
-            log("✅ Page fetched successfully")
+            log(f"✅ Page fetched successfully: {len(content)} bytes")
             return content
             
     except Exception as e:
