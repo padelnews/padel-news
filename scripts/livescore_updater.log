@@ -378,3 +378,41 @@
 [2026-05-07 10:44:34] ============================================================
 [2026-05-07 10:44:34] LIVESCORE UPDATER COMPLETED
 [2026-05-07 10:44:34] ============================================================
+[2026-05-07 10:54:34] ============================================================
+[2026-05-07 10:54:34] LIVESCORE UPDATER STARTED
+[2026-05-07 10:54:34] ============================================================
+[2026-05-07 10:54:34] Current tournament: Asunción P1
+[2026-05-07 10:54:34] Current round: None
+[2026-05-07 10:54:34] Simulating match progress...
+[2026-05-07 10:54:34]   Match updated: 6-2, 5-4
+[2026-05-07 10:54:34]   Match updated: 6-4, 5-2
+[2026-05-07 10:54:34]   Match updated: 6-2, 3-0
+[2026-05-07 10:54:34]   Match started: Antonio Fernandez vs Pol Hernandez Alvarez
+[2026-05-07 10:54:34] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 10:54:34] Regenerating website pages...
+[2026-05-07 10:54:34] ✅ Pages regenerated successfully
+[2026-05-07 10:54:34] Committing and pushing changes...
+[main dee73053] 🔴 Live score update 10:54
+ 2 files changed, 13 insertions(+), 13 deletions(-)
+[2026-05-07 10:54:36] ✅ Changes pushed to GitHub
+[2026-05-07 10:54:36] ============================================================
+[2026-05-07 10:54:36] LIVESCORE UPDATER COMPLETED
+[2026-05-07 10:54:36] ============================================================
+[2026-05-07 10:54:34] ============================================================
+[2026-05-07 10:54:34] LIVESCORE UPDATER STARTED
+[2026-05-07 10:54:34] ============================================================
+[2026-05-07 10:54:34] Current tournament: Asunción P1
+[2026-05-07 10:54:34] Current round: None
+[2026-05-07 10:54:34] Simulating match progress...
+[2026-05-07 10:54:34]   Match updated: 6-2, 5-4
+[2026-05-07 10:54:34]   Match updated: 6-4, 5-2
+[2026-05-07 10:54:34]   Match updated: 6-2, 3-0
+[2026-05-07 10:54:34]   Match started: Antonio Fernandez vs Pol Hernandez Alvarez
+[2026-05-07 10:54:34] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 10:54:34] Regenerating website pages...
+[2026-05-07 10:54:34] ✅ Pages regenerated successfully
+[2026-05-07 10:54:34] Committing and pushing changes...
+[2026-05-07 10:54:36] ✅ Changes pushed to GitHub
+[2026-05-07 10:54:36] ============================================================
+[2026-05-07 10:54:36] LIVESCORE UPDATER COMPLETED
+[2026-05-07 10:54:36] ============================================================
