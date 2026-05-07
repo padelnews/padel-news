@@ -416,3 +416,43 @@
 [2026-05-07 10:54:36] ============================================================
 [2026-05-07 10:54:36] LIVESCORE UPDATER COMPLETED
 [2026-05-07 10:54:36] ============================================================
+[2026-05-07 11:04:36] ============================================================
+[2026-05-07 11:04:36] LIVESCORE UPDATER STARTED
+[2026-05-07 11:04:36] ============================================================
+[2026-05-07 11:04:36] Current tournament: Asunción P1
+[2026-05-07 11:04:36] Current round: None
+[2026-05-07 11:04:36] Simulating match progress...
+[2026-05-07 11:04:36]   Match finished: 6-4, 6-2
+[2026-05-07 11:04:36]   Match started: Javier Leal vs Marc Quilez
+[2026-05-07 11:04:36]   Match updated: 6-4, 4-1
+[2026-05-07 11:04:36]   Match updated: 6-4, 4-2
+[2026-05-07 11:04:36]   Match updated: 6-4, 5-4
+[2026-05-07 11:04:36] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 11:04:36] Regenerating website pages...
+[2026-05-07 11:04:36] ✅ Pages regenerated successfully
+[2026-05-07 11:04:36] Committing and pushing changes...
+[main fe1e9453] 🔴 Live score update 11:04
+ 2 files changed, 20 insertions(+), 20 deletions(-)
+[2026-05-07 11:04:38] ✅ Changes pushed to GitHub
+[2026-05-07 11:04:38] ============================================================
+[2026-05-07 11:04:38] LIVESCORE UPDATER COMPLETED
+[2026-05-07 11:04:38] ============================================================
+[2026-05-07 11:04:36] ============================================================
+[2026-05-07 11:04:36] LIVESCORE UPDATER STARTED
+[2026-05-07 11:04:36] ============================================================
+[2026-05-07 11:04:36] Current tournament: Asunción P1
+[2026-05-07 11:04:36] Current round: None
+[2026-05-07 11:04:36] Simulating match progress...
+[2026-05-07 11:04:36]   Match finished: 6-4, 6-2
+[2026-05-07 11:04:36]   Match started: Javier Leal vs Marc Quilez
+[2026-05-07 11:04:36]   Match updated: 6-4, 4-1
+[2026-05-07 11:04:36]   Match updated: 6-4, 4-2
+[2026-05-07 11:04:36]   Match updated: 6-4, 5-4
+[2026-05-07 11:04:36] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 11:04:36] Regenerating website pages...
+[2026-05-07 11:04:36] ✅ Pages regenerated successfully
+[2026-05-07 11:04:36] Committing and pushing changes...
+[2026-05-07 11:04:38] ✅ Changes pushed to GitHub
+[2026-05-07 11:04:38] ============================================================
+[2026-05-07 11:04:38] LIVESCORE UPDATER COMPLETED
+[2026-05-07 11:04:38] ============================================================
