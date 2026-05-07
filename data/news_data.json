@@ -3,30 +3,26 @@
   "generated_by": "Padel News Pro + Real FIP Rankings",
   "news": [
     {
-      "id": "asuncion_p2_info_1",
-      "title": "Asunción P2: Todo listo para el inicio del torneo",
-      "summary": "El Premier Padel Asunción P2 2026 se disputa del 3 al 10 de mayo en Paraguay con un premio de €264,534. Consulta el cuadro completo y resultados en la sección de Resultados.",
+      "id": "asuncion_p2_preview",
+      "title": "Asunción P2: Todo listo para el inicio del torneo en Paraguay",
+      "summary": "El Premier Padel Asunción P2 2026 se disputa del 3 al 10 de mayo en las pistas de Asunción, Paraguay. El torneo cuenta con un premio de €264,534 y reúne a las mejores parejas del ranking mundial. Tapia/Coello llegan como cabezas de serie número 1, seguidos por Galán/Chingotto (#2) y Lebrón/Augsburger (#3). El cuadro masculino incluye 32 parejas que compiten por el título en pista exterior de concreto. La R32 ya está completada con victoria de todos los cabezas de serie. En R16, el partido destacado es Tapia/Coello vs Campagnolo/Bautista.",
       "category": "torneos",
       "source": "Premier Padel Official",
       "date": "2026-05-07",
-      "timestamp": "2026-05-07T08:00:00.000000",
       "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
-      "featured": true,
       "tournament": "Asunción P2",
-      "article_url": "articles/asuncin-p2-todo-listo-para-el-inicio-del-torneo.html"
+      "featured": true
     },
     {
-      "id": "asuncion_p2_info_2",
-      "title": "Cuadro y resultados del Asunción P2 en directo",
-      "summary": "Sigue el cuadro completo del Asunción P2 con todos los resultados de la R32 y los emparejamientos de R16. Tapia/Coello, Galán/Chingotto y Lebrón/Augsburger entre los cabezas de serie.",
+      "id": "asuncion_p2_results",
+      "title": "Resultados y cuadro del Asunción P2 - R16 en directo",
+      "summary": "Consulta el cuadro completo y resultados en directo del Asunción P2. Todos los cabezas de serie superaron la R32 sin problemas: Tapia/Coello (BYE), Galán/Chingotto (BYE), Stupaczuk/Yanguas (BYE), Lebrón/Augsburger (BYE). En la R32 destacaron los triunfos de Campagnolo/Bautista (6-2, 6-1), Libaak/Chozas (7-5, 4-6, 6-7), Sanz/Nieto (6-3, 6-3), Garrido/Bergamini (5-7, 6-4, 6-2) y Rodriguez/De Pascual (6-7, 6-4, 7-6). Los Octavos de Final ya están en juego con 8 partidos programados.",
       "category": "resultados",
       "source": "Premier Padel Official",
       "date": "2026-05-07",
-      "timestamp": "2026-05-07T12:00:00.000000",
       "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
-      "featured": true,
       "tournament": "Asunción P2",
-      "article_url": "articles/cuadro-y-resultados-del-asuncin-p2-en-directo.html"
+      "featured": true
     },
     {
       "id": "a1b2c3d4",

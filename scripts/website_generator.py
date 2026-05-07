@@ -494,12 +494,23 @@ def generate_torneos(state: Dict) -> str:
     log("Generating torneos.html...")
     
     past = state.get("past_tournaments", [])
+    current = state.get("current_tournament", {})
     upcoming = state.get("upcoming_tournaments", [])
     
     # Build calendar rows
     all_tournaments = []
     
-    # Add upcoming first
+    # Add CURRENT tournament first (if live/ongoing)
+    if current and current.get('status') in ['live', 'ongoing']:
+        all_tournaments.append({
+            "name": current.get("name", ""),
+            "location": current.get("location", ""),
+            "dates": current.get("dates", current.get("start_date", "") + " - " + current.get("end_date", "")),
+            "status": "live",
+            "is_current": True
+        })
+    
+    # Add upcoming
     for t in upcoming:
         all_tournaments.append({
             "name": t.get("name", ""),
@@ -519,13 +530,25 @@ def generate_torneos(state: Dict) -> str:
             "winner": "/".join(t.get("winner_male", []))
         })
     
-    # Sort: upcoming first (by date), then past (by date desc)
-    # For now just upcoming then past
-    
+    # Build calendar table
     calendar_rows = ""
+    
+    # Current tournament first
+    if current and current.get('status') in ['live', 'ongoing']:
+        loc = current.get("location", "")
+        loc_flag = {"Asunción": "🇵🇾", "Buenos Aires": "🇦🇷", "Roma": "🇮🇹"}.get(loc.split(",")[0].strip() if loc else "", "🏳️")
+        calendar_rows += f'''
+                        <tr style="background: rgba(255, 50, 50, 0.2); border-left: 3px solid #ff5050;">
+                            <td><strong>{current.get("dates", current.get("start_date", "") + " - " + current.get("end_date", ""))}</strong></td>
+                            <td>{current.get("name", "")}</td>
+                            <td>{loc_flag} {loc}</td>
+                            <td><span class="badge" style="background: rgba(255, 50, 50, 0.3); color: #ff5050;">🔴 EN VIVO</span></td>
+                        </tr>'''
+    
+    # Upcoming
     for t in upcoming:
         loc = t.get("location", "")
-        loc_flag = {"Asunción": "🇵🇾", "Buenos Aires": "🇦🇷", "Roma": "🇮🇹"}.get(loc.split(",")[0].strip(), "🏳️")
+        loc_flag = {"Asunción": "🇵🇾", "Buenos Aires": "🇦🇷", "Roma": "🇮🇹"}.get(loc.split(",")[0].strip() if loc else "", "🏳️")
         calendar_rows += f'''
                         <tr>
                             <td><strong>{t.get('dates', '')}</strong></td>
@@ -534,12 +557,18 @@ def generate_torneos(state: Dict) -> str:
                             <td><span class="badge" style="background: rgba(0, 255, 136, 0.2); color: #00ff88;">🎾 PRÓXIMO</span></td>
                         </tr>'''
     
+    # Past
     for t in past[:6]:
         loc = t.get("location", "")
         loc_flag = {"Bruselas": "🇧🇪", "El Gouna": "🇪🇬", "Miami": "🇺🇸", "Cancún": "🇲🇽", 
-                   "Gijón": "🇪🇸", "Riad": "🇸🇦"}.get(loc.split(",")[0].strip(), "🏳️")
+                   "Gijón": "🇪🇸", "Riad": "🇸🇦"}.get(loc.split(",")[0].strip() if loc else "", "🏳️")
         calendar_rows += f'''
                         <tr>
+                            <td>{t.get('dates', '')}</td>
+                            <td>{t.get('name', '')}</td>
+                            <td>{loc_flag} {loc}</td>
+                            <td><span class="badge" style="background: rgba(100,100,100,0.3); color: #ccc;">✅ Finalizado</span></td>
+                        </tr>'''
                             <td><strong>{t.get('dates', '')}</strong></td>
                             <td><strong>{t.get('name', '')}</strong></td>
                             <td>{loc_flag} {loc}</td>
