@@ -3,7 +3,7 @@
   "last_updated": "2026-04-26T21:00:00",
   "current_tournament": {
     "id": "asuncion_p1",
-    "name": "Asunción P1",
+    "name": "Asunción P2",
     "location": "Asunción, Paraguay",
     "dates": "04-10 Mayo 2026",
     "status": "live"
@@ -53,6 +53,6 @@
       "status": "upcoming"
     }
   ],
-  "last_generation": "2026-05-07T19:03:23.999582",
-  "generation_count": 2950
+  "last_generation": "2026-05-07T19:05:42.028643",
+  "generation_count": 2952
 }
