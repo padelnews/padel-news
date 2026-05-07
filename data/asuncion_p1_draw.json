@@ -4,7 +4,7 @@
   "dates": "04-10 Mayo 2026",
   "status": "live",
   "current_round": "Round of 16",
-  "last_updated": "2026-05-07T09:14:17.381160",
+  "last_updated": "2026-05-07T09:24:19.268331",
   "prize": "$200,000",
   "surface": "Outdoor Concrete",
   "source": "real_player_names",
@@ -252,8 +252,8 @@
           "country": "ESP/ESP",
           "seed": 14
         },
-        "score": "",
-        "status": "scheduled",
+        "score": "1-2",
+        "status": "live",
         "scheduled_time": "18:00",
         "winner": null
       },
@@ -275,10 +275,10 @@
           "country": "ESP/ESP",
           "seed": 13
         },
-        "score": "2-1",
-        "status": "live",
+        "score": "6-3, 6-3",
+        "status": "finished",
         "scheduled_time": "20:00",
-        "winner": null
+        "winner": "team1"
       },
       {
         "match_id": "r16_5",
