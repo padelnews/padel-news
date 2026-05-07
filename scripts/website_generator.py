@@ -569,11 +569,6 @@ def generate_torneos(state: Dict) -> str:
                             <td>{loc_flag} {loc}</td>
                             <td><span class="badge" style="background: rgba(100,100,100,0.3); color: #ccc;">✅ Finalizado</span></td>
                         </tr>'''
-                            <td><strong>{t.get('dates', '')}</strong></td>
-                            <td><strong>{t.get('name', '')}</strong></td>
-                            <td>{loc_flag} {loc}</td>
-                            <td><span class="badge" style="background: rgba(100,100,100,0.3);">✅ Finalizado</span></td>
-                        </tr>'''
     
     # Build next tournament card
     next_t = upcoming[0] if upcoming else {}
