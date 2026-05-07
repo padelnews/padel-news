@@ -4,7 +4,7 @@
   "dates": "03-10 Mayo 2026",
   "status": "live",
   "current_round": "Round of 16",
-  "last_updated": "2026-05-07T10:34:30.633502",
+  "last_updated": "2026-05-07T10:34:38.733877",
   "prize": "$200,000",
   "surface": "Outdoor Concrete",
   "source": "premier_padel_api_contestants",
@@ -22,8 +22,8 @@
         },
         "team2": {
           "players": [
-            "Jose Antonio Diestro",
-            "Maximiliano Sanchez Blasco"
+            "Alejandro Galan",
+            "Federico Chingotto"
           ],
           "country": "ESP",
           "seed": null
@@ -44,10 +44,10 @@
         },
         "team2": {
           "players": [
-            "Alejandro Ruiz",
-            "Juanlu Esbri"
+            "Inigo Jofre",
+            "David Gala Sanchez"
           ],
-          "country": "ESP",
+          "country": "AE",
           "seed": null
         },
         "score": "6-3, 6-4",
@@ -66,8 +66,8 @@
         },
         "team2": {
           "players": [
-            "Eduardo Alonso",
-            "Aimar Goñi Lacabe"
+            "Pablo Lijo",
+            "Pablo Garcia Rodrigo"
           ],
           "country": "ESP",
           "seed": null
@@ -88,10 +88,10 @@
         },
         "team2": {
           "players": [
-            "Leonel Daniel Aguirre",
-            "Alejandro Arroyo"
+            "Martin Abud",
+            "Miguel Lamperti"
           ],
-          "country": "ARG",
+          "country": "PAR",
           "seed": null
         },
         "score": "6-2, 6-3",
@@ -110,10 +110,10 @@
         },
         "team2": {
           "players": [
-            "Jeronimo Gonzalez",
-            "Martin Di Nenno"
+            "Juan Tello",
+            "Maximiliano Arce Simo"
           ],
-          "country": "ESP",
+          "country": "ARG",
           "seed": null
         },
         "score": "6-3, 6-4",
@@ -150,14 +150,14 @@
             "Jorge Nieto"
           ],
           "country": "ESP",
-          "seed": 7
+          "seed": 5
         },
         "team2": {
           "players": [
-            "Juan Tello",
-            "Maximiliano Arce Simo"
+            "Jeronimo Gonzalez",
+            "Martin Di Nenno"
           ],
-          "country": "ARG",
+          "country": "ESP",
           "seed": null
         },
         "score": "6-2, 6-3",
@@ -176,10 +176,10 @@
         },
         "team2": {
           "players": [
-            "Martin Abud",
-            "Miguel Lamperti"
+            "Leonel Daniel Aguirre",
+            "Alejandro Arroyo"
           ],
-          "country": "PAR",
+          "country": "ARG",
           "seed": null
         },
         "score": "6-3, 6-4",
@@ -200,13 +200,13 @@
         },
         "team2": {
           "players": [
-            "Facundo Dehnike",
-            "Marcel Font"
+            "Alejandro Galan",
+            "Federico Chingotto"
           ],
-          "country": "PAR",
-          "seed": 16
+          "country": "ESP",
+          "seed": 2
         },
-        "score": "6-4, 3-1",
+        "score": "6-4, 3-2",
         "status": "live",
         "scheduled_time": "",
         "winner": null
@@ -223,10 +223,10 @@
         },
         "team2": {
           "players": [
-            "Franco Stupaczuk",
-            "Miguel Yanguas"
+            "Jose Antonio Diestro",
+            "Maximiliano Sanchez Blasco"
           ],
-          "country": "ARG",
+          "country": "ESP",
           "seed": 15
         },
         "score": "",
@@ -246,14 +246,14 @@
         },
         "team2": {
           "players": [
-            "Leandro Augsburger",
-            "Juan Lebron"
+            "Alejandro Ruiz",
+            "Juanlu Esbri"
           ],
-          "country": "ARG",
+          "country": "ESP",
           "seed": 14
         },
-        "score": "1-2",
-        "status": "live",
+        "score": "",
+        "status": "scheduled",
         "scheduled_time": "18:00",
         "winner": null
       },
@@ -269,8 +269,8 @@
         },
         "team2": {
           "players": [
-            "Marc Quilez",
-            "Federico Mouriño"
+            "Eduardo Alonso",
+            "Aimar Goñi Lacabe"
           ],
           "country": "ESP",
           "seed": 13
@@ -292,10 +292,10 @@
         },
         "team2": {
           "players": [
-            "Victor Ruiz",
-            "Carlos Daniel Gutierrez"
+            "Leonel Daniel Aguirre",
+            "Alejandro Arroyo"
           ],
-          "country": "ESP",
+          "country": "ARG",
           "seed": 12
         },
         "score": "",
@@ -315,11 +315,11 @@
         },
         "team2": {
           "players": [
-            "Pol Hernandez Alvarez",
-            "Guillermo Collado Losada"
+            "Jeronimo Gonzalez",
+            "Martin Di Nenno"
           ],
           "country": "ESP",
-          "seed": 11
+          "seed": 7
         },
         "score": "",
         "status": "scheduled",
@@ -334,15 +334,15 @@
             "Jorge Nieto"
           ],
           "country": "ESP",
-          "seed": 7
+          "seed": 5
         },
         "team2": {
           "players": [
-            "Alonso Rodriguez Martinez",
-            "Juan Ignacio De Pascual"
+            "Francisco Navarro",
+            "Francisco Guerrero"
           ],
           "country": "ESP",
-          "seed": 10
+          "seed": 6
         },
         "score": "",
         "status": "scheduled",
@@ -361,10 +361,10 @@
         },
         "team2": {
           "players": [
-            "Javier Barahona",
-            "Gonzalo Gabriel Alfonso"
+            "Juan Tello",
+            "Maximiliano Arce Simo"
           ],
-          "country": "ESP",
+          "country": "ARG",
           "seed": 9
         },
         "score": "",
