@@ -4,28 +4,28 @@
   "dates": "03-10 Mayo 2026",
   "status": "live",
   "current_round": "Round of 16",
-  "last_updated": "2026-05-07T10:29:41.274169",
+  "last_updated": "2026-05-07T10:31:08.241330",
   "prize": "$200,000",
   "surface": "Outdoor Concrete",
-  "source": "premier_padel_scrape",
+  "source": "premier_padel_api_contestants",
   "rounds": {
     "round_of_32": [
       {
         "match_id": "r32_1",
         "team1": {
           "players": [
-            "Juan Lebrón",
-            "Leo Augsburger"
+            "Agustin Tapia",
+            "Arturo Coello"
           ],
-          "country": "ESP/ARG",
+          "country": "ARG",
           "seed": 1
         },
         "team2": {
           "players": [
-            "Local 1",
-            "Local 2"
+            "Jose Antonio Diestro",
+            "Maximiliano Sanchez Blasco"
           ],
-          "country": "PAR",
+          "country": "ESP",
           "seed": null
         },
         "score": "6-2, 6-3",
@@ -36,18 +36,18 @@
         "match_id": "r32_2",
         "team1": {
           "players": [
-            "Agustín Tapia",
-            "Arturo Coello"
+            "Lucas Campagnolo",
+            "Jairo Bautista"
           ],
-          "country": "ESP/ARG",
+          "country": "BRA",
           "seed": 2
         },
         "team2": {
           "players": [
-            "Local 3",
-            "Local 4"
+            "Alejandro Ruiz",
+            "Juanlu Esbri"
           ],
-          "country": "PAR",
+          "country": "ESP",
           "seed": null
         },
         "score": "6-3, 6-4",
@@ -58,18 +58,18 @@
         "match_id": "r32_3",
         "team1": {
           "players": [
-            "Alejandro Galán",
-            "Federico Chingotto"
+            "Javier Valdes",
+            "Renzo Gabriel Nuñez"
           ],
-          "country": "ESP/ARG",
+          "country": "CHI",
           "seed": 3
         },
         "team2": {
           "players": [
-            "Local 5",
-            "Local 6"
+            "Eduardo Alonso",
+            "Aimar Goñi Lacabe"
           ],
-          "country": "PAR",
+          "country": "ESP",
           "seed": null
         },
         "score": "6-4, 6-5",
@@ -80,18 +80,18 @@
         "match_id": "r32_4",
         "team1": {
           "players": [
-            "Franco Stupaczuk",
-            "Mike Yanguas"
+            "Javier Leal",
+            "Eduardo Agustin Torre"
           ],
-          "country": "ESP/ARG",
+          "country": "ESP",
           "seed": 4
         },
         "team2": {
           "players": [
-            "Local 7",
-            "Local 8"
+            "Leonel Daniel Aguirre",
+            "Alejandro Arroyo"
           ],
-          "country": "PAR",
+          "country": "ARG",
           "seed": null
         },
         "score": "6-2, 6-3",
@@ -102,18 +102,18 @@
         "match_id": "r32_5",
         "team1": {
           "players": [
-            "Coki Nieto",
-            "Jon Sanz"
+            "Valentino Libaak",
+            "Alex Chozas"
           ],
-          "country": "ESP/ARG",
+          "country": "ARG",
           "seed": 5
         },
         "team2": {
           "players": [
-            "Local 9",
-            "Local 10"
+            "Jeronimo Gonzalez",
+            "Martin Di Nenno"
           ],
-          "country": "PAR",
+          "country": "ESP",
           "seed": null
         },
         "score": "6-3, 6-4",
@@ -124,18 +124,18 @@
         "match_id": "r32_6",
         "team1": {
           "players": [
-            "Paquito Navarro",
-            "Pablo Cardona"
+            "Antonio Fernandez",
+            "Denis Tomas Perino"
           ],
-          "country": "ESP/ARG",
+          "country": "ESP",
           "seed": 6
         },
         "team2": {
           "players": [
-            "Local 11",
-            "Local 12"
+            "Francisco Navarro",
+            "Francisco Guerrero"
           ],
-          "country": "PAR",
+          "country": "ESP",
           "seed": null
         },
         "score": "6-4, 6-5",
@@ -146,18 +146,18 @@
         "match_id": "r32_7",
         "team1": {
           "players": [
-            "Martín Di Nenno",
-            "Lucas Bergamini"
+            "Jon Sanz",
+            "Jorge Nieto"
           ],
-          "country": "ESP/ARG",
+          "country": "ESP",
           "seed": 7
         },
         "team2": {
           "players": [
-            "Local 13",
-            "Local 14"
+            "Juan Tello",
+            "Maximiliano Arce Simo"
           ],
-          "country": "PAR",
+          "country": "ARG",
           "seed": null
         },
         "score": "6-2, 6-3",
@@ -168,16 +168,16 @@
         "match_id": "r32_8",
         "team1": {
           "players": [
-            "Javi Garrido",
-            "Lucas Campagnolo"
+            "Javier Garrido",
+            "Lucas Bergamini"
           ],
-          "country": "ESP/ARG",
+          "country": "ESP",
           "seed": 8
         },
         "team2": {
           "players": [
-            "Local 15",
-            "Local 16"
+            "Martin Abud",
+            "Miguel Lamperti"
           ],
           "country": "PAR",
           "seed": null
@@ -192,18 +192,18 @@
         "match_id": "r16_1",
         "team1": {
           "players": [
-            "Juan Lebrón",
-            "Leo Augsburger"
+            "Agustin Tapia",
+            "Arturo Coello"
           ],
-          "country": "ESP/ARG",
+          "country": "ARG",
           "seed": 1
         },
         "team2": {
           "players": [
-            "Momo González",
-            "Gonzalo Alfonso"
+            "Facundo Dehnike",
+            "Marcel Font"
           ],
-          "country": "ARG/ESP",
+          "country": "PAR",
           "seed": 16
         },
         "score": "6-4, 3-2",
@@ -215,18 +215,18 @@
         "match_id": "r16_2",
         "team1": {
           "players": [
-            "Agustín Tapia",
-            "Arturo Coello"
+            "Lucas Campagnolo",
+            "Jairo Bautista"
           ],
-          "country": "ESP/ARG",
+          "country": "BRA",
           "seed": 2
         },
         "team2": {
           "players": [
-            "Ramiro Moyano",
-            "Neri Vives"
+            "Franco Stupaczuk",
+            "Miguel Yanguas"
           ],
-          "country": "ARG/ESP",
+          "country": "ARG",
           "seed": 15
         },
         "score": "",
@@ -238,18 +238,18 @@
         "match_id": "r16_3",
         "team1": {
           "players": [
-            "Alejandro Galán",
-            "Federico Chingotto"
+            "Javier Valdes",
+            "Renzo Gabriel Nuñez"
           ],
-          "country": "ESP/ARG",
+          "country": "CHI",
           "seed": 3
         },
         "team2": {
           "players": [
-            "Álex Ruiz",
-            "Fran Guerrero"
+            "Leandro Augsburger",
+            "Juan Lebron"
           ],
-          "country": "ARG/ESP",
+          "country": "ARG",
           "seed": 14
         },
         "score": "",
@@ -261,18 +261,18 @@
         "match_id": "r16_4",
         "team1": {
           "players": [
-            "Franco Stupaczuk",
-            "Mike Yanguas"
+            "Javier Leal",
+            "Eduardo Agustin Torre"
           ],
-          "country": "ESP/ARG",
+          "country": "ESP",
           "seed": 4
         },
         "team2": {
           "players": [
-            "Javi Leal",
-            "Pol Hernández"
+            "Marc Quilez",
+            "Federico Mouriño"
           ],
-          "country": "ARG/ESP",
+          "country": "ESP",
           "seed": 13
         },
         "score": "",
@@ -284,18 +284,18 @@
         "match_id": "r16_5",
         "team1": {
           "players": [
-            "Coki Nieto",
-            "Jon Sanz"
+            "Valentino Libaak",
+            "Alex Chozas"
           ],
-          "country": "ESP/ARG",
+          "country": "ARG",
           "seed": 5
         },
         "team2": {
           "players": [
-            "Matías Marina",
-            "Tomás van Bracht"
+            "Victor Ruiz",
+            "Carlos Daniel Gutierrez"
           ],
-          "country": "ARG/ESP",
+          "country": "ESP",
           "seed": 12
         },
         "score": "",
@@ -307,18 +307,18 @@
         "match_id": "r16_6",
         "team1": {
           "players": [
-            "Paquito Navarro",
-            "Pablo Cardona"
+            "Antonio Fernandez",
+            "Denis Tomas Perino"
           ],
-          "country": "ESP/ARG",
+          "country": "ESP",
           "seed": 6
         },
         "team2": {
           "players": [
-            "Tiago Santos",
-            "Fábio Silva"
+            "Pol Hernandez Alvarez",
+            "Guillermo Collado Losada"
           ],
-          "country": "ARG/ESP",
+          "country": "ESP",
           "seed": 11
         },
         "score": "",
@@ -330,18 +330,18 @@
         "match_id": "r16_7",
         "team1": {
           "players": [
-            "Martín Di Nenno",
-            "Lucas Bergamini"
+            "Jon Sanz",
+            "Jorge Nieto"
           ],
-          "country": "ESP/ARG",
+          "country": "ESP",
           "seed": 7
         },
         "team2": {
           "players": [
-            "Maxi Sánchez",
-            "Luciano Capra"
+            "Alonso Rodriguez Martinez",
+            "Juan Ignacio De Pascual"
           ],
-          "country": "ARG/ESP",
+          "country": "ESP",
           "seed": 10
         },
         "score": "",
@@ -353,18 +353,18 @@
         "match_id": "r16_8",
         "team1": {
           "players": [
-            "Javi Garrido",
-            "Lucas Campagnolo"
+            "Javier Garrido",
+            "Lucas Bergamini"
           ],
-          "country": "ESP/ARG",
+          "country": "ESP",
           "seed": 8
         },
         "team2": {
           "players": [
-            "Sanyo Gutiérrez",
-            "Sebastián Nerone"
+            "Javier Barahona",
+            "Gonzalo Gabriel Alfonso"
           ],
-          "country": "ARG/ESP",
+          "country": "ESP",
           "seed": 9
         },
         "score": "",
