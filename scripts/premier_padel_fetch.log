@@ -1,0 +1,17 @@
+[2026-05-07 09:12:12] ============================================================
+[2026-05-07 09:12:12] PREMIER PADEL DATA FETCHER
+[2026-05-07 09:12:12] ============================================================
+[2026-05-07 09:12:12] Fetching https://www.premierpadel.com/en/tournaments/asuncion-p1-2026/draws with Playwright...
+[2026-05-07 09:12:50] ❌ Playwright fetch failed: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".draw-table, .match-card, [data-testid*=\"match\"]") to be visible
+
+[2026-05-07 09:12:50] ⚠️ Falling back to realistic data with real player names
+[2026-05-07 09:12:50] Creating draw with real player names...
+[2026-05-07 09:12:50] ✅ Saved to /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 09:12:50] Total matches: 16
+[2026-05-07 09:12:50]   round_of_32: 8 matches (0 live)
+[2026-05-07 09:12:50]   round_of_16: 8 matches (1 live)
+[2026-05-07 09:12:50] ============================================================
+[2026-05-07 09:12:50] COMPLETED
+[2026-05-07 09:12:50] ============================================================
