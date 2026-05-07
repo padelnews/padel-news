@@ -285,8 +285,50 @@ def generate_resultados(state: Dict) -> str:
     # Build sections for each tournament
     tournament_sections = ""
     
-    # Upcoming first
-    if upcoming:
+    # CURRENT TORNEO FIRST (if live/ongoing)
+    if current and current.get('status') == 'live':
+        # Add live tournament banner
+        tournament_sections += f'''
+        <!-- TORNEO EN CURSO -->
+        <section style="margin-bottom: 3rem;">
+            <div style="background: linear-gradient(135deg, rgba(255, 50, 50, 0.2), rgba(255, 100, 0, 0.2)); border: 2px solid rgba(255, 50, 50, 0.5); padding: 2.5rem; border-radius: 20px; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <span class="badge" style="background: rgba(255, 50, 50, 0.3); color: #ff5050; animation: pulse 2s infinite;">🔴 EN VIVO</span>
+                        <h3 style="font-size: 1.8rem; margin: 0.5rem 0;">{current.get('name', '')}</h3>
+                        <p style="opacity: 0.9;">📅 {current.get('dates', current.get('start_date', '') + ' - ' + current.get('end_date', ''))} • {current.get('location', '')}</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Estado</p>
+                        <p style="font-size: 1.3rem; font-weight: 700; color: #ff5050;">🎾 EN CURSO</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(26, 26, 46, 0.6); border: 1px solid rgba(255, 50, 50, 0.3); border-radius: 16px; padding: 2rem; margin-top: 1.5rem; text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 1rem; color: #fff;">
+                    🔥 El torneo está en directo. Resultados en tiempo real próximamente.
+                </p>
+                <p style="font-size: 0.95rem; color: #aaa;">
+                    📍 {current.get('location', 'Paraguay')} • Premios: {current.get('prize', '$200,000')}
+                </p>
+            </div>
+        </section>'''
+        
+        # Add info box about live scoring
+        tournament_sections += f'''
+        <section style="margin-bottom: 2rem;">
+            <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(191, 0, 255, 0.1)); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem;">
+                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📊 Seguimiento en Vivo</h4>
+                <p style="color: #ccc; font-size: 0.95rem;">
+                    Los resultados se actualizarán automáticamente durante el torneo. 
+                    ¡Vuelve más tarde para ver los partidos en directo!
+                </p>
+            </div>
+        </section>'''
+    
+    # Upcoming (only if current is not live)
+    if upcoming and (not current or current.get('status') != 'live'):
         t = upcoming[0]
         tournament_sections += f'''
         <!-- PRÓXIMO TORNEO -->
