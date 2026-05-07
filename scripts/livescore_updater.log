@@ -1056,3 +1056,41 @@
 [2026-05-07 14:05:12] ============================================================
 [2026-05-07 14:05:12] LIVESCORE UPDATER COMPLETED
 [2026-05-07 14:05:12] ============================================================
+[2026-05-07 14:15:13] ============================================================
+[2026-05-07 14:15:13] LIVESCORE UPDATER STARTED
+[2026-05-07 14:15:13] ============================================================
+[2026-05-07 14:15:13] Current tournament: Asunción P1
+[2026-05-07 14:15:13] Current round: None
+[2026-05-07 14:15:13] Simulating match progress...
+[2026-05-07 14:15:13]   Match started: Agustin Tapia vs Lucas Campagnolo
+[2026-05-07 14:15:13]   Match updated: 6-2, 5-4
+[2026-05-07 14:15:13]   Match started: Marc Quilez vs Leandro Augsburger
+[2026-05-07 14:15:13]   Match started: Inigo Jofre vs Alejandro Galan
+[2026-05-07 14:15:13] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 14:15:13] Regenerating website pages...
+[2026-05-07 14:15:13] ✅ Pages regenerated successfully
+[2026-05-07 14:15:13] Committing and pushing changes...
+[main 35bd6474] 🔴 Live score update 14:15
+ 2 files changed, 19 insertions(+), 19 deletions(-)
+[2026-05-07 14:15:14] ✅ Changes pushed to GitHub
+[2026-05-07 14:15:14] ============================================================
+[2026-05-07 14:15:14] LIVESCORE UPDATER COMPLETED
+[2026-05-07 14:15:14] ============================================================
+[2026-05-07 14:15:13] ============================================================
+[2026-05-07 14:15:13] LIVESCORE UPDATER STARTED
+[2026-05-07 14:15:13] ============================================================
+[2026-05-07 14:15:13] Current tournament: Asunción P1
+[2026-05-07 14:15:13] Current round: None
+[2026-05-07 14:15:13] Simulating match progress...
+[2026-05-07 14:15:13]   Match started: Agustin Tapia vs Lucas Campagnolo
+[2026-05-07 14:15:13]   Match updated: 6-2, 5-4
+[2026-05-07 14:15:13]   Match started: Marc Quilez vs Leandro Augsburger
+[2026-05-07 14:15:13]   Match started: Inigo Jofre vs Alejandro Galan
+[2026-05-07 14:15:13] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 14:15:13] Regenerating website pages...
+[2026-05-07 14:15:13] ✅ Pages regenerated successfully
+[2026-05-07 14:15:13] Committing and pushing changes...
+[2026-05-07 14:15:14] ✅ Changes pushed to GitHub
+[2026-05-07 14:15:14] ============================================================
+[2026-05-07 14:15:14] LIVESCORE UPDATER COMPLETED
+[2026-05-07 14:15:14] ============================================================
