@@ -1274,3 +1274,37 @@
 [2026-05-07 15:05:24] ============================================================
 [2026-05-07 15:05:24] LIVESCORE UPDATER COMPLETED
 [2026-05-07 15:05:24] ============================================================
+[2026-05-07 15:15:24] ============================================================
+[2026-05-07 15:15:24] LIVESCORE UPDATER STARTED
+[2026-05-07 15:15:24] ============================================================
+[2026-05-07 15:15:24] Current tournament: Asunción P1
+[2026-05-07 15:15:24] Current round: None
+[2026-05-07 15:15:24] Simulating match progress...
+[2026-05-07 15:15:24]   Match started: Javier Garrido vs Alonso Rodriguez Martinez
+[2026-05-07 15:15:24]   Match updated: 6-3, 3-0
+[2026-05-07 15:15:24] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 15:15:24] Regenerating website pages...
+[2026-05-07 15:15:24] ✅ Pages regenerated successfully
+[2026-05-07 15:15:24] Committing and pushing changes...
+[main 8e082037] 🔴 Live score update 15:15
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+[2026-05-07 15:15:26] ✅ Changes pushed to GitHub
+[2026-05-07 15:15:26] ============================================================
+[2026-05-07 15:15:26] LIVESCORE UPDATER COMPLETED
+[2026-05-07 15:15:26] ============================================================
+[2026-05-07 15:15:24] ============================================================
+[2026-05-07 15:15:24] LIVESCORE UPDATER STARTED
+[2026-05-07 15:15:24] ============================================================
+[2026-05-07 15:15:24] Current tournament: Asunción P1
+[2026-05-07 15:15:24] Current round: None
+[2026-05-07 15:15:24] Simulating match progress...
+[2026-05-07 15:15:24]   Match started: Javier Garrido vs Alonso Rodriguez Martinez
+[2026-05-07 15:15:24]   Match updated: 6-3, 3-0
+[2026-05-07 15:15:24] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 15:15:24] Regenerating website pages...
+[2026-05-07 15:15:24] ✅ Pages regenerated successfully
+[2026-05-07 15:15:24] Committing and pushing changes...
+[2026-05-07 15:15:26] ✅ Changes pushed to GitHub
+[2026-05-07 15:15:26] ============================================================
+[2026-05-07 15:15:26] LIVESCORE UPDATER COMPLETED
+[2026-05-07 15:15:26] ============================================================
