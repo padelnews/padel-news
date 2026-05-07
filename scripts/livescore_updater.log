@@ -82,3 +82,37 @@
 [2026-05-07 09:14:19] ============================================================
 [2026-05-07 09:14:19] LIVESCORE UPDATER COMPLETED
 [2026-05-07 09:14:19] ============================================================
+[2026-05-07 09:24:19] ============================================================
+[2026-05-07 09:24:19] LIVESCORE UPDATER STARTED
+[2026-05-07 09:24:19] ============================================================
+[2026-05-07 09:24:19] Current tournament: Asunción P1
+[2026-05-07 09:24:19] Current round: None
+[2026-05-07 09:24:19] Simulating match progress...
+[2026-05-07 09:24:19]   Match started: Alejandro Galán vs Álex Ruiz
+[2026-05-07 09:24:19]   Match finished: 6-3, 6-3
+[2026-05-07 09:24:19] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 09:24:19] Regenerating website pages...
+[2026-05-07 09:24:19] ✅ Pages regenerated successfully
+[2026-05-07 09:24:19] Committing and pushing changes...
+[main 921a90c6] 🔴 Live score update 09:24
+ 2 files changed, 14 insertions(+), 14 deletions(-)
+[2026-05-07 09:24:21] ✅ Changes pushed to GitHub
+[2026-05-07 09:24:21] ============================================================
+[2026-05-07 09:24:21] LIVESCORE UPDATER COMPLETED
+[2026-05-07 09:24:21] ============================================================
+[2026-05-07 09:24:19] ============================================================
+[2026-05-07 09:24:19] LIVESCORE UPDATER STARTED
+[2026-05-07 09:24:19] ============================================================
+[2026-05-07 09:24:19] Current tournament: Asunción P1
+[2026-05-07 09:24:19] Current round: None
+[2026-05-07 09:24:19] Simulating match progress...
+[2026-05-07 09:24:19]   Match started: Alejandro Galán vs Álex Ruiz
+[2026-05-07 09:24:19]   Match finished: 6-3, 6-3
+[2026-05-07 09:24:19] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 09:24:19] Regenerating website pages...
+[2026-05-07 09:24:19] ✅ Pages regenerated successfully
+[2026-05-07 09:24:19] Committing and pushing changes...
+[2026-05-07 09:24:21] ✅ Changes pushed to GitHub
+[2026-05-07 09:24:21] ============================================================
+[2026-05-07 09:24:21] LIVESCORE UPDATER COMPLETED
+[2026-05-07 09:24:21] ============================================================
