@@ -607,56 +607,43 @@ def generate_torneos(state: Dict) -> str:
 
 
 def generate_actualidad(state: Dict) -> str:
-    """Generate actualidad.html from state."""
+    """Generate actualidad.html from state AND news_data.json."""
     log("Generating actualidad.html...")
     
-    past = state.get("past_tournaments", [])
-    current = state.get("current_tournament", {})
-    upcoming = state.get("upcoming_tournaments", [])
+    # Load news from news_data.json
+    news_file = PADEL_DIR / "data" / "news_data.json"
+    news_list = []
+    if news_file.exists():
+        try:
+            with open(news_file, 'r') as f:
+                news_data = json.load(f)
+                news_list = news_data.get('news', [])
+            log(f"Loaded {len(news_list)} news from news_data.json")
+        except:
+            pass
     
-    # Build all past tournaments as news cards
-    past_cards = ""
-    for t in past[:4]:  # Max 4 past tournaments
-        winner_m = t.get("winner_male", [])
-        article_url = t.get("article_url", "index.html")
-        loc = t.get("location", "")
-        loc_split = loc.split(",")[0].strip() if loc else ""
-        loc_flag = {"Bruselas": "🇧🇪", "El Gouna": "🇪🇬", "Miami": "🇺🇸", "Cancún": "🇲🇽", 
-                   "Gijón": "🇪🇸", "Riad": "🇸🇦"}.get(loc_split, "🏳️")
+    # Build news cards from news_data.json (recent first)
+    news_cards = ""
+    for news in news_list[:8]:  # Max 8 news items
+        category = news.get('category', 'general')
+        category_emoji = {'torneos': '🏆', 'ranking': '📊', 'jugadores': '👥', 'femenino': '♀️', 'resultados': '✅', 'general': '📰'}.get(category, '📰')
         
-        past_cards += f'''
+        # Get flag based on tournament
+        tournament = news.get('tournament', '')
+        flag = '🇵🇾' if 'Asunción' in tournament else '🇧🇪' if 'Brussels' in tournament else '🇪🇬' if 'NewGiza' in tournament else '🏳️'
+        
+        news_cards += f'''
             <article class="news-card">
-                <div class="news-card-image">{loc_flag}</div>
+                <div class="news-card-image">{flag}</div>
                 <div class="news-card-content">
-                    <span class="news-card-category">🏆 CAMPEONES</span>
-                    <h3><a href="{article_url}">{t.get('name', '')}: {' y '.join(winner_m)} se proclaman campeones</a></h3>
-                    <p>La pareja {' y '.join(winner_m)} victories en {t.get('name', '')} con un marcador de {t.get('final_score', '')}.</p>
+                    <span class="news-card-category">{category_emoji} {category.upper()}</span>
+                    <h3><a href="{news.get('url', '#')}">{news.get('title', '')}</a></h3>
+                    <p>{news.get('summary', '')[:200]}...</p>
                     <div class="news-card-meta">
-                        <span>📅 {t.get('dates', '')}</span>
-                        <span>📍 {t.get('location', '')}</span>
+                        <span>📅 {news.get('date', '')}</span>
+                        <span>📍 {news.get('source', '')}</span>
                     </div>
-                    <a href="{article_url}" class="btn">Leer más →</a>
-                </div>
-            </article>'''
-    
-    # Build upcoming tournament card
-    upcoming_card = ""
-    if upcoming:
-        next_t = upcoming[0]
-        loc_split = next_t.get("location", "").split(",")[0].strip() if next_t.get("location") else ""
-        loc_flag = {"Asunción": "🇵🇾", "Buenos Aires": "🇦🇷", "Roma": "🇮🇹"}.get(loc_split, "🏳️")
-        upcoming_card = f'''
-            <article class="news-card">
-                <div class="news-card-image">{loc_flag}</div>
-                <div class="news-card-content">
-                    <span class="news-card-category">📅 PRÓXIMO</span>
-                    <h3><a href="torneos.html">{next_t.get('name', '')}: El siguiente torneo del Premier Padel</a></h3>
-                    <p>El próximo torneo se celebrará del {next_t.get('dates', '')} en {next_t.get('location', '')}.</p>
-                    <div class="news-card-meta">
-                        <span>📅 {next_t.get('dates', '')}</span>
-                        <span>📍 {next_t.get('location', '')}</span>
-                    </div>
-                    <a href="torneos.html" class="btn">Ver torneo →</a>
+                    <a href="{news.get('url', '#')}" class="btn">Leer más →</a>
                 </div>
             </article>'''
     
@@ -672,8 +659,7 @@ def generate_actualidad(state: Dict) -> str:
         <h2 class="section-title">📰 Últimas Noticias</h2>
         
         <div class="news-grid">
-            {past_cards}
-            {upcoming_card}
+            {news_cards}
         </div>
 {TEMPLATE_FOOTER.format(timestamp=timestamp)}'''
     
