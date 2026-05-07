@@ -116,3 +116,37 @@
 [2026-05-07 09:24:21] ============================================================
 [2026-05-07 09:24:21] LIVESCORE UPDATER COMPLETED
 [2026-05-07 09:24:21] ============================================================
+[2026-05-07 09:34:21] ============================================================
+[2026-05-07 09:34:21] LIVESCORE UPDATER STARTED
+[2026-05-07 09:34:21] ============================================================
+[2026-05-07 09:34:21] Current tournament: Asunción P1
+[2026-05-07 09:34:21] Current round: None
+[2026-05-07 09:34:21] Simulating match progress...
+[2026-05-07 09:34:21]   Match updated: 6-2, 2-0
+[2026-05-07 09:34:21]   Match started: Martín Di Nenno vs Maxi Sánchez
+[2026-05-07 09:34:21] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 09:34:21] Regenerating website pages...
+[2026-05-07 09:34:21] ✅ Pages regenerated successfully
+[2026-05-07 09:34:21] Committing and pushing changes...
+[main db397a80] 🔴 Live score update 09:34
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+[2026-05-07 09:34:22] ✅ Changes pushed to GitHub
+[2026-05-07 09:34:22] ============================================================
+[2026-05-07 09:34:22] LIVESCORE UPDATER COMPLETED
+[2026-05-07 09:34:22] ============================================================
+[2026-05-07 09:34:21] ============================================================
+[2026-05-07 09:34:21] LIVESCORE UPDATER STARTED
+[2026-05-07 09:34:21] ============================================================
+[2026-05-07 09:34:21] Current tournament: Asunción P1
+[2026-05-07 09:34:21] Current round: None
+[2026-05-07 09:34:21] Simulating match progress...
+[2026-05-07 09:34:21]   Match updated: 6-2, 2-0
+[2026-05-07 09:34:21]   Match started: Martín Di Nenno vs Maxi Sánchez
+[2026-05-07 09:34:21] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 09:34:21] Regenerating website pages...
+[2026-05-07 09:34:21] ✅ Pages regenerated successfully
+[2026-05-07 09:34:21] Committing and pushing changes...
+[2026-05-07 09:34:22] ✅ Changes pushed to GitHub
+[2026-05-07 09:34:22] ============================================================
+[2026-05-07 09:34:22] LIVESCORE UPDATER COMPLETED
+[2026-05-07 09:34:22] ============================================================
