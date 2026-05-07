@@ -1,0 +1,57 @@
+[2026-05-07 10:16:53] ============================================================
+[2026-05-07 10:16:53] PREMIER PADEL UNIVERSAL SCRAPER
+[2026-05-07 10:16:53] ============================================================
+[2026-05-07 10:16:53] Tournament URL: https://premierpadel.com/tournaments-live/asuncion-p2-2
+[2026-05-07 10:16:53] Intercepting API calls for: https://premierpadel.com/tournaments-live/asuncion-p2-2
+[2026-05-07 10:16:55] ✅ Found JSON response: https://premierpadel.com/premierpadel/api/beforeauth/gettournamentslivematch
+[2026-05-07 10:17:11] ✅ Found JSON response: https://premierpadel.com/premierpadel/api/beforeauth/gettournamentslivematch
+[2026-05-07 10:17:12] Found 4 potential match elements in DOM
+[2026-05-07 10:17:12] ✅ Extracted data from DOM
+[2026-05-07 10:17:13] Processing API data...
+[2026-05-07 10:17:13] Processing 4 matches...
+[2026-05-07 10:17:13] ⚠️ No matches found in API data, using fallback
+[2026-05-07 10:17:13] Creating fallback draw with real player names...
+[2026-05-07 10:17:13] ✅ Saved to /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 10:17:13] Total matches: 16
+[2026-05-07 10:17:13]   round_of_32: 8 matches (0 live)
+[2026-05-07 10:17:13]   round_of_16: 8 matches (1 live)
+[2026-05-07 10:17:13] ============================================================
+[2026-05-07 10:17:13] COMPLETED
+[2026-05-07 10:17:13] ============================================================
+[2026-05-07 10:17:41] ============================================================
+[2026-05-07 10:17:41] PREMIER PADEL UNIVERSAL SCRAPER
+[2026-05-07 10:17:41] ============================================================
+[2026-05-07 10:17:41] Tournament URL: https://premierpadel.com/tournaments-live/asuncion-p2-2
+[2026-05-07 10:17:41] Intercepting API calls for: https://premierpadel.com/tournaments-live/asuncion-p2-2
+[2026-05-07 10:17:43] ✅ Found JSON: https://consentcdn.cookiebot.com/consentconfig/6a714ce7-9b90-414b-b4cd-a705247d3c50/settings.json
+[2026-05-07 10:17:43]   → Saved to api_raw_0.json
+[2026-05-07 10:17:43] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/getlanguage
+[2026-05-07 10:17:43]   → Saved to api_raw_1.json
+[2026-05-07 10:17:43] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/gettournamentslivematch
+[2026-05-07 10:17:43]   → Saved to api_raw_2.json
+[2026-05-07 10:17:43] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/appsetting
+[2026-05-07 10:17:43]   → Saved to api_raw_3.json
+[2026-05-07 10:17:43] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/getsponsorsfooter
+[2026-05-07 10:17:43]   → Saved to api_raw_4.json
+[2026-05-07 10:17:43] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/appsetting
+[2026-05-07 10:17:43]   → Saved to api_raw_5.json
+[2026-05-07 10:17:43] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/appsetting
+[2026-05-07 10:17:43]   → Saved to api_raw_6.json
+[2026-05-07 10:17:44] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/getwheretowatch
+[2026-05-07 10:17:44]   → Saved to api_raw_7.json
+[2026-05-07 10:17:44]   → Found 'data' with 257 items
+[2026-05-07 10:17:58] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/gettournamentslivematch
+[2026-05-07 10:17:58]   → Saved to api_raw_8.json
+[2026-05-07 10:18:00] Found 4 potential match elements in DOM
+[2026-05-07 10:18:00] ✅ Extracted data from DOM
+[2026-05-07 10:18:00] Processing API data...
+[2026-05-07 10:18:00] Processing 257 matches...
+[2026-05-07 10:18:00] ⚠️ No matches found in API data, using fallback
+[2026-05-07 10:18:00] Creating fallback draw with real player names...
+[2026-05-07 10:18:00] ✅ Saved to /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 10:18:00] Total matches: 16
+[2026-05-07 10:18:00]   round_of_32: 8 matches (0 live)
+[2026-05-07 10:18:00]   round_of_16: 8 matches (1 live)
+[2026-05-07 10:18:00] ============================================================
+[2026-05-07 10:18:00] COMPLETED
+[2026-05-07 10:18:00] ============================================================

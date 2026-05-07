@@ -1,0 +1,39 @@
+{
+  "url": "https://consentcdn.cookiebot.com/consentconfig/6a714ce7-9b90-414b-b4cd-a705247d3c50/settings.json",
+  "data": {
+    "widget": {
+      "enabled": true,
+      "position": {
+        "position": "bottom-left",
+        "distanceVerticalPx": 10,
+        "distanceHorizontalPx": 10
+      },
+      "theme": {
+        "closed": {
+          "backgroundColor": "#b49058",
+          "foregroundColor": "#000000"
+        },
+        "opened": {
+          "backgroundColor": "#646464",
+          "foregroundColor": "#f1f1f1",
+          "highlightColor": "#ffffff",
+          "shadeColor": "#b49058",
+          "changeBackgroundColor": "#b49058",
+          "changeTextColor": "#ffffff",
+          "changeBorderColor": "#b49058",
+          "withdrawBackgroundColor": "#FFFFFF",
+          "withdrawTextColor": "#141414",
+          "withdrawBorderColor": "#fdfcfc",
+          "detailsBackgroundColor": "#a0a0a0"
+        }
+      },
+      "content": {
+        "cultures": [
+          "en"
+        ],
+        "default": "en",
+        "autodetectLanguage": true
+      }
+    }
+  }
+}

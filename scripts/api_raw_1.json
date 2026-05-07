@@ -1,0 +1,632 @@
+{
+  "url": "https://premierpadel.com/premierpadel/api/beforeauth/getlanguage",
+  "data": {
+    "status": 1,
+    "data": {
+      "News": {
+        "title": "News"
+      },
+      "readmore": {
+        "title": "Read More"
+      },
+      "sortby": {
+        "title": "SORT BY"
+      },
+      "newest": {
+        "title": "newest"
+      },
+      "oldest": {
+        "title": "oldest"
+      },
+      "morenews": {
+        "title": "MORE NEWS"
+      },
+      "share": {
+        "title": "Share"
+      },
+      "home": {
+        "title": "HOME"
+      },
+      "rankings": {
+        "title": "FIP Rankings"
+      },
+      "watch": {
+        "title": "WATCH"
+      },
+      "rbtv": {
+        "title": "RED BULL TV"
+      },
+      "privacy": {
+        "title": "Privacy Policy"
+      },
+      "terams": {
+        "title": "Terms & Conditions"
+      },
+      "pp": {
+        "title": "Premierpadel"
+      },
+      "signupmail": {
+        "title": "SIGN UP TO OUR MAILING LIST"
+      },
+      "email": {
+        "title": "Email Address"
+      },
+      "submit": {
+        "title": "Submit"
+      },
+      "mailthanks": {
+        "title": "We have received your details. Stay tuned for more information."
+      },
+      "powered": {
+        "title": "Developed by"
+      },
+      "yp": {
+        "title": "Yellow Panther"
+      },
+      "tickets": {
+        "title": "TICKETS"
+      },
+      "buytickets": {
+        "title": "Buy tickets"
+      },
+      "p1": {
+        "title": "p1"
+      },
+      "p2": {
+        "title": "p2"
+      },
+      "major": {
+        "title": "Major"
+      },
+      "january": {
+        "title": "January"
+      },
+      "february": {
+        "title": "February"
+      },
+      "march": {
+        "title": "March"
+      },
+      "april": {
+        "title": "April"
+      },
+      "may": {
+        "title": "May"
+      },
+      "june": {
+        "title": "June"
+      },
+      "july": {
+        "title": "July"
+      },
+      "august": {
+        "title": "August"
+      },
+      "september": {
+        "title": "September"
+      },
+      "october": {
+        "title": "October"
+      },
+      "november": {
+        "title": "November"
+      },
+      "december": {
+        "title": "December"
+      },
+      "all": {
+        "title": "All"
+      },
+      "venue": {
+        "title": "Venue"
+      },
+      "nodataerror": {
+        "title": "NO DATA AT THE MOMENT. PLEASE TUNE IN LATER"
+      },
+      "editprofile": {
+        "title": "Edit Profile"
+      },
+      "backtoprofile": {
+        "title": "Back To Profile"
+      },
+      "firstname": {
+        "title": "First Name"
+      },
+      "lastname": {
+        "title": "Last Name"
+      },
+      "mobilenumber": {
+        "title": "Mobile Number (optional)"
+      },
+      "dateofbirth": {
+        "title": "Date of Birth"
+      },
+      "selectgender": {
+        "title": "Select Gender"
+      },
+      "male": {
+        "title": "Male"
+      },
+      "female": {
+        "title": "Female"
+      },
+      "other": {
+        "title": "Other"
+      },
+      "prefernottosay": {
+        "title": "Prefer Not To Say"
+      },
+      "emailaddress": {
+        "title": "Email Address"
+      },
+      "update": {
+        "title": "Update"
+      },
+      "selectcountry": {
+        "title": "Select Country"
+      },
+      "selectcity": {
+        "title": "Select City"
+      },
+      "selectfavouriteplayer": {
+        "title": "Select Favourite Player (optional)"
+      },
+      "joinnow": {
+        "title": "JOIN NOW"
+      },
+      "bychecking": {
+        "title": "By checking this box you agree to the following"
+      },
+      "bychecking2": {
+        "title": "By checking this box, you are giving consent for marketing communications & promotional offers."
+      },
+      "signuptitle": {
+        "title": "Join the PREMIER Padel Club"
+      },
+      "siginupsubtitle": {
+        "title": "Get access to exclusive content."
+      },
+      "alreadyaccount": {
+        "title": "Already have an account?"
+      },
+      "loginnow": {
+        "title": "Login Now"
+      },
+      "favoriteplayers": {
+        "title": "favorite players"
+      },
+      "city": {
+        "title": "City"
+      },
+      "country": {
+        "title": "Country"
+      },
+      "unfavorite": {
+        "title": "unfavorite"
+      },
+      "uploadphoto": {
+        "title": "Upload Photo"
+      },
+      "optional": {
+        "title": "optional"
+      },
+      "password": {
+        "title": "Password"
+      },
+      "confirmpassword": {
+        "title": "Confirm Password"
+      },
+      "passwordsdonotmatch": {
+        "title": "Passwords do not match"
+      },
+      "login": {
+        "title": "LOGIN"
+      },
+      "signup": {
+        "title": "Sign up"
+      },
+      "newuser": {
+        "title": "New User?"
+      },
+      "forgotpassword": {
+        "title": "Forgot Password?"
+      },
+      "forgotpasswordtext": {
+        "title": "Enter your email address to reset your password. A link will be sent to your email with steps to follow."
+      },
+      "backtologin": {
+        "title": "Back to Login"
+      },
+      "resetpassword": {
+        "title": "reset password"
+      },
+      "sponsorspartners": {
+        "title": "Partners"
+      },
+      "titlepartner": {
+        "title": "Title Partner"
+      },
+      "toursponsors": {
+        "title": "Tour Sponsors"
+      },
+      "charitypartner": {
+        "title": "Charity Partner"
+      },
+      "visit": {
+        "title": "Visit"
+      },
+      "live": {
+        "title": "Live"
+      },
+      "matchcentre": {
+        "title": "match centre"
+      },
+      "draws": {
+        "title": "draws"
+      },
+      "viewall": {
+        "title": "view all"
+      },
+      "wheretowatch": {
+        "title": "Where to watch"
+      },
+      "latest": {
+        "title": "LATEST"
+      },
+      "results": {
+        "title": "RESULTS"
+      },
+      "upcoming": {
+        "title": "Upcoming"
+      },
+      "downloadcalender": {
+        "title": "DOWNLOAD CALENDAR"
+      },
+      "nolive": {
+        "title": "NO LIVE MATCHES AT THE MOMENT. PLEASE CHECK UPCOMING OR RESULTS. "
+      },
+      "tournaments": {
+        "title": "Tournaments"
+      },
+      "noupcoming": {
+        "title": "NO UPCOMING MATCHES AT THE MOMENT. PLEASE TUNE IN LATER."
+      },
+      "nocompleated": {
+        "title": "NO COMPLETED TOURNAMENTS AT THE MOMENT. PLEASE TUNE IN LATER."
+      },
+      "prizemoney": {
+        "title": "Prize Money"
+      },
+      "deadlineforregistration": {
+        "title": "Deadline for registration"
+      },
+      "watchnow": {
+        "title": "WATCH NOW"
+      },
+      "morevideos": {
+        "title": "more videos"
+      },
+      "bio": {
+        "title": "Bio"
+      },
+      "tournamenthistory": {
+        "title": "TOURNAMENT HISTORY"
+      },
+      "type": {
+        "title": "TYPE"
+      },
+      "date": {
+        "title": "DATE"
+      },
+      "points": {
+        "title": "POINTS"
+      },
+      "round": {
+        "title": "ROUND"
+      },
+      "nickname": {
+        "title": "nickname"
+      },
+      "handofplay": {
+        "title": "HAND OF Play"
+      },
+      "height": {
+        "title": "Height"
+      },
+      "playersponsor": {
+        "title": "Player Sponsor"
+      },
+      "pairedwith": {
+        "title": "PAIRED WITH"
+      },
+      "matchstats": {
+        "title": "Match Stats"
+      },
+      "vs": {
+        "title": "VS"
+      },
+      "service": {
+        "title": "service"
+      },
+      "return": {
+        "title": "return"
+      },
+      "totalpoints": {
+        "title": "total points"
+      },
+      "set1": {
+        "title": "set  1"
+      },
+      "set2": {
+        "title": "set  2"
+      },
+      "set3": {
+        "title": "set  3"
+      },
+      "match": {
+        "title": "Match"
+      },
+      "video": {
+        "title": "Videos"
+      },
+      "photos": {
+        "title": "Photos"
+      },
+      "content": {
+        "title": "content"
+      },
+      "logout": {
+        "title": "log Out"
+      },
+      "followus": {
+        "title": "Follow us"
+      },
+      "logintocontinue": {
+        "title": "Please Login to continue"
+      },
+      "availablebrodcasters": {
+        "title": "AVAILABLE BROADCASTERS"
+      },
+      "searchhere": {
+        "title": "Search here"
+      },
+      "men": {
+        "title": "MEN"
+      },
+      "women": {
+        "title": "WOMEN"
+      },
+      "overall": {
+        "title": "overall"
+      },
+      "searchplayer": {
+        "title": "Search player"
+      },
+      "loadmore": {
+        "title": "Load More"
+      },
+      "fiprankingspage": {
+        "title": "fip rankings"
+      },
+      "aboutus": {
+        "title": "About us"
+      },
+      "partners": {
+        "title": "PARTNERS"
+      },
+      "media": {
+        "title": "MEDIA"
+      },
+      "overview": {
+        "title": "Overview"
+      },
+      "playerslist": {
+        "title": "players list"
+      },
+      "drawsresults": {
+        "title": "draws"
+      },
+      "visitwebsite": {
+        "title": "VISIT WEBSITE"
+      },
+      "drawdates": {
+        "title": "Draw Dates"
+      },
+      "qualification": {
+        "title": "Qualification"
+      },
+      "maindraw": {
+        "title": "Main Draw"
+      },
+      "orderofplay": {
+        "title": "order of play"
+      },
+      "pairs": {
+        "title": "Pairs"
+      },
+      "perranking": {
+        "title": "per ranking"
+      },
+      "qualifiers": {
+        "title": "Qualifiers"
+      },
+      "wc": {
+        "title": "WC"
+      },
+      "qualifyingdraw": {
+        "title": "Qualifying draw"
+      },
+      "matches": {
+        "title": "matches"
+      },
+      "menqualify": {
+        "title": "MEN Qualify"
+      },
+      "womenqualify": {
+        "title": "women Qualify"
+      },
+      "mains": {
+        "title": "Mains"
+      },
+      "about": {
+        "title": "About"
+      },
+      "viewalbum": {
+        "title": "view album"
+      },
+      "marketingcheckbox": {
+        "title": "By checking this box, you are giving consent for marketing communications and promotional offers."
+      },
+      "institutional_partners": {
+        "title": "institutional partners"
+      },
+      "cookiepolicy": {
+        "title": "Cookie Policy"
+      },
+      "globaldistribution": {
+        "title": "Global Distribution"
+      },
+      "phonecode": {
+        "title": "Phone Code"
+      },
+      "watchlive": {
+        "title": "WATCH LIVE"
+      },
+      "tourfinals": {
+        "title": "Tour Finals"
+      },
+      "faqs": {
+        "title": "FAQs"
+      },
+      "completed": {
+        "title": "Completed"
+      },
+      "matchresults": {
+        "title": "Match RESULTS"
+      },
+      "nomatchstats": {
+        "title": "No MATCH STATS"
+      },
+      "menqualifing": {
+        "title": "MEN'S QUALIFYING"
+      },
+      "womenqualifing": {
+        "title": "WOMEN'S QUALIFYING"
+      },
+      "menmain": {
+        "title": "MEN'S MAIN DRAW"
+      },
+      "womenmain": {
+        "title": "WOMEN'S MAIN DRAW"
+      },
+      "resultspage": {
+        "title": "RESULTS"
+      },
+      "homenomatch": {
+        "title": "DRAWS WILL BE AVAILABLE BY TOMORROW MORNING. STAY TUNED!"
+      },
+      "shop": {
+        "title": "shop"
+      },
+      "topranked": {
+        "title": "Top-ranked"
+      },
+      "careers": {
+        "title": "Careers"
+      },
+      "vacancies": {
+        "title": "Vacancies"
+      },
+      "applynow": {
+        "title": "Apply Now"
+      },
+      "closingdate": {
+        "title": "closing date"
+      },
+      "applyforthisjob": {
+        "title": "Apply for this job"
+      },
+      "uploadyourcv": {
+        "title": "Upload your CV"
+      },
+      "dropyourfilesorupload": {
+        "title": "Drop your files or upload"
+      },
+      "uploadyourcoverletter": {
+        "title": "Upload your Cover Letter"
+      },
+      "salaryexpectation": {
+        "title": "What is your current salary expectation?"
+      },
+      "thousandpoundsperannum": {
+        "title": "thousand pounds per annum"
+      },
+      "workinUK": {
+        "title": "Do you have current, valid right to work in the UK?"
+      },
+      "experiencesportsindustry": {
+        "title": "Tell us about your experience in the sports industry."
+      },
+      "submitapplication": {
+        "title": "Submit Application"
+      },
+      "bysubmit": {
+        "title": "By submitting this application, I agree that I have read the"
+      },
+      "bysubmit2": {
+        "title": "and confirm that Premier padel can store my personal details to be able to process my job application."
+      },
+      "jobtitlekeywords": {
+        "title": "Job title or keywords"
+      },
+      "search": {
+        "title": "search"
+      },
+      "alljobs": {
+        "title": "All Jobs"
+      },
+      "found": {
+        "title": "Found"
+      },
+      "jobs": {
+        "title": "Jobs"
+      },
+      "writeyouranswerhere": {
+        "title": "Write your answer here..."
+      },
+      "jobmobilenumber": {
+        "title": "Mobile Number"
+      },
+      "select": {
+        "title": "Select an option"
+      },
+      "chairman": {
+        "title": "Chairman"
+      },
+      "topmoments": {
+        "title": "Top Moments"
+      },
+      "highlights": {
+        "title": "highlights"
+      },
+      "tournament": {
+        "title": "Tournaments"
+      },
+      "players": {
+        "title": "Players"
+      },
+      "slanguage": {
+        "title": "Select Language"
+      },
+      "selecttournament": {
+        "title": "Select Tournament"
+      },
+      "twoAnnouncements": {
+        "title": "2026 Announcements"
+      },
+      "alltournaments": {
+        "title": "All Tournaments"
+      }
+    }
+  }
+}

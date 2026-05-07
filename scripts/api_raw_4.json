@@ -1,0 +1,143 @@
+{
+  "url": "https://premierpadel.com/premierpadel/api/beforeauth/getsponsorsfooter",
+  "data": {
+    "status": 1,
+    "data": {
+      "sponsors_highlight": [],
+      "sponsors": [
+        {
+          "sponsors_id": 1,
+          "title": "",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/45eq3ah3a0msx00cgjm4bccq2i5qq3fw.png",
+          "description": "Qatar Airways, the Best Airline in the Middle East, operates one of the youngest fleets in the world, offering exceptional service and connectivity to over 170 destinations worldwide. With its state-of-the-art aircraft and award-winning hospitality, Qatar Airways is committed to delivering a world-class travel experience to its passengers. The airline is renowned for its innovation, reliability, and commitment to safety, ensuring passengers enjoy a seamless journey from start to finish. Qatar Airways strives to set industry benchmarks in customer service, and continues to maintain its position as one of the most respected and trusted airlines globally, having won World\u2019s Best Airline for an unprecedented seven times, and World\u2019s Best Business Class for 10 consecutive years. Qatar Airways continues to elevate the standards of air travel and connect people across the globe and is committed to supporting sports through its large portfolio in its mission to bring people together.",
+          "url": "https://www.qatarairways.com/en-gb/homepage.html",
+          "type": "TourSponsors",
+          "highlight": 0,
+          "display_order": 4,
+          "status": "Active",
+          "created_at": "2024-03-29 16:53:40",
+          "updated_at": "2024-06-10 18:36:05"
+        },
+        {
+          "sponsors_id": 15,
+          "title": "",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/iz1l87m666ls785mchtsgrlo3nsqod8a.png",
+          "description": "Bullpadel was founded in 1995 under the ambitious initiatives of several Argentine and Spanish professionals. In 2005, Aguirre y Cia. S.A took over the brand, the logo was changed, and design and production processes were systematized. Innovation, technology, and quality are the fundamental pillars of the brand. Over the past 5 years, Bullpadel has developed over 15 proprietary technologies to offer consumers the best possible product, consistently leading the market.",
+          "url": "https://www.bullpadel.com/",
+          "type": "TourSponsors",
+          "highlight": 0,
+          "display_order": 6,
+          "status": "Active",
+          "created_at": "2024-06-04 14:40:41",
+          "updated_at": "2024-06-10 15:34:10"
+        },
+        {
+          "sponsors_id": 7,
+          "title": "",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/do2q1ize6lmqko8glc5hzwtjpkxvx14m.png",
+          "description": "In collaboration with us, Wilson has once again pushed the boundaries of innovation with the introduction of two new additions to the global courts: the Wilson Premier Padel Balls.\r\n \r\nRigorously tested by the world\u2019s top players and custom-designed for them to excel at the highest levels of competition.\r\n \r\nThese balls have been meticulously designed to elevate the game of padel, providing unmatched consistency, durability, and playability in varied playing conditions. The Wilson Premier Padel Ball is perfect for slowing down the game on faster court surfaces. This ball has been optimized for high altitude and hot, humid conditions. The Wilson Premier Padel Speed Ball is built for slower court surfaces and colder conditions, making it livelier and more responsive.",
+          "url": "https://www.wilson.com/en-gb/blog/padel/wilson-labs/introducing-new-wilson-premier-padel-balls",
+          "type": "TourSponsors",
+          "highlight": 0,
+          "display_order": 7,
+          "status": "Active",
+          "created_at": "2024-03-29 16:56:23",
+          "updated_at": "2024-06-07 16:50:02"
+        },
+        {
+          "sponsors_id": 19,
+          "title": "Heineken 0.0",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/gky1gunrlt74fbgf2frl1joykreh4c17.png",
+          "description": "Heineken is one of the world\u2019s most iconic beer brands, with a heritage dating back to 1873. Known for its premium quality and global reach, Heineken is committed to creating memorable experiences that bring people together. Through its partnership with Premier Padel, Heineken celebrates innovation, inclusivity, and the vibrant energy of sport, connecting fans worldwide with moments of enjoyment and refreshment.",
+          "url": "https://www.heineken.com/global/en/our-products/heineken-0-0",
+          "type": "TourSponsors",
+          "highlight": 0,
+          "display_order": 8,
+          "status": "Active",
+          "created_at": "2026-01-06 20:17:28",
+          "updated_at": "2026-01-26 22:59:12"
+        },
+        {
+          "sponsors_id": 8,
+          "title": "",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/u4oqih9xn7ggcbv86p7q1mouhnxm9trx.png",
+          "description": "Excellence in the game is in every detail. As the Official Court, in MejorSet, innovation, quality, and design are at the heart of everything we do.\r\n\r\nA premium padel court means innovation through cutting-edge technology, unwavering attention to detail, top-tier design and the use of only the highest quality materials. That is the meaning of MejorSet and the reason to be the Official Court of Premier Padel and the International Padel Federation.\r\n\r\nOver two decades of commitment to the padel community and present in over 40 countries. Our courts are not just structures; they are the embodiment of a deep understanding and love for the game, designed and crafted by those who play and breathe padel. Discover now the only Limited Edition Premier Padel Court.",
+          "url": "https://www.mejorset.com/",
+          "type": "TourSponsors",
+          "highlight": 0,
+          "display_order": 11,
+          "status": "Active",
+          "created_at": "2024-03-29 16:56:53",
+          "updated_at": "2024-06-12 17:27:49"
+        },
+        {
+          "sponsors_id": 5,
+          "title": "",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/3swtdo8wxhsei2ufni1ic954kigy0ygx.png",
+          "description": "Playtomic is the world's largest community of padel players and clubs. Discover the biggest offering of padel clubs, with more than 5.000 venues, and over 4 million players in 50 countries. With Playtomic, you can book courts effortlessly, find rivals at your skill level, connect with thousands of players and create unforgettable matches. Download the app and start enjoying it now.",
+          "url": "https://playtomic.go.link/matches?adj_t=1bzmb88e",
+          "type": "TourSponsors",
+          "highlight": 0,
+          "display_order": 12,
+          "status": "Active",
+          "created_at": "2024-03-29 16:55:48",
+          "updated_at": "2024-06-10 16:04:38"
+        },
+        {
+          "sponsors_id": 6,
+          "title": "",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/p3djbqcm92gsciezgxp4kbjjprjprya5.png",
+          "description": "Mondo, official supplier of artificial turf for Premier Padel, is a leading brand in the artificial turf sales market for padel courts, with more than 20.000 courts supplied worldwide. Currently, its texturized artificial turf systems, SupercourtTM, have been used in more than 135 padel professional tournaments all around the world. Mondo's R&D laboratories have once again succeeded: the company has completed the development of Premier Supercourt X3, the new artificial turf developed specifically for Premier Padel, unique in the market. The new system marks a before and after in padel surfaces, both in its sporting performance - allowing players to have total control over the game - and in their morphology, as it combines three textured filaments with different morphologies, two of which are completely new. Premier Supercourt X3 offers more control in the game, consistent ball bounce across the court, and an extraordinary aesthetic appearance.",
+          "url": "https://www.mondoworldwide.com/emea/en/sport/padel/",
+          "type": "TourSponsors",
+          "highlight": 0,
+          "display_order": 13,
+          "status": "Active",
+          "created_at": "2024-03-29 16:56:07",
+          "updated_at": "2024-06-06 16:50:52"
+        },
+        {
+          "sponsors_id": 9,
+          "title": "",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/mwc5tqv4qcx1nwqyvibofi6gtfer8wen.png",
+          "description": "The WHO Foundation is an independent grant-making foundation working alongside the World Health Organization (WHO) to address global health challenges. By mobilizing resources and fostering partnerships, the WHO Foundation strives to support WHO in achieving its critical health objectives.",
+          "url": "https://who.foundation/",
+          "type": "CharityPartner",
+          "highlight": 0,
+          "display_order": 14,
+          "status": "Active",
+          "created_at": "2024-03-29 16:57:11",
+          "updated_at": "2024-06-06 16:51:43"
+        },
+        {
+          "sponsors_id": 21,
+          "title": "WHOOP",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/fxzm8rum6kf64bz3503slhbv7npcsle1.png",
+          "description": "",
+          "url": "",
+          "type": "TourSponsors",
+          "highlight": 0,
+          "display_order": 16,
+          "status": "Active",
+          "created_at": "2026-03-25 18:18:47",
+          "updated_at": "2026-04-29 21:36:24"
+        }
+      ],
+      "institutional_partners_sponsors": [
+        {
+          "sponsors_id": 12,
+          "title": "",
+          "image": "https://d1txpmnu5q46gr.cloudfront.net/uploads/images/sponsors/ilmrxwn1m3aewqhnmrbctgn69dc9u06q.png",
+          "description": "The International Padel Players Association represents and works for padel women players worldwide. IPPA\u2019s aim is to contribute to the development of the padel game while helping women players to fulfil their potential and develop valuable careers as sport professionals.",
+          "url": "https://ippapadel.com/",
+          "type": "InstitutionalPartners",
+          "highlight": 0,
+          "display_order": 2,
+          "status": "Active",
+          "created_at": "2024-04-16 19:13:15",
+          "updated_at": "2024-06-06 18:04:05"
+        }
+      ]
+    }
+  }
+}
