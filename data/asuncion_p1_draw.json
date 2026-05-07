@@ -4,7 +4,7 @@
   "dates": "03-10 Mayo 2026",
   "status": "live",
   "current_round": "Round of 16",
-  "last_updated": "2026-05-07T10:24:28.663044",
+  "last_updated": "2026-05-07T10:29:41.274169",
   "prize": "$200,000",
   "surface": "Outdoor Concrete",
   "source": "premier_padel_scrape",
@@ -206,7 +206,7 @@
           "country": "ARG/ESP",
           "seed": 16
         },
-        "score": "6-3, 2-0",
+        "score": "6-4, 3-2",
         "status": "live",
         "scheduled_time": "",
         "winner": null
@@ -229,8 +229,8 @@
           "country": "ARG/ESP",
           "seed": 15
         },
-        "score": "1-0",
-        "status": "live",
+        "score": "",
+        "status": "scheduled",
         "scheduled_time": "16:00",
         "winner": null
       },
@@ -321,8 +321,8 @@
           "country": "ARG/ESP",
           "seed": 11
         },
-        "score": "0-0",
-        "status": "live",
+        "score": "",
+        "status": "scheduled",
         "scheduled_time": "24:00",
         "winner": null
       },

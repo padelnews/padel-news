@@ -55,3 +55,28 @@
 [2026-05-07 10:18:00] ============================================================
 [2026-05-07 10:18:00] COMPLETED
 [2026-05-07 10:18:00] ============================================================
+[2026-05-07 10:29:22] ============================================================
+[2026-05-07 10:29:22] PREMIER PADEL UNIVERSAL SCRAPER
+[2026-05-07 10:29:22] ============================================================
+[2026-05-07 10:29:22] Tournament URL: https://premierpadel.com/es/tournaments-live/asuncion-p2-2/draws
+[2026-05-07 10:29:22] Intercepting API calls for: https://premierpadel.com/es/tournaments-live/asuncion-p2-2/draws
+[2026-05-07 10:29:25] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/getlanguage
+[2026-05-07 10:29:25] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/gettournamentsmatchdraw
+[2026-05-07 10:29:25] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/getsponsorsfooter
+[2026-05-07 10:29:25] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/appsetting
+[2026-05-07 10:29:25] ✅ Found JSON: https://premierpadel.com/premierpadel/api/beforeauth/appsetting
+[2026-05-07 10:29:25] ✅ Found JSON: https://consentcdn.cookiebot.com/consentconfig/6a714ce7-9b90-414b-b4cd-a705247d3c50/settings.json
+[2026-05-07 10:29:41] Found 50 potential match elements in DOM
+[2026-05-07 10:29:41] ✅ Extracted data from DOM
+[2026-05-07 10:29:41] ✅ Saved all API responses to api_all_responses.json
+[2026-05-07 10:29:41] Processing API data...
+[2026-05-07 10:29:41] Processing 50 matches...
+[2026-05-07 10:29:41] ⚠️ No matches found in API data, using fallback
+[2026-05-07 10:29:41] Creating fallback draw with real player names...
+[2026-05-07 10:29:41] ✅ Saved to /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 10:29:41] Total matches: 16
+[2026-05-07 10:29:41]   round_of_32: 8 matches (0 live)
+[2026-05-07 10:29:41]   round_of_16: 8 matches (1 live)
+[2026-05-07 10:29:41] ============================================================
+[2026-05-07 10:29:41] COMPLETED
+[2026-05-07 10:29:41] ============================================================

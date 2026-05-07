@@ -46,6 +46,7 @@ def intercept_api_calls(url: str, timeout: int = 60000) -> dict:
     
     api_responses = []
     match_data = None
+    raw_responses = []  # Save ALL responses
     
     def handle_response(response):
         nonlocal match_data
@@ -65,11 +66,8 @@ def intercept_api_calls(url: str, timeout: int = 60000) -> dict:
                 data = response.json()
                 log(f"✅ Found JSON: {url}")
                 
-                # Save raw response for debugging
-                raw_file = LOG_FILE.parent / f"api_raw_{len(api_responses)}.json"
-                with open(raw_file, 'w') as f:
-                    json.dump({'url': url, 'data': data}, f, indent=2)
-                log(f"  → Saved to {raw_file.name}")
+                # Save ALL raw responses for debugging
+                raw_responses.append({'url': url, 'data': data})
                 
                 api_responses.append({'url': url, 'data': data})
                 
@@ -89,6 +87,13 @@ def intercept_api_calls(url: str, timeout: int = 60000) -> dict:
                     if not match_data and 'data' in data and isinstance(data['data'], list):
                         if len(data['data']) > 0:
                             log(f"  → 'data' array has {len(data['data'])} items")
+                            match_data = data
+                            
+                    # Check for rounds structure
+                    if 'rounds' in data and isinstance(data['rounds'], list):
+                        log(f"  → Found 'rounds' with {len(data['rounds'])} items")
+                        if 'matches' in data and isinstance(data['matches'], list):
+                            log(f"  → Found {len(data['matches'])} matches")
                             match_data = data
                             
             except Exception as e:
@@ -126,9 +131,17 @@ def intercept_api_calls(url: str, timeout: int = 60000) -> dict:
         
         browser.close()
     
+    # Save ALL raw responses
+    if raw_responses:
+        raw_file = LOG_FILE.parent / "api_all_responses.json"
+        with open(raw_file, 'w') as f:
+            json.dump(raw_responses, f, indent=2, ensure_ascii=False)
+        log(f"✅ Saved all API responses to {raw_file.name}")
+    
     return {
         'api_responses': api_responses,
-        'match_data': match_data
+        'match_data': match_data,
+        'raw_responses': raw_responses
     }
 
 
