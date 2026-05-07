@@ -11,7 +11,8 @@
       "date": "2026-05-07",
       "url": "https://www.padeladdict.com/bea-gonzalez-torneo-fetiche-asuncion-triplete/",
       "tournament": "Asunción P2",
-      "featured": true
+      "featured": true,
+      "article_url": "articles/bea-gonzlez-busca-el-triplete-en-asuncin-2-de-2-y.html"
     },
     {
       "id": "octavos_asuncion_p2_horarios",
@@ -22,7 +23,8 @@
       "date": "2026-05-07",
       "url": "https://www.padeladdict.com/partidos-horarios-streaming-octavos-asuncion-p2-premier-padel-2026/",
       "tournament": "Asunción P2",
-      "featured": true
+      "featured": true,
+      "article_url": "articles/octavos-del-asuncin-p2-partidos-y-horarios-desde-l.html"
     },
     {
       "id": "dieciseisavos_completados",
@@ -33,7 +35,8 @@
       "date": "2026-05-07",
       "url": "https://www.padeladdict.com/resultados-segunda-jornada-dieciseisavos-asuncion-premier-padel-p2-2026/",
       "tournament": "Asunción P2",
-      "featured": false
+      "featured": false,
+      "article_url": "articles/se-completan-los-dieciseisavos-sorpresas-en-asunci.html"
     },
     {
       "id": "premier_padel_nuevo_major",
@@ -44,7 +47,8 @@
       "date": "2026-05-07",
       "url": "https://www.padeladdict.com/premier-padel-actualiza-su-calendario-tendremos-un-nuevo-major/",
       "tournament": "",
-      "featured": false
+      "featured": false,
+      "article_url": "articles/premier-padel-actualiza-su-calendario-habr-un-nuev.html"
     }
   ],
   "results": [
