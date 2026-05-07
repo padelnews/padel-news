@@ -2768,3 +2768,36 @@
 [2026-05-07 23:17:18] ============================================================
 [2026-05-07 23:17:18] LIVESCORE UPDATER COMPLETED
 [2026-05-07 23:17:18] ============================================================
+[2026-05-07 23:27:18] ============================================================
+[2026-05-07 23:27:18] LIVESCORE UPDATER STARTED
+[2026-05-07 23:27:18] ============================================================
+[2026-05-07 23:27:18] Current tournament: Asunción P2
+[2026-05-07 23:27:18] Current round: None
+[2026-05-07 23:27:18] Simulating match progress...
+[2026-05-07 23:27:18] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 23:27:18] Regenerating website pages...
+[2026-05-07 23:27:18] ✅ Pages regenerated successfully
+[2026-05-07 23:27:18] Committing and pushing changes...
+[main 53f03104] 🔴 Live score update 23:27
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[2026-05-07 23:27:22] ⚠️ Push failed, trying pull+push...
+Already up to date.
+[2026-05-07 23:27:23] ✅ Pull+push successful
+[2026-05-07 23:27:23] ============================================================
+[2026-05-07 23:27:23] LIVESCORE UPDATER COMPLETED
+[2026-05-07 23:27:23] ============================================================
+[2026-05-07 23:27:18] ============================================================
+[2026-05-07 23:27:18] LIVESCORE UPDATER STARTED
+[2026-05-07 23:27:18] ============================================================
+[2026-05-07 23:27:18] Current tournament: Asunción P2
+[2026-05-07 23:27:18] Current round: None
+[2026-05-07 23:27:18] Simulating match progress...
+[2026-05-07 23:27:18] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 23:27:18] Regenerating website pages...
+[2026-05-07 23:27:18] ✅ Pages regenerated successfully
+[2026-05-07 23:27:18] Committing and pushing changes...
+[2026-05-07 23:27:22] ⚠️ Push failed, trying pull+push...
+[2026-05-07 23:27:23] ✅ Pull+push successful
+[2026-05-07 23:27:23] ============================================================
+[2026-05-07 23:27:23] LIVESCORE UPDATER COMPLETED
+[2026-05-07 23:27:23] ============================================================

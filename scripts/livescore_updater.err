@@ -6,3 +6,6 @@ Traceback (most recent call last):
   File "/Users/cristian/Sites/padel_news/scripts/livescore_updater.py", line 106, in simulate_match_progress
     winner1 = r16_matches[i*2].get('winner', 'team1')
 IndexError: list index out of range
+From https://github.com/padelnews/padel-news
+   004cf3c7..53f03104  main       -> origin/main
+Everything up-to-date
