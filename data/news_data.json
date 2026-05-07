@@ -12,7 +12,8 @@
       "timestamp": "2026-05-07T08:00:00.000000",
       "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
       "featured": true,
-      "tournament": "Asunción P2"
+      "tournament": "Asunción P2",
+      "article_url": "articles/asuncin-p2-arranca-con-tapiacoello-como-mximos-fav.html"
     },
     {
       "id": "asuncion_p2_2026_2",
@@ -24,7 +25,8 @@
       "timestamp": "2026-05-07T10:00:00.000000",
       "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
       "featured": true,
-      "tournament": "Asunción P2"
+      "tournament": "Asunción P2",
+      "article_url": "articles/galnchingotto-buscan-reducir-distancias-con-los-1.html"
     },
     {
       "id": "asuncion_p2_2026_3",
@@ -36,7 +38,8 @@
       "timestamp": "2026-05-06T18:00:00.000000",
       "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
       "featured": false,
-      "tournament": "Asunción P2"
+      "tournament": "Asunción P2",
+      "article_url": "articles/lebrn-y-augsburger-la-pareja-revelacin-que-quiere.html"
     },
     {
       "id": "asuncion_p2_2026_4",
@@ -48,7 +51,8 @@
       "timestamp": "2026-05-07T12:00:00.000000",
       "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
       "featured": true,
-      "tournament": "Asunción P2"
+      "tournament": "Asunción P2",
+      "article_url": "articles/r32-completados-avanzan-todos-los-cabezas-de-serie.html"
     },
     {
       "id": "a1b2c3d4",
@@ -59,7 +63,8 @@
       "date": "2026-04-25",
       "timestamp": "2026-04-25T08:53:00.000000",
       "url": "https://worldpadeltour.com/noticias/ranking",
-      "featured": true
+      "featured": true,
+      "article_url": "articles/tapia-y-coello-dominan-el-ranking-premier-padel-20.html"
     },
     {
       "id": "e5f6g7h8",
@@ -70,7 +75,8 @@
       "date": "2026-04-25",
       "timestamp": "2026-04-25T08:53:00.000000",
       "url": "https://worldpadeltour.com/noticias/ranking",
-      "featured": true
+      "featured": true,
+      "article_url": "articles/galn-y-chingotto-escalan-al-2-del-ranking-mundial.html"
     },
     {
       "id": "i9j0k1l2",
@@ -81,7 +87,8 @@
       "date": "2026-04-25",
       "timestamp": "2026-04-25T08:53:00.000000",
       "url": "https://worldpadeltour.com/noticias/jugadores",
-      "featured": true
+      "featured": true,
+      "article_url": "articles/juan-lebrn-se-une-a-leo-augsburger-para-2026.html"
     },
     {
       "id": "m3n4o5p6",
@@ -92,7 +99,8 @@
       "date": "2026-04-25",
       "timestamp": "2026-04-25T08:53:00.000000",
       "url": "https://worldpadeltour.com/noticias/femenino",
-      "featured": true
+      "featured": true,
+      "article_url": "articles/triay-y-brea-lideran-el-ranking-femenino-2026.html"
     },
     {
       "id": "q7r8s9t0",
@@ -103,7 +111,8 @@
       "date": "2026-04-24",
       "timestamp": "2026-04-24T12:00:00.000000",
       "url": "https://worldpadeltour.com/noticias/jugadores",
-      "featured": false
+      "featured": false,
+      "article_url": "articles/stupaczuk-y-yanguas-regresan-como-dupla-3.html"
     },
     {
       "id": "u1v2w3x4",
@@ -114,7 +123,8 @@
       "date": "2026-04-24",
       "timestamp": "2026-04-24T10:00:00.000000",
       "url": "https://worldpadeltour.com/noticias/jugadores",
-      "featured": false
+      "featured": false,
+      "article_url": "articles/coki-nieto-y-jon-sanz-la-nueva-sensacin-del-circui.html"
     }
   ],
   "results": [

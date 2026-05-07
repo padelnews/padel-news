@@ -632,18 +632,21 @@ def generate_actualidad(state: Dict) -> str:
         tournament = news.get('tournament', '')
         flag = '🇵🇾' if 'Asunción' in tournament else '🇧🇪' if 'Brussels' in tournament else '🇪🇬' if 'NewGiza' in tournament else '🏳️'
         
+        # Use article_url if available, otherwise use external url
+        article_url = news.get('article_url', news.get('url', '#'))
+        
         news_cards += f'''
             <article class="news-card">
                 <div class="news-card-image">{flag}</div>
                 <div class="news-card-content">
                     <span class="news-card-category">{category_emoji} {category.upper()}</span>
-                    <h3><a href="{news.get('url', '#')}">{news.get('title', '')}</a></h3>
+                    <h3><a href="{article_url}">{news.get('title', '')}</a></h3>
                     <p>{news.get('summary', '')[:200]}...</p>
                     <div class="news-card-meta">
                         <span>📅 {news.get('date', '')}</span>
                         <span>📍 {news.get('source', '')}</span>
                     </div>
-                    <a href="{news.get('url', '#')}" class="btn">Leer más →</a>
+                    <a href="{article_url}" class="btn">Leer más →</a>
                 </div>
             </article>'''
     
