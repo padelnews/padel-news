@@ -2198,3 +2198,33 @@
 [2026-05-07 20:06:40] ============================================================
 [2026-05-07 20:06:40] LIVESCORE UPDATER COMPLETED
 [2026-05-07 20:06:40] ============================================================
+[2026-05-07 20:16:41] ============================================================
+[2026-05-07 20:16:41] LIVESCORE UPDATER STARTED
+[2026-05-07 20:16:41] ============================================================
+[2026-05-07 20:16:41] Current tournament: Asunción P2
+[2026-05-07 20:16:41] Current round: None
+[2026-05-07 20:16:41] Simulating match progress...
+[2026-05-07 20:16:41] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 20:16:41] Regenerating website pages...
+[2026-05-07 20:16:41] ✅ Pages regenerated successfully
+[2026-05-07 20:16:41] Committing and pushing changes...
+[main 49e05640] 🔴 Live score update 20:16
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+[2026-05-07 20:16:42] ✅ Changes pushed to GitHub
+[2026-05-07 20:16:42] ============================================================
+[2026-05-07 20:16:42] LIVESCORE UPDATER COMPLETED
+[2026-05-07 20:16:42] ============================================================
+[2026-05-07 20:16:41] ============================================================
+[2026-05-07 20:16:41] LIVESCORE UPDATER STARTED
+[2026-05-07 20:16:41] ============================================================
+[2026-05-07 20:16:41] Current tournament: Asunción P2
+[2026-05-07 20:16:41] Current round: None
+[2026-05-07 20:16:41] Simulating match progress...
+[2026-05-07 20:16:41] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 20:16:41] Regenerating website pages...
+[2026-05-07 20:16:41] ✅ Pages regenerated successfully
+[2026-05-07 20:16:41] Committing and pushing changes...
+[2026-05-07 20:16:42] ✅ Changes pushed to GitHub
+[2026-05-07 20:16:42] ============================================================
+[2026-05-07 20:16:42] LIVESCORE UPDATER COMPLETED
+[2026-05-07 20:16:42] ============================================================
