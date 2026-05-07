@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-05-07T19:05:12.294119",
+  "last_updated": "2026-05-07T20:48:56.228031",
   "generated_by": "Padel News Pro + Real FIP Rankings",
   "news": [
     {
-      "id": "asuncion_p2_2026_1",
-      "title": "Asunción P2 arranca con Tapia/Coello como máximos favoritos",
-      "summary": "El Premier Padel Asunción P2 2026 comienza hoy en Paraguay con un premio récord de €264,534. Agustín Tapia y Arturo Coello llegan como cabezas de serie número 1 tras su dominante temporada. El cuadro masculino cuenta con 32 parejas en busca del título en las pistas de Asunción.",
+      "id": "asuncion_p2_info_1",
+      "title": "Asunción P2: Todo listo para el inicio del torneo",
+      "summary": "El Premier Padel Asunción P2 2026 se disputa del 3 al 10 de mayo en Paraguay con un premio de €264,534. Consulta el cuadro completo y resultados en la sección de Resultados.",
       "category": "torneos",
       "source": "Premier Padel Official",
       "date": "2026-05-07",
@@ -13,38 +13,12 @@
       "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
       "featured": true,
       "tournament": "Asunción P2",
-      "article_url": "articles/asuncin-p2-arranca-con-tapiacoello-como-mximos-fav.html"
+      "article_url": "articles/asuncin-p2-todo-listo-para-el-inicio-del-torneo.html"
     },
     {
-      "id": "asuncion_p2_2026_2",
-      "title": "Galán/Chingotto buscan reducir distancias con los #1 en Paraguay",
-      "summary": "Alejandro Galán y Federico Chingotto llegan al Asunción P2 como segunda cabeza de serie con la oportunidad de recortar puntos a Tapia/Coello. La pareja española necesita ganar el torneo para mantener vivas sus opciones en la lucha por el número 1 del ranking Premier Padel 2026.",
-      "category": "torneos",
-      "source": "Premier Padel Official",
-      "date": "2026-05-07",
-      "timestamp": "2026-05-07T10:00:00.000000",
-      "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
-      "featured": true,
-      "tournament": "Asunción P2",
-      "article_url": "articles/galnchingotto-buscan-reducir-distancias-con-los-1.html"
-    },
-    {
-      "id": "asuncion_p2_2026_3",
-      "title": "Lebrón y Augsburger: la pareja revelación que quiere sorprender en Asunción",
-      "summary": "Juan Lebrón y Leo Augsburger llegan al Asunción P2 con el objetivo de dar la sorpresa. La pareja, que ya suma 13,000 puntos en el ranking, busca su primer título juntos en una de las pistas más rápidas del circuito Premier Padel.",
-      "category": "jugadores",
-      "source": "Premier Padel Official",
-      "date": "2026-05-06",
-      "timestamp": "2026-05-06T18:00:00.000000",
-      "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
-      "featured": false,
-      "tournament": "Asunción P2",
-      "article_url": "articles/lebrn-y-augsburger-la-pareja-revelacin-que-quiere.html"
-    },
-    {
-      "id": "asuncion_p2_2026_4",
-      "title": "R32 completados: avanzan todos los cabezas de serie al R16",
-      "summary": "Primera ronda del Asunción P2 completada con victoria de todos los cabezas de serie. Tapia/Coello, Galán/Chingotto, Stupaczuk/Yanguas y Lebrón/Augsburger se clasificaron sin problemas. Destaca el triunfo de Garrido/Bergamini en tres sets ante Barahona/Alfonso.",
+      "id": "asuncion_p2_info_2",
+      "title": "Cuadro y resultados del Asunción P2 en directo",
+      "summary": "Sigue el cuadro completo del Asunción P2 con todos los resultados de la R32 y los emparejamientos de R16. Tapia/Coello, Galán/Chingotto y Lebrón/Augsburger entre los cabezas de serie.",
       "category": "resultados",
       "source": "Premier Padel Official",
       "date": "2026-05-07",
@@ -52,7 +26,7 @@
       "url": "https://premierpadel.com/es/tournaments-live/asuncion-p2-2",
       "featured": true,
       "tournament": "Asunción P2",
-      "article_url": "articles/r32-completados-avanzan-todos-los-cabezas-de-serie.html"
+      "article_url": "articles/cuadro-y-resultados-del-asuncin-p2-en-directo.html"
     },
     {
       "id": "a1b2c3d4",
