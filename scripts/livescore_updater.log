@@ -924,3 +924,39 @@
 [2026-05-07 13:25:05] ============================================================
 [2026-05-07 13:25:05] LIVESCORE UPDATER COMPLETED
 [2026-05-07 13:25:05] ============================================================
+[2026-05-07 13:35:05] ============================================================
+[2026-05-07 13:35:05] LIVESCORE UPDATER STARTED
+[2026-05-07 13:35:05] ============================================================
+[2026-05-07 13:35:05] Current tournament: Asunción P1
+[2026-05-07 13:35:05] Current round: None
+[2026-05-07 13:35:05] Simulating match progress...
+[2026-05-07 13:35:05]   Match updated: 6-2, 3-0
+[2026-05-07 13:35:05]   Match started: Eduardo Alonso vs Jeronimo Gonzalez
+[2026-05-07 13:35:05]   Match started: Inigo Jofre vs Alejandro Galan
+[2026-05-07 13:35:05] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 13:35:05] Regenerating website pages...
+[2026-05-07 13:35:05] ✅ Pages regenerated successfully
+[2026-05-07 13:35:05] Committing and pushing changes...
+[main de3971e0] 🔴 Live score update 13:35
+ 2 files changed, 546 insertions(+), 34 deletions(-)
+[2026-05-07 13:35:07] ✅ Changes pushed to GitHub
+[2026-05-07 13:35:07] ============================================================
+[2026-05-07 13:35:07] LIVESCORE UPDATER COMPLETED
+[2026-05-07 13:35:07] ============================================================
+[2026-05-07 13:35:05] ============================================================
+[2026-05-07 13:35:05] LIVESCORE UPDATER STARTED
+[2026-05-07 13:35:05] ============================================================
+[2026-05-07 13:35:05] Current tournament: Asunción P1
+[2026-05-07 13:35:05] Current round: None
+[2026-05-07 13:35:05] Simulating match progress...
+[2026-05-07 13:35:05]   Match updated: 6-2, 3-0
+[2026-05-07 13:35:05]   Match started: Eduardo Alonso vs Jeronimo Gonzalez
+[2026-05-07 13:35:05]   Match started: Inigo Jofre vs Alejandro Galan
+[2026-05-07 13:35:05] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-07 13:35:05] Regenerating website pages...
+[2026-05-07 13:35:05] ✅ Pages regenerated successfully
+[2026-05-07 13:35:05] Committing and pushing changes...
+[2026-05-07 13:35:07] ✅ Changes pushed to GitHub
+[2026-05-07 13:35:07] ============================================================
+[2026-05-07 13:35:07] LIVESCORE UPDATER COMPLETED
+[2026-05-07 13:35:07] ============================================================
