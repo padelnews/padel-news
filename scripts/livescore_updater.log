@@ -7064,3 +7064,33 @@ Already up to date.
 [2026-05-08 23:12:28] ============================================================
 [2026-05-08 23:12:28] LIVESCORE UPDATER COMPLETED
 [2026-05-08 23:12:28] ============================================================
+[2026-05-08 23:22:28] ============================================================
+[2026-05-08 23:22:28] LIVESCORE UPDATER STARTED
+[2026-05-08 23:22:28] ============================================================
+[2026-05-08 23:22:28] Current tournament: Asunción P2
+[2026-05-08 23:22:28] Current round: None
+[2026-05-08 23:22:28] Simulating match progress...
+[2026-05-08 23:22:28] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-08 23:22:28] Regenerating website pages...
+[2026-05-08 23:22:28] ✅ Pages regenerated successfully
+[2026-05-08 23:22:28] Committing and pushing changes...
+[main 07ade6e2] 🔴 Live score update 23:22
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+[2026-05-08 23:22:30] ✅ Changes pushed to GitHub
+[2026-05-08 23:22:30] ============================================================
+[2026-05-08 23:22:30] LIVESCORE UPDATER COMPLETED
+[2026-05-08 23:22:30] ============================================================
+[2026-05-08 23:22:28] ============================================================
+[2026-05-08 23:22:28] LIVESCORE UPDATER STARTED
+[2026-05-08 23:22:28] ============================================================
+[2026-05-08 23:22:28] Current tournament: Asunción P2
+[2026-05-08 23:22:28] Current round: None
+[2026-05-08 23:22:28] Simulating match progress...
+[2026-05-08 23:22:28] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-08 23:22:28] Regenerating website pages...
+[2026-05-08 23:22:28] ✅ Pages regenerated successfully
+[2026-05-08 23:22:28] Committing and pushing changes...
+[2026-05-08 23:22:30] ✅ Changes pushed to GitHub
+[2026-05-08 23:22:30] ============================================================
+[2026-05-08 23:22:30] LIVESCORE UPDATER COMPLETED
+[2026-05-08 23:22:30] ============================================================
