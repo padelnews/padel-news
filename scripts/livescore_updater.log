@@ -6614,3 +6614,33 @@ Already up to date.
 [2026-05-08 20:41:59] ============================================================
 [2026-05-08 20:41:59] LIVESCORE UPDATER COMPLETED
 [2026-05-08 20:41:59] ============================================================
+[2026-05-08 20:51:59] ============================================================
+[2026-05-08 20:51:59] LIVESCORE UPDATER STARTED
+[2026-05-08 20:51:59] ============================================================
+[2026-05-08 20:51:59] Current tournament: Asunción P2
+[2026-05-08 20:51:59] Current round: None
+[2026-05-08 20:51:59] Simulating match progress...
+[2026-05-08 20:51:59] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-08 20:51:59] Regenerating website pages...
+[2026-05-08 20:51:59] ✅ Pages regenerated successfully
+[2026-05-08 20:51:59] Committing and pushing changes...
+[main 16ec4c8b] 🔴 Live score update 20:51
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[2026-05-08 20:52:01] ✅ Changes pushed to GitHub
+[2026-05-08 20:52:01] ============================================================
+[2026-05-08 20:52:01] LIVESCORE UPDATER COMPLETED
+[2026-05-08 20:52:01] ============================================================
+[2026-05-08 20:51:59] ============================================================
+[2026-05-08 20:51:59] LIVESCORE UPDATER STARTED
+[2026-05-08 20:51:59] ============================================================
+[2026-05-08 20:51:59] Current tournament: Asunción P2
+[2026-05-08 20:51:59] Current round: None
+[2026-05-08 20:51:59] Simulating match progress...
+[2026-05-08 20:51:59] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-08 20:51:59] Regenerating website pages...
+[2026-05-08 20:51:59] ✅ Pages regenerated successfully
+[2026-05-08 20:51:59] Committing and pushing changes...
+[2026-05-08 20:52:01] ✅ Changes pushed to GitHub
+[2026-05-08 20:52:01] ============================================================
+[2026-05-08 20:52:01] LIVESCORE UPDATER COMPLETED
+[2026-05-08 20:52:01] ============================================================
