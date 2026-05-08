@@ -186622,3 +186622,67 @@
 >>> Running check_tournament_state: Interval-based run (5 min)
 [2026-05-08 07:48:59]     Script: dynamic_flow.py
 [2026-05-08 07:48:59]     Description: Check tournament state and transition if needed
+[2026-05-08 07:49:02]     ✓ SUCCESS
+[2026-05-08 07:49:02]     Skipping index_updater: Hour 7 not in [8, 20]
+[2026-05-08 07:49:02]     Skipping torneos_updater: Hour 7 not in [9]
+[2026-05-08 07:49:02]     Skipping rankings_updater: Hour 7 not in [20]
+[2026-05-08 07:49:02]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-05-08 07:49:02] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-05-08 07:49:02]     Script: tournament_watcher.py
+[2026-05-08 07:49:02]     Description: Watch for new tournaments in Premier Padel
+[2026-05-08 07:49:03]     ✓ SUCCESS
+[2026-05-08 07:49:03]     Skipping live_score: Tournament is live, not active
+[2026-05-08 07:49:03]     Skipping actualidad_updater: Ran 117 min ago, interval is 360
+[2026-05-08 07:49:03]     Skipping resultados_updater: Tournament is live, not finished
+[2026-05-08 07:49:03] 
+============================================================
+[2026-05-08 07:49:03] SUMMARY
+[2026-05-08 07:49:03] ============================================================
+[2026-05-08 07:49:03] Agents run: 2
+[2026-05-08 07:49:03]   - check_tournament_state
+[2026-05-08 07:49:03]   - tournament_watcher
+[2026-05-08 07:49:03] ============================================================
+[2026-05-08 07:49:03] ORCHESTRATOR COMPLETED
+[2026-05-08 07:49:03] ============================================================
+[2026-05-08 07:48:59] ============================================================
+[2026-05-08 07:48:59] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-05-08 07:48:59] ============================================================
+[2026-05-08 07:48:59] Current time: 2026-05-08 07:48:59
+[2026-05-08 07:48:59] Tournament status: live
+[2026-05-08 07:48:59] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-05-08 07:48:59]     Script: dynamic_flow.py
+[2026-05-08 07:48:59]     Description: Check tournament state and transition if needed
+[2026-05-08 07:49:02]     ✓ SUCCESS
+[2026-05-08 07:49:02]     Skipping index_updater: Hour 7 not in [8, 20]
+[2026-05-08 07:49:02]     Skipping torneos_updater: Hour 7 not in [9]
+[2026-05-08 07:49:02]     Skipping rankings_updater: Hour 7 not in [20]
+[2026-05-08 07:49:02]     Skipping chollos_fetcher: Ran 5 min ago, interval is 10
+[2026-05-08 07:49:02] 
+>>> Running tournament_watcher: Interval-based run (30 min)
+[2026-05-08 07:49:02]     Script: tournament_watcher.py
+[2026-05-08 07:49:02]     Description: Watch for new tournaments in Premier Padel
+[2026-05-08 07:49:03]     ✓ SUCCESS
+[2026-05-08 07:49:03]     Skipping live_score: Tournament is live, not active
+[2026-05-08 07:49:03]     Skipping actualidad_updater: Ran 117 min ago, interval is 360
+[2026-05-08 07:49:03]     Skipping resultados_updater: Tournament is live, not finished
+[2026-05-08 07:49:03] 
+============================================================
+[2026-05-08 07:49:03] SUMMARY
+[2026-05-08 07:49:03] ============================================================
+[2026-05-08 07:49:03] Agents run: 2
+[2026-05-08 07:49:03]   - check_tournament_state
+[2026-05-08 07:49:03]   - tournament_watcher
+[2026-05-08 07:49:03] ============================================================
+[2026-05-08 07:49:03] ORCHESTRATOR COMPLETED
+[2026-05-08 07:49:03] ============================================================
+[2026-05-08 07:54:03] ============================================================
+[2026-05-08 07:54:03] PADEL NEWS ORCHESTRATOR v1.0 STARTED
+[2026-05-08 07:54:03] ============================================================
+[2026-05-08 07:54:03] Current time: 2026-05-08 07:54:03
+[2026-05-08 07:54:03] Tournament status: live
+[2026-05-08 07:54:03] 
+>>> Running check_tournament_state: Interval-based run (5 min)
+[2026-05-08 07:54:03]     Script: dynamic_flow.py
+[2026-05-08 07:54:03]     Description: Check tournament state and transition if needed
