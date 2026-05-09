@@ -41254,3 +41254,29 @@
 [2026-05-09 06:49:12] Generated: torneos.html
 [2026-05-09 06:49:12] Generated: actualidad.html
 [2026-05-09 06:49:12] === Generation Complete (3608 times) ===
+[2026-05-09 06:53:47] === Website Generator v2.0 Started ===
+[2026-05-09 06:53:47] Dry run: False, Verify: False
+[2026-05-09 06:53:47] Generating index.html...
+[2026-05-09 06:53:47] Generating resultados.html...
+[2026-05-09 06:53:47] Loaded draw data: 5 rounds
+[2026-05-09 06:53:47] Generating torneos.html...
+[2026-05-09 06:53:47] Generating actualidad.html...
+[2026-05-09 06:53:47] Loaded 4 news from news_data.json
+[2026-05-09 06:53:47] Generated: index.html
+[2026-05-09 06:53:47] Generated: resultados.html
+[2026-05-09 06:53:47] Generated: torneos.html
+[2026-05-09 06:53:47] Generated: actualidad.html
+[2026-05-09 06:53:47] === Generation Complete (3609 times) ===
+[2026-05-09 06:54:16] === Website Generator v2.0 Started ===
+[2026-05-09 06:54:16] Dry run: False, Verify: False
+[2026-05-09 06:54:16] Generating index.html...
+[2026-05-09 06:54:16] Generating resultados.html...
+[2026-05-09 06:54:16] Loaded draw data: 5 rounds
+[2026-05-09 06:54:16] Generating torneos.html...
+[2026-05-09 06:54:16] Generating actualidad.html...
+[2026-05-09 06:54:16] Loaded 4 news from news_data.json
+[2026-05-09 06:54:16] Generated: index.html
+[2026-05-09 06:54:16] Generated: resultados.html
+[2026-05-09 06:54:16] Generated: torneos.html
+[2026-05-09 06:54:16] Generated: actualidad.html
+[2026-05-09 06:54:16] === Generation Complete (3610 times) ===
