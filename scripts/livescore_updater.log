@@ -10844,3 +10844,33 @@ Already up to date.
 [2026-05-09 20:16:35] ============================================================
 [2026-05-09 20:16:35] LIVESCORE UPDATER COMPLETED
 [2026-05-09 20:16:35] ============================================================
+[2026-05-09 20:26:35] ============================================================
+[2026-05-09 20:26:35] LIVESCORE UPDATER STARTED
+[2026-05-09 20:26:35] ============================================================
+[2026-05-09 20:26:35] Current tournament: Asunción P2
+[2026-05-09 20:26:35] Current round: None
+[2026-05-09 20:26:35] Simulating match progress...
+[2026-05-09 20:26:35] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-09 20:26:35] Regenerating website pages...
+[2026-05-09 20:26:35] ✅ Pages regenerated successfully
+[2026-05-09 20:26:35] Committing and pushing changes...
+[main 3fc35170] 🔴 Live score update 20:26
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[2026-05-09 20:26:36] ✅ Changes pushed to GitHub
+[2026-05-09 20:26:36] ============================================================
+[2026-05-09 20:26:36] LIVESCORE UPDATER COMPLETED
+[2026-05-09 20:26:36] ============================================================
+[2026-05-09 20:26:35] ============================================================
+[2026-05-09 20:26:35] LIVESCORE UPDATER STARTED
+[2026-05-09 20:26:35] ============================================================
+[2026-05-09 20:26:35] Current tournament: Asunción P2
+[2026-05-09 20:26:35] Current round: None
+[2026-05-09 20:26:35] Simulating match progress...
+[2026-05-09 20:26:35] Saved /Users/cristian/Sites/padel_news/data/asuncion_p1_draw.json
+[2026-05-09 20:26:35] Regenerating website pages...
+[2026-05-09 20:26:35] ✅ Pages regenerated successfully
+[2026-05-09 20:26:35] Committing and pushing changes...
+[2026-05-09 20:26:36] ✅ Changes pushed to GitHub
+[2026-05-09 20:26:36] ============================================================
+[2026-05-09 20:26:36] LIVESCORE UPDATER COMPLETED
+[2026-05-09 20:26:36] ============================================================
