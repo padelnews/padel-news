@@ -12,3 +12,5 @@ Everything up-to-date
 From https://github.com/padelnews/padel-news
    d9e6e645..9a6b3357  main       -> origin/main
 Everything up-to-date
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
