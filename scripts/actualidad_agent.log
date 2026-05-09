@@ -897,3 +897,9 @@
 [2026-05-09 21:17:01] ============================================================
 [2026-05-09 21:17:01] 
 >>> Step 1: Fetching news...
+[2026-05-09 21:20:01] ✅ News fetched successfully
+[2026-05-09 21:20:01] 
+>>> Step 2: Generating pages...
+[2026-05-09 21:20:01] ✅ Pages generated successfully
+[2026-05-09 21:20:01] 
+>>> Step 3: Committing and pushing to GitHub...
