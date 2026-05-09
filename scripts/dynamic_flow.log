@@ -67030,3 +67030,20 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 [2026-05-09 14:46:02] Validation passed
 [2026-05-09 14:46:02] 
 --- Deploying to GitHub ---
+[2026-05-09 14:46:06] Deployed to GitHub successfully
+[2026-05-09 14:46:06] ============================================================
+[2026-05-09 14:46:06] DYNAMIC FLOW v3.0 COMPLETED
+[2026-05-09 14:46:06] ============================================================
+[2026-05-09 14:51:08] ============================================================
+[2026-05-09 14:51:08] DYNAMIC FLOW v3.0 STARTED
+[2026-05-09 14:51:08] ============================================================
+[2026-05-09 14:51:08] Current tournament: Asunción P2
+[2026-05-09 14:51:08] Status: live
+[2026-05-09 14:51:08] 
+--- Generating pages from state ---
+[2026-05-09 14:51:08] Pages generated successfully
+[2026-05-09 14:51:08] 
+--- Validating pages ---
+[2026-05-09 14:51:08] Validation passed
+[2026-05-09 14:51:08] 
+--- Deploying to GitHub ---
